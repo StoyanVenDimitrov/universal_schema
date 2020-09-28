@@ -1,5 +1,7 @@
 import nltk
+import csv
 import numpy as np
+import requests
 from itertools import groupby
 
 def read_from_pdf(file_path):
@@ -24,16 +26,20 @@ def read_index(index_path):
     # TODO: Map entites with 'see ...' together
     return entity_index
 
+def prepare_neg_data(neg_samples):
+    """negative training samples: from each existing ep+rel pair, create
+        #neg_samples samples that are not existing at the real data"""
+
 def run(file_path, index_path):
     # reading from a .pdf converted to .txt:
     content = read_from_pdf(file_path)
     entity_index = read_index(index_path)
     # take only unique 
     text_examples = set()
+    rel_map = {}
 
     for sentence in content:
 
-        #entity_index = {'DL':['0-1', 'loss'], 'DEEP':['deep'], 'FORM':['formalisms'], 'GUIDE':['guide']}
         sentence_iter = iter(enumerate(sentence))
 
         found_here = []
@@ -72,13 +78,50 @@ def run(file_path, index_path):
                 found_here_on.append((last_found_on, span[0]))
             last_found_on = span[1]
             last_found = w
+        relations = [' '.join(sentence[i[0]:i[1]]) for i in found_here_on if i[0]!=i[1]]
+        for rel_str in relations:
+            rel_map.setdefault(rel_str, str(len(rel_map) + 1))
+        result = []
+        for e, i in zip(found_here, found_here_on):
+            if i[0]!=i[1]:
+                seq = ' '.join(sentence[i[0]:i[1]])
+                result.append((e[0], e[1], '_'.join([e[0], e[1]]), rel_map[seq], '$ARG1 '+ seq +' $ARG2'))
+        # result = [ (e[0] + '\t' + e[1], e[0], e[1],  '$ARG1 '+' '.join(sentence[i[0]:i[1]])+' $ARG2') for e, i in zip(found_here, found_here_on) if i[0]!=i[1]]
 
-        result = [ (e[0], e[1], '$ARG1 '+' '.join(sentence[i[0]:i[1]])+' $ARG2') for e, i in zip(found_here, found_here_on) if i[0]!=i[1]]
         text_examples.update(result)
-    print(len(text_examples))
-    return text_examples
+    return list(text_examples)
+
+def wikidata_query(query):
+    url = 'https://query.wikidata.org/sparql'
+    data = requests.get(url, params={'query': query, 'format': 'json'}).json()
+    return len(data['results']['bindings'])
+
+    #TODO: import to table with prefix  pre:...
+    
 
 if __name__ == "__main__":
-    run("data/[11]part-2-chapter-6.txt", "data/[28]index.txt")
-    # run("data/texts.txt", "data/[28]index.txt")
+    data = run("data/[11]part-2-chapter-6.txt", "data/[28]index.txt")
+    print(data[3])
+    with open('train.tsv','w') as out:
+        csv_out=csv.writer(out, delimiter='\t')
+        csv_out.writerow(['e1','e2', 'ep', 'relation_id', 'sequence', '1'])
+        for row in data:
+            row = row + (1,)
+            csv_out.writerow(row)
 
+    # query = '''    '''
+    # print(wikidata_query(query))
+
+    """
+    16      10      392     493     3 1008 130 16 60 8 132 35 10 31 12 15 25 1009 9 35 10 105 12 14 5 4     1
+
+    23      64      219     494     3 6 90 17 243 22 28 49 240 9 82 37 10 13 88 153 6 5 114 1010 11 8 1011 15 5 4   1
+
+    87      5       393     495     3 11 27 4       1
+
+    21      4       394     496     3 78 5 1012 13 5 178 9 5 4      1
+
+    119     16      395     497     3 11 1013 13 39 80 6 95 5 4     1
+
+    28      20      396     498     3 121 21 179 20 7 4     1
+    """
