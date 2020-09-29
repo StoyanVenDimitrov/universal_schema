@@ -10,16 +10,8 @@ class LSTMEncoder(nn.Module):
     
     def forward(self, seq): 
         emb = self.emb(seq)
+        #emb = torch.unsqueeze(emb, 0)
         h, _ = self.lstm(emb)
         # take last hidden state only:
         # out= self.linear(h[-1, :, :])
-        return h[-1, :, :]
-
-class LookupTable:
-    def __init__(self, vocab_size, emb_dim):
-        super().__init__()
-        self.emb = nn.Embedding(vocab_size, emb_dim)
-
-    def forward(self, seq): 
-        emb = self.emb(seq)
-        return emb
+        return h[-1, :, :].unsqueeze(1)

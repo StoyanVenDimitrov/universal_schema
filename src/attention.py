@@ -28,7 +28,7 @@ class Attention(nn.Module):
          torch.Size([5, 1, 5])
     """
 
-    def __init__(self, dimensions, attention_type='general'):
+    def __init__(self, dimensions, attention_type='dot'):
         super(Attention, self).__init__()
 
         if attention_type not in ['dot', 'general']:
