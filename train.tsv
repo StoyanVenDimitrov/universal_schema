@@ -1,0 +1,527 @@
+e1	e2	ep	relation_id	sequence	1
+deep feedforward network	set	"deep feedforward network	set"	130	$ARG1 the fraction of counts of each outcome observed in the training $ARG2	1
+computational graph	gradient	"computational graph	gradient"	278	$ARG1 for the $ARG2	1
+example	convolutional network	"example	convolutional network"	5	$ARG1 , the $ARG2	1
+matrix	operation	"matrix	operation"	466	$ARG1 or ﬁnding approximations to its eigenvectors or eigenvalues , without using any $ARG2	1
+back-propagation	example	"back-propagation	example"	402	$ARG1 for MLP Training As an $ARG2	1
+parametric model	maximum likelihood	"parametric model	maximum likelihood"	70	$ARG1 deﬁnes a distribution p ( y | x ; θ ) and we simply use the principle of $ARG2	1
+maximum likelihood	variance	"maximum likelihood	variance"	151	$ARG1 estimator of $ARG2	1
+sigmoid	unnormalized probability distribution	"sigmoid	unnormalized probability distribution"	111	$ARG1 can be motivated by constructing an $ARG2	1
+back-propagation	gradient	"back-propagation	gradient"	460	$ARG1 is therefore not the only way or the optimal way of computing the $ARG2	1
+graph	set	"graph	set"	354	$ARG1 , then return a $ARG2	1
+aﬃne	set	"aﬃne	set"	209	$ARG1 transformation , it can be a good practice to $ARG2	1
+deep feedforward network	cross-entropy	"deep feedforward network	cross-entropy"	81	$ARG1 as the $ARG2	1
+second derivative	scalar	"second derivative	scalar"	13	$ARG1 of a $ARG2	1
+design matrix	vector	"design matrix	vector"	410	$ARG1 X and a $ARG2	1
+graph	gradient	"graph	gradient"	400	$ARG1 has a corresponding slot in a ∂u ( i ) table to store the $ARG2	1
+variance	example	"variance	example"	189	$ARG1 gets to be small for a particular $ARG2	1
+deep learning	krylov methods	"deep learning	krylov methods"	463	$ARG1 approach is to use $ARG2	1
+dot product	gradient	"dot product	gradient"	317	$ARG1 is performed for each node , between the $ARG2	1
+deep feedforward network	computational graph	"deep feedforward network	computational graph"	333	$ARG1 Figure 6.9 : A $ARG2	1
+standard deviation	precision	"standard deviation	precision"	171	$ARG1 rather than $ARG2	1
+regularization	neural network	"regularization	neural network"	78	$ARG1 strategies for $ARG2	1
+mean squared error	optimization	"mean squared error	optimization"	103	$ARG1 and mean absolute error often lead to poor results when used with gradient-based $ARG2	1
+gradient	neural network	"gradient	neural network"	64	$ARG1 is slightly more complicated for a $ARG2	1
+maxout	activation function	"maxout	activation function"	216	$ARG1 layer with two pieces can learn to implement the same function of the input x as a traditional layer using the rectiﬁed linear $ARG2	1
+operation	back-propagation	"operation	back-propagation"	372	$ARG1 is responsible for deﬁning two $ARG2	1
+deep feedforward network	activation function	"deep feedforward network	activation function"	40	$ARG1 Figure 6.3 : The rectiﬁed linear $ARG2	1
+graph	operation	"graph	operation"	412	$ARG1 language includes a cross_entropy $ARG2	1
+generalization	challenge	"generalization	challenge"	479	$ARG1 is a $ARG2	1
+graph	gradient	"graph	gradient"	361	$ARG1 , we begin by observing that the $ARG2	1
+rectiﬁed linear unit	design matrix	"rectiﬁed linear unit	design matrix"	280	$ARG1 activations H given a $ARG2	1
+hessian matrix	vector	"hessian matrix	vector"	468	$ARG1 H and an arbitrary $ARG2	1
+scalar	softmax	"scalar	softmax"	140	$ARG1 to all of its $ARG2	1
+recurrent network	activation function	"recurrent network	activation function"	228	$ARG1 , many probabilistic models , and some autoencoders have additional requirements that rule out the use of piecewise linear $ARG2	1
+neural network	parametric model	"neural network	parametric model"	69	$ARG1 are more or less the same as those for other $ARG2	1
+vector	probability distribution	"vector	probability distribution"	125	$ARG1 sums to 1 so that it represents a valid $ARG2	1
+computational graph	vector	"computational graph	vector"	315	$ARG1 is the $ARG2	1
+deep feedforward network	example	"deep feedforward network	example"	347	$ARG1 Figure 6.10 : An $ARG2	1
+back-propagation	computational graph	"back-propagation	computational graph"	312	$ARG1 , we can construct a $ARG2	1
+dataset	activation function	"dataset	activation function"	230	$ARG1 and obtained an error rate of less than 1 % , which is competitive with results obtained using more conventional $ARG2	1
+vector	weights	"vector	weights"	32	$ARG1 of $ARG2	1
+maximum likelihood	cost function	"maximum likelihood	cost function"	113	$ARG1 is − log P ( y | x ) , the log in the $ARG2	1
+machine learning	gradient descent	"machine learning	gradient descent"	49	$ARG1 model with $ARG2	1
+deep feedforward network	loop	"deep feedforward network	loop"	398	$ARG1 Algorithm 6.6 The inner $ARG2	1
+deep feedforward network	hidden layer	"deep feedforward network	hidden layer"	14	$ARG1 , with φ deﬁning a $ARG2	1
+neural network	cost function	"neural network	cost function"	198	$ARG1 training algorithms do not usually arrive at a local minimum of the $ARG2	1
+output layer	hidden layer	"output layer	hidden layer"	341	$ARG1 and going backwards to the ﬁrst $ARG2	1
+regularization	rectiﬁed linear unit	"regularization	rectiﬁed linear unit"	219	$ARG1 than $ARG2	1
+neural network	aﬃne	"neural network	aﬃne"	24	$ARG1 do so using an $ARG2	1
+back-propagation	gradient	"back-propagation	gradient"	301	$ARG1 algorithm that speciﬁes the actual $ARG2	1
+gradient descent	gaussian distribution	"gradient descent	gaussian distribution"	158	$ARG1 because the formula for the log-likelihood of the $ARG2	1
+cost function	neural network	"cost function	neural network"	73	$ARG1 used to train a $ARG2	1
+universal approximation theorem	output layer	"universal approximation theorem	output layer"	236	$ARG1 ( Hornik et al. , 1989 ; Cybenko , 1989 ) states that a feedforward network with a linear $ARG2	1
+scalar	covariance	"scalar	covariance"	173	$ARG1 times identity rather than It is rare to learn a $ARG2	1
+convolutional network	computer vision	"convolutional network	computer vision"	257	$ARG1 , described in chapter 9 , use specialized patterns of sparse connections that are very eﬀective for $ARG2	1
+operation	cross-entropy	"operation	cross-entropy"	413	$ARG1 that computes the $ARG2	1
+back-propagation	forward propagation	"back-propagation	forward propagation"	418	$ARG1 algorithm by looking at the $ARG2	1
+convex optimization	logistic regression	"convex optimization	logistic regression"	56	$ARG1 algorithms with global convergence guarantees used to train $ARG2	1
+neural network	derivative	"neural network	derivative"	268	$ARG1 , but in principle it can compute derivatives of any function ( for some functions , the correct response is to report that the $ARG2	1
+back-propagation	neural network	"back-propagation	neural network"	161	$ARG1 , $ARG2	1
+deep feedforward network	softmax	"deep feedforward network	softmax"	182	$ARG1 typically be obtained by a $ARG2	1
+softmax	set	"softmax	set"	143	$ARG1 can describe the same $ARG2	1
+neural network	machine learning	"neural network	machine learning"	194	$ARG1 that are common to most parametric $ARG2	1
+graph	partial derivative	"graph	partial derivative"	444	$ARG1 G has a single output node and each $ARG2	1
+matrix	operation	"matrix	operation"	390	$ARG1 multiplication as a single $ARG2	1
+example	mean squared error	"example	mean squared error"	82	$ARG1 , as we saw in section 5.5.1 , if pmodel ( y | x ) = N ( y ; f ( x ; θ ) , I ) , then we recover the $ARG2	1
+optimization	gradient descent	"optimization	gradient descent"	471	$ARG1 problems in closed form , but $ARG2	1
+neural network	gaussian mixture	"neural network	gaussian mixture"	62	$ARG1 with $ARG2	1
+example	cross-entropy	"example	cross-entropy"	424	$ARG1 of a single-layer MLP using the $ARG2	1
+generalization	sigmoid	"generalization	sigmoid"	141	$ARG1 of the way that $ARG2	1
+cross-entropy	maximum likelihood	"cross-entropy	maximum likelihood"	415	$ARG1 performs $ARG2	1
+matrix	tensor	"matrix	tensor"	181	$ARG1 providing µ ( i ) ( x ) for all i , and a $ARG2	1
+multilayer perceptron	gradient	"multilayer perceptron	gradient"	474	$ARG1 and a means of computing the $ARG2	1
+maximum likelihood	cost function	"maximum likelihood	cost function"	148	$ARG1 suggests we use − log p ( y | x ; θ ) as our $ARG2	1
+generalization	sigmoid	"generalization	sigmoid"	83	$ARG1 of the $ARG2	1
+example	neural network	"example	neural network"	96	$ARG1 , we may have a predictor f ( x ; θ ) that we wish to predict the mean If we use a suﬃciently powerful $ARG2	1
+optimization	cost function	"optimization	cost function"	51	$ARG1 procedure , a $ARG2	1
+deep feedforward network	neural network	"deep feedforward network	neural network"	44	$ARG1 The $ARG2	1
+operation	computational graph	"operation	computational graph"	365	$ARG1 that computes V , represented by the edges coming into V in the $ARG2	1
+backprop	graph	"backprop	graph"	322	$ARG1 ( algorithm 6.2 ) visits each edge from node u ( j ) to node u ( i ) of ∂u ( i ) the $ARG2	1
+forward propagation	scalar	"forward propagation	scalar"	260	$ARG1 can continue onward until it produces a $ARG2	1
+rectiﬁed linear unit	aﬃne	"rectiﬁed linear unit	aﬃne"	208	$ARG1 are typically used on top of an $ARG2	1
+vector	partial derivative	"vector	partial derivative"	319	$ARG1 containing the $ARG2	1
+maximum likelihood	softmax	"maximum likelihood	softmax"	129	$ARG1 will drive the model to learn parameters that drive the $ARG2	1
+precision	variance	"precision	variance"	157	$ARG1 , rather than $ARG2	1
+gradient	operation	"gradient	operation"	289	$ARG1 of performing such a Jacobian-gradient product for each $ARG2	1
+back-propagation	graph	"back-propagation	graph"	336	$ARG1 algorithm to this $ARG2	1
+computational graph	scalar	"computational graph	scalar"	300	$ARG1 that produced that $ARG2	1
+gradient	partial derivative	"gradient	partial derivative"	447	$ARG1 computation is of the same order as the number of computations for the forward computation : this can be seen in algorithm 6.2 because each local $ARG2	1
+computational graph	example	"computational graph	example"	387	$ARG1 , which might actually consist of very many arithmetic operations ( for $ARG2	1
+graph	gradient	"graph	gradient"	363	$ARG1 by multiplying the current $ARG2	1
+partial derivative	back-propagation	"partial derivative	back-propagation"	445	$ARG1 can be computed with a constant amount of computation , $ARG2	1
+deep feedforward network	scalar	"deep feedforward network	scalar"	184	$ARG1 each $ARG2	1
+back-propagation	graph	"back-propagation	graph"	396	$ARG1 algorithm adds one Jacobian-vector product , which should be expressed with O ( 1 ) nodes , per edge in the original $ARG2	1
+cost function	expected value	"cost function	expected value"	98	$ARG1 to have its minimum lie on the function that maps x to the $ARG2	1
+example	regularization	"example	regularization"	416	$ARG1 more realistic , we also include a $ARG2	1
+gradient descent	optimization	"gradient descent	optimization"	433	$ARG1 algorithm , or another $ARG2	1
+generalization	set	"generalization	set"	11	$ARG1 to the test $ARG2	1
+maximum likelihood	covariance	"maximum likelihood	covariance"	106	$ARG1 framework makes it straightforward to learn the $ARG2	1
+aﬃne	vector	"aﬃne	vector"	37	$ARG1 transformation from a $ARG2	1
+cost function	output layer	"cost function	output layer"	147	$ARG1 for nearly any kind of $ARG2	1
+gradient	operation	"gradient	operation"	379	$ARG1 on the output of the $ARG2	1
+deep learning	computational graph	"deep learning	computational graph"	458	$ARG1 community , $ARG2	1
+variance	gaussian distribution	"variance	gaussian distribution"	83	$ARG1 of the $ARG2	1
+back-propagation	operation	"back-propagation	operation"	431	$ARG1 rule for the second argument of the matmul $ARG2	1
+activation function	logistic sigmoid	"activation function	logistic sigmoid"	227	$ARG1 typically performs better than the $ARG2	1
+loop	back-propagation	"loop	back-propagation"	399	$ARG1 subroutine build_grad ( V , G , G , grad_table ) of the $ARG2	1
+aﬃne	vector	"aﬃne	vector"	35	$ARG1 transformation from an input $ARG2	1
+neural network	logistic sigmoid	"neural network	logistic sigmoid"	224	$ARG1 used the $ARG2	1
+cost function	neural network	"cost function	neural network"	68	$ARG1 for $ARG2	1
+convolutional network	set	"convolutional network	set"	258	$ARG1 without increasing their depth is not nearly as eﬀective at increasing test $ARG2	1
+activation function	logistic sigmoid	"activation function	logistic sigmoid"	239	$ARG1 ( such as the $ARG2	1
+gradient	tensor	"gradient	tensor"	294	$ARG1 back into a $ARG2	1
+backprop	gradient	"backprop	gradient"	262	$ARG1 , allows the information from the cost to then ﬂow backwards through the network , in order to compute the $ARG2	1
+feedforward neural network	multilayer perceptron	"feedforward neural network	multilayer perceptron"	2	$ARG1 , or $ARG2	1
+heteroscedastic	variance	"heteroscedastic	variance"	155	$ARG1 case , we simply make the speciﬁcation of the $ARG2	1
+cross-entropy	sigmoid	"cross-entropy	sigmoid"	485	$ARG1 losses greatly improved the performance of models with $ARG2	1
+computational graph	back-propagation	"computational graph	back-propagation"	448	$ARG1 constructed by $ARG2	1
+gradient	operation	"gradient	operation"	364	$ARG1 by the Jacobian of the $ARG2	1
+scalar	graph	"scalar	graph"	453	$ARG1 internal node in the original forward $ARG2	1
+maximum likelihood	machine learning	"maximum likelihood	machine learning"	484	$ARG1 as ideas spread between the statistics community and the $ARG2	1
+gradient	scalar	"gradient	scalar"	359	$ARG1 of some $ARG2	1
+deep feedforward network	example	"deep feedforward network	example"	91	$ARG1 can control the density of the output distribution ( for $ARG2	1
+example	variance	"example	variance"	149	$ARG1 , we may wish to learn the $ARG2	1
+gradient	cost function	"gradient	cost function"	60	$ARG1 to descend the $ARG2	1
+example	convolutional network	"example	convolutional network"	161	$ARG1 , $ARG2	1
+softmax	probability distribution	"softmax	probability distribution"	120	$ARG1 Units for Multinoulli Output Distributions Any time we wish to represent a $ARG2	1
+example	back-propagation	"example	back-propagation"	401	$ARG1 : $ARG2	1
+activation function	rectiﬁed linear unit	"activation function	rectiﬁed linear unit"	246	$ARG1 , including $ARG2	1
+operation	graph	"operation	graph"	369	$ARG1 is responsible for knowing how to back-propagate through the edges in the $ARG2	1
+vector	jacobian matrix	"vector	jacobian matrix"	286	$ARG1 notation , this may be equivalently written as is the n × m $ARG2	1
+gradient	matrix	"gradient	matrix"	373	$ARG1 on the output is G , then the bprop method of the $ARG2	1
+scalar	diagonal matrix	"scalar	diagonal matrix"	168	$ARG1 times the $ARG2	1
+logistic sigmoid	softmax	"logistic sigmoid	softmax"	128	$ARG1 , the use of the exp function works very well when training the $ARG2	1
+softmax	vector	"softmax	vector"	183	$ARG1 over an n-dimensional $ARG2	1
+matrix	weights	"matrix	weights"	434	$ARG1 , resulting in O ( w ) multiply-adds , where w is the number of $ARG2	1
+gradient descent	optimization	"gradient descent	optimization"	472	$ARG1 was not introduced as a technique for iteratively approximating the solution to $ARG2	1
+cost function	maximum likelihood	"cost function	maximum likelihood"	112	$ARG1 used with $ARG2	1
+parallel distributed processing	back-propagation	"parallel distributed processing	back-propagation"	475	$ARG1 presented the results of some of the ﬁrst successful experiments with $ARG2	1
+loss function	softmax	"loss function	softmax"	68	$ARG1 for $ARG2	1
+softmax	cross-entropy	"softmax	cross-entropy"	440	$ARG1 function out of exponentiation ,  operations , and construct a $ARG2	1
+neural network	example	"neural network	example"	45	$ARG1 has obtained the correct answer for every $ARG2	1
+feedforward neural network	hidden layer	"feedforward neural network	hidden layer"	196	$ARG1 : how to choose the type of hidden unit to use in the $ARG2	1
+example	feature	"example	feature"	26	$ARG1 solution , the two points that must have output 1 have been collapsed into a single point in $ARG2	1
+deep feedforward network	cost function	"deep feedforward network	cost function"	146	$ARG1 a good $ARG2	1
+deep feedforward network	stochastic gradient descent	"deep feedforward network	stochastic gradient descent"	61	$ARG1 more speciﬁcally , are most often improvements of the $ARG2	1
+computational graph	gradient	"computational graph	gradient"	334	$ARG1 that results in repeated subexpressions when computing the $ARG2	1
+cost function	optimization	"cost function	optimization"	153	$ARG1 with the appropriate terms necessary to make our $ARG2	1
+example	neural network	"example	neural network"	190	$ARG1 , we may wish for our $ARG2	1
+scalar	graph	"scalar	graph"	452	$ARG1 nodes in the $ARG2	1
+vector	graph	"vector	graph"	457	$ARG1 while A has many rows , this corresponds to a $ARG2	1
+forward propagation	example	"forward propagation	example"	329	$ARG1 ( algorithm 6.1 for this $ARG2	1
+set	factors of variation	"set	factors of variation"	251	$ARG1 of underlying $ARG2	1
+softplus	gradient	"softplus	gradient"	117	$ARG1 function does not shrink the $ARG2	1
+covariance	covariance matrix	"covariance	covariance matrix"	174	$ARG1 is full and conditional , then a parametrization must be chosen that guarantees positive-deﬁniteness of the predicted $ARG2	1
+cross-entropy	probability distribution	"cross-entropy	probability distribution"	414	$ARG1 between the targets y and the $ARG2	1
+activation function	absolute value rectiﬁcation	"activation function	absolute value rectiﬁcation"	161	$ARG1 , $ARG2	1
+activation function	feedforward neural network	"activation function	feedforward neural network"	41	$ARG1 recommended for use with most $ARG2	1
+gaussian mixture	neural network	"gaussian mixture	neural network"	187	$ARG1 ( on the output of $ARG2	1
+vector	scalar	"vector	scalar"	36	$ARG1 to an output $ARG2	1
+forward propagation	graph	"forward propagation	graph"	311	$ARG1 computation , which we could put in a $ARG2	1
+computational graph	set	"computational graph	set"	313	$ARG1 that depends on G and adds to it an extra $ARG2	1
+example	matrix	"example	matrix"	370	$ARG1 , we might use a $ARG2	1
+example	deep feedforward network	"example	deep feedforward network"	13	$ARG1 of a $ARG2	1
+computational graph	design matrix	"computational graph	design matrix"	279	$ARG1 for the expression H = max { 0 , XW + b } , which computes a $ARG2	1
+neural network	machine learning	"neural network	machine learning"	48	$ARG1 is not much diﬀerent from training any other $ARG2	1
+gradient	operation	"gradient	operation"	159	$ARG1 through the squaring $ARG2	1
+back-propagation	gradient descent	"back-propagation	gradient descent"	307	$ARG1 to computing gradients for $ARG2	1
+example	neural network	"example	neural network"	332	$ARG1 ( x , y ) , with ŷ the output of the $ARG2	1
+graph	partial derivative	"graph	partial derivative"	323	$ARG1 exactly once in order to obtain the associated $ARG2	1
+output layer	linear regression	"output layer	linear regression"	23	$ARG1 is still just a $ARG2	1
+matrix	positive deﬁnite	"matrix	positive deﬁnite"	166	$ARG1 is $ARG2	1
+back-propagation	backprop	"back-propagation	backprop"	261	$ARG1 algorithm ( Rumelhart et al. , 1986a ) , often simply called $ARG2	1
+design matrix	rectiﬁed linear unit	"design matrix	rectiﬁed linear unit"	32	$ARG1 of $ARG2	1
+rectiﬁed linear unit	activation function	"rectiﬁed linear unit	activation function"	39	$ARG1 or ReLU ( Jarrett et al. , 2009 ; Nair and Hinton , 2010 ; Glorot et al. , 2011a ) deﬁned by the $ARG2	1
+output layer	hidden layer	"output layer	hidden layer"	237	$ARG1 and at least one $ARG2	1
+softmax	probability distribution	"softmax	probability distribution"	123	$ARG1 functions are most often used as the output of a classiﬁer , to represent the $ARG2	1
+stochastic gradient descent	loss function	"stochastic gradient descent	loss function"	57	$ARG1 applied to non-convex $ARG2	1
+recurrent network	example	"recurrent network	example"	455	$ARG1 , for $ARG2	1
+convolutional network	object recognition	"convolutional network	object recognition"	6	$ARG1 used for $ARG2	1
+cross-entropy	weight decay	"cross-entropy	weight decay"	425	$ARG1 loss and $ARG2	1
+variance	set	"variance	set"	93	$ARG1 parameter of a Gaussian output distribution ) then it becomes possible to assign extremely high density to the correct training $ARG2	1
+graph	operation	"graph	operation"	282	$ARG1 that applies more than one $ARG2	1
+example	graph	"example	graph"	388	$ARG1 , we might have a $ARG2	1
+deep feedforward network	logistic sigmoid	"deep feedforward network	logistic sigmoid"	110	$ARG1 where σ is the $ARG2	1
+rectiﬁed linear unit	activation function	"rectiﬁed linear unit	activation function"	489	$ARG1 were avoided due to a somewhat superstitious belief that $ARG2	1
+forward propagation	example	"forward propagation	example"	331	$ARG1 , which maps parameters to the supervised loss L ( ŷ , y ) associated with a single ( input , target ) training $ARG2	1
+maximum likelihood	sigmoid	"maximum likelihood	sigmoid"	115	$ARG1 learning of a Bernoulli parametrized by a $ARG2	1
+computer vision	convolutional network	"computer vision	convolutional network"	252	$ARG1 called $ARG2	1
+set	probability distribution	"set	probability distribution"	32	$ARG1 of $ARG2	1
+softplus	precision	"softplus	precision"	170	$ARG1 function to obtain a positive $ARG2	1
+cost function	gradient	"cost function	gradient"	200	$ARG1 to correspond to points with undeﬁned $ARG2	1
+maxout	rectiﬁed linear unit	"maxout	rectiﬁed linear unit"	213	$ARG1 units ( Goodfellow et al. , 2013a ) generalize $ARG2	1
+gradient descent	neural network	"gradient descent	neural network"	47	$ARG1 would usually not ﬁnd clean , easily understood , integer-valued solutions like the one we presented Designing and training a $ARG2	1
+probability distribution	softmax	"probability distribution	softmax"	121	$ARG1 over a discrete variable with n possible values , we may use the $ARG2	1
+gradient descent	set	"gradient descent	set"	63	$ARG1 too , and in fact this is common when the training $ARG2	1
+output layer	covariance	"output layer	covariance"	108	$ARG1 , so typically other output units are used to parametrize the $ARG2	1
+operation	gradient	"operation	gradient"	376	$ARG1 is responsible for implementing the bprop method and specifying that the desired $ARG2	1
+gradient	back-propagation	"gradient	back-propagation"	427	$ARG1 on W ( 2 ) , using the $ARG2	1
+deep feedforward network	loss function	"deep feedforward network	loss function"	142	$ARG1 can cause similar diﬃculties for learning if the $ARG2	1
+deep feedforward network	radial basis function	"deep feedforward network	radial basis function"	233	$ARG1 A few other reasonably common hidden unit types include : • $ARG2	1
+logistic sigmoid	rectiﬁed linear unit	"logistic sigmoid	rectiﬁed linear unit"	222	$ARG1 and Hyperbolic Tangent Prior to the introduction of $ARG2	1
+cost function	mean squared error	"cost function	mean squared error"	104	$ARG1 is more popular than $ARG2	1
+weights	feature	"weights	feature"	490	$ARG1 are suﬃcient to propagate useful information through a rectiﬁed linear network , allowing the classiﬁer layer at the top to learn how to map diﬀerent $ARG2	1
+neural network	output layer	"neural network	output layer"	192	$ARG1 with a mixture density $ARG2	1
+graph	gradient	"graph	gradient"	303	$ARG1 that performs the $ARG2	1
+neural network	machine learning	"neural network	machine learning"	6	$ARG1 used for $ARG2	1
+minibatch	set	"minibatch	set"	408	$ARG1 of examples from the training $ARG2	1
+objective function	softmax	"objective function	softmax"	134	$ARG1 that do not use a log to undo the exp of the $ARG2	1
+graph	logistic regression	"graph	logistic regression"	278	$ARG1 for the $ARG2	1
+matrix	tensor	"matrix	tensor"	161	$ARG1 , $ARG2	1
+absolute value rectiﬁcation	parametric relu	"absolute value rectiﬁcation	parametric relu"	217	$ARG1 function , or the leaky or $ARG2	1
+example	minibatch	"example	minibatch"	309	$ARG1 or a $ARG2	1
+cost function	sigmoid	"cost function	sigmoid"	114	$ARG1 undoes the exp of the $ARG2	1
+machine learning	deep learning	"machine learning	deep learning"	477	$ARG1 techniques became more popular until the modern $ARG2	1
+gradient	back-propagation	"gradient	back-propagation"	65	$ARG1 using the $ARG2	1
+back-propagation	operation	"back-propagation	operation"	275	$ARG1 usually support operations with multiple outputs , but we avoid this case in our description because it introduces many extra details that are not important to If a variable y is computed by applying an $ARG2	1
+sigmoid	softmax	"sigmoid	softmax"	5	$ARG1 , the $ARG2	1
+set	graph	"set	graph"	353	$ARG1 of numerical values for the inputs to the $ARG2	1
+bernoulli distribution	multinoulli distribution	"bernoulli distribution	multinoulli distribution"	126	$ARG1 generalizes to the $ARG2	1
+deep feedforward network	cost function	"deep feedforward network	cost function"	102	$ARG1 Diﬀerent $ARG2	1
+sigmoid	rectiﬁed linear unit	"sigmoid	rectiﬁed linear unit"	487	$ARG1 hidden units with piecewise linear hidden units , such as $ARG2	1
+diagonal matrix	scalar	"diagonal matrix	scalar"	167	$ARG1 , or a $ARG2	1
+back-propagation	forward propagation	"back-propagation	forward propagation"	328	$ARG1 Run $ARG2	1
+gradient	activation function	"gradient	activation function"	207	$ARG1 direction is far more useful for learning than it would be with $ARG2	1
+deep feedforward network	neural network	"deep feedforward network	neural network"	270	$ARG1 So far we have discussed $ARG2	1
+activation function	hidden layer	"activation function	hidden layer"	17	$ARG1 that will be used to compute the $ARG2	1
+deep feedforward network	set	"deep feedforward network	set"	214	$ARG1 one of these groups : g ( z ) i = max zj j∈G ( i ) where G ( i ) is the $ARG2	1
+neural network	cost function	"neural network	cost function"	67	$ARG1 is the choice of the $ARG2	1
+neural network	graph	"neural network	graph"	271	$ARG1 with a relatively informal $ARG2	1
+feedforward neural network	recurrent neural network	"feedforward neural network	recurrent neural network"	4	$ARG1 are extended to include feedback connections , they are called $ARG2	1
+maximum likelihood	mean squared error	"maximum likelihood	mean squared error"	84	$ARG1 estimation with an output distribution and minimization of $ARG2	1
+optimization	gaussian mixture	"optimization	gaussian mixture"	186	$ARG1 of conditional $ARG2	1
+machine learning	set	"machine learning	set"	249	$ARG1 algorithm , we are implicitly stating some $ARG2	1
+data generating distribution	mean squared error	"data generating distribution	mean squared error"	101	$ARG1 , minimizing the $ARG2	1
+activation function	rectiﬁed linear unit	"activation function	rectiﬁed linear unit"	242	$ARG1 , which includes the now commonly used $ARG2	1
+deep feedforward network	back-propagation	"deep feedforward network	back-propagation"	385	$ARG1 Algorithm 6.5 The outermost skeleton of the $ARG2	1
+recurrent network	feedforward neural network	"recurrent network	feedforward neural network"	7	$ARG1 , which power many natural $ARG2	1
+back-propagation	gradient	"back-propagation	gradient"	449	$ARG1 only for the computation of a $ARG2	1
+optimization	parameter initialization	"optimization	parameter initialization"	59	$ARG1 algorithms used to train feedforward networks and almost all other deep models will be described in detail in chapter 8 , with $ARG2	1
+deep feedforward network	standard deviation	"deep feedforward network	standard deviation"	160	$ARG1 Regardless of whether we use $ARG2	1
+gradient	example	"gradient	example"	439	$ARG1 is NP-complete ( Naumann , 2008 ) , in the sense that it may require simplifying algebraic expressions into their least For $ARG2	1
+second derivative	operation	"second derivative	operation"	204	$ARG1 of the rectifying $ARG2	1
+weights	weight decay	"weights	weight decay"	285	$ARG1 are used to make both the prediction ŷ and the $ARG2	1
+back-propagation	operation	"back-propagation	operation"	384	$ARG1 or advanced users who need to add their own $ARG2	1
+vector	set	"vector	set"	316	$ARG1 x , and is $ARG2	1
+loss function	gradient descent	"loss function	gradient descent"	46	$ARG1 , so $ARG2	1
+loss function	mean squared error	"loss function	mean squared error"	118	$ARG1 , such as $ARG2	1
+graph	operation	"graph	operation"	277	$ARG1 using the × $ARG2	1
+computational graph	graph	"computational graph	graph"	356	$ARG1 and add additional nodes to the $ARG2	1
+multilayer perception	hidden layer	"multilayer perception	hidden layer"	405	$ARG1 with a single $ARG2	1
+neural network	rectiﬁed linear unit	"neural network	rectiﬁed linear unit"	38	$ARG1 , the default recommendation is to use the $ARG2	1
+graph	gradient	"graph	gradient"	454	$ARG1 , the naive implementation computes k gradients instead of a single $ARG2	1
+graph	set	"graph	set"	273	$ARG1 language is accompanied by a $ARG2	1
+neural network	cost function	"neural network	cost function"	53	$ARG1 are usually trained by using iterative , gradient-based optimizers that merely drive the $ARG2	1
+recurrent neural network	neural network	"recurrent neural network	neural network"	193	$ARG1 to deﬁne such models over sequences , and part III describes advanced techniques for modeling arbitrary So far we have focused our discussion on design choices for $ARG2	1
+transpose	matrix	"transpose	matrix"	435	$ARG1 of each weight $ARG2	1
+derivative	operation	"derivative	operation"	204	$ARG1 of the rectifying $ARG2	1
+mean squared error	cross-entropy	"mean squared error	cross-entropy"	480	$ARG1 with the $ARG2	1
+operation	computational graph	"operation	computational graph"	386	$ARG1 as the fundamental unit of our $ARG2	1
+set	matrix	"set	matrix"	465	$ARG1 of iterative techniques for performing various operations like approximately inverting a $ARG2	1
+gradient	vector	"gradient	vector"	318	$ARG1 already computed with respect to nodes u ( i ) that are children of u ( j ) and the $ARG2	1
+loss function	maximum likelihood	"loss function	maximum likelihood"	68	$ARG1 for $ARG2	1
+machine learning	perceptron	"machine learning	perceptron"	473	$ARG1 models such as the $ARG2	1
+aﬃne	activation function	"aﬃne	activation function"	25	$ARG1 transformation controlled by learned parameters , followed by a ﬁxed , nonlinear function called an $ARG2	1
+vector	aﬃne	"vector	aﬃne"	202	$ARG1 of inputs x , computing an $ARG2	1
+gradient	tensor	"gradient	tensor"	295	$ARG1 of a value z with respect to a $ARG2	1
+unsupervised learning	supervised learning	"unsupervised learning	supervised learning"	493	$ARG1 to support $ARG2	1
+deep feedforward network	hidden layer	"deep feedforward network	hidden layer"	247	$ARG1 ( 2014 ) showed that functions representable with a deep rectiﬁer net can require an exponential number of hidden units with a shallow ( one $ARG2	1
+example	dataset	"example	dataset"	229	$ARG1 , the authors tested a feedforward network using h = cos ( W x + b ) on the MNIST $ARG2	1
+bias parameter	aﬃne	"bias parameter	aﬃne"	34	$ARG1 to describe an $ARG2	1
+matrix	covariance matrix	"matrix	covariance matrix"	164	$ARG1 are the reciprocals of the eigenvalues of the $ARG2	1
+regularization	set	"regularization	set"	220	$ARG1 if the training $ARG2	1
+gradient	deep learning	"gradient	deep learning"	461	$ARG1 , but it is a very practical method that continues to serve the $ARG2	1
+back-propagation	gradient	"back-propagation	gradient"	441	$ARG1 algorithm is not capable of simplifying the $ARG2	1
+example	feature	"example	feature"	27	$ARG1 , the motivation for learning the $ARG2	1
+operation	graph	"operation	graph"	290	$ARG1 in the $ARG2	1
+probability distribution	statistic	"probability distribution	statistic"	95	$ARG1 p ( y | x ; θ ) we often want to learn just one conditional $ARG2	1
+set	cross-entropy	"set	cross-entropy"	94	$ARG1 outputs , resulting in $ARG2	1
+back-propagation	jacobian matrix	"back-propagation	jacobian matrix"	287	$ARG1 algorithm consists a $ARG2	1
+machine learning	cost function	"machine learning	cost function"	66	$ARG1 models , to apply gradient-based learning we must choose a $ARG2	1
+loss function	convex optimization	"loss function	convex optimization"	235	$ARG1 result in $ARG2	1
+example	tensor	"example	tensor"	437	$ARG1 , if we wish to compute both the maximum value in a $ARG2	1
+neural network	derivative	"neural network	derivative"	201	$ARG1 training usually return one of the one-sided derivatives rather than reporting that the $ARG2	1
+multilayer perceptron	deep learning	"multilayer perceptron	deep learning"	3	$ARG1 ( MLPs ) , are the quintessential $ARG2	1
+cross-entropy	maximum likelihood	"cross-entropy	maximum likelihood"	483	$ARG1 losses and the principle of $ARG2	1
+example	generalization	"example	generalization"	18	$ARG1 , we will not be concerned with statistical $ARG2	1
+vector	matrix	"vector	matrix"	180	$ARG1 deﬁning p ( c = i | x ) , a $ARG2	1
+example	cost function	"example	cost function"	97	$ARG1 , we can design the $ARG2	1
+machine learning	optimization	"machine learning	optimization"	195	$ARG1 models trained with gradientbased $ARG2	1
+softmax	probability distribution	"softmax	probability distribution"	232	$ARG1 units naturally represent a $ARG2	1
+scalar	matrix	"scalar	matrix"	371	$ARG1 z with respect to C is given by G. The $ARG2	1
+softmax	logistic sigmoid	"softmax	logistic sigmoid"	127	$ARG1 ( z ) i =  j exp ( zj ) As with the $ARG2	1
+neural network	matrix	"neural network	matrix"	43	$ARG1 is to multiply the input $ARG2	1
+weights	scalar	"weights	scalar"	33	$ARG1 and a $ARG2	1
+vector	bias parameter	"vector	bias parameter"	32	$ARG1 of $ARG2	1
+gradient	graph	"gradient	graph"	391	$ARG1 in a $ARG2	1
+maximum likelihood	sigmoid	"maximum likelihood	sigmoid"	119	$ARG1 is almost always the preferred approach to training $ARG2	1
+operation	gradient	"operation	gradient"	378	$ARG1 implements , X is the input whose $ARG2	1
+cost function	cross-entropy	"cost function	cross-entropy"	88	$ARG1 and the choice of output unit in One unusual property of the $ARG2	1
+vector	computational graph	"vector	computational graph"	469	$ARG1 produced by a $ARG2	1
+neuroscience	deep learning	"neuroscience	deep learning"	492	$ARG1 has continued to have an inﬂuence on the development of $ARG2	1
+gradient descent	machine learning	"gradient descent	machine learning"	197	$ARG1 still performs well enough for these models to be used for $ARG2	1
+operation	weights	"operation	weights"	283	$ARG1 to the $ARG2	1
+deep learning	matrix	"deep learning	matrix"	383	$ARG1 software libraries are able to back-propagate through graphs built using common operations like $ARG2	1
+gradient	graph	"gradient	graph"	442	$ARG1 this way , and will instead explicitly propagate gradients through all of the logarithm and exponentiation operations in the original $ARG2	1
+logistic regression	example	"logistic regression	example"	90	$ARG1 is an $ARG2	1
+tensor	vector	"tensor	vector"	296	$ARG1 X , we write ∇ Xz , just as if X were a $ARG2	1
+representation learning	set	"representation learning	set"	250	$ARG1 point of view as saying that we believe the learning problem consists of discovering a $ARG2	1
+linear regression	convex optimization	"linear regression	convex optimization"	55	$ARG1 models or the $ARG2	1
+back-propagation	neural network	"back-propagation	neural network"	263	$ARG1 is often misunderstood as meaning the whole learning algorithm for multi-layer $ARG2	1
+variance	standard deviation	"variance	standard deviation"	12	$ARG1 or $ARG2	1
+leaky relu	parametric relu	"leaky relu	parametric relu"	212	$ARG1 ( Maas et al. , 2013 ) ﬁxes αi to a small value like 0.01 while a $ARG2	1
+weight decay	gradient	"weight decay	gradient"	421	$ARG1 cost is relatively simple ; it will always contribute 2λW ( i ) to the $ARG2	1
+example	graph	"example	graph"	348	$ARG1 , we begin with a $ARG2	1
+scalar	vector	"scalar	vector"	161	$ARG1 , $ARG2	1
+deep feedforward network	operation	"deep feedforward network	operation"	368	$ARG1 Each $ARG2	1
+computational graph	graph	"computational graph	graph"	397	$ARG1 is a directed acyclic $ARG2	1
+matrix	vector	"matrix	vector"	31	$ARG1 W describes the mapping from x to h , and a $ARG2	1
+weights	regularization	"weights	regularization"	346	$ARG1 and biases ( including the $ARG2	1
+neural network	gradient	"neural network	gradient"	87	$ARG1 design is that the $ARG2	1
+neural network	cost function	"neural network	cost function"	339	$ARG1 and the computation of the $ARG2	1
+set	design matrix	"set	design matrix"	409	$ARG1 formatted as a $ARG2	1
+rectiﬁed linear unit	set	"rectiﬁed linear unit	set"	210	$ARG1 will be initially active for most inputs in the training $ARG2	1
+gradient	output layer	"gradient	output layer"	253	$ARG1 to ﬂow from $ARG2	1
+computational graph	operation	"computational graph	operation"	392	$ARG1 , not individual operations executed by the underlying hardware , so it is important to remember that the runtime of each $ARG2	1
+operation	gradient	"operation	gradient"	432	$ARG1 to add X G  to the $ARG2	1
+scalar	computational graph	"scalar	computational graph"	299	$ARG1 with respect to any node in the $ARG2	1
+back-propagation	graph	"back-propagation	graph"	330	$ARG1 computation , let us consider the speciﬁc $ARG2	1
+challenge	set	"challenge	set"	19	$ARG1 is to ﬁt the training $ARG2	1
+softmax	gradient	"softmax	gradient"	135	$ARG1 fail to learn when the argument to the exp becomes very negative , causing the $ARG2	1
+back-propagation	matrix	"back-propagation	matrix"	428	$ARG1 rule for the second argument to the $ARG2	1
+deep feedforward network	gradient descent	"deep feedforward network	gradient descent"	478	$ARG1 approaches to $ARG2	1
+back-propagation	scalar	"back-propagation	scalar"	451	$ARG1 can be extended to compute a Jacobian ( either of k diﬀerent $ARG2	1
+example	variance	"example	variance"	92	$ARG1 , by learning the $ARG2	1
+gradient	graph	"gradient	graph"	362	$ARG1 with respect to each parent of z in the $ARG2	1
+graph	vector	"graph	vector"	30	$ARG1 for each entire $ARG2	1
+computational graph	forward propagation	"computational graph	forward propagation"	337	$ARG1 by explicitly manipulating a data structure for representing symbolic Algorithm 6.3 $ARG2	1
+deep feedforward network	maximum likelihood	"deep feedforward network	maximum likelihood"	105	$ARG1 Maximizing the log-likelihood is then equivalent to minimizing the mean squared The $ARG2	1
+set	gradient	"set	gradient"	355	$ARG1 of numerical values describing the $ARG2	1
+covariance matrix	positive deﬁnite	"covariance matrix	positive deﬁnite"	163	$ARG1 of the Gaussian is $ARG2	1
+maxout	regularization	"maxout	regularization"	218	$ARG1 units typically need more $ARG2	1
+cross-entropy	loss function	"cross-entropy	loss function"	481	$ARG1 family of $ARG2	1
+example	vector	"example	vector"	456	$ARG1 , if D is a column $ARG2	1
+gradient descent	example	"gradient descent	example"	308	$ARG1 over parameters , u ( n ) will be the cost associated with an $ARG2	1
+neural network	variance	"neural network	variance"	188	$ARG1 ) can be unreliable , in part because one gets divisions ( by the $ARG2	1
+computational graph	scalar	"computational graph	scalar"	304	$ARG1 describing how to compute a single $ARG2	1
+back-propagation	gradient	"back-propagation	gradient"	406	$ARG1 algorithm is used to compute the $ARG2	1
+back-propagation	operation	"back-propagation	operation"	459	$ARG1 rules to be developed for each $ARG2	1
+derivative	softplus	"derivative	softplus"	116	$ARG1 with respect to z asymptotes to sign ( z ) , so , in the limit of extremely incorrect z , the $ARG2	1
+precision	covariance matrix	"precision	covariance matrix"	162	$ARG1 , we must ensure that the $ARG2	1
+gradient	set	"gradient	set"	269	$ARG1 ∇x f ( x , y ) for an arbitrary function f , where x is a $ARG2	1
+determinant	eigendecomposition	"determinant	eigendecomposition"	176	$ARG1 and inverse of Σ ( x ) ( or equivalently , and more commonly done , its $ARG2	1
+example	derivative	"example	derivative"	380	$ARG1 , if the mul operator is passed two copies of x to compute x2 , the op.bprop method should still return x as the $ARG2	1
+sigmoid	softmax	"sigmoid	softmax"	8	$ARG1 and $ARG2	1
+speech recognition	computer vision	"speech recognition	computer vision"	12	$ARG1 or $ARG2	1
+activation function	matrix	"activation function	matrix"	231	$ARG1 , then we have essentially factored the weight $ARG2	1
+gradient	minibatch	"gradient	minibatch"	407	$ARG1 of the cost on a single $ARG2	1
+gaussian mixture	mixture density networks	"gaussian mixture	mixture density networks"	177	$ARG1 as their output are often called $ARG2	1
+operation	set	"operation	set"	310	$ARG1 f ( i ) and is computed by evaluating the function u ( i ) = f ( A ( i ) ) where A ( i ) is the $ARG2	1
+design matrix	minibatch	"design matrix	minibatch"	281	$ARG1 containing a $ARG2	1
+softmax	scalar	"softmax	scalar"	139	$ARG1 output is invariant to adding the same $ARG2	1
+back-propagation	graph	"back-propagation	graph"	349	$ARG1 algorithm , instructing it to construct the $ARG2	1
+cost function	maximum likelihood	"cost function	maximum likelihood"	85	$ARG1 from $ARG2	1
+back-propagation	gradient	"back-propagation	gradient"	264	$ARG1 refers only to the method for computing the $ARG2	1
+hidden layer	set	"hidden layer	set"	234	$ARG1 is suﬃcient to ﬁt the training $ARG2	1
+supervised learning	unsupervised learning	"supervised learning	unsupervised learning"	493	$ARG1 to support $ARG2	1
+precision	softplus	"precision	softplus"	169	$ARG1 , we can use the $ARG2	1
+variance	precision	"variance	precision"	2	$ARG1 , or $ARG2	1
+feedforward neural network	weights	"feedforward neural network	weights"	58	$ARG1 , it is important to initialize all $ARG2	1
+set	generalization	"set	generalization"	10	$ARG1 , but $ARG2	1
+deep feedforward network	machine learning	"deep feedforward network	machine learning"	248	$ARG1 Of course , there is no guarantee that the kinds of functions we want to learn in applications of $ARG2	1
+neural network	matrix	"neural network	matrix"	256	$ARG1 layer described by a linear transformation via a $ARG2	1
+mean squared error	cross-entropy	"mean squared error	cross-entropy"	482	$ARG1 was popular in the 1980s and 1990s , but was gradually replaced by $ARG2	1
+example	matrix	"example	matrix"	366	$ARG1 , there may be a Python or C++ class representing the $ARG2	1
+maximum likelihood	cost function	"maximum likelihood	cost function"	86	$ARG1 is that it removes the burden of designing $ARG2	1
+covariance	precision	"covariance	precision"	12	$ARG1 or $ARG2	1
+back-propagation	feedforward neural network	"back-propagation	feedforward neural network"	259	$ARG1 and Other Diﬀerentiation Algorithms When we use a $ARG2	1
+operation	tensor	"operation	tensor"	436	$ARG1 to be a function that returns a single $ARG2	1
+optimization	calculus of variations	"optimization	calculus of variations"	99	$ARG1 problem with respect to a function requires a mathematical tool called $ARG2	1
+gradient	forward propagation	"gradient	forward propagation"	394	$ARG1 requires as most O ( n 2 ) operations because the $ARG2	1
+deep feedforward network	back-propagation	"deep feedforward network	back-propagation"	335	$ARG1 applying the $ARG2	1
+variance	maximum likelihood	"variance	maximum likelihood"	150	$ARG1 σ 2 is a constant , there is a closed form expression because the $ARG2	1
+operation	gradient	"operation	gradient"	374	$ARG1 must state that the $ARG2	1
+vector	matrix	"vector	matrix"	161	$ARG1 , $ARG2	1
+neural network	regularization	"neural network	regularization"	77	$ARG1 and is among the most popular $ARG2	1
+back-propagation	deep learning	"back-propagation	deep learning"	382	$ARG1 usually provide both the operations and their bprop methods , so that users of $ARG2	1
+backprop	gradient	"backprop	gradient"	298	$ARG1 Using the chain rule , it is straightforward to write down an algebraic expression for the $ARG2	1
+computational graph	set	"computational graph	set"	314	$ARG1 where each node computes numerical value u ( i ) by applying a function f ( i ) to the $ARG2	1
+variational autoencoder	generative adversarial networks	"variational autoencoder	generative adversarial networks"	8	$ARG1 and $ARG2	1
+tensor	operation	"tensor	operation"	438	$ARG1 and the index of that value , it is best to compute both in a single pass through memory , so it is most eﬃcient to implement this procedure as a single $ARG2	1
+calculus of variations	optimization	"calculus of variations	optimization"	100	$ARG1 is that solving the $ARG2	1
+loss function	example	"loss function	example"	20	$ARG1 to simplify the math for this $ARG2	1
+example	back-propagation	"example	back-propagation"	403	$ARG1 , we walk through the $ARG2	1
+graph	partial derivative	"graph	partial derivative"	326	$ARG1 , assuming that the $ARG2	1
+activation function	universal approximation theorem	"activation function	universal approximation theorem"	240	$ARG1 that saturate both for very negative and for very positive arguments , $ARG2	1
+weights	bias	"weights	bias"	8	$ARG1 and $ARG2	1
+neural network	maximum likelihood	"neural network	maximum likelihood"	80	$ARG1 are trained using $ARG2	1
+objective function	softmax	"objective function	softmax"	133	$ARG1 other than the log-likelihood do not work as well with the $ARG2	1
+weights	example	"weights	example"	184	$ARG1 each $ARG2	1
+gradient	operation	"gradient	operation"	426	$ARG1 on the unnormalized log probabilities U ( 2 ) provided by the cross_entropy $ARG2	1
+loss function	softmax	"loss function	softmax"	136	$ARG1 can fail , we need to examine the $ARG2	1
+jacobian matrix	gradient	"jacobian matrix	gradient"	288	$ARG1 ∂y ∂x by a $ARG2	1
+weights	hidden layer	"weights	hidden layer"	83	$ARG1 of the $ARG2	1
+back-propagation	neural network	"back-propagation	neural network"	476	$ARG1 and initiated a very active period of research in multi-layer $ARG2	1
+scalar	back-propagation	"scalar	back-propagation"	450	$ARG1 output but $ARG2	1
+back-propagation	computational graph	"back-propagation	computational graph"	272	$ARG1 algorithm more precisely , it is helpful to have a more precise $ARG2	1
+neural network	vector	"neural network	vector"	179	$ARG1 must have three outputs : a $ARG2	1
+example	back-propagation	"example	back-propagation"	350	$ARG1 , we do not explain how the $ARG2	1
+maxout	neural network	"maxout	neural network"	221	$ARG1 units have some redundancy that helps them to resist a phenomenon called catastrophic forgetting in which $ARG2	1
+krylov methods	hessian matrix	"krylov methods	hessian matrix"	467	$ARG1 on the Hessian , we only need to be able to compute the product between the $ARG2	1
+computational graph	graph	"computational graph	graph"	470	$ARG1 , it is important to specify that the automatic diﬀerentiation software should not diﬀerentiate through the $ARG2	1
+computational graph	back-propagation	"computational graph	back-propagation"	351	$ARG1 with a symbolic description of the Some approaches to $ARG2	1
+deep feedforward network	computational graph	"deep feedforward network	computational graph"	276	$ARG1 u ( 1 ) u ( 2 ) u ( 2 ) U ( 2 ) u ( 3 ) U ( 1 ) u ( 1 ) Figure 6.8 : Examples of $ARG2	1
+tensor	vector	"tensor	vector"	291	$ARG1 into a $ARG2	1
+rectiﬁed linear unit	activation function	"rectiﬁed linear unit	activation function"	203	$ARG1 use the $ARG2	1
+matrix	operation	"matrix	operation"	367	$ARG1 multiplication $ARG2	1
+probability distribution	statistic	"probability distribution	statistic"	72	$ARG1 over y , we merely predict some $ARG2	1
+neural network	output layer	"neural network	output layer"	145	$ARG1 can generalize to almost any kind of $ARG2	1
+computational graph	back-propagation	"computational graph	back-propagation"	302	$ARG1 for computing the $ARG2	1
+softmax	cost function	"softmax	cost function"	137	$ARG1 saturates , many $ARG2	1
+cross-entropy	weight decay	"cross-entropy	weight decay"	420	$ARG1 cost , and one through the $ARG2	1
+softmax	mean squared error	"softmax	mean squared error"	486	$ARG1 outputs , which had previously suﬀered from saturation and slow learning when using the $ARG2	1
+design matrix	example	"design matrix	example"	42	$ARG1 containing all four points in the binary input space , with one $ARG2	1
+back-propagation	derivative	"back-propagation	derivative"	381	$ARG1 algorithm will later add both of these arguments together to obtain 2x , which is the correct total $ARG2	1
+back-propagation	matrix	"back-propagation	matrix"	429	$ARG1 rule for the ﬁrst argument to the $ARG2	1
+feature	set	"feature	set"	28	$ARG1 space is only to make the model capacity greater so that it can ﬁt the training $ARG2	1
+rectiﬁed linear unit	gradient	"rectiﬁed linear unit	gradient"	211	$ARG1 guarantee that they receive $ARG2	1
+operation	gradient	"operation	gradient"	430	$ARG1 uses its backpropagation rule to zero out components of the $ARG2	1
+weights	cross-entropy	"weights	cross-entropy"	419	$ARG1 : one through the $ARG2	1
+back-propagation	partial derivative	"back-propagation	partial derivative"	320	$ARG1 scales linearly with the number of edges in G , where the computation for each edge corresponds to computing a $ARG2	1
+scalar	graph	"scalar	graph"	360	$ARG1 z with respect to one of its ancestors x in the $ARG2	1
+precision	scalar	"precision	scalar"	172	$ARG1 or if using a $ARG2	1
+gradient	back-propagation	"gradient	back-propagation"	377	$ARG1 is given by A G. The $ARG2	1
+gradient	weights	"gradient	weights"	345	$ARG1 into the prenonlinearity activation ( element-wise multiplication if f is element-wise ) : g ← ∇ a ( k ) J = g  f  ( a ( k ) ) Compute gradients on $ARG2	1
+example	operation	"example	operation"	393	$ARG1 , multiplying two matrices that each contain millions of entries might correspond to a single $ARG2	1
+hidden layer	activation function	"hidden layer	activation function"	16	$ARG1 , and this requires us to choose the $ARG2	1
+gradient	cost function	"gradient	cost function"	83	$ARG1 of the $ARG2	1
+variance	expected value	"variance	expected value"	152	$ARG1 is simply the empirical mean of the squared diﬀerence between observations y and their $ARG2	1
+computational graph	set	"computational graph	set"	33	$ARG1 and a $ARG2	1
+weights	gradient	"weights	gradient"	342	$ARG1 and biases can be immediately used as part of a stochastic $ARG2	1
+covariance matrix	precision	"covariance matrix	precision"	165	$ARG1 , this is equivalent to ensuring that the $ARG2	1
+gaussian distribution	precision	"gaussian distribution	precision"	156	$ARG1 using $ARG2	1
+hidden layer	activation function	"hidden layer	activation function"	238	$ARG1 with any “ squashing ” $ARG2	1
+deep feedforward network	vector	"deep feedforward network	vector"	124	$ARG1 To generalize to the case of a discrete variable with n values , we now need to produce a $ARG2	1
+operation	almost everywhere	"operation	almost everywhere"	205	$ARG1 is 0 $ARG2	1
+deep learning	second derivative	"deep learning	second derivative"	462	$ARG1 , it is rare to compute a single $ARG2	1
+sigmoid	maximum likelihood	"sigmoid	maximum likelihood"	109	$ARG1 output units combined with $ARG2	1
+recall	machine learning	"recall	machine learning"	243	$ARG1 from section 5.2.1 that the “ no free lunch ” theorem shows that there is no universally superior $ARG2	1
+sigmoid	softmax	"sigmoid	softmax"	144	$ARG1 , and $ARG2	1
+deep feedforward network	neural network	"deep feedforward network	neural network"	191	$ARG1 Figure 6.4 : Samples drawn from a $ARG2	1
+set	softmax	"set	softmax"	131	$ARG1 : j=1 1y ( j ) =i , x ( j ) =x $ARG2	1
+cost function	softmax	"cost function	softmax"	138	$ARG1 based on the $ARG2	1
+example	tensor	"example	tensor"	297	$ARG1 , a 3-D $ARG2	1
+forward propagation	neural network	"forward propagation	neural network"	338	$ARG1 through a typical deep $ARG2	1
+neural network	rectiﬁed linear unit	"neural network	rectiﬁed linear unit"	245	$ARG1 use $ARG2	1
+forward propagation	graph	"forward propagation	graph"	395	$ARG1 stage will at worst execute all n nodes in the original $ARG2	1
+neural network	neocognitron	"neural network	neocognitron"	488	$ARG1 models and dates back at least as far as the Cognitron and $ARG2	1
+back-propagation	computational graph	"back-propagation	computational graph"	352	$ARG1 take a $ARG2	1
+neural network	loss function	"neural network	loss function"	52	$ARG1 causes most interesting $ARG2	1
+deep feedforward network	cost function	"deep feedforward network	cost function"	21	$ARG1 appropriate $ARG2	1
+universal approximation theorem	accuracy	"universal approximation theorem	accuracy"	244	$ARG1 says that there exists a network large enough to achieve any degree of $ARG2	1
+graph	operation	"graph	operation"	411	$ARG1 language includes a relu $ARG2	1
+standard deviation	variance	"standard deviation	variance"	161	$ARG1 , $ARG2	1
+neural network	cost function	"neural network	cost function"	74	$ARG1 will often combine one of the primary $ARG2	1
+rectiﬁed linear unit	neuroscience	"rectiﬁed linear unit	neuroscience"	491	$ARG1 are also of historical interest because they show that $ARG2	1
+graph	back-propagation	"graph	back-propagation"	327	$ARG1 to those added for the $ARG2	1
+gradient	stochastic gradient descent	"gradient	stochastic gradient descent"	265	$ARG1 , while another algorithm , such as $ARG2	1
+deep feedforward network	accuracy	"deep feedforward network	accuracy"	254	$ARG1 Test $ARG2	1
+cost function	regularization	"cost function	regularization"	75	$ARG1 described here with a $ARG2	1
+deep feedforward network	feedforward neural network	"deep feedforward network	feedforward neural network"	1	$ARG1 , also often called $ARG2	1
+maximum likelihood	neural network	"maximum likelihood	neural network"	79	$ARG1 Most modern $ARG2	1
+computational graph	back-propagation	"computational graph	back-propagation"	357	$ARG1 , it is possible to run $ARG2	1
+weight decay	neural network	"weight decay	neural network"	76	$ARG1 approach used for linear models is also directly applicable to deep $ARG2	1
+almost everywhere	derivative	"almost everywhere	derivative"	206	$ARG1 , and the $ARG2	1
+covariance	positive deﬁnite	"covariance	positive deﬁnite"	107	$ARG1 must be constrained to be a $ARG2	1
+stochastic gradient descent	gradient	"stochastic gradient descent	gradient"	266	$ARG1 , is used to perform learning using this $ARG2	1
+back-propagation	neural network	"back-propagation	neural network"	267	$ARG1 is often misunderstood as being speciﬁc to multilayer $ARG2	1
+gradient	optimization	"gradient	optimization"	343	$ARG1 update ( performing the update right after the gradients have been computed ) or used with other gradient-based $ARG2	1
+sigmoid	activation function	"sigmoid	activation function"	226	$ARG1 in the output When a sigmoidal $ARG2	1
+gradient	cost function	"gradient	cost function"	199	$ARG1 is 0 , it is acceptable for the minima of the $ARG2	1
+back-propagation	graph	"back-propagation	graph"	325	$ARG1 algorithm for computing the derivatives of u ( n ) with respect to the variables in the $ARG2	1
+cost function	sigmoid	"cost function	sigmoid"	225	$ARG1 can undo the saturation of the $ARG2	1
+cross-entropy	probability distribution	"cross-entropy	probability distribution"	71	$ARG1 between the training data and the model ’ s predictions as the cost Sometimes , we take a simpler approach , where rather than predicting a complete $ARG2	1
+deep feedforward network	example	"deep feedforward network	example"	29	$ARG1 Figure 6.2 : An $ARG2	1
+accuracy	hidden layer	"accuracy	hidden layer"	255	$ARG1 ( percent ) Number of $ARG2	1
+deep feedforward network	back-propagation	"deep feedforward network	back-propagation"	324	$ARG1 Algorithm 6.2 Simpliﬁed version of the $ARG2	1
+sigmoid	probability distribution	"sigmoid	probability distribution"	122	$ARG1 function which was used to represent a $ARG2	1
+back-propagation	multilayer perceptron	"back-propagation	multilayer perceptron"	404	$ARG1 algorithm as it is used to train a $ARG2	1
+scalar	back-propagation	"scalar	back-propagation"	321	$ARG1 values in the same node and enable more The $ARG2	1
+cross-entropy	weight decay	"cross-entropy	weight decay"	33	$ARG1 and a $ARG2	1
+matrix	determinant	"matrix	determinant"	175	$ARG1 requiring O ( d3 ) computation for the $ARG2	1
+deep feedforward network	computational graph	"deep feedforward network	computational graph"	358	$ARG1 terms of constructing a $ARG2	1
+maxout	activation function	"maxout	activation function"	215	$ARG1 units can thus be seen as learning the $ARG2	1
+gradient descent	mixture model	"gradient descent	mixture model"	185	$ARG1 will automatically follow the correct process if given the correct speciﬁcation of the negative log-likelihood under the $ARG2	1
+cost function	linear regression	"cost function	linear regression"	54	$ARG1 to a very low value , rather than the linear equation solvers used to train $ARG2	1
+cross-entropy	maximum likelihood	"cross-entropy	maximum likelihood"	89	$ARG1 cost used to perform $ARG2	1
+gradient	matrix	"gradient	matrix"	375	$ARG1 with respect to B , then the $ARG2	1
+back-propagation	gradient	"back-propagation	gradient"	293	$ARG1 , computing a vector-valued $ARG2	1
+deep feedforward network	neural network	"deep feedforward network	neural network"	340	$ARG1 Algorithm 6.4 Backward computation for the deep $ARG2	1
+deep feedforward network	computational graph	"deep feedforward network	computational graph"	422	$ARG1 U ( 2 ) u ( 8 ) W ( 2 ) U ( 5 ) u ( 6 ) u ( 7 ) U ( 1 ) W ( 1 ) U ( 3 ) u ( 4 ) Figure 6.11 : The $ARG2	1
+weights	linear regression	"weights	linear regression"	284	$ARG1 w of a $ARG2	1
+graph	back-propagation	"graph	back-propagation"	443	$ARG1 proposed by the pure $ARG2	1
+krylov methods	set	"krylov methods	set"	464	$ARG1 are a $ARG2	1
+set	operation	"set	operation"	274	$ARG1 may be described by composing many operations Without loss of generality , we deﬁne an $ARG2	1
+scalar	example	"scalar	example"	305	$ARG1 ( say the loss on a training $ARG2	1
+support vector machine	gradient descent	"support vector machine	gradient descent"	62	$ARG1 with $ARG2	1
+computational graph	example	"computational graph	example"	423	$ARG1 used to compute the cost used to train our $ARG2	1
+rectiﬁed linear unit	neural network	"rectiﬁed linear unit	neural network"	223	$ARG1 , most $ARG2	1
+softmax	maximum likelihood	"softmax	maximum likelihood"	132	$ARG1 ( z ( x ; θ ) ) i ≈ j=1 1x ( j ) =x Because $ARG2	1
+linear regression	convex optimization	"linear regression	convex optimization"	9	$ARG1 , are appealing because they may be ﬁt eﬃciently and reliably , either in closed form or with $ARG2	1
+optimization	variance	"optimization	variance"	154	$ARG1 procedure incrementally learn the $ARG2	1
+set	loss function	"set	loss function"	22	$ARG1 , the MSE $ARG2	1
+gradient	scalar	"gradient	scalar"	13	$ARG1 of a $ARG2	1
+vector	back-propagation	"vector	back-propagation"	292	$ARG1 before we run $ARG2	1
+probability distribution	vector	"probability distribution	vector"	15	$ARG1 over a single $ARG2	1
+graph	matrix	"graph	matrix"	389	$ARG1 that treats $ARG2	1
+gradient	example	"gradient	example"	417	$ARG1 of this $ARG2	1
+scalar	gradient	"scalar	gradient"	306	$ARG1 is the quantity whose $ARG2	1
+back-propagation	gradient	"back-propagation	gradient"	446	$ARG1 guarantees that the number of computations for the $ARG2	1
+challenge	neural network	"challenge	neural network"	68	$ARG1 for $ARG2	1
+universal approximation theorem	activation function	"universal approximation theorem	activation function"	241	$ARG1 have also been proved for a wider class of $ARG2	1
+logistic regression	linear regression	"logistic regression	linear regression"	8	$ARG1 and $ARG2	1
+machine learning	optimization	"machine learning	optimization"	50	$ARG1 algorithm by specifying an $ARG2	1
+linear regression	support vector machine	"linear regression	support vector machine"	8	$ARG1 and $ARG2	1
+gaussian mixture	conditional probability	"gaussian mixture	conditional probability"	178	$ARG1 output with n components is deﬁned by the $ARG2	1
+gradient	output layer	"gradient	output layer"	344	$ARG1 on the $ARG2	1

@@ -1,0 +1,3 @@
+ep	relation	sequence
+WEIGHTS_REGULARIZATION	is a	$ARG1 and biases ( including the $ARG2
+FORWARD PROPAGATION_NEURAL NETWORK	consists of	$ARG1 through a typical deep $ARG2

@@ -1,0 +1,588 @@
+Index
+0-1 loss, 102, 274
+
+Bag of words, 467
+Bagging, 252
+Absolute value rectiﬁcation, 191
+Batch normalization, 264, 422
+Accuracy, 420
+Bayes error, 116
+Activation function, 169
+Bayes’ rule, 69
+Active constraint, 94
+Bayesian hyperparameter optimization, 433
+AdaGrad, 305
+Bayesian network, see directed graphical
+ADALINE, see adaptive linear element
+Bayesian probability, 54
+Adaptive linear element, 15, 23, 26
+Bayesian statistics, 134
+Adversarial example, 265
+Belief network, see directed graphical model
+Adversarial training, 266, 268, 526
+Bernoulli distribution, 61
+Aﬃne, 109
+Bias, 123, 227
+Almost everywhere, 70
+Bias parameter, 109
+Almost sure convergence, 128
+Biased importance sampling, 589
+Ancestral sampling, 576, 591
+Bigram, 458
+ANN, see Artiﬁcial neural network
+Binary relation, 478
+Annealed importance sampling, 621, 662, Block Gibbs sampling, 595
+711
+Boltzmann distribution, 566
+Approximate Bayesian computation, 710
+Boltzmann machine, 566, 648
+Approximate inference, 579
+BPTT, see back-propagation through time
+Artiﬁcial intelligence, 1
+Broadcasting, 33
+Artiﬁcial neural network, see Neural net- Burn-in, 593
+work
+ASR, see automatic speech recognition
+Asymptotically unbiased, 123
+Calculus of variations, 178
+Audio, 101, 357, 455
+Categorical distribution, see multinoulli disAutoencoder, 4, 353, 498
+Automatic speech recognition, 455
+Centering trick (DBM), 667
+Back-propagation, 201
+Central limit theorem, 63
+Back-propagation through time, 381
+Chain rule (calculus), 203
+Backprop, see back-propagation
+Chain rule of probability, 58
+Chess, 2
+Chord, 575
+Chordal graph, 575
+Class-based language models, 460
+Classical dynamical system, 372
+Classiﬁcation, 99
+Clique potential, see factor (graphical model)
+CNN, see convolutional neural network
+Collaborative Filtering, 474
+Collider, see explaining away
+Color images, 357
+Complex cell, 362
+Computational graph, 202
+Computer vision, 449
+Concept drift, 533
+Condition number, 277
+Conditional computation, see dynamic structure
+Conditional independence, xiii, 59
+Conditional probability, 58
+Conditional RBM, 679
+Connectionism, 17, 440
+Connectionist temporal classiﬁcation, 457
+Consistency, 128, 509
+Constrained optimization, 92, 235
+Content-based addressing, 416
+Content-based recommender systems, 475
+Context-speciﬁc independence, 569
+Contextual bandits, 476
+Continuation methods, 324
+Contractive autoencoder, 516
+Contrast, 451
+Contrastive divergence, 289, 606, 666
+Convex optimization, 140
+Convolution, 327, 677
+Convolutional network, 16
+Convolutional neural network, 250, 327, 422,
+Coordinate descent, 319, 665
+Correlation, 60
+Cost function, see objective function
+Covariance, xiii, 60
+Covariance matrix, 61
+Coverage, 421
+Critical temperature, 599
+Cross-correlation, 329
+Cross-entropy, 74, 131
+Cross-validation, 121
+CTC, see connectionist temporal classiﬁcation
+Curriculum learning, 326
+Curse of dimensionality, 153
+Cyc, 2
+D-separation, 568
+DAE, see denoising autoencoder
+Data generating distribution, 110, 130
+Data generating process, 110
+Data parallelism, 444
+Dataset, 103
+Dataset augmentation, 268, 454
+DBM, see deep Boltzmann machine
+DCGAN, 547, 548, 695
+Decision tree, 144, 544
+Decoder, 4
+Deep belief network, 26, 525, 626, 651, 654,
+678, 686
+Deep Blue, 2
+Deep Boltzmann machine, 23, 26, 525, 626,
+647, 651, 657, 666, 678
+Deep feedforward network, 166, 422
+Deep learning, 2, 5
+Denoising autoencoder, 506, 683
+Denoising score matching, 615
+Density estimation, 102
+Derivative, xiii, 82
+Design matrix, 105
+Detector layer, 336
+Determinant, xii
+Diagonal matrix, 40
+Diﬀerential entropy, 73, 641
+Dirac delta function, 64
+Directed graphical model, 76, 503, 559, 685
+Directional derivative, 84
+Discriminative ﬁne-tuning, see supervised
+ﬁne-tuning
+Discriminative RBM, 680
+Distributed representation, 17, 149, 542
+Domain adaptation, 532
+Dot product, 33, 139
+Double backprop, 268
+Doubly block circulant matrix, 330
+Dream sleep, 605, 647
+DropConnect, 263
+Dropout, 255, 422, 427, 428, 666, 683
+Dynamic structure, 445
+F-score, 420
+Factor (graphical model), 563
+Factor analysis, 486
+Factor graph, 575
+Factors of variation, 4
+Feature, 98
+Feature selection, 234
+Feedforward neural network, 166
+E-step, 629
+Fine-tuning, 321
+Early stopping, 244, 246, 270, 271, 422
+Finite diﬀerences, 436
+EBM, see energy-based model
+Forget gate, 304
+Echo state network, 23, 26, 401
+Forward propagation, 201
+Eﬀective capacity, 113
+Fourier transform, 357, 359
+Eigendecomposition, 41
+Fovea, 363
+Eigenvalue, 41
+FPCD, 610
+Eigenvector, 41
+Free energy, 567, 674
+ELBO, see evidence lower bound
+Freebase, 479
+Element-wise product, see Hadamard prod- Frequentist probability, 54
+uct, see Hadamard product
+Frequentist statistics, 134
+EM, see expectation maximization
+Frobenius norm, 45
+Embedding, 512
+Fully-visible Bayes network, 699
+Empirical distribution, 65
+Functional derivatives, 640
+Empirical risk, 274
+FVBN, see fully-visible Bayes network
+Empirical risk minimization, 274
+Gabor function, 365
+Encoder, 4
+GANs, see generative adversarial networks
+Energy function, 565
+Gated recurrent unit, 422
+Energy-based model, 565, 591, 648, 657
+Gaussian distribution, see normal distribuEnsemble methods, 252
+Epoch, 244
+Gaussian kernel, 140
+Equality constraint, 93
+Gaussian mixture, 66, 187
+Equivariance, 335
+GCN, see global contrast normalization
+Error function, see objective function
+GeneOntology, 479
+ESN, see echo state network
+Generalization, 109
+Euclidean norm, 38
+Generalized Lagrange function, see generalEuler-Lagrange equation, 641
+ized Lagrangian
+Evidence lower bound, 628, 655
+Generalized Lagrangian, 93
+Example, 98
+Generative adversarial networks, 683, 693
+Expectation, 59
+Generative moment matching networks, 696
+Expectation maximization, 629
+Generator network, 687
+Expected value, see expectation
+Gibbs distribution, 564
+Explaining away, 570, 626, 639
+Gibbs sampling, 577, 595
+Exploitation, 477
+Global contrast normalization, 451
+Exploration, 477
+GPU, see graphics processing unit
+Exponential distribution, 64
+Gradient, 83
+Gradient clipping, 287, 411
+Gradient descent, 82, 84
+Graph, xii
+Graphical model, see structured probabilistic model
+Graphics processing unit, 441
+Greedy algorithm, 321
+Greedy layer-wise unsupervised pretraining,
+Greedy supervised pretraining, 321
+Grid search, 429
+Information retrieval, 520
+Initialization, 298
+Integral, xiii
+Invariance, 339
+Isotropic, 64
+Jacobian matrix, xiii, 71, 85
+Joint probability, 56
+k-means, 361, 542
+k-nearest neighbors, 141, 544
+Karush-Kuhn-Tucker conditions, 94, 235
+Karush–Kuhn–Tucker, 93
+Hadamard product, xii, 33
+Kernel (convolution), 328, 329
+Hard tanh, 195
+Harmonium, see restricted Boltzmann ma- Kernel machine, 544
+Kernel trick, 139
+chine
+KKT, see Karush–Kuhn–Tucker
+Harmony theory, 567
+KKT
+conditions, see Karush-Kuhn-Tucker
+Helmholtz free energy, see evidence lower
+conditions
+bound
+KL
+divergence,
+see Kullback-Leibler diverHessian, 221
+gence
+Hessian matrix, xiii, 86
+Knowledge
+base, 2, 479
+Heteroscedastic, 186
+Krylov methods, 222
+Hidden layer, 6, 166
+Kullback-Leibler divergence, xiii, 73
+Hill climbing, 85
+Hyperparameter optimization, 429
+Label smoothing, 241
+Hyperparameters, 119, 427
+Lagrange multipliers, 93, 641
+Hypothesis space, 111, 117
+Lagrangian, see generalized Lagrangian
+LAPGAN, 695
+i.i.d. assumptions, 110, 121, 265
+Laplace distribution, 64, 492
+Identity matrix, 35
+ILSVRC, see ImageNet Large Scale Visual Latent variable, 66
+Layer (neural network), 166
+Recognition Challenge
+ImageNet Large Scale Visual Recognition LCN, see local contrast normalization
+Leaky ReLU, 191
+Challenge, 22
+Leaky units, 404
+Immorality, 573
+Learning rate, 84
+Importance sampling, 588, 620, 691
+Line search, 84, 85, 92
+Importance weighted autoencoder, 691
+Linear combination, 36
+Independence, xiii, 59
+Independent and identically distributed, see Linear dependence, 37
+Linear factor models, 485
+i.i.d. assumptions
+Linear regression, 106, 109, 138
+Independent component analysis, 487
+Link prediction, 480
+Independent subspace analysis, 489
+Lipschitz constant, 91
+Inequality constraint, 93
+Inference, 558, 579, 626, 628, 630, 633, 643, Lipschitz continuous, 91
+Liquid state machine, 401
+Local conditional probability distribution,
+Local contrast normalization, 452
+Logistic regression, 3, 138, 139
+Logistic sigmoid, 7, 66
+Long short-term memory, 18, 24, 304, 407,
+Loop, 575
+Loopy belief propagation, 581
+Loss function, see objective function
+Lp norm, 38
+LSTM, see long short-term memory
+M-step, 629
+Machine learning, 2
+Machine translation, 100
+Main diagonal, 32
+Manifold, 159
+Manifold hypothesis, 160
+Manifold learning, 160
+Manifold tangent classiﬁer, 268
+MAP approximation, 137, 501
+Marginal probability, 57
+Markov chain, 591
+Markov chain Monte Carlo, 591
+Markov network, see undirected model
+Markov random ﬁeld, see undirected model
+Matrix, xi, xii, 31
+Matrix inverse, 35
+Matrix product, 33
+Max norm, 39
+Max pooling, 336
+Maximum likelihood, 130
+Maxout, 191, 422
+MCMC, see Markov chain Monte Carlo
+Mean ﬁeld, 633, 634, 666
+Mean squared error, 107
+Measure theory, 70
+Measure zero, 70
+Memory network, 413, 415
+Method of steepest descent, see gradient descent
+Minibatch, 277
+Missing inputs, 99
+Mixing (Markov chain), 597
+Mixture density networks, 187
+Mixture distribution, 65
+Mixture model, 187, 506
+Mixture of experts, 446, 544
+MLP, see multilayer perception
+MNIST, 20, 21, 666
+Model averaging, 252
+Model compression, 444
+Model identiﬁability, 282
+Model parallelism, 444
+Moment matching, 696
+Moore-Penrose pseudoinverse, 44, 237
+Moralized graph, 573
+MP-DBM, see multi-prediction DBM
+MRF (Markov Random Field), see undirected model
+MSE, see mean squared error
+Multi-modal learning, 535
+Multi-prediction DBM, 668
+Multi-task learning, 242, 533
+Multilayer perception, 5
+Multilayer perceptron, 26
+Multinomial distribution, 61
+Multinoulli distribution, 61
+n-gram, 458
+NADE, 702
+Naive Bayes, 3
+Nat, 72
+Natural image, 555
+Natural language processing, 457
+Nearest neighbor regression, 114
+Negative deﬁnite, 88
+Negative phase, 466, 602, 604
+Neocognitron, 16, 23, 26, 364
+Nesterov momentum, 298
+Netﬂix Grand Prize, 255, 475
+Neural language model, 460, 472
+Neural network, 13
+Neural Turing machine, 415
+Neuroscience, 15
+Newton’s method, 88, 309
+NLM, see neural language model
+NLP, see natural language processing
+No free lunch theorem, 115
+Noise-contrastive estimation, 616
+Non-parametric model, 113
+Norm, xiv, 38
+Normal distribution, 62, 63, 124
+Normal equations, 108, 108, 111, 232
+Normalized initialization, 301
+Numerical diﬀerentiation, see ﬁnite diﬀerences
+Object detection, 449
+Object recognition, 449
+Objective function, 81
+OMP-k, see orthogonal matching pursuit
+One-shot learning, 534
+Operation, 202
+Optimization, 79, 81
+Orthodox statistics, see frequentist statistics
+Orthogonal matching pursuit, 26, 252
+Orthogonal matrix, 41
+Orthogonality, 40
+Output layer, 166
+Preprocessing, 450
+Pretraining, 320, 524
+Primary visual cortex, 362
+Principal components analysis, 47, 145, 146,
+Prior probability distribution, 134
+Probabilistic max pooling, 677
+Probabilistic PCA, 486, 487, 627
+Probability density function, 57
+Probability distribution, 55
+Probability mass function, 55
+Probability mass function estimation, 102
+Product of experts, 566
+Product rule of probability, see chain ruleof probability
+PSD, see predictive sparse decomposition
+Pseudolikelihood, 611
+Quadrature pair, 366
+Quasi-Newton methods, 314
+Radial basis function, 195
+Parallel distributed processing, 17
+Random search, 431
+Parameter initialization, 298, 403
+Random variable, 55
+Parameter sharing, 249, 332, 370, 372, 386 Ratio matching, 614
+Parameter tying, see Parameter sharing
+RBF, 195
+Parametric model, 113
+RBM, see restricted Boltzmann machine
+Parametric ReLU, 191
+Recall, 420
+Partial derivative, 83
+Receptive ﬁeld, 334
+Partition function, 564, 601, 663
+Recommender Systems, 474
+PCA, see principal components analysis
+Rectiﬁed linear unit, 170, 191, 422, 503
+PCD, see stochastic maximum likelihood
+Recurrent network, 26
+Perceptron, 15, 26
+Recurrent neural network, 375
+Persistent contrastive divergence, see stochas- Regression, 99
+tic maximum likelihood
+Regularization, 119, 119, 176, 226, 427
+Perturbation analysis, see reparametrization Regularizer, 118
+REINFORCE, 683
+Point estimator, 121
+Reinforcement learning, 24, 105, 476, 683
+Policy, 476
+Relational database, 479
+Pooling, 327, 677
+Relations, 478
+Positive deﬁnite, 88
+Reparametrization trick, 682
+Positive phase, 466, 602, 604, 650, 662
+Representation learning, 3
+Precision, 420
+Representational capacity, 113
+Precision (of a normal distribution), 62, 64 
+Restricted Boltzmann machine, 353, 456,
+Predictive sparse decomposition, 519
+Ridge regression, see weight decay
+RNN-RBM, 679
+
+Square matrix, 37
+ssRBM, see spike and slab restricted Boltzmann machine
+Standard deviation, 60
+Standard error, 126
+Saddle points, 283
+Standard error of the mean, 126, 276
+Sample mean, 124
+Statistic, 121
+Scalar, xi, xii, 30
+Statistical learning theory, 109
+Score matching, 509, 613
+Steepest descent, see gradient descent
+Second derivative, 85
+Stochastic back-propagation, see reparametrizaSecond derivative test, 88
+tion trick
+Self-information, 72
+Stochastic gradient descent, 15, 149, 277,
+Semantic hashing, 521
+292, 666
+Semi-supervised learning, 241
+Stochastic maximum likelihood, 608, 666
+Separable convolution, 359
+Stochastic pooling, 263
+Separation (probabilistic modeling), 568
+Structure learning, 578
+Set, xii
+Structured output, 100, 679
+SGD, see stochastic gradient descent
+Structured probabilistic model, 76, 554
+Shannon entropy, xiii, 73
+Sum rule of probability, 57
+Shortlist, 462
+Sum-product network, 549
+Sigmoid, xiv, see logistic sigmoid
+Supervised ﬁne-tuning, 525, 656
+Sigmoid belief network, 26
+Supervised learning, 104
+Simple cell, 362
+Support vector machine, 139
+Singular value, see singular value decompo- Surrogate loss function, 274
+sition
+SVD, see singular value decomposition
+Singular value decomposition, 43, 146, 475 Symmetric matrix, 40, 42
+Singular vector, see singular value decomposition
+Tangent distance, 267
+Slow feature analysis, 489
+Tangent plane, 511
+SML, see stochastic maximum likelihood
+Tangent prop, 267
+Softmax, 182, 415, 446
+TDNN, see time-delay neural network
+Softplus, xiv, 67, 195
+Teacher forcing, 379, 380
+Spam detection, 3
+Tempering, 599
+Sparse coding, 319, 353, 492, 626, 686
+Template matching, 140
+Sparse initialization, 302, 403
+Tensor, xi, xii, 32
+Sparse representation, 145, 224, 251, 501, Test set, 109
+Tikhonov regularization, see weight decay
+Spearmint, 433
+Tiled convolution, 349
+Spectral radius, 401
+Time-delay neural network, 364, 371
+Speech recognition, see automatic speech Toeplitz matrix, 330
+recognition
+Topographic ICA, 489
+Sphering, see whitening
+Trace operator, 45
+Spike and slab restricted Boltzmann ma- Training error, 109
+chine, 674
+Transcription, 100
+SPN, see sum-product network
+Transfer learning, 532
+Transpose, xii, 32
+Triangle inequality, 38
+Triangulated graph, see chordal graph
+Trigram, 458
+
+Zero-data learning, see zero-shot learning
+Zero-shot learning, 534
+
+Unbiased, 123
+Undirected graphical model, 76, 503
+Undirected model, 562
+Uniform distribution, 56
+Unigram, 458
+Unit norm, 40
+Unit vector, 40
+Universal approximation theorem, 196
+Universal approximator, 549
+Unnormalized probability distribution, 563
+Unsupervised learning, 104, 144
+Unsupervised pretraining, 456, 524
+V-structure, see explaining away
+V1, 362
+VAE, see variational autoencoder
+Vapnik-Chervonenkis dimension, 113
+Variance, xiii, 60, 227
+Variational autoencoder, 683, 690
+Variational derivatives, see functional derivatives
+Variational free energy, see evidence lower bound
+VC dimension, see Vapnik-Chervonenkis dimension
+Vector, xi, xii, 31
+Virtual adversarial examples, 266
+Visible layer, 6
+Volumetric data, 357
+Wake-sleep, 646, 655
+Weight decay, 117, 176, 229, 428
+Weight space symmetry, 282
+Weights, 15, 106
+Whitening, 452
+Wikibase, 479
+Wikibase, 479
+Word embedding, 460
+Word-sense disambiguation, 480
+WordNet, 479

@@ -4,11 +4,19 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
-            "name": "Python: Current File",
+            "name": "Python: train",
             "type": "python",
             "request": "launch",
             "program": "train.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: prepare",
+            "type": "python",
+            "request": "launch",
+            "program": "preprocessing/prepare_train_input.py",
             "console": "integratedTerminal"
         }
     ]

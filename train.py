@@ -17,25 +17,38 @@ REL = data.Field(sequential=False)
 SEQ = data.Field()
 LABEL = data.Field(use_vocab=False, sequential=False)
 
-rel_set = data.TabularDataset(path='train.tsv', format='tsv', skip_header=True,
+train_set = data.TabularDataset(path='train.tsv', format='tsv', skip_header=True,
 fields=[('e1', E1),
         ('e2', E2),
-        ('ep', EP),
+        ('ep', SEQ),
         ('rel', REL),
         ('seq', SEQ),
         ('label', LABEL)
         ])
 
-SEQ.build_vocab(rel_set)
-REL.build_vocab(rel_set)
-E1.build_vocab(rel_set)
-EP.build_vocab(rel_set)
-E2.build_vocab(rel_set)
+SEQ.build_vocab(train_set)
+REL.build_vocab(train_set)
+E1.build_vocab(train_set)
+EP.build_vocab(train_set)
+E2.build_vocab(train_set)
+
 train_iterator = data.BucketIterator(
-    dataset=rel_set, batch_size=6,
+    dataset=train_set, batch_size=6,
     sort_key=lambda x: len(x.seq)
     )
-# TODO: check if no inverting is needed 
+
+
+test_set = data.TabularDataset(path='test.tsv', format='tsv', skip_header=True,
+fields=[
+        ('ep', SEQ),
+        ('seq', SEQ)
+        ])
+
+test_iterator = data.BucketIterator(
+    dataset=test_set, batch_size=6,
+    sort_key=lambda x: len(x.seq)
+    )
+    
 
 # writer = SummaryWriter()
 
@@ -57,6 +70,7 @@ class UniversalSchema(nn.Module):
             
         else:
             row_vocab_size = len(EP.vocab)
+            print(EP.vocab)
             col_vocab_size = len(REL.vocab)
             self.row_encoder = nn.Embedding(row_vocab_size, params['emb_dim'])
             self.col_encoder = nn.Embedding(col_vocab_size, params['emb_dim'])
@@ -123,7 +137,7 @@ def evaluate():
     # ? they were trained to maximize similarity between eps and rel/text. At each iteration, ep gets more similar to the rel/text it's been seen with
     # it is "encoded as an aggregation over its observed relation types". When new relation comes in for a ep, the aggregation is by taking the mean
     # or learned with attention. When using attention, the aggregation is built with regard of the incoming relation
-    for batch in tqdm.tqdm(train_iterator):        
+    for batch in tqdm.tqdm(test_iterator):        
         x = batch
         y_, rows, cols = model(x)
         cos = nn.CosineSimilarity(dim=2, eps=1e-6)

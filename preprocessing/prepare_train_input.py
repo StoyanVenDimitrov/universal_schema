@@ -2,7 +2,8 @@ import nltk
 import csv
 import numpy as np
 import requests
-from itertools import groupby
+from itertools import groupby, zip_longest
+from kb_pool import single_query
 
 def read_from_pdf(file_path):
     content_as_list = []
@@ -20,11 +21,26 @@ def read_index(index_path):
     with open(index_path) as file:
         for line in file.readlines():
             line_list = line.strip().split(',')
-            if len(line_list) > 1 and not line_list[0].isdigit():
+            if len(line_list) > 1 and not line_list[0].isdigit() and not line_list[0].isupper():
                 name = line_list[0].lower()
-                entity_index[name.upper()] = name.split()
+                entity_index[name] = name.split()
     # TODO: Map entites with 'see ...' together
     return entity_index
+
+def get_wikidata_facts(entities):
+    # split the entites in groups of n to send them with one request
+    batch_size= 5 # take n entities to put in a query together
+    batches = [iter(entities)] * 5
+    buckets = zip_longest(fillvalue=None, *batches)
+    code_triples = []
+    label_triples = []
+    for i in buckets:
+        entity_str = '"' + '"@en "'.join(list(i)) + '"' + '@en'
+        c, l = single_query(entity_str)   
+        code_triples.extend(c)
+        label_triples.extend(l)
+    print(label_triples)
+
 
 def prepare_neg_data(neg_samples):
     """negative training samples: from each existing ep+rel pair, create
@@ -34,6 +50,13 @@ def run(file_path, index_path):
     # reading from a .pdf converted to .txt:
     content = read_from_pdf(file_path)
     entity_index = read_index(index_path)
+    get_wikidata_facts(entity_index)
+    # for entity in entity_index.keys():
+    #     single_query(entity)
+    # entity = ['optimization', 'deep learning']
+    # entity_str = '"' + '"@en "'.join(entity) + '"' + '@en'
+    # single_query(entity_str)
+
     # take only unique 
     text_examples = set()
     rel_map = {}
@@ -85,7 +108,7 @@ def run(file_path, index_path):
         for e, i in zip(found_here, found_here_on):
             if i[0]!=i[1]:
                 seq = ' '.join(sentence[i[0]:i[1]])
-                result.append((e[0], e[1], '_'.join([e[0], e[1]]), rel_map[seq], '$ARG1 '+ seq +' $ARG2'))
+                result.append((e[0], e[1], '\t'.join([e[0], e[1]]), rel_map[seq], '$ARG1 '+ seq +' $ARG2'))
         # result = [ (e[0] + '\t' + e[1], e[0], e[1],  '$ARG1 '+' '.join(sentence[i[0]:i[1]])+' $ARG2') for e, i in zip(found_here, found_here_on) if i[0]!=i[1]]
 
         text_examples.update(result)
