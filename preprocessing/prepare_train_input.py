@@ -2,18 +2,26 @@ import nltk
 import csv
 import numpy as np
 import requests
+import json
+import os,glob
+import itertools  
+
 from itertools import groupby, zip_longest
 from kb_pool import single_query
 
-def read_from_pdf(file_path):
-    content_as_list = []
-    with open(file_path) as file:
-        for line in file.readlines():
-            line_as_list = nltk.word_tokenize(line) # good tokenizer will avoid splitting on each . 
-            if len(line_as_list) >3:
-                content_as_list = content_as_list + line_as_list
-    i = (list(g) for _, g in groupby(content_as_list, key='.'.__ne__)) #TODO: dont split if next token starts with lowercase
-    content = [a + b for a, b in zip(i, i)]
+nltk.download('punkt')
+def read_from_pdf(file_dir):
+    content = []
+    for filename in glob.glob(os.path.join(file_dir, '*.txt')):
+        content_as_list = []
+        with open(filename) as file:
+            for line in file.readlines():
+                line_as_list = nltk.word_tokenize(line) # good tokenizer will avoid splitting on each . 
+                if len(line_as_list) >3:
+                    content_as_list = content_as_list + line_as_list
+        i = (list(g) for _, g in groupby(content_as_list, key='.'.__ne__)) #TODO: dont split if next token starts with lowercase
+        chapter_content = [a + b for a, b in zip(i, i)]
+        content.extend(chapter_content)
     return content
 
 def read_index(index_path):
@@ -22,6 +30,8 @@ def read_index(index_path):
         for line in file.readlines():
             line_list = line.strip().split(',')
             if len(line_list) > 1 and not line_list[0].isdigit() and not line_list[0].isupper():
+                # name = line_list[0]
+                # entity_index[name] = name.split()
                 name = line_list[0].lower()
                 entity_index[name] = name.split()
     # TODO: Map entites with 'see ...' together
@@ -30,37 +40,55 @@ def read_index(index_path):
 def get_wikidata_facts(entities):
     # split the entites in groups of n to send them with one request
     batch_size= 5 # take n entities to put in a query together
-    batches = [iter(entities)] * 5
-    buckets = zip_longest(fillvalue=None, *batches)
+    batches = [iter(entities)] * batch_size
+    buckets = zip_longest(fillvalue='__pad__', *batches)
     code_triples = []
-    label_triples = []
+    label_triples = dict()
+    found_objects = dict()
     for i in buckets:
-        entity_str = '"' + '"@en "'.join(list(i)) + '"' + '@en'
-        c, l = single_query(entity_str)   
-        code_triples.extend(c)
-        label_triples.extend(l)
-    print(label_triples)
+        for is_subj in [True, False]:
+            try:
+                entity_str = '"' + '"@en "'.join(list(i)) + '"' + '@en'
+                c, l, obj = single_query(entity_str, is_subj)   
+                code_triples.extend(c)
+                label_triples.update(l)
+                found_objects.update(obj)
+            except TypeError as error:
+                print(error)
+                continue
+    return code_triples, label_triples, found_objects
 
 
 def prepare_neg_data(neg_samples):
     """negative training samples: from each existing ep+rel pair, create
         #neg_samples samples that are not existing at the real data"""
 
-def run(file_path, index_path):
+def run(file_dir, index_path):
     # reading from a .pdf converted to .txt:
-    content = read_from_pdf(file_path)
+    content = read_from_pdf(file_dir)
     entity_index = read_index(index_path)
-    get_wikidata_facts(entity_index)
-    # for entity in entity_index.keys():
-    #     single_query(entity)
-    # entity = ['optimization', 'deep learning']
-    # entity_str = '"' + '"@en "'.join(entity) + '"' + '@en'
-    # single_query(entity_str)
+    
+    facts = dict()
+    # start extracting facts with the index:
+    # ... and expand with the found objects: 
+    expand_iterations = 1
+    for i  in range(expand_iterations):
+        _, f, new_entities = get_wikidata_facts(entity_index)
+        facts.update(f)
+        entity_index.update(new_entities)
+    
+    with open('test_entitiy_index.json', 'w+') as f:
+        # this would place the entire output on one line
+        # use json.dump(lista_items, f, indent=4) to "pretty-print" with four spaces per indent
+        json.dump(entity_index, f, indent=4)
 
-    # take only unique 
-    text_examples = set()
-    rel_map = {}
+    with open('kb_facts_test.json', 'w+') as fout:
+        #print(*facts, sep="\n", file=fout)
+        json.dump(facts, fout, indent=4)
 
+    # reset facts to [] just to see which KB pairs have textual mentions
+    for k, _ in facts.items():
+        facts[k] = []
     for sentence in content:
 
         sentence_iter = iter(enumerate(sentence))
@@ -70,6 +98,7 @@ def run(file_path, index_path):
         last_found = None
         last_found_on = None
 
+        # finding entity mentions in the sentence:
         for i,token in sentence_iter:
             token = token.lower()
             candidates = [item for item in entity_index.items() if item[1][0]==token]
@@ -101,36 +130,30 @@ def run(file_path, index_path):
                 found_here_on.append((last_found_on, span[0]))
             last_found_on = span[1]
             last_found = w
-        relations = [' '.join(sentence[i[0]:i[1]]) for i in found_here_on if i[0]!=i[1]]
-        for rel_str in relations:
-            rel_map.setdefault(rel_str, str(len(rel_map) + 1))
-        result = []
+        # result = []
         for e, i in zip(found_here, found_here_on):
             if i[0]!=i[1]:
                 seq = ' '.join(sentence[i[0]:i[1]])
-                result.append((e[0], e[1], '\t'.join([e[0], e[1]]), rel_map[seq], '$ARG1 '+ seq +' $ARG2'))
+                # result.append((e[0], e[1], '*****'.join([e[0], e[1]]), '$ARG1 '+ seq +' $ARG2'))
+                # adding mentions for pairs found in KB + all other pairs of entites from the index or found in KB relations:
+                facts.setdefault(e[0] +'*****'+e[1],[]).append('$ARG1 '+ seq +' $ARG2')
         # result = [ (e[0] + '\t' + e[1], e[0], e[1],  '$ARG1 '+' '.join(sentence[i[0]:i[1]])+' $ARG2') for e, i in zip(found_here, found_here_on) if i[0]!=i[1]]
 
-        text_examples.update(result)
-    return list(text_examples)
+    with open('text_facts_test.json', 'w+') as fout:
+        #print(*facts, sep="\n", file=fout)
+        json.dump(facts, fout, indent=4)
 
-def wikidata_query(query):
-    url = 'https://query.wikidata.org/sparql'
-    data = requests.get(url, params={'query': query, 'format': 'json'}).json()
-    return len(data['results']['bindings'])
-
-    #TODO: import to table with prefix  pre:...
-    
+    # return list(text_examples)
+   
 
 if __name__ == "__main__":
-    data = run("data/[11]part-2-chapter-6.txt", "data/[28]index.txt")
-    print(data[3])
-    with open('train.tsv','w') as out:
-        csv_out=csv.writer(out, delimiter='\t')
-        csv_out.writerow(['e1','e2', 'ep', 'relation_id', 'sequence', '1'])
-        for row in data:
-            row = row + (1,)
-            csv_out.writerow(row)
+    run("data/chapters", "data/[28]index.txt")
+    # with open('train.tsv','w') as out:
+    #     csv_out=csv.writer(out, delimiter='\t')
+    #     csv_out.writerow(['e1','e2', 'ep', 'relation_id', 'sequence', '1'])
+    #     for row in data:
+    #         row = row + (1,)
+    #         csv_out.writerow(row)
 
     # query = '''    '''
     # print(wikidata_query(query))
