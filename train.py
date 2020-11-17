@@ -70,7 +70,6 @@ class UniversalSchema(nn.Module):
             
         else:
             row_vocab_size = len(EP.vocab)
-            print(EP.vocab)
             col_vocab_size = len(REL.vocab)
             self.row_encoder = nn.Embedding(row_vocab_size, params['emb_dim'])
             self.col_encoder = nn.Embedding(col_vocab_size, params['emb_dim'])
@@ -97,7 +96,7 @@ class UniversalSchema(nn.Module):
                 col_out = self.col_encoder_output(batch.seq)
             else:
                 col_out = self.col_encoder_output(batch.rel).unsqueeze(1)
-            relations = self.attention(rows, relations_encoding, col_out)
+            relations = self.attention(rows, col_out)
         if params['pooling'] == 'mean':
             # taking the mean of relations for one example. 
             # it assumes one or more relations per ep, but not one relation for more than one eps.

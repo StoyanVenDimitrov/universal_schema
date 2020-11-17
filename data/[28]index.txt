@@ -1,5 +1,5 @@
 Index
-0-1 loss, 102, 274
+Bag of words, 467
 
 Bag of words, 467
 Bagging, 252
@@ -204,7 +204,6 @@ ESN, see echo state network
 Generalization, 109
 Euclidean norm, 38
 Generalized Lagrange function, see generalEuler-Lagrange equation, 641
-ized Lagrangian
 Evidence lower bound, 628, 655
 Generalized Lagrangian, 93
 Example, 98
