@@ -27,12 +27,13 @@ def single_query(term_list, subj):
   ORDER BY ?s
   LIMIT 20
   """
+  return apply_request(query)
   
-
+def apply_request(query):
   r = requests.get(url, params = {'format': 'json', 'query': query})
   try:
     time.sleep(1)
-    codes = []
+    codes = dict()
     labels = dict()
     objects = dict()
     full_results_list = r.json()['results']['bindings']
@@ -48,14 +49,15 @@ def single_query(term_list, subj):
           if not any(n in res['oLabel']['value'] for n in html_chars):
             if len(obj_label.split()) < 4 and len(subj_label.split()) < 4:
         #and res['oLabel']['value'].islower() and res['sLabel']['value'].islower():
-              codes.append((res['s']['value'], res['property']['value'], res['o']['value']))
+              # codes.append((res['s']['value'].split('/')[-1], res['property']['value'].split('/')[-1], res['o']['value'].split('/')[-1]))
+              codes.setdefault(res['property']['value'].split('/')[-1], []).append((res['s']['value'].split('/')[-1],res['o']['value'].split('/')[-1]))
               labels.setdefault(subj_label +'*****'+obj_label,[]).append('per: '+res['propertyLabel']['value'])
               # add object or subject to the set of possible entities:
               objects.update({obj_label:obj_label.split()})
               objects.update({subj_label:subj_label.split()})
     return codes, labels, objects
   except json.decoder.JSONDecodeError:
-    print('json.decoder.JSONDecodeError: ', term_list)
+    print('json.decoder.JSONDecodeError: ')
     print(r)
     return [], dict(), dict()
   if r.status_code == 429:
@@ -63,7 +65,7 @@ def single_query(term_list, subj):
     print('Stuck with code 429')
   if r.status_code == 430:
     print('Code 430')
-    single_query(term_list, subj)
+    apply_request(query)
 
 
 def rel_from_domain(relation, category):
@@ -73,3 +75,28 @@ def rel_from_domain(relation, category):
       relation (_id): from index facts
       category:  
   """
+  # query for sublcass_of (wdt:P31) and domain 'AI (wd:Q11660)'
+  query = f"""
+  SELECT DISTINCT ?item ?itemLabel ?object ?objectLabel
+  {{
+    ?item wdt:P31* / wdt:P279* wd:{category} . # Find items in the domain
+    ?item wdt:{relation} ?object .
+    SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" . }}
+  }}
+  """
+  r = requests.get(url, params = {'format': 'json', 'query': query})
+
+  try:
+    time.sleep(1)
+
+
+  except json.decoder.JSONDecodeError:
+    print('json.decoder.JSONDecodeError: ', category)
+    print(r)
+    return [], dict(), dict()
+  if r.status_code == 429:
+    time.sleep(2)
+    print('Stuck with code 429')
+  if r.status_code == 430:
+    print('Code 430')
+    rel_from_domain(relation, category)
