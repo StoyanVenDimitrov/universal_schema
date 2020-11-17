@@ -5,7 +5,6 @@ import requests
 import json
 import os,glob
 import itertools  
-
 from itertools import groupby, zip_longest
 from kb_pool import single_query
 
@@ -37,12 +36,12 @@ def read_index(index_path):
     # TODO: Map entites with 'see ...' together
     return entity_index
 
-def get_wikidata_facts(entities):
+def get_initial_wikidata_facts(entities):
     # split the entites in groups of n to send them with one request
     batch_size= 5 # take n entities to put in a query together
     batches = [iter(entities)] * batch_size
     buckets = zip_longest(fillvalue='__pad__', *batches)
-    code_triples = []
+    code_triples = dict()
     label_triples = dict()
     found_objects = dict()
     for i in buckets:
@@ -50,7 +49,7 @@ def get_wikidata_facts(entities):
             try:
                 entity_str = '"' + '"@en "'.join(list(i)) + '"' + '@en'
                 c, l, obj = single_query(entity_str, is_subj)   
-                code_triples.extend(c)
+                code_triples.update(c)
                 label_triples.update(l)
                 found_objects.update(obj)
             except TypeError as error:
@@ -58,6 +57,15 @@ def get_wikidata_facts(entities):
                 continue
     return code_triples, label_triples, found_objects
 
+def get_secondary_wikidata_facts(code_facts, top_k):
+    """given the initially extracted facts,
+    extract more facts, to extend the training data
+    """
+    min_count = 2
+    keys = sorted(code_facts.items(), key=lambda item: len(item[1]), reverse=True)[:top_k]
+    facts = {k[0]: code_facts[k[0]] for k in keys if len(code_facts[k[0]])>min_count}
+    return facts
+    
 
 def prepare_neg_data(neg_samples):
     """negative training samples: from each existing ep+rel pair, create
@@ -73,8 +81,10 @@ def run(file_dir, index_path):
     # ... and expand with the found objects: 
     expand_iterations = 1
     for i  in range(expand_iterations):
-        _, f, new_entities = get_wikidata_facts(entity_index)
+        code_f, f, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 30))  ) 
+        # code_f, f, new_entities = get_initial_wikidata_facts(entity_index)
         facts.update(f)
+        secondary_facts = get_secondary_wikidata_facts(code_f, 2)
         entity_index.update(new_entities)
     
     with open('test_entitiy_index.json', 'w+') as f:
@@ -147,7 +157,7 @@ def run(file_dir, index_path):
    
 
 if __name__ == "__main__":
-    run("data/chapters", "data/[28]index.txt")
+    run("data/test_chapters", "data/[28]index.txt")
     # with open('train.tsv','w') as out:
     #     csv_out=csv.writer(out, delimiter='\t')
     #     csv_out.writerow(['e1','e2', 'ep', 'relation_id', 'sequence', '1'])
@@ -157,17 +167,3 @@ if __name__ == "__main__":
 
     # query = '''    '''
     # print(wikidata_query(query))
-
-    """
-    16      10      392     493     3 1008 130 16 60 8 132 35 10 31 12 15 25 1009 9 35 10 105 12 14 5 4     1
-
-    23      64      219     494     3 6 90 17 243 22 28 49 240 9 82 37 10 13 88 153 6 5 114 1010 11 8 1011 15 5 4   1
-
-    87      5       393     495     3 11 27 4       1
-
-    21      4       394     496     3 78 5 1012 13 5 178 9 5 4      1
-
-    119     16      395     497     3 11 1013 13 39 80 6 95 5 4     1
-
-    28      20      396     498     3 121 21 179 20 7 4     1
-    """
