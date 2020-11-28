@@ -51,7 +51,8 @@ def apply_request(query):
         #and res['oLabel']['value'].islower() and res['sLabel']['value'].islower():
               # codes.append((res['s']['value'].split('/')[-1], res['property']['value'].split('/')[-1], res['o']['value'].split('/')[-1]))
               codes.setdefault(res['property']['value'].split('/')[-1], []).append((res['s']['value'].split('/')[-1],res['o']['value'].split('/')[-1]))
-              labels.setdefault(subj_label +'*****'+obj_label,[]).append('per: '+res['propertyLabel']['value'])
+              labels.setdefault(res['property']['value'].split('/')[-1], []).append((subj_label, obj_label))
+              # labels.setdefault(subj_label +'*****'+obj_label,[]).append('per: '+res['propertyLabel']['value'])
               # add object or subject to the set of possible entities:
               objects.update({obj_label:obj_label.split()})
               objects.update({subj_label:subj_label.split()})
@@ -69,34 +70,22 @@ def apply_request(query):
 
 
 def rel_from_domain(relation, category):
-  """all facts holding this relation from certain domain
-
-  Args:
-      relation (_id): from index facts
-      category:  
   """
-  # query for sublcass_of (wdt:P31) and domain 'AI (wd:Q11660)'
+  "all facts holding this relation from certain domain
+
+  relation: relation between searched facts
+  category: domain name (math, CS, medicine, etc)
+  rel_set: relations to look for with domain name
+  """
+  # query for instance_of foolowed by sublcass_of and domain category
   query = f"""
-  SELECT DISTINCT ?item ?itemLabel ?object ?objectLabel
+  SELECT DISTINCT ?s ?sLabel ?property ?propertyLabel ?o ?oLabel
   {{
-    ?item wdt:P31* / wdt:P279* wd:{category} . # Find items in the domain
-    ?item wdt:{relation} ?object .
+    hint:Query hint:optimizer "None"
+    VALUES ?property {{wdt:{relation}}}
+    ?s wdt:P31* / wdt:P279* wd:{category} . # Find items in the domain
+    ?s ?property ?o .
     SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" . }}
   }}
   """
-  r = requests.get(url, params = {'format': 'json', 'query': query})
-
-  try:
-    time.sleep(1)
-
-
-  except json.decoder.JSONDecodeError:
-    print('json.decoder.JSONDecodeError: ', category)
-    print(r)
-    return [], dict(), dict()
-  if r.status_code == 429:
-    time.sleep(2)
-    print('Stuck with code 429')
-  if r.status_code == 430:
-    print('Code 430')
-    rel_from_domain(relation, category)
+  return apply_request(query)

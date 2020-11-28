@@ -6,7 +6,7 @@ import json
 import os,glob
 import itertools  
 from itertools import groupby, zip_longest
-from kb_pool import single_query
+from kb_pool import single_query, rel_from_domain
 
 nltk.download('punkt')
 def read_from_pdf(file_dir):
@@ -49,8 +49,12 @@ def get_initial_wikidata_facts(entities):
             try:
                 entity_str = '"' + '"@en "'.join(list(i)) + '"' + '@en'
                 c, l, obj = single_query(entity_str, is_subj)   
-                code_triples.update(c)
-                label_triples.update(l)
+                for rel_code, code_tuples in c.items():
+                    code_triples[rel_code] = code_triples.get(rel_code, []) + code_tuples
+                # code_triples.update(c)
+                for rel_label, label_tuples in l.items():
+                    label_triples[rel_label] = label_triples.get(rel_label, []) + label_tuples
+                # label_triples.update(l)
                 found_objects.update(obj)
             except TypeError as error:
                 print(error)
@@ -59,12 +63,33 @@ def get_initial_wikidata_facts(entities):
 
 def get_secondary_wikidata_facts(code_facts, top_k):
     """given the initially extracted facts,
-    extract more facts, to extend the training data
+    extract more facts with the most frequent relations
+    from specific domain
     """
-    min_count = 2
+    code_triples = dict()
+    label_triples = dict()
+    found_objects = dict()
+    min_count = 1
     keys = sorted(code_facts.items(), key=lambda item: len(item[1]), reverse=True)[:top_k]
     facts = {k[0]: code_facts[k[0]] for k in keys if len(code_facts[k[0]])>min_count}
-    return facts
+    # check for one 'domain': Q21198 Computer Science
+    category = 'Q21198'
+    for rel in facts.keys():
+        c, l, obj = rel_from_domain(rel, category)
+        for rel_code, code_tuples in c.items():
+            code_triples[rel_code] = code_triples.get(rel_code, []) + code_tuples
+        # code_triples.update(c)
+        for rel_label, label_tuples in l.items():
+            label_triples[rel_label] = label_triples.get(rel_label, []) + label_tuples
+        # label_triples.update(l)
+        found_objects.update(obj)
+    label_triples = dict()
+    found_objects = dict()
+    with open('test_secondary_facts.json', 'w+') as f:
+        # this would place the entire output on one line
+        # use json.dump(lista_items, f, indent=4) to "pretty-print" with four spaces per indent
+        json.dump(code_triples, f, indent=4)
+    return code_triples, label_triples, found_objects
     
 
 def prepare_neg_data(neg_samples):
@@ -81,10 +106,10 @@ def run(file_dir, index_path):
     # ... and expand with the found objects: 
     expand_iterations = 1
     for i  in range(expand_iterations):
-        code_f, f, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 30))  ) 
+        code_f, f, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 15))  ) 
         # code_f, f, new_entities = get_initial_wikidata_facts(entity_index)
         facts.update(f)
-        secondary_facts = get_secondary_wikidata_facts(code_f, 2)
+        sec_code_triples, sec_label_triples, sec_found_objects = get_secondary_wikidata_facts(code_f, 15)
         entity_index.update(new_entities)
     
     with open('test_entitiy_index.json', 'w+') as f:
