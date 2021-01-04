@@ -6,7 +6,8 @@ import json
 import os,glob
 import itertools  
 from itertools import groupby, zip_longest
-from kb_pool import single_query, rel_from_domain
+from bs4 import BeautifulSoup
+from get_requests import single_query, rel_from_domain, wikimedia_request
 
 nltk.download('punkt')
 def read_from_pdf(file_dir):
@@ -33,7 +34,7 @@ def read_index(index_path):
                 # entity_index[name] = name.split()
                 name = line_list[0].lower()
                 entity_index[name] = name.split()
-    # TODO: Map entites with 'see ...' together
+    # TODO: Map entities with 'see ...' together
     return entity_index
 
 def get_initial_wikidata_facts(entities):
@@ -73,24 +74,46 @@ def get_secondary_wikidata_facts(code_facts, top_k):
     keys = sorted(code_facts.items(), key=lambda item: len(item[1]), reverse=True)[:top_k]
     facts = {k[0]: code_facts[k[0]] for k in keys if len(code_facts[k[0]])>min_count}
     # check for one 'domain': Q21198 Computer Science
-    category = 'Q21198'
-    for rel in facts.keys():
-        c, l, obj = rel_from_domain(rel, category)
-        for rel_code, code_tuples in c.items():
-            code_triples[rel_code] = code_triples.get(rel_code, []) + code_tuples
-        # code_triples.update(c)
-        for rel_label, label_tuples in l.items():
-            label_triples[rel_label] = label_triples.get(rel_label, []) + label_tuples
-        # label_triples.update(l)
-        found_objects.update(obj)
-    label_triples = dict()
-    found_objects = dict()
+    # category = ['Q21198', 'Q395']
+    for category in ['Q21198', 'Q395']:
+        for rel in facts.keys():
+            c, l, obj = rel_from_domain(rel, category)
+            for rel_code, code_tuples in c.items():
+                code_triples[rel_code] = code_triples.get(rel_code, []) + code_tuples
+            # code_triples.update(c)
+            for rel_label, label_tuples in l.items():
+                label_triples[rel_label] = label_triples.get(rel_label, []) + label_tuples
+            # label_triples.update(l)
+            found_objects.update(obj)
+        # label_triples = dict()
+        # found_objects = dict()
     with open('test_secondary_facts.json', 'w+') as f:
-        # this would place the entire output on one line
-        # use json.dump(lista_items, f, indent=4) to "pretty-print" with four spaces per indent
-        json.dump(code_triples, f, indent=4)
+        json.dump(code_triples,  f, indent=4)
+    with open('test_secondary_labels.json', 'w+') as f:
+        json.dump(label_triples, f, indent=4)
     return code_triples, label_triples, found_objects
-    
+
+def get_textual_mentions(term_pair):
+    """search for textual mentions in wiki snippets
+    Args:
+        term_pair (tuple): pair of KB terms
+    """
+    cont = None
+    while True:
+        res = wikimedia_request(term_pair[0], cont)
+        for i in res['query']['search']:
+            soup = BeautifulSoup(i['snippet'])
+            plain_text = soup.get_text()
+            print(plain_text)
+            print(plain_text.find(term_pair[0]))
+            print('---------')
+        # TODO: extract mentions of the second term
+        print('##################')
+        try:
+            cont = res['continue']
+        except KeyError:
+            break
+
 
 def prepare_neg_data(neg_samples):
     """negative training samples: from each existing ep+rel pair, create
@@ -104,22 +127,17 @@ def run(file_dir, index_path):
     facts = dict()
     # start extracting facts with the index:
     # ... and expand with the found objects: 
-    expand_iterations = 1
-    for i  in range(expand_iterations):
-        code_f, f, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 15))  ) 
-        # code_f, f, new_entities = get_initial_wikidata_facts(entity_index)
-        facts.update(f)
-        sec_code_triples, sec_label_triples, sec_found_objects = get_secondary_wikidata_facts(code_f, 15)
-        entity_index.update(new_entities)
-    
-    with open('test_entitiy_index.json', 'w+') as f:
-        # this would place the entire output on one line
-        # use json.dump(lista_items, f, indent=4) to "pretty-print" with four spaces per indent
-        json.dump(entity_index, f, indent=4)
-
-    with open('kb_facts_test.json', 'w+') as fout:
-        #print(*facts, sep="\n", file=fout)
-        json.dump(facts, fout, indent=4)
+    # expand_iterations = 1
+    # for i  in range(expand_iterations):
+    codes, labels, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 15)))
+    # code_f, f, new_entities = get_initial_wikidata_facts(entity_index)
+    facts.update(labels)
+    entity_index.update(new_entities)
+    # search for the secondary data on wikipedia:
+    sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, 2)
+    get_textual_mentions(('word2vec', 'bla'))
+    # for pairs in sec_labels.values():
+    #     [get_textual_mentions(i) for i in pairs]
 
     # reset facts to [] just to see which KB pairs have textual mentions
     for k, _ in facts.items():
@@ -174,15 +192,24 @@ def run(file_dir, index_path):
                 facts.setdefault(e[0] +'*****'+e[1],[]).append('$ARG1 '+ seq +' $ARG2')
         # result = [ (e[0] + '\t' + e[1], e[0], e[1],  '$ARG1 '+' '.join(sentence[i[0]:i[1]])+' $ARG2') for e, i in zip(found_here, found_here_on) if i[0]!=i[1]]
 
-    with open('text_facts_test.json', 'w+') as fout:
-        #print(*facts, sep="\n", file=fout)
-        json.dump(facts, fout, indent=4)
+    # with open('test_entitiy_index.json', 'w+') as f:
+    #     # this would place the entire output on one line
+    #     # use json.dump(lista_items, f, indent=4) to "pretty-print" with four spaces per indent
+    #     json.dump(entity_index, f, indent=4)
 
+    # with open('kb_facts_test.json', 'w+') as fout:
+    #     #print(*facts, sep="\n", file=fout)
+    #     json.dump(facts, fout, indent=4)
+
+    # with open('text_facts_test.json', 'w+') as fout:
+    #     #print(*facts, sep="\n", file=fout)
+    #     json.dump(facts, fout, indent=4)
+    
     # return list(text_examples)
    
 
 if __name__ == "__main__":
-    run("data/test_chapters", "data/[28]index.txt")
+    run("data/chapters", "data/[28]index.txt")
     # with open('train.tsv','w') as out:
     #     csv_out=csv.writer(out, delimiter='\t')
     #     csv_out.writerow(['e1','e2', 'ep', 'relation_id', 'sequence', '1'])
