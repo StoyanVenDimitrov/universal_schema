@@ -6,6 +6,7 @@ import json
 import os,glob
 import itertools  
 from itertools import groupby, zip_longest
+from collections import defaultdict
 from bs4 import BeautifulSoup
 from get_requests import single_query, rel_from_domain, wikimedia_request
 
@@ -38,18 +39,83 @@ def read_index(index_path):
     return entity_index
 
 def get_initial_wikidata_facts(entities):
+    """get all KB relations where the entity is 
+       subject or object
+    Args:
+        entities ([list]): index entity list
+    Returns:
+        dict: {KB_rel:[(subj, obj),..],...}
+    """
     # split the entites in groups of n to send them with one request
-    batch_size= 5 # take n entities to put in a query together
-    batches = [iter(entities)] * batch_size
-    buckets = zip_longest(fillvalue='__pad__', *batches)
-    code_triples = dict()
-    label_triples = dict()
-    found_objects = dict()
-    for i in buckets:
-        for is_subj in [True, False]:
-            try:
-                entity_str = '"' + '"@en "'.join(list(i)) + '"' + '@en'
-                c, l, obj = single_query(entity_str, is_subj)   
+    try:
+        with open('data/initial_code_facts.json') as f_in:
+            code_triples = json.load(f_in)
+        with open('data/initial_label_facts.json') as f_in:
+            label_triples = json.load(f_in)
+        with open('data/initial_entities.json') as f_in:
+            found_objects = json.load(f_in)
+        return code_triples, label_triples, found_objects
+    except FileNotFoundError:
+        batch_size= 5 # take n entities to put in a query together
+        batches = [iter(entities)] * batch_size
+        buckets = zip_longest(fillvalue='__pad__', *batches)
+        code_triples = dict()
+        label_triples = dict()
+        found_objects = dict()
+        for i in buckets:
+            for is_subj in [True, False]:
+                try:
+                    entity_str = '"' + '"@en "'.join(list(i)) + '"' + '@en'
+                    c, l, obj = single_query(entity_str, is_subj)   
+                    for rel_code, code_tuples in c.items():
+                        code_triples[rel_code] = code_triples.get(rel_code, []) + code_tuples
+                    # code_triples.update(c)
+                    for rel_label, label_tuples in l.items():
+                        label_triples[rel_label] = label_triples.get(rel_label, []) + label_tuples
+                    # label_triples.update(l)
+                    found_objects.update(obj)
+                except TypeError as error:
+                    print(error)
+                    continue
+        with open('data/initial_code_facts.json', 'w+') as f:
+            json.dump(code_triples,  f, indent=4)
+        with open('data/initial_label_facts.json', 'w+') as f:
+            json.dump(label_triples, f, indent=4)
+        with open('data/initial_entities.json', 'w+') as f:
+            json.dump(found_objects, f, indent=4)
+        return code_triples, label_triples, found_objects
+
+def get_secondary_wikidata_facts(code_facts, top_k):
+    """given the initially extracted facts,
+    extract more facts with the most frequent relations
+    from specific domain
+    Args:
+        code_facts ([dict]): key: KB relations, values: (subj,obj)
+        top_k ([int]): k most frequent KB relations 
+    Returns:
+        dict: {KB_rel:[(subj, obj),..],...}
+    """
+    try:
+        with open('data/secondary_code_facts.json') as f_in:
+            code_triples = json.load(f_in)
+        with open('data/secondary_label_facts.json') as f_in:
+            label_triples = json.load(f_in)
+        with open('data/secondary_entities.json') as f_in:
+            found_objects = json.load(f_in)
+        return code_triples, label_triples, found_objects
+    except FileNotFoundError:
+        code_triples = dict()
+        label_triples = dict()
+        found_objects = dict()
+        min_count = 1
+        keys = sorted(code_facts.items(), key=lambda item: len(item[1]), reverse=True)[:top_k]
+        facts = {k[0]: code_facts[k[0]] for k in keys if len(code_facts[k[0]])>min_count}
+        # check for one 'domain': Q21198 Computer Science
+        # category = ['Q21198', 'Q395']
+        # TODO: more categories
+        for category in ['Q21198', 'Q395']:
+            for rel in facts.keys():
+                c, l, obj = rel_from_domain(rel, category)
                 for rel_code, code_tuples in c.items():
                     code_triples[rel_code] = code_triples.get(rel_code, []) + code_tuples
                 # code_triples.update(c)
@@ -57,63 +123,59 @@ def get_initial_wikidata_facts(entities):
                     label_triples[rel_label] = label_triples.get(rel_label, []) + label_tuples
                 # label_triples.update(l)
                 found_objects.update(obj)
-            except TypeError as error:
-                print(error)
-                continue
-    return code_triples, label_triples, found_objects
-
-def get_secondary_wikidata_facts(code_facts, top_k):
-    """given the initially extracted facts,
-    extract more facts with the most frequent relations
-    from specific domain
-    """
-    code_triples = dict()
-    label_triples = dict()
-    found_objects = dict()
-    min_count = 1
-    keys = sorted(code_facts.items(), key=lambda item: len(item[1]), reverse=True)[:top_k]
-    facts = {k[0]: code_facts[k[0]] for k in keys if len(code_facts[k[0]])>min_count}
-    # check for one 'domain': Q21198 Computer Science
-    # category = ['Q21198', 'Q395']
-    for category in ['Q21198', 'Q395']:
-        for rel in facts.keys():
-            c, l, obj = rel_from_domain(rel, category)
-            for rel_code, code_tuples in c.items():
-                code_triples[rel_code] = code_triples.get(rel_code, []) + code_tuples
-            # code_triples.update(c)
-            for rel_label, label_tuples in l.items():
-                label_triples[rel_label] = label_triples.get(rel_label, []) + label_tuples
-            # label_triples.update(l)
-            found_objects.update(obj)
-        # label_triples = dict()
-        # found_objects = dict()
-    with open('test_secondary_facts.json', 'w+') as f:
-        json.dump(code_triples,  f, indent=4)
-    with open('test_secondary_labels.json', 'w+') as f:
-        json.dump(label_triples, f, indent=4)
-    return code_triples, label_triples, found_objects
+            # label_triples = dict()
+            # found_objects = dict()
+        with open('data/secondary_code_facts.json', 'w+') as f:
+            json.dump(code_triples,  f, indent=4)
+        with open('data/secondary_label_facts.json', 'w+') as f:
+            json.dump(label_triples, f, indent=4)
+        with open('data/secondary_entities.json', 'w+') as f:
+            json.dump(found_objects, f, indent=4)
+        return code_triples, label_triples, found_objects
 
 def get_textual_mentions(term_pair):
     """search for textual mentions in wiki snippets
     Args:
         term_pair (tuple): pair of KB terms
+    Returns:
+        list of strings, found on wikipedia pages between 
+        the two KB terms
     """
+    mentions = []
     cont = None
     while True:
         res = wikimedia_request(term_pair[0], cont)
-        for i in res['query']['search']:
-            soup = BeautifulSoup(i['snippet'])
-            plain_text = soup.get_text()
-            print(plain_text)
-            print(plain_text.find(term_pair[0]))
-            print('---------')
-        # TODO: extract mentions of the second term
-        print('##################')
+        try:
+            for i in res['query']['search']:
+                soup = BeautifulSoup(i['snippet'])
+                plain_text_snippet = soup.get_text().lower()
+                # !!! important later for search on whole page:
+                # no need to search if the term is not in the snippet
+                if term_pair[0] in plain_text_snippet: 
+                    #TODO: search on whole pages
+                    pos_0 = plain_text_snippet.find(term_pair[0]) + len(term_pair[0])
+                    pos_1 = plain_text_snippet.find(term_pair[1])
+                    # mentions[term_pair] = mentions.setdefault(term_pair, []).append(plain_text_snippet[pos_0:pos_1])
+                    if pos_1 > pos_0:
+                        mentions.append(plain_text_snippet[pos_0:pos_1])
+    # TODO: extract mentions of the second term
+        except KeyError:
+            continue
+
+
+
+        # for experimentation:
+        break # only srlimit pages max
+
+
+
+
+
         try:
             cont = res['continue']
         except KeyError:
             break
-
+    return mentions
 
 def prepare_neg_data(neg_samples):
     """negative training samples: from each existing ep+rel pair, create
@@ -129,16 +191,25 @@ def run(file_dir, index_path):
     # ... and expand with the found objects: 
     # expand_iterations = 1
     # for i  in range(expand_iterations):
-    codes, labels, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 15)))
-    # code_f, f, new_entities = get_initial_wikidata_facts(entity_index)
+    # codes, labels, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 15)))
+    codes, labels, new_entities = get_initial_wikidata_facts(entity_index)
     facts.update(labels)
     entity_index.update(new_entities)
+    sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, 1)
     # search for the secondary data on wikipedia:
-    sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, 2)
-    get_textual_mentions(('word2vec', 'bla'))
-    # for pairs in sec_labels.values():
-    #     [get_textual_mentions(i) for i in pairs]
-
+    try:
+        with open('data/wikipedia_evidences.json') as f_in:
+            wikipedia_evidences = json.load(f_in)
+    except FileNotFoundError:
+        wikipedia_evidences = dict()
+        for relation, pairs in sec_labels.items():
+            entity_text_mentions = dict()
+            for i in pairs:
+                entity_text_mentions['*'.join(i)] = get_textual_mentions(i)
+            wikipedia_evidences[relation] = entity_text_mentions
+        with open('data/wikipedia_evidences.json', 'w+') as fout:
+            #print(*facts, sep="\n", file=fout)
+            json.dump(wikipedia_evidences, fout, indent=4)
     # reset facts to [] just to see which KB pairs have textual mentions
     for k, _ in facts.items():
         facts[k] = []
@@ -209,7 +280,7 @@ def run(file_dir, index_path):
    
 
 if __name__ == "__main__":
-    run("data/chapters", "data/[28]index.txt")
+    run("resources/chapters", "resources/[28]index.txt")
     # with open('train.tsv','w') as out:
     #     csv_out=csv.writer(out, delimiter='\t')
     #     csv_out.writerow(['e1','e2', 'ep', 'relation_id', 'sequence', '1'])

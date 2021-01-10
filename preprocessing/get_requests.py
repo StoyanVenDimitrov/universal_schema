@@ -80,7 +80,7 @@ def apply_request(query):
   except json.decoder.JSONDecodeError:
     print('json.decoder.JSONDecodeError: ')
     print(r)
-    return [], dict(), dict()
+    return dict(), dict(), dict()
   if r.status_code == 429:
     time.sleep(2)
     print('Stuck with code 429')
@@ -105,7 +105,7 @@ def wikimedia_request(search_term, continue_val):
       "format": "json",
       "list": "search",
       "srsearch": search_term,
-      "srlimit": 200
+      "srlimit": 300
   }
   if continue_val:
     PARAMS.update(continue_val)
