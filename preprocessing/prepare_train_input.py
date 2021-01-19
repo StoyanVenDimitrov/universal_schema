@@ -1,3 +1,4 @@
+import random
 import nltk
 import csv
 import numpy as np
@@ -134,6 +135,7 @@ def get_secondary_wikidata_facts(code_facts, top_k):
         return code_triples, label_triples, found_objects
 
 def get_textual_mentions(term_pair):
+
     """search for textual mentions in wiki snippets
     Args:
         term_pair (tuple): pair of KB terms
@@ -141,7 +143,7 @@ def get_textual_mentions(term_pair):
         list of strings, found on wikipedia pages between 
         the two KB terms
     """
-    mentions = []
+    mentions = set()
     cont = None
     while True:
         res = wikimedia_request(term_pair[0], cont)
@@ -155,9 +157,8 @@ def get_textual_mentions(term_pair):
                     #TODO: search on whole pages
                     pos_0 = plain_text_snippet.find(term_pair[0]) + len(term_pair[0])
                     pos_1 = plain_text_snippet.find(term_pair[1])
-                    # mentions[term_pair] = mentions.setdefault(term_pair, []).append(plain_text_snippet[pos_0:pos_1])
                     if pos_1 > pos_0:
-                        mentions.append(plain_text_snippet[pos_0:pos_1])
+                        mentions.add(plain_text_snippet[pos_0:pos_1])
     # TODO: extract mentions of the second term
         except KeyError:
             continue
@@ -175,45 +176,80 @@ def get_textual_mentions(term_pair):
             cont = res['continue']
         except KeyError:
             break
-    return mentions
+    return list(mentions)
 
-def prepare_neg_data(neg_samples):
-    """negative training samples: from each existing ep+rel pair, create
-        #neg_samples samples that are not existing at the real data"""
-
-def run(file_dir, index_path):
-    # reading from a .pdf converted to .txt:
-    content = read_from_pdf(file_dir)
-    entity_index = read_index(index_path)
-    
+def get_training_data(index):
+    """gather training data, starting from the book's index,
+       finding Wikidata KB relations and textual mentions on wikipedia
+    Args:
+        index ([type]): book's index
+    """
     facts = dict()
-    # start extracting facts with the index:
-    # ... and expand with the found objects: 
-    # expand_iterations = 1
-    # for i  in range(expand_iterations):
     # codes, labels, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 15)))
-    codes, labels, new_entities = get_initial_wikidata_facts(entity_index)
+    codes, labels, new_entities = get_initial_wikidata_facts(index) # s or o from the book index
     facts.update(labels)
-    entity_index.update(new_entities)
-    sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, 1)
-    # search for the secondary data on wikipedia:
+    index.update(new_entities)  # take in the new entities 
+    sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, 2)
+    # search textual patterns between entities of found KB facts for the most prominent relations 
     try:
         with open('data/wikipedia_evidences.json') as f_in:
             wikipedia_evidences = json.load(f_in)
     except FileNotFoundError:
         wikipedia_evidences = dict()
+        # TODO: by now, the initial KB facts are NOT used to extract text patterns:
+        id_start = 0
         for relation, pairs in sec_labels.items():
             entity_text_mentions = dict()
-            for i in pairs:
-                entity_text_mentions['*'.join(i)] = get_textual_mentions(i)
+            entity_id_mentions = dict()            
+            for _id, i in enumerate(pairs, id_start):
+                mentions = get_textual_mentions(i)
+                if mentions:
+                    mentions.append(relation)
+                    entity_text_mentions['*'.join(i)] = mentions
+                    entity_id_mentions[_id] = mentions
+                # entity_text_mentions['*'.join(i)] = get_textual_mentions(i)
             wikipedia_evidences[relation] = entity_text_mentions
+            id_start = _id
         with open('data/wikipedia_evidences.json', 'w+') as fout:
             #print(*facts, sep="\n", file=fout)
             json.dump(wikipedia_evidences, fout, indent=4)
-    # reset facts to [] just to see which KB pairs have textual mentions
-    for k, _ in facts.items():
-        facts[k] = []
-    for sentence in content:
+    neg_data = prepare_neg_data(wikipedia_evidences['P279'], 4)
+    return index 
+
+def prepare_neg_data(pos_samples, num_samples):
+    """negative training samples: from each existing ep+rel pair, create
+        #neg_samples samples that are not existing at the real data
+    Args:
+        num_samples (int): number of negative samples
+        pos_samples (dict): {id:[text mentions or KB relation]}
+    """
+    neg_samples = dict()
+    for _id, values in pos_samples.items():
+        neg_examples = []
+        while len(neg_examples) < num_samples:
+            # sample entity pairs:
+            sample_ids = random.choices(list(pos_samples.keys()), k=num_samples)
+            for sample_pair in sample_ids:
+                if sample_pair != _id:
+                # sample relation from the entity pair's list:
+                    neg_rel = random.choice(list(pos_samples.keys()))
+                    if not neg_rel in values:
+                        neg_examples.append(neg_rel) 
+        neg_samples[_id] = neg_examples
+    return neg_samples
+
+
+def run(file_dir, index_path):
+    # ------ get the book' index -------
+    index = read_index(index_path)
+    
+    # ---- preparing training data ------
+    entity_index = get_training_data(index)
+
+    # ---- prepare test data - (s, text, o) with s,o from entity_index of all 'interesting' entities
+    manual_content = read_from_pdf(file_dir)
+
+    for sentence in manual_content:
 
         sentence_iter = iter(enumerate(sentence))
 
@@ -228,7 +264,7 @@ def run(file_dir, index_path):
             candidates = [item for item in entity_index.items() if item[1][0]==token]
             if not candidates:
                 continue
-            # if we match single-word index token directly
+            # if we match single-word index token directly 
 
             str_the_rest = ' '.join(sentence[i:]).lower()
             to_remove = []
@@ -260,7 +296,7 @@ def run(file_dir, index_path):
                 seq = ' '.join(sentence[i[0]:i[1]])
                 # result.append((e[0], e[1], '*****'.join([e[0], e[1]]), '$ARG1 '+ seq +' $ARG2'))
                 # adding mentions for pairs found in KB + all other pairs of entites from the index or found in KB relations:
-                facts.setdefault(e[0] +'*****'+e[1],[]).append('$ARG1 '+ seq +' $ARG2')
+                # facts.setdefault(e[0] +'*****'+e[1],[]).append('$ARG1 '+ seq +' $ARG2')
         # result = [ (e[0] + '\t' + e[1], e[0], e[1],  '$ARG1 '+' '.join(sentence[i[0]:i[1]])+' $ARG2') for e, i in zip(found_here, found_here_on) if i[0]!=i[1]]
 
     # with open('test_entitiy_index.json', 'w+') as f:

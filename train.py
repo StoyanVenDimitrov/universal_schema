@@ -115,6 +115,8 @@ model = UniversalSchema(params)
 # --- train loop ---
 def train():
     loss_func = nn.BCEWithLogitsLoss()
+    # https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html
+    # https://discuss.pytorch.org/t/difference-between-cross-entropy-loss-or-log-likelihood-loss/38816/2
     opt = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=1e-5)
 
     model.train()
