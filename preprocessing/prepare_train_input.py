@@ -183,6 +183,38 @@ def get_textual_mentions(term_pair):
     return list(mentions)
 
 
+def get_wikipedia_evidences(sec_labels):
+    """collect textual mentions from Wikipedia
+    Args:
+        sec_labels: secondary extracted facts, with labels
+    Returns:
+        dict with text mentions per entity pair 
+    """
+
+    try:
+        with open('data/wikipedia_evidences.json') as f_in:
+            wikipedia_evidences = json.load(f_in)
+    except FileNotFoundError:
+        wikipedia_evidences = dict()
+        # TODO: by now, the initial KB facts are NOT used to extract text patterns:
+        id_start = 0
+        for relation, pairs in sec_labels.items():
+            entity_text_mentions = dict()
+            entity_id_mentions = dict()            
+            for _id, i in enumerate(pairs, id_start):
+                mentions = get_textual_mentions(i)
+                if mentions:
+                    mentions.append(relation)
+                    entity_text_mentions['*'.join(i)] = mentions
+                    entity_id_mentions[_id] = mentions
+                # entity_text_mentions['*'.join(i)] = get_textual_mentions(i)
+            wikipedia_evidences[relation] = entity_text_mentions
+            id_start = _id
+        with open('data/wikipedia_evidences.json', 'w+') as fout:
+            #print(*facts, sep="\n", file=fout)
+            json.dump(wikipedia_evidences, fout, indent=4)
+    return wikipedia_evidences
+
 def prepare_neg_data(all_pos_samples, num_samples):
     """negative training samples: from each existing ep+rel pair, create
         #neg_samples samples that are not existing at the real data
@@ -193,6 +225,8 @@ def prepare_neg_data(all_pos_samples, num_samples):
     try:
         with open('data/negative_evidences.json') as f_in:
             neg_samples = json.load(f_in)
+            # TODO: check if the content satisfies num_samples and
+            # all_pos_samples have been changed
     except FileNotFoundError:
         neg_samples = dict()
         for relation, pos_samples in all_pos_samples.items():
@@ -236,29 +270,34 @@ def get_training_data(index):
     index.update(new_entities)  # take in the new entities 
     sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, 4)
     # search textual patterns between entities of found KB facts for the most prominent relations 
-    try:
-        with open('data/wikipedia_evidences.json') as f_in:
-            wikipedia_evidences = json.load(f_in)
-    except FileNotFoundError:
-        wikipedia_evidences = dict()
-        # TODO: by now, the initial KB facts are NOT used to extract text patterns:
-        id_start = 0
-        for relation, pairs in sec_labels.items():
-            entity_text_mentions = dict()
-            entity_id_mentions = dict()            
-            for _id, i in enumerate(pairs, id_start):
-                mentions = get_textual_mentions(i)
-                if mentions:
-                    mentions.append(relation)
-                    entity_text_mentions['*'.join(i)] = mentions
-                    entity_id_mentions[_id] = mentions
-                # entity_text_mentions['*'.join(i)] = get_textual_mentions(i)
-            wikipedia_evidences[relation] = entity_text_mentions
-            id_start = _id
-        with open('data/wikipedia_evidences.json', 'w+') as fout:
-            #print(*facts, sep="\n", file=fout)
-            json.dump(wikipedia_evidences, fout, indent=4)
+    wikipedia_evidences = get_wikipedia_evidences(sec_labels)
     neg_data = prepare_neg_data(wikipedia_evidences, 40)
+
+    # [{row:..., seen_with:[...], column:..., label: 0 or 1}, ...]
+    final_dataset = []
+    for _, evidences in wikipedia_evidences.items():
+        for pair, relations in evidences.items():
+            for mention in relations:
+                final_dataset.append(
+                    {
+                        'row': pair, 
+                        'seen_with': relations, 
+                        'column': mention,
+                        'label': 1
+                    }
+                )
+            neg_relations = neg_data[pair]
+            for neg_mention in neg_relations:
+                final_dataset.append(
+                    {
+                        'row': pair, 
+                        'seen_with': relations, 
+                        'column': neg_mention,
+                        'label': 0
+                    }
+                )
+    with open('data/final_dataset.json', 'w+') as f:
+            json.dump(final_dataset,  f, indent=4)
     return index 
 
 
