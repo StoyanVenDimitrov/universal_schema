@@ -26,6 +26,7 @@ def read_from_pdf(file_dir):
         content.extend(chapter_content)
     return content
 
+
 def read_index(index_path):
     entity_index = dict()
     with open(index_path) as file:
@@ -38,6 +39,7 @@ def read_index(index_path):
                 entity_index[name] = name.split()
     # TODO: Map entities with 'see ...' together
     return entity_index
+
 
 def get_initial_wikidata_facts(entities):
     """get all KB relations where the entity is 
@@ -85,6 +87,7 @@ def get_initial_wikidata_facts(entities):
         with open('data/initial_entities.json', 'w+') as f:
             json.dump(found_objects, f, indent=4)
         return code_triples, label_triples, found_objects
+
 
 def get_secondary_wikidata_facts(code_facts, top_k):
     """given the initially extracted facts,
@@ -134,6 +137,7 @@ def get_secondary_wikidata_facts(code_facts, top_k):
             json.dump(found_objects, f, indent=4)
         return code_triples, label_triples, found_objects
 
+
 def get_textual_mentions(term_pair):
 
     """search for textual mentions in wiki snippets
@@ -178,6 +182,47 @@ def get_textual_mentions(term_pair):
             break
     return list(mentions)
 
+
+def prepare_neg_data(all_pos_samples, num_samples):
+    """negative training samples: from each existing ep+rel pair, create
+        #neg_samples samples that are not existing at the real data
+    Args:
+        num_samples (int): number of negative samples
+        all_pos_samples (dict): the extraction so far (e.g. wikidata_evidences.json)
+    """
+    try:
+        with open('data/negative_evidences.json') as f_in:
+            neg_samples = json.load(f_in)
+    except FileNotFoundError:
+        neg_samples = dict()
+        for relation, pos_samples in all_pos_samples.items():
+            neg_pool = set()
+            for rel, examples in all_pos_samples.items():
+                # take negatives only when NOT expressing the same relation:
+                if rel != relation:
+                    for e in examples.values():
+                        neg_pool.update(e)
+                  
+            for _id, values in pos_samples.items():
+                neg_examples = set()
+                while len(neg_examples) < num_samples:
+                    neg_rel = random.choice(list(neg_pool))
+                    if not neg_rel in values:
+                        neg_examples.add(neg_rel)
+                    # sample entity pairs:
+                    # sample_ids = random.choices(list(pos_samples.keys()), k=num_samples)
+                    # for sample_pair in sample_ids:
+                    #     if sample_pair != _id:
+                    #     # sample relation from the entity pair's list:
+                    #         neg_rel = random.choice(list(pos_samples.keys()))
+                    #         if not neg_rel in values:
+                    #             neg_examples.append(neg_rel) 
+                neg_samples[_id] = list(neg_examples)
+        with open('data/negative_evidences.json', 'w+') as f:
+            json.dump(neg_samples,  f, indent=4)
+    return neg_samples
+
+
 def get_training_data(index):
     """gather training data, starting from the book's index,
        finding Wikidata KB relations and textual mentions on wikipedia
@@ -189,7 +234,7 @@ def get_training_data(index):
     codes, labels, new_entities = get_initial_wikidata_facts(index) # s or o from the book index
     facts.update(labels)
     index.update(new_entities)  # take in the new entities 
-    sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, 2)
+    sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, 4)
     # search textual patterns between entities of found KB facts for the most prominent relations 
     try:
         with open('data/wikipedia_evidences.json') as f_in:
@@ -213,30 +258,8 @@ def get_training_data(index):
         with open('data/wikipedia_evidences.json', 'w+') as fout:
             #print(*facts, sep="\n", file=fout)
             json.dump(wikipedia_evidences, fout, indent=4)
-    neg_data = prepare_neg_data(wikipedia_evidences['P279'], 4)
+    neg_data = prepare_neg_data(wikipedia_evidences, 40)
     return index 
-
-def prepare_neg_data(pos_samples, num_samples):
-    """negative training samples: from each existing ep+rel pair, create
-        #neg_samples samples that are not existing at the real data
-    Args:
-        num_samples (int): number of negative samples
-        pos_samples (dict): {id:[text mentions or KB relation]}
-    """
-    neg_samples = dict()
-    for _id, values in pos_samples.items():
-        neg_examples = []
-        while len(neg_examples) < num_samples:
-            # sample entity pairs:
-            sample_ids = random.choices(list(pos_samples.keys()), k=num_samples)
-            for sample_pair in sample_ids:
-                if sample_pair != _id:
-                # sample relation from the entity pair's list:
-                    neg_rel = random.choice(list(pos_samples.keys()))
-                    if not neg_rel in values:
-                        neg_examples.append(neg_rel) 
-        neg_samples[_id] = neg_examples
-    return neg_samples
 
 
 def run(file_dir, index_path):
