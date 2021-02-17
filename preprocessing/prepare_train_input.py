@@ -274,30 +274,32 @@ def get_training_data(index):
     neg_data = prepare_neg_data(wikipedia_evidences, 40)
 
     # [{row:..., seen_with:[...], column:..., label: 0 or 1}, ...]
-    final_dataset = []
-    for _, evidences in wikipedia_evidences.items():
-        for pair, relations in evidences.items():
-            for mention in relations:
-                final_dataset.append(
-                    {
-                        'row': pair, 
+    with open('data/final_dataset.json', 'w+') as outfile:
+        # final_dataset = []
+        for _, evidences in wikipedia_evidences.items():
+            for pair, relations in evidences.items():
+                for mention in relations:
+                    to_add = {
+                            'entity_pair': pair, 
+                            'seen_with': relations, 
+                            'relation': mention,
+                            'label': 1
+                        }
+                json.dump(to_add, outfile)
+                outfile.write('\n')
+                neg_relations = neg_data[pair]
+                for neg_mention in neg_relations:
+                    to_add = {
+                        'entity_pair': pair, 
                         'seen_with': relations, 
-                        'column': mention,
-                        'label': 1
-                    }
-                )
-            neg_relations = neg_data[pair]
-            for neg_mention in neg_relations:
-                final_dataset.append(
-                    {
-                        'row': pair, 
-                        'seen_with': relations, 
-                        'column': neg_mention,
+                        'relation': neg_mention,
                         'label': 0
                     }
-                )
-    with open('data/final_dataset.json', 'w+') as f:
-            json.dump(final_dataset,  f, indent=4)
+                    json.dump(to_add, outfile)
+                    outfile.write('\n')
+    # final_json = {"training_set": final_dataset}
+    # with open('data/final_dataset.json', 'w+') as f:
+    #         json.dump(final_json,  f, indent=4)
     return index 
 
 
@@ -309,7 +311,7 @@ def run(file_dir, index_path):
     entity_index = get_training_data(index)
 
     # ---- prepare test data - (s, text, o) with s,o from entity_index of all 'interesting' entities
-    manual_content = read_from_pdf(file_dir)
+    """manual_content = read_from_pdf(file_dir)
 
     for sentence in manual_content:
 
@@ -375,7 +377,7 @@ def run(file_dir, index_path):
     #     json.dump(facts, fout, indent=4)
     
     # return list(text_examples)
-   
+   """
 
 if __name__ == "__main__":
     run("resources/chapters", "resources/[28]index.txt")
