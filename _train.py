@@ -140,4 +140,4 @@ def evaluate():
 # to build eval data, 
 
 train()
-evaluate()
+# evaluate()
