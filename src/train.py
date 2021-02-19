@@ -52,7 +52,7 @@ class UniversalSchema(nn.Module):
         if params.get('pooling', None) == 'attention':
             # TODO: using tying for the attention encoder
             self.attention_col_encoder = LSTMEncoder(col_vocab_size, params['emb_dim'], params['lstm_hid'])
-            self.attention = Attention(params['lstm_hid'])
+            self.attention = Attention(params['lstm_hid'], attention_type='dot')
 
     def forward(self, batch):
         """Row-less universal schema forward pass
@@ -85,7 +85,10 @@ class UniversalSchema(nn.Module):
             _, weights = self.attention(expanded_query, mentions_embed)
             weighted_mentions = torch.mul(mentions_embed, torch.transpose(weights, 2,1))
             row_aggregation = torch.sum(weighted_mentions, dim=1)
-        return query
+        row_m = torch.unsqueeze(row_aggregation, 1)
+        col_m = torch.unsqueeze(query, 2)
+        score = torch.bmm(row_m, col_m)
+        return torch.sigmoid(score)
 
 
 params = {'emb_dim': 50, 'lstm_encoder': True, 'pooling': 'attention', 'lstm_hid':5}   
