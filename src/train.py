@@ -88,7 +88,7 @@ class UniversalSchema(nn.Module):
         row_m = torch.unsqueeze(row_aggregation, 1)
         col_m = torch.unsqueeze(query, 2)
         score = torch.bmm(row_m, col_m)
-        return torch.sigmoid(score)
+        return torch.squeeze(score, dim=1)  # skip sigmoid if using BCEWithLogitsLoss
 
 
 params = {'emb_dim': 50, 'lstm_encoder': True, 'pooling': 'attention', 'lstm_hid':5}   
@@ -96,7 +96,7 @@ model = UniversalSchema(params)
 
 
 def train():
-    loss_func = nn.BCEWithLogitsLoss()
+    loss_func = nn.BCEWithLogitsLoss() # (reduction='none')
     # https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html
     # https://discuss.pytorch.org/t/difference-between-cross-entropy-loss-or-log-likelihood-loss/38816/2
     opt = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=1e-5)
