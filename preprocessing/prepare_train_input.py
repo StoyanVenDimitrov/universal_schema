@@ -271,7 +271,7 @@ def get_training_data(index):
     sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, 4)
     # search textual patterns between entities of found KB facts for the most prominent relations 
     wikipedia_evidences = get_wikipedia_evidences(sec_labels)
-    neg_data = prepare_neg_data(wikipedia_evidences, 40)
+    neg_data = prepare_neg_data(wikipedia_evidences, 2)
 
     # [{row:..., seen_with:[...], column:..., label: 0 or 1}, ...]
     with open('data/final_dataset.json', 'w+') as outfile:

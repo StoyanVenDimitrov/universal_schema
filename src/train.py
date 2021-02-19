@@ -14,7 +14,7 @@ mention = data.Field(sequential=True)
 mentions = data.NestedField(mention)
 # TODO: try shared vocabulary here
 column = data.Field(sequential=True)
-label = data.Field(sequential=False)
+label = data.LabelField(dtype = torch.float, use_vocab=False, preprocessing=float)
 
 dataset = data.TabularDataset(
 path='data/final_dataset.json', format='json',
@@ -29,15 +29,13 @@ fields= {
 row.build_vocab(dataset)
 mentions.build_vocab(dataset)
 column.build_vocab(dataset)
-label.build_vocab(dataset)
 
 train_iterator = data.BucketIterator(
-    dataset=dataset, batch_size=3,
-    sort_key=lambda x: len(x.relation),
+    dataset=dataset, batch_size=8,
     shuffle=True
     )
 
-batch = next(iter(train_iterator))
+# batch = next(iter(train_iterator))
 
 class UniversalSchema(nn.Module):
     def __init__(self, params):
@@ -45,13 +43,14 @@ class UniversalSchema(nn.Module):
 
         row_vocab_size = len(row.vocab)
         col_vocab_size = len(column.vocab)
+        mentions_vocab_size = len(mentions.vocab)
         self.row_encoder = nn.Embedding(row_vocab_size, params['emb_dim'])
         # encode the mentions with LSTM:
-        self.mention_col_encoder = LSTMEncoder(col_vocab_size, params['emb_dim'], params['lstm_hid'])
+        self.mention_col_encoder = LSTMEncoder(mentions_vocab_size, params['emb_dim'], params['lstm_hid'])
         self.query_col_encoder = LSTMEncoder(col_vocab_size, params['emb_dim'], params['lstm_hid'])
         if params.get('pooling', None) == 'attention':
             # TODO: using tying for the attention encoder
-            self.attention_col_encoder = LSTMEncoder(col_vocab_size, params['emb_dim'], params['lstm_hid'])
+            self.attention_col_encoder = LSTMEncoder(mentions_vocab_size, params['emb_dim'], params['lstm_hid'])
             self.attention = Attention(params['lstm_hid'], attention_type='dot')
 
     def forward(self, batch):
@@ -62,7 +61,6 @@ class UniversalSchema(nn.Module):
         query = self.query_col_encoder(batch.column)
         # men_len x seq_len x batch_size
         mentions = batch.mentions.permute(1,2,0)
-        # mentions_embed = torch.empty(mentions.shape)
         
         li = []
         for col in mentions: # max num of mentions (columns)
@@ -91,7 +89,7 @@ class UniversalSchema(nn.Module):
         return torch.squeeze(score, dim=1)  # skip sigmoid if using BCEWithLogitsLoss
 
 
-params = {'emb_dim': 50, 'lstm_encoder': True, 'pooling': 'attention', 'lstm_hid':5}   
+params = {'emb_dim': 100, 'lstm_encoder': True, 'pooling': 'mean_pool', 'lstm_hid':64}   
 model = UniversalSchema(params)
 
 
@@ -99,16 +97,16 @@ def train():
     loss_func = nn.BCEWithLogitsLoss() # (reduction='none')
     # https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html
     # https://discuss.pytorch.org/t/difference-between-cross-entropy-loss-or-log-likelihood-loss/38816/2
-    opt = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=1e-5)
+    opt = torch.optim.Adam(model.parameters(), lr=0.01)
 
     model.train()
-    #train_batches = list(train_iterator)
     for batch in tqdm.tqdm(train_iterator):
         x = batch
         y = torch.unsqueeze(batch.label.float(),1)
-        y_ = model(x)
-        loss = loss_func(y, y_)
         opt.zero_grad()
+        y_ = model(x)
+        loss = loss_func(y_, y)
+        # print(loss)
         loss.backward()
         opt.step()
 
