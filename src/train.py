@@ -5,8 +5,7 @@ import tqdm
 import copy
 
 from torchnlp.nn import Attention
-from encoders import LSTMEncoder
-from attention import Attention
+from utils import LSTMEncoder
 
 # --- prepare data tensors --- 
 
@@ -53,19 +52,39 @@ class UniversalSchema(nn.Module):
         if params.get('pooling', None) == 'attention':
             # TODO: using tying for the attention encoder
             self.attention_col_encoder = LSTMEncoder(col_vocab_size, params['emb_dim'], params['lstm_hid'])
-            self.attention = Attention(256)
+            self.attention = Attention(params['lstm_hid'])
 
     def forward(self, batch):
         """Row-less universal schema forward pass
         Args:
             batch: batch of (pair, mentions, column, label)
         """
-        query = self.query_col_encoder(batch.column)#.permute(1,0))
+        query = self.query_col_encoder(batch.column)
+        # men_len x seq_len x batch_size
         mentions = batch.mentions.permute(1,2,0)
-        for col in mentions:
-            embed = self.mention_col_encoder(col)
-            print(embed)
-            print('##############')
+        # mentions_embed = torch.empty(mentions.shape)
+        
+        li = []
+        for col in mentions: # max num of mentions (columns)
+            # seq_len x batch_size. This way LSTM gets what it needs - a column.
+            embed = self.mention_col_encoder(col) # for the n-mention, in a batch 
+            li.append(embed)
+        mentions_embed = torch.stack(li, dim=1) #  batch_size x men_len x hidd_size
+        if params['pooling'] == 'mean_pool':
+            row_aggregation = torch.sum(mentions_embed, dim=1)
+        if params['pooling'] == 'max_pool':
+            row_aggregation = torch.max(mentions_embed, dim=1).values
+        if params['pooling'] == 'max_relation':
+            c_matmul = torch.matmul(mentions_embed, torch.unsqueeze(query,2))
+            c_max_indices = torch.argmax(c_matmul, dim=1)
+            c_max_gather = torch.unsqueeze(c_max_indices.repeat(1,params['lstm_hid']),1)
+            # TODO: watch out that sometims the all-PAD seq is choosen:
+            row_aggregation = torch.squeeze(torch.gather(mentions_embed, 1, c_max_gather),1)
+        if params['pooling'] == 'attention':
+            expanded_query = torch.unsqueeze(query, 1)
+            _, weights = self.attention(expanded_query, mentions_embed)
+            weighted_mentions = torch.mul(mentions_embed, torch.transpose(weights, 2,1))
+            row_aggregation = torch.sum(weighted_mentions, dim=1)
         return query
 
 

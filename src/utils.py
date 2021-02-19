@@ -10,6 +10,6 @@ class LSTMEncoder(nn.Module):
     
     def forward(self, seq): 
         emb = self.emb(seq)
-        h, _ = self.lstm(emb)
-        # take last hidden state only:
-        return h[-1, :, :]#.unsqueeze(1)
+        o, h = self.lstm(emb)
+        # take last output state only:
+        return o[-1, :, :]#.unsqueeze(1)
