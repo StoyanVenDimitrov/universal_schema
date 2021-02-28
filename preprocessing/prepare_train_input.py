@@ -230,13 +230,17 @@ def prepare_neg_data(all_pos_samples, num_samples):
     except FileNotFoundError:
         neg_samples = dict()
         for relation, pos_samples in all_pos_samples.items():
-            neg_pool = set()
-            for rel, examples in all_pos_samples.items():
-                # take negatives only when NOT expressing the same relation:
-                if rel != relation:
-                    for e in examples.values():
-                        neg_pool.update(e)
+            # ! removing mentions as negatives
+            # adding all neg mentions
+            # neg_pool = set()
+            # for rel, examples in all_pos_samples.items():
+            #     # take negatives only when NOT expressing the same relation:
+            #     if rel != relation:
+            #         for e in examples.values():
+            #             neg_pool.update(e)
                   
+            # ! neg pool - only KB relations:
+            neg_pool = set(all_pos_samples.keys())
             for _id, values in pos_samples.items():
                 neg_examples = set()
                 while len(neg_examples) < num_samples:
@@ -261,14 +265,18 @@ def get_training_data(index):
     """gather training data, starting from the book's index,
        finding Wikidata KB relations and textual mentions on wikipedia
     Args:
-        index ([type]): book's index
+        index ([type]): book's index terms + terms related with them in the KB
     """
+    top_k = 4 
     facts = dict()
     # codes, labels, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 15)))
     codes, labels, new_entities = get_initial_wikidata_facts(index) # s or o from the book index
     facts.update(labels)
     index.update(new_entities)  # take in the new entities 
-    sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, 4)
+    sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, top_k)
+    # define the possible KB relations for test time
+    best_rels_obj = sorted(codes.items(), key=lambda item: len(item[1]), reverse=True)[:top_k]
+    desired_rels = [rel[0]for rel in best_rels_obj]
     # search textual patterns between entities of found KB facts for the most prominent relations 
     wikipedia_evidences = get_wikipedia_evidences(sec_labels)
     neg_data = prepare_neg_data(wikipedia_evidences, 2)
@@ -278,20 +286,25 @@ def get_training_data(index):
         # final_dataset = []
         for _, evidences in wikipedia_evidences.items():
             for pair, relations in evidences.items():
+                # ! remove the relation itself to avoid predicting simply its position
+                seen_with = [i for i in relations if not i.startswith('P')]
                 for mention in relations:
                     to_add = {
                             'entity_pair': pair, 
-                            'seen_with': relations, 
+                            'seen_with': seen_with, 
                             'relation': mention,
                             'label': 1
                         }
-                json.dump(to_add, outfile)
+                    # ! query with textual mentions as in USchema is too hard and 
+                    # ! not sufficient (prob. for depend. paths works).
+                    # ! Go only for KB relations as query, also on. neg samples
+                json.dump(to_add, outfile) # last is always path
                 outfile.write('\n')
                 neg_relations = neg_data[pair]
                 for neg_mention in neg_relations:
                     to_add = {
                         'entity_pair': pair, 
-                        'seen_with': relations, 
+                        'seen_with': seen_with, 
                         'relation': neg_mention,
                         'label': 0
                     }
@@ -300,19 +313,11 @@ def get_training_data(index):
     # final_json = {"training_set": final_dataset}
     # with open('data/final_dataset.json', 'w+') as f:
     #         json.dump(final_json,  f, indent=4)
-    return index 
+    return index, desired_rels
 
-
-def run(file_dir, index_path):
-    # ------ get the book' index -------
-    index = read_index(index_path)
-    
-    # ---- preparing training data ------
-    entity_index = get_training_data(index)
-
-    # ---- prepare test data - (s, text, o) with s,o from entity_index of all 'interesting' entities
-    """manual_content = read_from_pdf(file_dir)
-
+def get_test_data(index, file_dir, desired_rels):
+    manual_content = read_from_pdf(file_dir)
+    result = dict()
     for sentence in manual_content:
 
         sentence_iter = iter(enumerate(sentence))
@@ -325,7 +330,8 @@ def run(file_dir, index_path):
         # finding entity mentions in the sentence:
         for i,token in sentence_iter:
             token = token.lower()
-            candidates = [item for item in entity_index.items() if item[1][0]==token]
+            # TODO: only pairs of book_index entity and other entity
+            candidates = [item for item in index.items() if item[1][0]==token]
             if not candidates:
                 continue
             # if we match single-word index token directly 
@@ -354,11 +360,87 @@ def run(file_dir, index_path):
                 found_here_on.append((last_found_on, span[0]))
             last_found_on = span[1]
             last_found = w
-        # result = []
+
         for e, i in zip(found_here, found_here_on):
             if i[0]!=i[1]:
-                seq = ' '.join(sentence[i[0]:i[1]])
+                pair = '*****'.join([e[0], e[1]])
+                result.setdefault(pair, []).append(' '.join(sentence[i[0]:i[1]]))
+                # seq = ' '.join(sentence[i[0]:i[1]])
                 # result.append((e[0], e[1], '*****'.join([e[0], e[1]]), '$ARG1 '+ seq +' $ARG2'))
+    with open('data/test_dataset.json', 'w+') as outfile: 
+        for key, values in result.items():
+            # add the KB relation to be evaluated:
+            # TODO: try directly with 'relation': desired_rels  
+            for relation in desired_rels:
+                to_add = {
+                            'entity_pair': key, 
+                            'seen_with': values, 
+                            'relation': relation
+                        }
+                json.dump(to_add, outfile)
+                outfile.write('\n')
+
+
+def run(file_dir, index_path):
+    # ------ get the book' index -------
+    index = read_index(index_path)
+    
+    # ---- preparing training data ------
+    extended_index, desired_rels = get_training_data(index)
+
+    # ---- preparing training data ------
+    get_test_data(extended_index, file_dir, desired_rels)
+
+    # ---- prepare test data - (s, text, o) with s,o from entity_index of all 'interesting' entities
+    # manual_content = read_from_pdf(file_dir)
+
+    # for sentence in manual_content:
+
+    #     sentence_iter = iter(enumerate(sentence))
+
+    #     found_here = []
+    #     found_here_on = []
+    #     last_found = None
+    #     last_found_on = None
+
+    #     # finding entity mentions in the sentence:
+    #     for i,token in sentence_iter:
+    #         token = token.lower()
+    #         # TODO: only pairs of book_index entity and other entity
+    #         candidates = [item for item in extended_index.items() if item[1][0]==token]
+    #         if not candidates:
+    #             continue
+    #         # if we match single-word index token directly 
+
+    #         str_the_rest = ' '.join(sentence[i:]).lower()
+    #         to_remove = []
+    #         for c in candidates:
+    #             str_c = ' '.join(c[1])
+    #             seen_here = str_the_rest.find(str_c, 0, len(str_c))
+    #             to_remove.append(seen_here)
+    #         candidates = [candidate for seen, candidate in zip(to_remove, candidates) if seen>-1]
+    #         if not candidates:
+    #             continue
+    #         single_candidate = max(candidates, key=lambda item: len(item[1]))
+    #         # iter only if something was found:
+    #         start_pos = i
+    #         end_pos = i +1
+    #         for skip in range(len(single_candidate[1])-1):
+    #             i, _ = next(sentence_iter)
+    #             end_pos = i +1
+    #         span = (start_pos, end_pos)
+    #         w = single_candidate[0]
+    #         if last_found != None and last_found != w:
+    #             # apply aliases from list of aliases
+    #             found_here.append((last_found, w))  
+    #             found_here_on.append((last_found_on, span[0]))
+    #         last_found_on = span[1]
+    #         last_found = w
+    #     result = []
+    #     for e, i in zip(found_here, found_here_on):
+    #         if i[0]!=i[1]:
+    #             seq = ' '.join(sentence[i[0]:i[1]])
+    #             result.append((e[0], e[1], '*****'.join([e[0], e[1]]), '$ARG1 '+ seq +' $ARG2'))
                 # adding mentions for pairs found in KB + all other pairs of entites from the index or found in KB relations:
                 # facts.setdefault(e[0] +'*****'+e[1],[]).append('$ARG1 '+ seq +' $ARG2')
         # result = [ (e[0] + '\t' + e[1], e[0], e[1],  '$ARG1 '+' '.join(sentence[i[0]:i[1]])+' $ARG2') for e, i in zip(found_here, found_here_on) if i[0]!=i[1]]
@@ -377,10 +459,10 @@ def run(file_dir, index_path):
     #     json.dump(facts, fout, indent=4)
     
     # return list(text_examples)
-   """
+   
 
 if __name__ == "__main__":
-    run("resources/chapters", "resources/[28]index.txt")
+    run("resources/test_chapters", "resources/[28]index.txt")
     # with open('train.tsv','w') as out:
     #     csv_out=csv.writer(out, delimiter='\t')
     #     csv_out.writerow(['e1','e2', 'ep', 'relation_id', 'sequence', '1'])

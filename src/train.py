@@ -1,10 +1,12 @@
+import copy
+from datetime import datetime
+
 import torch
 import torch.nn as nn
 import torchtext.data as data
 import tqdm
-import copy
-
 from torchnlp.nn import Attention
+
 from utils import LSTMEncoder
 
 # --- prepare data tensors --- 
@@ -29,6 +31,15 @@ fields= {
 row.build_vocab(dataset)
 mentions.build_vocab(dataset)
 column.build_vocab(dataset)
+
+# test_dataset = data.TabularDataset(
+# path='data/test_dataset.json', format='json',
+# fields= {
+#     "entity_pair": ('row', row),
+#     "seen_with": ('mentions', mentions),
+#     "relation": ('column', column)
+#     } 
+# )
 
 train_iterator = data.BucketIterator(
     dataset=dataset, batch_size=8,
@@ -76,7 +87,7 @@ class UniversalSchema(nn.Module):
             c_matmul = torch.matmul(mentions_embed, torch.unsqueeze(query,2))
             c_max_indices = torch.argmax(c_matmul, dim=1)
             c_max_gather = torch.unsqueeze(c_max_indices.repeat(1,params['lstm_hid']),1)
-            # TODO: watch out that sometims the all-PAD seq is choosen:
+            # TODO: watch out that sometimes the all-PAD seq is choosen:
             row_aggregation = torch.squeeze(torch.gather(mentions_embed, 1, c_max_gather),1)
         if params['pooling'] == 'attention':
             expanded_query = torch.unsqueeze(query, 1)
@@ -99,15 +110,26 @@ def train():
     # https://discuss.pytorch.org/t/difference-between-cross-entropy-loss-or-log-likelihood-loss/38816/2
     opt = torch.optim.Adam(model.parameters(), lr=0.01)
 
-    model.train()
-    for batch in tqdm.tqdm(train_iterator):
-        x = batch
-        y = torch.unsqueeze(batch.label.float(),1)
-        opt.zero_grad()
-        y_ = model(x)
-        loss = loss_func(y_, y)
-        # print(loss)
-        loss.backward()
-        opt.step()
+    # model.train()
+    for epoch in range(10):
+        running_loss = 0.0
+        for i, batch in enumerate(train_iterator,0):
+            x = batch
+            y = torch.unsqueeze(batch.label.float(),1)
+            opt.zero_grad()
+            y_ = model(x)
+            loss = loss_func(y_, y)
+            # print(loss)
+            loss.backward()
+            opt.step()
+
+            running_loss += loss.item()
+            if i % 20 == 19:    # print every 2000 mini-batches
+                print( running_loss / 20)
+                running_loss = 0.0
+    
+
+    PATH = 'models/{save_as}.pth'.format(save_as = datetime.today().strftime('%m-%d-%H:%M:%S'))
+    torch.save(model.state_dict(), PATH)
 
 train()
