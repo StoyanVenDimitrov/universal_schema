@@ -3,54 +3,47 @@ import torch.nn as nn
 import torchtext.data as data
 import tqdm
 import copy
-from torch.utils.tensorboard import SummaryWriter
+# from datasets import load_dataset
+# from torch.utils.tensorboard import SummaryWriter
 
 from src.encoders import LSTMEncoder
 from src.attention import Attention
 
 # --- prepare data tensors --- 
 
-E1 = data.Field(sequential=False)
-E2 = data.Field(sequential=False)
-EP = data.Field(sequential=False)
-REL = data.Field(sequential=False)
-SEQ = data.Field()
-LABEL = data.Field(use_vocab=False, sequential=False)
+row = data.Field(sequential=False)
+mention = data.Field(sequential=True)
+mentions = data.NestedField(mention)
+column = data.Field(sequential=True)
+label = data.Field(sequential=False)
 
-train_set = data.TabularDataset(path='train.tsv', format='tsv', skip_header=True,
-fields=[('e1', E1),
-        ('e2', E2),
-        ('ep', SEQ),
-        ('rel', REL),
-        ('seq', SEQ),
-        ('label', LABEL)
-        ])
+dataset = data.TabularDataset(
+path='data/final_dataset.json', format='json',
+fields= {
+    "entity_pair": ('row', row),
+    "seen_with": ('mentions', mentions),
+    "relation": ('column', column),
+    "label": ('label', label)
+    } 
+)
 
-SEQ.build_vocab(train_set)
-REL.build_vocab(train_set)
-E1.build_vocab(train_set)
-EP.build_vocab(train_set)
-E2.build_vocab(train_set)
+row.build_vocab(dataset)
+mentions.build_vocab(dataset)
+column.build_vocab(dataset)
+label.build_vocab(dataset)
 
 train_iterator = data.BucketIterator(
-    dataset=train_set, batch_size=6,
-    sort_key=lambda x: len(x.seq)
+    dataset=dataset, batch_size=10,
+    sort_key=lambda x: len(x.relation),
+    shuffle=True
     )
 
+batch = next(iter(train_iterator))
 
-test_set = data.TabularDataset(path='test.tsv', format='tsv', skip_header=True,
-fields=[
-        ('ep', SEQ),
-        ('seq', SEQ)
-        ])
-
-test_iterator = data.BucketIterator(
-    dataset=test_set, batch_size=6,
-    sort_key=lambda x: len(x.seq)
-    )
-    
-
-# writer = SummaryWriter()
+# dataset = load_dataset('json', data_files='data/final_dataset.json', field='training_set')['train']
+# dataset.set_format(type='pytorch')
+# dataloader = torch.utils.data.DataLoader(dataset, batch_size=32)
+# print(next(iter(dataloader)))
 
 # --- declare models ----
 class UniversalSchema(nn.Module):
@@ -70,7 +63,6 @@ class UniversalSchema(nn.Module):
             
         else:
             row_vocab_size = len(EP.vocab)
-            print(EP.vocab)
             col_vocab_size = len(REL.vocab)
             self.row_encoder = nn.Embedding(row_vocab_size, params['emb_dim'])
             self.col_encoder = nn.Embedding(col_vocab_size, params['emb_dim'])
@@ -97,7 +89,7 @@ class UniversalSchema(nn.Module):
                 col_out = self.col_encoder_output(batch.seq)
             else:
                 col_out = self.col_encoder_output(batch.rel).unsqueeze(1)
-            relations = self.attention(rows, relations_encoding, col_out)
+            relations = self.attention(rows, col_out)
         if params['pooling'] == 'mean':
             # taking the mean of relations for one example. 
             # it assumes one or more relations per ep, but not one relation for more than one eps.
@@ -116,6 +108,8 @@ model = UniversalSchema(params)
 # --- train loop ---
 def train():
     loss_func = nn.BCEWithLogitsLoss()
+    # https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html
+    # https://discuss.pytorch.org/t/difference-between-cross-entropy-loss-or-log-likelihood-loss/38816/2
     opt = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=1e-5)
 
     model.train()
@@ -146,4 +140,4 @@ def evaluate():
 # to build eval data, 
 
 train()
-evaluate()
+# evaluate()
