@@ -32,21 +32,27 @@ row.build_vocab(dataset)
 mentions.build_vocab(dataset)
 column.build_vocab(dataset)
 
-# test_dataset = data.TabularDataset(
-# path='data/test_dataset.json', format='json',
-# fields= {
-#     "entity_pair": ('row', row),
-#     "seen_with": ('mentions', mentions),
-#     "relation": ('column', column)
-#     } 
-# )
+test_dataset = data.TabularDataset(
+path='data/test_dataset.json', format='json',
+fields= {
+    "entity_pair": ('row', row),
+    "seen_with": ('mentions', mentions),
+    "relation": ('column', column)
+    } 
+)
 
 train_iterator = data.BucketIterator(
     dataset=dataset, batch_size=8,
     shuffle=True
     )
 
-# batch = next(iter(train_iterator))
+test_iterator = data.BucketIterator(
+    dataset=test_dataset, batch_size=4,
+    shuffle=False
+    )
+
+# batch = next(iter(test_iterator))
+# print(batch)
 
 class UniversalSchema(nn.Module):
     def __init__(self, params):
@@ -113,7 +119,7 @@ def train():
     # model.train()
     for epoch in range(10):
         running_loss = 0.0
-        for i, batch in enumerate(train_iterator,0):
+        for i, batch in enumerate(train_iterator,0): # enumerate(tqdm(train_iterator)): 
             x = batch
             y = torch.unsqueeze(batch.label.float(),1)
             opt.zero_grad()
@@ -132,4 +138,15 @@ def train():
     PATH = 'models/{save_as}.pth'.format(save_as = datetime.today().strftime('%m-%d-%H:%M:%S'))
     torch.save(model.state_dict(), PATH)
 
-train()
+def test():
+    model = UniversalSchema(params)
+    model.load_state_dict(torch.load("models/03-01-17:25:26.pth"))
+    classes = column.vocab.itos[2:] # col vocab without <unk> and <pad>
+    for i, example in enumerate(test_iterator,0):
+        scores = model(example)
+        output = classes[torch.argmax(scores)]
+
+        
+
+# train()
+test()
