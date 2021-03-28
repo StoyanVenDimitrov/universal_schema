@@ -1,0 +1,2586 @@
+{
+    "computational chemistry*computational science": [
+        "P1889",
+        "P373"
+    ],
+    "security engineering*computer science": [
+        "P1889",
+        "P373"
+    ],
+    "computational linguistics*computer science": [
+        "P1889",
+        "P31"
+    ],
+    "computational biology*computational science": [
+        "P1552",
+        "P373"
+    ],
+    "bioinformatics*computational biology": [
+        "P279",
+        "P31"
+    ],
+    "bidirectional associative memory*recurrent neural network": [
+        "P101",
+        "P1552"
+    ],
+    "genomics*genetics": [
+        "P1889",
+        "P361"
+    ],
+    "cognitive science*artificial intelligence": [
+        "P101",
+        "P31"
+    ],
+    "robotics*mechatronics": [
+        "P1889",
+        "P373"
+    ],
+    "nanorobotics*nanotechnology": [
+        "P101",
+        "P361"
+    ],
+    "adaline*artificial neural network": [
+        "P1889",
+        "P1552"
+    ],
+    "artificial neural network*machine learning": [
+        "P1889",
+        "P1552"
+    ],
+    "expert system*artificial intelligence": [
+        "P1889",
+        "P361"
+    ],
+    "computational science*computer science": [
+        "P101",
+        "P31"
+    ],
+    "computational chemistry*cheminformatics": [
+        "P1552",
+        "P279"
+    ],
+    "deep learning*machine learning": [
+        "P101",
+        "P1552"
+    ],
+    "applied computer science*technology": [
+        "P1889",
+        "P31"
+    ],
+    "data mining*statistics": [
+        "P1552",
+        "P361"
+    ],
+    "computational science*applied mathematics": [
+        "P1889",
+        "P31"
+    ],
+    "mechatronics*computer science": [
+        "P1889",
+        "P31"
+    ],
+    "virtual private network*encryption": [
+        "P1552",
+        "P31"
+    ],
+    "explanation-based learning*machine learning": [
+        "P361",
+        "P31"
+    ],
+    "data mining*computer science": [
+        "P373",
+        "P31"
+    ],
+    "neocognitron*artificial neural network": [
+        "P101",
+        "P1889"
+    ],
+    "virtual private network*confidentiality": [
+        "P1552",
+        "P31"
+    ],
+    "rsa*public-key cryptography": [
+        "P101",
+        "P361"
+    ],
+    "artificial neural network*artificial intelligence": [
+        "P101",
+        "P373"
+    ],
+    "cryptographic hash function*hashing": [
+        "P1889",
+        "P373"
+    ],
+    "human\u2013computer interaction*interaction design": [
+        "P101",
+        "P1889"
+    ],
+    "supervised learning*machine learning": [
+        "P101",
+        "P31"
+    ],
+    "cognitive science*neuroscience": [
+        "P361",
+        "P31"
+    ],
+    "computer graphics*computer science": [
+        "P101",
+        "P31"
+    ],
+    "perihelion*periastron": [
+        "P101",
+        "P31"
+    ],
+    "apsis*distance": [
+        "P1889",
+        "P373"
+    ],
+    "cryptographic primitive*algorithm": [
+        "P101",
+        "P1889"
+    ],
+    "perihelion*periapsis": [
+        "P1889",
+        "P361"
+    ],
+    "cryptographic primitive*cryptography": [
+        "P1889",
+        "P1552"
+    ],
+    "decision support system*artificial intelligence": [
+        "P1889",
+        "P31"
+    ],
+    "computational linguistics*mathematical linguistics": [
+        "P1552",
+        "P31"
+    ],
+    "expert system*knowledge-based system": [
+        "P1552",
+        "P373"
+    ],
+    "speech recognition*computational linguistics": [
+        "P101",
+        "P1889"
+    ],
+    "dualism*concept": [
+        "P373",
+        "P31"
+    ],
+    "genomics*computational biology": [
+        "P1889",
+        "P1552"
+    ],
+    "pattern recognition*machine learning": [
+        "P101",
+        "P1889"
+    ],
+    "mechatronics*control engineering": [
+        "P1889",
+        "P31"
+    ],
+    "computational complexity theory*computability theory": [
+        "P1552",
+        "P373"
+    ],
+    "cluster analysis*data mining": [
+        "P101",
+        "P31"
+    ],
+    "decision support system*information system": [
+        "P1889",
+        "P361"
+    ],
+    "cluster analysis*data analysis": [
+        "P1552",
+        "P373"
+    ],
+    "boltzmann machine*recurrent neural network": [
+        "P101",
+        "P361"
+    ],
+    "cognitive science*psychology": [
+        "P1552",
+        "P361"
+    ],
+    "cognitive science*anthropology": [
+        "P101",
+        "P361"
+    ],
+    "cognitive science*philosophy of mind": [
+        "P1889",
+        "P361"
+    ],
+    "expert system*computer program": [
+        "P373",
+        "P31"
+    ],
+    "hierarchical temporal memory*machine learning": [
+        "P1889",
+        "P373"
+    ],
+    "unconventional computing*computer science": [
+        "P1889",
+        "P31"
+    ],
+    "cognitive science*linguistics": [
+        "P1889",
+        "P31"
+    ],
+    "data mining*discovery": [
+        "P101",
+        "P1889"
+    ],
+    "apsis*point": [
+        "P101",
+        "P373"
+    ],
+    "genetic algorithm*evolutionary algorithm": [
+        "P361",
+        "P31"
+    ],
+    "speech recognition*natural language processing": [
+        "P1889",
+        "P31"
+    ],
+    "data mining*analysis": [
+        "P1552",
+        "P31"
+    ],
+    "machine translation*computational linguistics": [
+        "P373",
+        "P31"
+    ],
+    "human\u2013computer interaction*computer science": [
+        "P1889",
+        "P31"
+    ],
+    "cheminformatics*computer science": [
+        "P1889",
+        "P361"
+    ],
+    "computational physics*computational science": [
+        "P361",
+        "P31"
+    ],
+    "hierarchical clustering*cluster analysis": [
+        "P101",
+        "P1889"
+    ],
+    "secret sharing*cryptographic primitive": [
+        "P101",
+        "P361"
+    ],
+    "semi-supervised learning*machine learning": [
+        "P1552",
+        "P279"
+    ],
+    "emergency medical hologram*fictional character": [
+        "P373",
+        "P31"
+    ],
+    "self-organizing map*artificial neural network": [
+        "P101",
+        "P361"
+    ],
+    "perceptron*feedforward neural network": [
+        "P1552",
+        "P373"
+    ],
+    "toxicogenomics*toxicology": [
+        "P373",
+        "P31"
+    ],
+    "affinity analysis*data mining": [
+        "P1889",
+        "P361"
+    ],
+    "winner-take-all*recurrent neural network": [
+        "P1889",
+        "P373"
+    ],
+    "apogee*apoapsis": [
+        "P1552",
+        "P373"
+    ],
+    "elliptic curve cryptography*method": [
+        "P1889",
+        "P31"
+    ],
+    "computability theory*theory of computation": [
+        "P101",
+        "P361"
+    ],
+    "user experience*human\u2013computer interaction": [
+        "P1552",
+        "P31"
+    ],
+    "human\u2013robot interaction*robotics": [
+        "P101",
+        "P361"
+    ],
+    "computational geometry*computer science": [
+        "P1889",
+        "P1552"
+    ],
+    "computational fluid dynamics*computational mechanics": [
+        "P101",
+        "P373"
+    ],
+    "computability theory*mathematical logic": [
+        "P101",
+        "P361"
+    ],
+    "modding*process": [
+        "P1552",
+        "P361"
+    ],
+    "chopper*custom motorcycle": [
+        "P101",
+        "P1552"
+    ],
+    "computational fluid dynamics*computer-aided engineering": [
+        "P1552",
+        "P373"
+    ],
+    "cognitive neuroscience*cognitive science": [
+        "P101",
+        "P31"
+    ],
+    "autoencoder*artificial neural network": [
+        "P101",
+        "P31"
+    ],
+    "unsupervised learning*machine learning": [
+        "P1889",
+        "P31"
+    ],
+    "computational mechanics*computational physics": [
+        "P279",
+        "P31"
+    ],
+    "cutdown*scooter": [
+        "P101",
+        "P1889"
+    ],
+    "quantitative structure\u2013activity relationship*chemometrics": [
+        "P101",
+        "P361"
+    ],
+    "computational intelligence*artificial intelligence": [
+        "P1889",
+        "P1552"
+    ],
+    "recurrent neural network*artificial neural network": [
+        "P361",
+        "P373"
+    ],
+    "modding*personalization": [
+        "P101",
+        "P373"
+    ],
+    "web mining*data mining": [
+        "P361",
+        "P373"
+    ],
+    "combinatorial game theory*theoretical computer science": [
+        "P1889",
+        "P361"
+    ],
+    "elliptic curve cryptography*public-key cryptography": [
+        "P1889",
+        "P361"
+    ],
+    "chemometrics*chemistry": [
+        "P101",
+        "P361"
+    ],
+    "combinatorial game theory*analysis": [
+        "P373",
+        "P31"
+    ],
+    "inductive logic programming*inductive programming": [
+        "P101",
+        "P373"
+    ],
+    "reinforcement learning*machine learning": [
+        "P1889",
+        "P31"
+    ],
+    "cheminformatics*chemistry": [
+        "P101",
+        "P1889"
+    ],
+    "part-of-speech tagging*natural language processing": [
+        "P1552",
+        "P361"
+    ],
+    "perigee*periapsis": [
+        "P1889",
+        "P361"
+    ],
+    "computational mathematics*computational science": [
+        "P1552",
+        "P361"
+    ],
+    "bobber*custom motorcycle": [
+        "P1889",
+        "P373"
+    ],
+    "structure mining*data mining": [
+        "P1552",
+        "P373"
+    ],
+    "periastron*periapsis": [
+        "P101",
+        "P1552"
+    ],
+    "artificial general intelligence*artificial intelligence": [
+        "P1889",
+        "P361"
+    ],
+    "knowledge engineering*systems engineering": [
+        "P1552",
+        "P31"
+    ],
+    "modular neural network*artificial neural network": [
+        "P361",
+        "P373"
+    ],
+    "morphological analysis*natural language processing": [
+        "P1552",
+        "P361"
+    ],
+    "heuristic*algorithm": [
+        "P1889",
+        "P31"
+    ],
+    "cognitive anthropology*cognitive science": [
+        "P1889",
+        "P373"
+    ],
+    "astroinformatics*astronomy": [
+        "P101",
+        "P1889"
+    ],
+    "hybrid cryptosystem*cryptography": [
+        "P361",
+        "P31"
+    ],
+    "aphelion*apoapsis": [
+        "P101",
+        "P361"
+    ],
+    "knowledge extraction*data mining": [
+        "P101",
+        "P31"
+    ],
+    "theoretical computer science*mathematics": [
+        "P1889",
+        "P373"
+    ],
+    "virtual screening*cheminformatics": [
+        "P101",
+        "P1552"
+    ],
+    "social informatics*computer science": [
+        "P1889",
+        "P1552"
+    ],
+    "beam search*best-first search": [
+        "P1552",
+        "P373"
+    ],
+    "process mining*data mining": [
+        "P1552",
+        "P361"
+    ],
+    "computational number theory*computational mathematics": [
+        "P1889",
+        "P1552"
+    ],
+    "computational genomics*computational biology": [
+        "P1889",
+        "P361"
+    ],
+    "quantum information science*computer science": [
+        "P1889",
+        "P373"
+    ],
+    "ring signature*digital signature": [
+        "P1889",
+        "P361"
+    ],
+    "heuristic*artificial intelligence": [
+        "P361",
+        "P31"
+    ],
+    "statistical classification*machine learning": [
+        "P361",
+        "P373"
+    ],
+    "data science*statistics": [
+        "P101",
+        "P361"
+    ],
+    "sweep line algorithm*computational geometry": [
+        "P101",
+        "P373"
+    ],
+    "aphelion*apoastron": [
+        "P1552",
+        "P361"
+    ],
+    "bibliomining*data mining": [
+        "P361",
+        "P31"
+    ],
+    "data science*computer science": [
+        "P101",
+        "P1889"
+    ],
+    "friendly artificial intelligence*artificial general intelligence": [
+        "P101",
+        "P1889"
+    ],
+    "cryptovirology*cryptography": [
+        "P1889",
+        "P361"
+    ],
+    "numerical calculus*numerical analysis": [
+        "P101",
+        "P373"
+    ],
+    "morphological parsing*natural language processing": [
+        "P1889",
+        "P373"
+    ],
+    "offline learning*machine learning": [
+        "P1889",
+        "P1552"
+    ],
+    "connectionist expert system*artificial neural network": [
+        "P1889",
+        "P1552"
+    ],
+    "probabilistic neural network*feedforward neural network": [
+        "P361",
+        "P373"
+    ],
+    "spiking neural network*artificial neural network": [
+        "P361",
+        "P373"
+    ],
+    "apoastron*apoapsis": [
+        "P1552",
+        "P31"
+    ],
+    "information visualization*computer graphics": [
+        "P101",
+        "P361"
+    ],
+    "stochastic neural network*artificial neural network": [
+        "P361",
+        "P31"
+    ],
+    "long short-term memory*recurrent neural network": [
+        "P101",
+        "P1889"
+    ],
+    "vertex*computer graphics": [
+        "P361",
+        "P31"
+    ],
+    "transfer learning*machine learning": [
+        "P1552",
+        "P373"
+    ],
+    "computer arithmetic*computer science": [
+        "P101",
+        "P1552"
+    ],
+    "geometric design*computational geometry": [
+        "P1889",
+        "P31"
+    ],
+    "pay it forward*reciprocity": [
+        "P1889",
+        "P31"
+    ],
+    "multi-task learning*machine learning": [
+        "P1552",
+        "P361"
+    ],
+    "compositional pattern-producing network*artificial neural network": [
+        "P1889",
+        "P1552"
+    ],
+    "computational neuroscience*computational science": [
+        "P101",
+        "P361"
+    ],
+    "statistical relational learning*machine learning": [
+        "P1552",
+        "P31"
+    ],
+    "isomap*nonlinear dimensionality reduction": [
+        "P1552",
+        "P31"
+    ],
+    "computer networking*computer science": [
+        "P1552",
+        "P373"
+    ],
+    "restricted boltzmann machine*stochastic neural network": [
+        "P1552",
+        "P361"
+    ],
+    "nonlinear dimensionality reduction*machine learning": [
+        "P101",
+        "P1552"
+    ],
+    "instant translation*machine translation": [
+        "P1889",
+        "P1552"
+    ],
+    "metabolomics*biochemistry": [
+        "P1889",
+        "P31"
+    ],
+    "feedforward neural network*artificial neural network": [
+        "P101",
+        "P361"
+    ],
+    "echo state network*recurrent neural network": [
+        "P101",
+        "P1552"
+    ],
+    "social network analysis*data mining": [
+        "P1552",
+        "P361"
+    ],
+    "computer graphics*applied computer science": [
+        "P101",
+        "P373"
+    ],
+    "protein\u2013protein interaction prediction*structural biology": [
+        "P101",
+        "P31"
+    ],
+    "molecular graphics*computer graphics": [
+        "P1552",
+        "P373"
+    ],
+    "protein\u2013protein interaction prediction*bioinformatics": [
+        "P373",
+        "P31"
+    ],
+    "dichotomy*dualism": [
+        "P373",
+        "P31"
+    ],
+    "metabolomics*computational biology": [
+        "P1552",
+        "P373"
+    ],
+    "computational humor*computational linguistics": [
+        "P361",
+        "P31"
+    ],
+    "extreme learning machine*feedforward neural network": [
+        "P373",
+        "P31"
+    ],
+    "generative adversarial network*generative model": [
+        "P373",
+        "P31"
+    ],
+    "deep belief network*bayesian network": [
+        "P1552",
+        "P361"
+    ],
+    "pathway analysis*bioinformatics": [
+        "P1552",
+        "P31"
+    ],
+    "feminist hci*human\u2013computer interaction": [
+        "P1552",
+        "P373"
+    ],
+    "cognitive geography*cognitive science": [
+        "P373",
+        "P31"
+    ],
+    "floating point arithmetic*computer arithmetic": [
+        "P1889",
+        "P373"
+    ],
+    "explainable ai*artificial intelligence": [
+        "P1889",
+        "P31"
+    ],
+    "music informatics*computer science": [
+        "P1889",
+        "P361"
+    ],
+    "archetypal analysis*unsupervised learning": [
+        "P101",
+        "P361"
+    ],
+    "approximate bayesian computation*bioinformatics": [
+        "P101",
+        "P361"
+    ],
+    "gated recurrent unit*recurrent neural network": [
+        "P1889",
+        "P373"
+    ],
+    "alexnet*convolutional neural network": [
+        "P101",
+        "P361"
+    ],
+    "hardware modification*modding": [
+        "P101",
+        "P1552"
+    ],
+    "transcriptomics*computational biology": [
+        "P361",
+        "P373"
+    ],
+    "multiple kernel learning*machine learning": [
+        "P1889",
+        "P1552"
+    ],
+    "deep neural network*artificial neural network": [
+        "P1889",
+        "P31"
+    ],
+    "data ethics*data science": [
+        "P1889",
+        "P373"
+    ],
+    "feature learning*machine learning": [
+        "P101",
+        "P361"
+    ],
+    "geometric algorithm*computational geometry": [
+        "P101",
+        "P361"
+    ],
+    "barrier resilience*computational geometry": [
+        "P361",
+        "P373"
+    ],
+    "inductive programming*supervised learning": [
+        "P1552",
+        "P373"
+    ],
+    "federated learning*machine learning": [
+        "P101",
+        "P361"
+    ],
+    "artificial empathy*artificial intelligence": [
+        "P101",
+        "P373"
+    ],
+    "deep belief network*artificial neural network": [
+        "P101",
+        "P361"
+    ],
+    "decision tree learning*machine learning": [
+        "P101",
+        "P1552"
+    ],
+    "geometric algorithm*combinatorial algorithm": [
+        "P1889",
+        "P31"
+    ],
+    "transcriptomics*genetics": [
+        "P101",
+        "P361"
+    ],
+    "federated learning*artificial intelligence": [
+        "P1552",
+        "P31"
+    ],
+    "brown clustering*hierarchical clustering": [
+        "P101",
+        "P31"
+    ],
+    "residual neural network*artificial neural network": [
+        "P361",
+        "P31"
+    ],
+    "indistinguishability obfuscation*cryptographic primitive": [
+        "P1889",
+        "P1552"
+    ],
+    "genome informatics*bioinformatics": [
+        "P1889",
+        "P361"
+    ],
+    "applied computing*computer science": [
+        "P101",
+        "P373"
+    ],
+    "computational creativity*computer science": [
+        "P361",
+        "P31"
+    ],
+    "informed search algorithm*heuristic": [
+        "P1552",
+        "P361"
+    ],
+    "computational finance*computer science": [
+        "P1889",
+        "P31"
+    ],
+    "capsule neural network*artificial neural network": [
+        "P1552",
+        "P373"
+    ],
+    "phyloinformatics*bioinformatics": [
+        "P1552",
+        "P361"
+    ],
+    "deep reinforcement learning*deep learning": [
+        "P101",
+        "P31"
+    ],
+    "weak supervision*machine learning": [
+        "P1889",
+        "P1552"
+    ],
+    "ecological informatics*ecology": [
+        "P373",
+        "P31"
+    ],
+    "seq-well*single-cell rna-seq": [
+        "P1552",
+        "P373"
+    ],
+    "wikification*entity linking": [
+        "P1889",
+        "P361"
+    ],
+    "machine learning*computer science": [
+        "P1889",
+        "P373"
+    ],
+    "natural language processing*computational linguistics": [
+        "P373",
+        "P31"
+    ],
+    "cel-seq*single-cell rna-seq": [
+        "P101",
+        "P1889"
+    ],
+    "machine learning*artificial intelligence": [
+        "P373",
+        "P279"
+    ],
+    "artificial intelligence*algorithm": [
+        "P101",
+        "P1889"
+    ],
+    "natural language processing*computer science": [
+        "P1552",
+        "P373"
+    ],
+    "artificial intelligence*computer science": [
+        "P1889",
+        "P373"
+    ],
+    "computer science*formal science": [
+        "P1889",
+        "P1552"
+    ],
+    "data engineering*computer science": [
+        "P101",
+        "P361"
+    ],
+    "natural language processing*artificial intelligence": [
+        "P1889",
+        "P373"
+    ],
+    "decision theory*statistics": [
+        "P361",
+        "P31"
+    ],
+    "calculus*advanced mathematics": [
+        "P1889",
+        "P361"
+    ],
+    "decision theory*economics": [
+        "P1889",
+        "P1552"
+    ],
+    "calculus*mathematical analysis": [
+        "P101",
+        "P361"
+    ],
+    "craniometry*cephalometry": [
+        "P1889",
+        "P361"
+    ],
+    "canonical correlation analysis*multivariate analysis": [
+        "P101",
+        "P373"
+    ],
+    "complex analysis*mathematical analysis": [
+        "P1889",
+        "P31"
+    ],
+    "hyperbolic geometry*non-euclidean geometry": [
+        "P1889",
+        "P279"
+    ],
+    "menin*page": [
+        "P101",
+        "P31"
+    ],
+    "mathematical physics*mathematics": [
+        "P1889",
+        "P361"
+    ],
+    "working class*social class": [
+        "P1552",
+        "P373"
+    ],
+    "mathematical finance*applied mathematics": [
+        "P101",
+        "P31"
+    ],
+    "biostatistics*biology": [
+        "P361",
+        "P373"
+    ],
+    "arhat*bhikkhu": [
+        "P101",
+        "P31"
+    ],
+    "biostatistics*biometry": [
+        "P101",
+        "P373"
+    ],
+    "calculus of variations*mathematical analysis": [
+        "P1889",
+        "P31"
+    ],
+    "caste*social stratification": [
+        "P1889",
+        "P361"
+    ],
+    "social class*social group": [
+        "P1552",
+        "P361"
+    ],
+    "aging of japan*population ageing": [
+        "P373",
+        "P31"
+    ],
+    "noble title*rank": [
+        "P101",
+        "P31"
+    ],
+    "spherical geometry*non-euclidean geometry": [
+        "P101",
+        "P31"
+    ],
+    "social class*social stratification": [
+        "P361",
+        "P373"
+    ],
+    "burakumin*untouchability": [
+        "P101",
+        "P373"
+    ],
+    "bhikkhuni*buddhist nun": [
+        "P1552",
+        "P373"
+    ],
+    "erlang distribution*gamma distribution": [
+        "P361",
+        "P373"
+    ],
+    "grand master*president": [
+        "P361",
+        "P373"
+    ],
+    "butler*valet": [
+        "P1552",
+        "P373"
+    ],
+    "auction theory*game theory": [
+        "P373",
+        "P31"
+    ],
+    "algorithmic game theory*algorithm design": [
+        "P101",
+        "P1889"
+    ],
+    "auction theory*economics": [
+        "P101",
+        "P1889"
+    ],
+    "bounded rationality*decision theory": [
+        "P1889",
+        "P361"
+    ],
+    "bhikkhuni*nun": [
+        "P1889",
+        "P1552"
+    ],
+    "riemannian geometry*differential geometry": [
+        "P1889",
+        "P373"
+    ],
+    "group theory*mathematics": [
+        "P1889",
+        "P361"
+    ],
+    "songbun*social class": [
+        "P101",
+        "P1889"
+    ],
+    "extrapolation*prediction": [
+        "P1889",
+        "P1552"
+    ],
+    "trend estimation*time series analysis": [
+        "P1552",
+        "P373"
+    ],
+    "butler*domestic worker": [
+        "P101",
+        "P361"
+    ],
+    "grand master*title": [
+        "P1889",
+        "P1552"
+    ],
+    "real analysis*mathematical analysis": [
+        "P1889",
+        "P31"
+    ],
+    "grand master*position": [
+        "P1889",
+        "P373"
+    ],
+    "duke of brabant*crown prince": [
+        "P101",
+        "P1552"
+    ],
+    "grand master*superior general": [
+        "P1889",
+        "P1552"
+    ],
+    "bhikkhu*monk": [
+        "P1889",
+        "P373"
+    ],
+    "bhikkhuni*woman": [
+        "P361",
+        "P373"
+    ],
+    "protovestiarios*comes": [
+        "P361",
+        "P373"
+    ],
+    "r\u014dshi*monk": [
+        "P101",
+        "P1552"
+    ],
+    "earthling*organism": [
+        "P1889",
+        "P31"
+    ],
+    "geometry of numbers*number theory": [
+        "P1552",
+        "P361"
+    ],
+    "earthling*life": [
+        "P101",
+        "P31"
+    ],
+    "spatial analysis*statistics": [
+        "P1552",
+        "P361"
+    ],
+    "elliptic geometry*non-euclidean geometry": [
+        "P101",
+        "P1552"
+    ],
+    "fourier analysis*harmonic analysis": [
+        "P1889",
+        "P1552"
+    ],
+    "digital geometry*discrete geometry": [
+        "P361",
+        "P31"
+    ],
+    "class field theory*algebraic number theory": [
+        "P1889",
+        "P361"
+    ],
+    "evolutionarily stable strategy*nash equilibrium": [
+        "P1552",
+        "P373"
+    ],
+    "renewal theory*probability theory": [
+        "P373",
+        "P31"
+    ],
+    "don*noble title": [
+        "P101",
+        "P1552"
+    ],
+    "manorialism*landed property": [
+        "P373",
+        "P31"
+    ],
+    "nonstandard analysis*mathematical analysis": [
+        "P361",
+        "P31"
+    ],
+    "don*style": [
+        "P101",
+        "P1552"
+    ],
+    "geometric graph theory*geometry": [
+        "P1552",
+        "P31"
+    ],
+    "nomen*given name": [
+        "P1889",
+        "P1552"
+    ],
+    "nomen*name": [
+        "P1552",
+        "P361"
+    ],
+    "group cohomology*mathematics": [
+        "P101",
+        "P31"
+    ],
+    "manorialism*organization": [
+        "P1552",
+        "P361"
+    ],
+    "goniometry*geometry": [
+        "P1889",
+        "P1552"
+    ],
+    "primor*noble title": [
+        "P1552",
+        "P373"
+    ],
+    "feudal land tenure*fiefdom": [
+        "P1889",
+        "P31"
+    ],
+    "expected utility hypothesis*decision theory": [
+        "P101",
+        "P361"
+    ],
+    "multivariate analysis*multivariate statistics": [
+        "P373",
+        "P31"
+    ],
+    "engineering mathematics*applied mathematics": [
+        "P101",
+        "P31"
+    ],
+    "demographics*statistics": [
+        "P1552",
+        "P373"
+    ],
+    "untouchability*discrimination": [
+        "P1889",
+        "P1552"
+    ],
+    "symplectic geometry*differential geometry": [
+        "P361",
+        "P373"
+    ],
+    "symplectic geometry*differential topology": [
+        "P1552",
+        "P31"
+    ],
+    "p-adic analysis*number theory": [
+        "P373",
+        "P31"
+    ],
+    "p-adic analysis*mathematical analysis": [
+        "P101",
+        "P361"
+    ],
+    "cephalometry*anthropometry": [
+        "P101",
+        "P1889"
+    ],
+    "applied statistics*applied mathematics": [
+        "P101",
+        "P1552"
+    ],
+    "quantum geometry*theoretical physics": [
+        "P1889",
+        "P31"
+    ],
+    "constructive analysis*mathematical analysis": [
+        "P1552",
+        "P361"
+    ],
+    "demographic profile*demographics": [
+        "P101",
+        "P1889"
+    ],
+    "information geometry*probability theory": [
+        "P101",
+        "P1552"
+    ],
+    "information geometry*information theory": [
+        "P1889",
+        "P373"
+    ],
+    "computable topology*mathematics": [
+        "P361",
+        "P31"
+    ],
+    "geometric analysis*geometry": [
+        "P1889",
+        "P361"
+    ],
+    "smooth infinitesimal analysis*synthetic differential geometry": [
+        "P1552",
+        "P31"
+    ],
+    "camerlengo*chamberlain": [
+        "P1552",
+        "P361"
+    ],
+    "architectural geometry*architecture": [
+        "P1889",
+        "P1552"
+    ],
+    "information geometry*statistics": [
+        "P101",
+        "P361"
+    ],
+    "caballerizo*equerry": [
+        "P101",
+        "P31"
+    ],
+    "smooth infinitesimal analysis*mathematical analysis": [
+        "P1889",
+        "P361"
+    ],
+    "\u015bik\u1e63am\u0101\u1e47\u0101*nun": [
+        "P101",
+        "P373"
+    ],
+    "hereditary title*noble title": [
+        "P101",
+        "P31"
+    ],
+    "probability theory*mathematics": [
+        "P1889",
+        "P31"
+    ],
+    "cephalometric analysis*cephalometry": [
+        "P1889",
+        "P361"
+    ],
+    "computable analysis*mathematical analysis": [
+        "P1889",
+        "P373"
+    ],
+    "kharol*caste": [
+        "P101",
+        "P361"
+    ],
+    "maharana*position": [
+        "P361",
+        "P31"
+    ],
+    "proximity analysis*spatial analysis": [
+        "P1889",
+        "P31"
+    ],
+    "maharana*sovereign": [
+        "P1889",
+        "P373"
+    ],
+    "spin geometry*differential geometry": [
+        "P101",
+        "P1889"
+    ],
+    "subsidiary title*hereditary title": [
+        "P1552",
+        "P373"
+    ],
+    "anthropometry*anthropology": [
+        "P373",
+        "P31"
+    ],
+    "spatial econometrics*spatial analysis": [
+        "P1552",
+        "P361"
+    ],
+    "rubinstein bargaining model*game theory": [
+        "P1889",
+        "P1552"
+    ],
+    "hobbesian trap*game theory": [
+        "P361",
+        "P373"
+    ],
+    "visual calculus*integral calculus": [
+        "P101",
+        "P373"
+    ],
+    "time series analysis*statistics": [
+        "P101",
+        "P31"
+    ],
+    "kharot*scheduled caste": [
+        "P101",
+        "P1889"
+    ],
+    "quantum game theory*quantum mechanics": [
+        "P361",
+        "P373"
+    ],
+    "negoro-sh\u016b*warrior monk": [
+        "P1889",
+        "P373"
+    ],
+    "circular analysis*error": [
+        "P361",
+        "P373"
+    ],
+    "statistical genetics*statistics": [
+        "P1889",
+        "P361"
+    ],
+    "circular analysis*statistics": [
+        "P1889",
+        "P1552"
+    ],
+    "mathematical linguistics*mathematics": [
+        "P101",
+        "P1552"
+    ],
+    "k-theory*mathematics": [
+        "P361",
+        "P31"
+    ],
+    "mathematical programming*mathematics": [
+        "P1552",
+        "P373"
+    ],
+    "statistical data*statistics": [
+        "P1552",
+        "P31"
+    ],
+    "rational mechanics*mathematics": [
+        "P1889",
+        "P373"
+    ],
+    "rational mechanics*classical mechanics": [
+        "P101",
+        "P1552"
+    ],
+    "maternal mortality ratio*mortality rate": [
+        "P101",
+        "P1889"
+    ],
+    "marquisate*noble title": [
+        "P101",
+        "P31"
+    ],
+    "mathematical thinking*mathematics": [
+        "P101",
+        "P1552"
+    ],
+    "sheaf theory*mathematics": [
+        "P361",
+        "P31"
+    ],
+    "senhorio*fiefdom": [
+        "P1552",
+        "P373"
+    ],
+    "old man*elderly people": [
+        "P373",
+        "P31"
+    ],
+    "number theory*mathematics": [
+        "P1552",
+        "P31"
+    ],
+    "mathematics*exact science": [
+        "P1889",
+        "P31"
+    ],
+    "mathematics*formal science": [
+        "P101",
+        "P373"
+    ],
+    "likelihood function*statistics": [
+        "P1889",
+        "P31"
+    ],
+    "game theory*decision theory": [
+        "P1552",
+        "P31"
+    ],
+    "world population*human population": [
+        "P373",
+        "P31"
+    ],
+    "trigonometry*geometry": [
+        "P1889",
+        "P373"
+    ],
+    "statistics*formal science": [
+        "P361",
+        "P373"
+    ],
+    "girl*child": [
+        "P101",
+        "P1889"
+    ],
+    "statistics*mathematics": [
+        "P279",
+        "P31"
+    ],
+    "girl*female human": [
+        "P373",
+        "P279"
+    ],
+    "spherical trigonometry*spherical geometry": [
+        "P1889",
+        "P31"
+    ],
+    "geometry*mathematics": [
+        "P101",
+        "P1889"
+    ],
+    "nutrigenomics*food science": [
+        "P361",
+        "P279"
+    ],
+    "haval*cryptographic hash function": [
+        "P1889",
+        "P361"
+    ],
+    "independent component analysis*method": [
+        "P373",
+        "P279"
+    ],
+    "dualism*philosophical concept": [
+        "P361",
+        "P279"
+    ],
+    "copiale cipher*manuscript": [
+        "P361",
+        "P373"
+    ],
+    "genomics*branch of biology": [
+        "P373",
+        "P279"
+    ],
+    "unsupervised learning*method": [
+        "P373",
+        "P279"
+    ],
+    "has-160*cryptographic hash function": [
+        "P1552",
+        "P373"
+    ],
+    "snefru*cryptographic hash function": [
+        "P361",
+        "P279"
+    ],
+    "virtual private network*extension": [
+        "P101",
+        "P1889"
+    ],
+    "softimage*3d computer graphics": [
+        "P373",
+        "P279"
+    ],
+    "extension*semantics": [
+        "P101",
+        "P1889"
+    ],
+    "marcionism*heresy": [
+        "P1552",
+        "P279"
+    ],
+    "parallax scrolling*computer graphics": [
+        "P101",
+        "P373"
+    ],
+    "computational chemistry*branch of chemistry": [
+        "P1889",
+        "P373"
+    ],
+    "rsa*cryptosystem": [
+        "P1889",
+        "P373"
+    ],
+    "skein*cryptographic hash function": [
+        "P1552",
+        "P373"
+    ],
+    "supervised learning*algorithm": [
+        "P1889",
+        "P1552"
+    ],
+    "cryptographic hash function*cryptographic primitive": [
+        "P101",
+        "P1889"
+    ],
+    "md5*cryptographic hash function": [
+        "P101",
+        "P279"
+    ],
+    "bing translator*machine translation": [
+        "P101",
+        "P279"
+    ],
+    "copiale cipher*cryptography": [
+        "P361",
+        "P279"
+    ],
+    "decisional diffie\u2013hellman assumption*cryptography": [
+        "P1552",
+        "P373"
+    ],
+    "bisection method*root-finding algorithm": [
+        "P361",
+        "P373"
+    ],
+    "perceptron*algorithm": [
+        "P373",
+        "P279"
+    ],
+    "nutrigenomics*nutrition": [
+        "P1889",
+        "P279"
+    ],
+    "md4*cryptographic hash function": [
+        "P1552",
+        "P361"
+    ],
+    "robotics*industry": [
+        "P101",
+        "P361"
+    ],
+    "md2*cryptographic hash function": [
+        "P1889",
+        "P373"
+    ],
+    "julius*speech recognition": [
+        "P361",
+        "P279"
+    ],
+    "ripemd*cryptographic hash function": [
+        "P361",
+        "P279"
+    ],
+    "algorithmic probability*algorithmic information theory": [
+        "P101",
+        "P373"
+    ],
+    "whirlpool*cryptographic hash function": [
+        "P1889",
+        "P279"
+    ],
+    "gr\u00f8stl*cryptographic hash function": [
+        "P101",
+        "P1552"
+    ],
+    "md6*cryptographic hash function": [
+        "P1889",
+        "P361"
+    ],
+    "split screen*computer graphics": [
+        "P1552",
+        "P279"
+    ],
+    "ripemd*hashing": [
+        "P101",
+        "P1889"
+    ],
+    "chan's algorithm*convex hull algorithm": [
+        "P1552",
+        "P361"
+    ],
+    "duolingo*website": [
+        "P101",
+        "P279"
+    ],
+    "very smooth hash*cryptographic hash function": [
+        "P101",
+        "P279"
+    ],
+    "decimal floating point*computer arithmetic": [
+        "P373",
+        "P279"
+    ],
+    "kirkpatrick\u2013seidel algorithm*convex hull algorithm": [
+        "P1889",
+        "P373"
+    ],
+    "adaboost*algorithm": [
+        "P1552",
+        "P279"
+    ],
+    "beam search*search algorithm": [
+        "P101",
+        "P361"
+    ],
+    "jh*cryptographic hash function": [
+        "P1889",
+        "P1552"
+    ],
+    "algorithmic learning theory*machine learning": [
+        "P101",
+        "P361"
+    ],
+    "emily howell*computer program": [
+        "P361",
+        "P373"
+    ],
+    "n-hash*cryptographic hash function": [
+        "P1889",
+        "P361"
+    ],
+    "oblivious transfer*cryptography": [
+        "P361",
+        "P279"
+    ],
+    "exslt*extension": [
+        "P1552",
+        "P373"
+    ],
+    "caduceus*expert system": [
+        "P1889",
+        "P279"
+    ],
+    "tiger*cryptographic hash function": [
+        "P1889",
+        "P279"
+    ],
+    "duolingo*mobile app": [
+        "P1889",
+        "P279"
+    ],
+    "algorithmic information theory*theoretical computer science": [
+        "P361",
+        "P373"
+    ],
+    "gender*dyad": [
+        "P101",
+        "P373"
+    ],
+    "ring signature*cryptographic primitive": [
+        "P1889",
+        "P1552"
+    ],
+    "algorithmic inference*machine learning": [
+        "P101",
+        "P279"
+    ],
+    "mod*modding": [
+        "P101",
+        "P1552"
+    ],
+    "streebog*cryptographic hash function": [
+        "P373",
+        "P279"
+    ],
+    "simsimi*application": [
+        "P101",
+        "P373"
+    ],
+    "aiva*artificial intelligence": [
+        "P1889",
+        "P1552"
+    ],
+    "streebog*gost": [
+        "P373",
+        "P279"
+    ],
+    "personalized search*personalization": [
+        "P373",
+        "P279"
+    ],
+    "prince*block cipher": [
+        "P1889",
+        "P373"
+    ],
+    "new computer express*magazine": [
+        "P1552",
+        "P373"
+    ],
+    "hirohata merc*custom car": [
+        "P1889",
+        "P373"
+    ],
+    "change and continuity*dichotomy": [
+        "P1889",
+        "P373"
+    ],
+    "kernel perceptron*algorithm": [
+        "P101",
+        "P1552"
+    ],
+    "sequence labeling*pattern recognition": [
+        "P1889",
+        "P373"
+    ],
+    "ntru*public-key cryptography": [
+        "P1552",
+        "P361"
+    ],
+    "talking angela*chatterbot": [
+        "P101",
+        "P361"
+    ],
+    "l-notation*computational number theory": [
+        "P1552",
+        "P361"
+    ],
+    "male connector*gender": [
+        "P1889",
+        "P361"
+    ],
+    "good and evil*dichotomy": [
+        "P101",
+        "P373"
+    ],
+    "aiva*algorithm": [
+        "P361",
+        "P373"
+    ],
+    "kupyna*cryptographic hash function": [
+        "P1889",
+        "P1552"
+    ],
+    "friday*fictional character": [
+        "P1552",
+        "P373"
+    ],
+    "reciprocity*concept": [
+        "P101",
+        "P1552"
+    ],
+    "smash*cryptographic hash function": [
+        "P373",
+        "P279"
+    ],
+    "simsimi*artificial intelligence": [
+        "P1889",
+        "P1552"
+    ],
+    "gpt-2*language model": [
+        "P1889",
+        "P1552"
+    ],
+    "infer.net*machine learning framework": [
+        "P101",
+        "P1552"
+    ],
+    "gpt-3*language model": [
+        "P1889",
+        "P1552"
+    ],
+    "beauty and ugliness*dichotomy": [
+        "P101",
+        "P361"
+    ],
+    "infer.net*machine learning": [
+        "P1552",
+        "P361"
+    ],
+    "stylegan*generative adversarial network": [
+        "P1552",
+        "P279"
+    ],
+    "generative pre-trained transformer*language model": [
+        "P361",
+        "P373"
+    ],
+    "bliss*photograph": [
+        "P1552",
+        "P373"
+    ],
+    "bliss*computer wallpaper": [
+        "P361",
+        "P373"
+    ],
+    "cryptography*science": [
+        "P1889",
+        "P279"
+    ],
+    "computer science*academic discipline": [
+        "P1889",
+        "P373"
+    ],
+    "computer science*academic major": [
+        "P1552",
+        "P361"
+    ],
+    "doctor*emergency medical hologram": [
+        "P361",
+        "P373"
+    ],
+    "ml.net*machine learning": [
+        "P101",
+        "P1552"
+    ],
+    "protonvpn*virtual private network": [
+        "P1552",
+        "P361"
+    ],
+    "quark*cryptographic hash function": [
+        "P101",
+        "P1552"
+    ],
+    "el matador*custom car": [
+        "P101",
+        "P373"
+    ],
+    "marquis*custom car": [
+        "P1552",
+        "P373"
+    ],
+    "cooling and heating*combinatorial game theory": [
+        "P101",
+        "P361"
+    ],
+    "u-net*convolutional neural network": [
+        "P1889",
+        "P1552"
+    ],
+    "bert*language model": [
+        "P1552",
+        "P373"
+    ],
+    "grand master*custom car": [
+        "P101",
+        "P373"
+    ],
+    "exodus*custom car": [
+        "P1552",
+        "P279"
+    ],
+    "alphafold*artificial intelligence": [
+        "P101",
+        "P1552"
+    ],
+    "impact*custom car": [
+        "P1889",
+        "P1552"
+    ],
+    "cimon*robot": [
+        "P361",
+        "P373"
+    ],
+    "ml.net*machine learning framework": [
+        "P1889",
+        "P1552"
+    ],
+    "distributed point function*cryptographic primitive": [
+        "P1552",
+        "P373"
+    ],
+    "cadzzilla*custom car": [
+        "P1552",
+        "P279"
+    ],
+    "comes sacrarum largitionum*position": [
+        "P361",
+        "P373"
+    ],
+    "chamberlain*profession": [
+        "P1889",
+        "P279"
+    ],
+    "cybo*family name": [
+        "P1889",
+        "P361"
+    ],
+    "cybo*prince": [
+        "P101",
+        "P279"
+    ],
+    "santa sabina*minor basilica": [
+        "P1552",
+        "P373"
+    ],
+    "italians in germany*italian diaspora": [
+        "P1889",
+        "P279"
+    ],
+    "chamberlain*award": [
+        "P1889",
+        "P373"
+    ],
+    "chamberlain*rank": [
+        "P1552",
+        "P361"
+    ],
+    "namiestnik of poland*viceroy": [
+        "P1889",
+        "P373"
+    ],
+    "inclusion\u2013exclusion principle*probability": [
+        "P101",
+        "P1552"
+    ],
+    "group theory*area of mathematics": [
+        "P1889",
+        "P373"
+    ],
+    "magi*title": [
+        "P1889",
+        "P361"
+    ],
+    "butler*position": [
+        "P1889",
+        "P373"
+    ],
+    "boncompagni*prince": [
+        "P361",
+        "P279"
+    ],
+    "boncompagni*noble family": [
+        "P361",
+        "P279"
+    ],
+    "san callisto*cardinal title": [
+        "P101",
+        "P1552"
+    ],
+    "inclusion\u2013exclusion principle*combinatorics": [
+        "P361",
+        "P373"
+    ],
+    "butler*profession": [
+        "P1552",
+        "P279"
+    ],
+    "pure mathematics*academic major": [
+        "P1552",
+        "P361"
+    ],
+    "evolutionarily stable strategy*concept": [
+        "P1552",
+        "P361"
+    ],
+    "damrong rajanubhab*prince": [
+        "P361",
+        "P279"
+    ],
+    "protovestiarios*position": [
+        "P101",
+        "P1889"
+    ],
+    "eberhard*graf": [
+        "P1552",
+        "P373"
+    ],
+    "kuge*aristocrat": [
+        "P1552",
+        "P361"
+    ],
+    "cagot*people": [
+        "P361",
+        "P373"
+    ],
+    "allen's interval algebra*calculus": [
+        "P361",
+        "P279"
+    ],
+    "eberhard*human": [
+        "P101",
+        "P373"
+    ],
+    "spatial analysis*technique": [
+        "P101",
+        "P373"
+    ],
+    "sant'andrea della valle*minor basilica": [
+        "P101",
+        "P279"
+    ],
+    "ling rinpoche*tulku": [
+        "P101",
+        "P1552"
+    ],
+    "tsuchigumo*y\u014dkai": [
+        "P373",
+        "P279"
+    ],
+    "manorialism*economic system": [
+        "P373",
+        "P279"
+    ],
+    "valet de chambre*position": [
+        "P1889",
+        "P361"
+    ],
+    "duchy of castro*duke": [
+        "P1552",
+        "P373"
+    ],
+    "santa teresa*parish church": [
+        "P101",
+        "P1889"
+    ],
+    "beltrami identity*calculus of variations": [
+        "P101",
+        "P1552"
+    ],
+    "function*elementary mathematics": [
+        "P1552",
+        "P373"
+    ],
+    "arung palakka*prince": [
+        "P1889",
+        "P279"
+    ],
+    "viscountcy*fiefdom": [
+        "P1889",
+        "P373"
+    ],
+    "anthropometry*academic discipline": [
+        "P1889",
+        "P361"
+    ],
+    "porism*proposition": [
+        "P361",
+        "P279"
+    ],
+    "non-gaussianity*statistics": [
+        "P1552",
+        "P373"
+    ],
+    "camerlengo*title": [
+        "P101",
+        "P361"
+    ],
+    "comes hispaniarum*position": [
+        "P101",
+        "P373"
+    ],
+    "comes domesticorum*position": [
+        "P361",
+        "P373"
+    ],
+    "obaala*title": [
+        "P101",
+        "P373"
+    ],
+    "ali'i*nobility": [
+        "P101",
+        "P1889"
+    ],
+    "petersson trace formula*mathematics": [
+        "P1889",
+        "P1552"
+    ],
+    "house of chiefs*nobility": [
+        "P1889",
+        "P279"
+    ],
+    "porism*corollary": [
+        "P101",
+        "P373"
+    ],
+    "wass de czege*family": [
+        "P1889",
+        "P373"
+    ],
+    "togashi masachika*daimyo": [
+        "P1552",
+        "P361"
+    ],
+    "chiefdom of yongning*tusi": [
+        "P361",
+        "P279"
+    ],
+    "andriana*nobility": [
+        "P1552",
+        "P373"
+    ],
+    "valet*profession": [
+        "P1889",
+        "P279"
+    ],
+    "marca geronis*margrave": [
+        "P1552",
+        "P373"
+    ],
+    "chiefdom of lijiang*tusi": [
+        "P373",
+        "P279"
+    ],
+    "togashi masachika*general": [
+        "P1889",
+        "P279"
+    ],
+    "saionji family*kuge": [
+        "P101",
+        "P279"
+    ],
+    "chiefdom of lithang*tusi": [
+        "P101",
+        "P1889"
+    ],
+    "widmann*baron": [
+        "P1552",
+        "P361"
+    ],
+    "maternal mortality ratio*measurement": [
+        "P1889",
+        "P373"
+    ],
+    "chiefdom of bathang*tusi": [
+        "P1552",
+        "P361"
+    ],
+    "chiefdom of mangshi*tusi": [
+        "P1889",
+        "P279"
+    ],
+    "manteri*nobility": [
+        "P101",
+        "P373"
+    ],
+    "luciano*king": [
+        "P101",
+        "P1889"
+    ],
+    "nujeen mustafa*refugee": [
+        "P101",
+        "P1889"
+    ],
+    "sant'alberto magno*parish": [
+        "P1889",
+        "P279"
+    ],
+    "siunia*nakharar": [
+        "P361",
+        "P279"
+    ],
+    "comes rei militaris*military rank": [
+        "P361",
+        "P373"
+    ],
+    "rights holder*profession": [
+        "P1889",
+        "P361"
+    ],
+    "dr. caldera*criminal": [
+        "P1552",
+        "P361"
+    ],
+    "kate middleton*prince": [
+        "P1552",
+        "P361"
+    ],
+    "saxon eastern march*margrave": [
+        "P1889",
+        "P373"
+    ],
+    "mathematics*academic discipline": [
+        "P361",
+        "P373"
+    ],
+    "fromo kesaro*king": [
+        "P361",
+        "P279"
+    ],
+    "principal component analysis*statistical method": [
+        "P1889",
+        "P279"
+    ],
+    "infant boy*baby": [
+        "P361",
+        "P373"
+    ],
+    "geometry*area of mathematics": [
+        "P101",
+        "P361"
+    ],
+    "teenage boy*teenager": [
+        "P1552",
+        "P361"
+    ],
+    "number theory*area of mathematics": [
+        "P101",
+        "P1889"
+    ],
+    "infant girl*baby": [
+        "P1552",
+        "P373"
+    ],
+    "good and evil*philosophy": [
+        "P1552",
+        "P31"
+    ],
+    "adaboost*machine learning": [
+        "P1552",
+        "P279"
+    ],
+    "medical statistics*medicine": [
+        "P1552",
+        "P31"
+    ],
+    "gender*grammatical gender": [
+        "P373",
+        "P279"
+    ],
+    "artificial intelligence*intelligence amplification": [
+        "P101",
+        "P1552"
+    ],
+    "custom car*custom motorcycle": [
+        "P101",
+        "P31"
+    ],
+    "custom motorcycle*custom car": [
+        "P101",
+        "P279"
+    ],
+    "robotics*cybernetics": [
+        "P279",
+        "P31"
+    ],
+    "dualism*yin and yang": [
+        "P361",
+        "P373"
+    ],
+    "cheminformatics*computational chemistry": [
+        "P1889",
+        "P279"
+    ],
+    "md5*maryland route 5": [
+        "P1552",
+        "P361"
+    ],
+    "computer science*informatics": [
+        "P101",
+        "P373"
+    ],
+    "nutrigenomics*nutritional genomics": [
+        "P361",
+        "P31"
+    ],
+    "dualism*dichotomy": [
+        "P1552",
+        "P361"
+    ],
+    "artificial intelligence*machine learning": [
+        "P1552",
+        "P361"
+    ],
+    "periapsis*periastron": [
+        "P101",
+        "P279"
+    ],
+    "user experience*user interface": [
+        "P101",
+        "P279"
+    ],
+    "data science*information science": [
+        "P373",
+        "P279"
+    ],
+    "female connector*electrical receptacle": [
+        "P1552",
+        "P361"
+    ],
+    "decimal floating point*binary-coded decimal": [
+        "P101",
+        "P373"
+    ],
+    "magi*magician": [
+        "P373",
+        "P279"
+    ],
+    "brutus of troy*brutus greenshield": [
+        "P1552",
+        "P361"
+    ],
+    "demographics*demography": [
+        "P1552",
+        "P31"
+    ],
+    "magi*mago island": [
+        "P101",
+        "P279"
+    ],
+    "marquisate*marquesado": [
+        "P361",
+        "P279"
+    ],
+    "game theory*game studies": [
+        "P373",
+        "P31"
+    ],
+    "game theory*combinatorial game theory": [
+        "P101",
+        "P31"
+    ],
+    "swedish noble family*finnish noble family": [
+        "P373",
+        "P31"
+    ],
+    "teenage boy*young men": [
+        "P1552",
+        "P279"
+    ],
+    "maternal mortality ratio*maternal mortality rate": [
+        "P1552",
+        "P361"
+    ],
+    "calculus*multivariable calculus": [
+        "P101",
+        "P373"
+    ],
+    "number theory*numerology": [
+        "P101",
+        "P373"
+    ],
+    "girl*girlfriend": [
+        "P373",
+        "P279"
+    ],
+    "human population*stand": [
+        "P1552",
+        "P279"
+    ],
+    "cryptography*cryptology": [
+        "P101",
+        "P1552"
+    ],
+    "artificial intelligence*cognitive science": [
+        "P101",
+        "P31"
+    ],
+    "computer graphics*art": [
+        "P101",
+        "P373"
+    ],
+    "analysis of algorithms*computer science": [
+        "P1889",
+        "P31"
+    ],
+    "split screen*video game": [
+        "P1552",
+        "P373"
+    ],
+    "computational complexity theory*theoretical computer science": [
+        "P1889",
+        "P31"
+    ],
+    "aes instruction set*x86": [
+        "P1552",
+        "P279"
+    ],
+    "bioinformatics*computer science": [
+        "P101",
+        "P1889"
+    ],
+    "perihelion*perihelion and aphelion": [
+        "P1889",
+        "P1552"
+    ],
+    "mind\u2013body dualism*philosophy of mind": [
+        "P373",
+        "P31"
+    ],
+    "computational complexity theory*mathematics": [
+        "P1552",
+        "P31"
+    ],
+    "apsis*orbit": [
+        "P101",
+        "P279"
+    ],
+    "mathematical morphology*image processing": [
+        "P1889",
+        "P31"
+    ],
+    "group theory*abstract algebra": [
+        "P1889",
+        "P31"
+    ],
+    "social stratification*social structure": [
+        "P373",
+        "P279"
+    ],
+    "burgess*social structure": [
+        "P373",
+        "P31"
+    ],
+    "diophantine geometry*arithmetic geometry": [
+        "P1552",
+        "P279"
+    ],
+    "herrschaft*feudalism": [
+        "P1889",
+        "P1552"
+    ],
+    "number theory*pure mathematics": [
+        "P279",
+        "P31"
+    ],
+    "nobility predicate*family name": [
+        "P101",
+        "P1552"
+    ],
+    "descriptive geometry*engineering": [
+        "P101",
+        "P1889"
+    ],
+    "elementary mathematics*mathematics education": [
+        "P1552",
+        "P31"
+    ],
+    "noble title*nobility": [
+        "P1552",
+        "P279"
+    ],
+    "human\u2013computer interaction*human-computer interaction": [
+        "P101",
+        "P1889"
+    ],
+    "expert system*expert systems": [
+        "P1552",
+        "P279"
+    ],
+    "virtual private network*virtual private networks": [
+        "P1552",
+        "P279"
+    ],
+    "computability theory*computer science": [
+        "P1552",
+        "P31"
+    ],
+    "artificial neural network*artificial neural networks": [
+        "P279",
+        "P31"
+    ],
+    "custom car*custom cars": [
+        "P101",
+        "P31"
+    ],
+    "quantum information science*quantum computing": [
+        "P101",
+        "P1889"
+    ],
+    "computational biology*bioinformatics": [
+        "P361",
+        "P31"
+    ],
+    "dichotomy*dichotomies": [
+        "P1889",
+        "P31"
+    ],
+    "cimon*cimon (robot)": [
+        "P101",
+        "P361"
+    ],
+    "decision support system*decision support systems": [
+        "P101",
+        "P279"
+    ],
+    "custom motorcycle*custom motorcycles": [
+        "P1552",
+        "P31"
+    ],
+    "caste*castes": [
+        "P1552",
+        "P279"
+    ],
+    "bhikkhu*buddhist monks": [
+        "P1552",
+        "P361"
+    ],
+    "chamberlain*chamberlains": [
+        "P1889",
+        "P279"
+    ],
+    "butler*butlers": [
+        "P1889",
+        "P279"
+    ],
+    "working class*working-class": [
+        "P361",
+        "P279"
+    ],
+    "barberini*house of barberini": [
+        "P101",
+        "P361"
+    ],
+    "bhikkhuni*buddhist nuns": [
+        "P1552",
+        "P279"
+    ],
+    "duke of brabant*dukes of brabant": [
+        "P101",
+        "P361"
+    ],
+    "valet*valets": [
+        "P101",
+        "P31"
+    ],
+    "elderly people*old people": [
+        "P1552",
+        "P279"
+    ],
+    "gnomonics*sundials": [
+        "P1889",
+        "P361"
+    ],
+    "mahasiddha*mahasiddhas": [
+        "P361",
+        "P31"
+    ],
+    "japanese mathematics*wasan": [
+        "P101",
+        "P1889"
+    ],
+    "greek mathematics*ancient greek mathematicians": [
+        "P1552",
+        "P31"
+    ],
+    "girl*girls": [
+        "P101",
+        "P279"
+    ],
+    "computer graphics*level of detail": [
+        "P1889",
+        "P361"
+    ],
+    "poor reader*reading disability": [
+        "P279",
+        "P31"
+    ],
+    "old man*old age": [
+        "P361",
+        "P373"
+    ],
+    "bhikkhu*male": [
+        "P101",
+        "P31"
+    ]
+}

@@ -1,0 +1,68 @@
+Part III
+
+Deep Learning Research
+
+486
+
+This part of the book describes the more ambitious and advanced approaches
+to deep learning, currently pursued by the research community.
+In the previous parts of the book, we have shown how to solve supervised
+learning problems—how to learn to map one vector to another, given enough
+examples of the mapping.
+Not all problems we might want to solve fall into this category. We may
+wish to generate new examples, or determine how likely some point is, or handle
+missing values and take advantage of a large set of unlabeled examples or examples
+from related tasks. A shortcoming of the current state of the art for industrial
+applications is that our learning algorithms require large amounts of supervised
+data to achieve good accuracy. In this part of the book, we discuss some of
+the speculative approaches to reducing the amount of labeled data necessary
+for existing models to work well and be applicable across a broader range of
+tasks. Accomplishing these goals usually requires some form of unsupervised or
+semi-supervised learning.
+Many deep learning algorithms have been designed to tackle unsupervised
+learning problems, but none have truly solved the problem in the same way that
+deep learning has largely solved the supervised learning problem for a wide variety of
+tasks. In this part of the book, we describe the existing approaches to unsupervised
+learning and some of the popular thought about how we can make progress in this
+ﬁeld.
+A central cause of the diﬃculties with unsupervised learning is the high dimensionality of the random variables being modeled. This brings two distinct
+challenges: a statistical challenge and a computational challenge. The statistical
+challenge regards generalization: the number of conﬁgurations we may want to
+distinguish can grow exponentially with the number of dimensions of interest, and
+this quickly becomes much larger than the number of examples one can possibly
+have (or use with bounded computational resources). The computational challenge
+associated with high-dimensional distributions arises because many algorithms for
+learning or using a trained model (especially those based on estimating an explicit
+probability function) involve intractable computations that grow exponentially
+with the number of dimensions.
+With probabilistic models, this computational challenge arises from the need to
+perform intractable inference or simply from the need to normalize the distribution.
+• Intractable inference: inference is discussed mostly in chapter 19. It regards
+the question of guessing the probable values of some variables a, given other
+variables b, with respect to a model that captures the joint distribution over
+487
+
+a, b and c. In order to even compute such conditional probabilities one needs
+to sum over the values of the variables c, as well as compute a normalization
+constant which sums over the values of a and c.
+• Intractable normalization constants (the partition function): the partition
+function is discussed mostly in chapter 18. Normalizing constants of probability functions come up in inference (above) as well as in learning. Many
+probabilistic models involve such a normalizing constant. Unfortunately,
+learning such a model often requires computing the gradient of the logarithm of the partition function with respect to the model parameters. That
+computation is generally as intractable as computing the partition function
+itself. Monte Carlo Markov chain (MCMC) methods (chapter 17) are often used to deal with the partition function (computing it or its gradient).
+Unfortunately, MCMC methods suﬀer when the modes of the model distribution are numerous and well-separated, especially in high-dimensional spaces
+(section 17.5).
+One way to confront these intractable computations is to approximate them,
+and many approaches have been proposed as discussed in this third part of the
+book. Another interesting way, also discussed here, would be to avoid these
+intractable computations altogether by design, and methods that do not require
+such computations are thus very appealing. Several generative models have been
+proposed in recent years, with that motivation. A wide variety of contemporary
+approaches to generative modeling are discussed in chapter 20.
+Part III is the most important for a researcher—someone who wants to understand the breadth of perspectives that have been brought to the ﬁeld of deep
+learning, and push the ﬁeld forward towards true artiﬁcial intelligence.
+
+488
+
+

@@ -1,0 +1,13 @@
+feedforward network
+parameter
+function approximation
+output layer
+training data
+neuroscience
+unit
+linear function
+
+
+too broad:
+Learning
+other

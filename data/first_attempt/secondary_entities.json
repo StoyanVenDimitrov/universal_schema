@@ -1,0 +1,6554 @@
+{
+    "computational science": [
+        "computational",
+        "science"
+    ],
+    "computational chemistry": [
+        "computational",
+        "chemistry"
+    ],
+    "computer science": [
+        "computer",
+        "science"
+    ],
+    "security engineering": [
+        "security",
+        "engineering"
+    ],
+    "computational linguistics": [
+        "computational",
+        "linguistics"
+    ],
+    "description": [
+        "description"
+    ],
+    "cryptographic primitive": [
+        "cryptographic",
+        "primitive"
+    ],
+    "computational biology": [
+        "computational",
+        "biology"
+    ],
+    "binary classification": [
+        "binary",
+        "classification"
+    ],
+    "dualism": [
+        "dualism"
+    ],
+    "bioinformatics": [
+        "bioinformatics"
+    ],
+    "component": [
+        "component"
+    ],
+    "recurrent neural network": [
+        "recurrent",
+        "neural",
+        "network"
+    ],
+    "bidirectional associative memory": [
+        "bidirectional",
+        "associative",
+        "memory"
+    ],
+    "translation": [
+        "translation"
+    ],
+    "machine translation": [
+        "machine",
+        "translation"
+    ],
+    "genetics": [
+        "genetics"
+    ],
+    "genomics": [
+        "genomics"
+    ],
+    "artificial intelligence": [
+        "artificial",
+        "intelligence"
+    ],
+    "cognitive science": [
+        "cognitive",
+        "science"
+    ],
+    "mechatronics": [
+        "mechatronics"
+    ],
+    "robotics": [
+        "robotics"
+    ],
+    "nanotechnology": [
+        "nanotechnology"
+    ],
+    "nanorobotics": [
+        "nanorobotics"
+    ],
+    "artificial neural network": [
+        "artificial",
+        "neural",
+        "network"
+    ],
+    "adaline": [
+        "adaline"
+    ],
+    "machine learning": [
+        "machine",
+        "learning"
+    ],
+    "architectural computer science": [
+        "architectural",
+        "computer",
+        "science"
+    ],
+    "feedforward neural network": [
+        "feedforward",
+        "neural",
+        "network"
+    ],
+    "perceptron": [
+        "perceptron"
+    ],
+    "problem solving": [
+        "problem",
+        "solving"
+    ],
+    "reverse engineering": [
+        "reverse",
+        "engineering"
+    ],
+    "expert system": [
+        "expert",
+        "system"
+    ],
+    "cheminformatics": [
+        "cheminformatics"
+    ],
+    "deep learning": [
+        "deep",
+        "learning"
+    ],
+    "hash function": [
+        "hash",
+        "function"
+    ],
+    "cryptographic hash function": [
+        "cryptographic",
+        "hash",
+        "function"
+    ],
+    "technology": [
+        "technology"
+    ],
+    "applied computer science": [
+        "applied",
+        "computer",
+        "science"
+    ],
+    "hierarchical temporal memory": [
+        "hierarchical",
+        "temporal",
+        "memory"
+    ],
+    "statistics": [
+        "statistics"
+    ],
+    "data mining": [
+        "data",
+        "mining"
+    ],
+    "applied mathematics": [
+        "applied",
+        "mathematics"
+    ],
+    "affinity analysis": [
+        "affinity",
+        "analysis"
+    ],
+    "data analysis": [
+        "data",
+        "analysis"
+    ],
+    "computational hardness assumption": [
+        "computational",
+        "hardness",
+        "assumption"
+    ],
+    "decisional diffie\u2013hellman assumption": [
+        "decisional",
+        "diffie\u2013hellman",
+        "assumption"
+    ],
+    "conceptual model": [
+        "conceptual",
+        "model"
+    ],
+    "explanation-based learning": [
+        "explanation-based",
+        "learning"
+    ],
+    "neocognitron": [
+        "neocognitron"
+    ],
+    "public-key cryptography": [
+        "public-key",
+        "cryptography"
+    ],
+    "rsa": [
+        "rsa"
+    ],
+    "hashing": [
+        "hashing"
+    ],
+    "interaction design": [
+        "interaction",
+        "design"
+    ],
+    "human\u2013computer interaction": [
+        "human\u2013computer",
+        "interaction"
+    ],
+    "supervised learning": [
+        "supervised",
+        "learning"
+    ],
+    "neuroscience": [
+        "neuroscience"
+    ],
+    "computer graphics": [
+        "computer",
+        "graphics"
+    ],
+    "periastron": [
+        "periastron"
+    ],
+    "perihelion": [
+        "perihelion"
+    ],
+    "distance": [
+        "distance"
+    ],
+    "apsis": [
+        "apsis"
+    ],
+    "chemistry": [
+        "chemistry"
+    ],
+    "algorithm": [
+        "algorithm"
+    ],
+    "cryptography": [
+        "cryptography"
+    ],
+    "biology": [
+        "biology"
+    ],
+    "periapsis": [
+        "periapsis"
+    ],
+    "custom motorcycle": [
+        "custom",
+        "motorcycle"
+    ],
+    "rat bike": [
+        "rat",
+        "bike"
+    ],
+    "decision support system": [
+        "decision",
+        "support",
+        "system"
+    ],
+    "informed search algorithm": [
+        "informed",
+        "search",
+        "algorithm"
+    ],
+    "genetic algorithm": [
+        "genetic",
+        "algorithm"
+    ],
+    "mathematical linguistics": [
+        "mathematical",
+        "linguistics"
+    ],
+    "knowledge-based system": [
+        "knowledge-based",
+        "system"
+    ],
+    "speech recognition": [
+        "speech",
+        "recognition"
+    ],
+    "concept": [
+        "concept"
+    ],
+    "3d computer graphics": [
+        "3d",
+        "computer",
+        "graphics"
+    ],
+    "information science": [
+        "information",
+        "science"
+    ],
+    "pattern recognition": [
+        "pattern",
+        "recognition"
+    ],
+    "control engineering": [
+        "control",
+        "engineering"
+    ],
+    "computability theory": [
+        "computability",
+        "theory"
+    ],
+    "computational complexity theory": [
+        "computational",
+        "complexity",
+        "theory"
+    ],
+    "association rule learning": [
+        "association",
+        "rule",
+        "learning"
+    ],
+    "cluster analysis": [
+        "cluster",
+        "analysis"
+    ],
+    "analysis of algorithms": [
+        "analysis",
+        "of",
+        "algorithms"
+    ],
+    "statistical classification": [
+        "statistical",
+        "classification"
+    ],
+    "document classification": [
+        "document",
+        "classification"
+    ],
+    "information system": [
+        "information",
+        "system"
+    ],
+    "boltzmann machine": [
+        "boltzmann",
+        "machine"
+    ],
+    "metaheuristic": [
+        "metaheuristic"
+    ],
+    "boosting": [
+        "boosting"
+    ],
+    "psychology": [
+        "psychology"
+    ],
+    "anthropology": [
+        "anthropology"
+    ],
+    "philosophy of mind": [
+        "philosophy",
+        "of",
+        "mind"
+    ],
+    "computer program": [
+        "computer",
+        "program"
+    ],
+    "electromechanical engineering": [
+        "electromechanical",
+        "engineering"
+    ],
+    "unconventional computing": [
+        "unconventional",
+        "computing"
+    ],
+    "linguistics": [
+        "linguistics"
+    ],
+    "discovery": [
+        "discovery"
+    ],
+    "business software": [
+        "business",
+        "software"
+    ],
+    "open-source robotics": [
+        "open-source",
+        "robotics"
+    ],
+    "point": [
+        "point"
+    ],
+    "evolutionary algorithm": [
+        "evolutionary",
+        "algorithm"
+    ],
+    "natural language processing": [
+        "natural",
+        "language",
+        "processing"
+    ],
+    "analysis": [
+        "analysis"
+    ],
+    "engineering": [
+        "engineering"
+    ],
+    "memory-bounded a*": [
+        "memory-bounded",
+        "a*"
+    ],
+    "sma*": [
+        "sma*"
+    ],
+    "neural network": [
+        "neural",
+        "network"
+    ],
+    "autoregressive model": [
+        "autoregressive",
+        "model"
+    ],
+    "mobile translation": [
+        "mobile",
+        "translation"
+    ],
+    "hearing science": [
+        "hearing",
+        "science"
+    ],
+    "cognitive hearing science": [
+        "cognitive",
+        "hearing",
+        "science"
+    ],
+    "bobber": [
+        "bobber"
+    ],
+    "q2465638": [
+        "q2465638"
+    ],
+    "elliptic curve cryptography": [
+        "elliptic",
+        "curve",
+        "cryptography"
+    ],
+    "elliptic curve diffie\u2013hellman": [
+        "elliptic",
+        "curve",
+        "diffie\u2013hellman"
+    ],
+    "structure mining": [
+        "structure",
+        "mining"
+    ],
+    "statistical models": [
+        "statistical",
+        "models"
+    ],
+    "incremental learning": [
+        "incremental",
+        "learning"
+    ],
+    "active learning": [
+        "active",
+        "learning"
+    ],
+    "bio-inspired robotics": [
+        "bio-inspired",
+        "robotics"
+    ],
+    "computational epigenetics": [
+        "computational",
+        "epigenetics"
+    ],
+    "artificial general intelligence": [
+        "artificial",
+        "general",
+        "intelligence"
+    ],
+    "reconstruction": [
+        "reconstruction"
+    ],
+    "3d reconstruction": [
+        "3d",
+        "reconstruction"
+    ],
+    "strong cryptography": [
+        "strong",
+        "cryptography"
+    ],
+    "scientific visualization": [
+        "scientific",
+        "visualization"
+    ],
+    "fundamental science": [
+        "fundamental",
+        "science"
+    ],
+    "theoretical computer science": [
+        "theoretical",
+        "computer",
+        "science"
+    ],
+    "local search": [
+        "local",
+        "search"
+    ],
+    "modular neural network": [
+        "modular",
+        "neural",
+        "network"
+    ],
+    "distributed artificial intelligence": [
+        "distributed",
+        "artificial",
+        "intelligence"
+    ],
+    "interlingual machine translation": [
+        "interlingual",
+        "machine",
+        "translation"
+    ],
+    "dichotomy": [
+        "dichotomy"
+    ],
+    "fact\u2013value distinction": [
+        "fact\u2013value",
+        "distinction"
+    ],
+    "virtual screening": [
+        "virtual",
+        "screening"
+    ],
+    "biclustering": [
+        "biclustering"
+    ],
+    "sequence mining": [
+        "sequence",
+        "mining"
+    ],
+    "manichaeanism": [
+        "manichaeanism"
+    ],
+    "competitive analysis": [
+        "competitive",
+        "analysis"
+    ],
+    "apoapsis": [
+        "apoapsis"
+    ],
+    "swarm robotics": [
+        "swarm",
+        "robotics"
+    ],
+    "cg artwork": [
+        "cg",
+        "artwork"
+    ],
+    "q1915556": [
+        "q1915556"
+    ],
+    "morphological analysis": [
+        "morphological",
+        "analysis"
+    ],
+    "numerical calculus": [
+        "numerical",
+        "calculus"
+    ],
+    "number theory": [
+        "number",
+        "theory"
+    ],
+    "computational number theory": [
+        "computational",
+        "number",
+        "theory"
+    ],
+    "beam search": [
+        "beam",
+        "search"
+    ],
+    "text simplification": [
+        "text",
+        "simplification"
+    ],
+    "humor studies": [
+        "humor",
+        "studies"
+    ],
+    "computational humor": [
+        "computational",
+        "humor"
+    ],
+    "heuristic": [
+        "heuristic"
+    ],
+    "self-management": [
+        "self-management"
+    ],
+    "certificateless cryptography": [
+        "certificateless",
+        "cryptography"
+    ],
+    "cognitive anthropology": [
+        "cognitive",
+        "anthropology"
+    ],
+    "ant robotics": [
+        "ant",
+        "robotics"
+    ],
+    "astronomy": [
+        "astronomy"
+    ],
+    "astroinformatics": [
+        "astroinformatics"
+    ],
+    "adaptable robotics": [
+        "adaptable",
+        "robotics"
+    ],
+    "aphelion": [
+        "aphelion"
+    ],
+    "multilayer perceptron": [
+        "multilayer",
+        "perceptron"
+    ],
+    "computational sustainability": [
+        "computational",
+        "sustainability"
+    ],
+    "mathematics": [
+        "mathematics"
+    ],
+    "kohonen neural network": [
+        "kohonen",
+        "neural",
+        "network"
+    ],
+    "calculus": [
+        "calculus"
+    ],
+    "q4416626": [
+        "q4416626"
+    ],
+    "compositional pattern-producing network": [
+        "compositional",
+        "pattern-producing",
+        "network"
+    ],
+    "social informatics": [
+        "social",
+        "informatics"
+    ],
+    "microbotics": [
+        "microbotics"
+    ],
+    "best-first search": [
+        "best-first",
+        "search"
+    ],
+    "text segmentation": [
+        "text",
+        "segmentation"
+    ],
+    "tokenization": [
+        "tokenization"
+    ],
+    "process mining": [
+        "process",
+        "mining"
+    ],
+    "computational mathematics": [
+        "computational",
+        "mathematics"
+    ],
+    "computational genomics": [
+        "computational",
+        "genomics"
+    ],
+    "quantum information science": [
+        "quantum",
+        "information",
+        "science"
+    ],
+    "activity recognition": [
+        "activity",
+        "recognition"
+    ],
+    "semi-supervised learning": [
+        "semi-supervised",
+        "learning"
+    ],
+    "reciprocity": [
+        "reciprocity"
+    ],
+    "hardware modification": [
+        "hardware",
+        "modification"
+    ],
+    "afterburner": [
+        "afterburner"
+    ],
+    "digital signature": [
+        "digital",
+        "signature"
+    ],
+    "ring signature": [
+        "ring",
+        "signature"
+    ],
+    "gender hci": [
+        "gender",
+        "hci"
+    ],
+    "data science": [
+        "data",
+        "science"
+    ],
+    "epigenetics": [
+        "epigenetics"
+    ],
+    "apoastron": [
+        "apoastron"
+    ],
+    "bibliomining": [
+        "bibliomining"
+    ],
+    "friendly artificial intelligence": [
+        "friendly",
+        "artificial",
+        "intelligence"
+    ],
+    "optimal design": [
+        "optimal",
+        "design"
+    ],
+    "sustainability science": [
+        "sustainability",
+        "science"
+    ],
+    "ai diagnostics": [
+        "ai",
+        "diagnostics"
+    ],
+    "cryptovirology": [
+        "cryptovirology"
+    ],
+    "q4378865": [
+        "q4378865"
+    ],
+    "numerical analysis": [
+        "numerical",
+        "analysis"
+    ],
+    "personalization": [
+        "personalization"
+    ],
+    "computational physics": [
+        "computational",
+        "physics"
+    ],
+    "marcionism": [
+        "marcionism"
+    ],
+    "christian doctrine": [
+        "christian",
+        "doctrine"
+    ],
+    "hierarchical clustering": [
+        "hierarchical",
+        "clustering"
+    ],
+    "fictional character": [
+        "fictional",
+        "character"
+    ],
+    "emergency medical hologram": [
+        "emergency",
+        "medical",
+        "hologram"
+    ],
+    "media informatics": [
+        "media",
+        "informatics"
+    ],
+    "game theory": [
+        "game",
+        "theory"
+    ],
+    "combinatorial game theory": [
+        "combinatorial",
+        "game",
+        "theory"
+    ],
+    "self-organizing map": [
+        "self-organizing",
+        "map"
+    ],
+    "natural language understanding": [
+        "natural",
+        "language",
+        "understanding"
+    ],
+    "modding": [
+        "modding"
+    ],
+    "custom car": [
+        "custom",
+        "car"
+    ],
+    "substitution box": [
+        "substitution",
+        "box"
+    ],
+    "natural language generation": [
+        "natural",
+        "language",
+        "generation"
+    ],
+    "emergency hologram": [
+        "emergency",
+        "hologram"
+    ],
+    "systems engineering": [
+        "systems",
+        "engineering"
+    ],
+    "knowledge engineering": [
+        "knowledge",
+        "engineering"
+    ],
+    "computer wallpaper": [
+        "computer",
+        "wallpaper"
+    ],
+    "cruiser": [
+        "cruiser"
+    ],
+    "chopper": [
+        "chopper"
+    ],
+    "2d computer graphics": [
+        "2d",
+        "computer",
+        "graphics"
+    ],
+    "toxicology": [
+        "toxicology"
+    ],
+    "toxicogenomics": [
+        "toxicogenomics"
+    ],
+    "winner-take-all": [
+        "winner-take-all"
+    ],
+    "soul dualism": [
+        "soul",
+        "dualism"
+    ],
+    "geometry": [
+        "geometry"
+    ],
+    "computational geometry": [
+        "computational",
+        "geometry"
+    ],
+    "apogee": [
+        "apogee"
+    ],
+    "fluid dynamics": [
+        "fluid",
+        "dynamics"
+    ],
+    "computational fluid dynamics": [
+        "computational",
+        "fluid",
+        "dynamics"
+    ],
+    "method": [
+        "method"
+    ],
+    "theory of computation": [
+        "theory",
+        "of",
+        "computation"
+    ],
+    "user experience": [
+        "user",
+        "experience"
+    ],
+    "fordec": [
+        "fordec"
+    ],
+    "computational mechanics": [
+        "computational",
+        "mechanics"
+    ],
+    "mathematical logic": [
+        "mathematical",
+        "logic"
+    ],
+    "informatics": [
+        "informatics"
+    ],
+    "data clustering algorithm": [
+        "data",
+        "clustering",
+        "algorithm"
+    ],
+    "process": [
+        "process"
+    ],
+    "text mining": [
+        "text",
+        "mining"
+    ],
+    "automatic summarization": [
+        "automatic",
+        "summarization"
+    ],
+    "computer-aided engineering": [
+        "computer-aided",
+        "engineering"
+    ],
+    "cognitive neuroscience": [
+        "cognitive",
+        "neuroscience"
+    ],
+    "autoencoder": [
+        "autoencoder"
+    ],
+    "functional genomics": [
+        "functional",
+        "genomics"
+    ],
+    "physics": [
+        "physics"
+    ],
+    "evolutionary computation": [
+        "evolutionary",
+        "computation"
+    ],
+    "hybrid cryptosystem": [
+        "hybrid",
+        "cryptosystem"
+    ],
+    "derivative work": [
+        "derivative",
+        "work"
+    ],
+    "knowledge extraction": [
+        "knowledge",
+        "extraction"
+    ],
+    "unsupervised learning": [
+        "unsupervised",
+        "learning"
+    ],
+    "scooter": [
+        "scooter"
+    ],
+    "cutdown": [
+        "cutdown"
+    ],
+    "substitution\u2013permutation network": [
+        "substitution\u2013permutation",
+        "network"
+    ],
+    "chemometrics": [
+        "chemometrics"
+    ],
+    "quantitative structure\u2013activity relationship": [
+        "quantitative",
+        "structure\u2013activity",
+        "relationship"
+    ],
+    "motor car": [
+        "motor",
+        "car"
+    ],
+    "creative work": [
+        "creative",
+        "work"
+    ],
+    "computational intelligence": [
+        "computational",
+        "intelligence"
+    ],
+    "human\u2013robot interaction": [
+        "human\u2013robot",
+        "interaction"
+    ],
+    "web mining": [
+        "web",
+        "mining"
+    ],
+    "motorcycle": [
+        "motorcycle"
+    ],
+    "customizing": [
+        "customizing"
+    ],
+    "structure\u2013activity relationship": [
+        "structure\u2013activity",
+        "relationship"
+    ],
+    "secret sharing": [
+        "secret",
+        "sharing"
+    ],
+    "case modding": [
+        "case",
+        "modding"
+    ],
+    "media studies": [
+        "media",
+        "studies"
+    ],
+    "metagenomics": [
+        "metagenomics"
+    ],
+    "independent component analysis": [
+        "independent",
+        "component",
+        "analysis"
+    ],
+    "inductive programming": [
+        "inductive",
+        "programming"
+    ],
+    "inductive logic programming": [
+        "inductive",
+        "logic",
+        "programming"
+    ],
+    "reinforcement learning": [
+        "reinforcement",
+        "learning"
+    ],
+    "cognitive robotics": [
+        "cognitive",
+        "robotics"
+    ],
+    "part-of-speech tagging": [
+        "part-of-speech",
+        "tagging"
+    ],
+    "web engineering": [
+        "web",
+        "engineering"
+    ],
+    "video game graphics": [
+        "video",
+        "game",
+        "graphics"
+    ],
+    "full motion video": [
+        "full",
+        "motion",
+        "video"
+    ],
+    "hopfield network": [
+        "hopfield",
+        "network"
+    ],
+    "mechanics": [
+        "mechanics"
+    ],
+    "perigee": [
+        "perigee"
+    ],
+    "multivariate statistics": [
+        "multivariate",
+        "statistics"
+    ],
+    "do it yourself": [
+        "do",
+        "it",
+        "yourself"
+    ],
+    "spiking neural network": [
+        "spiking",
+        "neural",
+        "network"
+    ],
+    "morphological parsing": [
+        "morphological",
+        "parsing"
+    ],
+    "offline learning": [
+        "offline",
+        "learning"
+    ],
+    "academic discipline": [
+        "academic",
+        "discipline"
+    ],
+    "privacy-enhancing technologies": [
+        "privacy-enhancing",
+        "technologies"
+    ],
+    "liquid state machine": [
+        "liquid",
+        "state",
+        "machine"
+    ],
+    "connectionist expert system": [
+        "connectionist",
+        "expert",
+        "system"
+    ],
+    "bayesian network": [
+        "bayesian",
+        "network"
+    ],
+    "deep belief network": [
+        "deep",
+        "belief",
+        "network"
+    ],
+    "chinellabile": [
+        "chinellabile"
+    ],
+    "probabilistic neural network": [
+        "probabilistic",
+        "neural",
+        "network"
+    ],
+    "online machine learning": [
+        "online",
+        "machine",
+        "learning"
+    ],
+    "group signature": [
+        "group",
+        "signature"
+    ],
+    "distributional semantics": [
+        "distributional",
+        "semantics"
+    ],
+    "pulse-coupled network": [
+        "pulse-coupled",
+        "network"
+    ],
+    "embodied cognitive science": [
+        "embodied",
+        "cognitive",
+        "science"
+    ],
+    "yes and no": [
+        "yes",
+        "and",
+        "no"
+    ],
+    "cognitive computing": [
+        "cognitive",
+        "computing"
+    ],
+    "choice": [
+        "choice"
+    ],
+    "music informatics": [
+        "music",
+        "informatics"
+    ],
+    "semantics": [
+        "semantics"
+    ],
+    "gender binary": [
+        "gender",
+        "binary"
+    ],
+    "flow cytometry bioinformatics": [
+        "flow",
+        "cytometry",
+        "bioinformatics"
+    ],
+    "information visualization": [
+        "information",
+        "visualization"
+    ],
+    "translational research informatics": [
+        "translational",
+        "research",
+        "informatics"
+    ],
+    "stochastic neural network": [
+        "stochastic",
+        "neural",
+        "network"
+    ],
+    "pay it forward": [
+        "pay",
+        "it",
+        "forward"
+    ],
+    "echo state network": [
+        "echo",
+        "state",
+        "network"
+    ],
+    "rule-based machine translation": [
+        "rule-based",
+        "machine",
+        "translation"
+    ],
+    "post-quantum cryptography": [
+        "post-quantum",
+        "cryptography"
+    ],
+    "relational learning": [
+        "relational",
+        "learning"
+    ],
+    "statistical relational learning": [
+        "statistical",
+        "relational",
+        "learning"
+    ],
+    "long short-term memory": [
+        "long",
+        "short-term",
+        "memory"
+    ],
+    "vertex": [
+        "vertex"
+    ],
+    "non-speech audio input": [
+        "non-speech",
+        "audio",
+        "input"
+    ],
+    "geometric design": [
+        "geometric",
+        "design"
+    ],
+    "suspension lift": [
+        "suspension",
+        "lift"
+    ],
+    "homomorphic secret sharing": [
+        "homomorphic",
+        "secret",
+        "sharing"
+    ],
+    "connector": [
+        "connector"
+    ],
+    "male connector": [
+        "male",
+        "connector"
+    ],
+    "visualization": [
+        "visualization"
+    ],
+    "genetic algorithm scheduling": [
+        "genetic",
+        "algorithm",
+        "scheduling"
+    ],
+    "female connector": [
+        "female",
+        "connector"
+    ],
+    "multiclass classification": [
+        "multiclass",
+        "classification"
+    ],
+    "health informatics": [
+        "health",
+        "informatics"
+    ],
+    "q16831130": [
+        "q16831130"
+    ],
+    "ribonomics": [
+        "ribonomics"
+    ],
+    "q16655792": [
+        "q16655792"
+    ],
+    "multi-task learning": [
+        "multi-task",
+        "learning"
+    ],
+    "dimensionality reduction": [
+        "dimensionality",
+        "reduction"
+    ],
+    "nonlinear dimensionality reduction": [
+        "nonlinear",
+        "dimensionality",
+        "reduction"
+    ],
+    "physical process": [
+        "physical",
+        "process"
+    ],
+    "relationship extraction": [
+        "relationship",
+        "extraction"
+    ],
+    "computational neuroscience": [
+        "computational",
+        "neuroscience"
+    ],
+    "graphics": [
+        "graphics"
+    ],
+    "isomap": [
+        "isomap"
+    ],
+    "music technology": [
+        "music",
+        "technology"
+    ],
+    "inductive transfer": [
+        "inductive",
+        "transfer"
+    ],
+    "restricted boltzmann machine": [
+        "restricted",
+        "boltzmann",
+        "machine"
+    ],
+    "personal genomics": [
+        "personal",
+        "genomics"
+    ],
+    "binary opposition": [
+        "binary",
+        "opposition"
+    ],
+    "good and evil": [
+        "good",
+        "and",
+        "evil"
+    ],
+    "instant translation": [
+        "instant",
+        "translation"
+    ],
+    "biochemistry": [
+        "biochemistry"
+    ],
+    "metabolomics": [
+        "metabolomics"
+    ],
+    "scheduling algorithm": [
+        "scheduling",
+        "algorithm"
+    ],
+    "symbolic artificial intelligence": [
+        "symbolic",
+        "artificial",
+        "intelligence"
+    ],
+    "mini chopper": [
+        "mini",
+        "chopper"
+    ],
+    "a* search algorithm": [
+        "a*",
+        "search",
+        "algorithm"
+    ],
+    "recursive best-first search": [
+        "recursive",
+        "best-first",
+        "search"
+    ],
+    "structural biology": [
+        "structural",
+        "biology"
+    ],
+    "protein\u2013protein interaction prediction": [
+        "protein\u2013protein",
+        "interaction",
+        "prediction"
+    ],
+    "molecular graphics": [
+        "molecular",
+        "graphics"
+    ],
+    "sentence boundary disambiguation": [
+        "sentence",
+        "boundary",
+        "disambiguation"
+    ],
+    "viral phylodynamics": [
+        "viral",
+        "phylodynamics"
+    ],
+    "q14631840": [
+        "q14631840"
+    ],
+    "decision tree learning": [
+        "decision",
+        "tree",
+        "learning"
+    ],
+    "japanese robotics": [
+        "japanese",
+        "robotics"
+    ],
+    "relational data mining": [
+        "relational",
+        "data",
+        "mining"
+    ],
+    "brown clustering": [
+        "brown",
+        "clustering"
+    ],
+    "kernel perceptron": [
+        "kernel",
+        "perceptron"
+    ],
+    "deep reinforcement learning": [
+        "deep",
+        "reinforcement",
+        "learning"
+    ],
+    "generative model": [
+        "generative",
+        "model"
+    ],
+    "generative adversarial network": [
+        "generative",
+        "adversarial",
+        "network"
+    ],
+    "convolutional neural network": [
+        "convolutional",
+        "neural",
+        "network"
+    ],
+    "capsule neural network": [
+        "capsule",
+        "neural",
+        "network"
+    ],
+    "label propagation algorithm": [
+        "label",
+        "propagation",
+        "algorithm"
+    ],
+    "pathway analysis": [
+        "pathway",
+        "analysis"
+    ],
+    "embedding": [
+        "embedding"
+    ],
+    "fasttext": [
+        "fasttext"
+    ],
+    "perihelion and aphelion": [
+        "perihelion",
+        "and",
+        "aphelion"
+    ],
+    "recursive neural network": [
+        "recursive",
+        "neural",
+        "network"
+    ],
+    "data ethics": [
+        "data",
+        "ethics"
+    ],
+    "big data ethics": [
+        "big",
+        "data",
+        "ethics"
+    ],
+    "multimodal learning": [
+        "multimodal",
+        "learning"
+    ],
+    "quantum machine learning": [
+        "quantum",
+        "machine",
+        "learning"
+    ],
+    "feminist hci": [
+        "feminist",
+        "hci"
+    ],
+    "transcriptomics": [
+        "transcriptomics"
+    ],
+    "single-cell rna-seq": [
+        "single-cell",
+        "rna-seq"
+    ],
+    "cognitive geography": [
+        "cognitive",
+        "geography"
+    ],
+    "deep neural network": [
+        "deep",
+        "neural",
+        "network"
+    ],
+    "highway network": [
+        "highway",
+        "network"
+    ],
+    "rna-seq": [
+        "rna-seq"
+    ],
+    "computer-aided structure elucidation": [
+        "computer-aided",
+        "structure",
+        "elucidation"
+    ],
+    "graph embedding": [
+        "graph",
+        "embedding"
+    ],
+    "word embedding": [
+        "word",
+        "embedding"
+    ],
+    "memory-augmented neural network": [
+        "memory-augmented",
+        "neural",
+        "network"
+    ],
+    "explainable ai": [
+        "explainable",
+        "ai"
+    ],
+    "jordan network": [
+        "jordan",
+        "network"
+    ],
+    "3d-convolutional neural network": [
+        "3d-convolutional",
+        "neural",
+        "network"
+    ],
+    "sequence-to-sequence learning": [
+        "sequence-to-sequence",
+        "learning"
+    ],
+    "argumentation mining": [
+        "argumentation",
+        "mining"
+    ],
+    "differentiable neural computer": [
+        "differentiable",
+        "neural",
+        "computer"
+    ],
+    "image processing": [
+        "image",
+        "processing"
+    ],
+    "image-to-image translation": [
+        "image-to-image",
+        "translation"
+    ],
+    "natural language inference": [
+        "natural",
+        "language",
+        "inference"
+    ],
+    "interactive machine learning": [
+        "interactive",
+        "machine",
+        "learning"
+    ],
+    "non-commutative cryptography": [
+        "non-commutative",
+        "cryptography"
+    ],
+    "archetypal analysis": [
+        "archetypal",
+        "analysis"
+    ],
+    "urology robotics": [
+        "urology",
+        "robotics"
+    ],
+    "elman network": [
+        "elman",
+        "network"
+    ],
+    "approximate bayesian computation": [
+        "approximate",
+        "bayesian",
+        "computation"
+    ],
+    "decompounding": [
+        "decompounding"
+    ],
+    "q17775927": [
+        "q17775927"
+    ],
+    "neural turing machine": [
+        "neural",
+        "turing",
+        "machine"
+    ],
+    "gated recurrent unit": [
+        "gated",
+        "recurrent",
+        "unit"
+    ],
+    "computer-based question classification": [
+        "computer-based",
+        "question",
+        "classification"
+    ],
+    "alexnet": [
+        "alexnet"
+    ],
+    "multiple kernel learning": [
+        "multiple",
+        "kernel",
+        "learning"
+    ],
+    "information ethics": [
+        "information",
+        "ethics"
+    ],
+    "cryptocurrency mining": [
+        "cryptocurrency",
+        "mining"
+    ],
+    "feature learning": [
+        "feature",
+        "learning"
+    ],
+    "cheminformatics software": [
+        "cheminformatics",
+        "software"
+    ],
+    "hamming neural network": [
+        "hamming",
+        "neural",
+        "network"
+    ],
+    "knowledge graph embedding": [
+        "knowledge",
+        "graph",
+        "embedding"
+    ],
+    "rdf2vec": [
+        "rdf2vec"
+    ],
+    "glove": [
+        "glove"
+    ],
+    "phylogenetics": [
+        "phylogenetics"
+    ],
+    "phyloinformatics": [
+        "phyloinformatics"
+    ],
+    "barrier resilience": [
+        "barrier",
+        "resilience"
+    ],
+    "geography": [
+        "geography"
+    ],
+    "sentence embedding": [
+        "sentence",
+        "embedding"
+    ],
+    "graph convolutional network": [
+        "graph",
+        "convolutional",
+        "network"
+    ],
+    "proteochemometrics": [
+        "proteochemometrics"
+    ],
+    "sparse dictionary learning": [
+        "sparse",
+        "dictionary",
+        "learning"
+    ],
+    "federated learning": [
+        "federated",
+        "learning"
+    ],
+    "word2vec": [
+        "word2vec"
+    ],
+    "extreme learning machine": [
+        "extreme",
+        "learning",
+        "machine"
+    ],
+    "privacy engineering": [
+        "privacy",
+        "engineering"
+    ],
+    "deep q-network": [
+        "deep",
+        "q-network"
+    ],
+    "adversarial machine learning": [
+        "adversarial",
+        "machine",
+        "learning"
+    ],
+    "italian robotics": [
+        "italian",
+        "robotics"
+    ],
+    "soft robotics": [
+        "soft",
+        "robotics"
+    ],
+    "artificial empathy": [
+        "artificial",
+        "empathy"
+    ],
+    "developmental cognitive neuroscience": [
+        "developmental",
+        "cognitive",
+        "neuroscience"
+    ],
+    "recurrent entity network": [
+        "recurrent",
+        "entity",
+        "network"
+    ],
+    "automated machine learning": [
+        "automated",
+        "machine",
+        "learning"
+    ],
+    "biocuration": [
+        "biocuration"
+    ],
+    "sentiment analysis": [
+        "sentiment",
+        "analysis"
+    ],
+    "multimodal sentiment analysis": [
+        "multimodal",
+        "sentiment",
+        "analysis"
+    ],
+    "residual neural network": [
+        "residual",
+        "neural",
+        "network"
+    ],
+    "artificial entity": [
+        "artificial",
+        "entity"
+    ],
+    "industry": [
+        "industry"
+    ],
+    "formal science": [
+        "formal",
+        "science"
+    ],
+    "artificial life": [
+        "artificial",
+        "life"
+    ],
+    "xenobot": [
+        "xenobot"
+    ],
+    "applied computing": [
+        "applied",
+        "computing"
+    ],
+    "indistinguishability obfuscation": [
+        "indistinguishability",
+        "obfuscation"
+    ],
+    "homebrew": [
+        "homebrew"
+    ],
+    "nintendo switch modification": [
+        "nintendo",
+        "switch",
+        "modification"
+    ],
+    "rule-based expert system": [
+        "rule-based",
+        "expert",
+        "system"
+    ],
+    "biomedical computation": [
+        "biomedical",
+        "computation"
+    ],
+    "green ai": [
+        "green",
+        "ai"
+    ],
+    "single-cell mrna sequencing": [
+        "single-cell",
+        "mrna",
+        "sequencing"
+    ],
+    "artificial chemist": [
+        "artificial",
+        "chemist"
+    ],
+    "drop-seq": [
+        "drop-seq"
+    ],
+    "roberta": [
+        "roberta"
+    ],
+    "data tribology": [
+        "data",
+        "tribology"
+    ],
+    "computational creativity": [
+        "computational",
+        "creativity"
+    ],
+    "search algorithm": [
+        "search",
+        "algorithm"
+    ],
+    "transformer": [
+        "transformer"
+    ],
+    "metaexpert system": [
+        "metaexpert",
+        "system"
+    ],
+    "self-supervised learning": [
+        "self-supervised",
+        "learning"
+    ],
+    "entity linking": [
+        "entity",
+        "linking"
+    ],
+    "wikification": [
+        "wikification"
+    ],
+    "neural history compressor": [
+        "neural",
+        "history",
+        "compressor"
+    ],
+    "higher-order neural network": [
+        "higher-order",
+        "neural",
+        "network"
+    ],
+    "dronc-seq": [
+        "dronc-seq"
+    ],
+    "gerontology": [
+        "gerontology"
+    ],
+    "geromics": [
+        "geromics"
+    ],
+    "lenet-5": [
+        "lenet-5"
+    ],
+    "biomedicine": [
+        "biomedicine"
+    ],
+    "end-to-end learning": [
+        "end-to-end",
+        "learning"
+    ],
+    "computational finance": [
+        "computational",
+        "finance"
+    ],
+    "cresceptron": [
+        "cresceptron"
+    ],
+    "q99646233": [
+        "q99646233"
+    ],
+    "individual and society": [
+        "individual",
+        "and",
+        "society"
+    ],
+    "spatial transformer network": [
+        "spatial",
+        "transformer",
+        "network"
+    ],
+    "software": [
+        "software"
+    ],
+    "automated music production": [
+        "automated",
+        "music",
+        "production"
+    ],
+    "block graphics": [
+        "block",
+        "graphics"
+    ],
+    "genome informatics": [
+        "genome",
+        "informatics"
+    ],
+    "q97208985": [
+        "q97208985"
+    ],
+    "monitoring expert system": [
+        "monitoring",
+        "expert",
+        "system"
+    ],
+    "space-time clustering": [
+        "space-time",
+        "clustering"
+    ],
+    "diagnostic expert system": [
+        "diagnostic",
+        "expert",
+        "system"
+    ],
+    "red ai": [
+        "red",
+        "ai"
+    ],
+    "local beam search": [
+        "local",
+        "beam",
+        "search"
+    ],
+    "data engineering": [
+        "data",
+        "engineering"
+    ],
+    "autonomous navigation": [
+        "autonomous",
+        "navigation"
+    ],
+    "planning expert system": [
+        "planning",
+        "expert",
+        "system"
+    ],
+    "ecology": [
+        "ecology"
+    ],
+    "ecological informatics": [
+        "ecological",
+        "informatics"
+    ],
+    "articulated soft robotics": [
+        "articulated",
+        "soft",
+        "robotics"
+    ],
+    "neural abstraction pyramid": [
+        "neural",
+        "abstraction",
+        "pyramid"
+    ],
+    "responsible data science": [
+        "responsible",
+        "data",
+        "science"
+    ],
+    "weak supervision": [
+        "weak",
+        "supervision"
+    ],
+    "frame-based expert system": [
+        "frame-based",
+        "expert",
+        "system"
+    ],
+    "metainformation system": [
+        "metainformation",
+        "system"
+    ],
+    "fog robotics": [
+        "fog",
+        "robotics"
+    ],
+    "academic major": [
+        "academic",
+        "major"
+    ],
+    "video game genre": [
+        "video",
+        "game",
+        "genre"
+    ],
+    "julius": [
+        "julius"
+    ],
+    "haval": [
+        "haval"
+    ],
+    "philosophical concept": [
+        "philosophical",
+        "concept"
+    ],
+    "manuscript": [
+        "manuscript"
+    ],
+    "copiale cipher": [
+        "copiale",
+        "cipher"
+    ],
+    "whirlpool": [
+        "whirlpool"
+    ],
+    "aes instruction set": [
+        "aes",
+        "instruction",
+        "set"
+    ],
+    "branch of biology": [
+        "branch",
+        "of",
+        "biology"
+    ],
+    "literary work": [
+        "literary",
+        "work"
+    ],
+    "gr\u00f8stl": [
+        "gr\u00f8stl"
+    ],
+    "specialty": [
+        "specialty"
+    ],
+    "has-160": [
+        "has-160"
+    ],
+    "lossy compression": [
+        "lossy",
+        "compression"
+    ],
+    "area of mathematics": [
+        "area",
+        "of",
+        "mathematics"
+    ],
+    "free software": [
+        "free",
+        "software"
+    ],
+    "snefru": [
+        "snefru"
+    ],
+    "burrows\u2013abadi\u2013needham logic": [
+        "burrows\u2013abadi\u2013needham",
+        "logic"
+    ],
+    "softimage": [
+        "softimage"
+    ],
+    "heresy": [
+        "heresy"
+    ],
+    "animated film": [
+        "animated",
+        "film"
+    ],
+    "parallax scrolling": [
+        "parallax",
+        "scrolling"
+    ],
+    "game engine": [
+        "game",
+        "engine"
+    ],
+    "applied science": [
+        "applied",
+        "science"
+    ],
+    "branch of chemistry": [
+        "branch",
+        "of",
+        "chemistry"
+    ],
+    "hebbian rule": [
+        "hebbian",
+        "rule"
+    ],
+    "cryptosystem": [
+        "cryptosystem"
+    ],
+    "skein": [
+        "skein"
+    ],
+    "branch of engineering": [
+        "branch",
+        "of",
+        "engineering"
+    ],
+    "pathfinding algorithm": [
+        "pathfinding",
+        "algorithm"
+    ],
+    "interdisciplinary science": [
+        "interdisciplinary",
+        "science"
+    ],
+    "simulated annealing": [
+        "simulated",
+        "annealing"
+    ],
+    "instruction set architecture": [
+        "instruction",
+        "set",
+        "architecture"
+    ],
+    "md5": [
+        "md5"
+    ],
+    "bing translator": [
+        "bing",
+        "translator"
+    ],
+    "theatrical property": [
+        "theatrical",
+        "property"
+    ],
+    "root-finding algorithm": [
+        "root-finding",
+        "algorithm"
+    ],
+    "bisection method": [
+        "bisection",
+        "method"
+    ],
+    "filter bubble": [
+        "filter",
+        "bubble"
+    ],
+    "information theory": [
+        "information",
+        "theory"
+    ],
+    "algorithmic information theory": [
+        "algorithmic",
+        "information",
+        "theory"
+    ],
+    "md4": [
+        "md4"
+    ],
+    "readability": [
+        "readability"
+    ],
+    "benaloh cryptosystem": [
+        "benaloh",
+        "cryptosystem"
+    ],
+    "nature versus nurture": [
+        "nature",
+        "versus",
+        "nurture"
+    ],
+    "physical address": [
+        "physical",
+        "address"
+    ],
+    "branch of science": [
+        "branch",
+        "of",
+        "science"
+    ],
+    "north\u2013south divide": [
+        "north\u2013south",
+        "divide"
+    ],
+    "md2": [
+        "md2"
+    ],
+    "fictional software": [
+        "fictional",
+        "software"
+    ],
+    "graph algorithm": [
+        "graph",
+        "algorithm"
+    ],
+    "hypothesis": [
+        "hypothesis"
+    ],
+    "scigen": [
+        "scigen"
+    ],
+    "mod": [
+        "mod"
+    ],
+    "aggregation": [
+        "aggregation"
+    ],
+    "ripemd": [
+        "ripemd"
+    ],
+    "adaboost": [
+        "adaboost"
+    ],
+    "algorithmic probability": [
+        "algorithmic",
+        "probability"
+    ],
+    "combinatorial algorithm": [
+        "combinatorial",
+        "algorithm"
+    ],
+    "lin\u2013kernighan heuristic": [
+        "lin\u2013kernighan",
+        "heuristic"
+    ],
+    "field of work": [
+        "field",
+        "of",
+        "work"
+    ],
+    "google personalized search": [
+        "google",
+        "personalized",
+        "search"
+    ],
+    "esperanto learning tool": [
+        "esperanto",
+        "learning",
+        "tool"
+    ],
+    "duolingo": [
+        "duolingo"
+    ],
+    "lexical choice": [
+        "lexical",
+        "choice"
+    ],
+    "md6": [
+        "md6"
+    ],
+    "personalized search": [
+        "personalized",
+        "search"
+    ],
+    "split screen": [
+        "split",
+        "screen"
+    ],
+    "gamification of learning": [
+        "gamification",
+        "of",
+        "learning"
+    ],
+    "website": [
+        "website"
+    ],
+    "key-agreement protocol": [
+        "key-agreement",
+        "protocol"
+    ],
+    "mdc-2": [
+        "mdc-2"
+    ],
+    "fiat\u2013shamir heuristic": [
+        "fiat\u2013shamir",
+        "heuristic"
+    ],
+    "iterative deepening a*": [
+        "iterative",
+        "deepening",
+        "a*"
+    ],
+    "very smooth hash": [
+        "very",
+        "smooth",
+        "hash"
+    ],
+    "magazine": [
+        "magazine"
+    ],
+    "new computer express": [
+        "new",
+        "computer",
+        "express"
+    ],
+    "hirohata merc": [
+        "hirohata",
+        "merc"
+    ],
+    "realization": [
+        "realization"
+    ],
+    "gender": [
+        "gender"
+    ],
+    "ripemd-128": [
+        "ripemd-128"
+    ],
+    "referring expression generation": [
+        "referring",
+        "expression",
+        "generation"
+    ],
+    "east\u2013west divide": [
+        "east\u2013west",
+        "divide"
+    ],
+    "classification system": [
+        "classification",
+        "system"
+    ],
+    "ntru": [
+        "ntru"
+    ],
+    "algorithmic inference": [
+        "algorithmic",
+        "inference"
+    ],
+    "document structuring": [
+        "document",
+        "structuring"
+    ],
+    "greedy algorithm": [
+        "greedy",
+        "algorithm"
+    ],
+    "legal expert system": [
+        "legal",
+        "expert",
+        "system"
+    ],
+    "ford individual": [
+        "ford",
+        "individual"
+    ],
+    "jh": [
+        "jh"
+    ],
+    "emily howell": [
+        "emily",
+        "howell"
+    ],
+    "algorithmic learning theory": [
+        "algorithmic",
+        "learning",
+        "theory"
+    ],
+    "mind\u2013body dualism": [
+        "mind\u2013body",
+        "dualism"
+    ],
+    "n-hash": [
+        "n-hash"
+    ],
+    "hypothetical technology": [
+        "hypothetical",
+        "technology"
+    ],
+    "oblivious transfer": [
+        "oblivious",
+        "transfer"
+    ],
+    "philosophical theory": [
+        "philosophical",
+        "theory"
+    ],
+    "person-situation debate": [
+        "person-situation",
+        "debate"
+    ],
+    "educational technology": [
+        "educational",
+        "technology"
+    ],
+    "propaganda": [
+        "propaganda"
+    ],
+    "caduceus": [
+        "caduceus"
+    ],
+    "tiger": [
+        "tiger"
+    ],
+    "business": [
+        "business"
+    ],
+    "mobile app": [
+        "mobile",
+        "app"
+    ],
+    "q4040382": [
+        "q4040382"
+    ],
+    "dyad": [
+        "dyad"
+    ],
+    "technique": [
+        "technique"
+    ],
+    "information-theoretic security": [
+        "information-theoretic",
+        "security"
+    ],
+    "wimp": [
+        "wimp"
+    ],
+    "ml.net": [
+        "ml.net"
+    ],
+    "quark": [
+        "quark"
+    ],
+    "application": [
+        "application"
+    ],
+    "talking angela": [
+        "talking",
+        "angela"
+    ],
+    "aladdin": [
+        "aladdin"
+    ],
+    "algorithmic logic": [
+        "algorithmic",
+        "logic"
+    ],
+    "streebog": [
+        "streebog"
+    ],
+    "simsimi": [
+        "simsimi"
+    ],
+    "chainer": [
+        "chainer"
+    ],
+    "cimon": [
+        "cimon"
+    ],
+    "world view": [
+        "world",
+        "view"
+    ],
+    "aiva": [
+        "aiva"
+    ],
+    "comics character": [
+        "comics",
+        "character"
+    ],
+    "supreme intelligence": [
+        "supreme",
+        "intelligence"
+    ],
+    "gost": [
+        "gost"
+    ],
+    "block cipher": [
+        "block",
+        "cipher"
+    ],
+    "prince": [
+        "prince"
+    ],
+    "accumulator": [
+        "accumulator"
+    ],
+    "subject and object": [
+        "subject",
+        "and",
+        "object"
+    ],
+    "chatbot": [
+        "chatbot"
+    ],
+    "chinese whispers": [
+        "chinese",
+        "whispers"
+    ],
+    "time machine": [
+        "time",
+        "machine"
+    ],
+    "guardian of forever": [
+        "guardian",
+        "of",
+        "forever"
+    ],
+    "q11077928": [
+        "q11077928"
+    ],
+    "biochemistry method": [
+        "biochemistry",
+        "method"
+    ],
+    "literary character": [
+        "literary",
+        "character"
+    ],
+    "model": [
+        "model"
+    ],
+    "ripemd-256": [
+        "ripemd-256"
+    ],
+    "awario": [
+        "awario"
+    ],
+    "q25389007": [
+        "q25389007"
+    ],
+    "branch of geography": [
+        "branch",
+        "of",
+        "geography"
+    ],
+    "speech synthesis software": [
+        "speech",
+        "synthesis",
+        "software"
+    ],
+    "google wavenet": [
+        "google",
+        "wavenet"
+    ],
+    "single-cell analysis": [
+        "single-cell",
+        "analysis"
+    ],
+    "software library": [
+        "software",
+        "library"
+    ],
+    "software framework": [
+        "software",
+        "framework"
+    ],
+    "redoc": [
+        "redoc"
+    ],
+    "l-notation": [
+        "l-notation"
+    ],
+    "bmw hash function": [
+        "bmw",
+        "hash",
+        "function"
+    ],
+    "change and continuity": [
+        "change",
+        "and",
+        "continuity"
+    ],
+    "government document": [
+        "government",
+        "document"
+    ],
+    "ripemd-160": [
+        "ripemd-160"
+    ],
+    "kidule": [
+        "kidule"
+    ],
+    "robot": [
+        "robot"
+    ],
+    "programming paradigm": [
+        "programming",
+        "paradigm"
+    ],
+    "software category": [
+        "software",
+        "category"
+    ],
+    "kupyna": [
+        "kupyna"
+    ],
+    "machine learning framework": [
+        "machine",
+        "learning",
+        "framework"
+    ],
+    "distributed point function": [
+        "distributed",
+        "point",
+        "function"
+    ],
+    "enterprise": [
+        "enterprise"
+    ],
+    "cadzzilla": [
+        "cadzzilla"
+    ],
+    "engineering process": [
+        "engineering",
+        "process"
+    ],
+    "smash": [
+        "smash"
+    ],
+    "computer hardware": [
+        "computer",
+        "hardware"
+    ],
+    "open content": [
+        "open",
+        "content"
+    ],
+    "gbif norway": [
+        "gbif",
+        "norway"
+    ],
+    "facility": [
+        "facility"
+    ],
+    "language model": [
+        "language",
+        "model"
+    ],
+    "generative pre-trained transformer": [
+        "generative",
+        "pre-trained",
+        "transformer"
+    ],
+    "data hub": [
+        "data",
+        "hub"
+    ],
+    "image gpt": [
+        "image",
+        "gpt"
+    ],
+    "bert": [
+        "bert"
+    ],
+    "el matador": [
+        "el",
+        "matador"
+    ],
+    "q82745779": [
+        "q82745779"
+    ],
+    "plug and receptacle": [
+        "plug",
+        "and",
+        "receptacle"
+    ],
+    "marquis": [
+        "marquis"
+    ],
+    "watsonian\u2013doylist dichotomy": [
+        "watsonian\u2013doylist",
+        "dichotomy"
+    ],
+    "gpt-2": [
+        "gpt-2"
+    ],
+    "cooling and heating": [
+        "cooling",
+        "and",
+        "heating"
+    ],
+    "alphafold": [
+        "alphafold"
+    ],
+    "gpt-3": [
+        "gpt-3"
+    ],
+    "q57232573": [
+        "q57232573"
+    ],
+    "j.a.r.v.i.s.": [
+        "j.a.r.v.i.s."
+    ],
+    "hypertraps": [
+        "hypertraps"
+    ],
+    "t5": [
+        "t5"
+    ],
+    "camembert": [
+        "camembert"
+    ],
+    "emil": [
+        "emil"
+    ],
+    "artificial\u2013natural dichotomy": [
+        "artificial\u2013natural",
+        "dichotomy"
+    ],
+    "collision resistant hash": [
+        "collision",
+        "resistant",
+        "hash"
+    ],
+    "grand master": [
+        "grand",
+        "master"
+    ],
+    "exodus": [
+        "exodus"
+    ],
+    "image model": [
+        "image",
+        "model"
+    ],
+    "the stallion": [
+        "the",
+        "stallion"
+    ],
+    "q60607156": [
+        "q60607156"
+    ],
+    "q62122374": [
+        "q62122374"
+    ],
+    "the mantaray": [
+        "the",
+        "mantaray"
+    ],
+    "impact": [
+        "impact"
+    ],
+    "q60741886": [
+        "q60741886"
+    ],
+    "elmo": [
+        "elmo"
+    ],
+    "research infrastructure": [
+        "research",
+        "infrastructure"
+    ],
+    "q62084136": [
+        "q62084136"
+    ],
+    "vacnet": [
+        "vacnet"
+    ],
+    "0032": [
+        "0032"
+    ],
+    "u-net": [
+        "u-net"
+    ],
+    "stylegan": [
+        "stylegan"
+    ],
+    "teaching methodology": [
+        "teaching",
+        "methodology"
+    ],
+    "deezymatch": [
+        "deezymatch"
+    ],
+    "category:digitrust": [
+        "category:digitrust"
+    ],
+    "q104444631": [
+        "q104444631"
+    ],
+    "record producer": [
+        "record",
+        "producer"
+    ],
+    "infer.net": [
+        "infer.net"
+    ],
+    "prometea": [
+        "prometea"
+    ],
+    "photograph": [
+        "photograph"
+    ],
+    "bliss": [
+        "bliss"
+    ],
+    "artistic theme": [
+        "artistic",
+        "theme"
+    ],
+    "beauty and ugliness": [
+        "beauty",
+        "and",
+        "ugliness"
+    ],
+    "q97143912": [
+        "q97143912"
+    ],
+    "kasumi izumo": [
+        "kasumi",
+        "izumo"
+    ],
+    "day and night": [
+        "day",
+        "and",
+        "night"
+    ],
+    "wikimedia category": [
+        "wikimedia",
+        "category"
+    ],
+    "digital certificate": [
+        "digital",
+        "certificate"
+    ],
+    "utility software": [
+        "utility",
+        "software"
+    ],
+    "science": [
+        "science"
+    ],
+    "classification algorithm": [
+        "classification",
+        "algorithm"
+    ],
+    "q104158327": [
+        "q104158327"
+    ],
+    "fictional human": [
+        "fictional",
+        "human"
+    ],
+    "fictional physician": [
+        "fictional",
+        "physician"
+    ],
+    "doctor": [
+        "doctor"
+    ],
+    "easy and difficult": [
+        "easy",
+        "and",
+        "difficult"
+    ],
+    "television character": [
+        "television",
+        "character"
+    ],
+    "decision theory": [
+        "decision",
+        "theory"
+    ],
+    "upper class": [
+        "upper",
+        "class"
+    ],
+    "yuppie": [
+        "yuppie"
+    ],
+    "advanced mathematics": [
+        "advanced",
+        "mathematics"
+    ],
+    "bose-einstein statistics": [
+        "bose-einstein",
+        "statistics"
+    ],
+    "economics": [
+        "economics"
+    ],
+    "non-euclidean geometry": [
+        "non-euclidean",
+        "geometry"
+    ],
+    "mathematical analysis": [
+        "mathematical",
+        "analysis"
+    ],
+    "upper middle class": [
+        "upper",
+        "middle",
+        "class"
+    ],
+    "cephalometry": [
+        "cephalometry"
+    ],
+    "craniometry": [
+        "craniometry"
+    ],
+    "differential geometry": [
+        "differential",
+        "geometry"
+    ],
+    "multivariate analysis": [
+        "multivariate",
+        "analysis"
+    ],
+    "canonical correlation analysis": [
+        "canonical",
+        "correlation",
+        "analysis"
+    ],
+    "morphometrics": [
+        "morphometrics"
+    ],
+    "social class": [
+        "social",
+        "class"
+    ],
+    "g\u014dzoku": [
+        "g\u014dzoku"
+    ],
+    "fiefdom": [
+        "fiefdom"
+    ],
+    "herrschaft": [
+        "herrschaft"
+    ],
+    "complex analysis": [
+        "complex",
+        "analysis"
+    ],
+    "differential calculus": [
+        "differential",
+        "calculus"
+    ],
+    "hyperbolic geometry": [
+        "hyperbolic",
+        "geometry"
+    ],
+    "algebraic number theory": [
+        "algebraic",
+        "number",
+        "theory"
+    ],
+    "page": [
+        "page"
+    ],
+    "menin": [
+        "menin"
+    ],
+    "mathematical physics": [
+        "mathematical",
+        "physics"
+    ],
+    "court appointment": [
+        "court",
+        "appointment"
+    ],
+    "untouchability": [
+        "untouchability"
+    ],
+    "al-akhdam": [
+        "al-akhdam"
+    ],
+    "finance": [
+        "finance"
+    ],
+    "mathematical finance": [
+        "mathematical",
+        "finance"
+    ],
+    "working class": [
+        "working",
+        "class"
+    ],
+    "civil servant": [
+        "civil",
+        "servant"
+    ],
+    "chamberlain": [
+        "chamberlain"
+    ],
+    "manorialism": [
+        "manorialism"
+    ],
+    "particle statistics": [
+        "particle",
+        "statistics"
+    ],
+    "biostatistics": [
+        "biostatistics"
+    ],
+    "descriptive statistics": [
+        "descriptive",
+        "statistics"
+    ],
+    "behavioral sciences": [
+        "behavioral",
+        "sciences"
+    ],
+    "integral calculus": [
+        "integral",
+        "calculus"
+    ],
+    "interactivity": [
+        "interactivity"
+    ],
+    "interactive geometry": [
+        "interactive",
+        "geometry"
+    ],
+    "title of honor": [
+        "title",
+        "of",
+        "honor"
+    ],
+    "position": [
+        "position"
+    ],
+    "feudal japan hierarchy": [
+        "feudal",
+        "japan",
+        "hierarchy"
+    ],
+    "burakumin": [
+        "burakumin"
+    ],
+    "noble title": [
+        "noble",
+        "title"
+    ],
+    "ordinary": [
+        "ordinary"
+    ],
+    "synthetic geometry": [
+        "synthetic",
+        "geometry"
+    ],
+    "euclidean geometry": [
+        "euclidean",
+        "geometry"
+    ],
+    "biometry": [
+        "biometry"
+    ],
+    "superior general": [
+        "superior",
+        "general"
+    ],
+    "calculus of variations": [
+        "calculus",
+        "of",
+        "variations"
+    ],
+    "lexicostatistics": [
+        "lexicostatistics"
+    ],
+    "comes": [
+        "comes"
+    ],
+    "comes sacrarum largitionum": [
+        "comes",
+        "sacrarum",
+        "largitionum"
+    ],
+    "social stratification": [
+        "social",
+        "stratification"
+    ],
+    "caste": [
+        "caste"
+    ],
+    "social group": [
+        "social",
+        "group"
+    ],
+    "time series analysis": [
+        "time",
+        "series",
+        "analysis"
+    ],
+    "trend estimation": [
+        "trend",
+        "estimation"
+    ],
+    "title": [
+        "title"
+    ],
+    "q456579": [
+        "q456579"
+    ],
+    "court rank": [
+        "court",
+        "rank"
+    ],
+    "digital geometry": [
+        "digital",
+        "geometry"
+    ],
+    "mathematical morphology": [
+        "mathematical",
+        "morphology"
+    ],
+    "analytic geometry": [
+        "analytic",
+        "geometry"
+    ],
+    "rank": [
+        "rank"
+    ],
+    "theory": [
+        "theory"
+    ],
+    "spherical geometry": [
+        "spherical",
+        "geometry"
+    ],
+    "protovestiarios": [
+        "protovestiarios"
+    ],
+    "pure mathematics": [
+        "pure",
+        "mathematics"
+    ],
+    "trade statistics": [
+        "trade",
+        "statistics"
+    ],
+    "foreign trade statistics": [
+        "foreign",
+        "trade",
+        "statistics"
+    ],
+    "gamma distribution": [
+        "gamma",
+        "distribution"
+    ],
+    "erlang distribution": [
+        "erlang",
+        "distribution"
+    ],
+    "president": [
+        "president"
+    ],
+    "nobility": [
+        "nobility"
+    ],
+    "q1001045": [
+        "q1001045"
+    ],
+    "vital statistics": [
+        "vital",
+        "statistics"
+    ],
+    "valet": [
+        "valet"
+    ],
+    "butler": [
+        "butler"
+    ],
+    "auction theory": [
+        "auction",
+        "theory"
+    ],
+    "baekjeong": [
+        "baekjeong"
+    ],
+    "economic statistics": [
+        "economic",
+        "statistics"
+    ],
+    "algorithm design": [
+        "algorithm",
+        "design"
+    ],
+    "algorithmic game theory": [
+        "algorithmic",
+        "game",
+        "theory"
+    ],
+    "q942710": [
+        "q942710"
+    ],
+    "bohemianism": [
+        "bohemianism"
+    ],
+    "bourgeois-boh\u00e8me": [
+        "bourgeois-boh\u00e8me"
+    ],
+    "demographics": [
+        "demographics"
+    ],
+    "anthropometry": [
+        "anthropometry"
+    ],
+    "calipometry": [
+        "calipometry"
+    ],
+    "asymptotic analysis": [
+        "asymptotic",
+        "analysis"
+    ],
+    "bounded rationality": [
+        "bounded",
+        "rationality"
+    ],
+    "comes illyrici": [
+        "comes",
+        "illyrici"
+    ],
+    "estimation process": [
+        "estimation",
+        "process"
+    ],
+    "extrapolation": [
+        "extrapolation"
+    ],
+    "planimetrics": [
+        "planimetrics"
+    ],
+    "riemannian geometry": [
+        "riemannian",
+        "geometry"
+    ],
+    "group theory": [
+        "group",
+        "theory"
+    ],
+    "comes africae": [
+        "comes",
+        "africae"
+    ],
+    "q18784426": [
+        "q18784426"
+    ],
+    "babylonian mathematics": [
+        "babylonian",
+        "mathematics"
+    ],
+    "comes britanniarum": [
+        "comes",
+        "britanniarum"
+    ],
+    "don": [
+        "don"
+    ],
+    "triangle geometry": [
+        "triangle",
+        "geometry"
+    ],
+    "songbun": [
+        "songbun"
+    ],
+    "soft biometrics": [
+        "soft",
+        "biometrics"
+    ],
+    "prediction": [
+        "prediction"
+    ],
+    "domestic worker": [
+        "domestic",
+        "worker"
+    ],
+    "experimental mathematics": [
+        "experimental",
+        "mathematics"
+    ],
+    "employment-to-population ratio": [
+        "employment-to-population",
+        "ratio"
+    ],
+    "real analysis": [
+        "real",
+        "analysis"
+    ],
+    "clergy": [
+        "clergy"
+    ],
+    "secular clergy": [
+        "secular",
+        "clergy"
+    ],
+    "given name": [
+        "given",
+        "name"
+    ],
+    "nomen": [
+        "nomen"
+    ],
+    "crown prince": [
+        "crown",
+        "prince"
+    ],
+    "duke of brabant": [
+        "duke",
+        "of",
+        "brabant"
+    ],
+    "third estate": [
+        "third",
+        "estate"
+    ],
+    "discrete geometry": [
+        "discrete",
+        "geometry"
+    ],
+    "bourgeoisie": [
+        "bourgeoisie"
+    ],
+    "cagot": [
+        "cagot"
+    ],
+    "medical statistics": [
+        "medical",
+        "statistics"
+    ],
+    "substantive title": [
+        "substantive",
+        "title"
+    ],
+    "indian mathematics": [
+        "indian",
+        "mathematics"
+    ],
+    "primor": [
+        "primor"
+    ],
+    "engineering mathematics": [
+        "engineering",
+        "mathematics"
+    ],
+    "expected utility hypothesis": [
+        "expected",
+        "utility",
+        "hypothesis"
+    ],
+    "recreation": [
+        "recreation"
+    ],
+    "recreational mathematics": [
+        "recreational",
+        "mathematics"
+    ],
+    "geostatistics": [
+        "geostatistics"
+    ],
+    "demographic statistics": [
+        "demographic",
+        "statistics"
+    ],
+    "organism": [
+        "organism"
+    ],
+    "earthling": [
+        "earthling"
+    ],
+    "valet de chambre": [
+        "valet",
+        "de",
+        "chambre"
+    ],
+    "q1623469": [
+        "q1623469"
+    ],
+    "exterior derivative": [
+        "exterior",
+        "derivative"
+    ],
+    "life": [
+        "life"
+    ],
+    "underclass": [
+        "underclass"
+    ],
+    "graph theory": [
+        "graph",
+        "theory"
+    ],
+    "geometric graph theory": [
+        "geometric",
+        "graph",
+        "theory"
+    ],
+    "japanese mathematics": [
+        "japanese",
+        "mathematics"
+    ],
+    "peerage of france": [
+        "peerage",
+        "of",
+        "france"
+    ],
+    "contact geometry": [
+        "contact",
+        "geometry"
+    ],
+    "symplectic geometry": [
+        "symplectic",
+        "geometry"
+    ],
+    "equerry": [
+        "equerry"
+    ],
+    "probability theory": [
+        "probability",
+        "theory"
+    ],
+    "q2494366": [
+        "q2494366"
+    ],
+    "human population": [
+        "human",
+        "population"
+    ],
+    "q1491544": [
+        "q1491544"
+    ],
+    "linear approximation": [
+        "linear",
+        "approximation"
+    ],
+    "spatial analysis": [
+        "spatial",
+        "analysis"
+    ],
+    "elliptic geometry": [
+        "elliptic",
+        "geometry"
+    ],
+    "q1756504": [
+        "q1756504"
+    ],
+    "fils de france": [
+        "fils",
+        "de",
+        "france"
+    ],
+    "transport sciences": [
+        "transport",
+        "sciences"
+    ],
+    "transport statistics": [
+        "transport",
+        "statistics"
+    ],
+    "chess theory": [
+        "chess",
+        "theory"
+    ],
+    "renewal theory": [
+        "renewal",
+        "theory"
+    ],
+    "differential topology": [
+        "differential",
+        "topology"
+    ],
+    "trigonometry": [
+        "trigonometry"
+    ],
+    "rational trigonometry": [
+        "rational",
+        "trigonometry"
+    ],
+    "q2138693": [
+        "q2138693"
+    ],
+    "iwasawa theory": [
+        "iwasawa",
+        "theory"
+    ],
+    "q2077789": [
+        "q2077789"
+    ],
+    "class field theory": [
+        "class",
+        "field",
+        "theory"
+    ],
+    "parametric statistics": [
+        "parametric",
+        "statistics"
+    ],
+    "philosophy": [
+        "philosophy"
+    ],
+    "gnomonics": [
+        "gnomonics"
+    ],
+    "landed property": [
+        "landed",
+        "property"
+    ],
+    "burgess": [
+        "burgess"
+    ],
+    "nonstandard analysis": [
+        "nonstandard",
+        "analysis"
+    ],
+    "q1436106": [
+        "q1436106"
+    ],
+    "q2395002": [
+        "q2395002"
+    ],
+    "q2615343": [
+        "q2615343"
+    ],
+    "relative risk": [
+        "relative",
+        "risk"
+    ],
+    "q1436110": [
+        "q1436110"
+    ],
+    "demographic profile": [
+        "demographic",
+        "profile"
+    ],
+    "elderly people": [
+        "elderly",
+        "people"
+    ],
+    "applied statistics": [
+        "applied",
+        "statistics"
+    ],
+    "frequency analysis": [
+        "frequency",
+        "analysis"
+    ],
+    "population group": [
+        "population",
+        "group"
+    ],
+    "name": [
+        "name"
+    ],
+    "computational group theory": [
+        "computational",
+        "group",
+        "theory"
+    ],
+    "titre de courtoisie": [
+        "titre",
+        "de",
+        "courtoisie"
+    ],
+    "evolutionary game theory": [
+        "evolutionary",
+        "game",
+        "theory"
+    ],
+    "group cohomology": [
+        "group",
+        "cohomology"
+    ],
+    "\u00e6theling": [
+        "\u00e6theling"
+    ],
+    "organization": [
+        "organization"
+    ],
+    "inorodtsy": [
+        "inorodtsy"
+    ],
+    "goniometry": [
+        "goniometry"
+    ],
+    "hofmarschall": [
+        "hofmarschall"
+    ],
+    "stochastic geometry": [
+        "stochastic",
+        "geometry"
+    ],
+    "arithmetic geometry": [
+        "arithmetic",
+        "geometry"
+    ],
+    "q3798076": [
+        "q3798076"
+    ],
+    "q2915132": [
+        "q2915132"
+    ],
+    "algebraic analysis": [
+        "algebraic",
+        "analysis"
+    ],
+    "feudal land tenure": [
+        "feudal",
+        "land",
+        "tenure"
+    ],
+    "viscountcy": [
+        "viscountcy"
+    ],
+    "comes italiae": [
+        "comes",
+        "italiae"
+    ],
+    "clifford analysis": [
+        "clifford",
+        "analysis"
+    ],
+    "elementary mathematics": [
+        "elementary",
+        "mathematics"
+    ],
+    "algebraic statistics": [
+        "algebraic",
+        "statistics"
+    ],
+    "feud": [
+        "feud"
+    ],
+    "chamberlain of japan": [
+        "chamberlain",
+        "of",
+        "japan"
+    ],
+    "information geometry": [
+        "information",
+        "geometry"
+    ],
+    "ober-stallmeister": [
+        "ober-stallmeister"
+    ],
+    "classical mathematics": [
+        "classical",
+        "mathematics"
+    ],
+    "comes tingitaniae": [
+        "comes",
+        "tingitaniae"
+    ],
+    "computable topology": [
+        "computable",
+        "topology"
+    ],
+    "ancillary statistic": [
+        "ancillary",
+        "statistic"
+    ],
+    "hinin": [
+        "hinin"
+    ],
+    "q4458360": [
+        "q4458360"
+    ],
+    "comes isauriae": [
+        "comes",
+        "isauriae"
+    ],
+    "geometric group theory": [
+        "geometric",
+        "group",
+        "theory"
+    ],
+    "synthetic differential geometry": [
+        "synthetic",
+        "differential",
+        "geometry"
+    ],
+    "smooth infinitesimal analysis": [
+        "smooth",
+        "infinitesimal",
+        "analysis"
+    ],
+    "astrostatistics": [
+        "astrostatistics"
+    ],
+    "q3620955": [
+        "q3620955"
+    ],
+    "j\u00e4germeister": [
+        "j\u00e4germeister"
+    ],
+    "tropical geometry": [
+        "tropical",
+        "geometry"
+    ],
+    "comes hispaniarum": [
+        "comes",
+        "hispaniarum"
+    ],
+    "q2689786": [
+        "q2689786"
+    ],
+    "infinitesimal calculus": [
+        "infinitesimal",
+        "calculus"
+    ],
+    "q4165702": [
+        "q4165702"
+    ],
+    "comes rerum privatarum": [
+        "comes",
+        "rerum",
+        "privatarum"
+    ],
+    "viscount": [
+        "viscount"
+    ],
+    "vicomtes of vesoul": [
+        "vicomtes",
+        "of",
+        "vesoul"
+    ],
+    "q4147018": [
+        "q4147018"
+    ],
+    "architecture": [
+        "architecture"
+    ],
+    "architectural geometry": [
+        "architectural",
+        "geometry"
+    ],
+    "comes domesticorum": [
+        "comes",
+        "domesticorum"
+    ],
+    "comes tractus argentoratensis": [
+        "comes",
+        "tractus",
+        "argentoratensis"
+    ],
+    "discrimination": [
+        "discrimination"
+    ],
+    "burchnall\u2013chaundy theory": [
+        "burchnall\u2013chaundy",
+        "theory"
+    ],
+    "social rejection": [
+        "social",
+        "rejection"
+    ],
+    "spectral geometry": [
+        "spectral",
+        "geometry"
+    ],
+    "count": [
+        "count"
+    ],
+    "counts of villafranca": [
+        "counts",
+        "of",
+        "villafranca"
+    ],
+    "q2748254": [
+        "q2748254"
+    ],
+    "set-theoretic topology": [
+        "set-theoretic",
+        "topology"
+    ],
+    "causal decision theory": [
+        "causal",
+        "decision",
+        "theory"
+    ],
+    "q3696377": [
+        "q3696377"
+    ],
+    "additive number theory": [
+        "additive",
+        "number",
+        "theory"
+    ],
+    "se\u00f1orio": [
+        "se\u00f1orio"
+    ],
+    "comes limitis aegypti": [
+        "comes",
+        "limitis",
+        "aegypti"
+    ],
+    "p-adic analysis": [
+        "p-adic",
+        "analysis"
+    ],
+    "cephalometric analysis": [
+        "cephalometric",
+        "analysis"
+    ],
+    "classe c": [
+        "classe",
+        "c"
+    ],
+    "euclidean plane geometry": [
+        "euclidean",
+        "plane",
+        "geometry"
+    ],
+    "complexe trigonometry": [
+        "complexe",
+        "trigonometry"
+    ],
+    "constructive analysis": [
+        "constructive",
+        "analysis"
+    ],
+    "computable analysis": [
+        "computable",
+        "analysis"
+    ],
+    "comes commerciorum": [
+        "comes",
+        "commerciorum"
+    ],
+    "q4329148": [
+        "q4329148"
+    ],
+    "q4329149": [
+        "q4329149"
+    ],
+    "social statistics": [
+        "social",
+        "statistics"
+    ],
+    "bargaining problem": [
+        "bargaining",
+        "problem"
+    ],
+    "rubinstein bargaining model": [
+        "rubinstein",
+        "bargaining",
+        "model"
+    ],
+    "q48782649": [
+        "q48782649"
+    ],
+    "q5719565": [
+        "q5719565"
+    ],
+    "environmental statistics": [
+        "environmental",
+        "statistics"
+    ],
+    "quantitative ecology": [
+        "quantitative",
+        "ecology"
+    ],
+    "kharol": [
+        "kharol"
+    ],
+    "maharana": [
+        "maharana"
+    ],
+    "value of information": [
+        "value",
+        "of",
+        "information"
+    ],
+    "quaternionic analysis": [
+        "quaternionic",
+        "analysis"
+    ],
+    "brazo / bra\u00e7": [
+        "brazo",
+        "/",
+        "bra\u00e7"
+    ],
+    "q5403040": [
+        "q5403040"
+    ],
+    "sovereign": [
+        "sovereign"
+    ],
+    "national bourgeoisie": [
+        "national",
+        "bourgeoisie"
+    ],
+    "spin geometry": [
+        "spin",
+        "geometry"
+    ],
+    "scottish feudal lordship": [
+        "scottish",
+        "feudal",
+        "lordship"
+    ],
+    "porism": [
+        "porism"
+    ],
+    "econometrics": [
+        "econometrics"
+    ],
+    "spatial econometrics": [
+        "spatial",
+        "econometrics"
+    ],
+    "hereditary title": [
+        "hereditary",
+        "title"
+    ],
+    "subsidiary title": [
+        "subsidiary",
+        "title"
+    ],
+    "communication medium": [
+        "communication",
+        "medium"
+    ],
+    "official statistics": [
+        "official",
+        "statistics"
+    ],
+    "data set": [
+        "data",
+        "set"
+    ],
+    "vector algebra": [
+        "vector",
+        "algebra"
+    ],
+    "constructive non-standard analysis": [
+        "constructive",
+        "non-standard",
+        "analysis"
+    ],
+    "geometric analysis": [
+        "geometric",
+        "analysis"
+    ],
+    "q5741713": [
+        "q5741713"
+    ],
+    "pelvimetry": [
+        "pelvimetry"
+    ],
+    "evidential decision theory": [
+        "evidential",
+        "decision",
+        "theory"
+    ],
+    "camerlengo": [
+        "camerlengo"
+    ],
+    "multiplicative number theory": [
+        "multiplicative",
+        "number",
+        "theory"
+    ],
+    "sparse pca": [
+        "sparse",
+        "pca"
+    ],
+    "visual calculus": [
+        "visual",
+        "calculus"
+    ],
+    "sasakian manifold": [
+        "sasakian",
+        "manifold"
+    ],
+    "voting age population": [
+        "voting",
+        "age",
+        "population"
+    ],
+    "nobility predicate": [
+        "nobility",
+        "predicate"
+    ],
+    "territorial designation": [
+        "territorial",
+        "designation"
+    ],
+    "folk science": [
+        "folk",
+        "science"
+    ],
+    "informal mathematics": [
+        "informal",
+        "mathematics"
+    ],
+    "caballerizo": [
+        "caballerizo"
+    ],
+    "priestly caste": [
+        "priestly",
+        "caste"
+    ],
+    "obaala": [
+        "obaala"
+    ],
+    "deprivation index": [
+        "deprivation",
+        "index"
+    ],
+    "q11655354": [
+        "q11655354"
+    ],
+    "saionji family": [
+        "saionji",
+        "family"
+    ],
+    "scheduled caste": [
+        "scheduled",
+        "caste"
+    ],
+    "kharot": [
+        "kharot"
+    ],
+    "quantum mechanics": [
+        "quantum",
+        "mechanics"
+    ],
+    "quantum game theory": [
+        "quantum",
+        "game",
+        "theory"
+    ],
+    "dhusia": [
+        "dhusia"
+    ],
+    "baronetcy": [
+        "baronetcy"
+    ],
+    "grant baronets": [
+        "grant",
+        "baronets"
+    ],
+    "demographics of sarawak": [
+        "demographics",
+        "of",
+        "sarawak"
+    ],
+    "kinanthropometry": [
+        "kinanthropometry"
+    ],
+    "q5554260": [
+        "q5554260"
+    ],
+    "odontometrics": [
+        "odontometrics"
+    ],
+    "generalized trigonometry": [
+        "generalized",
+        "trigonometry"
+    ],
+    "deformation theory": [
+        "deformation",
+        "theory"
+    ],
+    "malliavin calculus": [
+        "malliavin",
+        "calculus"
+    ],
+    "contingent cooperator": [
+        "contingent",
+        "cooperator"
+    ],
+    "honor regalis": [
+        "honor",
+        "regalis"
+    ],
+    "comes notariarum": [
+        "comes",
+        "notariarum"
+    ],
+    "q21574108": [
+        "q21574108"
+    ],
+    "q21574109": [
+        "q21574109"
+    ],
+    "non-standard calculus": [
+        "non-standard",
+        "calculus"
+    ],
+    "q18088094": [
+        "q18088094"
+    ],
+    "inversive geometry": [
+        "inversive",
+        "geometry"
+    ],
+    "numeric code": [
+        "numeric",
+        "code"
+    ],
+    "global analysis": [
+        "global",
+        "analysis"
+    ],
+    "portuguese noble title": [
+        "portuguese",
+        "noble",
+        "title"
+    ],
+    "statistical genetics": [
+        "statistical",
+        "genetics"
+    ],
+    "non-permanent population": [
+        "non-permanent",
+        "population"
+    ],
+    "error": [
+        "error"
+    ],
+    "circular analysis": [
+        "circular",
+        "analysis"
+    ],
+    "q12056311": [
+        "q12056311"
+    ],
+    "analytic number theory": [
+        "analytic",
+        "number",
+        "theory"
+    ],
+    "q18409399": [
+        "q18409399"
+    ],
+    "q15873065": [
+        "q15873065"
+    ],
+    "q20755119": [
+        "q20755119"
+    ],
+    "q12056315": [
+        "q12056315"
+    ],
+    "q12056313": [
+        "q12056313"
+    ],
+    "q12056318": [
+        "q12056318"
+    ],
+    "q12056319": [
+        "q12056319"
+    ],
+    "q12056316": [
+        "q12056316"
+    ],
+    "q12056317": [
+        "q12056317"
+    ],
+    "q12056322": [
+        "q12056322"
+    ],
+    "hobbesian trap": [
+        "hobbesian",
+        "trap"
+    ],
+    "a-level mathematics": [
+        "a-level",
+        "mathematics"
+    ],
+    "q12056321": [
+        "q12056321"
+    ],
+    "enlightened bourgeoisie": [
+        "enlightened",
+        "bourgeoisie"
+    ],
+    "q12056325": [
+        "q12056325"
+    ],
+    "permanent population": [
+        "permanent",
+        "population"
+    ],
+    "elementary number theory": [
+        "elementary",
+        "number",
+        "theory"
+    ],
+    "non pr\u00e6judicando": [
+        "non",
+        "pr\u00e6judicando"
+    ],
+    "forensic science": [
+        "forensic",
+        "science"
+    ],
+    "forensic statistics": [
+        "forensic",
+        "statistics"
+    ],
+    "k-theory": [
+        "k-theory"
+    ],
+    "gemeindeverzeichnis information system": [
+        "gemeindeverzeichnis",
+        "information",
+        "system"
+    ],
+    "plane analytic geometry": [
+        "plane",
+        "analytic",
+        "geometry"
+    ],
+    "hill people": [
+        "hill",
+        "people"
+    ],
+    "medicine": [
+        "medicine"
+    ],
+    "medical mathematics": [
+        "medical",
+        "mathematics"
+    ],
+    "resident population (hungary)": [
+        "resident",
+        "population",
+        "(hungary)"
+    ],
+    "q12287256": [
+        "q12287256"
+    ],
+    "misuse of statistics": [
+        "misuse",
+        "of",
+        "statistics"
+    ],
+    "q16699880": [
+        "q16699880"
+    ],
+    "ancient roman senator": [
+        "ancient",
+        "roman",
+        "senator"
+    ],
+    "q19606964": [
+        "q19606964"
+    ],
+    "mathematical programming": [
+        "mathematical",
+        "programming"
+    ],
+    "senator": [
+        "senator"
+    ],
+    "profession": [
+        "profession"
+    ],
+    "q12316990": [
+        "q12316990"
+    ],
+    "q15874961": [
+        "q15874961"
+    ],
+    "applicable mathematics": [
+        "applicable",
+        "mathematics"
+    ],
+    "lie sphere geometry": [
+        "lie",
+        "sphere",
+        "geometry"
+    ],
+    "q16676903": [
+        "q16676903"
+    ],
+    "q21574106": [
+        "q21574106"
+    ],
+    "total population": [
+        "total",
+        "population"
+    ],
+    "q12040506": [
+        "q12040506"
+    ],
+    "data": [
+        "data"
+    ],
+    "statistical data": [
+        "statistical",
+        "data"
+    ],
+    "maharana of mewar": [
+        "maharana",
+        "of",
+        "mewar"
+    ],
+    "thinking": [
+        "thinking"
+    ],
+    "mathematical thinking": [
+        "mathematical",
+        "thinking"
+    ],
+    "q28746086": [
+        "q28746086"
+    ],
+    "behavioral game theory": [
+        "behavioral",
+        "game",
+        "theory"
+    ],
+    "inferential statistics": [
+        "inferential",
+        "statistics"
+    ],
+    "q28746106": [
+        "q28746106"
+    ],
+    "q27077345": [
+        "q27077345"
+    ],
+    "q55862681": [
+        "q55862681"
+    ],
+    "interrupted time series": [
+        "interrupted",
+        "time",
+        "series"
+    ],
+    "vizcondado": [
+        "vizcondado"
+    ],
+    "marquisate": [
+        "marquisate"
+    ],
+    "q28874456": [
+        "q28874456"
+    ],
+    "newton raphson division": [
+        "newton",
+        "raphson",
+        "division"
+    ],
+    "primer caballerizo": [
+        "primer",
+        "caballerizo"
+    ],
+    "rational mechanics": [
+        "rational",
+        "mechanics"
+    ],
+    "marquisate of spain": [
+        "marquisate",
+        "of",
+        "spain"
+    ],
+    "q47983043": [
+        "q47983043"
+    ],
+    "emperor": [
+        "emperor"
+    ],
+    "emporer of china": [
+        "emporer",
+        "of",
+        "china"
+    ],
+    "q58894829": [
+        "q58894829"
+    ],
+    "head of state": [
+        "head",
+        "of",
+        "state"
+    ],
+    "emir of diriyah": [
+        "emir",
+        "of",
+        "diriyah"
+    ],
+    "q51666780": [
+        "q51666780"
+    ],
+    "vadivakkanitham": [
+        "vadivakkanitham"
+    ],
+    "maharaja": [
+        "maharaja"
+    ],
+    "maharaja of bharatpur": [
+        "maharaja",
+        "of",
+        "bharatpur"
+    ],
+    "imperial chamberlain": [
+        "imperial",
+        "chamberlain"
+    ],
+    "classical mechanics": [
+        "classical",
+        "mechanics"
+    ],
+    "newar caste": [
+        "newar",
+        "caste"
+    ],
+    "historical administrative division": [
+        "historical",
+        "administrative",
+        "division"
+    ],
+    "q28053070": [
+        "q28053070"
+    ],
+    "superclass": [
+        "superclass"
+    ],
+    "incidence": [
+        "incidence"
+    ],
+    "suicide rate": [
+        "suicide",
+        "rate"
+    ],
+    "q23931049": [
+        "q23931049"
+    ],
+    "mortality rate": [
+        "mortality",
+        "rate"
+    ],
+    "maternal mortality ratio": [
+        "maternal",
+        "mortality",
+        "ratio"
+    ],
+    "distributive trade statistics": [
+        "distributive",
+        "trade",
+        "statistics"
+    ],
+    "maharaja of bikaner": [
+        "maharaja",
+        "of",
+        "bikaner"
+    ],
+    "q28191875": [
+        "q28191875"
+    ],
+    "count of paris": [
+        "count",
+        "of",
+        "paris"
+    ],
+    "q29035534": [
+        "q29035534"
+    ],
+    "man": [
+        "man"
+    ],
+    "old man": [
+        "old",
+        "man"
+    ],
+    "comes domesticorum peditum": [
+        "comes",
+        "domesticorum",
+        "peditum"
+    ],
+    "suburban population": [
+        "suburban",
+        "population"
+    ],
+    "legal person": [
+        "legal",
+        "person"
+    ],
+    "rights holder": [
+        "rights",
+        "holder"
+    ],
+    "sheaf theory": [
+        "sheaf",
+        "theory"
+    ],
+    "q92785829": [
+        "q92785829"
+    ],
+    "q101428230": [
+        "q101428230"
+    ],
+    "exact science": [
+        "exact",
+        "science"
+    ],
+    "mathification": [
+        "mathification"
+    ],
+    "consort": [
+        "consort"
+    ],
+    "principal component analysis": [
+        "principal",
+        "component",
+        "analysis"
+    ],
+    "comes avernorum": [
+        "comes",
+        "avernorum"
+    ],
+    "comes civitatis": [
+        "comes",
+        "civitatis"
+    ],
+    "world population": [
+        "world",
+        "population"
+    ],
+    "didactic method": [
+        "didactic",
+        "method"
+    ],
+    "q60469267": [
+        "q60469267"
+    ],
+    "jianren": [
+        "jianren"
+    ],
+    "demographics of officeholders": [
+        "demographics",
+        "of",
+        "officeholders"
+    ],
+    "q63207954": [
+        "q63207954"
+    ],
+    "comes rei militaris": [
+        "comes",
+        "rei",
+        "militaris"
+    ],
+    "roman magistrate": [
+        "roman",
+        "magistrate"
+    ],
+    "spatio-temporal analysis": [
+        "spatio-temporal",
+        "analysis"
+    ],
+    "poor reader": [
+        "poor",
+        "reader"
+    ],
+    "q8146019": [
+        "q8146019"
+    ],
+    "senhorio": [
+        "senhorio"
+    ],
+    "comes archiatrorum": [
+        "comes",
+        "archiatrorum"
+    ],
+    "comes dispositionum": [
+        "comes",
+        "dispositionum"
+    ],
+    "secretary": [
+        "secretary"
+    ],
+    "nobility of spain": [
+        "nobility",
+        "of",
+        "spain"
+    ],
+    "dukedom of spain": [
+        "dukedom",
+        "of",
+        "spain"
+    ],
+    "french bourgeoisie": [
+        "french",
+        "bourgeoisie"
+    ],
+    "diophantine geometry": [
+        "diophantine",
+        "geometry"
+    ],
+    "q95613337": [
+        "q95613337"
+    ],
+    "spanish noble title": [
+        "spanish",
+        "noble",
+        "title"
+    ],
+    "french noble title": [
+        "french",
+        "noble",
+        "title"
+    ],
+    "comes domesticorum equitum": [
+        "comes",
+        "domesticorum",
+        "equitum"
+    ],
+    "q61051513": [
+        "q61051513"
+    ],
+    "comes largitionum": [
+        "comes",
+        "largitionum"
+    ],
+    "comes auri": [
+        "comes",
+        "auri"
+    ],
+    "mathematics education": [
+        "mathematics",
+        "education"
+    ],
+    "q98556499": [
+        "q98556499"
+    ],
+    "commendation": [
+        "commendation"
+    ],
+    "noble family": [
+        "noble",
+        "family"
+    ],
+    "swedish noble family": [
+        "swedish",
+        "noble",
+        "family"
+    ],
+    "nobility of sweden": [
+        "nobility",
+        "of",
+        "sweden"
+    ],
+    "demographics of ra\u00eblism": [
+        "demographics",
+        "of",
+        "ra\u00eblism"
+    ],
+    "military rank": [
+        "military",
+        "rank"
+    ],
+    "likelihood function": [
+        "likelihood",
+        "function"
+    ],
+    "spherical trigonometry": [
+        "spherical",
+        "trigonometry"
+    ],
+    "greek mathematics": [
+        "greek",
+        "mathematics"
+    ],
+    "population": [
+        "population"
+    ],
+    "group of humans": [
+        "group",
+        "of",
+        "humans"
+    ],
+    "human": [
+        "human"
+    ],
+    "curt glaser": [
+        "curt",
+        "glaser"
+    ],
+    "refugee": [
+        "refugee"
+    ],
+    "alfred flechtheim": [
+        "alfred",
+        "flechtheim"
+    ],
+    "max stern": [
+        "max",
+        "stern"
+    ],
+    "cardinal title": [
+        "cardinal",
+        "title"
+    ],
+    "santa sabina": [
+        "santa",
+        "sabina"
+    ],
+    "branch of physics": [
+        "branch",
+        "of",
+        "physics"
+    ],
+    "earl": [
+        "earl"
+    ],
+    "earl of chatham": [
+        "earl",
+        "of",
+        "chatham"
+    ],
+    "louis of oettingen-wallerstein": [
+        "louis",
+        "of",
+        "oettingen-wallerstein"
+    ],
+    "q132484": [
+        "q132484"
+    ],
+    "paul westheim": [
+        "paul",
+        "westheim"
+    ],
+    "administrative type": [
+        "administrative",
+        "type"
+    ],
+    "family name": [
+        "family",
+        "name"
+    ],
+    "cybo": [
+        "cybo"
+    ],
+    "narisara nuvadtivongs": [
+        "narisara",
+        "nuvadtivongs"
+    ],
+    "q305049": [
+        "q305049"
+    ],
+    "minor basilica": [
+        "minor",
+        "basilica"
+    ],
+    "san clemente": [
+        "san",
+        "clemente"
+    ],
+    "award": [
+        "award"
+    ],
+    "q585001": [
+        "q585001"
+    ],
+    "ethnic group": [
+        "ethnic",
+        "group"
+    ],
+    "q599564": [
+        "q599564"
+    ],
+    "scientific theory": [
+        "scientific",
+        "theory"
+    ],
+    "viceroy": [
+        "viceroy"
+    ],
+    "namiestnik of poland": [
+        "namiestnik",
+        "of",
+        "poland"
+    ],
+    "zentherr": [
+        "zentherr"
+    ],
+    "venetian patrician family": [
+        "venetian",
+        "patrician",
+        "family"
+    ],
+    "isolated human group": [
+        "isolated",
+        "human",
+        "group"
+    ],
+    "q925297": [
+        "q925297"
+    ],
+    "sant\u2019eusebio": [
+        "sant\u2019eusebio"
+    ],
+    "probability": [
+        "probability"
+    ],
+    "inclusion\u2013exclusion principle": [
+        "inclusion\u2013exclusion",
+        "principle"
+    ],
+    "chivalry (institution)": [
+        "chivalry",
+        "(institution)"
+    ],
+    "estonian knighthood": [
+        "estonian",
+        "knighthood"
+    ],
+    "march": [
+        "march"
+    ],
+    "saxon eastern march": [
+        "saxon",
+        "eastern",
+        "march"
+    ],
+    "q723377": [
+        "q723377"
+    ],
+    "wikimedia list article": [
+        "wikimedia",
+        "list",
+        "article"
+    ],
+    "grandee": [
+        "grandee"
+    ],
+    "barberini": [
+        "barberini"
+    ],
+    "house of dolgorukov": [
+        "house",
+        "of",
+        "dolgorukov"
+    ],
+    "weierstrass substitution": [
+        "weierstrass",
+        "substitution"
+    ],
+    "san leone i": [
+        "san",
+        "leone",
+        "i"
+    ],
+    "q977254": [
+        "q977254"
+    ],
+    "kurl\u00e4ndische ritterschaft": [
+        "kurl\u00e4ndische",
+        "ritterschaft"
+    ],
+    "boyar": [
+        "boyar"
+    ],
+    "santo stefano rotondo": [
+        "santo",
+        "stefano",
+        "rotondo"
+    ],
+    "boncompagni": [
+        "boncompagni"
+    ],
+    "economic concept": [
+        "economic",
+        "concept"
+    ],
+    "ratio": [
+        "ratio"
+    ],
+    "q952824": [
+        "q952824"
+    ],
+    "subculture": [
+        "subculture"
+    ],
+    "santa prassede": [
+        "santa",
+        "prassede"
+    ],
+    "margrave": [
+        "margrave"
+    ],
+    "von brandt": [
+        "von",
+        "brandt"
+    ],
+    "socio-economic lifestyle": [
+        "socio-economic",
+        "lifestyle"
+    ],
+    "immacolata al tiburtino": [
+        "immacolata",
+        "al",
+        "tiburtino"
+    ],
+    "san callisto": [
+        "san",
+        "callisto"
+    ],
+    "combinatorics": [
+        "combinatorics"
+    ],
+    "sant\u2019eustachio": [
+        "sant\u2019eustachio"
+    ],
+    "sant'angelo in pescheria": [
+        "sant'angelo",
+        "in",
+        "pescheria"
+    ],
+    "sociological concept": [
+        "sociological",
+        "concept"
+    ],
+    "sant\u2019anastasia": [
+        "sant\u2019anastasia"
+    ],
+    "santa prisca": [
+        "santa",
+        "prisca"
+    ],
+    "q669781": [
+        "q669781"
+    ],
+    "sant\u2019onofrio": [
+        "sant\u2019onofrio"
+    ],
+    "san marcello": [
+        "san",
+        "marcello"
+    ],
+    "santa pudenziana": [
+        "santa",
+        "pudenziana"
+    ],
+    "sant\u2019agata dei goti": [
+        "sant\u2019agata",
+        "dei",
+        "goti"
+    ],
+    "monarch": [
+        "monarch"
+    ],
+    "kyi": [
+        "kyi"
+    ],
+    "q749161": [
+        "q749161"
+    ],
+    "q952741": [
+        "q952741"
+    ],
+    "san marco": [
+        "san",
+        "marco"
+    ],
+    "q946593": [
+        "q946593"
+    ],
+    "q1083269": [
+        "q1083269"
+    ],
+    "patrician": [
+        "patrician"
+    ],
+    "busmann": [
+        "busmann"
+    ],
+    "santa chiara": [
+        "santa",
+        "chiara"
+    ],
+    "q1087641": [
+        "q1087641"
+    ],
+    "damrong rajanubhab": [
+        "damrong",
+        "rajanubhab"
+    ],
+    "ges\u00f9 divin lavoratore": [
+        "ges\u00f9",
+        "divin",
+        "lavoratore"
+    ],
+    "church building": [
+        "church",
+        "building"
+    ],
+    "sant'andrea al quirinale": [
+        "sant'andrea",
+        "al",
+        "quirinale"
+    ],
+    "q1087652": [
+        "q1087652"
+    ],
+    "q1088253": [
+        "q1088253"
+    ],
+    "q1088258": [
+        "q1088258"
+    ],
+    "q1087656": [
+        "q1087656"
+    ],
+    "q1391379": [
+        "q1391379"
+    ],
+    "grabbe family": [
+        "grabbe",
+        "family"
+    ],
+    "graf": [
+        "graf"
+    ],
+    "eberhard": [
+        "eberhard"
+    ],
+    "santi quattro coronati": [
+        "santi",
+        "quattro",
+        "coronati"
+    ],
+    "kuge": [
+        "kuge"
+    ],
+    "aristocrat": [
+        "aristocrat"
+    ],
+    "family": [
+        "family"
+    ],
+    "q1168486": [
+        "q1168486"
+    ],
+    "duke of sutherland": [
+        "duke",
+        "of",
+        "sutherland"
+    ],
+    "ss. xii apostoli": [
+        "ss.",
+        "xii",
+        "apostoli"
+    ],
+    "egyptian mathematics": [
+        "egyptian",
+        "mathematics"
+    ],
+    "jesuit church": [
+        "jesuit",
+        "church"
+    ],
+    "economic theory": [
+        "economic",
+        "theory"
+    ],
+    "prospect theory": [
+        "prospect",
+        "theory"
+    ],
+    "trigonometric substitution": [
+        "trigonometric",
+        "substitution"
+    ],
+    "people": [
+        "people"
+    ],
+    "allen's interval algebra": [
+        "allen's",
+        "interval",
+        "algebra"
+    ],
+    "sant\u2019agostino": [
+        "sant\u2019agostino"
+    ],
+    "tulku": [
+        "tulku"
+    ],
+    "demo rinpoche": [
+        "demo",
+        "rinpoche"
+    ],
+    "kronberg family": [
+        "kronberg",
+        "family"
+    ],
+    "q1083414": [
+        "q1083414"
+    ],
+    "imperial knight": [
+        "imperial",
+        "knight"
+    ],
+    "santa balbina": [
+        "santa",
+        "balbina"
+    ],
+    "sant'andrea delle fratte": [
+        "sant'andrea",
+        "delle",
+        "fratte"
+    ],
+    "parish church": [
+        "parish",
+        "church"
+    ],
+    "q2160875": [
+        "q2160875"
+    ],
+    "otto bernheimer": [
+        "otto",
+        "bernheimer"
+    ],
+    "santa maria nuova": [
+        "santa",
+        "maria",
+        "nuova"
+    ],
+    "santa teresa": [
+        "santa",
+        "teresa"
+    ],
+    "q1764538": [
+        "q1764538"
+    ],
+    "shrine": [
+        "shrine"
+    ],
+    "trijang rinpoche": [
+        "trijang",
+        "rinpoche"
+    ],
+    "plus-minus": [
+        "plus-minus"
+    ],
+    "tatsag": [
+        "tatsag"
+    ],
+    "house of malatesta": [
+        "house",
+        "of",
+        "malatesta"
+    ],
+    "santa susanna": [
+        "santa",
+        "susanna"
+    ],
+    "arung palakka": [
+        "arung",
+        "palakka"
+    ],
+    "sant'andrea della valle": [
+        "sant'andrea",
+        "della",
+        "valle"
+    ],
+    "tshemon ling rinpoche": [
+        "tshemon",
+        "ling",
+        "rinpoche"
+    ],
+    "manfredi family": [
+        "manfredi",
+        "family"
+    ],
+    "marquess": [
+        "marquess"
+    ],
+    "house of bentivoglio": [
+        "house",
+        "of",
+        "bentivoglio"
+    ],
+    "san crisogono": [
+        "san",
+        "crisogono"
+    ],
+    "ling rinpoche": [
+        "ling",
+        "rinpoche"
+    ],
+    "q2384915": [
+        "q2384915"
+    ],
+    "hinlopen family": [
+        "hinlopen",
+        "family"
+    ],
+    "duke": [
+        "duke"
+    ],
+    "duke of ireland": [
+        "duke",
+        "of",
+        "ireland"
+    ],
+    "y\u014dkai": [
+        "y\u014dkai"
+    ],
+    "tsuchigumo": [
+        "tsuchigumo"
+    ],
+    "economic system": [
+        "economic",
+        "system"
+    ],
+    "duke of montagu": [
+        "duke",
+        "of",
+        "montagu"
+    ],
+    "san pancrazio": [
+        "san",
+        "pancrazio"
+    ],
+    "q11423883": [
+        "q11423883"
+    ],
+    "q2631144": [
+        "q2631144"
+    ],
+    "lord": [
+        "lord"
+    ],
+    "nguy\u1ec5n lords": [
+        "nguy\u1ec5n",
+        "lords"
+    ],
+    "q2521480": [
+        "q2521480"
+    ],
+    "san biagio dell'anello": [
+        "san",
+        "biagio",
+        "dell'anello"
+    ],
+    "seigneur": [
+        "seigneur"
+    ],
+    "duke of inverness": [
+        "duke",
+        "of",
+        "inverness"
+    ],
+    "duchy of castro": [
+        "duchy",
+        "of",
+        "castro"
+    ],
+    "baron": [
+        "baron"
+    ],
+    "famille de gail": [
+        "famille",
+        "de",
+        "gail"
+    ],
+    "q3344380": [
+        "q3344380"
+    ],
+    "q3471603": [
+        "q3471603"
+    ],
+    "freiherr": [
+        "freiherr"
+    ],
+    "q3471463": [
+        "q3471463"
+    ],
+    "q3471618": [
+        "q3471618"
+    ],
+    "q3471464": [
+        "q3471464"
+    ],
+    "q3471470": [
+        "q3471470"
+    ],
+    "san giuliano martire": [
+        "san",
+        "giuliano",
+        "martire"
+    ],
+    "san giustino": [
+        "san",
+        "giustino"
+    ],
+    "q2661124": [
+        "q2661124"
+    ],
+    "q3471480": [
+        "q3471480"
+    ],
+    "arisugawa-no-miya": [
+        "arisugawa-no-miya"
+    ],
+    "kazoku": [
+        "kazoku"
+    ],
+    "q3471633": [
+        "q3471633"
+    ],
+    "san trifone": [
+        "san",
+        "trifone"
+    ],
+    "q3132289": [
+        "q3132289"
+    ],
+    "q3267677": [
+        "q3267677"
+    ],
+    "patronymic surname": [
+        "patronymic",
+        "surname"
+    ],
+    "sant'agnese in agone": [
+        "sant'agnese",
+        "in",
+        "agone"
+    ],
+    "san gerardo maiella": [
+        "san",
+        "gerardo",
+        "maiella"
+    ],
+    "q11452125": [
+        "q11452125"
+    ],
+    "extended imperial family": [
+        "extended",
+        "imperial",
+        "family"
+    ],
+    "q3471374": [
+        "q3471374"
+    ],
+    "q2822903": [
+        "q2822903"
+    ],
+    "q3461778": [
+        "q3461778"
+    ],
+    "san giuseppe all'aurelio": [
+        "san",
+        "giuseppe",
+        "all'aurelio"
+    ],
+    "house of brandolin": [
+        "house",
+        "of",
+        "brandolin"
+    ],
+    "beltrami identity": [
+        "beltrami",
+        "identity"
+    ],
+    "function": [
+        "function"
+    ],
+    "affine frame": [
+        "affine",
+        "frame"
+    ],
+    "q3065064": [
+        "q3065064"
+    ],
+    "san liborio": [
+        "san",
+        "liborio"
+    ],
+    "q3471570": [
+        "q3471570"
+    ],
+    "q3471426": [
+        "q3471426"
+    ],
+    "q3471428": [
+        "q3471428"
+    ],
+    "q3471581": [
+        "q3471581"
+    ],
+    "q3471587": [
+        "q3471587"
+    ],
+    "\u02bfilm al-\u1e25urouf": [
+        "\u02bfilm",
+        "al-\u1e25urouf"
+    ],
+    "q3694895": [
+        "q3694895"
+    ],
+    "jacovella da celano": [
+        "jacovella",
+        "da",
+        "celano"
+    ],
+    "q3472511": [
+        "q3472511"
+    ],
+    "q3472664": [
+        "q3472664"
+    ],
+    "odd hilt": [
+        "odd",
+        "hilt"
+    ],
+    "q3472674": [
+        "q3472674"
+    ],
+    "q3472520": [
+        "q3472520"
+    ],
+    "q3472521": [
+        "q3472521"
+    ],
+    "q3472676": [
+        "q3472676"
+    ],
+    "sant\u2019angela merici": [
+        "sant\u2019angela",
+        "merici"
+    ],
+    "property law": [
+        "property",
+        "law"
+    ],
+    "q3472534": [
+        "q3472534"
+    ],
+    "q3472535": [
+        "q3472535"
+    ],
+    "q3472539": [
+        "q3472539"
+    ],
+    "q3472842": [
+        "q3472842"
+    ],
+    "q3472688": [
+        "q3472688"
+    ],
+    "q3472689": [
+        "q3472689"
+    ],
+    "q3472543": [
+        "q3472543"
+    ],
+    "sant'ippolito": [
+        "sant'ippolito"
+    ],
+    "q3472693": [
+        "q3472693"
+    ],
+    "crivelli": [
+        "crivelli"
+    ],
+    "numerology": [
+        "numerology"
+    ],
+    "q3472594": [
+        "q3472594"
+    ],
+    "esotericism": [
+        "esotericism"
+    ],
+    "nobile": [
+        "nobile"
+    ],
+    "q3472753": [
+        "q3472753"
+    ],
+    "q3472905": [
+        "q3472905"
+    ],
+    "ges\u00f9 e maria": [
+        "ges\u00f9",
+        "e",
+        "maria"
+    ],
+    "q3472909": [
+        "q3472909"
+    ],
+    "mencey": [
+        "mencey"
+    ],
+    "menceyato of daute": [
+        "menceyato",
+        "of",
+        "daute"
+    ],
+    "q3472630": [
+        "q3472630"
+    ],
+    "menceyato of abona": [
+        "menceyato",
+        "of",
+        "abona"
+    ],
+    "gambara": [
+        "gambara"
+    ],
+    "nobility of italy": [
+        "nobility",
+        "of",
+        "italy"
+    ],
+    "averoldi": [
+        "averoldi"
+    ],
+    "political organisation": [
+        "political",
+        "organisation"
+    ],
+    "proprietor": [
+        "proprietor"
+    ],
+    "arendator": [
+        "arendator"
+    ],
+    "form of government": [
+        "form",
+        "of",
+        "government"
+    ],
+    "knyaz": [
+        "knyaz"
+    ],
+    "q4440230": [
+        "q4440230"
+    ],
+    "moderate party": [
+        "moderate",
+        "party"
+    ],
+    "prince ulrik": [
+        "prince",
+        "ulrik"
+    ],
+    "proposition": [
+        "proposition"
+    ],
+    "vietnamese nobility": [
+        "vietnamese",
+        "nobility"
+    ],
+    "economic model": [
+        "economic",
+        "model"
+    ],
+    "karl gr\u00fcnwald": [
+        "karl",
+        "gr\u00fcnwald"
+    ],
+    "wass de czege": [
+        "wass",
+        "de",
+        "czege"
+    ],
+    "non-gaussianity": [
+        "non-gaussianity"
+    ],
+    "merchant": [
+        "merchant"
+    ],
+    "domaine jean-luc colombo": [
+        "domaine",
+        "jean-luc",
+        "colombo"
+    ],
+    "menceyato of tacoronte": [
+        "menceyato",
+        "of",
+        "tacoronte"
+    ],
+    "producer": [
+        "producer"
+    ],
+    "royalty": [
+        "royalty"
+    ],
+    "shunten dynasty": [
+        "shunten",
+        "dynasty"
+    ],
+    "higashikuni-no-miya": [
+        "higashikuni-no-miya"
+    ],
+    "prince of vitebsk": [
+        "prince",
+        "of",
+        "vitebsk"
+    ],
+    "q8778790": [
+        "q8778790"
+    ],
+    "menceyato of icode": [
+        "menceyato",
+        "of",
+        "icode"
+    ],
+    "rezzonico": [
+        "rezzonico"
+    ],
+    "gudmund harlem": [
+        "gudmund",
+        "harlem"
+    ],
+    "mathematical concept": [
+        "mathematical",
+        "concept"
+    ],
+    "khan": [
+        "khan"
+    ],
+    "t\u00fcsheet khan": [
+        "t\u00fcsheet",
+        "khan"
+    ],
+    "q5796692": [
+        "q5796692"
+    ],
+    "scholz's reciprocity law": [
+        "scholz's",
+        "reciprocity",
+        "law"
+    ],
+    "andriana": [
+        "andriana"
+    ],
+    "q3948000": [
+        "q3948000"
+    ],
+    "administrative territorial entity": [
+        "administrative",
+        "territorial",
+        "entity"
+    ],
+    "q4171318": [
+        "q4171318"
+    ],
+    "euler substitution": [
+        "euler",
+        "substitution"
+    ],
+    "podmanitzky noble family": [
+        "podmanitzky",
+        "noble",
+        "family"
+    ],
+    "statistical term": [
+        "statistical",
+        "term"
+    ],
+    "branch of ecology": [
+        "branch",
+        "of",
+        "ecology"
+    ],
+    "daimyo": [
+        "daimyo"
+    ],
+    "\u014dkubo tadaaki": [
+        "\u014dkubo",
+        "tadaaki"
+    ],
+    "ali'i": [
+        "ali'i"
+    ],
+    "historical profession": [
+        "historical",
+        "profession"
+    ],
+    "petersson trace formula": [
+        "petersson",
+        "trace",
+        "formula"
+    ],
+    "tenson dynasty": [
+        "tenson",
+        "dynasty"
+    ],
+    "eiso dynasty": [
+        "eiso",
+        "dynasty"
+    ],
+    "demo tulku": [
+        "demo",
+        "tulku"
+    ],
+    "hadjicostas's formula": [
+        "hadjicostas's",
+        "formula"
+    ],
+    "house of chiefs": [
+        "house",
+        "of",
+        "chiefs"
+    ],
+    "mathematical model": [
+        "mathematical",
+        "model"
+    ],
+    "wikimedia disambiguation page": [
+        "wikimedia",
+        "disambiguation",
+        "page"
+    ],
+    "corollary": [
+        "corollary"
+    ],
+    "sant\u2019ireneo a centrocelle": [
+        "sant\u2019ireneo",
+        "a",
+        "centrocelle"
+    ],
+    "peling tukse": [
+        "peling",
+        "tukse"
+    ],
+    "q15953031": [
+        "q15953031"
+    ],
+    "landlord": [
+        "landlord"
+    ],
+    "stockholmshem": [
+        "stockholmshem"
+    ],
+    "q15632215": [
+        "q15632215"
+    ],
+    "q15587490": [
+        "q15587490"
+    ],
+    "q17195284": [
+        "q17195284"
+    ],
+    "q11907510": [
+        "q11907510"
+    ],
+    "q11907511": [
+        "q11907511"
+    ],
+    "foreign affiliates statistics": [
+        "foreign",
+        "affiliates",
+        "statistics"
+    ],
+    "sultan": [
+        "sultan"
+    ],
+    "q12491039": [
+        "q12491039"
+    ],
+    "cossack": [
+        "cossack"
+    ],
+    "greben cossacks": [
+        "greben",
+        "cossacks"
+    ],
+    "togashi masachika": [
+        "togashi",
+        "masachika"
+    ],
+    "chiefdom": [
+        "chiefdom"
+    ],
+    "chiefdom of yongning": [
+        "chiefdom",
+        "of",
+        "yongning"
+    ],
+    "criterion": [
+        "criterion"
+    ],
+    "camponeschi": [
+        "camponeschi"
+    ],
+    "q19359001": [
+        "q19359001"
+    ],
+    "q17390587": [
+        "q17390587"
+    ],
+    "sultan of tafilalt": [
+        "sultan",
+        "of",
+        "tafilalt"
+    ],
+    "tusi": [
+        "tusi"
+    ],
+    "noble": [
+        "noble"
+    ],
+    "michai\u0142 rukievi\u010d": [
+        "michai\u0142",
+        "rukievi\u010d"
+    ],
+    "q15838242": [
+        "q15838242"
+    ],
+    "marquess of dublin": [
+        "marquess",
+        "of",
+        "dublin"
+    ],
+    "greyerz family": [
+        "greyerz",
+        "family"
+    ],
+    "chiefdom of lijiang": [
+        "chiefdom",
+        "of",
+        "lijiang"
+    ],
+    "san gabriele dell'addolorata": [
+        "san",
+        "gabriele",
+        "dell'addolorata"
+    ],
+    "san timoteo": [
+        "san",
+        "timoteo"
+    ],
+    "hasculf de tany": [
+        "hasculf",
+        "de",
+        "tany"
+    ],
+    "q20107722": [
+        "q20107722"
+    ],
+    "q20107723": [
+        "q20107723"
+    ],
+    "q10957773": [
+        "q10957773"
+    ],
+    "q20107726": [
+        "q20107726"
+    ],
+    "q20107724": [
+        "q20107724"
+    ],
+    "marca geronis": [
+        "marca",
+        "geronis"
+    ],
+    "realm": [
+        "realm"
+    ],
+    "kingdom of chakla": [
+        "kingdom",
+        "of",
+        "chakla"
+    ],
+    "q19312092": [
+        "q19312092"
+    ],
+    "historical country": [
+        "historical",
+        "country"
+    ],
+    "gangteng tulku rinpoche": [
+        "gangteng",
+        "tulku",
+        "rinpoche"
+    ],
+    "terek cossacks": [
+        "terek",
+        "cossacks"
+    ],
+    "vogt": [
+        "vogt"
+    ],
+    "q16404627": [
+        "q16404627"
+    ],
+    "heian aristocracy": [
+        "heian",
+        "aristocracy"
+    ],
+    "general": [
+        "general"
+    ],
+    "q11917807": [
+        "q11917807"
+    ],
+    "demographics of brazil": [
+        "demographics",
+        "of",
+        "brazil"
+    ],
+    "q10264970": [
+        "q10264970"
+    ],
+    "satto dynasty": [
+        "satto",
+        "dynasty"
+    ],
+    "matsudaira yorihide": [
+        "matsudaira",
+        "yorihide"
+    ],
+    "chiefdom of muli": [
+        "chiefdom",
+        "of",
+        "muli"
+    ],
+    "q11573683": [
+        "q11573683"
+    ],
+    "q19320689": [
+        "q19320689"
+    ],
+    "intelligentsia": [
+        "intelligentsia"
+    ],
+    "q12776255": [
+        "q12776255"
+    ],
+    "emir": [
+        "emir"
+    ],
+    "q25421365": [
+        "q25421365"
+    ],
+    "chiefdom of mangshi": [
+        "chiefdom",
+        "of",
+        "mangshi"
+    ],
+    "q25421371": [
+        "q25421371"
+    ],
+    "sant'alberto magno": [
+        "sant'alberto",
+        "magno"
+    ],
+    "group": [
+        "group"
+    ],
+    "lessie sachs": [
+        "lessie",
+        "sachs"
+    ],
+    "q31073094": [
+        "q31073094"
+    ],
+    "marquess of assche": [
+        "marquess",
+        "of",
+        "assche"
+    ],
+    "josepa veciana pastoret": [
+        "josepa",
+        "veciana",
+        "pastoret"
+    ],
+    "quranic character": [
+        "quranic",
+        "character"
+    ],
+    "bilqis": [
+        "bilqis"
+    ],
+    "newton's method": [
+        "newton's",
+        "method"
+    ],
+    "principality": [
+        "principality"
+    ],
+    "siunia": [
+        "siunia"
+    ],
+    "q25403478": [
+        "q25403478"
+    ],
+    "tsar": [
+        "tsar"
+    ],
+    "chiefdom of lithang": [
+        "chiefdom",
+        "of",
+        "lithang"
+    ],
+    "se\u00f1or": [
+        "se\u00f1or"
+    ],
+    "q25421291": [
+        "q25421291"
+    ],
+    "q29472073": [
+        "q29472073"
+    ],
+    "vijayanagara monarch": [
+        "vijayanagara",
+        "monarch"
+    ],
+    "white-collar worker": [
+        "white-collar",
+        "worker"
+    ],
+    "national check professional": [
+        "national",
+        "check",
+        "professional"
+    ],
+    "q24260586": [
+        "q24260586"
+    ],
+    "parish": [
+        "parish"
+    ],
+    "q27861687": [
+        "q27861687"
+    ],
+    "q30887531": [
+        "q30887531"
+    ],
+    "werlhof family": [
+        "werlhof",
+        "family"
+    ],
+    "q22679822": [
+        "q22679822"
+    ],
+    "q23823734": [
+        "q23823734"
+    ],
+    "sant\u2019eufemia": [
+        "sant\u2019eufemia"
+    ],
+    "q25421307": [
+        "q25421307"
+    ],
+    "q25421305": [
+        "q25421305"
+    ],
+    "q25421310": [
+        "q25421310"
+    ],
+    "widmann": [
+        "widmann"
+    ],
+    "q27882555": [
+        "q27882555"
+    ],
+    "measurement": [
+        "measurement"
+    ],
+    "q39402802": [
+        "q39402802"
+    ],
+    "q25421323": [
+        "q25421323"
+    ],
+    "nakharar": [
+        "nakharar"
+    ],
+    "q25421326": [
+        "q25421326"
+    ],
+    "q25421325": [
+        "q25421325"
+    ],
+    "q28156790": [
+        "q28156790"
+    ],
+    "karko\u1e6da emperor": [
+        "karko\u1e6da",
+        "emperor"
+    ],
+    "flemish clergy": [
+        "flemish",
+        "clergy"
+    ],
+    "mental process": [
+        "mental",
+        "process"
+    ],
+    "q27838750": [
+        "q27838750"
+    ],
+    "q23054684": [
+        "q23054684"
+    ],
+    "chiefdom of bathang": [
+        "chiefdom",
+        "of",
+        "bathang"
+    ],
+    "chiefdom of b\u00e9ri": [
+        "chiefdom",
+        "of",
+        "b\u00e9ri"
+    ],
+    "q25421350": [
+        "q25421350"
+    ],
+    "q25421351": [
+        "q25421351"
+    ],
+    "q21014235": [
+        "q21014235"
+    ],
+    "duke of friuli": [
+        "duke",
+        "of",
+        "friuli"
+    ],
+    "marquessate of algorfa": [
+        "marquessate",
+        "of",
+        "algorfa"
+    ],
+    "q25421352": [
+        "q25421352"
+    ],
+    "q25421353": [
+        "q25421353"
+    ],
+    "q57230946": [
+        "q57230946"
+    ],
+    "emir of ray": [
+        "emir",
+        "of",
+        "ray"
+    ],
+    "ruler": [
+        "ruler"
+    ],
+    "manteri": [
+        "manteri"
+    ],
+    "hafsid sultan": [
+        "hafsid",
+        "sultan"
+    ],
+    "q55758260": [
+        "q55758260"
+    ],
+    "lordship of \u00e9ch\u00e9ry": [
+        "lordship",
+        "of",
+        "\u00e9ch\u00e9ry"
+    ],
+    "q55758270": [
+        "q55758270"
+    ],
+    "q60463164": [
+        "q60463164"
+    ],
+    "knight": [
+        "knight"
+    ],
+    "q58803113": [
+        "q58803113"
+    ],
+    "belgians": [
+        "belgians"
+    ],
+    "belgian": [
+        "belgian"
+    ],
+    "vassal state": [
+        "vassal",
+        "state"
+    ],
+    "alfredo allen": [
+        "alfredo",
+        "allen"
+    ],
+    "q56662032": [
+        "q56662032"
+    ],
+    "baby": [
+        "baby"
+    ],
+    "q61729499": [
+        "q61729499"
+    ],
+    "q56762381": [
+        "q56762381"
+    ],
+    "q55342090": [
+        "q55342090"
+    ],
+    "holmfeld": [
+        "holmfeld"
+    ],
+    "nujeen mustafa": [
+        "nujeen",
+        "mustafa"
+    ],
+    "public research institution": [
+        "public",
+        "research",
+        "institution"
+    ],
+    "finnish museum statistics": [
+        "finnish",
+        "museum",
+        "statistics"
+    ],
+    "q61126758": [
+        "q61126758"
+    ],
+    "q64691784": [
+        "q64691784"
+    ],
+    "emir of ifriqiya": [
+        "emir",
+        "of",
+        "ifriqiya"
+    ],
+    "q60964757": [
+        "q60964757"
+    ],
+    "q60964761": [
+        "q60964761"
+    ],
+    "q64581614": [
+        "q64581614"
+    ],
+    "house of pindemonte": [
+        "house",
+        "of",
+        "pindemonte"
+    ],
+    "emir of fars": [
+        "emir",
+        "of",
+        "fars"
+    ],
+    "q48961244": [
+        "q48961244"
+    ],
+    "williams number": [
+        "williams",
+        "number"
+    ],
+    "criminal": [
+        "criminal"
+    ],
+    "dr. caldera": [
+        "dr.",
+        "caldera"
+    ],
+    "q55237225": [
+        "q55237225"
+    ],
+    "king": [
+        "king"
+    ],
+    "scythian king": [
+        "scythian",
+        "king"
+    ],
+    "emir of sicily": [
+        "emir",
+        "of",
+        "sicily"
+    ],
+    "male human": [
+        "male",
+        "human"
+    ],
+    "infant boy": [
+        "infant",
+        "boy"
+    ],
+    "austrians": [
+        "austrians"
+    ],
+    "elisabeth philipp": [
+        "elisabeth",
+        "philipp"
+    ],
+    "q90966869": [
+        "q90966869"
+    ],
+    "pacific islanders": [
+        "pacific",
+        "islanders"
+    ],
+    "stan kalauni": [
+        "stan",
+        "kalauni"
+    ],
+    "sigmund fein": [
+        "sigmund",
+        "fein"
+    ],
+    "carlota landsberg": [
+        "carlota",
+        "landsberg"
+    ],
+    "icelanders": [
+        "icelanders"
+    ],
+    "herra hnetusmj\u00f6r": [
+        "herra",
+        "hnetusmj\u00f6r"
+    ],
+    "harry fuld jr": [
+        "harry",
+        "fuld",
+        "jr"
+    ],
+    "q92851678": [
+        "q92851678"
+    ],
+    "motif": [
+        "motif"
+    ],
+    "manchu nobility": [
+        "manchu",
+        "nobility"
+    ],
+    "marquessate of asprillas": [
+        "marquessate",
+        "of",
+        "asprillas"
+    ],
+    "mfon": [
+        "mfon"
+    ],
+    "lea bondi jaray": [
+        "lea",
+        "bondi",
+        "jaray"
+    ],
+    "q66810166": [
+        "q66810166"
+    ],
+    "fromo kesaro": [
+        "fromo",
+        "kesaro"
+    ],
+    "teenager": [
+        "teenager"
+    ],
+    "teenage boy": [
+        "teenage",
+        "boy"
+    ],
+    "regret (decision theory)": [
+        "regret",
+        "(decision",
+        "theory)"
+    ],
+    "quander": [
+        "quander"
+    ],
+    "nancy carter quander": [
+        "nancy",
+        "carter",
+        "quander"
+    ],
+    "statistics in libraries": [
+        "statistics",
+        "in",
+        "libraries"
+    ],
+    "statistics of e-resources": [
+        "statistics",
+        "of",
+        "e-resources"
+    ],
+    "enslaved person": [
+        "enslaved",
+        "person"
+    ],
+    "q100477792": [
+        "q100477792"
+    ],
+    "josef symon": [
+        "josef",
+        "symon"
+    ],
+    "infant girl": [
+        "infant",
+        "girl"
+    ],
+    "female human": [
+        "female",
+        "human"
+    ],
+    "kate middleton": [
+        "kate",
+        "middleton"
+    ],
+    "q76639210": [
+        "q76639210"
+    ],
+    "soldier": [
+        "soldier"
+    ],
+    "estratiota": [
+        "estratiota"
+    ],
+    "francesc de bellcastell": [
+        "francesc",
+        "de",
+        "bellcastell"
+    ],
+    "sophia of raabs": [
+        "sophia",
+        "of",
+        "raabs"
+    ],
+    "q95585532": [
+        "q95585532"
+    ],
+    "caesar": [
+        "caesar"
+    ],
+    "nobility of hungary": [
+        "nobility",
+        "of",
+        "hungary"
+    ],
+    "majth\u00e9nyi family": [
+        "majth\u00e9nyi",
+        "family"
+    ],
+    "hospital mortality": [
+        "hospital",
+        "mortality"
+    ],
+    "perinatal mortality": [
+        "perinatal",
+        "mortality"
+    ],
+    "peasant": [
+        "peasant"
+    ],
+    "list": [
+        "list"
+    ],
+    "missionary": [
+        "missionary"
+    ],
+    "category:american shaker missionaries": [
+        "category:american",
+        "shaker",
+        "missionaries"
+    ],
+    "marquessate of arneva": [
+        "marquessate",
+        "of",
+        "arneva"
+    ],
+    "americans": [
+        "americans"
+    ],
+    "quaco": [
+        "quaco"
+    ],
+    "q96347078": [
+        "q96347078"
+    ],
+    "q99439388": [
+        "q99439388"
+    ],
+    "marquessate of rubalcava": [
+        "marquessate",
+        "of",
+        "rubalcava"
+    ],
+    "q76783733": [
+        "q76783733"
+    ],
+    "q99439403": [
+        "q99439403"
+    ],
+    "shakers": [
+        "shakers"
+    ],
+    "q64822125": [
+        "q64822125"
+    ],
+    "q65216087": [
+        "q65216087"
+    ],
+    "activity": [
+        "activity"
+    ],
+    "defendant": [
+        "defendant"
+    ],
+    "ethan ralph": [
+        "ethan",
+        "ralph"
+    ],
+    "cheteria": [
+        "cheteria"
+    ],
+    "martha nathan": [
+        "martha",
+        "nathan"
+    ],
+    "activist": [
+        "activist"
+    ],
+    "internet celebrity": [
+        "internet",
+        "celebrity"
+    ],
+    "youtuber": [
+        "youtuber"
+    ],
+    "podcaster": [
+        "podcaster"
+    ],
+    "manchu": [
+        "manchu"
+    ],
+    "akishino": [
+        "akishino"
+    ],
+    "ursula p\u00f6ck": [
+        "ursula",
+        "p\u00f6ck"
+    ],
+    "child": [
+        "child"
+    ],
+    "statistical method": [
+        "statistical",
+        "method"
+    ],
+    "jarya": [
+        "jarya"
+    ],
+    "universal language": [
+        "universal",
+        "language"
+    ],
+    "q102426138": [
+        "q102426138"
+    ],
+    "q20108467": [
+        "q20108467"
+    ],
+    "vizier": [
+        "vizier"
+    ],
+    "online streamer": [
+        "online",
+        "streamer"
+    ],
+    "q20107725": [
+        "q20107725"
+    ],
+    "photography": [
+        "photography"
+    ],
+    "satrap": [
+        "satrap"
+    ],
+    "aria satrapy": [
+        "aria",
+        "satrapy"
+    ]
+}

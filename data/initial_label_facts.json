@@ -1,0 +1,7494 @@
+    {
+        "use": [
+            [
+                "red ai",
+                "most precise value"
+            ],
+            [
+                "sigmoid function",
+                "activation function"
+            ],
+            [
+                "rectifier",
+                "activation function"
+            ],
+            [
+                "dragon naturallyspeaking",
+                "speech recognition"
+            ],
+            [
+                "kaldi",
+                "speech recognition"
+            ],
+            [
+                "julius",
+                "speech recognition"
+            ],
+            [
+                "deeplabcut",
+                "computer vision"
+            ],
+            [
+                "vissl",
+                "computer vision"
+            ],
+            [
+                "tango",
+                "computer vision"
+            ],
+            [
+                "data replication",
+                "consistency"
+            ],
+            [
+                "contrast",
+                "visual perception"
+            ],
+            [
+                "tensor processing unit",
+                "convolutional neural network"
+            ],
+            [
+                "deep learning",
+                "artificial intelligence"
+            ],
+            [
+                "factor analysis",
+                "look for"
+            ],
+            [
+                "endec",
+                "encoder"
+            ],
+            [
+                "faac",
+                "encoder"
+            ],
+            [
+                "lsblk",
+                "information retrieval"
+            ],
+            [
+                "apache solr",
+                "information retrieval"
+            ],
+            [
+                "integrator",
+                "integral"
+            ],
+            [
+                "photomath",
+                "integral"
+            ],
+            [
+                "leibniz integral rule",
+                "integral"
+            ],
+            [
+                "lifting stone",
+                "challenge"
+            ],
+            [
+                "scikit-learn",
+                "machine learning"
+            ],
+            [
+                "matrix multiplication algorithm",
+                "matrix multiplication"
+            ],
+            [
+                "tensor processing unit",
+                "multilayer perceptron"
+            ],
+            [
+                "principal component analysis",
+                "dimensionality reduction"
+            ],
+            [
+                "partial derivative symbol",
+                "partial derivative"
+            ],
+            [
+                "relations",
+                "interaction"
+            ],
+            [
+                "sql server express",
+                "relational database"
+            ],
+            [
+                "ibm informix",
+                "relational database"
+            ],
+            [
+                "tikhonov regularization",
+                "regularization"
+            ],
+            [
+                "dragon naturallyspeaking",
+                "speech recognition"
+            ],
+            [
+                "kaldi",
+                "speech recognition"
+            ],
+            [
+                "julius",
+                "speech recognition"
+            ],
+            [
+                "tikhonov regularization",
+                "regularization"
+            ]
+        ],
+        "part of": [
+            [
+                "accuracy",
+                "accuracy and precision"
+            ],
+            [
+                "systematic error",
+                "observational error"
+            ],
+            [
+                "binary relation",
+                "cartesian product"
+            ],
+            [
+                "ordered pair",
+                "binary relation"
+            ],
+            [
+                "speech recognition",
+                "natural-language user interface"
+            ],
+            [
+                "central limit theorem",
+                "probability theory"
+            ],
+            [
+                "chord",
+                "specification"
+            ],
+            [
+                "connectionism",
+                "artificial intelligence"
+            ],
+            [
+                "consistency",
+                "acid"
+            ],
+            [
+                "correlation",
+                "statistics"
+            ],
+            [
+                "convolution",
+                "harmonic analysis"
+            ],
+            [
+                "convolution",
+                "functional analysis"
+            ],
+            [
+                "coverage",
+                "dublin core"
+            ],
+            [
+                "objective function",
+                "optimization problem"
+            ],
+            [
+                "cytochrome c aq_042",
+                "cytochrome c family"
+            ],
+            [
+                "cytochrome c aq_042",
+                "membrane proteins"
+            ],
+            [
+                "decoder",
+                "codec"
+            ],
+            [
+                "q1721532",
+                "factor analysis"
+            ],
+            [
+                "feature",
+                "linguistics"
+            ],
+            [
+                "feature",
+                "unified modeling language"
+            ],
+            [
+                "feature data",
+                "geographic information system"
+            ],
+            [
+                "embedding",
+                "machine learning"
+            ],
+            [
+                "encoder",
+                "codec"
+            ],
+            [
+                "generalization",
+                "philosophy of language"
+            ],
+            [
+                "generalization",
+                "ontology"
+            ],
+            [
+                "generalization",
+                "epistemology"
+            ],
+            [
+                "diaminopimelate decarboxylase lmo1952",
+                "example"
+            ],
+            [
+                "expectation",
+                "psychology terminology"
+            ],
+            [
+                "grade",
+                "geodesy"
+            ],
+            [
+                "proximity",
+                "information retrieval"
+            ],
+            [
+                "divergence",
+                "grammaticalization"
+            ],
+            [
+                "main diagonal",
+                "matrix"
+            ],
+            [
+                "machine learning",
+                "artificial intelligence"
+            ],
+            [
+                "matrix",
+                "petrology"
+            ],
+            [
+                "maximum likelihood estimation",
+                "statistics"
+            ],
+            [
+                "measure theory",
+                "mathematics"
+            ],
+            [
+                "geometric measure theory",
+                "measure theory"
+            ],
+            [
+                "arylamine n-acetyltransferase    rv3566c",
+                "arylamine n-acetyltransferase"
+            ],
+            [
+                "neuroscience",
+                "robotics"
+            ],
+            [
+                "neuroscience",
+                "computer science"
+            ],
+            [
+                "neuroscience",
+                "information technology"
+            ],
+            [
+                "neuroscience",
+                "medicine"
+            ],
+            [
+                "neuroscience",
+                "psychology"
+            ],
+            [
+                "neuroscience",
+                "biology"
+            ],
+            [
+                "neural processing unit",
+                "artificial neural network"
+            ],
+            [
+                "norm",
+                "chess terminology"
+            ],
+            [
+                "sufficiency",
+                "necessity and sufficiency"
+            ],
+            [
+                "1.96",
+                "normal distribution"
+            ],
+            [
+                "operation",
+                "economy"
+            ],
+            [
+                "maintenance",
+                "utilization"
+            ],
+            [
+                "mathematical optimization",
+                "algorithmics"
+            ],
+            [
+                "nelder\u2013mead method",
+                "mathematical optimization"
+            ],
+            [
+                "probability density function",
+                "probability distribution"
+            ],
+            [
+                "probability density function",
+                "probability distribution"
+            ],
+            [
+                "random variable",
+                "probability theory"
+            ],
+            [
+                "sensitivity",
+                "sensitivity and specificity"
+            ],
+            [
+                "sensitivity",
+                "precision and recall"
+            ],
+            [
+                "reinforcement learning",
+                "machine learning"
+            ],
+            [
+                "standard deviation",
+                "stochastic"
+            ],
+            [
+                "standard deviation",
+                "descriptive statistics"
+            ],
+            [
+                "semi-supervised learning",
+                "machine learning"
+            ],
+            [
+                "plexin a3",
+                "sema domain superfamily"
+            ],
+            [
+                "support vector machine",
+                "supervised learning"
+            ],
+            [
+                "supervised learning",
+                "machine learning"
+            ],
+            [
+                "tempering",
+                "metallurgy"
+            ],
+            [
+                "speech recognition",
+                "natural-language user interface"
+            ],
+            [
+                "transcription",
+                "gene expression"
+            ],
+            [
+                "unsupervised learning",
+                "machine learning"
+            ],
+            [
+                "std::vector",
+                "standard template library"
+            ],
+            [
+                "word embedding",
+                "natural language processing"
+            ]
+        ],
+        "different from": [
+            [
+                "accuracy",
+                "accuracy"
+            ],
+            [
+                "almost everywhere",
+                "almost surely"
+            ],
+            [
+                "almost everywhere",
+                "almost all"
+            ],
+            [
+                "almost all",
+                "almost everywhere"
+            ],
+            [
+                "almost surely",
+                "almost everywhere"
+            ],
+            [
+                "chord",
+                "accord tour"
+            ],
+            [
+                "covariance",
+                "sample covariance"
+            ],
+            [
+                "covariance",
+                "covariance"
+            ],
+            [
+                "covariance",
+                "covariance"
+            ],
+            [
+                "sample covariance",
+                "covariance"
+            ],
+            [
+                "covariance",
+                "covariance"
+            ],
+            [
+                "covariance",
+                "covariance"
+            ],
+            [
+                "derivative",
+                "derivative"
+            ],
+            [
+                "analog",
+                "analog signal"
+            ],
+            [
+                "derivative",
+                "derivative"
+            ],
+            [
+                "expectation",
+                "anticipation"
+            ],
+            [
+                "anticipation",
+                "expectation"
+            ],
+            [
+                "grade",
+                "pente"
+            ],
+            [
+                "information retrieval",
+                "recall"
+            ],
+            [
+                "hyperparameter optimization",
+                "hyperparameter"
+            ],
+            [
+                "identity matrix",
+                "matrix of ones"
+            ],
+            [
+                "identity matrix",
+                "unitary matrix"
+            ],
+            [
+                "matrix of ones",
+                "identity matrix"
+            ],
+            [
+                "unitary matrix",
+                "identity matrix"
+            ],
+            [
+                "challenge",
+                "izazov"
+            ],
+            [
+                "izazov",
+                "challenge"
+            ],
+            [
+                "immorality",
+                "amorality"
+            ],
+            [
+                "amorality",
+                "immorality"
+            ],
+            [
+                "independence",
+                "q13537519"
+            ],
+            [
+                "q13537519",
+                "independence"
+            ],
+            [
+                "loop",
+                "free loop"
+            ],
+            [
+                "inverse matrix",
+                "adjugate matrix"
+            ],
+            [
+                "maximum likelihood estimation",
+                "restricted maximum likelihood"
+            ],
+            [
+                "mean squared error",
+                "root-mean-square deviation"
+            ],
+            [
+                "mixture model",
+                "mixed model"
+            ],
+            [
+                "norm",
+                "q11792930"
+            ],
+            [
+                "norm",
+                "norm"
+            ],
+            [
+                "norm",
+                "rule"
+            ],
+            [
+                "sufficiency",
+                "necessity"
+            ],
+            [
+                "norm",
+                "norm"
+            ],
+            [
+                "rule",
+                "norm"
+            ],
+            [
+                "q11792930",
+                "norm"
+            ],
+            [
+                "operation",
+                "verksamhet"
+            ],
+            [
+                "operation",
+                "enterprise"
+            ],
+            [
+                "operation",
+                "production"
+            ],
+            [
+                "q10317846",
+                "operation"
+            ],
+            [
+                "orthogonality",
+                "orthogonality"
+            ],
+            [
+                "orthogonality",
+                "orthogonality"
+            ],
+            [
+                "orthonormality",
+                "orthogonality"
+            ],
+            [
+                "probability density function",
+                "probability mass function"
+            ],
+            [
+                "probability mass function",
+                "probability density function"
+            ],
+            [
+                "probability density function",
+                "probability mass function"
+            ],
+            [
+                "partial derivative",
+                "boundary"
+            ],
+            [
+                "partial derivative",
+                "total derivative"
+            ],
+            [
+                "recurrent neural network",
+                "recursive neural network"
+            ],
+            [
+                "recursive neural network",
+                "recurrent neural network"
+            ],
+            [
+                "policy",
+                "politics"
+            ],
+            [
+                "relational database",
+                "blockchain-based database"
+            ],
+            [
+                "standard deviation",
+                "root mean square"
+            ],
+            [
+                "standard deviation",
+                "root-mean-square deviation"
+            ],
+            [
+                "root mean square",
+                "standard deviation"
+            ],
+            [
+                "root-mean-square deviation",
+                "standard deviation"
+            ],
+            [
+                "scalar",
+                "scalar field"
+            ],
+            [
+                "scalar",
+                "scalar quantity"
+            ],
+            [
+                "scalar quantity",
+                "scalar"
+            ],
+            [
+                "set",
+                "set"
+            ],
+            [
+                "set",
+                "set"
+            ],
+            [
+                "set",
+                "set"
+            ],
+            [
+                "set",
+                "collection"
+            ],
+            [
+                "set",
+                "set"
+            ],
+            [
+                "set",
+                "set"
+            ],
+            [
+                "transpose matrix",
+                "matrix transposition"
+            ],
+            [
+                "matrix transposition",
+                "transpose matrix"
+            ],
+            [
+                "uniform distribution",
+                "uniform distribution"
+            ],
+            [
+                "uniform distribution",
+                "uniform distribution"
+            ],
+            [
+                "dependence",
+                "dependency"
+            ],
+            [
+                "dependency",
+                "dependence"
+            ],
+            [
+                "time variance",
+                "dependence"
+            ],
+            [
+                "vector",
+                "genetic vector"
+            ],
+            [
+                "vector",
+                "genetic vector"
+            ],
+            [
+                "diving weighting system",
+                "track ballast"
+            ],
+            [
+                "track ballast",
+                "diving weighting system"
+            ]
+        ],
+        "subclass of": [
+            [
+                "historicity",
+                "accuracy and precision"
+            ],
+            [
+                "activation function",
+                "function"
+            ],
+            [
+                "deep belief network",
+                "bayesian network"
+            ],
+            [
+                "bias",
+                "statistic"
+            ],
+            [
+                "almost everywhere",
+                "property"
+            ],
+            [
+                "bias",
+                "textile component"
+            ],
+            [
+                "bias",
+                "unfairness"
+            ],
+            [
+                "bias",
+                "cognitive perspective"
+            ],
+            [
+                "bias",
+                "human error"
+            ],
+            [
+                "pcr bias",
+                "bias"
+            ],
+            [
+                "technical bias",
+                "bias"
+            ],
+            [
+                "codon usage bias",
+                "bias"
+            ],
+            [
+                "media bias",
+                "bias"
+            ],
+            [
+                "cognitive bias",
+                "bias"
+            ],
+            [
+                "almost surely",
+                "almost everywhere"
+            ],
+            [
+                "xenophilia",
+                "bias"
+            ],
+            [
+                "tribalism",
+                "bias"
+            ],
+            [
+                "self-righteousness",
+                "bias"
+            ],
+            [
+                "gender bias",
+                "bias"
+            ],
+            [
+                "binary relation",
+                "relation"
+            ],
+            [
+                "bigram",
+                "n-gram"
+            ],
+            [
+                "bigram",
+                "dyad"
+            ],
+            [
+                "multiple",
+                "binary relation"
+            ],
+            [
+                "converse relation",
+                "binary relation"
+            ],
+            [
+                "correspondence",
+                "binary relation"
+            ],
+            [
+                "empirical relationship",
+                "binary relation"
+            ],
+            [
+                "epigraph",
+                "binary relation"
+            ],
+            [
+                "phonography",
+                "binary relation"
+            ],
+            [
+                "single-valued function",
+                "binary relation"
+            ],
+            [
+                "partial function",
+                "binary relation"
+            ],
+            [
+                "surjective relation",
+                "binary relation"
+            ],
+            [
+                "semantic relation",
+                "binary relation"
+            ],
+            [
+                "asymmetric relation",
+                "binary relation"
+            ],
+            [
+                "broadcasting",
+                "mass media"
+            ],
+            [
+                "approximate inference",
+                "statistical inference"
+            ],
+            [
+                "cell broadcast",
+                "broadcasting"
+            ],
+            [
+                "speech recognition",
+                "computational linguistics"
+            ],
+            [
+                "speech recognition",
+                "natural language processing"
+            ],
+            [
+                "chord",
+                "imaginary line"
+            ],
+            [
+                "chord",
+                "group"
+            ],
+            [
+                "chord",
+                "line segment"
+            ],
+            [
+                "chord",
+                "railway line"
+            ],
+            [
+                "chordal graph",
+                "perfect graph"
+            ],
+            [
+                "block graph",
+                "chordal graph"
+            ],
+            [
+                "trivially perfect graph",
+                "chordal graph"
+            ],
+            [
+                "collider",
+                "particle accelerator"
+            ],
+            [
+                "hadron collider",
+                "collider"
+            ],
+            [
+                "item-item collaborative filtering",
+                "collaborative filtering"
+            ],
+            [
+                "user-user collaborative filtering",
+                "collaborative filtering"
+            ],
+            [
+                "consistency",
+                "property"
+            ],
+            [
+                "consistency",
+                "property"
+            ],
+            [
+                "conditional probability",
+                "probability"
+            ],
+            [
+                "consistency",
+                "capability"
+            ],
+            [
+                "concord",
+                "consistency"
+            ],
+            [
+                "constrained optimization",
+                "optimization"
+            ],
+            [
+                "convex optimization",
+                "mathematical optimization"
+            ],
+            [
+                "contrast",
+                "difference"
+            ],
+            [
+                "linear programming",
+                "convex optimization"
+            ],
+            [
+                "geometric programming",
+                "convex optimization"
+            ],
+            [
+                "semidefinite programming",
+                "convex optimization"
+            ],
+            [
+                "conic optimization",
+                "convex optimization"
+            ],
+            [
+                "second-order cone programming",
+                "convex optimization"
+            ],
+            [
+                "line weight",
+                "contrast"
+            ],
+            [
+                "convolutional neural network",
+                "feedforward neural network"
+            ],
+            [
+                "correlation",
+                "relation"
+            ],
+            [
+                "gene-gene correlation",
+                "correlation"
+            ],
+            [
+                "coherence",
+                "correlation"
+            ],
+            [
+                "environmental factor",
+                "correlation"
+            ],
+            [
+                "loss function",
+                "function"
+            ],
+            [
+                "covariance matrix",
+                "copositive matrix"
+            ],
+            [
+                "critical temperature",
+                "temperature"
+            ],
+            [
+                "covariance",
+                "statistic"
+            ],
+            [
+                "coverage",
+                "metadata"
+            ],
+            [
+                "objective function",
+                "real-valued function"
+            ],
+            [
+                "cross-covariance",
+                "covariance"
+            ],
+            [
+                "cross-correlation",
+                "similarity measure"
+            ],
+            [
+                "cytochrome c aq_042",
+                "protein-coding gene"
+            ],
+            [
+                "cytochrome c aq_042",
+                "gene"
+            ],
+            [
+                "data set",
+                "intellectual work"
+            ],
+            [
+                "data set",
+                "collection"
+            ],
+            [
+                "deep belief network",
+                "bayesian network"
+            ],
+            [
+                "deep belief network",
+                "artificial neural network"
+            ],
+            [
+                "data set",
+                "computer file"
+            ],
+            [
+                "decoder",
+                "system"
+            ],
+            [
+                "decision tree",
+                "tree structure"
+            ],
+            [
+                "deep learning",
+                "machine learning"
+            ],
+            [
+                "derivative",
+                "lexeme"
+            ],
+            [
+                "analog",
+                "chemical compound"
+            ],
+            [
+                "design matrix",
+                "matrix"
+            ],
+            [
+                "derivative",
+                "financial product"
+            ],
+            [
+                "derivative",
+                "financial instrument"
+            ],
+            [
+                "derivative",
+                "security"
+            ],
+            [
+                "convertible bond",
+                "derivative"
+            ],
+            [
+                "swap",
+                "derivative"
+            ],
+            [
+                "asset-backed security",
+                "derivative"
+            ],
+            [
+                "rate",
+                "derivative"
+            ],
+            [
+                "q11774627",
+                "derivative"
+            ],
+            [
+                "q11916941",
+                "derivative"
+            ],
+            [
+                "structured product",
+                "derivative"
+            ],
+            [
+                "forward rate agreement",
+                "derivative"
+            ],
+            [
+                "transition state analog",
+                "analog"
+            ],
+            [
+                "determinant",
+                "alternating multilinear map"
+            ],
+            [
+                "determinant",
+                "invariant"
+            ],
+            [
+                "diagonal matrix",
+                "lower triangular matrix"
+            ],
+            [
+                "diagonal matrix",
+                "upper triangular matrix"
+            ],
+            [
+                "diagonal matrix",
+                "generalized permutation matrix"
+            ],
+            [
+                "diagonal matrix",
+                "z-matrix"
+            ],
+            [
+                "diagonal matrix",
+                "block diagonal matrix"
+            ],
+            [
+                "diagonal matrix",
+                "diagonalizable matrix"
+            ],
+            [
+                "diagonal matrix",
+                "bidiagonal matrix"
+            ],
+            [
+                "diagonal matrix",
+                "symmetric matrix"
+            ],
+            [
+                "resultant",
+                "determinant"
+            ],
+            [
+                "pfaffian",
+                "determinant"
+            ],
+            [
+                "wronskian",
+                "determinant"
+            ],
+            [
+                "minor",
+                "determinant"
+            ],
+            [
+                "jacobian determinant",
+                "determinant"
+            ],
+            [
+                "functional determinant",
+                "determinant"
+            ],
+            [
+                "hurwitz determinant",
+                "determinant"
+            ],
+            [
+                "q3045333",
+                "determinant"
+            ],
+            [
+                "fredholm determinant",
+                "determinant"
+            ],
+            [
+                "degree matrix",
+                "diagonal matrix"
+            ],
+            [
+                "zero matrix",
+                "diagonal matrix"
+            ],
+            [
+                "q4166529",
+                "determinant"
+            ],
+            [
+                "signature matrix",
+                "diagonal matrix"
+            ],
+            [
+                "dieudonn\u00e9 determinant",
+                "determinant"
+            ],
+            [
+                "dot product",
+                "vector multiplication"
+            ],
+            [
+                "dot product",
+                "inner product"
+            ],
+            [
+                "dot product",
+                "binary operation"
+            ],
+            [
+                "canonical inner product",
+                "dot product"
+            ],
+            [
+                "dropout",
+                "human"
+            ],
+            [
+                "dropout",
+                "regularization"
+            ],
+            [
+                "factor analysis",
+                "statistical method"
+            ],
+            [
+                "dropping out",
+                "departure"
+            ],
+            [
+                "q5654698",
+                "dropping out"
+            ],
+            [
+                "feature",
+                "quality"
+            ],
+            [
+                "quality",
+                "property"
+            ],
+            [
+                "feature data",
+                "data structure"
+            ],
+            [
+                "radio documentary",
+                "documentary"
+            ],
+            [
+                "radio documentary",
+                "radio program"
+            ],
+            [
+                "relative quality",
+                "quality"
+            ],
+            [
+                "subjective quality",
+                "quality"
+            ],
+            [
+                "battlespace",
+                "geographical feature"
+            ],
+            [
+                "echo state network",
+                "recurrent neural network"
+            ],
+            [
+                "echo state network",
+                "artificial neural network"
+            ],
+            [
+                "eigenvalue",
+                "polynomial root"
+            ],
+            [
+                "eigenvalue",
+                "solution"
+            ],
+            [
+                "eigenvalue",
+                "number"
+            ],
+            [
+                "eigenvector",
+                "generalized eigenvector"
+            ],
+            [
+                "eigenvector",
+                "element"
+            ],
+            [
+                "eigenfunction",
+                "eigenvector"
+            ],
+            [
+                "spectral radius",
+                "eigenvalue"
+            ],
+            [
+                "cheirank",
+                "eigenvector"
+            ],
+            [
+                "embedding",
+                "mapping"
+            ],
+            [
+                "embedding",
+                "function"
+            ],
+            [
+                "low-dimensional embedding",
+                "embedding"
+            ],
+            [
+                "word embedding",
+                "embedding"
+            ],
+            [
+                "sentence embedding",
+                "embedding"
+            ],
+            [
+                "fasttext",
+                "embedding"
+            ],
+            [
+                "gated recurrent unit",
+                "recurrent neural network"
+            ],
+            [
+                "encoder",
+                "device"
+            ],
+            [
+                "encoder",
+                "encoder"
+            ],
+            [
+                "codec",
+                "encoder"
+            ],
+            [
+                "mp3 encoder",
+                "encoder"
+            ],
+            [
+                "encoder",
+                "encoder"
+            ],
+            [
+                "loss function",
+                "function"
+            ],
+            [
+                "generalization",
+                "concept"
+            ],
+            [
+                "generalization",
+                "learning"
+            ],
+            [
+                "stereotype",
+                "generalization"
+            ],
+            [
+                "faulty generalization",
+                "generalization"
+            ],
+            [
+                "demo program",
+                "example"
+            ],
+            [
+                "tv format",
+                "template"
+            ],
+            [
+                "web template",
+                "template"
+            ],
+            [
+                "infobox",
+                "template"
+            ],
+            [
+                "minimal working example",
+                "example"
+            ],
+            [
+                "q1898226",
+                "example"
+            ],
+            [
+                "expectation",
+                "mental projection"
+            ],
+            [
+                "expected value",
+                "arithmetic mean"
+            ],
+            [
+                "credibility",
+                "expectation"
+            ],
+            [
+                "q2468404",
+                "expected value"
+            ],
+            [
+                "social expectation",
+                "expectation"
+            ],
+            [
+                "expectation value",
+                "expected value"
+            ],
+            [
+                "melodic expectation",
+                "expectation"
+            ],
+            [
+                "expected value",
+                "arithmetic mean"
+            ],
+            [
+                "q2468404",
+                "expected value"
+            ],
+            [
+                "expectation value",
+                "expected value"
+            ],
+            [
+                "over harvesting",
+                "exploitation"
+            ],
+            [
+                "q5853443",
+                "exploitation"
+            ],
+            [
+                "single loss expectancy",
+                "expected value"
+            ],
+            [
+                "grade",
+                "physical quantity"
+            ],
+            [
+                "q10265487",
+                "exploration"
+            ],
+            [
+                "sertanismo",
+                "exploration"
+            ],
+            [
+                "planetary science",
+                "exploration"
+            ],
+            [
+                "urban exploration",
+                "exploration"
+            ],
+            [
+                "init",
+                "daemon"
+            ],
+            [
+                "information retrieval",
+                "search"
+            ],
+            [
+                "sequential access",
+                "information retrieval"
+            ],
+            [
+                "marketing research",
+                "information retrieval"
+            ],
+            [
+                "information system",
+                "information retrieval"
+            ],
+            [
+                "polling",
+                "information retrieval"
+            ],
+            [
+                "information extraction",
+                "information retrieval"
+            ],
+            [
+                "random access",
+                "information retrieval"
+            ],
+            [
+                "integral",
+                "unary operation"
+            ],
+            [
+                "integral",
+                "linear map"
+            ],
+            [
+                "q12047374",
+                "integral"
+            ],
+            [
+                "birkhoff integral",
+                "integral"
+            ],
+            [
+                "complete fermi\u2013dirac integral",
+                "integral"
+            ],
+            [
+                "definite integral",
+                "integral"
+            ],
+            [
+                "pettis integral",
+                "integral"
+            ],
+            [
+                "absement",
+                "integral"
+            ],
+            [
+                "parametric integral",
+                "integral"
+            ],
+            [
+                "riemann\u2013liouville integral",
+                "integral"
+            ],
+            [
+                "barnes integral",
+                "integral"
+            ],
+            [
+                "harmonium",
+                "reed organ"
+            ],
+            [
+                "physharmonica",
+                "harmonium"
+            ],
+            [
+                "difference",
+                "relation"
+            ],
+            [
+                "difference",
+                "set"
+            ],
+            [
+                "interspecies difference",
+                "difference"
+            ],
+            [
+                "q1230529",
+                "divergence"
+            ],
+            [
+                "difference",
+                "difference"
+            ],
+            [
+                "difference",
+                "difference"
+            ],
+            [
+                "infrared divergence",
+                "divergence"
+            ],
+            [
+                "ultraviolet divergence",
+                "divergence"
+            ],
+            [
+                "political polarization",
+                "divergence"
+            ],
+            [
+                "identity matrix",
+                "unistochastic matrix"
+            ],
+            [
+                "identity matrix",
+                "orthostochastic matrix"
+            ],
+            [
+                "identity matrix",
+                "scalar matrix"
+            ],
+            [
+                "identity matrix",
+                "signature matrix"
+            ],
+            [
+                "identity matrix",
+                "alternating sign matrix"
+            ],
+            [
+                "identity matrix",
+                "idempotent matrix"
+            ],
+            [
+                "identity matrix",
+                "permutation matrix"
+            ],
+            [
+                "identity matrix",
+                "identity element"
+            ],
+            [
+                "challenge",
+                "task"
+            ],
+            [
+                "achievement",
+                "achievement"
+            ],
+            [
+                "challenge",
+                "tournament"
+            ],
+            [
+                "q102333788",
+                "challenge"
+            ],
+            [
+                "cheating",
+                "immorality"
+            ],
+            [
+                "moral turpitude",
+                "immorality"
+            ],
+            [
+                "injustice",
+                "immorality"
+            ],
+            [
+                "evil",
+                "immorality"
+            ],
+            [
+                "linear regression",
+                "regression analysis"
+            ],
+            [
+                "linear combination",
+                "mathematical expression"
+            ],
+            [
+                "independence",
+                "self-governance"
+            ],
+            [
+                "autocephaly",
+                "independence"
+            ],
+            [
+                "independent component analysis",
+                "multivariate statistics"
+            ],
+            [
+                "independent component analysis",
+                "unsupervised learning"
+            ],
+            [
+                "logistic regression model",
+                "regression model"
+            ],
+            [
+                "logistic regression model",
+                "generalized linear model"
+            ],
+            [
+                "logistic regression analysis",
+                "regression analysis"
+            ],
+            [
+                "inference",
+                "process"
+            ],
+            [
+                "liquid state machine",
+                "artificial neural network"
+            ],
+            [
+                "statistical inference",
+                "inference"
+            ],
+            [
+                "backward chaining",
+                "inference"
+            ],
+            [
+                "approximate inference",
+                "statistical inference"
+            ],
+            [
+                "cut rule",
+                "inference"
+            ],
+            [
+                "ecological inference",
+                "inference"
+            ],
+            [
+                "loss function",
+                "function"
+            ],
+            [
+                "looping",
+                "aerobatic maneuver"
+            ],
+            [
+                "siding",
+                "track"
+            ],
+            [
+                "loop",
+                "quasigroup"
+            ],
+            [
+                "loop",
+                "path"
+            ],
+            [
+                "loop",
+                "element"
+            ],
+            [
+                "ring road",
+                "street"
+            ],
+            [
+                "ring road",
+                "road"
+            ],
+            [
+                "vertical loop",
+                "loop"
+            ],
+            [
+                "main diagonal",
+                "diagonal"
+            ],
+            [
+                "machine translation",
+                "computational linguistics"
+            ],
+            [
+                "machine translation",
+                "translation"
+            ],
+            [
+                "machine learning",
+                "computer science"
+            ],
+            [
+                "machine learning",
+                "artificial intelligence"
+            ],
+            [
+                "manifold",
+                "non-hausdorff manifold"
+            ],
+            [
+                "manifold",
+                "second-countable space"
+            ],
+            [
+                "manifold",
+                "hausdorff space"
+            ],
+            [
+                "manifold",
+                "topological space"
+            ],
+            [
+                "nonlinear dimensionality reduction",
+                "dimensionality reduction"
+            ],
+            [
+                "nonlinear dimensionality reduction",
+                "machine learning"
+            ],
+            [
+                "submanifold",
+                "manifold"
+            ],
+            [
+                "linear manifold",
+                "manifold"
+            ],
+            [
+                "4-manifold",
+                "manifold"
+            ],
+            [
+                "topological manifold",
+                "manifold"
+            ],
+            [
+                "5-manifold",
+                "manifold"
+            ],
+            [
+                "3-manifold",
+                "manifold"
+            ],
+            [
+                "matrix multiplication",
+                "matrix operation"
+            ],
+            [
+                "matrix multiplication",
+                "multiplication"
+            ],
+            [
+                "inverse matrix",
+                "generalized inverse"
+            ],
+            [
+                "inverse matrix",
+                "invertible matrix"
+            ],
+            [
+                "matrix",
+                "tensor"
+            ],
+            [
+                "matrix",
+                "array data structure"
+            ],
+            [
+                "sparse matrix",
+                "matrix"
+            ],
+            [
+                "complex conjugate matrix",
+                "matrix"
+            ],
+            [
+                "kernel",
+                "matrix"
+            ],
+            [
+                "q1466923",
+                "matrix"
+            ],
+            [
+                "transformation matrix",
+                "matrix"
+            ],
+            [
+                "generator matrix",
+                "matrix"
+            ],
+            [
+                "risk matrix",
+                "matrix"
+            ],
+            [
+                "co-occurrence matrix",
+                "matrix"
+            ],
+            [
+                "cauchy matrix",
+                "matrix"
+            ],
+            [
+                "fundamental matrix",
+                "matrix"
+            ],
+            [
+                "next-generation matrix",
+                "matrix"
+            ],
+            [
+                "manin matrix",
+                "matrix"
+            ],
+            [
+                "random matrix",
+                "matrix"
+            ],
+            [
+                "stoichiometry matrix",
+                "matrix"
+            ],
+            [
+                "adam optimizer",
+                "gradient descent"
+            ],
+            [
+                "stochastic gradient descent",
+                "gradient descent"
+            ],
+            [
+                "mixture distribution",
+                "probability distribution"
+            ],
+            [
+                "mixture model",
+                "statistical model"
+            ],
+            [
+                "gaussian mixture model",
+                "mixture model"
+            ],
+            [
+                "wishart mixture model",
+                "mixture model"
+            ],
+            [
+                "multilayer perceptron",
+                "feedforward neural network"
+            ],
+            [
+                "multi-task learning",
+                "machine learning"
+            ],
+            [
+                "arylamine n-acetyltransferase rv3566c",
+                "protein-coding gene"
+            ],
+            [
+                "arylamine n-acetyltransferase rv3566c",
+                "gene"
+            ],
+            [
+                "arylamine n-acetyltransferase    rv3566c",
+                "protein"
+            ],
+            [
+                "arylamine acetylase mb3596c",
+                "protein-coding gene"
+            ],
+            [
+                "arylamine acetylase mb3596c",
+                "gene"
+            ],
+            [
+                "wikification",
+                "natural language processing"
+            ],
+            [
+                "artificial neural network",
+                "neural network"
+            ],
+            [
+                "artificial neural network",
+                "artificial intelligence"
+            ],
+            [
+                "artificial neural network",
+                "machine learning"
+            ],
+            [
+                "neuroscience",
+                "medicine"
+            ],
+            [
+                "norm",
+                "activity"
+            ],
+            [
+                "norm",
+                "rule"
+            ],
+            [
+                "sufficiency",
+                "modality"
+            ],
+            [
+                "convention",
+                "rule"
+            ],
+            [
+                "vector length",
+                "norm"
+            ],
+            [
+                "standard",
+                "convention"
+            ],
+            [
+                "normal distribution",
+                "tweedie distribution"
+            ],
+            [
+                "normal distribution",
+                "skew normal distribution"
+            ],
+            [
+                "normal distribution",
+                "stable distribution"
+            ],
+            [
+                "normal distribution",
+                "contaminated normal distribution"
+            ],
+            [
+                "normal distribution",
+                "exponential family"
+            ],
+            [
+                "normal distribution",
+                "multivariate normal distribution"
+            ],
+            [
+                "normal distribution",
+                "student's t-distribution"
+            ],
+            [
+                "pedestrian detection",
+                "object detection"
+            ],
+            [
+                "command",
+                "command"
+            ],
+            [
+                "command",
+                "statement"
+            ],
+            [
+                "operation",
+                "process"
+            ],
+            [
+                "operation",
+                "change"
+            ],
+            [
+                "operation",
+                "economic unit"
+            ],
+            [
+                "operation",
+                "economic agent"
+            ],
+            [
+                "operation",
+                "organizational unit"
+            ],
+            [
+                "operation",
+                "goods"
+            ],
+            [
+                "string operation",
+                "operation"
+            ],
+            [
+                "graph operation",
+                "operation"
+            ],
+            [
+                "micro-operation",
+                "operation"
+            ],
+            [
+                "program optimization",
+                "mathematical optimization"
+            ],
+            [
+                "mathematical optimization",
+                "optimization"
+            ],
+            [
+                "orthogonality",
+                "property"
+            ],
+            [
+                "computer aided optimization",
+                "mathematical optimization"
+            ],
+            [
+                "entry form optimization",
+                "program optimization"
+            ],
+            [
+                "program optimization",
+                "mathematical optimization"
+            ],
+            [
+                "prioritization",
+                "optimization"
+            ],
+            [
+                "rotation matrix",
+                "orthogonal matrix"
+            ],
+            [
+                "combinatorial optimization",
+                "mathematical optimization"
+            ],
+            [
+                "memoization",
+                "program optimization"
+            ],
+            [
+                "orthonormality",
+                "orthogonality"
+            ],
+            [
+                "mathematical optimization",
+                "optimization"
+            ],
+            [
+                "team software process",
+                "optimization"
+            ],
+            [
+                "principal component analysis",
+                "multivariate statistics"
+            ],
+            [
+                "probability distribution",
+                "statistical model"
+            ],
+            [
+                "probability distribution",
+                "distribution"
+            ],
+            [
+                "probability distribution",
+                "generalized function"
+            ],
+            [
+                "probability density function",
+                "generalized function"
+            ],
+            [
+                "prior probability",
+                "probability"
+            ],
+            [
+                "exponential family",
+                "probability distribution"
+            ],
+            [
+                "asymptotic distribution",
+                "probability distribution"
+            ],
+            [
+                "joint probability distribution",
+                "probability distribution"
+            ],
+            [
+                "voigt profile",
+                "probability distribution"
+            ],
+            [
+                "heavy-tailed distribution",
+                "probability distribution"
+            ],
+            [
+                "symmetric probability distribution",
+                "probability distribution"
+            ],
+            [
+                "mixture distribution",
+                "probability distribution"
+            ],
+            [
+                "stable distribution",
+                "probability distribution"
+            ],
+            [
+                "conditional probability distribution",
+                "probability distribution"
+            ],
+            [
+                "mixture density",
+                "probability density function"
+            ],
+            [
+                "bimodal distribution",
+                "probability distribution"
+            ],
+            [
+                "rice distribution",
+                "probability distribution"
+            ],
+            [
+                "discrete probability distribution",
+                "probability distribution"
+            ],
+            [
+                "probability mass function",
+                "function"
+            ],
+            [
+                "radial basis function",
+                "real-valued function"
+            ],
+            [
+                "random search",
+                "mathematical optimization"
+            ],
+            [
+                "random variable",
+                "random element"
+            ],
+            [
+                "parametric model",
+                "statistical model"
+            ],
+            [
+                "discrete random variable",
+                "random variable"
+            ],
+            [
+                "sample mean",
+                "random variable"
+            ],
+            [
+                "confounding",
+                "random variable"
+            ],
+            [
+                "identically distributed",
+                "random variable"
+            ],
+            [
+                "independent random variables",
+                "random variable"
+            ],
+            [
+                "complex random variable",
+                "random variable"
+            ],
+            [
+                "real random variable",
+                "random variable"
+            ],
+            [
+                "hitting time",
+                "random variable"
+            ],
+            [
+                "partial derivative",
+                "derivative"
+            ],
+            [
+                "food recall",
+                "product recall"
+            ],
+            [
+                "sensitivity",
+                "statistic"
+            ],
+            [
+                "recall",
+                "bugle call"
+            ],
+            [
+                "recall",
+                "access"
+            ],
+            [
+                "screen memory",
+                "recall"
+            ],
+            [
+                "false memory",
+                "recall"
+            ],
+            [
+                "recollection",
+                "recall"
+            ],
+            [
+                "recurrent neural network",
+                "artificial neural network"
+            ],
+            [
+                "perceptron",
+                "feedforward neural network"
+            ],
+            [
+                "hopfield network",
+                "recurrent neural network"
+            ],
+            [
+                "kernel perceptron",
+                "perceptron"
+            ],
+            [
+                "recursive neural network",
+                "recurrent neural network"
+            ],
+            [
+                "boltzmann machine",
+                "recurrent neural network"
+            ],
+            [
+                "jordan network",
+                "recurrent neural network"
+            ],
+            [
+                "elman network",
+                "recurrent neural network"
+            ],
+            [
+                "gated recurrent unit",
+                "recurrent neural network"
+            ],
+            [
+                "hamming neural network",
+                "recurrent neural network"
+            ],
+            [
+                "regularization",
+                "linguistic phenomenon"
+            ],
+            [
+                "reinforcement learning",
+                "machine learning"
+            ],
+            [
+                "zeta function regularization",
+                "regularization"
+            ],
+            [
+                "policy",
+                "creative work"
+            ],
+            [
+                "policy",
+                "principle"
+            ],
+            [
+                "relational database",
+                "database"
+            ],
+            [
+                "relations",
+                "multi-organism process"
+            ],
+            [
+                "relations",
+                "relation"
+            ],
+            [
+                "expansionism",
+                "policy"
+            ],
+            [
+                "copyright policy",
+                "policy"
+            ],
+            [
+                "sparse dictionary learning",
+                "feature learning"
+            ],
+            [
+                "square matrix",
+                "matrix"
+            ],
+            [
+                "conference matrix",
+                "square matrix"
+            ],
+            [
+                "hollow matrix",
+                "square matrix"
+            ],
+            [
+                "frobenius matrix",
+                "square matrix"
+            ],
+            [
+                "sylvester matrix",
+                "square matrix"
+            ],
+            [
+                "hankel matrix",
+                "square matrix"
+            ],
+            [
+                "higher-dimensional gamma matrices",
+                "square matrix"
+            ],
+            [
+                "stochastic matrix",
+                "square matrix"
+            ],
+            [
+                "diagonalizable matrix",
+                "square matrix"
+            ],
+            [
+                "schur complement",
+                "square matrix"
+            ],
+            [
+                "productive matrix",
+                "square matrix"
+            ],
+            [
+                "singular matrix",
+                "square matrix"
+            ],
+            [
+                "cartan matrix",
+                "square matrix"
+            ],
+            [
+                "q-matrix",
+                "square matrix"
+            ],
+            [
+                "adjugate matrix",
+                "square matrix"
+            ],
+            [
+                "inverse-positive matrix",
+                "square matrix"
+            ],
+            [
+                "invertible matrix",
+                "square matrix"
+            ],
+            [
+                "standard deviation",
+                "statistical dispersion"
+            ],
+            [
+                "standard deviation",
+                "dimensionless quantity"
+            ],
+            [
+                "sample mean",
+                "random variable"
+            ],
+            [
+                "sample mean",
+                "arithmetic mean"
+            ],
+            [
+                "scalar",
+                "symmetric tensor"
+            ],
+            [
+                "scalar",
+                "magnitude"
+            ],
+            [
+                "scalar",
+                "antisymmetric tensor"
+            ],
+            [
+                "scalar quantity",
+                "scalar"
+            ],
+            [
+                "scalar quantity",
+                "physical quantity"
+            ],
+            [
+                "effective potential growth",
+                "statistic"
+            ],
+            [
+                "mass number",
+                "scalar quantity"
+            ],
+            [
+                "self inductance",
+                "scalar quantity"
+            ],
+            [
+                "equalized odds",
+                "statistic"
+            ],
+            [
+                "mass flux density",
+                "scalar quantity"
+            ],
+            [
+                "luminous intensity",
+                "scalar quantity"
+            ],
+            [
+                "amount of substance",
+                "scalar quantity"
+            ],
+            [
+                "influence function",
+                "statistic"
+            ],
+            [
+                "angular wavenumber",
+                "scalar quantity"
+            ],
+            [
+                "phonon angular wavenumber",
+                "scalar quantity"
+            ],
+            [
+                "sample covariance",
+                "statistic"
+            ],
+            [
+                "automatic variable",
+                "assignable variable"
+            ],
+            [
+                "sufficient statistic",
+                "statistic"
+            ],
+            [
+                "bias",
+                "statistic"
+            ],
+            [
+                "normal stress",
+                "scalar quantity"
+            ],
+            [
+                "second derivative",
+                "function iteration"
+            ],
+            [
+                "second derivative",
+                "higher-order derivative"
+            ],
+            [
+                "information content",
+                "logarithmic quantity"
+            ],
+            [
+                "information content",
+                "physical quantity"
+            ],
+            [
+                "information content",
+                "information"
+            ],
+            [
+                "stochastic gradient descent",
+                "gradient descent"
+            ],
+            [
+                "adam optimizer",
+                "stochastic gradient descent"
+            ],
+            [
+                "adam optimizer",
+                "gradient descent"
+            ],
+            [
+                "semi-supervised learning",
+                "machine learning"
+            ],
+            [
+                "label propagation algorithm",
+                "semi-supervised learning"
+            ],
+            [
+                "set",
+                "collection"
+            ],
+            [
+                "set",
+                "abstract data type"
+            ],
+            [
+                "set",
+                "collection entity"
+            ],
+            [
+                "complete residual system",
+                "set"
+            ],
+            [
+                "gene group",
+                "set"
+            ],
+            [
+                "support vector machine",
+                "classification algorithm"
+            ],
+            [
+                "supervised learning",
+                "machine learning"
+            ],
+            [
+                "inductive programming",
+                "supervised learning"
+            ],
+            [
+                "singular value",
+                "number of entities"
+            ],
+            [
+                "singular value decomposition",
+                "matrix decomposition"
+            ],
+            [
+                "tempering",
+                "technique"
+            ],
+            [
+                "speech recognition",
+                "computational linguistics"
+            ],
+            [
+                "speech recognition",
+                "natural language processing"
+            ],
+            [
+                "sphereing",
+                "human-powered transport"
+            ],
+            [
+                "sphereing",
+                "fun sport"
+            ],
+            [
+                "sphereing",
+                "amusement ride"
+            ],
+            [
+                "transcription",
+                "musical notation"
+            ],
+            [
+                "transcription",
+                "chemical reaction"
+            ],
+            [
+                "triangle inequality",
+                "inequality"
+            ],
+            [
+                "transpose matrix",
+                "matrix"
+            ],
+            [
+                "trigram",
+                "triad"
+            ],
+            [
+                "trigram",
+                "n-gram"
+            ],
+            [
+                "ba gua",
+                "character"
+            ],
+            [
+                "cauchy\u2013schwarz inequality",
+                "triangle inequality"
+            ],
+            [
+                "unit vector",
+                "euclidean vector"
+            ],
+            [
+                "unit normal vector",
+                "unit vector"
+            ],
+            [
+                "unsupervised learning",
+                "machine learning"
+            ],
+            [
+                "independent component analysis",
+                "unsupervised learning"
+            ],
+            [
+                "archetypal analysis",
+                "unsupervised learning"
+            ],
+            [
+                "variance",
+                "descriptive statistic"
+            ],
+            [
+                "variance",
+                "exception"
+            ],
+            [
+                "dependence",
+                "dependency"
+            ],
+            [
+                "dependence",
+                "correlation"
+            ],
+            [
+                "variance",
+                "difference"
+            ],
+            [
+                "time variation",
+                "dependence"
+            ],
+            [
+                "chromism",
+                "dependence"
+            ],
+            [
+                "data dependency",
+                "dependence"
+            ],
+            [
+                "pooled variance",
+                "variance"
+            ],
+            [
+                "solvent effects",
+                "dependence"
+            ],
+            [
+                "relativity",
+                "dependence"
+            ],
+            [
+                "vector",
+                "source of infection"
+            ],
+            [
+                "vector",
+                "organism"
+            ],
+            [
+                "dynamic array",
+                "array data structure"
+            ],
+            [
+                "vector",
+                "multivector"
+            ],
+            [
+                "vector",
+                "tensor"
+            ],
+            [
+                "electric polarization",
+                "vector quantity"
+            ],
+            [
+                "wind direction",
+                "euclidean vector"
+            ],
+            [
+                "snap",
+                "vector quantity"
+            ],
+            [
+                "sound intensity",
+                "vector quantity"
+            ],
+            [
+                "vorticity",
+                "vector quantity"
+            ],
+            [
+                "laplace\u2013runge\u2013lenz vector",
+                "euclidean vector"
+            ],
+            [
+                "tangent vector",
+                "vector"
+            ],
+            [
+                "spin",
+                "vector quantity"
+            ],
+            [
+                "vector clock",
+                "euclidean vector"
+            ],
+            [
+                "diving weighting system",
+                "diving equipment"
+            ],
+            [
+                "word embedding",
+                "embedding"
+            ],
+            [
+                "word net",
+                "thesaurus"
+            ],
+            [
+                "word net",
+                "semantic network"
+            ],
+            [
+                "word-sense disambiguation",
+                "interpretation"
+            ],
+            [
+                "word-sense disambiguation",
+                "problem"
+            ]
+        ],
+        "has quality": [
+            [
+                "sun sensor",
+                "accuracy and precision"
+            ],
+            [
+                "measuring instrument",
+                "accuracy"
+            ],
+            [
+                "measuring instrument",
+                "accuracy"
+            ],
+            [
+                "binary relation",
+                "input set"
+            ],
+            [
+                "binary relation",
+                "arity"
+            ],
+            [
+                "binary relation",
+                "codomain"
+            ],
+            [
+                "broadcasting",
+                "broadcasting time"
+            ],
+            [
+                "hitchbot",
+                "speech recognition"
+            ],
+            [
+                "logical system",
+                "consistency"
+            ],
+            [
+                "snapshot",
+                "consistency"
+            ],
+            [
+                "formal system",
+                "consistency"
+            ],
+            [
+                "axiomatic system",
+                "consistency"
+            ],
+            [
+                "constrained optimization",
+                "constraint"
+            ],
+            [
+                "derivative",
+                "moneyness"
+            ],
+            [
+                "singular matrix",
+                "determinant"
+            ],
+            [
+                "square matrix",
+                "determinant"
+            ],
+            [
+                "householder matrix",
+                "eigenvalue"
+            ],
+            [
+                "inductive reasoning",
+                "generalization"
+            ],
+            [
+                "standard normal distribution",
+                "expected value"
+            ],
+            [
+                "standard uniform distribution",
+                "expected value"
+            ],
+            [
+                "rademacher distribution",
+                "expected value"
+            ],
+            [
+                "standard normal distribution",
+                "expected value"
+            ],
+            [
+                "standard uniform distribution",
+                "expected value"
+            ],
+            [
+                "rademacher distribution",
+                "expected value"
+            ],
+            [
+                "average gradient",
+                "average"
+            ],
+            [
+                "change",
+                "difference"
+            ],
+            [
+                "asymmetry property",
+                "difference"
+            ],
+            [
+                "grammaticalization",
+                "divergence"
+            ],
+            [
+                "approximate equality",
+                "difference"
+            ],
+            [
+                "unethical human experimentation",
+                "immorality"
+            ],
+            [
+                "humbert humbert",
+                "immorality"
+            ],
+            [
+                "voter suppression",
+                "immorality"
+            ],
+            [
+                "predatory lending",
+                "immorality"
+            ],
+            [
+                "independent random variables",
+                "independence"
+            ],
+            [
+                "loop",
+                "latin square property"
+            ],
+            [
+                "loop",
+                "identity element"
+            ],
+            [
+                "loop",
+                "identity"
+            ],
+            [
+                "manifold",
+                "dimension"
+            ],
+            [
+                "manifold",
+                "euler characteristic"
+            ],
+            [
+                "matrix multiplication",
+                "associativity"
+            ],
+            [
+                "mixture distribution",
+                "mixture density"
+            ],
+            [
+                "intelligence quotient",
+                "normal distribution"
+            ],
+            [
+                "probability distribution",
+                "skewness"
+            ],
+            [
+                "discrete probability distribution",
+                "probability mass function"
+            ],
+            [
+                "policy",
+                "type of policy"
+            ],
+            [
+                "square matrix",
+                "trace"
+            ],
+            [
+                "square matrix",
+                "eigenvectors and eigenvalues"
+            ],
+            [
+                "square matrix",
+                "determinant"
+            ],
+            [
+                "scalar",
+                "1"
+            ],
+            [
+                "stochastic gradient descent",
+                "stochastic"
+            ],
+            [
+                "hitchbot",
+                "speech recognition"
+            ],
+            [
+                "absolute value",
+                "triangle inequality"
+            ],
+            [
+                "triangle",
+                "triangle inequality"
+            ],
+            [
+                "standard normal distribution",
+                "variance"
+            ],
+            [
+                "time-varying covariate",
+                "dependence"
+            ],
+            [
+                "temperature-dependent sex determination",
+                "dependence"
+            ],
+            [
+                "thermistor",
+                "dependence"
+            ],
+            [
+                "time-dependent viscosity",
+                "dependence"
+            ],
+            [
+                "standard uniform distribution",
+                "variance"
+            ],
+            [
+                "rademacher distribution",
+                "variance"
+            ],
+            [
+                "dependent source",
+                "dependence"
+            ],
+            [
+                "environmental sex determination",
+                "dependence"
+            ]
+        ],
+        "category's main topic": [
+            [
+                "category:accuracy and precision",
+                "accuracy and precision"
+            ],
+            [
+                "q27031404",
+                "collider"
+            ],
+            [
+                "category:conditional probability",
+                "conditional probability"
+            ],
+            [
+                "category:convex optimization",
+                "convex optimization"
+            ],
+            [
+                "category:independence",
+                "independence"
+            ],
+            [
+                "q20918412",
+                "inference"
+            ],
+            [
+                "category:maximum likelihood estimation",
+                "maximum likelihood estimation"
+            ],
+            [
+                "q10037997",
+                "operation"
+            ],
+            [
+                "category:orthogonality",
+                "orthogonality"
+            ],
+            [
+                "category:random variable",
+                "random variable"
+            ],
+            [
+                "q10219033",
+                "perceptron"
+            ],
+            [
+                "category:standard deviation",
+                "standard deviation"
+            ],
+            [
+                "category:trigrams",
+                "ba gua"
+            ],
+            [
+                "category:unsupervised learning",
+                "unsupervised learning"
+            ],
+            [
+                "category:vector",
+                "vector"
+            ]
+        ],
+        "instance of": [
+            [
+                "softmax function",
+                "activation function"
+            ],
+            [
+                "bayesian network",
+                "statistical model"
+            ],
+            [
+                "systematic error",
+                "bias"
+            ],
+            [
+                "matilda effect",
+                "bias"
+            ],
+            [
+                "subsequence",
+                "binary relation"
+            ],
+            [
+                "reachability",
+                "binary relation"
+            ],
+            [
+                "simultaneity",
+                "binary relation"
+            ],
+            [
+                "subset",
+                "binary relation"
+            ],
+            [
+                "q18669329",
+                "binary relation"
+            ],
+            [
+                "perpendicularity",
+                "binary relation"
+            ],
+            [
+                "has part",
+                "binary relation"
+            ],
+            [
+                "broadcasting",
+                "product distribution method"
+            ],
+            [
+                "q10337881",
+                "broadcasting"
+            ],
+            [
+                "radio del oeste",
+                "broadcasting"
+            ],
+            [
+                "speech recognition",
+                "academic discipline"
+            ],
+            [
+                "central limit theorem",
+                "theorem"
+            ],
+            [
+                "julius",
+                "speech recognition"
+            ],
+            [
+                "chord",
+                "musical term"
+            ],
+            [
+                "goldner\u2013harary graph",
+                "chordal graph"
+            ],
+            [
+                "collaborative filtering",
+                "algorithm"
+            ],
+            [
+                "vepp-4",
+                "collider"
+            ],
+            [
+                "spear",
+                "collider"
+            ],
+            [
+                "condition number",
+                "function"
+            ],
+            [
+                "computer vision",
+                "academic discipline"
+            ],
+            [
+                "consistency",
+                "encyclopedic article"
+            ],
+            [
+                "consistency",
+                "logical property type"
+            ],
+            [
+                "consistency",
+                "property"
+            ],
+            [
+                "correlation",
+                "concept"
+            ],
+            [
+                "convolution",
+                "integral transform"
+            ],
+            [
+                "convolution",
+                "binary operation"
+            ],
+            [
+                "q11304604",
+                "correlation"
+            ],
+            [
+                "beer-diapers syndrome",
+                "correlation"
+            ],
+            [
+                "q26835505",
+                "correspondence table"
+            ],
+            [
+                "q26856897",
+                "correspondence table"
+            ],
+            [
+                "q26868819",
+                "correspondence table"
+            ],
+            [
+                "q26882165",
+                "correspondence table"
+            ],
+            [
+                "covariance",
+                "type of statistic"
+            ],
+            [
+                "covariance",
+                "property"
+            ],
+            [
+                "huber loss function",
+                "loss function"
+            ],
+            [
+                "logarithmic loss",
+                "loss function"
+            ],
+            [
+                "cross-correlation",
+                "statistic"
+            ],
+            [
+                "curse of dimensionality",
+                "phenomenon"
+            ],
+            [
+                "cross-validation",
+                "algorithm"
+            ],
+            [
+                "cytochrome c aq_042",
+                "gene"
+            ],
+            [
+                "cytochrome c aq_042",
+                "protein"
+            ],
+            [
+                "physicians from vienna",
+                "data set"
+            ],
+            [
+                "art in ume\u00e5",
+                "data set"
+            ],
+            [
+                "deezymatch",
+                "deep learning"
+            ],
+            [
+                "derivative",
+                "wikimedia disambiguation page"
+            ],
+            [
+                "snap",
+                "derivative"
+            ],
+            [
+                "fr\u00e9chet derivative",
+                "derivative"
+            ],
+            [
+                "frobenius inner product",
+                "dot product"
+            ],
+            [
+                "dropout",
+                "lifestyle"
+            ],
+            [
+                "kaiser-guttman criterion",
+                "factor analysis"
+            ],
+            [
+                "quality",
+                "type of property"
+            ],
+            [
+                "quality",
+                "philosophical concept"
+            ],
+            [
+                "hypergolicity",
+                "quality"
+            ],
+            [
+                "coffeelatte",
+                "geographical feature"
+            ],
+            [
+                "free energy",
+                "encyclopedic article"
+            ],
+            [
+                "eigenvalue",
+                "mathematical concept"
+            ],
+            [
+                "knot",
+                "embedding"
+            ],
+            [
+                "alexander horned sphere",
+                "embedding"
+            ],
+            [
+                "encoder",
+                "wikimedia disambiguation page"
+            ],
+            [
+                "encoder",
+                "system"
+            ],
+            [
+                "rotary encoder",
+                "device"
+            ],
+            [
+                "x265",
+                "encoder"
+            ],
+            [
+                "x264",
+                "encoder"
+            ],
+            [
+                "guetzli",
+                "encoder"
+            ],
+            [
+                "libde265",
+                "encoder"
+            ],
+            [
+                "faac",
+                "encoder"
+            ],
+            [
+                "quenc",
+                "encoder"
+            ],
+            [
+                "flaccl",
+                "encoder"
+            ],
+            [
+                "x266",
+                "encoder"
+            ],
+            [
+                "oligocene",
+                "geological epoch"
+            ],
+            [
+                "oligocene",
+                "series"
+            ],
+            [
+                "late devonian",
+                "geological epoch"
+            ],
+            [
+                "late devonian",
+                "series"
+            ],
+            [
+                "early imbrian",
+                "geological epoch"
+            ],
+            [
+                "pridoli",
+                "geological epoch"
+            ],
+            [
+                "pridoli",
+                "series"
+            ],
+            [
+                "wenlock",
+                "geological epoch"
+            ],
+            [
+                "wenlock",
+                "series"
+            ],
+            [
+                "ludlow",
+                "geological epoch"
+            ],
+            [
+                "ludlow",
+                "series"
+            ],
+            [
+                "early ordovician",
+                "geological epoch"
+            ],
+            [
+                "early ordovician",
+                "series"
+            ],
+            [
+                "early triassic",
+                "geological epoch"
+            ],
+            [
+                "early triassic",
+                "series"
+            ],
+            [
+                "error function",
+                "special function"
+            ],
+            [
+                "confidence set",
+                "generalization"
+            ],
+            [
+                "huber loss function",
+                "loss function"
+            ],
+            [
+                "holm\u2013bonferroni method",
+                "generalization"
+            ],
+            [
+                "function object",
+                "generalization"
+            ],
+            [
+                "orthogonality",
+                "generalization"
+            ],
+            [
+                "logarithmic loss",
+                "loss function"
+            ],
+            [
+                "cancellation property",
+                "generalization"
+            ],
+            [
+                "great ape personhood",
+                "generalization"
+            ],
+            [
+                "red link example",
+                "example"
+            ],
+            [
+                "exploitation",
+                "concept"
+            ],
+            [
+                "average gradient",
+                "wikidata property"
+            ],
+            [
+                "gradient",
+                "encyclopedic article"
+            ],
+            [
+                "q105581980",
+                "exploration"
+            ],
+            [
+                "information retrieval",
+                "activity"
+            ],
+            [
+                "fuzzy retrieval",
+                "information retrieval"
+            ],
+            [
+                "isotropic",
+                "encyclopedic article"
+            ],
+            [
+                "borwein integral",
+                "integral"
+            ],
+            [
+                "q4349850",
+                "integral"
+            ],
+            [
+                "harmonium",
+                "harmonium"
+            ],
+            [
+                "hooke's atom",
+                "mathematical model"
+            ],
+            [
+                "q29128683",
+                "harmonium"
+            ],
+            [
+                "q29137562",
+                "harmonium"
+            ],
+            [
+                "q29166062",
+                "harmonium"
+            ],
+            [
+                "q29188682",
+                "harmonium"
+            ],
+            [
+                "difference",
+                "philosophical concept"
+            ],
+            [
+                "divergence",
+                "vector operator"
+            ],
+            [
+                "divergence",
+                "differential operator"
+            ],
+            [
+                "divergence",
+                "property"
+            ],
+            [
+                "base",
+                "encyclopedic article"
+            ],
+            [
+                "q100276477",
+                "military base"
+            ],
+            [
+                "achievement",
+                "video game term"
+            ],
+            [
+                "challenge",
+                "tournament system"
+            ],
+            [
+                "challenge",
+                "challenge"
+            ],
+            [
+                "apcn humanitarian awards",
+                "achievement"
+            ],
+            [
+                "2010 challenge",
+                "challenge"
+            ],
+            [
+                "condom challenge",
+                "challenge"
+            ],
+            [
+                "bonn challenge",
+                "challenge"
+            ],
+            [
+                "myheartmap challenge",
+                "challenge"
+            ],
+            [
+                "q2309200",
+                "challenge"
+            ],
+            [
+                "three poles challenge",
+                "challenge"
+            ],
+            [
+                "cinnamon challenge",
+                "challenge"
+            ],
+            [
+                "line search",
+                "optimization algorithm"
+            ],
+            [
+                "line search",
+                "linear search"
+            ],
+            [
+                "immorality",
+                "moral quality"
+            ],
+            [
+                "learning rate",
+                "rate"
+            ],
+            [
+                "linear regression",
+                "regression"
+            ],
+            [
+                "independence",
+                "relation"
+            ],
+            [
+                "kriging",
+                "linear regression"
+            ],
+            [
+                "independent component analysis",
+                "method"
+            ],
+            [
+                "inference",
+                "wikimedia disambiguation page"
+            ],
+            [
+                "logistic regression model",
+                "regression analysis"
+            ],
+            [
+                "inference",
+                "sourcing circumstance"
+            ],
+            [
+                "inference",
+                "reasoning"
+            ],
+            [
+                "q100272824",
+                "ring road"
+            ],
+            [
+                "q101150469",
+                "ring road"
+            ],
+            [
+                "hungary boulevard",
+                "ring road"
+            ],
+            [
+                "medicinaregatan",
+                "ring road"
+            ],
+            [
+                "kir\u00e1lyr\u00e9t draisine loop",
+                "ring road"
+            ],
+            [
+                "krisztina boulevard",
+                "ring road"
+            ],
+            [
+                "tehachapi loop",
+                "spiral"
+            ],
+            [
+                "margit ring",
+                "ring road"
+            ],
+            [
+                "sochaczew bypass",
+                "ring road"
+            ],
+            [
+                "q1214941",
+                "ring road"
+            ],
+            [
+                "q12189711",
+                "ring road"
+            ],
+            [
+                "q12306421",
+                "ring road"
+            ],
+            [
+                "lens space",
+                "manifold"
+            ],
+            [
+                "matrix multiplication",
+                "binary operation"
+            ],
+            [
+                "matrix",
+                "matter"
+            ],
+            [
+                "matrix",
+                "technical term"
+            ],
+            [
+                "maximum likelihood estimation",
+                "method"
+            ],
+            [
+                "maximum likelihood estimation",
+                "estimator"
+            ],
+            [
+                "maximum likelihood estimation",
+                "m-estimator"
+            ],
+            [
+                "measure theory",
+                "area of mathematics"
+            ],
+            [
+                "gradient descent",
+                "optimization algorithm"
+            ],
+            [
+                "gradient descent",
+                "iterative numerical method"
+            ],
+            [
+                "arylamine n-acetyltransferase rv3566c",
+                "gene"
+            ],
+            [
+                "arylamine n-acetyltransferase    rv3566c",
+                "protein"
+            ],
+            [
+                "automated music production",
+                "artificial neural network"
+            ],
+            [
+                "deezymatch",
+                "artificial neural network"
+            ],
+            [
+                "norm",
+                "sports competition"
+            ],
+            [
+                "sufficiency",
+                "relative quality"
+            ],
+            [
+                "sufficiency",
+                "philosophical concept"
+            ],
+            [
+                "q102048053",
+                "norm"
+            ],
+            [
+                "local custom",
+                "convention"
+            ],
+            [
+                "\u00e5land convention",
+                "convention"
+            ],
+            [
+                "q104613783",
+                "norm"
+            ],
+            [
+                "yobai",
+                "convention"
+            ],
+            [
+                "york-antwerp rules",
+                "norm"
+            ],
+            [
+                "din 488",
+                "norm"
+            ],
+            [
+                "din 820",
+                "norm"
+            ],
+            [
+                "din 824",
+                "norm"
+            ],
+            [
+                "q11743246",
+                "convention"
+            ],
+            [
+                "muldenfaltenstil",
+                "convention"
+            ],
+            [
+                "uniform norm",
+                "norm"
+            ],
+            [
+                "normal distribution",
+                "encyclopedic article"
+            ],
+            [
+                "standard normal distribution",
+                "normal distribution"
+            ],
+            [
+                "javaw",
+                "command"
+            ],
+            [
+                "mkfs",
+                "command"
+            ],
+            [
+                "route",
+                "command"
+            ],
+            [
+                "control-alt-delete",
+                "command"
+            ],
+            [
+                "drivespace",
+                "command"
+            ],
+            [
+                "mscdex",
+                "command"
+            ],
+            [
+                "directive",
+                "command"
+            ],
+            [
+                "sl",
+                "command"
+            ],
+            [
+                "control-v",
+                "command"
+            ],
+            [
+                "format",
+                "command"
+            ],
+            [
+                "mathematical optimization",
+                "academic discipline"
+            ],
+            [
+                "mathematical optimization",
+                "specialty"
+            ],
+            [
+                "principal component analysis",
+                "statistical method"
+            ],
+            [
+                "wigner quasiprobability distribution",
+                "probability distribution"
+            ],
+            [
+                "zeta distribution",
+                "probability distribution"
+            ],
+            [
+                "asymmetric laplace distribution",
+                "probability distribution"
+            ],
+            [
+                "skellam distribution",
+                "probability distribution"
+            ],
+            [
+                "partition function",
+                "encyclopedic article"
+            ],
+            [
+                "partition function",
+                "integer-valued function"
+            ],
+            [
+                "partial derivative",
+                "mathematical concept"
+            ],
+            [
+                "perceptron",
+                "algorithm"
+            ],
+            [
+                "deezymatch",
+                "recurrent neural network"
+            ],
+            [
+                "regularization",
+                "technique"
+            ],
+            [
+                "policy",
+                "plan"
+            ],
+            [
+                "q100138410",
+                "policy"
+            ],
+            [
+                "q10296979",
+                "policy"
+            ],
+            [
+                "assimilation policy",
+                "policy"
+            ],
+            [
+                "wood review implementation",
+                "policy"
+            ],
+            [
+                "tikhonov regularization",
+                "method"
+            ],
+            [
+                "standard deviation",
+                "type of statistic"
+            ],
+            [
+                "standard error",
+                "standard streams"
+            ],
+            [
+                "q102351631",
+                "statistic"
+            ],
+            [
+                "gradient descent",
+                "optimization algorithm"
+            ],
+            [
+                "gradient descent",
+                "iterative numerical method"
+            ],
+            [
+                "susan cummins",
+                "set"
+            ],
+            [
+                "q105080643",
+                "set"
+            ],
+            [
+                "q105080663",
+                "set"
+            ],
+            [
+                "q105101970",
+                "set"
+            ],
+            [
+                "q105102303",
+                "set"
+            ],
+            [
+                "q105103292",
+                "set"
+            ],
+            [
+                "q105103314",
+                "set"
+            ],
+            [
+                "q105103437",
+                "set"
+            ],
+            [
+                "q105133601",
+                "set"
+            ],
+            [
+                "q105151675",
+                "set"
+            ],
+            [
+                "q105237274",
+                "set"
+            ],
+            [
+                "q105260497",
+                "set"
+            ],
+            [
+                "q105303853",
+                "set"
+            ],
+            [
+                "supervised learning",
+                "algorithm"
+            ],
+            [
+                "tempering",
+                "heat treatment"
+            ],
+            [
+                "spearmint",
+                "herb"
+            ],
+            [
+                "speech recognition",
+                "academic discipline"
+            ],
+            [
+                "julius",
+                "speech recognition"
+            ],
+            [
+                "transcription",
+                "musical term"
+            ],
+            [
+                "triangle inequality",
+                "theorem"
+            ],
+            [
+                "transpose matrix",
+                "unary operation"
+            ],
+            [
+                "g\u00e8n",
+                "ba gua"
+            ],
+            [
+                "du\u00ec",
+                "ba gua"
+            ],
+            [
+                "trigram qian",
+                "ba gua"
+            ],
+            [
+                "x\u00f9n",
+                "ba gua"
+            ],
+            [
+                "zh\u00e8n",
+                "ba gua"
+            ],
+            [
+                "k\u01cen",
+                "ba gua"
+            ],
+            [
+                "l\u00ed",
+                "ba gua"
+            ],
+            [
+                "k\u016bn",
+                "ba gua"
+            ],
+            [
+                "uniform distribution",
+                "wikimedia disambiguation page"
+            ],
+            [
+                "unbiased.co.uk",
+                "website"
+            ],
+            [
+                "unsupervised learning",
+                "method"
+            ],
+            [
+                "variance",
+                "type of statistic"
+            ],
+            [
+                "dependence",
+                "philosophical concept"
+            ],
+            [
+                "std::vector",
+                "sequence container"
+            ],
+            [
+                "std::vector",
+                "template"
+            ],
+            [
+                "guttman scale",
+                "vector"
+            ],
+            [
+                "tikhonov regularization",
+                "method"
+            ],
+            [
+                "racial whitening",
+                "ideology"
+            ],
+            [
+                "q102426196",
+                "word-sense disambiguation"
+            ],
+            [
+                "q104384688",
+                "word-sense disambiguation"
+            ],
+            [
+                "q104635222",
+                "word-sense disambiguation"
+            ],
+            [
+                "q104717350",
+                "word-sense disambiguation"
+            ],
+            [
+                "q104772479",
+                "word-sense disambiguation"
+            ],
+            [
+                "q105280564",
+                "word-sense disambiguation"
+            ],
+            [
+                "q105574555",
+                "word-sense disambiguation"
+            ]
+        ],
+        "named after": [
+            [
+                "bayesian network",
+                "thomas bayes"
+            ],
+            [
+                "315 constantia",
+                "consistency"
+            ],
+            [
+                "paradocrasite",
+                "expectation"
+            ],
+            [
+                "h\u00f6galidsgatan",
+                "grade"
+            ],
+            [
+                "hooke's atom",
+                "hooke's law"
+            ],
+            [
+                "q105106576",
+                "independence"
+            ],
+            [
+                "independence square, minsk",
+                "independence"
+            ],
+            [
+                "tikhonov regularization",
+                "andrey tikhonov"
+            ],
+            [
+                "set",
+                "set"
+            ],
+            [
+                "tikhonov regularization",
+                "andrey tikhonov"
+            ]
+        ],
+        "opposite of": [
+            [
+                "systematic error",
+                "random error"
+            ],
+            [
+                "random error",
+                "systematic error"
+            ],
+            [
+                "consistency",
+                "contradiction"
+            ],
+            [
+                "consistency",
+                "inconsistency"
+            ],
+            [
+                "inconsistency",
+                "consistency"
+            ],
+            [
+                "contradiction",
+                "consistency"
+            ],
+            [
+                "convolution",
+                "deconvolution"
+            ],
+            [
+                "deconvolution",
+                "convolution"
+            ],
+            [
+                "obtuse angle",
+                "turn"
+            ],
+            [
+                "acute angle",
+                "turn"
+            ],
+            [
+                "decoder",
+                "encoder"
+            ],
+            [
+                "encoder",
+                "decoder"
+            ],
+            [
+                "decoder",
+                "encoder"
+            ],
+            [
+                "generalization",
+                "special case"
+            ],
+            [
+                "special case",
+                "generalization"
+            ],
+            [
+                "difference",
+                "approximate equality"
+            ],
+            [
+                "difference",
+                "identity"
+            ],
+            [
+                "divergence",
+                "convergence"
+            ],
+            [
+                "convergence",
+                "divergence"
+            ],
+            [
+                "similarity",
+                "difference"
+            ],
+            [
+                "identity",
+                "difference"
+            ],
+            [
+                "immorality",
+                "morality"
+            ],
+            [
+                "morality",
+                "immorality"
+            ],
+            [
+                "linear regression",
+                "nonlinear regression"
+            ],
+            [
+                "prior probability",
+                "posterior probability"
+            ],
+            [
+                "recurrent neural network",
+                "feedforward neural network"
+            ],
+            [
+                "scalar quantity",
+                "vector quantity"
+            ],
+            [
+                "supervised learning",
+                "unsupervised learning"
+            ],
+            [
+                "unsupervised learning",
+                "supervised learning"
+            ],
+            [
+                "unsupervised learning",
+                "supervised learning"
+            ],
+            [
+                "supervised learning",
+                "unsupervised learning"
+            ],
+            [
+                "symmetry",
+                "dependence"
+            ]
+        ],
+        "has cause": [
+            [
+                "systematic error",
+                "human error"
+            ],
+            [
+                "derivative",
+                "derivation"
+            ],
+            [
+                "generalization",
+                "connection"
+            ],
+            [
+                "generalization",
+                "thinking"
+            ],
+            [
+                "language barrier",
+                "difference"
+            ],
+            [
+                "round-off error",
+                "precision"
+            ]
+        ],
+        "Commons category": [
+            [
+                "bias",
+                "personal bias"
+            ],
+            [
+                "broadcasting",
+                "broadcasting"
+            ],
+            [
+                "speech recognition",
+                "speech recognition"
+            ],
+            [
+                "central limit theorem",
+                "central limit theorem"
+            ],
+            [
+                "chord",
+                "chords"
+            ],
+            [
+                "chord",
+                "chord (geometry)"
+            ],
+            [
+                "computer vision",
+                "computer vision"
+            ],
+            [
+                "conditional probability",
+                "conditional probability"
+            ],
+            [
+                "constrained optimization",
+                "constrained optimization"
+            ],
+            [
+                "convex optimization",
+                "convex optimization"
+            ],
+            [
+                "contrast",
+                "contrast"
+            ],
+            [
+                "correlation",
+                "correlation"
+            ],
+            [
+                "convolution",
+                "convolution"
+            ],
+            [
+                "cross-validation",
+                "cross-validation (statistics)"
+            ],
+            [
+                "deep learning",
+                "deep learning"
+            ],
+            [
+                "determinant",
+                "determinant"
+            ],
+            [
+                "directional derivative",
+                "directional derivative"
+            ],
+            [
+                "dot product",
+                "scalar product"
+            ],
+            [
+                "factor analysis",
+                "factor analysis"
+            ],
+            [
+                "quality",
+                "quality"
+            ],
+            [
+                "radio documentary",
+                "radio documentaries"
+            ],
+            [
+                "rotary encoder",
+                "rotary encoders"
+            ],
+            [
+                "error function",
+                "error function"
+            ],
+            [
+                "generalization",
+                "generalization"
+            ],
+            [
+                "information retrieval",
+                "information retrieval"
+            ],
+            [
+                "integral",
+                "integration (mathematics)"
+            ],
+            [
+                "harmonium",
+                "harmoniums"
+            ],
+            [
+                "divergence",
+                "divergence"
+            ],
+            [
+                "challenge",
+                "challenges"
+            ],
+            [
+                "immorality",
+                "immorality"
+            ],
+            [
+                "linear regression",
+                "linear regression"
+            ],
+            [
+                "independence",
+                "statistical dependence"
+            ],
+            [
+                "independence",
+                "self-determination"
+            ],
+            [
+                "independent component analysis",
+                "independent component analysis"
+            ],
+            [
+                "statistical inference",
+                "statistical inference"
+            ],
+            [
+                "looping",
+                "looping"
+            ],
+            [
+                "siding",
+                "sidings (rail transport)"
+            ],
+            [
+                "machine translation",
+                "machine translation"
+            ],
+            [
+                "manifold",
+                "manifolds"
+            ],
+            [
+                "manifold",
+                "manifolds"
+            ],
+            [
+                "matrix multiplication",
+                "matrix multiplication"
+            ],
+            [
+                "matrix",
+                "matrices (typefounding)"
+            ],
+            [
+                "matrix",
+                "matrix"
+            ],
+            [
+                "maximum likelihood estimation",
+                "maximum likehood"
+            ],
+            [
+                "measure theory",
+                "measure theory"
+            ],
+            [
+                "gradient descent",
+                "gradient descent"
+            ],
+            [
+                "artificial neural network",
+                "artificial neural networks"
+            ],
+            [
+                "normal distribution",
+                "normal distribution"
+            ],
+            [
+                "mathematical optimization",
+                "optimization"
+            ],
+            [
+                "principal component analysis",
+                "principal component analysis"
+            ],
+            [
+                "probability distribution",
+                "probability distributions"
+            ],
+            [
+                "random variable",
+                "random variable"
+            ],
+            [
+                "recall",
+                "recall (bugle call)"
+            ],
+            [
+                "policy",
+                "policies"
+            ],
+            [
+                "square matrix",
+                "square matrices"
+            ],
+            [
+                "standard deviation",
+                "standard deviation"
+            ],
+            [
+                "gradient descent",
+                "gradient descent"
+            ],
+            [
+                "speech recognition",
+                "speech recognition"
+            ],
+            [
+                "sphereing",
+                "sphereing"
+            ],
+            [
+                "transcription",
+                "transcription (music)"
+            ],
+            [
+                "ba gua",
+                "bagua (taoist cosmology)"
+            ],
+            [
+                "variance",
+                "variance"
+            ],
+            [
+                "vector",
+                "disease vectors"
+            ],
+            [
+                "diving weighting system",
+                "diving weighting system"
+            ]
+        ],
+        "partially coincident with": [
+            [
+                "bias",
+                "assumption"
+            ],
+            [
+                "bias",
+                "tendency"
+            ],
+            [
+                "coverage",
+                "pass"
+            ],
+            [
+                "pass",
+                "coverage"
+            ],
+            [
+                "quality",
+                "attribute"
+            ],
+            [
+                "expectation",
+                "anticipation"
+            ],
+            [
+                "anticipation",
+                "expectation"
+            ],
+            [
+                "difference",
+                "other"
+            ]
+        ],
+        "is metaclass for": [
+            [
+                "type of bias",
+                "bias"
+            ]
+        ],
+        "facet of": [
+            [
+                "prospect theory",
+                "bias"
+            ],
+            [
+                "first variation",
+                "calculus of variations"
+            ],
+            [
+                "condition number",
+                "well-posed problem"
+            ],
+            [
+                "condition number",
+                "mathematics"
+            ],
+            [
+                "object recognition",
+                "computer vision"
+            ],
+            [
+                "consistency",
+                "logical system"
+            ],
+            [
+                "contrast",
+                "graphic design"
+            ],
+            [
+                "correlation",
+                "statistics"
+            ],
+            [
+                "convolution theorem",
+                "convolution"
+            ],
+            [
+                "data set",
+                "operating system"
+            ],
+            [
+                "density estimation",
+                "machine learning"
+            ],
+            [
+                "avista",
+                "derivative"
+            ],
+            [
+                "black\u2013scholes model",
+                "derivative"
+            ],
+            [
+                "berezinian",
+                "determinant"
+            ],
+            [
+                "early stopping",
+                "machine learning"
+            ],
+            [
+                "eigenvalue",
+                "eigenvectors and eigenvalues"
+            ],
+            [
+                "eigenvector",
+                "eigenvectors and eigenvalues"
+            ],
+            [
+                "expected value",
+                "expectation"
+            ],
+            [
+                "expected value",
+                "expectation"
+            ],
+            [
+                "expected",
+                "expectation"
+            ],
+            [
+                "expected value",
+                "expectation"
+            ],
+            [
+                "servitude",
+                "exploitation"
+            ],
+            [
+                "grade",
+                "thoroughfare"
+            ],
+            [
+                "okapi bm25",
+                "information retrieval"
+            ],
+            [
+                "evaluation measures",
+                "information retrieval"
+            ],
+            [
+                "divergence",
+                "divergent sequence"
+            ],
+            [
+                "divergence",
+                "divergent series"
+            ],
+            [
+                "hyperparameter optimization",
+                "machine learning"
+            ],
+            [
+                "achievement",
+                "video game"
+            ],
+            [
+                "challenge",
+                "scrabble"
+            ],
+            [
+                "immorality",
+                "ethics"
+            ],
+            [
+                "learning rate",
+                "mathematical optimization"
+            ],
+            [
+                "linear combination",
+                "linear span"
+            ],
+            [
+                "declaration of independence",
+                "independence"
+            ],
+            [
+                "\u00e9vian accords",
+                "independence"
+            ],
+            [
+                "attention",
+                "machine learning"
+            ],
+            [
+                "whitney embedding theorem",
+                "manifold"
+            ],
+            [
+                "q2305406",
+                "measure theory"
+            ],
+            [
+                "carath\u00e9odory's extension theorem",
+                "measure theory"
+            ],
+            [
+                "classification of neurons",
+                "neuroscience"
+            ],
+            [
+                "normal distribution",
+                "statistics"
+            ],
+            [
+                "q3137244",
+                "normal distribution"
+            ],
+            [
+                "object recognition",
+                "computer vision"
+            ],
+            [
+                "program optimization",
+                "computer science"
+            ],
+            [
+                "probability distribution",
+                "statistics"
+            ],
+            [
+                "random variable",
+                "statistics"
+            ],
+            [
+                "sensitivity",
+                "binary classification"
+            ],
+            [
+                "square matrix",
+                "linear algebra"
+            ],
+            [
+                "standard deviation",
+                "statistics"
+            ],
+            [
+                "vector",
+                "epidemiology"
+            ],
+            [
+                "vector length",
+                "euclidean vector"
+            ],
+            [
+                "word-sense disambiguation",
+                "ambiguity"
+            ]
+        ],
+        "measures": [
+            [
+                "accuracy",
+                "systematic error"
+            ]
+        ],
+        "has parts of the class": [
+            [
+                "binary relation",
+                "ordered pair"
+            ],
+            [
+                "broadcasting",
+                "satellite television"
+            ],
+            [
+                "broadcasting",
+                "cable television"
+            ],
+            [
+                "broadcasting",
+                "terrestrial television"
+            ],
+            [
+                "eigenspace",
+                "eigenvector"
+            ],
+            [
+                "physical quantity",
+                "scalar quantity"
+            ],
+            [
+                "physical quantity",
+                "vector quantity"
+            ]
+        ],
+        "has part": [
+            [
+                "bigram",
+                "linguistic unit"
+            ],
+            [
+                "salitre business library",
+                "audio"
+            ],
+            [
+                "acid",
+                "consistency"
+            ],
+            [
+                "optimal control problem",
+                "objective function"
+            ],
+            [
+                "cytochrome c aq_042",
+                "cytochrome c-like domain"
+            ],
+            [
+                "derivative",
+                "swap"
+            ],
+            [
+                "derivative",
+                "forward contract"
+            ],
+            [
+                "derivative",
+                "option"
+            ],
+            [
+                "eigenvectors and eigenvalues",
+                "eigenvector"
+            ],
+            [
+                "eigenvectors and eigenvalues",
+                "eigenvalue"
+            ],
+            [
+                "synthesis",
+                "generalization"
+            ],
+            [
+                "expectation",
+                "social expectation"
+            ],
+            [
+                "bubble bash 3",
+                "achievement"
+            ],
+            [
+                "algorithmics",
+                "mathematical optimization"
+            ],
+            [
+                "cognition",
+                "recall"
+            ],
+            [
+                "standard streams",
+                "standard error"
+            ],
+            [
+                "set",
+                "element of set"
+            ],
+            [
+                "trigram",
+                "linguistic unit"
+            ],
+            [
+                "hexagram",
+                "ba gua"
+            ]
+        ],
+        "followed by": [
+            [
+                "bigram",
+                "trigram"
+            ],
+            [
+                "suggestioni",
+                "contrast"
+            ],
+            [
+                "init",
+                "systemd"
+            ],
+            [
+                "bigram",
+                "trigram"
+            ]
+        ],
+        "history of topic": [
+            [
+                "broadcasting",
+                "history of broadcasting"
+            ]
+        ],
+        "maintained by WikiProject": [
+            [
+                "broadcasting",
+                "wikiproject broadcasting"
+            ],
+            [
+                "data set",
+                "wikiproject datasets"
+            ],
+            [
+                "set",
+                "wikiproject ontology"
+            ]
+        ],
+        "call sign": [
+            [
+                "radio catalana",
+                "eaj-13"
+            ]
+        ],
+        "operating area": [
+            [
+                "radio catalana",
+                "spain"
+            ]
+        ],
+        "wavelength": [
+            [
+                "radio catalana",
+                "433"
+            ],
+            [
+                "radio catalana",
+                "286"
+            ]
+        ],
+        "broadcast by": [
+            [
+                "radio catalana",
+                "amplitude modulation"
+            ]
+        ],
+        "occupation": [
+            [
+                "amin alhassan",
+                "broadcasting"
+            ],
+            [
+                "q104869207",
+                "policy"
+            ]
+        ],
+        "field of work": [
+            [
+                "bill reed",
+                "broadcasting"
+            ],
+            [
+                "george e. probst",
+                "broadcasting"
+            ],
+            [
+                "noran kersta",
+                "broadcasting"
+            ],
+            [
+                "jim karayn",
+                "broadcasting"
+            ],
+            [
+                "shane media services",
+                "broadcasting"
+            ],
+            [
+                "thad holt",
+                "broadcasting"
+            ],
+            [
+                "mildred funnell",
+                "broadcasting"
+            ],
+            [
+                "w. lawrence patrick",
+                "broadcasting"
+            ],
+            [
+                "fred bohen",
+                "broadcasting"
+            ],
+            [
+                "burton d. harrison",
+                "broadcasting"
+            ],
+            [
+                "q12105293",
+                "calculus of variations"
+            ],
+            [
+                "alexander waibel",
+                "speech recognition"
+            ],
+            [
+                "peter f. brown",
+                "speech recognition"
+            ],
+            [
+                "badrul sarwar",
+                "collaborative filtering"
+            ],
+            [
+                "slobodan ilic",
+                "computer vision"
+            ],
+            [
+                "ralf pl\u00e4nkers",
+                "computer vision"
+            ],
+            [
+                "tolga birdal",
+                "computer vision"
+            ],
+            [
+                "aphrodite galata",
+                "computer vision"
+            ],
+            [
+                "noureldien hussein",
+                "computer vision"
+            ],
+            [
+                "victor alchanatis",
+                "computer vision"
+            ],
+            [
+                "shlomo greenberg",
+                "computer vision"
+            ],
+            [
+                "thomas b. moeslund",
+                "computer vision"
+            ],
+            [
+                "aharon bar-hillel",
+                "computer vision"
+            ],
+            [
+                "stephen p. boyd",
+                "convex optimization"
+            ],
+            [
+                "yonina eldar",
+                "convex optimization"
+            ],
+            [
+                "radityo eko prasojo",
+                "deep learning"
+            ],
+            [
+                "jesper ferkinghoff-borg",
+                "deep learning"
+            ],
+            [
+                "noureldien hussein",
+                "deep learning"
+            ],
+            [
+                "jordan j. bird",
+                "deep learning"
+            ],
+            [
+                "richard socher",
+                "deep learning"
+            ],
+            [
+                "hirotugu akaike",
+                "factor analysis"
+            ],
+            [
+                "anne le calv\u00e9",
+                "information retrieval"
+            ],
+            [
+                "cheng xiang zhai",
+                "information retrieval"
+            ],
+            [
+                "rada mihalcea",
+                "information retrieval"
+            ],
+            [
+                "ferenc husz\u00e1r",
+                "machine learning"
+            ],
+            [
+                "kairntech sas",
+                "machine learning"
+            ],
+            [
+                "ameet talwalkar",
+                "machine learning"
+            ],
+            [
+                "alan akbik",
+                "machine learning"
+            ],
+            [
+                "roland vollgraf",
+                "machine learning"
+            ],
+            [
+                "didrik nielsen",
+                "machine learning"
+            ],
+            [
+                "ivana bala\u017eevi\u0107",
+                "machine learning"
+            ],
+            [
+                "dustin wright",
+                "machine learning"
+            ],
+            [
+                "horia mania",
+                "machine learning"
+            ],
+            [
+                "giovanni montana",
+                "machine learning"
+            ],
+            [
+                "moritz hardt",
+                "machine learning"
+            ],
+            [
+                "tolga birdal",
+                "machine learning"
+            ],
+            [
+                "victoria lebed",
+                "manifold"
+            ],
+            [
+                "ulrich z\u00e4hle",
+                "measure theory"
+            ],
+            [
+                "andrey kolmogorov",
+                "measure theory"
+            ],
+            [
+                "alexander chentsov",
+                "measure theory"
+            ],
+            [
+                "abram samoilovitch besicovitch",
+                "measure theory"
+            ],
+            [
+                "ivan fesenko",
+                "measure theory"
+            ],
+            [
+                "vladimir abramovich rokhlin",
+                "measure theory"
+            ],
+            [
+                "vyacheslav sazonov",
+                "measure theory"
+            ],
+            [
+                "anatoly vershik",
+                "measure theory"
+            ],
+            [
+                "max a. woodbury",
+                "measure theory"
+            ],
+            [
+                "kairntech sas",
+                "natural language processing"
+            ],
+            [
+                "gina-anne levow",
+                "natural language processing"
+            ],
+            [
+                "alan akbik",
+                "natural language processing"
+            ],
+            [
+                "radityo eko prasojo",
+                "natural language processing"
+            ],
+            [
+                "dustin wright",
+                "natural language processing"
+            ],
+            [
+                "noriko nagata",
+                "natural language processing"
+            ],
+            [
+                "philippe langlais",
+                "natural language processing"
+            ],
+            [
+                "shamima mithun",
+                "natural language processing"
+            ],
+            [
+                "christian klose",
+                "natural language processing"
+            ],
+            [
+                "project encephalon",
+                "neuroscience"
+            ],
+            [
+                "jeremy teiss\u00e9re",
+                "neuroscience"
+            ],
+            [
+                "matthieu de wit",
+                "neuroscience"
+            ],
+            [
+                "leah wilson",
+                "neuroscience"
+            ],
+            [
+                "yan deschaintre",
+                "neuroscience"
+            ],
+            [
+                "gilbert bernier",
+                "neuroscience"
+            ],
+            [
+                "john kalaska",
+                "neuroscience"
+            ],
+            [
+                "jacques l. michaud",
+                "neuroscience"
+            ],
+            [
+                "dang khoa nguyen",
+                "neuroscience"
+            ],
+            [
+                "andrea green",
+                "neuroscience"
+            ],
+            [
+                "sylvie belleville",
+                "neuroscience"
+            ],
+            [
+                "mathematical optimization",
+                "optimization problem"
+            ],
+            [
+                "emilio balda",
+                "mathematical optimization"
+            ],
+            [
+                "paul tseng",
+                "mathematical optimization"
+            ],
+            [
+                "vladimir tikhomirov",
+                "mathematical optimization"
+            ],
+            [
+                "alexander waibel",
+                "speech recognition"
+            ],
+            [
+                "peter f. brown",
+                "speech recognition"
+            ],
+            [
+                "raymond kurzweil",
+                "speech recognition"
+            ],
+            [
+                "janet m. baker",
+                "speech recognition"
+            ],
+            [
+                "glove",
+                "unsupervised learning"
+            ]
+        ],
+        "said to be the same as": [
+            [
+                "q103838717",
+                "broadcasting"
+            ],
+            [
+                "computer vision",
+                "machine vision"
+            ],
+            [
+                "objective function",
+                "loss function"
+            ],
+            [
+                "perigon",
+                "turn"
+            ],
+            [
+                "full turn",
+                "turn"
+            ],
+            [
+                "derivative",
+                "q4380202"
+            ],
+            [
+                "derivative",
+                "derivative"
+            ],
+            [
+                "derivative",
+                "derivative"
+            ],
+            [
+                "dropping out",
+                "q10278454"
+            ],
+            [
+                "q10278454",
+                "dropping out"
+            ],
+            [
+                "quality",
+                "property"
+            ],
+            [
+                "objective function",
+                "loss function"
+            ],
+            [
+                "grade",
+                "rake"
+            ],
+            [
+                "grade",
+                "slope"
+            ],
+            [
+                "grade",
+                "slope"
+            ],
+            [
+                "difference",
+                "disparity"
+            ],
+            [
+                "disparity",
+                "difference"
+            ],
+            [
+                "independence",
+                "self-governance"
+            ],
+            [
+                "matrix",
+                "linear map"
+            ],
+            [
+                "command",
+                "statement"
+            ],
+            [
+                "recollection",
+                "recall"
+            ],
+            [
+                "scalar",
+                "number"
+            ],
+            [
+                "q11385914",
+                "vector"
+            ],
+            [
+                "q12336166",
+                "vector"
+            ]
+        ],
+        "industry": [
+            [
+                "hiptoro private limited",
+                "broadcasting"
+            ],
+            [
+                "din 820",
+                "norm"
+            ],
+            [
+                "unbiased.co.uk",
+                "financial services"
+            ]
+        ],
+        "subject item of this property": [
+            [
+                "audio",
+                "audio file format"
+            ],
+            [
+                "has quality",
+                "quality"
+            ],
+            [
+                "introduced feature",
+                "software feature"
+            ],
+            [
+                "removed feature",
+                "software feature"
+            ],
+            [
+                "time period",
+                "sports season"
+            ],
+            [
+                "time period",
+                "season"
+            ],
+            [
+                "time period",
+                "historical period"
+            ],
+            [
+                "time period",
+                "era"
+            ],
+            [
+                "epoch",
+                "epoch"
+            ],
+            [
+                "epoch",
+                "epoch"
+            ],
+            [
+                "model item",
+                "wikidata model item"
+            ],
+            [
+                "usage example",
+                "example"
+            ],
+            [
+                "average gradient",
+                "grade"
+            ],
+            [
+                "average gradient",
+                "grade"
+            ],
+            [
+                "maximum gradient",
+                "grade"
+            ],
+            [
+                "slope",
+                "slope"
+            ],
+            [
+                "image",
+                "image"
+            ],
+            [
+                "image",
+                "illustration"
+            ],
+            [
+                "gpu",
+                "graphics processing unit"
+            ],
+            [
+                "different from",
+                "difference"
+            ],
+            [
+                "base",
+                "base face"
+            ],
+            [
+                "base",
+                "base"
+            ],
+            [
+                "base",
+                "base"
+            ],
+            [
+                "ensembl transcript id",
+                "transcription"
+            ]
+        ],
+        "see also": [
+            [
+                "audio",
+                "produced sound"
+            ],
+            [
+                "audio",
+                "spoken text audio"
+            ],
+            [
+                "audio",
+                "pronunciation audio"
+            ],
+            [
+                "audio",
+                "video"
+            ],
+            [
+                "video",
+                "audio"
+            ],
+            [
+                "pronunciation audio",
+                "audio"
+            ],
+            [
+                "produced sound",
+                "audio"
+            ],
+            [
+                "time period",
+                "set in environment"
+            ],
+            [
+                "time period",
+                "end period"
+            ],
+            [
+                "time period",
+                "start period"
+            ],
+            [
+                "time period",
+                "set in period"
+            ],
+            [
+                "time period",
+                "point in time"
+            ],
+            [
+                "set in period",
+                "time period"
+            ],
+            [
+                "start period",
+                "time period"
+            ],
+            [
+                "model year",
+                "time period"
+            ],
+            [
+                "model item",
+                "wikidata property example"
+            ],
+            [
+                "model item",
+                "wikidata property example"
+            ],
+            [
+                "average gradient",
+                "maximum gradient"
+            ],
+            [
+                "maximum gradient",
+                "average gradient"
+            ],
+            [
+                "slope",
+                "average gradient"
+            ],
+            [
+                "image",
+                "twin town sign"
+            ],
+            [
+                "image",
+                "aerial view"
+            ],
+            [
+                "image",
+                "view"
+            ],
+            [
+                "image",
+                "image of reverse"
+            ],
+            [
+                "image",
+                "code (image)"
+            ],
+            [
+                "image",
+                "name (image)"
+            ],
+            [
+                "image",
+                "related image"
+            ],
+            [
+                "image",
+                "image of interior"
+            ],
+            [
+                "image",
+                "winter view"
+            ],
+            [
+                "image",
+                "photosphere image"
+            ],
+            [
+                "image",
+                "panoramic view"
+            ],
+            [
+                "image",
+                "nighttime view"
+            ],
+            [
+                "video",
+                "image"
+            ],
+            [
+                "logo image",
+                "image"
+            ],
+            [
+                "flag image",
+                "image"
+            ],
+            [
+                "commemorative plaque image",
+                "image"
+            ],
+            [
+                "sectional view",
+                "image"
+            ],
+            [
+                "base",
+                "radix"
+            ],
+            [
+                "radix",
+                "base"
+            ]
+        ],
+        "Wikidata property example": [
+            [
+                "audio",
+                "voiceless palatal plosive"
+            ],
+            [
+                "audio",
+                "brandenburg concerto no.3"
+            ],
+            [
+                "audio",
+                "atlantic puffin"
+            ],
+            [
+                "boardgamegeek id",
+                "chess"
+            ],
+            [
+                "solution to",
+                "eigenvalue"
+            ],
+            [
+                "time period",
+                "areni-1 cave complex"
+            ],
+            [
+                "epoch",
+                "26p/grigg\u2013skjellerup"
+            ],
+            [
+                "model item",
+                "animated film"
+            ],
+            [
+                "model item",
+                "politician"
+            ],
+            [
+                "model item",
+                "human"
+            ],
+            [
+                "itu/iso/iec object identifier",
+                "example"
+            ],
+            [
+                "average gradient",
+                "snowdon mountain railway"
+            ],
+            [
+                "base",
+                "regular icosahedron"
+            ],
+            [
+                "base",
+                "heptagonal bipyramid"
+            ],
+            [
+                "base",
+                "cubic pyramid"
+            ],
+            [
+                "base",
+                "quadrilateral prism"
+            ],
+            [
+                "base",
+                "hexagonal prism"
+            ],
+            [
+                "base",
+                "square antiprism"
+            ],
+            [
+                "base",
+                "pentagonal pyramid"
+            ],
+            [
+                "base",
+                "pentagonal prism"
+            ],
+            [
+                "base",
+                "pentagonal bipyramid"
+            ],
+            [
+                "base",
+                "elongated pentagonal pyramid"
+            ],
+            [
+                "base",
+                "cone"
+            ],
+            [
+                "uvl group id",
+                "achievement"
+            ],
+            [
+                "brilliant wiki id",
+                "linear regression"
+            ],
+            [
+                "contains",
+                "assignable variable"
+            ]
+        ],
+        "property constraint": [
+            [
+                "audio",
+                "commons link constraint"
+            ],
+            [
+                "audio",
+                "allowed qualifiers constraint"
+            ],
+            [
+                "audio",
+                "conflicts-with constraint"
+            ],
+            [
+                "audio",
+                "format constraint"
+            ],
+            [
+                "time period",
+                "contemporary constraint"
+            ],
+            [
+                "wikidata property example",
+                "property scope constraint"
+            ],
+            [
+                "wikidata property example",
+                "multi-value constraint"
+            ],
+            [
+                "wikidata property example",
+                "type constraint"
+            ],
+            [
+                "average gradient",
+                "property scope constraint"
+            ],
+            [
+                "average gradient",
+                "allowed units constraint"
+            ],
+            [
+                "average gradient",
+                "range constraint"
+            ],
+            [
+                "base",
+                "value type constraint"
+            ],
+            [
+                "base",
+                "required qualifier constraint"
+            ],
+            [
+                "base",
+                "type constraint"
+            ]
+        ],
+        "category for value same as Wikidata": [
+            [
+                "audio",
+                "q32085211"
+            ]
+        ],
+        "subproperty of": [
+            [
+                "pronunciation audio",
+                "audio"
+            ],
+            [
+                "spoken text audio",
+                "audio"
+            ],
+            [
+                "signature",
+                "image"
+            ],
+            [
+                "chemical structure",
+                "image"
+            ],
+            [
+                "seal image",
+                "image"
+            ],
+            [
+                "locator map image",
+                "image"
+            ],
+            [
+                "flag image",
+                "image"
+            ],
+            [
+                "image of grave",
+                "image"
+            ],
+            [
+                "place name sign",
+                "image"
+            ],
+            [
+                "commemorative plaque image",
+                "image"
+            ],
+            [
+                "distribution map",
+                "image"
+            ],
+            [
+                "location map",
+                "image"
+            ],
+            [
+                "sectional view",
+                "image"
+            ],
+            [
+                "collage image",
+                "image"
+            ]
+        ],
+        "has contributing factor": [
+            [
+                "speech recognition",
+                "audio file format"
+            ],
+            [
+                "misunderstanding",
+                "difference"
+            ],
+            [
+                "speech recognition",
+                "audio file format"
+            ]
+        ],
+        "has immediate cause": [
+            [
+                "speech recognition",
+                "speech"
+            ],
+            [
+                "speech recognition",
+                "speech"
+            ]
+        ],
+        "uses": [
+            [
+                "office assistant",
+                "speech recognition"
+            ],
+            [
+                "voice user interface",
+                "speech recognition"
+            ],
+            [
+                "deeplabcut",
+                "deep learning"
+            ],
+            [
+                "deepface",
+                "deep learning"
+            ],
+            [
+                "dot product norm",
+                "dot product"
+            ],
+            [
+                "challenge",
+                "adjudicator"
+            ],
+            [
+                "challenge",
+                "dictionary"
+            ],
+            [
+                "scrabble",
+                "challenge"
+            ],
+            [
+                "geohashing",
+                "achievement"
+            ],
+            [
+                "linear regression",
+                "linear model"
+            ],
+            [
+                "logistic regression model",
+                "logistic function"
+            ],
+            [
+                "logistic regression analysis",
+                "logistic regression model"
+            ],
+            [
+                "normal-form game",
+                "matrix"
+            ],
+            [
+                "non-negative matrix factorization",
+                "matrix multiplication"
+            ],
+            [
+                "minimum degree algorithm",
+                "matrix"
+            ],
+            [
+                "gradient descent",
+                "local search"
+            ],
+            [
+                "relational database",
+                "structured query language"
+            ],
+            [
+                "precision",
+                "standard deviation"
+            ],
+            [
+                "gradient descent",
+                "local search"
+            ],
+            [
+                "sphereing",
+                "inflatable"
+            ],
+            [
+                "office assistant",
+                "speech recognition"
+            ],
+            [
+                "voice user interface",
+                "speech recognition"
+            ],
+            [
+                "dynamic array",
+                "dynamic memory allocation"
+            ]
+        ],
+        "depicts": [
+            [
+                "bean machine",
+                "central limit theorem"
+            ],
+            [
+                "q24939613",
+                "expectation"
+            ],
+            [
+                "q48714597",
+                "expectation"
+            ],
+            [
+                "integral symbol",
+                "integral"
+            ],
+            [
+                "antifa logo",
+                "independence"
+            ],
+            [
+                "probability mass function",
+                "discrete probability distribution"
+            ],
+            [
+                "marienbad",
+                "recall"
+            ],
+            [
+                "nantes",
+                "recall"
+            ],
+            [
+                "l'aigle noir",
+                "recall"
+            ],
+            [
+                "plus-minus sign",
+                "standard error"
+            ]
+        ],
+        "contributing factor of": [
+            [
+                "chord",
+                "drag"
+            ]
+        ],
+        "sport": [
+            [
+                "bishop",
+                "chess"
+            ],
+            [
+                "pawn",
+                "chess"
+            ],
+            [
+                "knight",
+                "chess"
+            ],
+            [
+                "rook",
+                "chess"
+            ],
+            [
+                "king",
+                "chess"
+            ],
+            [
+                "queen",
+                "chess"
+            ],
+            [
+                "warwick nash",
+                "chess"
+            ],
+            [
+                "naomi bashkansky",
+                "chess"
+            ],
+            [
+                "william minnis",
+                "chess"
+            ],
+            [
+                "enda rohan",
+                "chess"
+            ],
+            [
+                "antichess",
+                "chess"
+            ],
+            [
+                "bullet chess",
+                "chess"
+            ],
+            [
+                "martin kr\u00e4mer",
+                "chess"
+            ],
+            [
+                "semi-open game",
+                "chess"
+            ],
+            [
+                "norm",
+                "chess"
+            ]
+        ],
+        "studied by": [
+            [
+                "chordal graph",
+                "graph theory"
+            ],
+            [
+                "condition number",
+                "numerical analysis"
+            ],
+            [
+                "derivative",
+                "word formation"
+            ],
+            [
+                "determinant",
+                "linear algebra"
+            ],
+            [
+                "eigenvalue",
+                "linear algebra"
+            ],
+            [
+                "embedding",
+                "category theory"
+            ],
+            [
+                "information retrieval",
+                "computer science"
+            ],
+            [
+                "integral",
+                "integral calculus"
+            ],
+            [
+                "machine translation",
+                "natural language processing"
+            ],
+            [
+                "manifold",
+                "manifold theory"
+            ],
+            [
+                "uncountable set",
+                "measure theory"
+            ],
+            [
+                "measure",
+                "measure theory"
+            ],
+            [
+                "essential supremum",
+                "measure theory"
+            ],
+            [
+                "measurable set",
+                "measure theory"
+            ],
+            [
+                "brunn\u2013minkowski theorem",
+                "measure theory"
+            ],
+            [
+                "gradient descent",
+                "mathematical optimization"
+            ],
+            [
+                "mathematical optimization",
+                "mathematical programming"
+            ],
+            [
+                "mathematical optimization",
+                "applied mathematics"
+            ],
+            [
+                "gradient descent",
+                "mathematical optimization"
+            ],
+            [
+                "probability distribution",
+                "statistics"
+            ],
+            [
+                "scalar",
+                "linear algebra"
+            ],
+            [
+                "gradient descent",
+                "mathematical optimization"
+            ],
+            [
+                "word embedding",
+                "natural language processing"
+            ],
+            [
+                "word net",
+                "graph theory"
+            ],
+            [
+                "word-sense disambiguation",
+                "natural language processing"
+            ]
+        ],
+        "topic's main category": [
+            [
+                "collider",
+                "q27031404"
+            ],
+            [
+                "inference",
+                "q20918412"
+            ],
+            [
+                "norm",
+                "q6579558"
+            ],
+            [
+                "perceptron",
+                "q10219033"
+            ]
+        ],
+        "title": [
+            [
+                "consistency",
+                "consistency"
+            ],
+            [
+                "free energy",
+                "free energy"
+            ],
+            [
+                "gradient",
+                "gradient"
+            ],
+            [
+                "isotropic",
+                "isotropic"
+            ],
+            [
+                "normal distribution",
+                "normal distribution"
+            ],
+            [
+                "partition function",
+                "partition function"
+            ]
+        ],
+        "generalization of": [
+            [
+                "chain rule",
+                "conditional probability"
+            ]
+        ],
+        "follows": [
+            [
+                "dance of liars",
+                "contrast"
+            ],
+            [
+                "trigram",
+                "bigram"
+            ]
+        ],
+        "item for this sense": [
+            [
+                "l6352-s1",
+                "contrast"
+            ],
+            [
+                "l6352-s2",
+                "contrast"
+            ],
+            [
+                "l760-s1",
+                "contrast"
+            ],
+            [
+                "l11041-s1",
+                "coverage"
+            ],
+            [
+                "l11041-s2",
+                "coverage"
+            ],
+            [
+                "l75757-s1",
+                "rotary encoder"
+            ],
+            [
+                "l322290-s1",
+                "immorality"
+            ],
+            [
+                "l297147-s1",
+                "standard deviation"
+            ]
+        ],
+        "discoverer or inventor": [
+            [
+                "convolutional neural network",
+                "yann lecun"
+            ],
+            [
+                "curse of dimensionality",
+                "richard e. bellman"
+            ],
+            [
+                "deep learning",
+                "yann lecun"
+            ],
+            [
+                "deep learning",
+                "geoffrey hinton"
+            ],
+            [
+                "factor analysis",
+                "charles spearman"
+            ],
+            [
+                "harmonium",
+                "alexandre debain"
+            ],
+            [
+                "linear regression",
+                "francis galton"
+            ],
+            [
+                "logistic regression model",
+                "joseph berkson"
+            ],
+            [
+                "multilayer perceptron",
+                "frank rosenblatt"
+            ],
+            [
+                "perceptron",
+                "frank rosenblatt"
+            ],
+            [
+                "tikhonov regularization",
+                "andrey tikhonov"
+            ],
+            [
+                "support vector machine",
+                "alexey chervonenkis"
+            ],
+            [
+                "support vector machine",
+                "vladimir vapnik"
+            ],
+            [
+                "tikhonov regularization",
+                "andrey tikhonov"
+            ]
+        ],
+        "official name": [
+            [
+                "coverage",
+                "coverage"
+            ]
+        ],
+        "notable work": [
+            [
+                "richard e. bellman",
+                "curse of dimensionality"
+            ],
+            [
+                "andrey tikhonov",
+                "tikhonov regularization"
+            ]
+        ],
+        "strand orientation": [
+            [
+                "cytochrome c aq_042",
+                "reverse strand"
+            ],
+            [
+                "arylamine n-acetyltransferase rv3566c",
+                "reverse strand"
+            ]
+        ],
+        "genomic end": [
+            [
+                "cytochrome c aq_042",
+                "27339"
+            ],
+            [
+                "arylamine n-acetyltransferase rv3566c",
+                "4008181"
+            ],
+            [
+                "arylamine acetylase mb3596c",
+                "3951396"
+            ]
+        ],
+        "genomic start": [
+            [
+                "cytochrome c aq_042",
+                "26617"
+            ],
+            [
+                "arylamine n-acetyltransferase rv3566c",
+                "4007330"
+            ],
+            [
+                "arylamine acetylase mb3596c",
+                "3950545"
+            ]
+        ],
+        "encodes": [
+            [
+                "cytochrome c aq_042",
+                "cytochrome c aq_042"
+            ],
+            [
+                "cytochrome c aq_042",
+                "cytochrome c aq_042"
+            ],
+            [
+                "cytochrome p450 atu1569",
+                "cytochrome p450 atu1569"
+            ],
+            [
+                "cyc",
+                "cycle dmel_cg8727"
+            ],
+            [
+                "arylamine n-acetyltransferase rv3566c",
+                "arylamine n-acetyltransferase    rv3566c"
+            ],
+            [
+                "arylamine acetylase mb3596c",
+                "arylamine acetylase mb3596c"
+            ]
+        ],
+        "found in taxon": [
+            [
+                "cytochrome c aq_042",
+                "aquifex aeolicus vf5"
+            ],
+            [
+                "arylamine n-acetyltransferase rv3566c",
+                "mycobacterium tuberculosis h37rv"
+            ],
+            [
+                "arylamine n-acetyltransferase    rv3566c",
+                "mycobacterium tuberculosis h37rv"
+            ],
+            [
+                "stigmasterol",
+                "mentha spicata"
+            ],
+            [
+                "oleanolic acid",
+                "mentha spicata"
+            ],
+            [
+                "2-(3,4-dimethoxyphenyl)-5,6-dihydroxy-7-methoxychromen-4-one",
+                "mentha spicata"
+            ],
+            [
+                "hesperidin",
+                "mentha spicata"
+            ],
+            [
+                "vicenin 2",
+                "mentha spicata"
+            ],
+            [
+                "(1s,2e,10r)-3,7,11,11-tetramethylbicyclo[8.1.0]undeca-2,6-diene",
+                "mentha spicata"
+            ],
+            [
+                "thymusin",
+                "mentha spicata"
+            ],
+            [
+                "myrtenal",
+                "mentha spicata"
+            ],
+            [
+                "(2r,8ar)-2,5,5,8a-tetramethyl-3,4,4a,6-tetrahydro-2h-1-benzopyran",
+                "mentha spicata"
+            ],
+            [
+                "(2s)-5-hydroxy-2-(3-hydroxy-4-methoxyphenyl)-7-{[(2s,3r,4s,5s,6r)-3,4,5-trihydroxy-6-({[(2r,3r,4s,5r,6s)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxy}methyl)oxan-2-yl]oxy}-2,3-dihydro-1-benzopyran-4-one",
+                "mentha spicata"
+            ],
+            [
+                "pebrellin",
+                "mentha spicata"
+            ],
+            [
+                "diosmine",
+                "mentha spicata"
+            ],
+            [
+                "7-{[(3r,4s,5s,6r)-4,5-dihydroxy-6-(hydroxymethyl)-3-{[(2s,3r,4r,5r,6s)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxy}oxan-2-yl]oxy}-2-(3,4-dihydroxyphenyl)-5-hydroxychromen-4-one",
+                "mentha spicata"
+            ],
+            [
+                "(2r,3r,6r)-2-chloro-3-hydroxy-6-isopropyl-3-methylcyclohexan-1-one",
+                "mentha spicata"
+            ],
+            [
+                "[(2r,3s,4s,5r,6s)-6-{[(1r,3as,3br,7s,9ar,9bs,11ar)-1-[(2r)-5-ethyl-6-methylheptan-2-yl]-3a,9a,11a-trimethyl-1h,2h,3h,3bh,4h,6h,7h,8h,9h,9bh,10h,11h-cyclopenta[a]phenanthren-7-yl]oxy}-3,4,5-trihydroxyoxan-2-yl]methyl 3-methylbutanoate",
+                "mentha spicata"
+            ],
+            [
+                "[(2r,3s,4s,5r,6s)-6-{[(1r,3as,3br,7s,9ar,9bs,11ar)-1-[(2r)-5-ethyl-6-methylheptan-2-yl]-3a,9a,11a-trimethyl-1h,2h,3h,3bh,4h,6h,7h,8h,9h,9bh,10h,11h-cyclopenta[a]phenanthren-7-yl]oxy}-3,4,5-trihydroxyoxan-2-yl]methyl hexadecanoate",
+                "mentha spicata"
+            ],
+            [
+                "5-hydroxy-2-(4-methoxyphenyl)-7-{[(2s,3s,4r,5r,6r)-3,4,5-trihydroxy-6-({[(2r,3r,4s,5r,6r)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxy}methyl)oxan-2-yl]oxy}-2,3-dihydro-1-benzopyran-4-one",
+                "mentha spicata"
+            ]
+        ],
+        "encoded by": [
+            [
+                "cytochrome c aq_042",
+                "cytochrome c aq_042"
+            ],
+            [
+                "cytochrome c aq_042",
+                "cytochrome c aq_042"
+            ],
+            [
+                "cytochrome p450 atu1569",
+                "cytochrome p450 atu1569"
+            ],
+            [
+                "cyclope dmel_cg14028",
+                "cype"
+            ],
+            [
+                "cycle dmel_cg8727",
+                "cyc"
+            ],
+            [
+                "nodal-related 2",
+                "ndr2"
+            ],
+            [
+                "arylamine n-acetyltransferase    rv3566c",
+                "arylamine n-acetyltransferase rv3566c"
+            ]
+        ],
+        "cell component": [
+            [
+                "cytochrome c aq_042",
+                "membrane"
+            ]
+        ],
+        "molecular function": [
+            [
+                "cytochrome c aq_042",
+                "heme binding"
+            ],
+            [
+                "cytochrome c aq_042",
+                "electron transfer activity"
+            ],
+            [
+                "cytochrome c aq_042",
+                "metal ion binding"
+            ]
+        ],
+        "biological process": [
+            [
+                "cytochrome c aq_042",
+                "electron transport chain"
+            ],
+            [
+                "arylamine n-acetyltransferase    rv3566c",
+                "metabolism"
+            ]
+        ],
+        "ortholog": [
+            [
+                "arntl",
+                "cyc"
+            ],
+            [
+                "arntl",
+                "cyc"
+            ],
+            [
+                "arntl",
+                "cyc"
+            ]
+        ],
+        "product or material produced": [
+            [
+                "nasdaq, inc.",
+                "derivative"
+            ]
+        ],
+        "studies": [
+            [
+                "differential calculus",
+                "derivative"
+            ],
+            [
+                "integral calculus",
+                "integral"
+            ],
+            [
+                "manifold theory",
+                "manifold"
+            ],
+            [
+                "measure theory",
+                "measure"
+            ]
+        ],
+        "definition domain": [
+            [
+                "determinant",
+                "square matrix"
+            ],
+            [
+                "probability mass function",
+                "discrete random variable"
+            ],
+            [
+                "determinant",
+                "square matrix"
+            ]
+        ],
+        "input set": [
+            [
+                "determinant",
+                "square matrix"
+            ],
+            [
+                "minimal polynomial",
+                "square matrix"
+            ],
+            [
+                "determinant",
+                "square matrix"
+            ]
+        ],
+        "calculated from": [
+            [
+                "eigenvalue",
+                "determinant"
+            ],
+            [
+                "eigenvalue",
+                "square matrix"
+            ],
+            [
+                "eigenvalue",
+                "identity matrix"
+            ],
+            [
+                "eigenvalue",
+                "determinant"
+            ],
+            [
+                "massieu function",
+                "helmholtz free energy"
+            ],
+            [
+                "specific helmholtz energy",
+                "helmholtz free energy"
+            ],
+            [
+                "eigenvalue",
+                "identity matrix"
+            ],
+            [
+                "hermitian function",
+                "normal distribution"
+            ],
+            [
+                "square matrix",
+                "field"
+            ],
+            [
+                "square matrix",
+                "natural number"
+            ],
+            [
+                "sample mean",
+                "sample"
+            ],
+            [
+                "angular velocity",
+                "unit vector"
+            ],
+            [
+                "torque",
+                "unit vector"
+            ]
+        ],
+        "Wikidata property": [
+            [
+                "quality",
+                "has quality"
+            ],
+            [
+                "grade",
+                "maximum gradient"
+            ],
+            [
+                "grade",
+                "average gradient"
+            ],
+            [
+                "grade",
+                "average gradient"
+            ],
+            [
+                "difference",
+                "different from"
+            ]
+        ],
+        "solution to": [
+            [
+                "eigenvalue",
+                "characteristic equation"
+            ]
+        ],
+        "based on": [
+            [
+                "singular value",
+                "eigenvalue"
+            ],
+            [
+                "multilayer perceptron",
+                "perceptron"
+            ],
+            [
+                "gaussian noise",
+                "normal distribution"
+            ],
+            [
+                "multilayer perceptron",
+                "perceptron"
+            ],
+            [
+                "relational database",
+                "relational model"
+            ],
+            [
+                "singular value",
+                "eigenvalue"
+            ]
+        ],
+        "computes solution to": [
+            [
+                "eigenvalue algorithm",
+                "eigenvalue"
+            ]
+        ],
+        "significant event": [
+            [
+                "georges lema\u00eetre atv",
+                "epoch"
+            ]
+        ],
+        "Wikidata property example for properties": [
+            [
+                "wikidata property example",
+                "participant in"
+            ],
+            [
+                "wikidata property example",
+                "position held"
+            ]
+        ],
+        "properties for this type": [
+            [
+                "wikidata property",
+                "wikidata property example"
+            ]
+        ],
+        "does not have quality": [
+            [
+                "windfall gain",
+                "expectation"
+            ],
+            [
+                "invariant",
+                "dependence"
+            ]
+        ],
+        "grammatical option indicates": [
+            [
+                "optative",
+                "expectation"
+            ]
+        ],
+        "field of this occupation": [
+            [
+                "explorer",
+                "exploration"
+            ]
+        ],
+        "Unicode character": [
+            [
+                "integral",
+                "\u222b"
+            ],
+            [
+                "divergence",
+                "\u2207 \u00b7"
+            ]
+        ],
+        "notation": [
+            [
+                "integral",
+                "integral symbol"
+            ],
+            [
+                "partial derivative",
+                "partial derivative symbol"
+            ]
+        ],
+        "has list": [
+            [
+                "integral",
+                "lists of integrals"
+            ]
+        ],
+        "is a list of": [
+            [
+                "lists of integrals",
+                "integral"
+            ],
+            [
+                "list of manifolds",
+                "manifold"
+            ]
+        ],
+        "Hornbostel-Sachs classification": [
+            [
+                "harmonium",
+                "412.132"
+            ]
+        ],
+        "country": [
+            [
+                "harmonium",
+                "france"
+            ],
+            [
+                "racial whitening",
+                "brazil"
+            ]
+        ],
+        "located in the administrative territorial entity": [
+            [
+                "harmonium",
+                "montolieu"
+            ]
+        ],
+        "made from material": [
+            [
+                "harmonium",
+                "wood"
+            ]
+        ],
+        "instrument": [
+            [
+                "karamjeet madonna",
+                "harmonium"
+            ],
+            [
+                "emanuel hornischer",
+                "harmonium"
+            ],
+            [
+                "frieso moolenaar",
+                "harmonium"
+            ],
+            [
+                "stelios tsakas",
+                "harmonium"
+            ],
+            [
+                "sigbj\u00f8rn apeland",
+                "harmonium"
+            ],
+            [
+                "arnold b\u00f6cklin",
+                "harmonium"
+            ],
+            [
+                "fran\u00e7ois benoist",
+                "harmonium"
+            ],
+            [
+                "vidyadhar oke",
+                "harmonium"
+            ],
+            [
+                "govindrao patwardhan",
+                "harmonium"
+            ],
+            [
+                "fran\u00e7ois verry",
+                "harmonium"
+            ],
+            [
+                "carla pallone",
+                "harmonium"
+            ],
+            [
+                "sanghamitra bharali",
+                "harmonium"
+            ],
+            [
+                "trent reznor",
+                "harmonium"
+            ],
+            [
+                "lisa hannigan",
+                "harmonium"
+            ]
+        ],
+        "instrumentation": [
+            [
+                "petite messe solennelle",
+                "harmonium"
+            ]
+        ],
+        "identity element": [
+            [
+                "matrix multiplication",
+                "identity matrix"
+            ],
+            [
+                "matrix multiplication",
+                "identity matrix"
+            ]
+        ],
+        "has effect": [
+            [
+                "challenge",
+                "loss of turn"
+            ],
+            [
+                "challenge",
+                "removal"
+            ],
+            [
+                "challenge",
+                "loss"
+            ],
+            [
+                "algerian self-determination referendum",
+                "independence"
+            ],
+            [
+                "norm",
+                "technical standard"
+            ],
+            [
+                "reminder",
+                "recall"
+            ],
+            [
+                "intensional definition",
+                "set"
+            ]
+        ],
+        "commemorates": [
+            [
+                "independence day",
+                "independence"
+            ]
+        ],
+        "applies to part": [
+            [
+                "coefficient of determination",
+                "linear regression"
+            ],
+            [
+                "wald estimator",
+                "linear regression"
+            ]
+        ],
+        "political ideology": [
+            [
+                "future of \u00e5land",
+                "independence"
+            ]
+        ],
+        "used by": [
+            [
+                "logistic regression model",
+                "logistic regression analysis"
+            ],
+            [
+                "logistic regression model",
+                "logistic regression analysis"
+            ],
+            [
+                "command",
+                "imperative programming"
+            ],
+            [
+                "command",
+                "command-line interface"
+            ],
+            [
+                "singular value",
+                "singular value decomposition"
+            ],
+            [
+                "singular value",
+                "singular value decomposition"
+            ]
+        ],
+        "symbolizes": [
+            [
+                "implication arrow",
+                "inference"
+            ]
+        ],
+        "short name": [
+            [
+                "machine translation",
+                "mt"
+            ],
+            [
+                "mean squared error",
+                "mse"
+            ],
+            [
+                "principal component analysis",
+                "acp"
+            ],
+            [
+                "principal component analysis",
+                "pca"
+            ],
+            [
+                "support vector machine",
+                "svm"
+            ]
+        ],
+        "MCN code": [
+            [
+                "manifold",
+                "8409.91.15"
+            ]
+        ],
+        "ACM Classification Code (2012)": [
+            [
+                "maximum likelihood estimation",
+                "10003663"
+            ],
+            [
+                "reinforcement learning",
+                "10010261"
+            ],
+            [
+                "semi-supervised learning",
+                "10010289"
+            ],
+            [
+                "supervised learning",
+                "10010259"
+            ],
+            [
+                "unsupervised learning",
+                "10010260"
+            ]
+        ],
+        "Commons gallery": [
+            [
+                "artificial neural network",
+                "artificial neural network"
+            ],
+            [
+                "standard deviation",
+                "standard deviation"
+            ]
+        ],
+        "interested in": [
+            [
+                "eli shmueli",
+                "neuroscience"
+            ],
+            [
+                "q104921688",
+                "policy"
+            ]
+        ],
+        "ISOCAT id": [
+            [
+                "norm",
+                "309"
+            ]
+        ],
+        "objective of project or action": [
+            [
+                "program optimization",
+                "reduction"
+            ],
+            [
+                "program optimization",
+                "algorithmic efficiency"
+            ],
+            [
+                "reminder",
+                "recall"
+            ]
+        ],
+        "represents": [
+            [
+                "significant figure",
+                "precision"
+            ]
+        ],
+        "quantity symbol (string)": [
+            [
+                "standard deviation",
+                "\u03c3"
+            ]
+        ],
+        "measured physical quantity": [
+            [
+                "shannon",
+                "information content"
+            ]
+        ],
+        "manifestation of": [
+            [
+                "set",
+                "set"
+            ]
+        ],
+        "natural product of taxon": [
+            [
+                "spearmint",
+                "mentha spicata"
+            ],
+            [
+                "spearmint",
+                "mentha spicata"
+            ]
+        ],
+        "taxon common name": [
+            [
+                "mentha spicata",
+                "yerba buena espa\u00f1ola"
+            ],
+            [
+                "mentha spicata",
+                "yerba buena com\u00fan"
+            ],
+            [
+                "mentha spicata",
+                "yerba buena"
+            ],
+            [
+                "mentha spicata",
+                "s\u00e1ndalo de jard\u00edn"
+            ],
+            [
+                "mentha spicata",
+                "s\u00e1ndalo"
+            ],
+            [
+                "mentha spicata",
+                "salvia romana"
+            ],
+            [
+                "mentha spicata",
+                "menta verde"
+            ],
+            [
+                "mentha spicata",
+                "menta romana"
+            ],
+            [
+                "mentha spicata",
+                "menta hortense"
+            ],
+            [
+                "mentha spicata",
+                "menta griega"
+            ],
+            [
+                "mentha spicata",
+                "menta"
+            ],
+            [
+                "mentha spicata",
+                "mastranzo menor"
+            ],
+            [
+                "mentha spicata",
+                "hortelana"
+            ],
+            [
+                "mentha spicata",
+                "hierbahuerto"
+            ],
+            [
+                "mentha spicata",
+                "hierbabuena"
+            ],
+            [
+                "mentha spicata",
+                "hierba romana"
+            ]
+        ],
+        "practiced by": [
+            [
+                "transcription",
+                "notation writer"
+            ]
+        ],
+        "statement describes": [
+            [
+                "triangle inequality",
+                "triangle"
+            ]
+        ],
+        "quantity": [
+            [
+                "ba gua",
+                "8"
+            ]
+        ],
+        "template has topic": [
+            [
+                "template:trigram",
+                "ba gua"
+            ]
+        ],
+        "phone number": [
+            [
+                "unbiased.co.uk",
+                "+44-800-023-6868"
+            ]
+        ],
+        "social media followers": [
+            [
+                "unbiased.co.uk",
+                "7888"
+            ]
+        ],
+        "headquarters location": [
+            [
+                "unbiased.co.uk",
+                "london"
+            ]
+        ],
+        "length": [
+            [
+                "unit vector",
+                "1"
+            ]
+        ],
+        "on focus list of Wikimedia project": [
+            [
+                "vector",
+                "wikiproject covid-19"
+            ],
+            [
+                "vector",
+                "wikiproject zika corpus"
+            ]
+        ],
+        "implementation of": [
+            [
+                "std::vector",
+                "dynamic array"
+            ],
+            [
+                "dynamic array",
+                "list"
+            ],
+            [
+                "std::vector",
+                "dynamic array"
+            ]
+        ]
+    }

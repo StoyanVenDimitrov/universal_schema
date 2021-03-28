@@ -1,0 +1,24 @@
+{
+    "python.pythonPath": "/Users/dimitrs/opt/anaconda3/envs/py36/bin/python",
+    "python.linting.pylintArgs": [
+        "--disable=E0611"
+    ],
+    "python.linting.pylintEnabled": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.useTabStops": false,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/__pycache__": true,
+    },
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true
+}

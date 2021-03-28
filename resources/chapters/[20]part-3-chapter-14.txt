@@ -1,0 +1,990 @@
+Chapter 14
+
+Autoencoders
+An autoencoder is a neural network that is trained to attempt to copy its input
+to its output. Internally, it has a hidden layer h that describes a code used to
+represent the input. The network may be viewed as consisting of two parts: an
+encoder function h = f (x) and a decoder that produces a reconstruction r = g(h).
+This architecture is presented in ﬁgure 14.1. If an autoencoder succeeds in simply
+learning to set g(f (x)) = x everywhere, then it is not especially useful. Instead,
+autoencoders are designed to be unable to learn to copy perfectly. Usually they are
+restricted in ways that allow them to copy only approximately, and to copy only
+input that resembles the training data. Because the model is forced to prioritize
+which aspects of the input should be copied, it often learns useful properties of the
+data.
+Modern autoencoders have generalized the idea of an encoder and a decoder beyond deterministic functions to stochastic mappings pencoder (h | x) and
+pdecoder (x | h).
+
+The idea of autoencoders has been part of the historical landscape of neural
+networks for decades (LeCun, 1987; Bourlard and Kamp, 1988; Hinton and Zemel,
+1994). Traditionally, autoencoders were used for dimensionality reduction or
+feature learning. Recently, theoretical connections between autoencoders and
+latent variable models have brought autoencoders to the forefront of generative
+modeling, as we will see in chapter 20. Autoencoders may be thought of as being
+a special case of feedforward networks, and may be trained with all of the same
+techniques, typically minibatch gradient descent following gradients computed
+by back-propagation. Unlike general feedforward networks, autoencoders may
+also be trained using recirculation (Hinton and McClelland, 1988), a learning
+algorithm based on comparing the activations of the network on the original input
+502
+
+CHAPTER 14. AUTOENCODERS
+
+to the activations on the reconstructed input. Recirculation is regarded as more
+biologically plausible than back-propagation, but is rarely used for machine learning
+applications.
+h
+g
+
+f
+x
+
+r
+
+Figure 14.1: The general structure of an autoencoder, mapping an input x to an output
+(called reconstruction) r through an internal representation or code h. The autoencoder
+has two components: the encoder f (mapping x to h) and the decoder g (mapping h to
+r).
+
+14.1
+
+Undercomplete Autoencoders
+
+Copying the input to the output may sound useless, but we are typically not
+interested in the output of the decoder. Instead, we hope that training the
+autoencoder to perform the input copying task will result in h taking on useful
+properties.
+One way to obtain useful features from the autoencoder is to constrain h to
+have smaller dimension than x. An autoencoder whose code dimension is less
+than the input dimension is called undercomplete. Learning an undercomplete
+representation forces the autoencoder to capture the most salient features of the
+training data.
+The learning process is described simply as minimizing a loss function
+L(x, g (f (x)))
+
+(14.1)
+
+where L is a loss function penalizing g(f (x)) for being dissimilar from x, such as
+the mean squared error.
+When the decoder is linear and L is the mean squared error, an undercomplete
+autoencoder learns to span the same subspace as PCA. In this case, an autoencoder
+trained to perform the copying task has learned the principal subspace of the
+training data as a side-eﬀect.
+Autoencoders with nonlinear encoder functions f and nonlinear decoder functions g can thus learn a more powerful nonlinear generalization of PCA. Unfortu503
+
+CHAPTER 14. AUTOENCODERS
+
+nately, if the encoder and decoder are allowed too much capacity, the autoencoder
+can learn to perform the copying task without extracting useful information about
+the distribution of the data. Theoretically, one could imagine that an autoencoder
+with a one-dimensional code but a very powerful nonlinear encoder could learn to
+represent each training example x(i) with the code i. The decoder could learn to
+map these integer indices back to the values of speciﬁc training examples. This
+speciﬁc scenario does not occur in practice, but it illustrates clearly that an autoencoder trained to perform the copying task can fail to learn anything useful about
+the dataset if the capacity of the autoencoder is allowed to become too great.
+
+14.2
+
+Regularized Autoencoders
+
+Undercomplete autoencoders, with code dimension less than the input dimension,
+can learn the most salient features of the data distribution. We have seen that
+these autoencoders fail to learn anything useful if the encoder and decoder are
+given too much capacity.
+A similar problem occurs if the hidden code is allowed to have dimension
+equal to the input, and in the overcomplete case in which the hidden code has
+dimension greater than the input. In these cases, even a linear encoder and linear
+decoder can learn to copy the input to the output without learning anything useful
+about the data distribution.
+Ideally, one could train any architecture of autoencoder successfully, choosing
+the code dimension and the capacity of the encoder and decoder based on the
+complexity of distribution to be modeled. Regularized autoencoders provide the
+ability to do so. Rather than limiting the model capacity by keeping the encoder
+and decoder shallow and the code size small, regularized autoencoders use a loss
+function that encourages the model to have other properties besides the ability
+to copy its input to its output. These other properties include sparsity of the
+representation, smallness of the derivative of the representation, and robustness
+to noise or to missing inputs. A regularized autoencoder can be nonlinear and
+overcomplete but still learn something useful about the data distribution even if
+the model capacity is great enough to learn a trivial identity function.
+In addition to the methods described here which are most naturally interpreted
+as regularized autoencoders, nearly any generative model with latent variables
+and equipped with an inference procedure (for computing latent representations
+given input) may be viewed as a particular form of autoencoder. Two generative
+modeling approaches that emphasize this connection with autoencoders are the
+descendants of the Helmholtz machine (Hinton et al., 1995b), such as the variational
+504
+
+CHAPTER 14. AUTOENCODERS
+
+autoencoder (section 20.10.3) and the generative stochastic networks (section 20.12).
+These models naturally learn high-capacity, overcomplete encodings of the input
+and do not require regularization for these encodings to be useful. Their encodings
+are naturally useful because the models were trained to approximately maximize
+the probability of the training data rather than to copy the input to the output.
+
+14.2.1
+
+Sparse Autoencoders
+
+A sparse autoencoder is simply an autoencoder whose training criterion involves a
+sparsity penalty Ω(h) on the code layer h, in addition to the reconstruction error:
+L(x, g (f (x))) + Ω(h)
+
+(14.2)
+
+where g(h) is the decoder output and typically we have h = f (x), the encoder
+output.
+Sparse autoencoders are typically used to learn features for another task such
+as classiﬁcation. An autoencoder that has been regularized to be sparse must
+respond to unique statistical features of the dataset it has been trained on, rather
+than simply acting as an identity function. In this way, training to perform the
+copying task with a sparsity penalty can yield a model that has learned useful
+features as a byproduct.
+We can think of the penalty Ω(h) simply as a regularizer term added to
+a feedforward network whose primary task is to copy the input to the output
+(unsupervised learning objective) and possibly also perform some supervised task
+(with a supervised learning objective) that depends on these sparse features.
+Unlike other regularizers such as weight decay, there is not a straightforward
+Bayesian interpretation to this regularizer. As described in section 5.6.1, training
+with weight decay and other regularization penalties can be interpreted as a
+MAP approximation to Bayesian inference, with the added regularizing penalty
+corresponding to a prior probability distribution over the model parameters. In
+this view, regularized maximum likelihood corresponds to maximizing p(θ | x),
+which is equivalent to maximizing log p(x | θ) + log p(θ). The log p(x | θ) term
+is the usual data log-likelihood term and the log p(θ) term, the log-prior over
+parameters, incorporates the preference over particular values of θ. This view was
+described in section 5.6. Regularized autoencoders defy such an interpretation
+because the regularizer depends on the data and is therefore by deﬁnition not a
+prior in the formal sense of the word. We can still think of these regularization
+terms as implicitly expressing a preference over functions.
+Rather than thinking of the sparsity penalty as a regularizer for the copying
+task, we can think of the entire sparse autoencoder framework as approximating
+505
+
+CHAPTER 14. AUTOENCODERS
+
+maximum likelihood training of a generative model that has latent variables.
+Suppose we have a model with visible variables x and latent variables h, with
+an explicit joint distribution pmodel (x, h ) = p model (h)pmodel (x | h ). We refer to
+pmodel (h) as the model’s prior distribution over the latent variables, representing
+the model’s beliefs prior to seeing x. This is diﬀerent from the way we have
+previously used the word “prior,” to refer to the distribution p(θ) encoding our
+beliefs about the model’s parameters before we have seen the training data. The
+log-likelihood can be decomposed as
+
+log p model (x) = log
+pmodel (h, x).
+(14.3)
+h
+
+We can think of the autoencoder as approximating this sum with a point estimate
+for just one highly likely value for h. This is similar to the sparse coding generative
+model (section 13.4), but with h being the output of the parametric encoder rather
+than the result of an optimization that infers the most likely h. From this point of
+view, with this chosen h, we are maximizing
+log p model (h, x) = log p model(h) + log pmodel (x | h).
+
+(14.4)
+
+The log p model (h) term can be sparsity-inducing. For example, the Laplace prior,
+pmodel (hi ) =
+
+λ −λ|hi |
+e
+,
+2
+
+(14.5)
+
+corresponds to an absolute value sparsity penalty. Expressing the log-prior as an
+absolute value penalty, we obtain
+
+|hi |
+(14.6)
+Ω(h) = λ
+i
+
+
+
+λ
+= Ω(h) + const
+− log p model (h) =
+λ|h i | − log
+2
+
+(14.7)
+
+i
+
+where the constant term depends only on λ and not h. We typically treat λ as a
+hyperparameter and discard the constant term since it does not aﬀect the parameter
+learning. Other priors such as the Student-t prior can also induce sparsity. From
+this point of view of sparsity as resulting from the eﬀect of pmodel (h) on approximate
+maximum likelihood learning, the sparsity penalty is not a regularization term at
+all. It is just a consequence of the model’s distribution over its latent variables.
+This view provides a diﬀerent motivation for training an autoencoder: it is a way
+of approximately training a generative model. It also provides a diﬀerent reason for
+506
+
+CHAPTER 14. AUTOENCODERS
+
+why the features learned by the autoencoder are useful: they describe the latent
+variables that explain the input.
+Early work on sparse autoencoders (Ranzato et al., 2007a, 2008) explored
+various forms of sparsity and proposed a connection between the sparsity penalty
+and the log Z term that arises when applying maximum likelihood to an undirected
+probabilistic model p(x) = Z1 p̃(x). The idea is that minimizing log Z prevents a
+probabilistic model from having high probability everywhere, and imposing sparsity
+on an autoencoder prevents the autoencoder from having low reconstruction
+error everywhere. In this case, the connection is on the level of an intuitive
+understanding of a general mechanism rather than a mathematical correspondence.
+The interpretation of the sparsity penalty as corresponding to log p model (h ) in a
+directed model pmodel (h)p model(x | h) is more mathematically straightforward.
+One way to achieve actual zeros in h for sparse (and denoising) autoencoders
+was introduced in Glorot et al. (2011b). The idea is to use rectiﬁed linear units to
+produce the code layer. With a prior that actually pushes the representations to
+zero (like the absolute value penalty), one can thus indirectly control the average
+number of zeros in the representation.
+
+14.2.2
+
+Denoising Autoencoders
+
+Rather than adding a penalty Ω to the cost function, we can obtain an autoencoder
+that learns something useful by changing the reconstruction error term of the cost
+function.
+Traditionally, autoencoders minimize some function
+L(x, g (f (x)))
+
+(14.8)
+
+where L is a loss function penalizing g(f (x)) for being dissimilar from x, such as
+the L2 norm of their diﬀerence. This encourages g ◦ f to learn to be merely an
+identity function if they have the capacity to do so.
+A denoising autoencoder or DAE instead minimizes
+L(x, g (f ( x̃))),
+
+(14.9)
+
+where x̃ is a copy of x that has been corrupted by some form of noise. Denoising
+autoencoders must therefore undo this corruption rather than simply copying their
+input.
+Denoising training forces f and g to implicitly learn the structure of pdata (x),
+as shown by Alain and Bengio (2013) and Bengio et al. (2013c). Denoising
+507
+
+CHAPTER 14. AUTOENCODERS
+
+autoencoders thus provide yet another example of how useful properties can emerge
+as a byproduct of minimizing reconstruction error. They are also an example of
+how overcomplete, high-capacity models may be used as autoencoders so long
+as care is taken to prevent them from learning the identity function. Denoising
+autoencoders are presented in more detail in section 14.5.
+
+14.2.3
+
+Regularizing by Penalizing Derivatives
+
+Another strategy for regularizing an autoencoder is to use a penalty Ω as in sparse
+autoencoders,
+L(x, g (f (x))) + Ω(h, x),
+(14.10)
+but with a diﬀerent form of Ω:
+Ω(h, x) = λ
+
+
+i
+
+||∇x h i ||2 .
+
+(14.11)
+
+This forces the model to learn a function that does not change much when x
+changes slightly. Because this penalty is applied only at training examples, it forces
+the autoencoder to learn features that capture information about the training
+distribution.
+An autoencoder regularized in this way is called a contractive autoencoder
+or CAE. This approach has theoretical connections to denoising autoencoders,
+manifold learning and probabilistic modeling. The CAE is described in more detail
+in section 14.7.
+
+14.3
+
+Representational Power, Layer Size and Depth
+
+Autoencoders are often trained with only a single layer encoder and a single layer
+decoder. However, this is not a requirement. In fact, using deep encoders and
+decoders oﬀers many advantages.
+Recall from section 6.4.1 that there are many advantages to depth in a feedforward network. Because autoencoders are feedforward networks, these advantages
+also apply to autoencoders. Moreover, the encoder is itself a feedforward network
+as is the decoder, so each of these components of the autoencoder can individually
+beneﬁt from depth.
+One major advantage of non-trivial depth is that the universal approximator
+theorem guarantees that a feedforward neural network with at least one hidden
+layer can represent an approximation of any function (within a broad class) to an
+508
+
+CHAPTER 14. AUTOENCODERS
+
+arbitrary degree of accuracy, provided that it has enough hidden units. This means
+that an autoencoder with a single hidden layer is able to represent the identity
+function along the domain of the data arbitrarily well. However, the mapping from
+input to code is shallow. This means that we are not able to enforce arbitrary
+constraints, such as that the code should be sparse. A deep autoencoder, with at
+least one additional hidden layer inside the encoder itself, can approximate any
+mapping from input to code arbitrarily well, given enough hidden units.
+Depth can exponentially reduce the computational cost of representing some
+functions. Depth can also exponentially decrease the amount of training data
+needed to learn some functions. See section 6.4.1 for a review of the advantages of
+depth in feedforward networks.
+Experimentally, deep autoencoders yield much better compression than corresponding shallow or linear autoencoders (Hinton and Salakhutdinov, 2006).
+A common strategy for training a deep autoencoder is to greedily pretrain
+the deep architecture by training a stack of shallow autoencoders, so we often
+encounter shallow autoencoders, even when the ultimate goal is to train a deep
+autoencoder.
+
+14.4
+
+Stochastic Encoders and Decoders
+
+Autoencoders are just feedforward networks. The same loss functions and output
+unit types that can be used for traditional feedforward networks are also used for
+autoencoders.
+As described in section 6.2.2.4, a general strategy for designing the output units
+and the loss function of a feedforward network is to deﬁne an output distribution
+p(y | x ) and minimize the negative log-likelihood − log p(y | x). In that setting, y
+was a vector of targets, such as class labels.
+In the case of an autoencoder, x is now the target as well as the input. However,
+we can still apply the same machinery as before. Given a hidden code h, we may
+think of the decoder as providing a conditional distribution p decoder (x | h). We
+may then train the autoencoder by minimizing − log pdecoder (x | h) . The exact
+form of this loss function will change depending on the form of pdecoder . As with
+traditional feedforward networks, we usually use linear output units to parametrize
+the mean of a Gaussian distribution if x is real-valued. In that case, the negative
+log-likelihood yields a mean squared error criterion. Similarly, binary x values
+correspond to a Bernoulli distribution whose parameters are given by a sigmoid
+output unit, discrete x values correspond to a softmax distribution, and so on.
+509
+
+CHAPTER 14. AUTOENCODERS
+
+Typically, the output variables are treated as being conditionally independent
+given h so that this probability distribution is inexpensive to evaluate, but some
+techniques such as mixture density outputs allow tractable modeling of outputs
+with correlations.
+h
+
+pencoder (h | x)
+
+pdecoder (x | h)
+
+x
+
+r
+
+Figure 14.2: The structure of a stochastic autoencoder, in which both the encoder and the
+decoder are not simple functions but instead involve some noise injection, meaning that
+their output can be seen as sampled from a distribution, pencoder (h | x ) for the encoder
+and p decoder (x | h) for the decoder.
+
+To make a more radical departure from the feedforward networks we have seen
+previously, we can also generalize the notion of an encoding function f (x) to
+an encoding distribution pencoder (h | x), as illustrated in ﬁgure 14.2.
+Any latent variable model pmodel (h, x) deﬁnes a stochastic encoder
+pencoder (h | x) = pmodel (h | x)
+
+(14.12)
+
+p decoder (x | h) = p model (x | h).
+
+(14.13)
+
+and a stochastic decoder
+
+In general, the encoder and decoder distributions are not necessarily conditional
+distributions compatible with a unique joint distribution pmodel (x, h ). Alain et al.
+(2015) showed that training the encoder and decoder as a denoising autoencoder
+will tend to make them compatible asymptotically (with enough capacity and
+examples).
+
+14.5
+
+Denoising Autoencoders
+
+The denoising autoencoder (DAE) is an autoencoder that receives a corrupted
+data point as input and is trained to predict the original, uncorrupted data point
+as its output.
+The DAE training procedure is illustrated in ﬁgure 14.3. We introduce a
+corruption process C(x̃ | x) which represents a conditional distribution over
+510
+
+CHAPTER 14. AUTOENCODERS
+
+h
+g
+
+f
+x̃
+
+L
+
+C(x̃ | x)
+x
+
+Figure 14.3: The computational graph of the cost function for a denoising autoencoder,
+which is trained to reconstruct the clean data point x from its corrupted version x̃.
+This is accomplished by minimizing the loss L = − log pdecoder (x | h = f(x̃)), where
+x̃ is a corrupted version of the data example x, obtained through a given corruption
+process C(x̃ | x). Typically the distribution pdecoder is a factorial distribution whose mean
+parameters are emitted by a feedforward network g .
+
+corrupted samples x̃, given a data sample x. The autoencoder then learns a
+reconstruction distribution preconstruct (x | x̃ ) estimated from training pairs
+(x, x̃), as follows:
+1. Sample a training example x from the training data.
+2. Sample a corrupted version x̃ from C(x̃ | x = x).
+3. Use (x, x̃) as a training example for estimating the autoencoder reconstruction
+distribution preconstruct(x | x̃) = pdecoder (x | h) with h the output of encoder
+f ( x̃) and pdecoder typically deﬁned by a decoder g(h).
+Typically we can simply perform gradient-based approximate minimization (such
+as minibatch gradient descent) on the negative log-likelihood − log pdecoder(x | h).
+So long as the encoder is deterministic, the denoising autoencoder is a feedforward
+network and may be trained with exactly the same techniques as any other
+feedforward network.
+We can therefore view the DAE as performing stochastic gradient descent on
+the following expectation:
+− E x∼p̂data (x)Ex̃∼C(x̃|x) log pdecoder (x | h = f (x̃))
+where p̂data (x) is the training distribution.
+511
+
+(14.14)
+
+CHAPTER 14. AUTOENCODERS
+
+x̃
+x
+
+g◦f
+
+x̃
+
+x
+
+C(x̃ | x)
+
+Figure 14.4: A denoising autoencoder is trained to map a corrupted data point x̃ back to
+the original data point x. We illustrate training examples x as red crosses lying near a
+low-dimensional manifold illustrated with the bold black line. We illustrate the corruption
+process C (x̃ | x) with a gray circle of equiprobable corruptions. A gray arrow demonstrates
+how one training example is transformed into one sample from this corruption process.
+When the denoising autoencoder is trained to minimize the average of squared errors
+||g(f(x̃)) − x||2 , the reconstruction g (f (x̃)) estimates E x,x̃∼pdata (x)C ( x̃|x)[x | x̃]. The vector
+g(f(x̃)) − x̃ points approximately towards the nearest point on the manifold, since g(f(x̃))
+estimates the center of mass of the clean points x which could have given rise to x̃. The
+autoencoder thus learns a vector ﬁeld g(f (x)) − x indicated by the green arrows. This
+vector ﬁeld estimates the score ∇ x log pdata (x) up to a multiplicative factor that is the
+average root mean square reconstruction error.
+
+512
+
+CHAPTER 14. AUTOENCODERS
+
+14.5.1
+
+Estimating the Score
+
+Score matching (Hyvärinen, 2005) is an alternative to maximum likelihood. It
+provides a consistent estimator of probability distributions based on encouraging
+the model to have the same score as the data distribution at every training point
+x. In this context, the score is a particular gradient ﬁeld:
+∇x log p(x).
+
+(14.15)
+
+Score matching is discussed further in section 18.4. For the present discussion
+regarding autoencoders, it is suﬃcient to understand that learning the gradient
+ﬁeld of log pdata is one way to learn the structure of pdata itself.
+A very important property of DAEs is that their training criterion (with
+conditionally Gaussian p( x | h)) makes the autoencoder learn a vector ﬁeld
+(g(f(x)) − x) that estimates the score of the data distribution. This is illustrated
+in ﬁgure 14.4.
+Denoising training of a speciﬁc kind of autoencoder (sigmoidal hidden units,
+linear reconstruction units) using Gaussian noise and mean squared error as
+the reconstruction cost is equivalent (Vincent, 2011) to training a speciﬁc kind
+of undirected probabilistic model called an RBM with Gaussian visible units.
+This kind of model will be described in detail in section 20.5.1; for the present
+discussion it suﬃces to know that it is a model that provides an explicit pmodel (x;θ ).
+When the RBM is trained using denoising score matching (Kingma and LeCun,
+2010), its learning algorithm is equivalent to denoising training in the corresponding
+autoencoder. With a ﬁxed noise level, regularized score matching is not a consistent
+estimator; it instead recovers a blurred version of the distribution. However, if
+the noise level is chosen to approach 0 when the number of examples approaches
+inﬁnity, then consistency is recovered. Denoising score matching is discussed in
+more detail in section 18.5.
+Other connections between autoencoders and RBMs exist. Score matching
+applied to RBMs yields a cost function that is identical to reconstruction error
+combined with a regularization term similar to the contractive penalty of the
+CAE (Swersky et al., 2011). Bengio and Delalleau (2009) showed that an autoencoder gradient provides an approximation to contrastive divergence training of
+RBMs.
+For continuous-valued x, the denoising criterion with Gaussian corruption and
+reconstruction distribution yields an estimator of the score that is applicable to
+general encoder and decoder parametrizations (Alain and Bengio, 2013). This
+means a generic encoder-decoder architecture may be made to estimate the score
+513
+
+CHAPTER 14. AUTOENCODERS
+
+by training with the squared error criterion
+||g (f (x̃)) − x||2
+
+(14.16)
+
+C(x̃ = x̃|x) = N (x̃; µ = x, Σ = σ2 I)
+
+(14.17)
+
+and corruption
+with noise variance σ 2. See ﬁgure 14.5 for an illustration of how this works.
+
+Figure 14.5: Vector ﬁeld learned by a denoising autoencoder around a 1-D curved manifold
+near which the data concentrates in a 2-D space. Each arrow is proportional to the
+reconstruction minus input vector of the autoencoder and points towards higher probability
+according to the implicitly estimated probability distribution. The vector ﬁeld has zeros
+at both maxima of the estimated density function (on the data manifolds) and at minima
+of that density function. For example, the spiral arm forms a one-dimensional manifold of
+local maxima that are connected to each other. Local minima appear near the middle of
+the gap between two arms. When the norm of reconstruction error (shown by the length
+of the arrows) is large, it means that probability can be signiﬁcantly increased by moving
+in the direction of the arrow, and that is mostly the case in places of low probability.
+The autoencoder maps these low probability points to higher probability reconstructions.
+Where probability is maximal, the arrows shrink because the reconstruction becomes more
+accurate. Figure reproduced with permission from Alain and Bengio (2013).
+
+In general, there is no guarantee that the reconstruction g(f (x)) minus the
+input x corresponds to the gradient of any function, let alone to the score. That is
+514
+
+CHAPTER 14. AUTOENCODERS
+
+why the early results (Vincent, 2011) are specialized to particular parametrizations
+where g (f (x)) − x may be obtained by taking the derivative of another function.
+Kamyshanska and Memisevic (2015) generalized the results of Vincent (2011) by
+identifying a family of shallow autoencoders such that g(f (x)) − x corresponds to
+a score for all members of the family.
+So far we have described only how the denoising autoencoder learns to represent
+a probability distribution. More generally, one may want to use the autoencoder as
+a generative model and draw samples from this distribution. This will be described
+later, in section 20.11.
+14.5.1.1
+
+Historical Perspective
+
+The idea of using MLPs for denoising dates back to the work of LeCun (1987)
+and Gallinari et al. (1987). Behnke (2001) also used recurrent networks to denoise
+images. Denoising autoencoders are, in some sense, just MLPs trained to denoise.
+However, the name “denoising autoencoder” refers to a model that is intended not
+merely to learn to denoise its input but to learn a good internal representation
+as a side eﬀect of learning to denoise. This idea came much later (Vincent
+et al., 2008, 2010). The learned representation may then be used to pretrain a
+deeper unsupervised network or a supervised network. Like sparse autoencoders,
+sparse coding, contractive autoencoders and other regularized autoencoders, the
+motivation for DAEs was to allow the learning of a very high-capacity encoder
+while preventing the encoder and decoder from learning a useless identity function.
+Prior to the introduction of the modern DAE, Inayoshi and Kurita (2005)
+explored some of the same goals with some of the same methods. Their approach
+minimizes reconstruction error in addition to a supervised objective while injecting
+noise in the hidden layer of a supervised MLP, with the objective to improve
+generalization by introducing the reconstruction error and the injected noise.
+However, their method was based on a linear encoder and could not learn function
+families as powerful as can the modern DAE.
+
+14.6
+
+Learning Manifolds with Autoencoders
+
+Like many other machine learning algorithms, autoencoders exploit the idea
+that data concentrates around a low-dimensional manifold or a small set of such
+manifolds, as described in section 5.11.3. Some machine learning algorithms exploit
+this idea only insofar as that they learn a function that behaves correctly on the
+manifold but may have unusual behavior if given an input that is oﬀ the manifold.
+515
+
+CHAPTER 14. AUTOENCODERS
+
+Autoencoders take this idea further and aim to learn the structure of the manifold.
+To understand how autoencoders do this, we must present some important
+characteristics of manifolds.
+An important characterization of a manifold is the set of its tangent planes.
+At a point x on a d-dimensional manifold, the tangent plane is given by d basis
+vectors that span the local directions of variation allowed on the manifold. As
+illustrated in ﬁgure 14.6, these local directions specify how one can change x
+inﬁnitesimally while staying on the manifold.
+All autoencoder training procedures involve a compromise between two forces:
+1. Learning a representation h of a training example x such that x can be
+approximately recovered from h through a decoder. The fact that x is drawn
+from the training data is crucial, because it means the autoencoder need
+not successfully reconstruct inputs that are not probable under the data
+generating distribution.
+2. Satisfying the constraint or regularization penalty. This can be an architectural constraint that limits the capacity of the autoencoder, or it can be
+a regularization term added to the reconstruction cost. These techniques
+generally prefer solutions that are less sensitive to the input.
+Clearly, neither force alone would be useful—copying the input to the output
+is not useful on its own, nor is ignoring the input. Instead, the two forces together
+are useful because they force the hidden representation to capture information
+about the structure of the data generating distribution. The important principle
+is that the autoencoder can aﬀord to represent only the variations that are needed
+to reconstruct training examples. If the data generating distribution concentrates
+near a low-dimensional manifold, this yields representations that implicitly capture
+a local coordinate system for this manifold: only the variations tangent to the
+manifold around x need to correspond to changes in h = f(x). Hence the encoder
+learns a mapping from the input space x to a representation space, a mapping that
+is only sensitive to changes along the manifold directions, but that is insensitive to
+changes orthogonal to the manifold.
+A one-dimensional example is illustrated in ﬁgure 14.7, showing that, by making
+the reconstruction function insensitive to perturbations of the input around the
+data points, we cause the autoencoder to recover the manifold structure.
+To understand why autoencoders are useful for manifold learning, it is instructive to compare them to other approaches. What is most commonly learned
+to characterize a manifold is a representation of the data points on (or near)
+516
+
+CHAPTER 14. AUTOENCODERS
+
+Figure 14.6: An illustration of the concept of a tangent hyperplane. Here we create a
+one-dimensional manifold in 784-dimensional space. We take an MNIST image with 784
+pixels and transform it by translating it vertically. The amount of vertical translation
+deﬁnes a coordinate along a one-dimensional manifold that traces out a curved path
+through image space. This plot shows a few points along this manifold. For visualization,
+we have projected the manifold into two dimensional space using PCA. An n-dimensional
+manifold has an n-dimensional tangent plane at every point. This tangent plane touches
+the manifold exactly at that point and is oriented parallel to the surface at that point.
+It deﬁnes the space of directions in which it is possible to move while remaining on
+the manifold. This one-dimensional manifold has a single tangent line. We indicate an
+example tangent line at one point, with an image showing how this tangent direction
+appears in image space. Gray pixels indicate pixels that do not change as we move along
+the tangent line, white pixels indicate pixels that brighten, and black pixels indicate pixels
+that darken.
+
+517
+
+CHAPTER 14. AUTOENCODERS
+
+1.0
+0.8
+
+Identity
+Optimal reconstruction
+
+r(x)
+
+0.6
+0.4
+0.2
+0.0
+
+x0
+
+x1
+
+x2
+
+x
+
+Figure 14.7: If the autoencoder learns a reconstruction function that is invariant to small
+perturbations near the data points, it captures the manifold structure of the data. Here
+the manifold structure is a collection of 0-dimensional manifolds. The dashed diagonal
+line indicates the identity function target for reconstruction. The optimal reconstruction
+function crosses the identity function wherever there is a data point. The horizontal
+arrows at the bottom of the plot indicate the r (x) − x reconstruction direction vector
+at the base of the arrow, in input space, always pointing towards the nearest “manifold”
+(a single datapoint, in the 1-D case). The denoising autoencoder explicitly tries to make
+the derivative of the reconstruction function r(x) small around the data points. The
+contractive autoencoder does the same for the encoder. Although the derivative of r(x) is
+asked to be small around the data points, it can be large between the data points. The
+space between the data points corresponds to the region between the manifolds, where
+the reconstruction function must have a large derivative in order to map corrupted points
+back onto the manifold.
+
+the manifold. Such a representation for a particular example is also called its
+embedding. It is typically given by a low-dimensional vector, with less dimensions
+than the “ambient” space of which the manifold is a low-dimensional subset. Some
+algorithms (non-parametric manifold learning algorithms, discussed below) directly
+learn an embedding for each training example, while others learn a more general
+mapping, sometimes called an encoder, or representation function, that maps any
+point in the ambient space (the input space) to its embedding.
+Manifold learning has mostly focused on unsupervised learning procedures that
+attempt to capture these manifolds. Most of the initial machine learning research
+on learning nonlinear manifolds has focused on non-parametric methods based
+on the nearest-neighbor graph. This graph has one node per training example
+and edges connecting near neighbors to each other. These methods (Schölkopf
+et al., 1998; Roweis and Saul, 2000; Tenenbaum et al., 2000; Brand, 2003; Belkin
+518
+
+CHAPTER 14. AUTOENCODERS
+
+Figure 14.8: Non-parametric manifold learning procedures build a nearest neighbor graph
+in which nodes represent training examples a directed edges indicate nearest neighbor
+relationships. Various procedures can thus obtain the tangent plane associated with a
+neighborhood of the graph as well as a coordinate system that associates each training
+example with a real-valued vector position, or embedding. It is possible to generalize
+such a representation to new examples by a form of interpolation. So long as the number
+of examples is large enough to cover the curvature and twists of the manifold, these
+approaches work well. Images from the QMUL Multiview Face Dataset (Gong et al.,
+2000).
+
+and Niyogi, 2003; Donoho and Grimes, 2003; Weinberger and Saul, 2004; Hinton
+and Roweis, 2003; van der Maaten and Hinton, 2008) associate each of nodes with a
+tangent plane that spans the directions of variations associated with the diﬀerence
+vectors between the example and its neighbors, as illustrated in ﬁgure 14.8.
+A global coordinate system can then be obtained through an optimization or
+solving a linear system. Figure 14.9 illustrates how a manifold can be tiled by a
+large number of locally linear Gaussian-like patches (or “pancakes,” because the
+Gaussians are ﬂat in the tangent directions).
+However, there is a fundamental diﬃculty with such local non-parametric
+approaches to manifold learning, raised in Bengio and Monperrus (2005): if the
+manifolds are not very smooth (they have many peaks and troughs and twists),
+one may need a very large number of training examples to cover each one of
+519
+
+CHAPTER 14. AUTOENCODERS
+
+Figure 14.9: If the tangent planes (see ﬁgure 14.6) at each location are known, then they
+can be tiled to form a global coordinate system or a density function. Each local patch
+can be thought of as a local Euclidean coordinate system or as a locally ﬂat Gaussian, or
+“pancake,” with a very small variance in the directions orthogonal to the pancake and a
+very large variance in the directions deﬁning the coordinate system on the pancake. A
+mixture of these Gaussians provides an estimated density function, as in the manifold
+Parzen window algorithm (Vincent and Bengio, 2003) or its non-local neural-net based
+variant (Bengio et al., 2006c).
+
+these variations, with no chance to generalize to unseen variations. Indeed, these
+methods can only generalize the shape of the manifold by interpolating between
+neighboring examples. Unfortunately, the manifolds involved in AI problems can
+have very complicated structure that can be diﬃcult to capture from only local
+interpolation. Consider for example the manifold resulting from translation shown
+in ﬁgure 14.6. If we watch just one coordinate within the input vector, x i, as the
+image is translated, we will observe that one coordinate encounters a peak or a
+trough in its value once for every peak or trough in brightness in the image. In
+other words, the complexity of the patterns of brightness in an underlying image
+template drives the complexity of the manifolds that are generated by performing
+simple image transformations. This motivates the use of distributed representations
+and deep learning for capturing manifold structure.
+
+520
+
+CHAPTER 14. AUTOENCODERS
+
+14.7
+
+Contractive Autoencoders
+
+The contractive autoencoder (Rifai et al., 2011a,b) introduces an explicit regularizer
+on the code h = f(x), encouraging the derivatives of f to be as small as possible:
+
+
+∂f (x)  2
+
+Ω(h) = λ 
+(14.18)
+ ∂x  .
+F
+
+The penalty Ω(h) is the squared Frobenius norm (sum of squared elements) of the
+Jacobian matrix of partial derivatives associated with the encoder function.
+
+There is a connection between the denoising autoencoder and the contractive
+autoencoder: Alain and Bengio (2013) showed that in the limit of small Gaussian
+input noise, the denoising reconstruction error is equivalent to a contractive
+penalty on the reconstruction function that maps x to r = g( f(x)). In other
+words, denoising autoencoders make the reconstruction function resist small but
+ﬁnite-sized perturbations of the input, while contractive autoencoders make the
+feature extraction function resist inﬁnitesimal perturbations of the input. When
+using the Jacobian-based contractive penalty to pretrain features f(x) for use
+with a classiﬁer, the best classiﬁcation accuracy usually results from applying the
+contractive penalty to f (x) rather than to g(f (x)). A contractive penalty on f (x)
+also has close connections to score matching, as discussed in section 14.5.1.
+The name contractive arises from the way that the CAE warps space. Speciﬁcally, because the CAE is trained to resist perturbations of its input, it is encouraged
+to map a neighborhood of input points to a smaller neighborhood of output points.
+We can think of this as contracting the input neighborhood to a smaller output
+neighborhood.
+To clarify, the CAE is contractive only locally—all perturbations of a training
+point x are mapped near to f( x). Globally, two diﬀerent points x and x may be
+mapped to f(x) and f(x ) points that are farther apart than the original points.
+It is plausible that f be expanding in-between or far from the data manifolds (see
+for example what happens in the 1-D toy example of ﬁgure 14.7). When the Ω(h)
+penalty is applied to sigmoidal units, one easy way to shrink the Jacobian is to
+make the sigmoid units saturate to 0 or 1. This encourages the CAE to encode
+input points with extreme values of the sigmoid that may be interpreted as a
+binary code. It also ensures that the CAE will spread its code values throughout
+most of the hypercube that its sigmoidal hidden units can span.
+We can think of the Jacobian matrix J at a point x as approximating the
+nonlinear encoder f (x) as being a linear operator. This allows us to use the word
+“contractive” more formally. In the theory of linear operators, a linear operator
+521
+
+CHAPTER 14. AUTOENCODERS
+
+is said to be contractive if the norm of J x remains less than or equal to 1 for
+all unit-norm x. In other words, J is contractive if it shrinks the unit sphere.
+We can think of the CAE as penalizing the Frobenius norm of the local linear
+approximation of f (x) at every training point x in order to encourage each of
+these local linear operator to become a contraction.
+As described in section 14.6, regularized autoencoders learn manifolds by
+balancing two opposing forces. In the case of the CAE, these two forces are
+reconstruction error and the contractive penalty Ω(h). Reconstruction error alone
+would encourage the CAE to learn an identity function. The contractive penalty
+alone would encourage the CAE to learn features that are constant with respect to x.
+The compromise between these two forces yields an autoencoder whose derivatives
+∂f (x)
+∂x are mostly tiny. Only a small number of hidden units, corresponding to a
+small number of directions in the input, may have signiﬁcant derivatives.
+The goal of the CAE is to learn the manifold structure of the data. Directions
+x with large J x rapidly change h, so these are likely to be directions which
+approximate the tangent planes of the manifold. Experiments by Rifai et al. (2011a)
+and Rifai et al. (2011b) show that training the CAE results in most singular values
+of J dropping below 1 in magnitude and therefore becoming contractive. However,
+some singular values remain above 1, because the reconstruction error penalty
+encourages the CAE to encode the directions with the most local variance. The
+directions corresponding to the largest singular values are interpreted as the tangent
+directions that the contractive autoencoder has learned. Ideally, these tangent
+directions should correspond to real variations in the data. For example, a CAE
+applied to images should learn tangent vectors that show how the image changes as
+objects in the image gradually change pose, as shown in ﬁgure 14.6. Visualizations
+of the experimentally obtained singular vectors do seem to correspond to meaningful
+transformations of the input image, as shown in ﬁgure 14.10.
+One practical issue with the CAE regularization criterion is that although it
+is cheap to compute in the case of a single hidden layer autoencoder, it becomes
+much more expensive in the case of deeper autoencoders. The strategy followed by
+Rifai et al. (2011a) is to separately train a series of single-layer autoencoders, each
+trained to reconstruct the previous autoencoder’s hidden layer. The composition
+of these autoencoders then forms a deep autoencoder. Because each layer was
+separately trained to be locally contractive, the deep autoencoder is contractive
+as well. The result is not the same as what would be obtained by jointly training
+the entire architecture with a penalty on the Jacobian of the deep model, but it
+captures many of the desirable qualitative characteristics.
+Another practical issue is that the contraction penalty can obtain useless results
+522
+
+CHAPTER 14. AUTOENCODERS
+
+Input
+point
+
+Tangent vectors
+
+Local PCA (no sharing across regions)
+
+Contractive autoencoder
+Figure 14.10: Illustration of tangent vectors of the manifold estimated by local PCA
+and by a contractive autoencoder. The location on the manifold is deﬁned by the input
+image of a dog drawn from the CIFAR-10 dataset. The tangent vectors are estimated
+by the leading singular vectors of the Jacobian matrix ∂h
+∂x of the input-to-code mapping.
+Although both local PCA and the CAE can capture local tangents, the CAE is able to
+form more accurate estimates from limited training data because it exploits parameter
+sharing across diﬀerent locations that share a subset of active hidden units. The CAE
+tangent directions typically correspond to moving or changing parts of the object (such as
+the head or legs). Images reproduced with permission from Rifai et al. (2011c).
+
+if we do not impose some sort of scale on the decoder. For example, the encoder
+could consist of multiplying the input by a small constant  and the decoder
+could consist of dividing the code by . As  approaches 0, the encoder drives the
+contractive penalty Ω(h) to approach 0 without having learned anything about the
+distribution. Meanwhile, the decoder maintains perfect reconstruction. In Rifai
+et al. (2011a), this is prevented by tying the weights of f and g. Both f and g are
+standard neural network layers consisting of an aﬃne transformation followed by
+an element-wise nonlinearity, so it is straightforward to set the weight matrix of g
+to be the transpose of the weight matrix of f .
+
+14.8
+
+Predictive Sparse Decomposition
+
+Predictive sparse decomposition (PSD) is a model that is a hybrid of sparse
+coding and parametric autoencoders (Kavukcuoglu et al., 2008). A parametric
+encoder is trained to predict the output of iterative inference. PSD has been
+applied to unsupervised feature learning for object recognition in images and video
+(Kavukcuoglu et al., 2009, 2010; Jarrett et al., 2009; Farabet et al., 2011), as well
+as for audio (Henaﬀ et al., 2011). The model consists of an encoder f (x) and a
+decoder g(h) that are both parametric. During training, h is controlled by the
+523
+
+CHAPTER 14. AUTOENCODERS
+
+optimization algorithm. Training proceeds by minimizing
+||x − g(h)||2 + λ|h|1 + γ ||h − f (x)|| 2.
+
+(14.19)
+
+Like in sparse coding, the training algorithm alternates between minimization with
+respect to h and minimization with respect to the model parameters. Minimization
+with respect to h is fast because f(x) provides a good initial value of h and the
+cost function constrains h to remain near f (x) anyway. Simple gradient descent
+can obtain reasonable values of h in as few as ten steps.
+The training procedure used by PSD is diﬀerent from ﬁrst training a sparse
+coding model and then training f(x) to predict the values of the sparse coding
+features. The PSD training procedure regularizes the decoder to use parameters
+for which f (x) can infer good code values.
+Predictive sparse coding is an example of learned approximate inference.
+In section 19.5, this topic is developed further. The tools presented in chapter 19
+make it clear that PSD can be interpreted as training a directed sparse coding
+probabilistic model by maximizing a lower bound on the log-likelihood of the
+model.
+In practical applications of PSD, the iterative optimization is only used during
+training. The parametric encoder f is used to compute the learned features when
+the model is deployed. Evaluating f is computationally inexpensive compared to
+inferring h via gradient descent. Because f is a diﬀerentiable parametric function,
+PSD models may be stacked and used to initialize a deep network to be trained
+with another criterion.
+
+14.9
+
+Applications of Autoencoders
+
+Autoencoders have been successfully applied to dimensionality reduction and information retrieval tasks. Dimensionality reduction was one of the ﬁrst applications
+of representation learning and deep learning. It was one of the early motivations
+for studying autoencoders. For example, Hinton and Salakhutdinov (2006) trained
+a stack of RBMs and then used their weights to initialize a deep autoencoder
+with gradually smaller hidden layers, culminating in a bottleneck of 30 units. The
+resulting code yielded less reconstruction error than PCA into 30 dimensions and
+the learned representation was qualitatively easier to interpret and relate to the
+underlying categories, with these categories manifesting as well-separated clusters.
+Lower-dimensional representations can improve performance on many tasks,
+such as classiﬁcation. Models of smaller spaces consume less memory and runtime.
+524
+
+CHAPTER 14. AUTOENCODERS
+
+Many forms of dimensionality reduction place semantically related examples near
+each other, as observed by Salakhutdinov and Hinton (2007b) and Torralba et al.
+(2008). The hints provided by the mapping to the lower-dimensional space aid
+generalization.
+One task that beneﬁts even more than usual from dimensionality reduction is
+information retrieval, the task of ﬁnding entries in a database that resemble a
+query entry. This task derives the usual beneﬁts from dimensionality reduction
+that other tasks do, but also derives the additional beneﬁt that search can become
+extremely eﬃcient in certain kinds of low dimensional spaces. Speciﬁcally, if
+we train the dimensionality reduction algorithm to produce a code that is lowdimensional and binary, then we can store all database entries in a hash table
+mapping binary code vectors to entries. This hash table allows us to perform
+information retrieval by returning all database entries that have the same binary
+code as the query. We can also search over slightly less similar entries very
+eﬃciently, just by ﬂipping individual bits from the encoding of the query. This
+approach to information retrieval via dimensionality reduction and binarization
+is called semantic hashing (Salakhutdinov and Hinton, 2007b, 2009b), and has
+been applied to both textual input (Salakhutdinov and Hinton, 2007b, 2009b) and
+images (Torralba et al., 2008; Weiss et al., 2008; Krizhevsky and Hinton, 2011).
+To produce binary codes for semantic hashing, one typically uses an encoding
+function with sigmoids on the ﬁnal layer. The sigmoid units must be trained to be
+saturated to nearly 0 or nearly 1 for all input values. One trick that can accomplish
+this is simply to inject additive noise just before the sigmoid nonlinearity during
+training. The magnitude of the noise should increase over time. To ﬁght that
+noise and preserve as much information as possible, the network must increase the
+magnitude of the inputs to the sigmoid function, until saturation occurs.
+The idea of learning a hashing function has been further explored in several
+directions, including the idea of training the representations so as to optimize
+a loss more directly linked to the task of ﬁnding nearby examples in the hash
+table (Norouzi and Fleet, 2011).
+
+525
+
+

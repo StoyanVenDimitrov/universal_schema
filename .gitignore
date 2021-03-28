@@ -1,5 +1,3 @@
-*.json
-*.txt
 *.zip
 *.pyc
 .DS_Store

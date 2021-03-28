@@ -14,7 +14,8 @@ from get_requests import single_query, rel_from_domain, wikimedia_request
 nltk.download('punkt')
 def read_from_pdf(file_dir):
     content = []
-    for filename in glob.glob(os.path.join(file_dir, '*.txt')):
+    dirs = glob.glob(os.path.join(file_dir, '*.txt')) if glob.glob(os.path.join(file_dir, '*.txt')) else [file_dir]
+    for filename in dirs:
         content_as_list = []
         with open(filename) as file:
             for line in file.readlines():
@@ -114,8 +115,7 @@ def get_secondary_wikidata_facts(code_facts, top_k):
         min_count = 1
         keys = sorted(code_facts.items(), key=lambda item: len(item[1]), reverse=True)[:top_k]
         facts = {k[0]: code_facts[k[0]] for k in keys if len(code_facts[k[0]])>min_count}
-        # check for one 'domain': Q21198 Computer Science
-        # category = ['Q21198', 'Q395']
+        # ! Domains: Mathematics, CS.
         # TODO: more categories
         for category in ['Q21198', 'Q395']:
             for rel in facts.keys():
@@ -149,37 +149,35 @@ def get_textual_mentions(term_pair):
     """
     mentions = set()
     cont = None
-    while True:
-        res = wikimedia_request(term_pair[0], cont)
-        try:
-            for i in res['query']['search']:
-                soup = BeautifulSoup(i['snippet'])
-                plain_text_snippet = soup.get_text().lower()
-                # !!! important later for search on whole page:
-                # no need to search if the term is not in the snippet
-                if term_pair[0] in plain_text_snippet: 
-                    #TODO: search on whole pages
-                    pos_0 = plain_text_snippet.find(term_pair[0]) + len(term_pair[0])
-                    pos_1 = plain_text_snippet.find(term_pair[1])
-                    if pos_1 > pos_0:
-                        mentions.add(plain_text_snippet[pos_0:pos_1])
-    # TODO: extract mentions of the second term
-        except KeyError:
-            continue
 
-
-
-        # for experimentation:
-        break # only srlimit pages max
-
-
-
-
-
-        try:
-            cont = res['continue']
-        except KeyError:
-            break
+    # TODO: the while is unneccessery if break after 1 iteration remains:
+    for term in term_pair:
+        while True:
+            res = wikimedia_request(term, cont)
+            try:
+                for i in res['query']['search']:
+                    soup = BeautifulSoup(i['snippet'])
+                    plain_text_snippet = soup.get_text().lower()
+                    # !!! important later for search on whole page:
+                    # no need to search if the term is not in the snippet
+                    if term_pair[0] in plain_text_snippet: 
+                        #TODO: search on whole pages
+                        pos_0 = plain_text_snippet.find(term_pair[0]) + len(term_pair[0])
+                        pos_1 = plain_text_snippet.find(term_pair[1])
+                        if pos_1 > pos_0:
+                            mention = plain_text_snippet[pos_0:pos_1]
+                            # TODO: if not in different sentences
+                            if "." not in mention:
+                                if mention not in [" ", ", " ]:
+                                    mentions.add(mention)
+            except KeyError:
+                continue
+            #! for experimentation (but meaningful anyway)
+            break # only srlimit pages max
+            try:
+                cont = res['continue']
+            except KeyError:
+                break
     return list(mentions)
 
 
@@ -267,7 +265,7 @@ def get_training_data(index):
     Args:
         index ([type]): book's index terms + terms related with them in the KB
     """
-    top_k = 4 
+    top_k = 4
     facts = dict()
     # codes, labels, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 15)))
     codes, labels, new_entities = get_initial_wikidata_facts(index) # s or o from the book index
@@ -367,7 +365,7 @@ def get_test_data(index, file_dir, desired_rels):
                 result.setdefault(pair, []).append(' '.join(sentence[i[0]:i[1]]))
                 # seq = ' '.join(sentence[i[0]:i[1]])
                 # result.append((e[0], e[1], '*****'.join([e[0], e[1]]), '$ARG1 '+ seq +' $ARG2'))
-    with open('data/test_dataset.json', 'w+') as outfile: 
+    with open('data/test_dataset_ch6.json', 'w+') as outfile: 
         for key, values in result.items():
             # add the KB relation to be evaluated:
             # TODO: try directly with 'relation': desired_rels  
@@ -393,82 +391,7 @@ def run(file_dir, index_path):
 
     # ---- prepare test data - (s, text, o) with s,o from entity_index of all 'interesting' entities
     # manual_content = read_from_pdf(file_dir)
-
-    # for sentence in manual_content:
-
-    #     sentence_iter = iter(enumerate(sentence))
-
-    #     found_here = []
-    #     found_here_on = []
-    #     last_found = None
-    #     last_found_on = None
-
-    #     # finding entity mentions in the sentence:
-    #     for i,token in sentence_iter:
-    #         token = token.lower()
-    #         # TODO: only pairs of book_index entity and other entity
-    #         candidates = [item for item in extended_index.items() if item[1][0]==token]
-    #         if not candidates:
-    #             continue
-    #         # if we match single-word index token directly 
-
-    #         str_the_rest = ' '.join(sentence[i:]).lower()
-    #         to_remove = []
-    #         for c in candidates:
-    #             str_c = ' '.join(c[1])
-    #             seen_here = str_the_rest.find(str_c, 0, len(str_c))
-    #             to_remove.append(seen_here)
-    #         candidates = [candidate for seen, candidate in zip(to_remove, candidates) if seen>-1]
-    #         if not candidates:
-    #             continue
-    #         single_candidate = max(candidates, key=lambda item: len(item[1]))
-    #         # iter only if something was found:
-    #         start_pos = i
-    #         end_pos = i +1
-    #         for skip in range(len(single_candidate[1])-1):
-    #             i, _ = next(sentence_iter)
-    #             end_pos = i +1
-    #         span = (start_pos, end_pos)
-    #         w = single_candidate[0]
-    #         if last_found != None and last_found != w:
-    #             # apply aliases from list of aliases
-    #             found_here.append((last_found, w))  
-    #             found_here_on.append((last_found_on, span[0]))
-    #         last_found_on = span[1]
-    #         last_found = w
-    #     result = []
-    #     for e, i in zip(found_here, found_here_on):
-    #         if i[0]!=i[1]:
-    #             seq = ' '.join(sentence[i[0]:i[1]])
-    #             result.append((e[0], e[1], '*****'.join([e[0], e[1]]), '$ARG1 '+ seq +' $ARG2'))
-                # adding mentions for pairs found in KB + all other pairs of entites from the index or found in KB relations:
-                # facts.setdefault(e[0] +'*****'+e[1],[]).append('$ARG1 '+ seq +' $ARG2')
-        # result = [ (e[0] + '\t' + e[1], e[0], e[1],  '$ARG1 '+' '.join(sentence[i[0]:i[1]])+' $ARG2') for e, i in zip(found_here, found_here_on) if i[0]!=i[1]]
-
-    # with open('test_entitiy_index.json', 'w+') as f:
-    #     # this would place the entire output on one line
-    #     # use json.dump(lista_items, f, indent=4) to "pretty-print" with four spaces per indent
-    #     json.dump(entity_index, f, indent=4)
-
-    # with open('kb_facts_test.json', 'w+') as fout:
-    #     #print(*facts, sep="\n", file=fout)
-    #     json.dump(facts, fout, indent=4)
-
-    # with open('text_facts_test.json', 'w+') as fout:
-    #     #print(*facts, sep="\n", file=fout)
-    #     json.dump(facts, fout, indent=4)
-    
-    # return list(text_examples)
    
 
 if __name__ == "__main__":
-    run("resources/test_chapters", "resources/[28]index.txt")
-    # with open('train.tsv','w') as out:
-    #     csv_out=csv.writer(out, delimiter='\t')
-    #     csv_out.writerow(['e1','e2', 'ep', 'relation_id', 'sequence', '1'])
-    #     for row in data:
-    #         row = row + (1,)
-    #         csv_out.writerow(row)
-
-    # query = '''    '''
-    # print(wikidata_query(query))
+    run("resources/chapters/[11]part-2-chapter-6.txt", "resources/[28]index.txt")

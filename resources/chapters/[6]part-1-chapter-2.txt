@@ -1,0 +1,1218 @@
+Chapter 2
+
+Linear Algebra
+Linear algebra is a branch of mathematics that is widely used throughout science
+and engineering. However, because linear algebra is a form of continuous rather
+than discrete mathematics, many computer scientists have little experience with it.
+A good understanding of linear algebra is essential for understanding and working
+with many machine learning algorithms, especially deep learning algorithms. We
+therefore precede our introduction to deep learning with a focused presentation of
+the key linear algebra prerequisites.
+If you are already familiar with linear algebra, feel free to skip this chapter. If
+you have previous experience with these concepts but need a detailed reference
+sheet to review key formulas, we recommend The Matrix Cookbook (Petersen and
+Pedersen, 2006). If you have no exposure at all to linear algebra, this chapter
+will teach you enough to read this book, but we highly recommend that you also
+consult another resource focused exclusively on teaching linear algebra, such as
+Shilov (1977). This chapter will completely omit many important linear algebra
+topics that are not essential for understanding deep learning.
+
+2.1
+
+Scalars, Vectors, Matrices and Tensors
+
+The study of linear algebra involves several types of mathematical objects:
+• Scalars: A scalar is just a single number, in contrast to most of the other
+objects studied in linear algebra, which are usually arrays of multiple numbers.
+We write scalars in italics. We usually give scalars lower-case variable names.
+When we introduce them, we specify what kind of number they are. For
+31
+
+CHAPTER 2. LINEAR ALGEBRA
+
+example, we might say “Let s ∈ R be the slope of the line,” while deﬁning a
+real-valued scalar, or “Let n ∈ N be the number of units,” while deﬁning a
+natural number scalar.
+• Vectors: A vector is an array of numbers. The numbers are arranged in
+order. We can identify each individual number by its index in that ordering.
+Typically we give vectors lower case names written in bold typeface, such
+as x. The elements of the vector are identiﬁed by writing its name in italic
+typeface, with a subscript. The ﬁrst element of x is x1 , the second element
+is x2 and so on. We also need to say what kind of numbers are stored in
+the vector. If each element is in R, and the vector has n elements, then the
+vector lies in the set formed by taking the Cartesian product of R n times,
+denoted as Rn . When we need to explicitly identify the elements of a vector,
+we write them as a column enclosed in square brackets:
+
+
+x1
+ x2 
+
+
+x =  . .
+(2.1)
+.
+ . 
+xn
+
+We can think of vectors as identifying points in space, with each element
+giving the coordinate along a diﬀerent axis.
+Sometimes we need to index a set of elements of a vector. In this case, we
+deﬁne a set containing the indices and write the set as a subscript. For
+example, to access x1 , x3 and x6 , we deﬁne the set S = {1, 3, 6} and write
+xS . We use the − sign to index the complement of a set. For example x−1 is
+the vector containing all elements of x except for x1 , and x−S is the vector
+containing all of the elements of x except for x1, x3 and x6 .
+• Matrices: A matrix is a 2-D array of numbers, so each element is identiﬁed
+by two indices instead of just one. We usually give matrices upper-case
+variable names with bold typeface, such as A. If a real-valued matrix A has
+a height of m and a width of n, then we say that A ∈ Rm×n . We usually
+identify the elements of a matrix using its name in italic but not bold font,
+and the indices are listed with separating commas. For example, A1,1 is the
+upper left entry of A and Am,n is the bottom right entry. We can identify all
+of the numbers with vertical coordinate i by writing a “ :” for the horizontal
+coordinate. For example, Ai,: denotes the horizontal cross section of A with
+vertical coordinate i. This is known as the i-th row of A. Likewise, A :,i is
+32
+
+CHAPTER 2. LINEAR ALGEBRA
+
+
+
+A1,1
+A =  A2,1
+A3,1
+
+
+
+A1,2
+A1,1
+A2,2  ⇒ A  =
+A1,2
+A3,2
+
+A2,1
+A2,2
+
+A3,1
+A3,2
+
+
+
+Figure 2.1: The transpose of the matrix can be thought of as a mirror image across the
+main diagonal.
+
+the i-th column of A. When we need to explicitly identify the elements of
+a matrix, we write them as an array enclosed in square brackets:
+
+
+A1,1 A 1,2
+.
+(2.2)
+A2,1 A 2,2
+Sometimes we may need to index matrix-valued expressions that are not just
+a single letter. In this case, we use subscripts after the expression, but do
+not convert anything to lower case. For example, f (A)i,j gives element (i, j)
+of the matrix computed by applying the function f to A.
+• Tensors: In some cases we will need an array with more than two axes.
+In the general case, an array of numbers arranged on a regular grid with a
+variable number of axes is known as a tensor. We denote a tensor named “A”
+with this typeface: A. We identify the element of A at coordinates (i, j, k)
+by writing Ai,j,k.
+One important operation on matrices is the transpose. The transpose of a
+matrix is the mirror image of the matrix across a diagonal line, called the main
+diagonal, running down and to the right, starting from its upper left corner. See
+ﬁgure 2.1 for a graphical depiction of this operation. We denote the transpose of a
+matrix A as A , and it is deﬁned such that
+(A )i,j = A j,i.
+
+(2.3)
+
+Vectors can be thought of as matrices that contain only one column. The
+transpose of a vector is therefore a matrix with only one row. Sometimes we
+33
+
+CHAPTER 2. LINEAR ALGEBRA
+
+deﬁne a vector by writing out its elements in the text inline as a row matrix,
+then using the transpose operator to turn it into a standard column vector, e.g.,
+x = [x1 , x2 , x3 ].
+A scalar can be thought of as a matrix with only a single entry. From this, we
+can see that a scalar is its own transpose: a = a .
+We can add matrices to each other, as long as they have the same shape, just
+by adding their corresponding elements: C = A + B where Ci,j = Ai,j + B i,j .
+We can also add a scalar to a matrix or multiply a matrix by a scalar, just
+by performing that operation on each element of a matrix: D = a · B + c where
+Di,j = a · Bi,j + c.
+
+In the context of deep learning, we also use some less conventional notation.
+We allow the addition of matrix and a vector, yielding another matrix: C = A + b,
+where Ci,j = Ai,j + bj . In other words, the vector b is added to each row of the
+matrix. This shorthand eliminates the need to deﬁne a matrix with b copied into
+each row before doing the addition. This implicit copying of b to many locations
+is called broadcasting.
+
+2.2
+
+Multiplying Matrices and Vectors
+
+One of the most important operations involving matrices is multiplication of two
+matrices. The matrix product of matrices A and B is a third matrix C . In
+order for this product to be deﬁned, A must have the same number of columns as
+B has rows. If A is of shape m × n and B is of shape n × p, then C is of shape
+m × p. We can write the matrix product just by placing two or more matrices
+together, e.g.
+C = AB .
+(2.4)
+The product operation is deﬁned by
+
+C i,j =
+Ai,k Bk,j .
+
+(2.5)
+
+k
+
+Note that the standard product of two matrices is not just a matrix containing
+the product of the individual elements. Such an operation exists and is called the
+element-wise product or Hadamard product, and is denoted as A  B.
+
+The dot product between two vectors x and y of the same dimensionality
+is the matrix product x y. We can think of the matrix product C = AB as
+computing Ci,j as the dot product between row i of A and column j of B .
+34
+
+CHAPTER 2. LINEAR ALGEBRA
+
+Matrix product operations have many useful properties that make mathematical
+analysis of matrices more convenient. For example, matrix multiplication is
+distributive:
+A(B + C ) = AB + AC .
+(2.6)
+It is also associative:
+A(BC ) = (AB )C .
+
+(2.7)
+
+Matrix multiplication is not commutative (the condition AB = BA does not
+always hold), unlike scalar multiplication. However, the dot product between two
+vectors is commutative:
+x y = y  x.
+(2.8)
+The transpose of a matrix product has a simple form:
+(AB ) = B A  .
+
+(2.9)
+
+This allows us to demonstrate equation 2.8, by exploiting the fact that the value
+of such a product is a scalar and therefore equal to its own transpose:
+
+
+(2.10)
+x y = x y
+= yx.
+
+Since the focus of this textbook is not linear algebra, we do not attempt to
+develop a comprehensive list of useful properties of the matrix product here, but
+the reader should be aware that many more exist.
+We now know enough linear algebra notation to write down a system of linear
+equations:
+Ax = b
+(2.11)
+
+where A ∈ Rm×n is a known matrix, b ∈ R m is a known vector, and x ∈ Rn is a
+vector of unknown variables we would like to solve for. Each element x i of x is one
+of these unknown variables. Each row of A and each element of b provide another
+constraint. We can rewrite equation 2.11 as:
+A1,: x = b1
+
+(2.12)
+
+A2,: x = b2
+
+(2.13)
+
+...
+
+(2.14)
+
+Am,:x = bm
+
+(2.15)
+
+A1,1 x1 + A 1,2 x2 + · · · + A1,n xn = b1
+
+(2.16)
+
+or, even more explicitly, as:
+
+35
+
+CHAPTER 2. LINEAR ALGEBRA
+
+
+
+
+1 0 0
+0 1 0 
+0 0 1
+Figure 2.2: Example identity matrix: This is I 3 .
+
+A2,1 x1 + A 2,2 x2 + · · · + A2,n xn = b2
+
+(2.17)
+
+...
+
+(2.18)
+
+A m,1x 1 + A m,2x2 + · · · + A m,nxn = bm .
+
+(2.19)
+
+Matrix-vector product notation provides a more compact representation for
+equations of this form.
+
+2.3
+
+Identity and Inverse Matrices
+
+Linear algebra oﬀers a powerful tool called matrix inversion that allows us to
+analytically solve equation 2.11 for many values of A.
+To describe matrix inversion, we ﬁrst need to deﬁne the concept of an identity
+matrix. An identity matrix is a matrix that does not change any vector when we
+multiply that vector by that matrix. We denote the identity matrix that preserves
+n-dimensional vectors as I n. Formally, I n ∈ Rn×n , and
+∀x ∈ Rn , In x = x.
+
+(2.20)
+
+The structure of the identity matrix is simple: all of the entries along the main
+diagonal are 1, while all of the other entries are zero. See ﬁgure 2.2 for an example.
+The matrix inverse of A is denoted as A −1, and it is deﬁned as the matrix
+such that
+A−1 A = In.
+(2.21)
+We can now solve equation 2.11 by the following steps:
+Ax = b
+
+(2.22)
+
+A−1 Ax = A −1b
+
+(2.23)
+
+In x = A−1 b
+
+(2.24)
+
+36
+
+CHAPTER 2. LINEAR ALGEBRA
+
+x = A−1 b.
+
+(2.25)
+
+Of course, this process depends on it being possible to ﬁnd A −1. We discuss
+the conditions for the existence of A−1 in the following section.
+When A−1 exists, several diﬀerent algorithms exist for ﬁnding it in closed form.
+In theory, the same inverse matrix can then be used to solve the equation many
+times for diﬀerent values of b. However, A −1 is primarily useful as a theoretical
+tool, and should not actually be used in practice for most software applications.
+Because A−1 can be represented with only limited precision on a digital computer,
+algorithms that make use of the value of b can usually obtain more accurate
+estimates of x.
+
+2.4
+
+Linear Dependence and Span
+
+In order for A−1 to exist, equation 2.11 must have exactly one solution for every
+value of b. However, it is also possible for the system of equations to have no
+solutions or inﬁnitely many solutions for some values of b. It is not possible to
+have more than one but less than inﬁnitely many solutions for a particular b; if
+both x and y are solutions then
+z = αx + (1 − α)y
+
+(2.26)
+
+is also a solution for any real α.
+To analyze how many solutions the equation has, we can think of the columns
+of A as specifying diﬀerent directions we can travel from the origin (the point
+speciﬁed by the vector of all zeros), and determine how many ways there are of
+reaching b . In this view, each element of x speciﬁes how far we should travel in
+each of these directions, with xi specifying how far to move in the direction of
+column i:
+
+Ax =
+x iA:,i.
+(2.27)
+i
+
+In general, this kind of operation is called a linear combination. Formally, a
+linear combination of some set of vectors {v (1) , . . . , v (n) } is given by multiplying
+each vector v (i) by a corresponding scalar coeﬃcient and adding the results:
+
+ci v (i).
+(2.28)
+i
+
+The span of a set of vectors is the set of all points obtainable by linear combination
+of the original vectors.
+37
+
+CHAPTER 2. LINEAR ALGEBRA
+
+Determining whether Ax = b has a solution thus amounts to testing whether b
+is in the span of the columns of A. This particular span is known as the column
+space or the range of A.
+In order for the system Ax = b to have a solution for all values of b ∈ Rm ,
+we therefore require that the column space of A be all of Rm . If any point in R m
+is excluded from the column space, that point is a potential value of b that has
+no solution. The requirement that the column space of A be all of R m implies
+immediately that A must have at least m columns, i.e., n ≥ m. Otherwise, the
+dimensionality of the column space would be less than m. For example, consider a
+3 × 2 matrix. The target b is 3-D, but x is only 2-D, so modifying the value of x
+at best allows us to trace out a 2-D plane within R 3. The equation has a solution
+if and only if b lies on that plane.
+Having n ≥ m is only a necessary condition for every point to have a solution.
+It is not a suﬃcient condition, because it is possible for some of the columns to
+be redundant. Consider a 2 × 2 matrix where both of the columns are identical.
+This has the same column space as a 2 × 1 matrix containing only one copy of the
+replicated column. In other words, the column space is still just a line, and fails to
+encompass all of R2 , even though there are two columns.
+Formally, this kind of redundancy is known as linear dependence. A set of
+vectors is linearly independent if no vector in the set is a linear combination
+of the other vectors. If we add a vector to a set that is a linear combination of
+the other vectors in the set, the new vector does not add any points to the set’s
+span. This means that for the column space of the matrix to encompass all of Rm ,
+the matrix must contain at least one set of m linearly independent columns. This
+condition is both necessary and suﬃcient for equation 2.11 to have a solution for
+every value of b. Note that the requirement is for a set to have exactly m linear
+independent columns, not at least m. No set of m-dimensional vectors can have
+more than m mutually linearly independent columns, but a matrix with more than
+m columns may have more than one such set.
+In order for the matrix to have an inverse, we additionally need to ensure that
+equation 2.11 has at most one solution for each value of b. To do so, we need to
+ensure that the matrix has at most m columns. Otherwise there is more than one
+way of parametrizing each solution.
+Together, this means that the matrix must be square, that is, we require that
+m = n and that all of the columns must be linearly independent. A square matrix
+with linearly dependent columns is known as singular.
+If A is not square or is square but singular, it can still be possible to solve the
+equation. However, we can not use the method of matrix inversion to ﬁnd the
+38
+
+CHAPTER 2. LINEAR ALGEBRA
+
+solution.
+So far we have discussed matrix inverses as being multiplied on the left. It is
+also possible to deﬁne an inverse that is multiplied on the right:
+AA−1 = I.
+
+(2.29)
+
+For square matrices, the left inverse and right inverse are equal.
+
+2.5
+
+Norms
+
+Sometimes we need to measure the size of a vector. In machine learning, we usually
+measure the size of vectors using a function called a norm . Formally, the Lp norm
+is given by
+
+1
+p
+
+p
+(2.30)
+||x|| p =
+|x i|
+i
+
+for p ∈ R, p ≥ 1.
+
+Norms, including the Lp norm, are functions mapping vectors to non-negative
+values. On an intuitive level, the norm of a vector x measures the distance from
+the origin to the point x. More rigorously, a norm is any function f that satisﬁes
+the following properties:
+• f (x) = 0 ⇒ x = 0
+• f (x + y) ≤ f (x) + f (y) (the triangle inequality)
+• ∀α ∈ R, f (αx) = |α|f (x)
+The L 2 norm, with p = 2, is known as the Euclidean norm. It is simply the
+Euclidean distance from the origin to the point identiﬁed by x. The L 2 norm is
+used so frequently in machine learning that it is often denoted simply as ||x||, with
+the subscript 2 omitted. It is also common to measure the size of a vector using
+the squared L 2 norm, which can be calculated simply as x x.
+The squared L 2 norm is more convenient to work with mathematically and
+computationally than the L 2 norm itself. For example, the derivatives of the
+squared L2 norm with respect to each element of x each depend only on the
+corresponding element of x, while all of the derivatives of the L2 norm depend
+on the entire vector. In many contexts, the squared L2 norm may be undesirable
+because it increases very slowly near the origin. In several machine learning
+39
+
+CHAPTER 2. LINEAR ALGEBRA
+
+applications, it is important to discriminate between elements that are exactly
+zero and elements that are small but nonzero. In these cases, we turn to a function
+that grows at the same rate in all locations, but retains mathematical simplicity:
+the L1 norm. The L1 norm may be simpliﬁed to
+
+||x||1 =
+|xi |.
+(2.31)
+i
+
+The L 1 norm is commonly used in machine learning when the diﬀerence between
+zero and nonzero elements is very important. Every time an element of x moves
+away from 0 by , the L 1 norm increases by .
+We sometimes measure the size of the vector by counting its number of nonzero
+elements. Some authors refer to this function as the “L 0 norm,” but this is incorrect
+terminology. The number of non-zero entries in a vector is not a norm, because
+scaling the vector by α does not change the number of nonzero entries. The L1
+norm is often used as a substitute for the number of nonzero entries.
+One other norm that commonly arises in machine learning is the L ∞ norm,
+also known as the max norm. This norm simpliﬁes to the absolute value of the
+element with the largest magnitude in the vector,
+||x||∞ = max |xi |.
+i
+
+(2.32)
+
+Sometimes we may also wish to measure the size of a matrix. In the context
+of deep learning, the most common way to do this is with the otherwise obscure
+Frobenius norm:
+
+||A|| F =
+A 2i,j ,
+(2.33)
+i,j
+
+which is analogous to the L 2 norm of a vector.
+The dot product of two vectors can be rewritten in terms of norms. Speciﬁcally,
+x y = ||x|| 2||y|| 2 cos θ
+
+(2.34)
+
+where θ is the angle between x and y .
+
+2.6
+
+Special Kinds of Matrices and Vectors
+
+Some special kinds of matrices and vectors are particularly useful.
+Diagonal matrices consist mostly of zeros and have non-zero entries only along
+the main diagonal. Formally, a matrix D is diagonal if and only if D i,j = 0 for
+40
+
+CHAPTER 2. LINEAR ALGEBRA
+
+all i = j . We have already seen one example of a diagonal matrix: the identity
+matrix, where all of the diagonal entries are 1. We write diag(v) to denote a square
+diagonal matrix whose diagonal entries are given by the entries of the vector v.
+Diagonal matrices are of interest in part because multiplying by a diagonal matrix
+is very computationally eﬃcient. To compute diag(v)x, we only need to scale each
+element xi by vi . In other words, diag(v)x = v  x. Inverting a square diagonal
+matrix is also eﬃcient. The inverse exists only if every diagonal entry is nonzero,
+and in that case, diag(v) −1 = diag([1/v 1, . . . , 1/vn ] ). In many cases, we may
+derive some very general machine learning algorithm in terms of arbitrary matrices,
+but obtain a less expensive (and less descriptive) algorithm by restricting some
+matrices to be diagonal.
+Not all diagonal matrices need be square. It is possible to construct a rectangular
+diagonal matrix. Non-square diagonal matrices do not have inverses but it is still
+possible to multiply by them cheaply. For a non-square diagonal matrix D, the
+product Dx will involve scaling each element of x, and either concatenating some
+zeros to the result if D is taller than it is wide, or discarding some of the last
+elements of the vector if D is wider than it is tall.
+A symmetric matrix is any matrix that is equal to its own transpose:
+A = A .
+
+(2.35)
+
+Symmetric matrices often arise when the entries are generated by some function of
+two arguments that does not depend on the order of the arguments. For example,
+if A is a matrix of distance measurements, with Ai,j giving the distance from point
+i to point j , then Ai,j = Aj,i because distance functions are symmetric.
+A unit vector is a vector with unit norm:
+||x||2 = 1.
+
+(2.36)
+
+A vector x and a vector y are orthogonal to each other if x y = 0. If both
+vectors have nonzero norm, this means that they are at a 90 degree angle to each
+other. In Rn , at most n vectors may be mutually orthogonal with nonzero norm.
+If the vectors are not only orthogonal but also have unit norm, we call them
+orthonormal.
+An orthogonal matrix is a square matrix whose rows are mutually orthonormal and whose columns are mutually orthonormal:
+A  A = AA = I.
+41
+
+(2.37)
+
+CHAPTER 2. LINEAR ALGEBRA
+
+This implies that
+A−1 = A ,
+
+(2.38)
+
+so orthogonal matrices are of interest because their inverse is very cheap to compute.
+Pay careful attention to the deﬁnition of orthogonal matrices. Counterintuitively,
+their rows are not merely orthogonal but fully orthonormal. There is no special
+term for a matrix whose rows or columns are orthogonal but not orthonormal.
+
+2.7
+
+Eigendecomposition
+
+Many mathematical objects can be understood better by breaking them into
+constituent parts, or ﬁnding some properties of them that are universal, not caused
+by the way we choose to represent them.
+For example, integers can be decomposed into prime factors. The way we
+represent the number 12 will change depending on whether we write it in base ten
+or in binary, but it will always be true that 12 = 2× 2 × 3. From this representation
+we can conclude useful properties, such as that 12 is not divisible by 5, or that any
+integer multiple of 12 will be divisible by 3.
+Much as we can discover something about the true nature of an integer by
+decomposing it into prime factors, we can also decompose matrices in ways that
+show us information about their functional properties that is not obvious from the
+representation of the matrix as an array of elements.
+One of the most widely used kinds of matrix decomposition is called eigendecomposition, in which we decompose a matrix into a set of eigenvectors and
+eigenvalues.
+An eigenvector of a square matrix A is a non-zero vector v such that multiplication by A alters only the scale of v:
+Av = λv.
+
+(2.39)
+
+The scalar λ is known as the eigenvalue corresponding to this eigenvector. (One
+can also ﬁnd a left eigenvector such that v  A = λv , but we are usually
+concerned with right eigenvectors).
+If v is an eigenvector of A, then so is any rescaled vector sv for s ∈ R, s  = 0.
+Moreover, sv still has the same eigenvalue. For this reason, we usually only look
+for unit eigenvectors.
+Suppose that a matrix A has n linearly independent eigenvectors, {v (1) , . . . ,
+v (n)}, with corresponding eigenvalues {λ1, . . . , λ n}. We may concatenate all of the
+42
+
+CHAPTER 2. LINEAR ALGEBRA
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 2.3: An example of the eﬀect of eigenvectors and eigenvalues. Here, we have
+a matrix A with two orthonormal eigenvectors, v(1) with eigenvalue λ1 and v (2) with
+eigenvalue λ2. (Left)We plot the set of all unit vectors u ∈ R 2 as a unit circle. (Right)We
+plot the set of all points Au. By observing the way that A distorts the unit circle, we
+can see that it scales space in direction v(i) by λi .
+
+eigenvectors to form a matrix V with one eigenvector per column: V = [v (1) , . . . ,
+v (n)]. Likewise, we can concatenate the eigenvalues to form a vector λ = [λ1 , . . . ,
+λ n ]. The eigendecomposition of A is then given by
+A = V diag(λ)V
+
+−1
+
+.
+
+(2.40)
+
+We have seen that constructing matrices with speciﬁc eigenvalues and eigenvectors allows us to stretch space in desired directions. However, we often want to
+decompose matrices into their eigenvalues and eigenvectors. Doing so can help
+us to analyze certain properties of the matrix, much as decomposing an integer
+into its prime factors can help us understand the behavior of that integer.
+Not every matrix can be decomposed into eigenvalues and eigenvectors. In some
+43
+
+CHAPTER 2. LINEAR ALGEBRA
+
+cases, the decomposition exists, but may involve complex rather than real numbers.
+Fortunately, in this book, we usually need to decompose only a speciﬁc class of
+matrices that have a simple decomposition. Speciﬁcally, every real symmetric
+matrix can be decomposed into an expression using only real-valued eigenvectors
+and eigenvalues:
+A = QΛQ ,
+(2.41)
+where Q is an orthogonal matrix composed of eigenvectors of A, and Λ is a
+diagonal matrix. The eigenvalue Λi,i is associated with the eigenvector in column i
+of Q, denoted as Q :,i. Because Q is an orthogonal matrix, we can think of A as
+scaling space by λi in direction v (i) . See ﬁgure 2.3 for an example.
+While any real symmetric matrix A is guaranteed to have an eigendecomposition, the eigendecomposition may not be unique. If any two or more eigenvectors
+share the same eigenvalue, then any set of orthogonal vectors lying in their span
+are also eigenvectors with that eigenvalue, and we could equivalently choose a Q
+using those eigenvectors instead. By convention, we usually sort the entries of Λ
+in descending order. Under this convention, the eigendecomposition is unique only
+if all of the eigenvalues are unique.
+The eigendecomposition of a matrix tells us many useful facts about the
+matrix. The matrix is singular if and only if any of the eigenvalues are zero.
+The eigendecomposition of a real symmetric matrix can also be used to optimize
+quadratic expressions of the form f(x) = x Ax subject to ||x||2 = 1. Whenever x
+is equal to an eigenvector of A, f takes on the value of the corresponding eigenvalue.
+The maximum value of f within the constraint region is the maximum eigenvalue
+and its minimum value within the constraint region is the minimum eigenvalue.
+A matrix whose eigenvalues are all positive is called positive deﬁnite. A
+matrix whose eigenvalues are all positive or zero-valued is called positive semideﬁnite. Likewise, if all eigenvalues are negative, the matrix is negative deﬁnite, and
+if all eigenvalues are negative or zero-valued, it is negative semideﬁnite. Positive
+semideﬁnite matrices are interesting because they guarantee that ∀x, x Ax ≥ 0.
+Positive deﬁnite matrices additionally guarantee that x Ax = 0 ⇒ x = 0.
+
+2.8
+
+Singular Value Decomposition
+
+In section 2.7, we saw how to decompose a matrix into eigenvectors and eigenvalues.
+The singular value decomposition (SVD) provides another way to factorize
+a matrix, into singular vectors and singular values. The SVD allows us to
+discover some of the same kind of information as the eigendecomposition. However,
+44
+
+CHAPTER 2. LINEAR ALGEBRA
+
+the SVD is more generally applicable. Every real matrix has a singular value
+decomposition, but the same is not true of the eigenvalue decomposition. For
+example, if a matrix is not square, the eigendecomposition is not deﬁned, and we
+must use a singular value decomposition instead.
+Recall that the eigendecomposition involves analyzing a matrix A to discover
+a matrix V of eigenvectors and a vector of eigenvalues λ such that we can rewrite
+A as
+A = V diag(λ)V −1 .
+(2.42)
+The singular value decomposition is similar, except this time we will write A
+as a product of three matrices:
+A = U DV  .
+
+(2.43)
+
+Suppose that A is an m × n matrix. Then U is deﬁned to be an m × m matrix,
+D to be an m × n matrix, and V to be an n × n matrix.
+
+Each of these matrices is deﬁned to have a special structure. The matrices U
+and V are both deﬁned to be orthogonal matrices. The matrix D is deﬁned to be
+a diagonal matrix. Note that D is not necessarily square.
+
+The elements along the diagonal of D are known as the singular values of
+the matrix A. The columns of U are known as the left-singular vectors. The
+columns of V are known as as the right-singular vectors.
+We can actually interpret the singular value decomposition of A in terms of
+the eigendecomposition of functions of A . The left-singular vectors of A are the
+eigenvectors of AA. The right-singular vectors of A are the eigenvectors of A A.
+The non-zero singular values of A are the square roots of the eigenvalues of A A.
+The same is true for AA  .
+Perhaps the most useful feature of the SVD is that we can use it to partially
+generalize matrix inversion to non-square matrices, as we will see in the next
+section.
+
+2.9
+
+The Moore-Penrose Pseudoinverse
+
+Matrix inversion is not deﬁned for matrices that are not square. Suppose we want
+to make a left-inverse B of a matrix A, so that we can solve a linear equation
+Ax = y
+45
+
+(2.44)
+
+CHAPTER 2. LINEAR ALGEBRA
+
+by left-multiplying each side to obtain
+x = By .
+
+(2.45)
+
+Depending on the structure of the problem, it may not be possible to design a
+unique mapping from A to B .
+If A is taller than it is wide, then it is possible for this equation to have
+no solution. If A is wider than it is tall, then there could be multiple possible
+solutions.
+The Moore-Penrose pseudoinverse allows us to make some headway in
+these cases. The pseudoinverse of A is deﬁned as a matrix
+A+ = lim (A A + αI ) −1 A .
+α0
+
+(2.46)
+
+Practical algorithms for computing the pseudoinverse are not based on this deﬁnition, but rather the formula
+A + = V D +U ,
+
+(2.47)
+
+where U, D and V are the singular value decomposition of A, and the pseudoinverse
+D + of a diagonal matrix D is obtained by taking the reciprocal of its non-zero
+elements then taking the transpose of the resulting matrix.
+When A has more columns than rows, then solving a linear equation using the
+pseudoinverse provides one of the many possible solutions. Speciﬁcally, it provides
+the solution x = A+ y with minimal Euclidean norm ||x||2 among all possible
+solutions.
+When A has more rows than columns, it is possible for there to be no solution.
+In this case, using the pseudoinverse gives us the x for which Ax is as close as
+possible to y in terms of Euclidean norm ||Ax − y|| 2.
+
+2.10
+
+The Trace Operator
+
+The trace operator gives the sum of all of the diagonal entries of a matrix:
+
+Tr(A) =
+Ai,i .
+(2.48)
+i
+
+The trace operator is useful for a variety of reasons. Some operations that are
+diﬃcult to specify without resorting to summation notation can be speciﬁed using
+46
+
+CHAPTER 2. LINEAR ALGEBRA
+
+matrix products and the trace operator. For example, the trace operator provides
+an alternative way of writing the Frobenius norm of a matrix:
+
+(2.49)
+||A|| F = Tr(AA ).
+Writing an expression in terms of the trace operator opens up opportunities to
+manipulate the expression using many useful identities. For example, the trace
+operator is invariant to the transpose operator:
+Tr(A) = Tr(A).
+
+(2.50)
+
+The trace of a square matrix composed of many factors is also invariant to
+moving the last factor into the ﬁrst position, if the shapes of the corresponding
+matrices allow the resulting product to be deﬁned:
+Tr(ABC ) = Tr(CAB ) = Tr(BCA)
+
+(2.51)
+
+or more generally,
+Tr(
+
+n
+
+
+F
+
+(i)
+
+) = Tr(F
+
+i=1
+
+(n)
+
+n−1
+
+
+F (i) ).
+
+(2.52)
+
+i=1
+
+This invariance to cyclic permutation holds even if the resulting product has a
+diﬀerent shape. For example, for A ∈ Rm×n and B ∈ R n×m, we have
+Tr(AB ) = Tr(BA)
+
+(2.53)
+
+even though AB ∈ Rm×m and BA ∈ Rn×n.
+
+Another useful fact to keep in mind is that a scalar is its own trace: a = Tr(a).
+
+2.11
+
+The Determinant
+
+The determinant of a square matrix, denoted det(A ), is a function mapping
+matrices to real scalars. The determinant is equal to the product of all the
+eigenvalues of the matrix. The absolute value of the determinant can be thought
+of as a measure of how much multiplication by the matrix expands or contracts
+space. If the determinant is 0, then space is contracted completely along at least
+one dimension, causing it to lose all of its volume. If the determinant is 1, then
+the transformation preserves volume.
+
+47
+
+CHAPTER 2. LINEAR ALGEBRA
+
+2.12
+
+Example: Principal Components Analysis
+
+One simple machine learning algorithm, principal components analysis or PCA
+can be derived using only knowledge of basic linear algebra.
+Suppose we have a collection of m points {x(1) , . . . , x (m)} in Rn . Suppose we
+would like to apply lossy compression to these points. Lossy compression means
+storing the points in a way that requires less memory but may lose some precision.
+We would like to lose as little precision as possible.
+One way we can encode these points is to represent a lower-dimensional version
+of them. For each point x(i) ∈ R n we will ﬁnd a corresponding code vector c (i) ∈ R l.
+If l is smaller than n, it will take less memory to store the code points than the
+original data. We will want to ﬁnd some encoding function that produces the code
+for an input, f(x) = c, and a decoding function that produces the reconstructed
+input given its code, x ≈ g(f (x)).
+PCA is deﬁned by our choice of the decoding function. Speciﬁcally, to make the
+decoder very simple, we choose to use matrix multiplication to map the code back
+into Rn . Let g(c) = Dc, where D ∈ Rn×l is the matrix deﬁning the decoding.
+
+Computing the optimal code for this decoder could be a diﬃcult problem. To
+keep the encoding problem easy, PCA constrains the columns of D to be orthogonal
+to each other. (Note that D is still not technically “an orthogonal matrix” unless
+l = n)
+
+With the problem as described so far, many solutions are possible, because we
+can increase the scale of D :,i if we decrease ci proportionally for all points. To give
+the problem a unique solution, we constrain all of the columns of D to have unit
+norm.
+In order to turn this basic idea into an algorithm we can implement, the ﬁrst
+thing we need to do is ﬁgure out how to generate the optimal code point c∗ for
+each input point x. One way to do this is to minimize the distance between the
+input point x and its reconstruction, g(c ∗). We can measure this distance using a
+norm. In the principal components algorithm, we use the L2 norm:
+c ∗ = arg min ||x − g(c)||2.
+
+(2.54)
+
+c
+
+We can switch to the squared L 2 norm instead of the L2 norm itself, because
+both are minimized by the same value of c. Both are minimized by the same
+value of c because the L2 norm is non-negative and the squaring operation is
+
+48
+
+CHAPTER 2. LINEAR ALGEBRA
+
+monotonically increasing for non-negative arguments.
+c ∗ = arg min ||x − g(c)||22.
+
+(2.55)
+
+c
+
+The function being minimized simpliﬁes to
+(x − g(c)) (x − g(c))
+
+(2.56)
+
+(by the deﬁnition of the L 2 norm, equation 2.30)
+= x x − x g(c) − g (c) x + g(c)g(c)
+
+(2.57)
+
+(by the distributive property)
+= x x − 2xg(c) + g (c)g(c)
+
+(2.58)
+
+(because the scalar g(c) x is equal to the transpose of itself).
+We can now change the function being minimized again, to omit the ﬁrst term,
+since this term does not depend on c:
+c∗ = arg min −2x g(c) + g (c)g(c).
+c
+
+(2.59)
+
+To make further progress, we must substitute in the deﬁnition of g(c):
+c∗ = arg min −2xDc + c D Dc
+
+(2.60)
+
+= arg min −2x Dc + cIl c
+
+(2.61)
+
+c
+
+c
+
+(by the orthogonality and unit norm constraints on D)
+= arg min −2xDc + c  c
+
+(2.62)
+
+c
+
+We can solve this optimization problem using vector calculus (see section 4.3 if
+you do not know how to do this):
+∇c(−2x  Dc + c  c) = 0
+
+(2.63)
+
+− 2D x + 2c = 0
+
+(2.64)
+
+c = D x.
+49
+
+(2.65)
+
+CHAPTER 2. LINEAR ALGEBRA
+
+This makes the algorithm eﬃcient: we can optimally encode x just using a
+matrix-vector operation. To encode a vector, we apply the encoder function
+f (x) = D x.
+
+(2.66)
+
+Using a further matrix multiplication, we can also deﬁne the PCA reconstruction
+operation:
+r(x) = g (f (x)) = DD x.
+(2.67)
+Next, we need to choose the encoding matrix D. To do so, we revisit the idea
+of minimizing the L 2 distance between inputs and reconstructions. Since we will
+use the same matrix D to decode all of the points, we can no longer consider the
+points in isolation. Instead, we must minimize the Frobenius norm of the matrix
+of errors computed over all dimensions and all points:
+
+2
+  (i)
+D = arg min
+xj − r(x(i)) j subject to DD = Il
+∗
+
+D
+
+(2.68)
+
+i,j
+
+To derive the algorithm for ﬁnding D∗ , we will start by considering the case
+where l = 1. In this case, D is just a single vector, d. Substituting equation 2.67
+into equation 2.68 and simplifying D into d, the problem reduces to
+d∗ = arg min
+d
+
+
+i
+
+||x(i) − ddx(i)||22 subject to ||d||2 = 1.
+
+(2.69)
+
+The above formulation is the most direct way of performing the substitution,
+but is not the most stylistically pleasing way to write the equation. It places the
+scalar value d x (i) on the right of the vector d. It is more conventional to write
+scalar coeﬃcients on the left of vector they operate on. We therefore usually write
+such a formula as
+
+||x(i) − dx (i)d|| 22 subject to ||d||2 = 1,
+d∗ = arg min
+(2.70)
+d
+
+i
+
+or, exploiting the fact that a scalar is its own transpose, as
+
+||x(i) − x(i)dd||22 subject to ||d|| 2 = 1.
+d∗ = arg min
+d
+
+(2.71)
+
+i
+
+The reader should aim to become familiar with such cosmetic rearrangements.
+50
+
+CHAPTER 2. LINEAR ALGEBRA
+
+At this point, it can be helpful to rewrite the problem in terms of a single
+design matrix of examples, rather than as a sum over separate example vectors.
+This will allow us to use more compact notation. Let X ∈ Rm×n be the matrix
+
+deﬁned by stacking all of the vectors describing the points, such that X i,: = x (i) .
+We can now rewrite the problem as
+d ∗ = arg min ||X − Xdd||2F subject to d d = 1.
+
+(2.72)
+
+d
+
+Disregarding the constraint for the moment, we can simplify the Frobenius norm
+portion as follows:
+arg min ||X − Xdd || 2F
+(2.73)
+d
+
+= arg min Tr
+d
+
+(by equation 2.49)
+
+
+
+X − Xdd
+
+
+
+ 
+
+X − Xdd
+
+
+
+
+
+= arg min Tr(X X − X Xdd − dd  X  X + dd X  Xdd )
+
+(2.74)
+
+(2.75)
+
+d
+
+= arg min Tr(X  X) − Tr(X Xdd) − Tr(ddX X) + Tr(ddX  Xdd )
+d
+
+= arg min − Tr(X  Xdd ) − Tr(ddX  X) + Tr(dd X Xdd  )
+
+(2.76)
+(2.77)
+
+d
+
+(because terms not involving d do not aﬀect the arg min)
+= arg min −2 Tr(X  Xdd) + Tr(dd X  Xdd )
+
+(2.78)
+
+d
+
+(because we can cycle the order of the matrices inside a trace, equation 2.52)
+= arg min −2 Tr(X  Xdd) + Tr(X  Xdd dd )
+
+(2.79)
+
+d
+
+(using the same property again)
+At this point, we re-introduce the constraint:
+arg min −2 Tr(XXdd ) + Tr(X Xdddd) subject to d d = 1
+
+(2.80)
+
+= arg min −2 Tr(X Xdd ) + Tr(X Xdd ) subject to dd = 1
+
+(2.81)
+
+d
+
+d
+
+(due to the constraint)
+= arg min − Tr(X Xdd ) subject to dd = 1
+d
+
+51
+
+(2.82)
+
+CHAPTER 2. LINEAR ALGEBRA
+
+= arg max Tr(X Xdd  ) subject to d d = 1
+
+(2.83)
+
+d
+
+= arg max Tr(d X Xd) subject to d d = 1
+
+(2.84)
+
+d
+
+This optimization problem may be solved using eigendecomposition. Speciﬁcally,
+the optimal d is given by the eigenvector of X X corresponding to the largest
+eigenvalue.
+This derivation is speciﬁc to the case of l = 1 and recovers only the ﬁrst
+principal component. More generally, when we wish to recover a basis of principal
+components, the matrix D is given by the l eigenvectors corresponding to the
+largest eigenvalues. This may be shown using proof by induction. We recommend
+writing this proof as an exercise.
+Linear algebra is one of the fundamental mathematical disciplines that is
+necessary to understand deep learning. Another key area of mathematics that is
+ubiquitous in machine learning is probability theory, presented next.
+
+52
+
+

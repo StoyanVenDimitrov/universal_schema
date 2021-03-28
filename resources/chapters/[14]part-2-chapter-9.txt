@@ -1,0 +1,2256 @@
+Chapter 9
+
+Convolutional Networks
+Convolutional networks (LeCun, 1989), also known as convolutional neural
+networks or CNNs, are a specialized kind of neural network for processing data
+that has a known, grid-like topology. Examples include time-series data, which can
+be thought of as a 1D grid taking samples at regular time intervals, and image data,
+which can be thought of as a 2D grid of pixels. Convolutional networks have been
+tremendously successful in practical applications. The name “convolutional neural
+network” indicates that the network employs a mathematical operation called
+convolution. Convolution is a specialized kind of linear operation. Convolutional
+networks are simply neural networks that use convolution in place of general matrix
+multiplication in at least one of their layers.
+In this chapter, we will ﬁrst describe what convolution is. Next, we will
+explain the motivation behind using convolution in a neural network. We will then
+describe an operation called pooling, which almost all convolutional networks
+employ. Usually, the operation used in a convolutional neural network does not
+correspond precisely to the deﬁnition of convolution as used in other ﬁelds such
+as engineering or pure mathematics. We will describe several variants on the
+convolution function that are widely used in practice for neural networks. We
+will also show how convolution may be applied to many kinds of data, with
+diﬀerent numbers of dimensions. We then discuss means of making convolution
+more eﬃcient. Convolutional networks stand out as an example of neuroscientiﬁc
+principles inﬂuencing deep learning. We will discuss these neuroscientiﬁc principles,
+then conclude with comments about the role convolutional networks have played
+in the history of deep learning. One topic this chapter does not address is how to
+choose the architecture of your convolutional network. The goal of this chapter is
+to describe the kinds of tools that convolutional networks provide, while chapter 11
+330
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+describes general guidelines for choosing which tools to use in which circumstances.
+Research into convolutional network architectures proceeds so rapidly that a new
+best architecture for a given benchmark is announced every few weeks to months,
+rendering it impractical to describe the best architecture in print. However, the
+best architectures have consistently been composed of the building blocks described
+here.
+
+9.1
+
+The Convolution Operation
+
+In its most general form, convolution is an operation on two functions of a realvalued argument. To motivate the deﬁnition of convolution, we start with examples
+of two functions we might use.
+Suppose we are tracking the location of a spaceship with a laser sensor. Our
+laser sensor provides a single output x(t), the position of the spaceship at time
+t. Both x and t are real-valued, i.e., we can get a diﬀerent reading from the laser
+sensor at any instant in time.
+Now suppose that our laser sensor is somewhat noisy. To obtain a less noisy
+estimate of the spaceship’s position, we would like to average together several
+measurements. Of course, more recent measurements are more relevant, so we will
+want this to be a weighted average that gives more weight to recent measurements.
+We can do this with a weighting function w(a), where a is the age of a measurement.
+If we apply such a weighted average operation at every moment, we obtain a new
+function s providing a smoothed estimate of the position of the spaceship:
+
+s(t) = x(a)w (t − a)da
+(9.1)
+This operation is called convolution. The convolution operation is typically
+denoted with an asterisk:
+s(t) = (x ∗ w )(t)
+(9.2)
+In our example, w needs to be a valid probability density function, or the
+output is not a weighted average. Also, w needs to be 0 for all negative arguments,
+or it will look into the future, which is presumably beyond our capabilities. These
+limitations are particular to our example though. In general, convolution is deﬁned
+for any functions for which the above integral is deﬁned, and may be used for other
+purposes besides taking weighted averages.
+In convolutional network terminology, the ﬁrst argument (in this example, the
+function x) to the convolution is often referred to as the input and the second
+331
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+argument (in this example, the function w) as the kernel. The output is sometimes
+referred to as the feature map.
+In our example, the idea of a laser sensor that can provide measurements
+at every instant in time is not realistic. Usually, when we work with data on a
+computer, time will be discretized, and our sensor will provide data at regular
+intervals. In our example, it might be more realistic to assume that our laser
+provides a measurement once per second. The time index t can then take on only
+integer values. If we now assume that x and w are deﬁned only on integer t, we
+can deﬁne the discrete convolution:
+s(t) = (x ∗ w )(t) =
+
+∞
+
+
+a=−∞
+
+x(a)w (t − a)
+
+(9.3)
+
+In machine learning applications, the input is usually a multidimensional array
+of data and the kernel is usually a multidimensional array of parameters that are
+adapted by the learning algorithm. We will refer to these multidimensional arrays
+as tensors. Because each element of the input and kernel must be explicitly stored
+separately, we usually assume that these functions are zero everywhere but the
+ﬁnite set of points for which we store the values. This means that in practice we
+can implement the inﬁnite summation as a summation over a ﬁnite number of
+array elements.
+Finally, we often use convolutions over more than one axis at a time. For
+example, if we use a two-dimensional image I as our input, we probably also want
+to use a two-dimensional kernel K :
+
+S (i, j ) = (I ∗ K )(i, j ) =
+I (m, n)K (i − m, j − n).
+(9.4)
+m
+
+n
+
+Convolution is commutative, meaning we can equivalently write:
+
+S (i, j ) = (K ∗ I )(i, j ) =
+I (i − m, j − n)K (m, n).
+m
+
+(9.5)
+
+n
+
+Usually the latter formula is more straightforward to implement in a machine
+learning library, because there is less variation in the range of valid values of m
+and n.
+The commutative property of convolution arises because we have ﬂipped the
+kernel relative to the input, in the sense that as m increases, the index into the
+input increases, but the index into the kernel decreases. The only reason to ﬂip
+the kernel is to obtain the commutative property. While the commutative property
+332
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+is useful for writing proofs, it is not usually an important property of a neural
+network implementation. Instead, many neural network libraries implement a
+related function called the cross-correlation, which is the same as convolution
+but without ﬂipping the kernel:
+
+I (i + m, j + n)K (m, n).
+(9.6)
+S (i, j ) = (I ∗ K )(i, j ) =
+m
+
+n
+
+Many machine learning libraries implement cross-correlation but call it convolution.
+In this text we will follow this convention of calling both operations convolution,
+and specify whether we mean to ﬂip the kernel or not in contexts where kernel
+ﬂipping is relevant. In the context of machine learning, the learning algorithm will
+learn the appropriate values of the kernel in the appropriate place, so an algorithm
+based on convolution with kernel ﬂipping will learn a kernel that is ﬂipped relative
+to the kernel learned by an algorithm without the ﬂipping. It is also rare for
+convolution to be used alone in machine learning; instead convolution is used
+simultaneously with other functions, and the combination of these functions does
+not commute regardless of whether the convolution operation ﬂips its kernel or
+not.
+See ﬁgure 9.1 for an example of convolution (without kernel ﬂipping) applied
+to a 2-D tensor.
+Discrete convolution can be viewed as multiplication by a matrix. However, the
+matrix has several entries constrained to be equal to other entries. For example,
+for univariate discrete convolution, each row of the matrix is constrained to be
+equal to the row above shifted by one element. This is known as a Toeplitz
+matrix. In two dimensions, a doubly block circulant matrix corresponds to
+convolution. In addition to these constraints that several elements be equal to
+each other, convolution usually corresponds to a very sparse matrix (a matrix
+whose entries are mostly equal to zero). This is because the kernel is usually much
+smaller than the input image. Any neural network algorithm that works with
+matrix multiplication and does not depend on speciﬁc properties of the matrix
+structure should work with convolution, without requiring any further changes
+to the neural network. Typical convolutional neural networks do make use of
+further specializations in order to deal with large inputs eﬃciently, but these are
+not strictly necessary from a theoretical perspective.
+
+333
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Input
+Kernel
+a
+
+b
+
+e
+
+f
+
+i
+
+j
+
+c
+
+d
+
+g
+
+w
+
+x
+
+y
+
+z
+
+h
+
+k
+
+l
+Output
+
+aw
+ey
+
++
++
+
+bx
+fz
+
++
+
+bw
+fy
+
++
++
+
+cx
+gz
+
++
+
+cw
+gy
+
++
++
+
+dx
+hz
+
++
+
+ew
+iy
+
++
++
+
+fx
+jz
+
++
+
+fw
+jy
+
++
++
+
+gx
+kz
+
++
+
+gw
+ky
+
++
++
+
+hx
+lz
+
++
+
+Figure 9.1: An example of 2-D convolution without kernel-ﬂipping. In this case we restrict
+the output to only positions where the kernel lies entirely within the image, called “valid”
+convolution in some contexts. We draw boxes with arrows to indicate how the upper-left
+element of the output tensor is formed by applying the kernel to the corresponding
+upper-left region of the input tensor.
+
+334
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+9.2
+
+Motivation
+
+Convolution leverages three important ideas that can help improve a machine
+learning system: sparse interactions, parameter sharing and equivariant
+representations. Moreover, convolution provides a means for working with
+inputs of variable size. We now describe each of these ideas in turn.
+Traditional neural network layers use matrix multiplication by a matrix of
+parameters with a separate parameter describing the interaction between each input
+unit and each output unit. This means every output unit interacts with every input
+unit. Convolutional networks, however, typically have sparse interactions (also
+referred to as sparse connectivity or sparse weights). This is accomplished by
+making the kernel smaller than the input. For example, when processing an image,
+the input image might have thousands or millions of pixels, but we can detect small,
+meaningful features such as edges with kernels that occupy only tens or hundreds of
+pixels. This means that we need to store fewer parameters, which both reduces the
+memory requirements of the model and improves its statistical eﬃciency. It also
+means that computing the output requires fewer operations. These improvements
+in eﬃciency are usually quite large. If there are m inputs and n outputs, then
+matrix multiplication requires m × n parameters and the algorithms used in practice
+have O(m × n ) runtime (per example). If we limit the number of connections
+each output may have to k, then the sparsely connected approach requires only
+k × n parameters and O(k × n) runtime. For many practical applications, it is
+possible to obtain good performance on the machine learning task while keeping
+k several orders of magnitude smaller than m. For graphical demonstrations of
+sparse connectivity, see ﬁgure 9.2 and ﬁgure 9.3. In a deep convolutional network,
+units in the deeper layers may indirectly interact with a larger portion of the input,
+as shown in ﬁgure 9.4. This allows the network to eﬃciently describe complicated
+interactions between many variables by constructing such interactions from simple
+building blocks that each describe only sparse interactions.
+Parameter sharing refers to using the same parameter for more than one
+function in a model. In a traditional neural net, each element of the weight matrix
+is used exactly once when computing the output of a layer. It is multiplied by
+one element of the input and then never revisited. As a synonym for parameter
+sharing, one can say that a network has tied weights, because the value of the
+weight applied to one input is tied to the value of a weight applied elsewhere. In
+a convolutional neural net, each member of the kernel is used at every position
+of the input (except perhaps some of the boundary pixels, depending on the
+design decisions regarding the boundary). The parameter sharing used by the
+convolution operation means that rather than learning a separate set of parameters
+335
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+Figure 9.2: Sparse connectivity, viewed from below: We highlight one input unit, x3 ,
+and also highlight the output units in s that are aﬀected by this unit. (Top)When s is
+formed by convolution with a kernel of width 3, only three outputs are aﬀected by x.
+(Bottom)When s is formed by matrix multiplication, connectivity is no longer sparse, so
+all of the outputs are aﬀected by x3 .
+
+336
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+Figure 9.3: Sparse connectivity, viewed from above: We highlight one output unit, s3 ,
+and also highlight the input units in x that aﬀect this unit. These units are known
+as the receptive ﬁeld of s3 . (Top)When s is formed by convolution with a kernel of
+width 3, only three inputs aﬀect s 3 . (Bottom)When s is formed by matrix multiplication,
+connectivity is no longer sparse, so all of the inputs aﬀect s3 .
+
+g1
+
+g2
+
+g3
+
+g4
+
+g5
+
+h1
+
+h2
+
+h3
+
+h4
+
+h5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+Figure 9.4: The receptive ﬁeld of the units in the deeper layers of a convolutional network
+is larger than the receptive ﬁeld of the units in the shallow layers. This eﬀect increases if
+the network includes architectural features like strided convolution (ﬁgure 9.12) or pooling
+(section 9.3). This means that even though direct connections in a convolutional net are
+very sparse, units in the deeper layers can be indirectly connected to all or most of the
+input image.
+337
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+Figure 9.5: Parameter sharing: Black arrows indicate the connections that use a particular
+parameter in two diﬀerent models. (Top)The black arrows indicate uses of the central
+element of a 3-element kernel in a convolutional model. Due to parameter sharing, this
+single parameter is used at all input locations. (Bottom)The single black arrow indicates
+the use of the central element of the weight matrix in a fully connected model. This model
+has no parameter sharing so the parameter is used only once.
+
+for every location, we learn only one set. This does not aﬀect the runtime of
+forward propagation—it is still O(k × n)—but it does further reduce the storage
+requirements of the model to k parameters. Recall that k is usually several orders
+of magnitude less than m. Since m and n are usually roughly the same size, k is
+practically insigniﬁcant compared to m × n. Convolution is thus dramatically more
+eﬃcient than dense matrix multiplication in terms of the memory requirements
+and statistical eﬃciency. For a graphical depiction of how parameter sharing works,
+see ﬁgure 9.5.
+As an example of both of these ﬁrst two principles in action, ﬁgure 9.6 shows
+how sparse connectivity and parameter sharing can dramatically improve the
+eﬃciency of a linear function for detecting edges in an image.
+In the case of convolution, the particular form of parameter sharing causes the
+layer to have a property called equivariance to translation. To say a function is
+equivariant means that if the input changes, the output changes in the same way.
+Speciﬁcally, a function f (x) is equivariant to a function g if f(g(x)) = g(f (x)).
+In the case of convolution, if we let g be any function that translates the input,
+i.e., shifts it, then the convolution function is equivariant to g. For example, let I
+be a function giving image brightness at integer coordinates. Let g be a function
+338
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+mapping one image function to another image function, such that I = g(I ) is
+the image function with I  (x, y) = I(x − 1, y). This shifts every pixel of I one
+unit to the right. If we apply this transformation to I, then apply convolution,
+the result will be the same as if we applied convolution to I  , then applied the
+transformation g to the output. When processing time series data, this means
+that convolution produces a sort of timeline that shows when diﬀerent features
+appear in the input. If we move an event later in time in the input, the exact
+same representation of it will appear in the output, just later in time. Similarly
+with images, convolution creates a 2-D map of where certain features appear in
+the input. If we move the object in the input, its representation will move the
+same amount in the output. This is useful for when we know that some function
+of a small number of neighboring pixels is useful when applied to multiple input
+locations. For example, when processing images, it is useful to detect edges in
+the ﬁrst layer of a convolutional network. The same edges appear more or less
+everywhere in the image, so it is practical to share parameters across the entire
+image. In some cases, we may not wish to share parameters across the entire
+image. For example, if we are processing images that are cropped to be centered
+on an individual’s face, we probably want to extract diﬀerent features at diﬀerent
+locations—the part of the network processing the top of the face needs to look for
+eyebrows, while the part of the network processing the bottom of the face needs to
+look for a chin.
+Convolution is not naturally equivariant to some other transformations, such
+as changes in the scale or rotation of an image. Other mechanisms are necessary
+for handling these kinds of transformations.
+Finally, some kinds of data cannot be processed by neural networks deﬁned by
+matrix multiplication with a ﬁxed-shape matrix. Convolution enables processing
+of some of these kinds of data. We discuss this further in section 9.7.
+
+9.3
+
+Pooling
+
+A typical layer of a convolutional network consists of three stages (see ﬁgure 9.7).
+In the ﬁrst stage, the layer performs several convolutions in parallel to produce a
+set of linear activations. In the second stage, each linear activation is run through
+a nonlinear activation function, such as the rectiﬁed linear activation function.
+This stage is sometimes called the detector stage. In the third stage, we use a
+pooling function to modify the output of the layer further.
+A pooling function replaces the output of the net at a certain location with a
+summary statistic of the nearby outputs. For example, the max pooling (Zhou
+339
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Figure 9.6: Eﬃciency of edge detection. The image on the right was formed by taking
+each pixel in the original image and subtracting the value of its neighboring pixel on the
+left. This shows the strength of all of the vertically oriented edges in the input image,
+which can be a useful operation for object detection. Both images are 280 pixels tall.
+The input image is 320 pixels wide while the output image is 319 pixels wide. This
+transformation can be described by a convolution kernel containing two elements, and
+requires 319 × 280 × 3 = 267, 960 ﬂoating point operations (two multiplications and
+one addition per output pixel) to compute using convolution. To describe the same
+transformation with a matrix multiplication would take 320 × 280× 319 × 280, or over
+eight billion, entries in the matrix, making convolution four billion times more eﬃcient for
+representing this transformation. The straightforward matrix multiplication algorithm
+performs over sixteen billion ﬂoating point operations, making convolution roughly 60,000
+times more eﬃcient computationally. Of course, most of the entries of the matrix would be
+zero. If we stored only the nonzero entries of the matrix, then both matrix multiplication
+and convolution would require the same number of ﬂoating point operations to compute.
+The matrix would still need to contain 2 × 319 × 280 = 178, 640 entries. Convolution
+is an extremely eﬃcient way of describing transformations that apply the same linear
+transformation of a small, local region across the entire input. (Photo credit: Paula
+Goodfellow)
+
+340
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Complex layer terminology
+
+Simple layer terminology
+
+Next layer
+
+Next layer
+
+Convolutional Layer
+Pooling stage
+
+Pooling layer
+
+Detector stage:
+Nonlinearity
+e.g., rectiﬁed linear
+
+Detector layer: Nonlinearity
+e.g., rectiﬁed linear
+
+Convolution stage:
+Aﬃne transform
+
+Convolution layer:
+Aﬃne transform
+
+Input to layer
+
+Input to layers
+
+Figure 9.7: The components of a typical convolutional neural network layer. There are two
+commonly used sets of terminology for describing these layers. (Left)In this terminology,
+the convolutional net is viewed as a small number of relatively complex layers, with
+each layer having many “stages.” In this terminology, there is a one-to-one mapping
+between kernel tensors and network layers. In this book we generally use this terminology.
+(Right)In this terminology, the convolutional net is viewed as a larger number of simple
+layers; every step of processing is regarded as a layer in its own right. This means that
+not every “layer” has parameters.
+
+341
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+and Chellappa, 1988) operation reports the maximum output within a rectangular
+neighborhood. Other popular pooling functions include the average of a rectangular
+neighborhood, the L2 norm of a rectangular neighborhood, or a weighted average
+based on the distance from the central pixel.
+In all cases, pooling helps to make the representation become approximately
+invariant to small translations of the input. Invariance to translation means that
+if we translate the input by a small amount, the values of most of the pooled
+outputs do not change. See ﬁgure 9.8 for an example of how this works. Invariance
+to local translation can be a very useful property if we care more about whether
+some feature is present than exactly where it is. For example, when determining
+whether an image contains a face, we need not know the location of the eyes with
+pixel-perfect accuracy, we just need to know that there is an eye on the left side
+of the face and an eye on the right side of the face. In other contexts, it is more
+important to preserve the location of a feature. For example, if we want to ﬁnd a
+corner deﬁned by two edges meeting at a speciﬁc orientation, we need to preserve
+the location of the edges well enough to test whether they meet.
+The use of pooling can be viewed as adding an inﬁnitely strong prior that
+the function the layer learns must be invariant to small translations. When this
+assumption is correct, it can greatly improve the statistical eﬃciency of the network.
+Pooling over spatial regions produces invariance to translation, but if we pool
+over the outputs of separately parametrized convolutions, the features can learn
+which transformations to become invariant to (see ﬁgure 9.9).
+Because pooling summarizes the responses over a whole neighborhood, it is
+possible to use fewer pooling units than detector units, by reporting summary
+statistics for pooling regions spaced k pixels apart rather than 1 pixel apart. See
+ﬁgure 9.10 for an example. This improves the computational eﬃciency of the
+network because the next layer has roughly k times fewer inputs to process. When
+the number of parameters in the next layer is a function of its input size (such as
+when the next layer is fully connected and based on matrix multiplication) this
+reduction in the input size can also result in improved statistical eﬃciency and
+reduced memory requirements for storing the parameters.
+For many tasks, pooling is essential for handling inputs of varying size. For
+example, if we want to classify images of variable size, the input to the classiﬁcation
+layer must have a ﬁxed size. This is usually accomplished by varying the size of an
+oﬀset between pooling regions so that the classiﬁcation layer always receives the
+same number of summary statistics regardless of the input size. For example, the
+ﬁnal pooling layer of the network may be deﬁned to output four sets of summary
+statistics, one for each quadrant of an image, regardless of the image size.
+342
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+POOLING STAGE
+...
+
+...
+
+1.
+
+1.
+
+1.
+
+0.2
+
+0.1
+
+1.
+
+0.2
+
+0.1
+
+...
+
+...
+
+DETECTOR STAGE
+
+POOLING STAGE
+...
+
+0.3
+
+1.
+
+1.
+
+1.
+
+...
+
+...
+
+0.3
+
+0.1
+
+1.
+
+0.2
+
+...
+
+DETECTOR STAGE
+
+Figure 9.8: Max pooling introduces invariance. (Top)A view of the middle of the output
+of a convolutional layer. The bottom row shows outputs of the nonlinearity. The top
+row shows the outputs of max pooling, with a stride of one pixel between pooling regions
+and a pooling region width of three pixels. (Bottom)A view of the same network, after
+the input has been shifted to the right by one pixel. Every value in the bottom row has
+changed, but only half of the values in the top row have changed, because the max pooling
+units are only sensitive to the maximum value in the neighborhood, not its exact location.
+
+343
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Large response
+in pooling unit
+
+Large response
+in pooling unit
+
+Large
+response
+in detector
+unit 1
+
+Large
+response
+in detector
+unit 3
+
+Figure 9.9: Example of learned invariances: A pooling unit that pools over multiple features
+that are learned with separate parameters can learn to be invariant to transformations of
+the input. Here we show how a set of three learned ﬁlters and a max pooling unit can learn
+to become invariant to rotation. All three ﬁlters are intended to detect a hand-written 5.
+Each ﬁlter attempts to match a slightly diﬀerent orientation of the 5. When a 5 appears in
+the input, the corresponding ﬁlter will match it and cause a large activation in a detector
+unit. The max pooling unit then has a large activation regardless of which detector unit
+was activated. We show here how the network processes two diﬀerent inputs, resulting
+in two diﬀerent detector units being activated. The eﬀect on the pooling unit is roughly
+the same either way. This principle is leveraged by maxout networks (Goodfellow et al.,
+2013a) and other convolutional networks. Max pooling over spatial positions is naturally
+invariant to translation; this multi-channel approach is only necessary for learning other
+transformations.
+
+1.
+
+0.1
+
+1.
+
+0.2
+
+0.2
+
+0.1
+
+0.1
+
+0.0
+
+0.1
+
+Figure 9.10: Pooling with downsampling. Here we use max-pooling with a pool width of
+three and a stride between pools of two. This reduces the representation size by a factor
+of two, which reduces the computational and statistical burden on the next layer. Note
+that the rightmost pooling region has a smaller size, but must be included if we do not
+want to ignore some of the detector units.
+344
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Some theoretical work gives guidance as to which kinds of pooling one should
+use in various situations (Boureau et al., 2010). It is also possible to dynamically
+pool features together, for example, by running a clustering algorithm on the
+locations of interesting features (Boureau et al., 2011). This approach yields a
+diﬀerent set of pooling regions for each image. Another approach is to learn a
+single pooling structure that is then applied to all images (Jia et al., 2012).
+Pooling can complicate some kinds of neural network architectures that use
+top-down information, such as Boltzmann machines and autoencoders. These
+issues will be discussed further when we present these types of networks in part III.
+Pooling in convolutional Boltzmann machines is presented in section 20.6. The
+inverse-like operations on pooling units needed in some diﬀerentiable networks will
+be covered in section 20.10.6.
+Some examples of complete convolutional network architectures for classiﬁcation
+using convolution and pooling are shown in ﬁgure 9.11.
+
+9.4
+
+Convolution and Pooling as an Inﬁnitely Strong
+Prior
+
+Recall the concept of a prior probability distribution from section 5.2. This is
+a probability distribution over the parameters of a model that encodes our beliefs
+about what models are reasonable, before we have seen any data.
+Priors can be considered weak or strong depending on how concentrated the
+probability density in the prior is. A weak prior is a prior distribution with high
+entropy, such as a Gaussian distribution with high variance. Such a prior allows
+the data to move the parameters more or less freely. A strong prior has very low
+entropy, such as a Gaussian distribution with low variance. Such a prior plays a
+more active role in determining where the parameters end up.
+An inﬁnitely strong prior places zero probability on some parameters and says
+that these parameter values are completely forbidden, regardless of how much
+support the data gives to those values.
+We can imagine a convolutional net as being similar to a fully connected net,
+but with an inﬁnitely strong prior over its weights. This inﬁnitely strong prior
+says that the weights for one hidden unit must be identical to the weights of its
+neighbor, but shifted in space. The prior also says that the weights must be zero,
+except for in the small, spatially contiguous receptive ﬁeld assigned to that hidden
+unit. Overall, we can think of the use of convolution as introducing an inﬁnitely
+strong prior probability distribution over the parameters of a layer. This prior
+345
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Output of softmax:
+1,000 class
+probabilities
+
+Output of softmax:
+1,000 class
+probabilities
+
+Output of softmax:
+1,000 class
+probabilities
+
+Output of matrix
+multiply: 1,000 units
+
+Output of matrix
+multiply: 1,000 units
+
+Output of average
+pooling: 1x1x1,000
+
+Output of reshape to
+vector:
+16,384 units
+
+Output of reshape to
+vector:
+576 units
+
+Output of
+convolution:
+16x16x1,000
+
+Output of pooling
+with stride 4:
+16x16x64
+
+Output of pooling to
+3x3 grid: 3x3x64
+
+Output of pooling
+with stride 4:
+16x16x64
+
+Output of
+convolution +
+ReLU: 64x64x64
+
+Output of
+convolution +
+ReLU: 64x64x64
+
+Output of
+convolution +
+ReLU: 64x64x64
+
+Output of pooling
+with stride 4:
+64x64x64
+
+Output of pooling
+with stride 4:
+64x64x64
+
+Output of pooling
+with stride 4:
+64x64x64
+
+Output of
+convolution +
+ReLU: 256x256x64
+
+Output of
+convolution +
+ReLU: 256x256x64
+
+Output of
+convolution +
+ReLU: 256x256x64
+
+Input image:
+256x256x3
+
+Input image:
+256x256x3
+
+Input image:
+256x256x3
+
+Figure 9.11: Examples of architectures for classiﬁcation with convolutional networks. The
+speciﬁc strides and depths used in this ﬁgure are not advisable for real use; they are
+designed to be very shallow in order to ﬁt onto the page. Real convolutional networks
+also often involve signiﬁcant amounts of branching, unlike the chain structures used
+here for simplicity. (Left)A convolutional network that processes a ﬁxed image size.
+After alternating between convolution and pooling for a few layers, the tensor for the
+convolutional feature map is reshaped to ﬂatten out the spatial dimensions. The rest
+of the network is an ordinary feedforward network classiﬁer, as described in chapter 6.
+(Center)A convolutional network that processes a variable-sized image, but still maintains
+a fully connected section. This network uses a pooling operation with variably-sized pools
+but a ﬁxed number of pools, in order to provide a ﬁxed-size vector of 576 units to the
+fully connected portion of the network. (Right)A convolutional network that does not
+have any fully connected weight layer. Instead, the last convolutional layer outputs one
+feature map per class. The model presumably learns a map of how likely each class is to
+occur at each spatial location. Averaging a feature map down to a single value provides
+the argument to the softmax classiﬁer at the top.
+346
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+says that the function the layer should learn contains only local interactions and is
+equivariant to translation. Likewise, the use of pooling is an inﬁnitely strong prior
+that each unit should be invariant to small translations.
+Of course, implementing a convolutional net as a fully connected net with an
+inﬁnitely strong prior would be extremely computationally wasteful. But thinking
+of a convolutional net as a fully connected net with an inﬁnitely strong prior can
+give us some insights into how convolutional nets work.
+One key insight is that convolution and pooling can cause underﬁtting. Like
+any prior, convolution and pooling are only useful when the assumptions made
+by the prior are reasonably accurate. If a task relies on preserving precise spatial
+information, then using pooling on all features can increase the training error.
+Some convolutional network architectures (Szegedy et al., 2014a) are designed to
+use pooling on some channels but not on other channels, in order to get both
+highly invariant features and features that will not underﬁt when the translation
+invariance prior is incorrect. When a task involves incorporating information from
+very distant locations in the input, then the prior imposed by convolution may be
+inappropriate.
+Another key insight from this view is that we should only compare convolutional models to other convolutional models in benchmarks of statistical learning
+performance. Models that do not use convolution would be able to learn even
+if we permuted all of the pixels in the image. For many image datasets, there
+are separate benchmarks for models that are permutation invariant and must
+discover the concept of topology via learning, and models that have the knowledge
+of spatial relationships hard-coded into them by their designer.
+
+9.5
+
+Variants of the Basic Convolution Function
+
+When discussing convolution in the context of neural networks, we usually do
+not refer exactly to the standard discrete convolution operation as it is usually
+understood in the mathematical literature. The functions used in practice diﬀer
+slightly. Here we describe these diﬀerences in detail, and highlight some useful
+properties of the functions used in neural networks.
+First, when we refer to convolution in the context of neural networks, we usually
+actually mean an operation that consists of many applications of convolution in
+parallel. This is because convolution with a single kernel can only extract one kind
+of feature, albeit at many spatial locations. Usually we want each layer of our
+network to extract many kinds of features, at many locations.
+347
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Additionally, the input is usually not just a grid of real values. Rather, it is a
+grid of vector-valued observations. For example, a color image has a red, green
+and blue intensity at each pixel. In a multilayer convolutional network, the input
+to the second layer is the output of the ﬁrst layer, which usually has the output
+of many diﬀerent convolutions at each position. When working with images, we
+usually think of the input and output of the convolution as being 3-D tensors, with
+one index into the diﬀerent channels and two indices into the spatial coordinates
+of each channel. Software implementations usually work in batch mode, so they
+will actually use 4-D tensors, with the fourth axis indexing diﬀerent examples in
+the batch, but we will omit the batch axis in our description here for simplicity.
+Because convolutional networks usually use multi-channel convolution, the
+linear operations they are based on are not guaranteed to be commutative, even if
+kernel-ﬂipping is used. These multi-channel operations are only commutative if
+each operation has the same number of output channels as input channels.
+Assume we have a 4-D kernel tensor K with element Ki,j,k,l giving the connection
+strength between a unit in channel i of the output and a unit in channel j of the
+input, with an oﬀset of k rows and l columns between the output unit and the
+input unit. Assume our input consists of observed data V with element Vi,j,k giving
+the value of the input unit within channel i at row j and column k . Assume our
+output consists of Z with the same format as V. If Z is produced by convolving K
+across V without ﬂipping K, then
+
+(9.7)
+Zi,j,k =
+V l,j +m−1,k +n−1 Ki,l,m,n
+l,m,n
+
+where the summation over l, m and n is over all values for which the tensor indexing
+operations inside the summation is valid. In linear algebra notation, we index into
+arrays using a 1 for the ﬁrst entry. This necessitates the −1 in the above formula.
+Programming languages such as C and Python index starting from 0, rendering
+the above expression even simpler.
+We may want to skip over some positions of the kernel in order to reduce the
+computational cost (at the expense of not extracting our features as ﬁnely). We
+can think of this as downsampling the output of the full convolution function. If
+we want to sample only every s pixels in each direction in the output, then we can
+deﬁne a downsampled convolution function c such that
+
+
+Zi,j,k = c(K, V , s)i,j,k =
+Vl,(j −1)×s+m,(k −1)×s+n Ki,l,m,n .
+(9.8)
+l,m,n
+
+We refer to s as the stride of this downsampled convolution. It is also possible
+348
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+to deﬁne a separate stride for each direction of motion. See ﬁgure 9.12 for an
+illustration.
+One essential feature of any convolutional network implementation is the ability
+to implicitly zero-pad the input V in order to make it wider. Without this feature,
+the width of the representation shrinks by one pixel less than the kernel width
+at each layer. Zero padding the input allows us to control the kernel width and
+the size of the output independently. Without zero padding, we are forced to
+choose between shrinking the spatial extent of the network rapidly and using small
+kernels—both scenarios that signiﬁcantly limit the expressive power of the network.
+See ﬁgure 9.13 for an example.
+Three special cases of the zero-padding setting are worth mentioning. One is
+the extreme case in which no zero-padding is used whatsoever, and the convolution
+kernel is only allowed to visit positions where the entire kernel is contained entirely
+within the image. In MATLAB terminology, this is called valid convolution. In
+this case, all pixels in the output are a function of the same number of pixels in
+the input, so the behavior of an output pixel is somewhat more regular. However,
+the size of the output shrinks at each layer. If the input image has width m and
+the kernel has width k, the output will be of width m − k + 1. The rate of this
+shrinkage can be dramatic if the kernels used are large. Since the shrinkage is
+greater than 0, it limits the number of convolutional layers that can be included
+in the network. As layers are added, the spatial dimension of the network will
+eventually drop to 1 × 1, at which point additional layers cannot meaningfully
+be considered convolutional. Another special case of the zero-padding setting is
+when just enough zero-padding is added to keep the size of the output equal to
+the size of the input. MATLAB calls this same convolution. In this case, the
+network can contain as many convolutional layers as the available hardware can
+support, since the operation of convolution does not modify the architectural
+possibilities available to the next layer. However, the input pixels near the border
+inﬂuence fewer output pixels than the input pixels near the center. This can make
+the border pixels somewhat underrepresented in the model. This motivates the
+other extreme case, which MATLAB refers to as full convolution, in which enough
+zeroes are added for every pixel to be visited k times in each direction, resulting
+in an output image of width m + k − 1. In this case, the output pixels near the
+border are a function of fewer pixels than the output pixels near the center. This
+can make it diﬃcult to learn a single kernel that performs well at all positions in
+the convolutional feature map. Usually the optimal amount of zero padding (in
+terms of test set classiﬁcation accuracy) lies somewhere between “valid” and “same”
+convolution.
+349
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+s1
+
+s2
+
+s3
+
+Strided
+convolution
+x1
+
+x2
+
+x3
+
+s1
+
+x4
+
+s2
+
+x5
+
+s3
+
+Downsampling
+
+z1
+
+z2
+
+z3
+
+z4
+
+z5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+Convolution
+
+Figure 9.12: Convolution with a stride. In this example, we use a stride of two.
+(Top)Convolution with a stride length of two implemented in a single operation. (Bottom)Convolution with a stride greater than one pixel is mathematically equivalent to
+convolution with unit stride followed by downsampling. Obviously, the two-step approach
+involving downsampling is computationally wasteful, because it computes many values
+that are then discarded.
+
+350
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+...
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+Figure 9.13: The eﬀect of zero padding on network size: Consider a convolutional network
+with a kernel of width six at every layer. In this example, we do not use any pooling, so
+only the convolution operation itself shrinks the network size. (Top)In this convolutional
+network, we do not use any implicit zero padding. This causes the representation to
+shrink by ﬁve pixels at each layer. Starting from an input of sixteen pixels, we are only
+able to have three convolutional layers, and the last layer does not ever move the kernel,
+so arguably only two of the layers are truly convolutional. The rate of shrinking can
+be mitigated by using smaller kernels, but smaller kernels are less expressive and some
+shrinking is inevitable in this kind of architecture. (Bottom)By adding ﬁve implicit zeroes
+to each layer, we prevent the representation from shrinking with depth. This allows us to
+make an arbitrarily deep convolutional network.
+
+351
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+In some cases, we do not actually want to use convolution, but rather locally
+connected layers (LeCun, 1986, 1989). In this case, the adjacency matrix in the
+graph of our MLP is the same, but every connection has its own weight, speciﬁed
+by a 6-D tensor W. The indices into W are respectively: i, the output channel,
+j, the output row, k, the output column, l, the input channel, m, the row oﬀset
+within the input, and n, the column oﬀset within the input. The linear part of a
+locally connected layer is then given by
+
+Zi,j,k =
+[Vl,j +m−1,k +n−1wi,j,k,l,m,n ] .
+(9.9)
+l,m,n
+
+This is sometimes also called unshared convolution, because it is a similar operation to discrete convolution with a small kernel, but without sharing parameters
+across locations. Figure 9.14 compares local connections, convolution, and full
+connections.
+Locally connected layers are useful when we know that each feature should be
+a function of a small part of space, but there is no reason to think that the same
+feature should occur across all of space. For example, if we want to tell if an image
+is a picture of a face, we only need to look for the mouth in the bottom half of the
+image.
+It can also be useful to make versions of convolution or locally connected layers
+in which the connectivity is further restricted, for example to constrain each output
+channel i to be a function of only a subset of the input channels l. A common
+way to do this is to make the ﬁrst m output channels connect to only the ﬁrst
+n input channels, the second m output channels connect to only the second n
+input channels, and so on. See ﬁgure 9.15 for an example. Modeling interactions
+between few channels allows the network to have fewer parameters in order to
+reduce memory consumption and increase statistical eﬃciency, and also reduces
+the amount of computation needed to perform forward and back-propagation. It
+accomplishes these goals without reducing the number of hidden units.
+Tiled convolution (Gregor and LeCun, 2010a; Le et al., 2010) oﬀers a compromise between a convolutional layer and a locally connected layer. Rather than
+learning a separate set of weights at every spatial location, we learn a set of kernels
+that we rotate through as we move through space. This means that immediately
+neighboring locations will have diﬀerent ﬁlters, like in a locally connected layer,
+but the memory requirements for storing the parameters will increase only by a
+factor of the size of this set of kernels, rather than the size of the entire output
+feature map. See ﬁgure 9.16 for a comparison of locally connected layers, tiled
+convolution, and standard convolution.
+352
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+s1
+
+a
+
+s2
+
+b
+
+c
+
+s3
+
+d
+
+e
+
+s4
+
+f
+
+g
+
+s5
+
+h
+
+i
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+Figure 9.14: Comparison of local connections, convolution, and full connections.
+(Top)A locally connected layer with a patch size of two pixels. Each edge is labeled with
+a unique letter to show that each edge is associated with its own weight parameter.
+(Center)A convolutional layer with a kernel width of two pixels. This model has exactly
+the same connectivity as the locally connected layer. The diﬀerence lies not in which units
+interact with each other, but in how the parameters are shared. The locally connected layer
+has no parameter sharing. The convolutional layer uses the same two weights repeatedly
+across the entire input, as indicated by the repetition of the letters labeling each edge.
+(Bottom)A fully connected layer resembles a locally connected layer in the sense that each
+edge has its own parameter (there are too many to label explicitly with letters in this
+diagram). However, it does not have the restricted connectivity of the locally connected
+layer.
+
+353
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Output Tensor
+
+Channel coordinates
+
+Input Tensor
+
+Spatial coordinates
+
+Figure 9.15: A convolutional network with the ﬁrst two output channels connected to
+only the ﬁrst two input channels, and the second two output channels connected to only
+the second two input channels.
+354
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+s1
+
+a
+
+s2
+
+b
+
+c
+
+s3
+
+d
+
+e
+
+s4
+
+f
+
+g
+
+s5
+
+h
+
+i
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+a
+
+b
+
+c
+
+d
+
+a
+
+b
+
+c
+
+d
+
+a
+
+x1
+
+x2
+
+x3
+
+x4
+
+x5
+
+s1
+
+s2
+
+s3
+
+s4
+
+s5
+
+a
+
+b
+x1
+
+a
+
+b
+x2
+
+a
+
+b
+x3
+
+a
+
+b
+x4
+
+a
+x5
+
+Figure 9.16: A comparison of locally connected layers, tiled convolution, and standard
+convolution. All three have the same sets of connections between units, when the same
+size of kernel is used. This diagram illustrates the use of a kernel that is two pixels wide.
+The diﬀerences between the methods lies in how they share parameters. (Top)A locally
+connected layer has no sharing at all. We indicate that each connection has its own weight
+by labeling each connection with a unique letter. (Center)Tiled convolution has a set of
+t diﬀerent kernels. Here we illustrate the case of t = 2. One of these kernels has edges
+labeled “a” and “b,” while the other has edges labeled “c” and “d.” Each time we move one
+pixel to the right in the output, we move on to using a diﬀerent kernel. This means that,
+like the locally connected layer, neighboring units in the output have diﬀerent parameters.
+Unlike the locally connected layer, after we have gone through all t available kernels,
+we cycle back to the ﬁrst kernel. If two output units are separated by a multiple of t
+steps, then they share parameters. (Bottom)Traditional convolution is equivalent to tiled
+convolution with t = 1. There is only one kernel and it is applied everywhere, as indicated
+in the diagram by using the kernel with weights labeled “a” and “b” everywhere.
+
+355
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+To deﬁne tiled convolution algebraically, let k be a 6-D tensor, where two of
+the dimensions correspond to diﬀerent locations in the output map. Rather than
+having a separate index for each location in the output map, output locations cycle
+through a set of t diﬀerent choices of kernel stack in each direction. If t is equal to
+the output width, this is the same as a locally connected layer.
+
+Zi,j,k =
+Vl,j +m−1,k +n−1Ki,l,m,n,j %t+1,k %t+1 ,
+(9.10)
+l,m,n
+
+where % is the modulo operation, with t%t = 0, ( t + 1)%t = 1, etc. It is
+straightforward to generalize this equation to use a diﬀerent tiling range for each
+dimension.
+Both locally connected layers and tiled convolutional layers have an interesting
+interaction with max-pooling: the detector units of these layers are driven by
+diﬀerent ﬁlters. If these ﬁlters learn to detect diﬀerent transformed versions of
+the same underlying features, then the max-pooled units become invariant to the
+learned transformation (see ﬁgure 9.9). Convolutional layers are hard-coded to be
+invariant speciﬁcally to translation.
+Other operations besides convolution are usually necessary to implement a
+convolutional network. To perform learning, one must be able to compute the
+gradient with respect to the kernel, given the gradient with respect to the outputs.
+In some simple cases, this operation can be performed using the convolution
+operation, but many cases of interest, including the case of stride greater than 1,
+do not have this property.
+Recall that convolution is a linear operation and can thus be described as a
+matrix multiplication (if we ﬁrst reshape the input tensor into a ﬂat vector). The
+matrix involved is a function of the convolution kernel. The matrix is sparse and
+each element of the kernel is copied to several elements of the matrix. This view
+helps us to derive some of the other operations needed to implement a convolutional
+network.
+Multiplication by the transpose of the matrix deﬁned by convolution is one
+such operation. This is the operation needed to back-propagate error derivatives
+through a convolutional layer, so it is needed to train convolutional networks
+that have more than one hidden layer. This same operation is also needed if we
+wish to reconstruct the visible units from the hidden units (Simard et al., 1992).
+Reconstructing the visible units is an operation commonly used in the models
+described in part III of this book, such as autoencoders, RBMs, and sparse coding.
+Transpose convolution is necessary to construct convolutional versions of those
+models. Like the kernel gradient operation, this input gradient operation can be
+356
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+implemented using a convolution in some cases, but in the general case requires
+a third operation to be implemented. Care must be taken to coordinate this
+transpose operation with the forward propagation. The size of the output that the
+transpose operation should return depends on the zero padding policy and stride of
+the forward propagation operation, as well as the size of the forward propagation’s
+output map. In some cases, multiple sizes of input to forward propagation can
+result in the same size of output map, so the transpose operation must be explicitly
+told what the size of the original input was.
+These three operations—convolution, backprop from output to weights, and
+backprop from output to inputs—are suﬃcient to compute all of the gradients
+needed to train any depth of feedforward convolutional network, as well as to train
+convolutional networks with reconstruction functions based on the transpose of
+convolution. See Goodfellow (2010) for a full derivation of the equations in the
+fully general multi-dimensional, multi-example case. To give a sense of how these
+equations work, we present the two dimensional, single example version here.
+Suppose we want to train a convolutional network that incorporates strided
+convolution of kernel stack K applied to multi-channel image V with stride s as
+deﬁned by c(K, V , s) as in equation 9.8. Suppose we want to minimize some loss
+function J (V, K ). During forward propagation, we will need to use c itself to
+output Z, which is then propagated through the rest of the network and used to
+compute the cost function J . During back-propagation, we will receive a tensor G
+such that G i,j,k = ∂Z∂i,j,k J (V , K).
+To train the network, we need to compute the derivatives with respect to the
+weights in the kernel. To do so, we can use a function
+
+∂
+Gi,m,n V j,(m−1)×s+k,(n−1)×s+l.
+g (G, V , s)i,j,k,l =
+J (V , K) =
+(9.11)
+∂Ki,j,k,l
+m,n
+If this layer is not the bottom layer of the network, we will need to compute
+the gradient with respect to V in order to back-propagate the error farther down.
+To do so, we can use a function
+h(K, G, s) i,j,k =
+=
+
+∂
+J (V , K)
+∂Vi,j,k
+
+
+(9.12)
+
+
+
+
+Kq,i,m,p G q,l,n.
+
+(9.13)
+
+n,p
+q
+l,m
+s.t.
+s.t.
+(l−1)×s+m=j (n−1)×s+p=k
+
+Autoencoder networks, described in chapter 14, are feedforward networks
+trained to copy their input to their output. A simple example is the PCA algorithm,
+357
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+that copies its input x to an approximate reconstruction r using the function
+W W x. It is common for more general autoencoders to use multiplication
+by the transpose of the weight matrix just as PCA does. To make such models
+convolutional, we can use the function h to perform the transpose of the convolution
+operation. Suppose we have hidden units H in the same format as Z and we deﬁne
+a reconstruction
+R = h(K, H, s).
+(9.14)
+In order to train the autoencoder, we will receive the gradient with respect
+to R as a tensor E. To train the decoder, we need to obtain the gradient with
+respect to K. This is given by g(H, E, s). To train the encoder, we need to obtain
+the gradient with respect to H. This is given by c(K, E, s). It is also possible to
+diﬀerentiate through g using c and h, but these operations are not needed for the
+back-propagation algorithm on any standard network architectures.
+Generally, we do not use only a linear operation in order to transform from
+the inputs to the outputs in a convolutional layer. We generally also add some
+bias term to each output before applying the nonlinearity. This raises the question
+of how to share parameters among the biases. For locally connected layers it is
+natural to give each unit its own bias, and for tiled convolution, it is natural to
+share the biases with the same tiling pattern as the kernels. For convolutional
+layers, it is typical to have one bias per channel of the output and share it across
+all locations within each convolution map. However, if the input is of known, ﬁxed
+size, it is also possible to learn a separate bias at each location of the output map.
+Separating the biases may slightly reduce the statistical eﬃciency of the model, but
+also allows the model to correct for diﬀerences in the image statistics at diﬀerent
+locations. For example, when using implicit zero padding, detector units at the
+edge of the image receive less total input and may need larger biases.
+
+9.6
+
+Structured Outputs
+
+Convolutional networks can be used to output a high-dimensional, structured
+object, rather than just predicting a class label for a classiﬁcation task or a real
+value for a regression task. Typically this object is just a tensor, emitted by a
+standard convolutional layer. For example, the model might emit a tensor S, where
+Si,j,k is the probability that pixel (j, k) of the input to the network belongs to class
+i. This allows the model to label every pixel in an image and draw precise masks
+that follow the outlines of individual objects.
+One issue that often comes up is that the output plane can be smaller than the
+358
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Ŷ
+
+(1)
+
+V
+
+Ŷ
+W
+
+V
+
+H(1)
+U
+
+(2)
+
+W
+
+H(2)
+U
+
+Ŷ
+
+(3)
+
+V
+
+H(3)
+
+U
+
+X
+
+Figure 9.17: An example of a recurrent convolutional network for pixel labeling. The
+input is an image tensor X, with axes corresponding to image rows, image columns, and
+channels (red, green, blue). The goal is to output a tensor of labels Ŷ , with a probability
+distribution over labels for each pixel. This tensor has axes corresponding to image rows,
+image columns, and the diﬀerent classes. Rather than outputting Yˆ in a single shot, the
+recurrent network iteratively reﬁnes its estimate Ŷ by using a previous estimate of Ŷ
+as input for creating a new estimate. The same parameters are used for each updated
+estimate, and the estimate can be reﬁned as many times as we wish. The tensor of
+convolution kernels U is used on each step to compute the hidden representation given the
+input image. The kernel tensor V is used to produce an estimate of the labels given the
+hidden values. On all but the ﬁrst step, the kernels W are convolved over Ŷ to provide
+input to the hidden layer. On the ﬁrst time step, this term is replaced by zero. Because
+the same parameters are used on each step, this is an example of a recurrent network, as
+described in chapter 10.
+
+input plane, as shown in ﬁgure 9.13. In the kinds of architectures typically used for
+classiﬁcation of a single object in an image, the greatest reduction in the spatial
+dimensions of the network comes from using pooling layers with large stride. In
+order to produce an output map of similar size as the input, one can avoid pooling
+altogether (Jain et al., 2007). Another strategy is to simply emit a lower-resolution
+grid of labels (Pinheiro and Collobert, 2014, 2015). Finally, in principle, one could
+use a pooling operator with unit stride.
+One strategy for pixel-wise labeling of images is to produce an initial guess
+of the image labels, then reﬁne this initial guess using the interactions between
+neighboring pixels. Repeating this reﬁnement step several times corresponds to
+using the same convolutions at each stage, sharing weights between the last layers of
+the deep net (Jain et al., 2007). This makes the sequence of computations performed
+by the successive convolutional layers with weights shared across layers a particular
+kind of recurrent network (Pinheiro and Collobert, 2014, 2015). Figure 9.17 shows
+the architecture of such a recurrent convolutional network.
+359
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Once a prediction for each pixel is made, various methods can be used to
+further process these predictions in order to obtain a segmentation of the image
+into regions (Briggman et al., 2009; Turaga et al., 2010; Farabet et al., 2013).
+The general idea is to assume that large groups of contiguous pixels tend to be
+associated with the same label. Graphical models can describe the probabilistic
+relationships between neighboring pixels. Alternatively, the convolutional network
+can be trained to maximize an approximation of the graphical model training
+objective (Ning et al., 2005; Thompson et al., 2014).
+
+9.7
+
+Data Types
+
+The data used with a convolutional network usually consists of several channels,
+each channel being the observation of a diﬀerent quantity at some point in space
+or time. See table 9.1 for examples of data types with diﬀerent dimensionalities
+and number of channels.
+For an example of convolutional networks applied to video, see Chen et al.
+(2010).
+So far we have discussed only the case where every example in the train and test
+data has the same spatial dimensions. One advantage to convolutional networks
+is that they can also process inputs with varying spatial extents. These kinds of
+input simply cannot be represented by traditional, matrix multiplication-based
+neural networks. This provides a compelling reason to use convolutional networks
+even when computational cost and overﬁtting are not signiﬁcant issues.
+For example, consider a collection of images, where each image has a diﬀerent
+width and height. It is unclear how to model such inputs with a weight matrix of
+ﬁxed size. Convolution is straightforward to apply; the kernel is simply applied a
+diﬀerent number of times depending on the size of the input, and the output of the
+convolution operation scales accordingly. Convolution may be viewed as matrix
+multiplication; the same convolution kernel induces a diﬀerent size of doubly block
+circulant matrix for each size of input. Sometimes the output of the network is
+allowed to have variable size as well as the input, for example if we want to assign
+a class label to each pixel of the input. In this case, no further design work is
+necessary. In other cases, the network must produce some ﬁxed-size output, for
+example if we want to assign a single class label to the entire image. In this case
+we must make some additional design steps, like inserting a pooling layer whose
+pooling regions scale in size proportional to the size of the input, in order to
+maintain a ﬁxed number of pooled outputs. Some examples of this kind of strategy
+are shown in ﬁgure 9.11.
+360
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+1-D
+
+2-D
+
+3-D
+
+Single channel
+Audio waveform: The axis we
+convolve over corresponds to
+time. We discretize time and
+measure the amplitude of the
+waveform once per time step.
+
+Audio data that has been preprocessed with a Fourier transform:
+We can transform the audio waveform into a 2D tensor with different rows corresponding to different frequencies and diﬀerent
+columns corresponding to diﬀerent points in time. Using convolution in the time makes the model
+equivariant to shifts in time. Using convolution across the frequency axis makes the model
+equivariant to frequency, so that
+the same melody played in a different octave produces the same
+representation but at a diﬀerent
+height in the network’s output.
+Volumetric data: A common
+source of this kind of data is medical imaging technology, such as
+CT scans.
+
+Multi-channel
+Skeleton animation data: Animations of 3-D computer-rendered
+characters are generated by altering the pose of a “skeleton” over
+time. At each point in time, the
+pose of the character is described
+by a speciﬁcation of the angles of
+each of the joints in the character’s skeleton. Each channel in
+the data we feed to the convolutional model represents the angle
+about one axis of one joint.
+Color image data: One channel
+contains the red pixels, one the
+green pixels, and one the blue
+pixels. The convolution kernel
+moves over both the horizontal
+and vertical axes of the image,
+conferring translation equivariance in both directions.
+
+Color video data: One axis corresponds to time, one to the height
+of the video frame, and one to
+the width of the video frame.
+
+Table 9.1: Examples of diﬀerent formats of data that can be used with convolutional
+networks.
+
+361
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Note that the use of convolution for processing variable sized inputs only makes
+sense for inputs that have variable size because they contain varying amounts
+of observation of the same kind of thing—diﬀerent lengths of recordings over
+time, diﬀerent widths of observations over space, etc. Convolution does not make
+sense if the input has variable size because it can optionally include diﬀerent
+kinds of observations. For example, if we are processing college applications, and
+our features consist of both grades and standardized test scores, but not every
+applicant took the standardized test, then it does not make sense to convolve the
+same weights over both the features corresponding to the grades and the features
+corresponding to the test scores.
+
+9.8
+
+Eﬃcient Convolution Algorithms
+
+Modern convolutional network applications often involve networks containing more
+than one million units. Powerful implementations exploiting parallel computation
+resources, as discussed in section 12.1, are essential. However, in many cases it
+is also possible to speed up convolution by selecting an appropriate convolution
+algorithm.
+Convolution is equivalent to converting both the input and the kernel to the
+frequency domain using a Fourier transform, performing point-wise multiplication
+of the two signals, and converting back to the time domain using an inverse
+Fourier transform. For some problem sizes, this can be faster than the naive
+implementation of discrete convolution.
+When a d-dimensional kernel can be expressed as the outer product of d
+vectors, one vector per dimension, the kernel is called separable. When the
+kernel is separable, naive convolution is ineﬃcient. It is equivalent to compose d
+one-dimensional convolutions with each of these vectors. The composed approach
+is signiﬁcantly faster than performing one d-dimensional convolution with their
+outer product. The kernel also takes fewer parameters to represent as vectors.
+If the kernel is w elements wide in each dimension, then naive multidimensional
+convolution requires O (wd ) runtime and parameter storage space, while separable
+convolution requires O(w × d) runtime and parameter storage space. Of course,
+not every convolution can be represented in this way.
+Devising faster ways of performing convolution or approximate convolution
+without harming the accuracy of the model is an active area of research. Even techniques that improve the eﬃciency of only forward propagation are useful because
+in the commercial setting, it is typical to devote more resources to deployment of
+a network than to its training.
+362
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+9.9
+
+Random or Unsupervised Features
+
+Typically, the most expensive part of convolutional network training is learning the
+features. The output layer is usually relatively inexpensive due to the small number
+of features provided as input to this layer after passing through several layers of
+pooling. When performing supervised training with gradient descent, every gradient
+step requires a complete run of forward propagation and backward propagation
+through the entire network. One way to reduce the cost of convolutional network
+training is to use features that are not trained in a supervised fashion.
+There are three basic strategies for obtaining convolution kernels without
+supervised training. One is to simply initialize them randomly. Another is to
+design them by hand, for example by setting each kernel to detect edges at a
+certain orientation or scale. Finally, one can learn the kernels with an unsupervised
+criterion. For example, Coates et al. (2011) apply k-means clustering to small
+image patches, then use each learned centroid as a convolution kernel. Part III
+describes many more unsupervised learning approaches. Learning the features
+with an unsupervised criterion allows them to be determined separately from the
+classiﬁer layer at the top of the architecture. One can then extract the features for
+the entire training set just once, essentially constructing a new training set for the
+last layer. Learning the last layer is then typically a convex optimization problem,
+assuming the last layer is something like logistic regression or an SVM.
+Random ﬁlters often work surprisingly well in convolutional networks (Jarrett
+et al., 2009; Saxe et al., 2011; Pinto et al., 2011; Cox and Pinto, 2011). Saxe et al.
+(2011) showed that layers consisting of convolution following by pooling naturally
+become frequency selective and translation invariant when assigned random weights.
+They argue that this provides an inexpensive way to choose the architecture of
+a convolutional network: ﬁrst evaluate the performance of several convolutional
+network architectures by training only the last layer, then take the best of these
+architectures and train the entire architecture using a more expensive approach.
+An intermediate approach is to learn the features, but using methods that do
+not require full forward and back-propagation at every gradient step. As with
+multilayer perceptrons, we use greedy layer-wise pretraining, to train the ﬁrst layer
+in isolation, then extract all features from the ﬁrst layer only once, then train the
+second layer in isolation given those features, and so on. Chapter 8 has described
+how to perform supervised greedy layer-wise pretraining, and part III extends this
+to greedy layer-wise pretraining using an unsupervised criterion at each layer. The
+canonical example of greedy layer-wise pretraining of a convolutional model is the
+convolutional deep belief network (Lee et al., 2009). Convolutional networks oﬀer
+363
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+us the opportunity to take the pretraining strategy one step further than is possible
+with multilayer perceptrons. Instead of training an entire convolutional layer at a
+time, we can train a model of a small patch, as Coates et al. (2011) do with k-means.
+We can then use the parameters from this patch-based model to deﬁne the kernels
+of a convolutional layer. This means that it is possible to use unsupervised learning
+to train a convolutional network without ever using convolution during the training
+process. Using this approach, we can train very large models and incur a high
+computational cost only at inference time (Ranzato et al., 2007b; Jarrett et al.,
+2009; Kavukcuoglu et al., 2010; Coates et al., 2013). This approach was popular
+from roughly 2007–2013, when labeled datasets were small and computational
+power was more limited. Today, most convolutional networks are trained in a
+purely supervised fashion, using full forward and back-propagation through the
+entire network on each training iteration.
+As with other approaches to unsupervised pretraining, it remains diﬃcult to
+tease apart the cause of some of the beneﬁts seen with this approach. Unsupervised
+pretraining may oﬀer some regularization relative to supervised training, or it may
+simply allow us to train much larger architectures due to the reduced computational
+cost of the learning rule.
+
+9.10
+
+The Neuroscientiﬁc Basis for Convolutional Networks
+
+Convolutional networks are perhaps the greatest success story of biologically
+inspired artiﬁcial intelligence. Though convolutional networks have been guided
+by many other ﬁelds, some of the key design principles of neural networks were
+drawn from neuroscience.
+The history of convolutional networks begins with neuroscientiﬁc experiments
+long before the relevant computational models were developed. Neurophysiologists
+David Hubel and Torsten Wiesel collaborated for several years to determine many
+of the most basic facts about how the mammalian vision system works (Hubel and
+Wiesel, 1959, 1962, 1968). Their accomplishments were eventually recognized with
+a Nobel prize. Their ﬁndings that have had the greatest inﬂuence on contemporary
+deep learning models were based on recording the activity of individual neurons in
+cats. They observed how neurons in the cat’s brain responded to images projected
+in precise locations on a screen in front of the cat. Their great discovery was
+that neurons in the early visual system responded most strongly to very speciﬁc
+patterns of light, such as precisely oriented bars, but responded hardly at all to
+other patterns.
+364
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Their work helped to characterize many aspects of brain function that are
+beyond the scope of this book. From the point of view of deep learning, we can
+focus on a simpliﬁed, cartoon view of brain function.
+In this simpliﬁed view, we focus on a part of the brain called V1, also known
+as the primary visual cortex. V1 is the ﬁrst area of the brain that begins to
+perform signiﬁcantly advanced processing of visual input. In this cartoon view,
+images are formed by light arriving in the eye and stimulating the retina, the
+light-sensitive tissue in the back of the eye. The neurons in the retina perform
+some simple preprocessing of the image but do not substantially alter the way it is
+represented. The image then passes through the optic nerve and a brain region
+called the lateral geniculate nucleus. The main role, as far as we are concerned
+here, of both of these anatomical regions is primarily just to carry the signal from
+the eye to V1, which is located at the back of the head.
+A convolutional network layer is designed to capture three properties of V1:
+1. V1 is arranged in a spatial map. It actually has a two-dimensional structure
+mirroring the structure of the image in the retina. For example, light
+arriving at the lower half of the retina aﬀects only the corresponding half of
+V1. Convolutional networks capture this property by having their features
+deﬁned in terms of two dimensional maps.
+2. V1 contains many simple cells. A simple cell’s activity can to some extent
+be characterized by a linear function of the image in a small, spatially
+localized receptive ﬁeld. The detector units of a convolutional network are
+designed to emulate these properties of simple cells.
+3. V1 also contains many complex cells. These cells respond to features that
+are similar to those detected by simple cells, but complex cells are invariant
+to small shifts in the position of the feature. This inspires the pooling units
+of convolutional networks. Complex cells are also invariant to some changes
+in lighting that cannot be captured simply by pooling over spatial locations.
+These invariances have inspired some of the cross-channel pooling strategies
+in convolutional networks, such as maxout units (Goodfellow et al., 2013a).
+Though we know the most about V1, it is generally believed that the same
+basic principles apply to other areas of the visual system. In our cartoon view of
+the visual system, the basic strategy of detection followed by pooling is repeatedly
+applied as we move deeper into the brain. As we pass through multiple anatomical
+layers of the brain, we eventually ﬁnd cells that respond to some speciﬁc concept
+and are invariant to many transformations of the input. These cells have been
+365
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+nicknamed “grandmother cells”—the idea is that a person could have a neuron that
+activates when seeing an image of their grandmother, regardless of whether she
+appears in the left or right side of the image, whether the image is a close-up of
+her face or zoomed out shot of her entire body, whether she is brightly lit, or in
+shadow, etc.
+These grandmother cells have been shown to actually exist in the human brain,
+in a region called the medial temporal lobe (Quiroga et al., 2005). Researchers
+tested whether individual neurons would respond to photos of famous individuals.
+They found what has come to be called the “Halle Berry neuron”: an individual
+neuron that is activated by the concept of Halle Berry. This neuron ﬁres when a
+person sees a photo of Halle Berry, a drawing of Halle Berry, or even text containing
+the words “Halle Berry.” Of course, this has nothing to do with Halle Berry herself;
+other neurons responded to the presence of Bill Clinton, Jennifer Aniston, etc.
+These medial temporal lobe neurons are somewhat more general than modern
+convolutional networks, which would not automatically generalize to identifying
+a person or object when reading its name. The closest analog to a convolutional
+network’s last layer of features is a brain area called the inferotemporal cortex
+(IT). When viewing an object, information ﬂows from the retina, through the
+LGN, to V1, then onward to V2, then V4, then IT. This happens within the ﬁrst
+100ms of glimpsing an object. If a person is allowed to continue looking at the
+object for more time, then information will begin to ﬂow backwards as the brain
+uses top-down feedback to update the activations in the lower level brain areas.
+However, if we interrupt the person’s gaze, and observe only the ﬁring rates that
+result from the ﬁrst 100ms of mostly feedforward activation, then IT proves to be
+very similar to a convolutional network. Convolutional networks can predict IT
+ﬁring rates, and also perform very similarly to (time limited) humans on object
+recognition tasks (DiCarlo, 2013).
+That being said, there are many diﬀerences between convolutional networks
+and the mammalian vision system. Some of these diﬀerences are well known
+to computational neuroscientists, but outside the scope of this book. Some of
+these diﬀerences are not yet known, because many basic questions about how the
+mammalian vision system works remain unanswered. As a brief list:
+• The human eye is mostly very low resolution, except for a tiny patch called the
+fovea. The fovea only observes an area about the size of a thumbnail held at
+arms length. Though we feel as if we can see an entire scene in high resolution,
+this is an illusion created by the subconscious part of our brain, as it stitches
+together several glimpses of small areas. Most convolutional networks actually
+receive large full resolution photographs as input. The human brain makes
+366
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+several eye movements called saccades to glimpse the most visually salient
+or task-relevant parts of a scene. Incorporating similar attention mechanisms
+into deep learning models is an active research direction. In the context of
+deep learning, attention mechanisms have been most successful for natural
+language processing, as described in section 12.4.5.1. Several visual models
+with foveation mechanisms have been developed but so far have not become
+the dominant approach (Larochelle and Hinton, 2010; Denil et al., 2012).
+• The human visual system is integrated with many other senses, such as
+hearing, and factors like our moods and thoughts. Convolutional networks
+so far are purely visual.
+• The human visual system does much more than just recognize objects. It is
+able to understand entire scenes including many objects and relationships
+between objects, and processes rich 3-D geometric information needed for
+our bodies to interface with the world. Convolutional networks have been
+applied to some of these problems but these applications are in their infancy.
+• Even simple brain areas like V1 are heavily impacted by feedback from higher
+levels. Feedback has been explored extensively in neural network models but
+has not yet been shown to oﬀer a compelling improvement.
+• While feedforward IT ﬁring rates capture much of the same information as
+convolutional network features, it is not clear how similar the intermediate
+computations are. The brain probably uses very diﬀerent activation and
+pooling functions. An individual neuron’s activation probably is not wellcharacterized by a single linear ﬁlter response. A recent model of V1 involves
+multiple quadratic ﬁlters for each neuron (Rust et al., 2005). Indeed our
+cartoon picture of “simple cells” and “complex cells” might create a nonexistent distinction; simple cells and complex cells might both be the same
+kind of cell but with their “parameters” enabling a continuum of behaviors
+ranging from what we call “simple” to what we call “complex.”
+It is also worth mentioning that neuroscience has told us relatively little
+about how to train convolutional networks. Model structures with parameter
+sharing across multiple spatial locations date back to early connectionist models
+of vision (Marr and Poggio, 1976), but these models did not use the modern
+back-propagation algorithm and gradient descent. For example, the Neocognitron
+(Fukushima, 1980) incorporated most of the model architecture design elements of
+the modern convolutional network but relied on a layer-wise unsupervised clustering
+algorithm.
+367
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Lang and Hinton (1988) introduced the use of back-propagation to train
+time-delay neural networks (TDNNs). To use contemporary terminology,
+TDNNs are one-dimensional convolutional networks applied to time series. Backpropagation applied to these models was not inspired by any neuroscientiﬁc observation and is considered by some to be biologically implausible. Following the success
+of back-propagation-based training of TDNNs, (LeCun et al., 1989) developed
+the modern convolutional network by applying the same training algorithm to 2-D
+convolution applied to images.
+So far we have described how simple cells are roughly linear and selective for
+certain features, complex cells are more nonlinear and become invariant to some
+transformations of these simple cell features, and stacks of layers that alternate
+between selectivity and invariance can yield grandmother cells for very speciﬁc
+phenomena. We have not yet described precisely what these individual cells detect.
+In a deep, nonlinear network, it can be diﬃcult to understand the function of
+individual cells. Simple cells in the ﬁrst layer are easier to analyze, because their
+responses are driven by a linear function. In an artiﬁcial neural network, we can
+just display an image of the convolution kernel to see what the corresponding
+channel of a convolutional layer responds to. In a biological neural network, we
+do not have access to the weights themselves. Instead, we put an electrode in the
+neuron itself, display several samples of white noise images in front of the animal’s
+retina, and record how each of these samples causes the neuron to activate. We can
+then ﬁt a linear model to these responses in order to obtain an approximation of
+the neuron’s weights. This approach is known as reverse correlation (Ringach
+and Shapley, 2004).
+Reverse correlation shows us that most V1 cells have weights that are described
+by Gabor functions. The Gabor function describes the weight at a 2-D point
+in the image. We can think of an image as being a function of 2-D coordinates,
+I(x, y). Likewise, we can think of a simple cell as sampling the image at a set of
+locations, deﬁned by a set of x coordinates X and a set of y coordinates, Y, and
+applying weights that are also a function of the location, w(x, y). From this point
+of view, the response of a simple cell to an image is given by
+
+s(I ) =
+w (x, y )I (x, y ).
+(9.15)
+x∈X y∈Y
+
+Speciﬁcally, w (x, y ) takes the form of a Gabor function:
+
+
+w (x, y ; α, βx , βy , f, φ, x 0, y 0, τ ) = α exp −βxx 2 − β y y2 cos(fx + φ),
+
+(9.16)
+
+where
+
+x = (x − x0 ) cos(τ ) + (y − y0) sin(τ )
+368
+
+(9.17)
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+and
+y = −(x − x 0 ) sin(τ ) + (y − y0) cos(τ ).
+
+(9.18)
+
+Here, α, βx, βy , f, φ, x 0 , y0, and τ are parameters that control the properties
+of the Gabor function. Figure 9.18 shows some examples of Gabor functions with
+diﬀerent settings of these parameters.
+The parameters x0, y0 , and τ deﬁne a coordinate system. We translate and
+rotate x and y to form x and y. Speciﬁcally, the simple cell will respond to image
+features centered at the point (x0 , y 0), and it will respond to changes in brightness
+as we move along a line rotated τ radians from the horizontal.
+Viewed as a function of x and y , the function w then responds to changes in
+brightness as we move along the x axis. It has two important factors: one is a
+Gaussian function and the other is a cosine function.
+
+
+The Gaussian factor α exp −βx x2 − βyy 2 can be seen as a gating term that
+ensures the simple cell will only respond to values near where x  and y are both
+zero, in other words, near the center of the cell’s receptive ﬁeld. The scaling factor
+α adjusts the total magnitude of the simple cell’s response, while β x and β y control
+how quickly its receptive ﬁeld falls oﬀ.
+The cosine factor cos(fx + φ) controls how the simple cell responds to changing
+brightness along the x axis. The parameter f controls the frequency of the cosine
+and φ controls its phase oﬀset.
+Altogether, this cartoon view of simple cells means that a simple cell responds
+to a speciﬁc spatial frequency of brightness in a speciﬁc direction at a speciﬁc
+location. Simple cells are most excited when the wave of brightness in the image
+has the same phase as the weights. This occurs when the image is bright where the
+weights are positive and dark where the weights are negative. Simple cells are most
+inhibited when the wave of brightness is fully out of phase with the weights—when
+the image is dark where the weights are positive and bright where the weights are
+negative.
+2
+The cartoon view of a complex cell is that it computes
+the L norm of the
+2-D vector containing two simple cells’ responses: c( I) = s0(I )2 + s1 (I )2 . An
+important special case occurs when s1 has all of the same parameters as s 0 except
+for φ, and φ is set such that s1 is one quarter cycle out of phase with s0. In this
+case, s 0 and s1 form a quadrature pair. A complex cell deﬁned in this way
+responds when the Gaussian reweighted image I(x, y) exp (−βx x2 − βyy 2) contains
+a high amplitude sinusoidal wave with frequency f in direction τ near (x 0 , y0),
+regardless of the phase oﬀset of this wave. In other words, the complex cell is
+invariant to small translations of the image in direction τ , or to negating the image
+
+369
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Figure 9.18: Gabor functions with a variety of parameter settings. White indicates
+large positive weight, black indicates large negative weight, and the background gray
+corresponds to zero weight. (Left)Gabor functions with diﬀerent values of the parameters
+that control the coordinate system: x 0, y 0, and τ . Each Gabor function in this grid is
+assigned a value of x0 and y 0 proportional to its position in its grid, and τ is chosen so
+that each Gabor ﬁlter is sensitive to the direction radiating out from the center of the grid.
+For the other two plots, x 0 , y 0, and τ are ﬁxed to zero. (Center)Gabor functions with
+diﬀerent Gaussian scale parameters βx and βy . Gabor functions are arranged in increasing
+width (decreasing βx ) as we move left to right through the grid, and increasing height
+(decreasing βy ) as we move top to bottom. For the other two plots, the β values are ﬁxed
+to 1.5× the image width. (Right)Gabor functions with diﬀerent sinusoid parameters f
+and φ. As we move top to bottom, f increases, and as we move left to right, φ increases.
+For the other two plots, φ is ﬁxed to 0 and f is ﬁxed to 5× the image width.
+
+(replacing black with white and vice versa).
+Some of the most striking correspondences between neuroscience and machine
+learning come from visually comparing the features learned by machine learning
+models with those employed by V1. Olshausen and Field (1996) showed that
+a simple unsupervised learning algorithm, sparse coding, learns features with
+receptive ﬁelds similar to those of simple cells. Since then, we have found that
+an extremely wide variety of statistical learning algorithms learn features with
+Gabor-like functions when applied to natural images. This includes most deep
+learning algorithms, which learn these features in their ﬁrst layer. Figure 9.19
+shows some examples. Because so many diﬀerent learning algorithms learn edge
+detectors, it is diﬃcult to conclude that any speciﬁc learning algorithm is the
+“right” model of the brain just based on the features that it learns (though it can
+certainly be a bad sign if an algorithm does not learn some sort of edge detector
+when applied to natural images). These features are an important part of the
+statistical structure of natural images and can be recovered by many diﬀerent
+approaches to statistical modeling. See Hyvärinen et al. (2009) for a review of the
+ﬁeld of natural image statistics.
+
+370
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+Figure 9.19: Many machine learning algorithms learn features that detect edges or speciﬁc
+colors of edges when applied to natural images. These feature detectors are reminiscent of
+the Gabor functions known to be present in primary visual cortex. (Left)Weights learned
+by an unsupervised learning algorithm (spike and slab sparse coding) applied to small
+image patches. (Right)Convolution kernels learned by the ﬁrst layer of a fully supervised
+convolutional maxout network. Neighboring pairs of ﬁlters drive the same maxout unit.
+
+9.11
+
+Convolutional Networks and the History of Deep
+Learning
+
+Convolutional networks have played an important role in the history of deep
+learning. They are a key example of a successful application of insights obtained
+by studying the brain to machine learning applications. They were also some of
+the ﬁrst deep models to perform well, long before arbitrary deep models were
+considered viable. Convolutional networks were also some of the ﬁrst neural
+networks to solve important commercial applications and remain at the forefront
+of commercial applications of deep learning today. For example, in the 1990s, the
+neural network research group at AT&T developed a convolutional network for
+reading checks (LeCun et al., 1998b). By the end of the 1990s, this system deployed
+by NEC was reading over 10% of all the checks in the US. Later, several OCR
+and handwriting recognition systems based on convolutional nets were deployed by
+Microsoft (Simard et al., 2003). See chapter 12 for more details on such applications
+and more modern applications of convolutional networks. See LeCun et al. (2010)
+for a more in-depth history of convolutional networks up to 2010.
+Convolutional networks were also used to win many contests. The current
+intensity of commercial interest in deep learning began when Krizhevsky et al.
+(2012) won the ImageNet object recognition challenge, but convolutional networks
+371
+
+CHAPTER 9. CONVOLUTIONAL NETWORKS
+
+had been used to win other machine learning and computer vision contests with
+less impact for years earlier.
+Convolutional nets were some of the ﬁrst working deep networks trained with
+back-propagation. It is not entirely clear why convolutional networks succeeded
+when general back-propagation networks were considered to have failed. It may
+simply be that convolutional networks were more computationally eﬃcient than
+fully connected networks, so it was easier to run multiple experiments with them
+and tune their implementation and hyperparameters. Larger networks also seem
+to be easier to train. With modern hardware, large fully connected networks
+appear to perform reasonably on many tasks, even when using datasets that were
+available and activation functions that were popular during the times when fully
+connected networks were believed not to work well. It may be that the primary
+barriers to the success of neural networks were psychological (practitioners did
+not expect neural networks to work, so they did not make a serious eﬀort to use
+neural networks). Whatever the case, it is fortunate that convolutional networks
+performed well decades ago. In many ways, they carried the torch for the rest of
+deep learning and paved the way to the acceptance of neural networks in general.
+Convolutional networks provide a way to specialize neural networks to work
+with data that has a clear grid-structured topology and to scale such models to
+very large size. This approach has been the most successful on a two-dimensional,
+image topology. To process one-dimensional, sequential data, we turn next to
+another powerful specialization of the neural networks framework: recurrent neural
+networks.
+
+372
+
+

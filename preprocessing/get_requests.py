@@ -105,7 +105,7 @@ def wikimedia_request(search_term, continue_val):
       "format": "json",
       "list": "search",
       "srsearch": search_term,
-      "srlimit": 40
+      "srlimit": 400
   }
   if continue_val:
     PARAMS.update(continue_val)

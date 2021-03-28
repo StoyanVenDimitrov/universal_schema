@@ -1,0 +1,41 @@
+Part II
+
+Deep Networks: Modern
+Practices
+
+166
+
+This part of the book summarizes the state of modern deep learning as it is
+used to solve practical applications.
+Deep learning has a long history and many aspirations. Several approaches
+have been proposed that have yet to entirely bear fruit. Several ambitious goals
+have yet to be realized. These less-developed branches of deep learning appear in
+the ﬁnal part of the book.
+This part focuses only on those approaches that are essentially working technologies that are already used heavily in industry.
+Modern deep learning provides a very powerful framework for supervised
+learning. By adding more layers and more units within a layer, a deep network can
+represent functions of increasing complexity. Most tasks that consist of mapping an
+input vector to an output vector, and that are easy for a person to do rapidly, can
+be accomplished via deep learning, given suﬃciently large models and suﬃciently
+large datasets of labeled training examples. Other tasks, that can not be described
+as associating one vector to another, or that are diﬃcult enough that a person
+would require time to think and reﬂect in order to accomplish the task, remain
+beyond the scope of deep learning for now.
+This part of the book describes the core parametric function approximation
+technology that is behind nearly all modern practical applications of deep learning.
+We begin by describing the feedforward deep network model that is used to
+represent these functions. Next, we present advanced techniques for regularization
+and optimization of such models. Scaling these models to large inputs such as high
+resolution images or long temporal sequences requires specialization. We introduce
+the convolutional network for scaling to large images and the recurrent neural
+network for processing temporal sequences. Finally, we present general guidelines
+for the practical methodology involved in designing, building, and conﬁguring an
+application involving deep learning, and review some of the applications of deep
+learning.
+These chapters are the most important for a practitioner—someone who wants
+to begin implementing and using deep learning algorithms to solve real-world
+problems today.
+
+167
+
+

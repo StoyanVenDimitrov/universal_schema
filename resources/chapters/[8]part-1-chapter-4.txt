@@ -1,0 +1,895 @@
+Chapter 4
+
+Numerical Computation
+Machine learning algorithms usually require a high amount of numerical computation. This typically refers to algorithms that solve mathematical problems by
+methods that update estimates of the solution via an iterative process, rather than
+analytically deriving a formula providing a symbolic expression for the correct solution. Common operations include optimization (ﬁnding the value of an argument
+that minimizes or maximizes a function) and solving systems of linear equations.
+Even just evaluating a mathematical function on a digital computer can be diﬃcult
+when the function involves real numbers, which cannot be represented precisely
+using a ﬁnite amount of memory.
+
+4.1
+
+Overﬂow and Underﬂow
+
+The fundamental diﬃculty in performing continuous math on a digital computer
+is that we need to represent inﬁnitely many real numbers with a ﬁnite number
+of bit patterns. This means that for almost all real numbers, we incur some
+approximation error when we represent the number in the computer. In many
+cases, this is just rounding error. Rounding error is problematic, especially when
+it compounds across many operations, and can cause algorithms that work in
+theory to fail in practice if they are not designed to minimize the accumulation of
+rounding error.
+One form of rounding error that is particularly devastating is underﬂow.
+Underﬂow occurs when numbers near zero are rounded to zero. Many functions
+behave qualitatively diﬀerently when their argument is zero rather than a small
+positive number. For example, we usually want to avoid division by zero (some
+80
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+software environments will raise exceptions when this occurs, others will return a
+result with a placeholder not-a-number value) or taking the logarithm of zero (this
+is usually treated as −∞, which then becomes not-a-number if it is used for many
+further arithmetic operations).
+Another highly damaging form of numerical error is overﬂow. Overﬂow occurs
+when numbers with large magnitude are approximated as ∞ or −∞. Further
+arithmetic will usually change these inﬁnite values into not-a-number values.
+One example of a function that must be stabilized against underﬂow and
+overﬂow is the softmax function. The softmax function is often used to predict the
+probabilities associated with a multinoulli distribution. The softmax function is
+deﬁned to be
+exp(xi )
+softmax(x)i = n
+.
+(4.1)
+j=1 exp(xj )
+
+Consider what happens when all of the xi are equal to some constant c. Analytically,
+we can see that all of the outputs should be equal to 1n . Numerically, this may
+not occur when c has large magnitude. If c is very negative, then exp(c) will
+underﬂow. This means the denominator of the softmax will become 0, so the ﬁnal
+result is undeﬁned. When c is very large and positive, exp(c) will overﬂow, again
+resulting in the expression as a whole being undeﬁned. Both of these diﬃculties
+can be resolved by instead evaluating softmax(z ) where z = x − max i xi . Simple
+algebra shows that the value of the softmax function is not changed analytically by
+adding or subtracting a scalar from the input vector. Subtracting maxi xi results
+in the largest argument to exp being 0, which rules out the possibility of overﬂow.
+Likewise, at least one term in the denominator has a value of 1, which rules out
+the possibility of underﬂow in the denominator leading to a division by zero.
+There is still one small problem. Underﬂow in the numerator can still cause
+the expression as a whole to evaluate to zero. This means that if we implement
+log softmax(x) by ﬁrst running the softmax subroutine then passing the result to
+the log function, we could erroneously obtain −∞. Instead, we must implement
+a separate function that calculates log softmax in a numerically stable way. The
+log softmax function can be stabilized using the same trick as we used to stabilize
+the softmax function.
+For the most part, we do not explicitly detail all of the numerical considerations
+involved in implementing the various algorithms described in this book. Developers
+of low-level libraries should keep numerical issues in mind when implementing
+deep learning algorithms. Most readers of this book can simply rely on lowlevel libraries that provide stable implementations. In some cases, it is possible
+to implement a new algorithm and have the new implementation automatically
+81
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+stabilized. Theano (Bergstra et al., 2010; Bastien et al., 2012) is an example
+of a software package that automatically detects and stabilizes many common
+numerically unstable expressions that arise in the context of deep learning.
+
+4.2
+
+Poor Conditioning
+
+Conditioning refers to how rapidly a function changes with respect to small changes
+in its inputs. Functions that change rapidly when their inputs are perturbed slightly
+can be problematic for scientiﬁc computation because rounding errors in the inputs
+can result in large changes in the output.
+Consider the function f(x) = A−1x. When A ∈ R n×n has an eigenvalue
+decomposition, its condition number is
+ 
+ λi 
+max   .
+(4.2)
+i,j
+λj
+
+This is the ratio of the magnitude of the largest and smallest eigenvalue. When
+this number is large, matrix inversion is particularly sensitive to error in the input.
+This sensitivity is an intrinsic property of the matrix itself, not the result
+of rounding error during matrix inversion. Poorly conditioned matrices amplify
+pre-existing errors when we multiply by the true matrix inverse. In practice, the
+error will be compounded further by numerical errors in the inversion process itself.
+
+4.3
+
+Gradient-Based Optimization
+
+Most deep learning algorithms involve optimization of some sort. Optimization
+refers to the task of either minimizing or maximizing some function f(x) by altering
+x. We usually phrase most optimization problems in terms of minimizing f (x).
+Maximization may be accomplished via a minimization algorithm by minimizing
+−f (x).
+The function we want to minimize or maximize is called the objective function or criterion. When we are minimizing it, we may also call it the cost
+function, loss function, or error function. In this book, we use these terms
+interchangeably, though some machine learning publications assign special meaning
+to some of these terms.
+We often denote the value that minimizes or maximizes a function with a
+superscript ∗. For example, we might say x∗ = arg min f (x).
+82
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+2.0
+1.5
+
+Global minimum at x = 0.
+Since f  (x) = 0, gradient
+descent halts here.
+
+1.0
+0.5
+0.0
+−0.5
+
+For x < 0, we have f  (x) < 0,
+so we can decrease f by
+moving rightward.
+
+For x > 0, we have f (x) > 0,
+so we can decrease f by
+moving leftward.
+
+−1.0
+
+f (x) = 12 x2
+
+−1.5
+−2.0
+−2.0
+
+f  (x) = x
+−1.5
+
+−1.0
+
+−0.5
+
+0.0
+
+0.5
+
+1.0
+
+1.5
+
+2.0
+
+x
+
+Figure 4.1: An illustration of how the gradient descent algorithm uses the derivatives of a
+function can be used to follow the function downhill to a minimum.
+
+We assume the reader is already familiar with calculus, but provide a brief
+review of how calculus concepts relate to optimization here.
+Suppose we have a function y = f (x), where both x and y are real numbers.
+
+The derivative of this function is denoted as f (x) or as dy
+dx . The derivative f (x)
+gives the slope of f (x) at the point x. In other words, it speciﬁes how to scale
+a small change in the input in order to obtain the corresponding change in the
+output: f (x + ) ≈ f (x) + f (x).
+The derivative is therefore useful for minimizing a function because it tells
+us how to change x in order to make a small improvement in y. For example,
+we know that f (x −  sign(f  (x))) is less than f (x) for small enough . We can
+thus reduce f (x) by moving x in small steps with opposite sign of the derivative.
+This technique is called gradient descent (Cauchy, 1847). See ﬁgure 4.1 for an
+example of this technique.
+
+When f  (x) = 0, the derivative provides no information about which direction
+to move. Points where f  (x) = 0 are known as critical points or stationary
+points. A local minimum is a point where f (x) is lower than at all neighboring
+points, so it is no longer possible to decrease f(x) by making inﬁnitesimal steps.
+A local maximum is a point where f (x) is higher than at all neighboring points,
+83
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+Minimum
+
+Maximum
+
+Saddle point
+
+Figure 4.2: Examples of each of the three types of critical points in 1-D. A critical point is
+a point with zero slope. Such a point can either be a local minimum, which is lower than
+the neighboring points, a local maximum, which is higher than the neighboring points, or
+a saddle point, which has neighbors that are both higher and lower than the point itself.
+
+so it is not possible to increase f (x) by making inﬁnitesimal steps. Some critical
+points are neither maxima nor minima. These are known as saddle points. See
+ﬁgure 4.2 for examples of each type of critical point.
+A point that obtains the absolute lowest value of f (x) is a global minimum.
+It is possible for there to be only one global minimum or multiple global minima of
+the function. It is also possible for there to be local minima that are not globally
+optimal. In the context of deep learning, we optimize functions that may have
+many local minima that are not optimal, and many saddle points surrounded by
+very ﬂat regions. All of this makes optimization very diﬃcult, especially when the
+input to the function is multidimensional. We therefore usually settle for ﬁnding a
+value of f that is very low, but not necessarily minimal in any formal sense. See
+ﬁgure 4.3 for an example.
+We often minimize functions that have multiple inputs: f : Rn → R. For the
+concept of “minimization” to make sense, there must still be only one (scalar)
+output.
+For functions with multiple inputs, we must make use of the concept of partial
+∂
+f(x) measures how f changes as only the
+derivatives. The partial derivative ∂x
+i
+variable xi increases at point x. The gradient generalizes the notion of derivative
+to the case where the derivative is with respect to a vector: the gradient of f is the
+vector containing all of the partial derivatives, denoted ∇ xf (x). Element i of the
+gradient is the partial derivative of f with respect to x i. In multiple dimensions,
+84
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+f (x)
+
+This local minimum
+performs nearly as well as
+the global one,
+so it is an acceptable
+halting point.
+Ideally, we would like
+to arrive at the global
+minimum, but this
+might not be possible.
+
+This local minimum performs
+poorly and should be avoided.
+
+x
+
+Figure 4.3: Optimization algorithms may fail to ﬁnd a global minimum when there are
+multiple local minima or plateaus present. In the context of deep learning, we generally
+accept such solutions even though they are not truly minimal, so long as they correspond
+to signiﬁcantly low values of the cost function.
+
+critical points are points where every element of the gradient is equal to zero.
+The directional derivative in direction u (a unit vector) is the slope of the
+function f in direction u. In other words, the directional derivative is the derivative
+of the function f (x + αu) with respect to α, evaluated at α = 0. Using the chain
+∂
+rule, we can see that ∂α
+f (x + αu) evaluates to u∇x f (x) when α = 0.
+To minimize f , we would like to ﬁnd the direction in which f decreases the
+fastest. We can do this using the directional derivative:
+min
+
+u,u u=1
+
+=
+
+u ∇x f (x)
+
+min ||u||2 ||∇x f (x)||2 cos θ
+
+u,u  u=1
+
+(4.3)
+(4.4)
+
+where θ is the angle between u and the gradient. Substituting in ||u||2 = 1 and
+ignoring factors that do not depend on u, this simpliﬁes to minu cos θ. This is
+minimized when u points in the opposite direction as the gradient. In other
+words, the gradient points directly uphill, and the negative gradient points directly
+downhill. We can decrease f by moving in the direction of the negative gradient.
+This is known as the method of steepest descent or gradient descent.
+Steepest descent proposes a new point
+x = x − ∇x f (x)
+85
+
+(4.5)
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+where  is the learning rate, a positive scalar determining the size of the step.
+We can choose  in several diﬀerent ways. A popular approach is to set  to a small
+constant. Sometimes, we can solve for the step size that makes the directional
+derivative vanish. Another approach is to evaluate f (x − ∇x f (x)) for several
+values of  and choose the one that results in the smallest objective function value.
+This last strategy is called a line search.
+Steepest descent converges when every element of the gradient is zero (or, in
+practice, very close to zero). In some cases, we may be able to avoid running this
+iterative algorithm, and just jump directly to the critical point by solving the
+equation ∇x f (x) = 0 for x.
+
+Although gradient descent is limited to optimization in continuous spaces, the
+general concept of repeatedly making a small move (that is approximately the best
+small move) towards better conﬁgurations can be generalized to discrete spaces.
+Ascending an objective function of discrete parameters is called hill climbing
+(Russel and Norvig, 2003).
+
+4.3.1
+
+Beyond the Gradient: Jacobian and Hessian Matrices
+
+Sometimes we need to ﬁnd all of the partial derivatives of a function whose input
+and output are both vectors. The matrix containing all such partial derivatives is
+known as a Jacobian matrix. Speciﬁcally, if we have a function f : R m → Rn ,
+∂
+then the Jacobian matrix J ∈ R n×m of f is deﬁned such that J i,j = ∂x
+f (x)i .
+j
+
+We are also sometimes interested in a derivative of a derivative. This is known
+as a second derivative. For example, for a function f : Rn → R, the derivative
+2
+with respect to xi of the derivative of f with respect to xj is denoted as ∂x∂i ∂x j f.
+2
+
+d
+
+In a single dimension, we can denote dx
+2 f by f (x). The second derivative tells
+us how the ﬁrst derivative will change as we vary the input. This is important
+because it tells us whether a gradient step will cause as much of an improvement
+as we would expect based on the gradient alone. We can think of the second
+derivative as measuring curvature. Suppose we have a quadratic function (many
+functions that arise in practice are not quadratic but can be approximated well
+as quadratic, at least locally). If such a function has a second derivative of zero,
+then there is no curvature. It is a perfectly ﬂat line, and its value can be predicted
+using only the gradient. If the gradient is 1, then we can make a step of size 
+along the negative gradient, and the cost function will decrease by . If the second
+derivative is negative, the function curves downward, so the cost function will
+actually decrease by more than . Finally, if the second derivative is positive, the
+function curves upward, so the cost function can decrease by less than . See
+
+86
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+f (x)
+
+x
+
+Positive curvature
+
+f (x)
+
+No curvature
+
+f (x)
+
+Negative curvature
+
+x
+
+x
+
+Figure 4.4: The second derivative determines the curvature of a function. Here we show
+quadratic functions with various curvature. The dashed line indicates the value of the cost
+function we would expect based on the gradient information alone as we make a gradient
+step downhill. In the case of negative curvature, the cost function actually decreases faster
+than the gradient predicts. In the case of no curvature, the gradient predicts the decrease
+correctly. In the case of positive curvature, the function decreases slower than expected
+and eventually begins to increase, so steps that are too large can actually increase the
+function inadvertently.
+
+ﬁgure 4.4 to see how diﬀerent forms of curvature aﬀect the relationship between
+the value of the cost function predicted by the gradient and the true value.
+When our function has multiple input dimensions, there are many second
+derivatives. These derivatives can be collected together into a matrix called the
+Hessian matrix. The Hessian matrix H (f )(x) is deﬁned such that
+H (f )(x)i,j
+
+∂2
+=
+f (x).
+∂xi ∂xj
+
+(4.6)
+
+Equivalently, the Hessian is the Jacobian of the gradient.
+Anywhere that the second partial derivatives are continuous, the diﬀerential
+operators are commutative, i.e. their order can be swapped:
+∂2
+∂2
+f (x) =
+f (x).
+∂xi ∂x j
+∂x j ∂xi
+
+(4.7)
+
+This implies that Hi,j = H j,i, so the Hessian matrix is symmetric at such points.
+Most of the functions we encounter in the context of deep learning have a symmetric
+Hessian almost everywhere. Because the Hessian matrix is real and symmetric,
+we can decompose it into a set of real eigenvalues and an orthogonal basis of
+87
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+eigenvectors. The second derivative in a speciﬁc direction represented by a unit
+vector d is given by d Hd. When d is an eigenvector of H , the second derivative
+in that direction is given by the corresponding eigenvalue. For other directions of
+d, the directional second derivative is a weighted average of all of the eigenvalues,
+with weights between 0 and 1, and eigenvectors that have smaller angle with d
+receiving more weight. The maximum eigenvalue determines the maximum second
+derivative and the minimum eigenvalue determines the minimum second derivative.
+The (directional) second derivative tells us how well we can expect a gradient
+descent step to perform. We can make a second-order Taylor series approximation
+to the function f (x) around the current point x (0):
+1
+f (x) ≈ f (x (0) ) + (x − x(0) ) g + (x − x(0) ) H (x − x (0)).
+2
+
+(4.8)
+
+where g is the gradient and H is the Hessian at x(0). If we use a learning rate
+of , then the new point x will be given by x (0) − g. Substituting this into our
+approximation, we obtain
+f (x(0) − g) ≈ f (x(0) ) − g g +
+
+1 2 
+ g Hg.
+2
+
+(4.9)
+
+There are three terms here: the original value of the function, the expected
+improvement due to the slope of the function, and the correction we must apply
+to account for the curvature of the function. When this last term is too large, the
+gradient descent step can actually move uphill. When gHg is zero or negative,
+the Taylor series approximation predicts that increasing  forever will decrease f
+forever. In practice, the Taylor series is unlikely to remain accurate for large , so
+one must resort to more heuristic choices of  in this case. When gHg is positive,
+solving for the optimal step size that decreases the Taylor series approximation of
+the function the most yields
+g g
+∗
+ = 
+.
+(4.10)
+g Hg
+In the worst case, when g aligns with the eigenvector of H corresponding to the
+1
+maximal eigenvalue λ max , then this optimal step size is given by λ max
+. To the
+extent that the function we minimize can be approximated well by a quadratic
+function, the eigenvalues of the Hessian thus determine the scale of the learning
+rate.
+The second derivative can be used to determine whether a critical point is
+a local maximum, a local minimum, or saddle point. Recall that on a critical
+point, f  (x) = 0. When the second derivative f (x) > 0, the ﬁrst derivative f  (x)
+increases as we move to the right and decreases as we move to the left. This means
+88
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+f (x − ) < 0 and f  (x + ) > 0 for small enough . In other words, as we move
+right, the slope begins to point uphill to the right, and as we move left, the slope
+begins to point uphill to the left. Thus, when f (x) = 0 and f  (x) > 0, we can
+conclude that x is a local minimum. Similarly, when f (x) = 0 and f  (x) < 0, we
+can conclude that x is a local maximum. This is known as the second derivative
+test. Unfortunately, when f  (x) = 0, the test is inconclusive. In this case x may
+be a saddle point, or a part of a ﬂat region.
+In multiple dimensions, we need to examine all of the second derivatives of the
+function. Using the eigendecomposition of the Hessian matrix, we can generalize
+the second derivative test to multiple dimensions. At a critical point, where
+∇ xf (x) = 0, we can examine the eigenvalues of the Hessian to determine whether
+the critical point is a local maximum, local minimum, or saddle point. When the
+Hessian is positive deﬁnite (all its eigenvalues are positive), the point is a local
+minimum. This can be seen by observing that the directional second derivative
+in any direction must be positive, and making reference to the univariate second
+derivative test. Likewise, when the Hessian is negative deﬁnite (all its eigenvalues
+are negative), the point is a local maximum. In multiple dimensions, it is actually
+possible to ﬁnd positive evidence of saddle points in some cases. When at least
+one eigenvalue is positive and at least one eigenvalue is negative, we know that
+x is a local maximum on one cross section of f but a local minimum on another
+cross section. See ﬁgure 4.5 for an example. Finally, the multidimensional second
+derivative test can be inconclusive, just like the univariate version. The test is
+inconclusive whenever all of the non-zero eigenvalues have the same sign, but at
+least one eigenvalue is zero. This is because the univariate second derivative test is
+inconclusive in the cross section corresponding to the zero eigenvalue.
+In multiple dimensions, there is a diﬀerent second derivative for each direction
+at a single point. The condition number of the Hessian at this point measures
+how much the second derivatives diﬀer from each other. When the Hessian has a
+poor condition number, gradient descent performs poorly. This is because in one
+direction, the derivative increases rapidly, while in another direction, it increases
+slowly. Gradient descent is unaware of this change in the derivative so it does not
+know that it needs to explore preferentially in the direction where the derivative
+remains negative for longer. It also makes it diﬃcult to choose a good step size.
+The step size must be small enough to avoid overshooting the minimum and going
+uphill in directions with strong positive curvature. This usually means that the
+step size is too small to make signiﬁcant progress in other directions with less
+curvature. See ﬁgure 4.6 for an example.
+This issue can be resolved by using information from the Hessian matrix to guide
+89
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+
+
+  
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+Figure 4.5: A saddle point containing both positive and negative curvature. The function
+in this example is f (x) = x 21 − x22. Along the axis corresponding to x1, the function
+curves upward. This axis is an eigenvector of the Hessian and has a positive eigenvalue.
+Along the axis corresponding to x2 , the function curves downward. This direction is an
+eigenvector of the Hessian with negative eigenvalue. The name “saddle point” derives from
+the saddle-like shape of this function. This is the quintessential example of a function
+with a saddle point. In more than one dimension, it is not necessary to have an eigenvalue
+of 0 in order to get a saddle point: it is only necessary to have both positive and negative
+eigenvalues. We can think of a saddle point with both signs of eigenvalues as being a local
+maximum within one cross section and a local minimum within another cross section.
+
+90
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+20
+
+x2
+
+10
+0
+−10
+−20
+−30
+−30 −20 −10
+
+0
+x1
+
+10
+
+20
+
+Figure 4.6: Gradient descent fails to exploit the curvature information contained in the
+Hessian matrix. Here we use gradient descent to minimize a quadratic function f( x) whose
+Hessian matrix has condition number 5. This means that the direction of most curvature
+has ﬁve times more curvature than the direction of least curvature. In this case, the most
+curvature is in the direction [1, 1] and the least curvature is in the direction [1, −1] . The
+red lines indicate the path followed by gradient descent. This very elongated quadratic
+function resembles a long canyon. Gradient descent wastes time repeatedly descending
+canyon walls, because they are the steepest feature. Because the step size is somewhat
+too large, it has a tendency to overshoot the bottom of the function and thus needs to
+descend the opposite canyon wall on the next iteration. The large positive eigenvalue
+of the Hessian corresponding to the eigenvector pointed in this direction indicates that
+this directional derivative is rapidly increasing, so an optimization algorithm based on
+the Hessian could predict that the steepest direction is not actually a promising search
+direction in this context.
+
+91
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+the search. The simplest method for doing so is known as Newton’s method.
+Newton’s method is based on using a second-order Taylor series expansion to
+approximate f (x) near some point x(0) :
+1
+f (x) ≈ f (x(0) )+(x−x(0) ) ∇x f (x (0))+ (x−x(0))H (f )(x(0) )(x−x(0) ). (4.11)
+2
+If we then solve for the critical point of this function, we obtain:
+x ∗ = x(0) − H (f )(x(0) )−1 ∇ x f (x(0)).
+
+(4.12)
+
+When f is a positive deﬁnite quadratic function, Newton’s method consists of
+applying equation 4.12 once to jump to the minimum of the function directly.
+When f is not truly quadratic but can be locally approximated as a positive
+deﬁnite quadratic, Newton’s method consists of applying equation 4.12 multiple
+times. Iteratively updating the approximation and jumping to the minimum of
+the approximation can reach the critical point much faster than gradient descent
+would. This is a useful property near a local minimum, but it can be a harmful
+property near a saddle point. As discussed in section 8.2.3, Newton’s method is
+only appropriate when the nearby critical point is a minimum (all the eigenvalues
+of the Hessian are positive), whereas gradient descent is not attracted to saddle
+points unless the gradient points toward them.
+Optimization algorithms that use only the gradient, such as gradient descent,
+are called ﬁrst-order optimization algorithms. Optimization algorithms that
+also use the Hessian matrix, such as Newton’s method, are called second-order
+optimization algorithms (Nocedal and Wright, 2006).
+The optimization algorithms employed in most contexts in this book are
+applicable to a wide variety of functions, but come with almost no guarantees.
+Deep learning algorithms tend to lack guarantees because the family of functions
+used in deep learning is quite complicated. In many other ﬁelds, the dominant
+approach to optimization is to design optimization algorithms for a limited family
+of functions.
+In the context of deep learning, we sometimes gain some guarantees by restricting ourselves to functions that are either Lipschitz continuous or have Lipschitz
+continuous derivatives. A Lipschitz continuous function is a function f whose rate
+of change is bounded by a Lipschitz constant L:
+∀x, ∀y, |f (x) − f (y)| ≤ L||x − y||2 .
+
+(4.13)
+
+This property is useful because it allows us to quantify our assumption that a
+small change in the input made by an algorithm such as gradient descent will have
+92
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+a small change in the output. Lipschitz continuity is also a fairly weak constraint,
+and many optimization problems in deep learning can be made Lipschitz continuous
+with relatively minor modiﬁcations.
+Perhaps the most successful ﬁeld of specialized optimization is convex optimization. Convex optimization algorithms are able to provide many more
+guarantees by making stronger restrictions. Convex optimization algorithms are
+applicable only to convex functions—functions for which the Hessian is positive
+semideﬁnite everywhere. Such functions are well-behaved because they lack saddle
+points and all of their local minima are necessarily global minima. However, most
+problems in deep learning are diﬃcult to express in terms of convex optimization.
+Convex optimization is used only as a subroutine of some deep learning algorithms.
+Ideas from the analysis of convex optimization algorithms can be useful for proving
+the convergence of deep learning algorithms. However, in general, the importance
+of convex optimization is greatly diminished in the context of deep learning. For
+more information about convex optimization, see Boyd and Vandenberghe (2004)
+or Rockafellar (1997).
+
+4.4
+
+Constrained Optimization
+
+Sometimes we wish not only to maximize or minimize a function f(x) over all
+possible values of x. Instead we may wish to ﬁnd the maximal or minimal
+value of f (x) for values of x in some set S. This is known as constrained
+optimization. Points x that lie within the set S are called feasible points in
+constrained optimization terminology.
+We often wish to ﬁnd a solution that is small in some sense. A common
+approach in such situations is to impose a norm constraint, such as ||x|| ≤ 1.
+
+One simple approach to constrained optimization is simply to modify gradient
+descent taking the constraint into account. If we use a small constant step size ,
+we can make gradient descent steps, then project the result back into S. If we use
+a line search, we can search only over step sizes  that yield new x points that are
+feasible, or we can project each point on the line back into the constraint region.
+When possible, this method can be made more eﬃcient by projecting the gradient
+into the tangent space of the feasible region before taking the step or beginning
+the line search (Rosen, 1960).
+A more sophisticated approach is to design a diﬀerent, unconstrained optimization problem whose solution can be converted into a solution to the original,
+constrained optimization problem. For example, if we want to minimize f(x) for
+93
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+x ∈ R2 with x constrained to have exactly unit L2 norm, we can instead minimize
+g(θ) = f ([cos θ, sin θ] ) with respect to θ , then return [cos θ, sin θ] as the solution
+to the original problem. This approach requires creativity; the transformation
+between optimization problems must be designed speciﬁcally for each case we
+encounter.
+The Karush–Kuhn–Tucker (KKT) approach1 provides a very general solution to constrained optimization. With the KKT approach, we introduce a
+new function called the generalized Lagrangian or generalized Lagrange
+function.
+To deﬁne the Lagrangian, we ﬁrst need to describe S in terms of equations
+and inequalities. We want a description of S in terms of m functions g (i) and n
+functions h (j) so that S = {x | ∀i, g(i) (x) = 0 and ∀j, h(j) (x ) ≤ 0}. The equations
+involving g(i) are called the equality constraints and the inequalities involving
+h(j) are called inequality constraints.
+We introduce new variables λi and α j for each constraint, these are called the
+KKT multipliers. The generalized Lagrangian is then deﬁned as
+
+
+L(x, λ, α) = f (x) +
+λi g(i) (x) +
+α j h (j)(x).
+(4.14)
+i
+
+j
+
+We can now solve a constrained minimization problem using unconstrained
+optimization of the generalized Lagrangian. Observe that, so long as at least one
+feasible point exists and f (x) is not permitted to have value ∞, then
+min max max L(x, λ, α).
+x
+
+α,α≥0
+
+λ
+
+(4.15)
+
+has the same optimal objective function value and set of optimal points x as
+min f (x).
+x∈S
+
+(4.16)
+
+This follows because any time the constraints are satisﬁed,
+max max L(x, λ, α) = f (x),
+λ
+
+α,α≥0
+
+(4.17)
+
+while any time a constraint is violated,
+max max L(x, λ, α) = ∞.
+λ
+
+α,α≥0
+
+1
+
+(4.18)
+
+The KKT approach generalizes the method of Lagrange multipliers which allows equality
+constraints but not inequality constraints.
+94
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+These properties guarantee that no infeasible point can be optimal, and that the
+optimum within the feasible points is unchanged.
+To perform constrained maximization, we can construct the generalized Lagrange function of −f (x), which leads to this optimization problem:
+
+
+min max max −f (x) +
+λ i g (i)(x) +
+αj h (j) (x).
+(4.19)
+x
+
+α,α≥0
+
+λ
+
+i
+
+j
+
+We may also convert this to a problem with maximization in the outer loop:
+
+
+max min min f (x) +
+λi g (i) (x) −
+αj h(j) (x).
+(4.20)
+x
+
+λ
+
+α,α≥0
+
+i
+
+j
+
+The sign of the term for the equality constraints does not matter; we may deﬁne it
+with addition or subtraction as we wish, because the optimization is free to choose
+any sign for each λ i.
+The inequality constraints are particularly interesting. We say that a constraint
+h (x ) is active if h(i) (x∗) = 0. If a constraint is not active, then the solution to
+the problem found using that constraint would remain at least a local solution if
+that constraint were removed. It is possible that an inactive constraint excludes
+other solutions. For example, a convex problem with an entire region of globally
+optimal points (a wide, ﬂat, region of equal cost) could have a subset of this
+region eliminated by constraints, or a non-convex problem could have better local
+stationary points excluded by a constraint that is inactive at convergence. However,
+the point found at convergence remains a stationary point whether or not the
+inactive constraints are included. Because an inactive h(i) has negative value, then
+the solution to min x maxλ max α,α≥0 L(x, λ, α) will have αi = 0. We can thus
+observe that at the solution, α  h(x) = 0. In other words, for all i, we know
+that at least one of the constraints αi ≥ 0 and h (i)(x) ≤ 0 must be active at the
+solution. To gain some intuition for this idea, we can say that either the solution
+is on the boundary imposed by the inequality and we must use its KKT multiplier
+to inﬂuence the solution to x, or the inequality has no inﬂuence on the solution
+and we represent this by zeroing out its KKT multiplier.
+(i)
+
+A simple set of properties describe the optimal points of constrained optimization problems. These properties are called the Karush-Kuhn-Tucker (KKT)
+conditions (Karush, 1939; Kuhn and Tucker, 1951). They are necessary conditions,
+but not always suﬃcient conditions, for a point to be optimal. The conditions are:
+• The gradient of the generalized Lagrangian is zero.
+• All constraints on both x and the KKT multipliers are satisﬁed.
+95
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+• The inequality constraints exhibit “complementary slackness”: α  h (x) = 0.
+For more information about the KKT approach, see Nocedal and Wright (2006).
+
+4.5
+
+Example: Linear Least Squares
+
+Suppose we want to ﬁnd the value of x that minimizes
+1
+f (x) = ||Ax − b|| 22.
+2
+
+(4.21)
+
+There are specialized linear algebra algorithms that can solve this problem eﬃciently.
+However, we can also explore how to solve it using gradient-based optimization as
+a simple example of how these techniques work.
+First, we need to obtain the gradient:
+∇ x f (x) = A (Ax − b) = A Ax − A b.
+
+(4.22)
+
+We can then follow this gradient downhill, taking small steps. See algorithm 4.1
+for details.
+Algorithm 4.1 An algorithm to minimize f(x) = 12 ||Ax − b||22 with respect to x
+using gradient descent, starting from an arbitrary value of x.
+Set the step size () and tolerance (δ ) to small, positive numbers.
+while ||A Ax
+− A b||2 > δ do
+ 
+x ← x −  A Ax − A  b
+end while
+One can also solve this problem using Newton’s method. In this case, because
+the true function is quadratic, the quadratic approximation employed by Newton’s
+method is exact, and the algorithm converges to the global minimum in a single
+step.
+Now suppose we wish to minimize the same function, but subject to the
+constraint x x ≤ 1. To do so, we introduce the Lagrangian
+
+
+L(x, λ) = f (x) + λ x x − 1 .
+(4.23)
+
+We can now solve the problem
+
+min max L(x, λ).
+x λ,λ≥0
+
+96
+
+(4.24)
+
+CHAPTER 4. NUMERICAL COMPUTATION
+
+The smallest-norm solution to the unconstrained least squares problem may be
+found using the Moore-Penrose pseudoinverse: x = A+ b. If this point is feasible,
+then it is the solution to the constrained problem. Otherwise, we must ﬁnd a
+solution where the constraint is active. By diﬀerentiating the Lagrangian with
+respect to x, we obtain the equation
+AAx − Ab + 2λx = 0.
+
+(4.25)
+
+This tells us that the solution will take the form
+x = (A A + 2λI ) −1A b.
+
+(4.26)
+
+The magnitude of λ must be chosen such that the result obeys the constraint. We
+can ﬁnd this value by performing gradient ascent on λ. To do so, observe
+∂
+L(x, λ) = x x − 1.
+∂λ
+
+(4.27)
+
+When the norm of x exceeds 1, this derivative is positive, so to follow the derivative
+uphill and increase the Lagrangian with respect to λ, we increase λ. Because the
+coeﬃcient on the x x penalty has increased, solving the linear equation for x will
+now yield a solution with smaller norm. The process of solving the linear equation
+and adjusting λ continues until x has the correct norm and the derivative on λ is
+0.
+This concludes the mathematical preliminaries that we use to develop machine
+learning algorithms. We are now ready to build and analyze some full-ﬂedged
+learning systems.
+
+97
+
+

@@ -5,10 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: train",
+            "name": "Python: sem. rel.",
             "type": "python",
             "request": "launch",
-            "program": "src/train.py",
+            "program": "src/sem_rel.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: know. disc.",
+            "type": "python",
+            "request": "launch",
+            "program": "src/know_disc.py",
             "console": "integratedTerminal"
         },
         {

@@ -4,3 +4,5 @@ torch==1.6.0
 torchtext==0.7.0
 pytorch-nlp
 beautifulsoup4==4.9.3
+networkx==2.5
+matplotlib==3.3.4
