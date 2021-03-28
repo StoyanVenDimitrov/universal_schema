@@ -363,10 +363,9 @@ described in chapter 7.
 6.2.1.1
 
 Learning Conditional Distributions with Maximum Likelihood
-
-Most modern neural networks are trained using maximum likelihood. This means
-that the cost function is simply the negative log-likelihood, equivalently described
-as the cross-entropy between the training data and the model distribution. This
+Most modern $neural networks$$ are trained using $$$maximum likelihood$$. This means
+that the $cost function$$ is simply the negative log-likelihood, equivalently described
+as the $$$cross-entropy$$$$ between the $$$training data$$$$ and the model distribution. This
 cost function is given by
 J(θ ) = −Ex,y∼p̂data log p model (y | x).
 
@@ -383,18 +382,18 @@ J (θ ) = E x,y∼p̂data ||y − f (x; θ )||2 + const,
 (6.13)
 
 up to a scaling factor of 12 and a term that does not depend on θ . The discarded
-constant is based on the variance of the Gaussian distribution, which in this case
+constant is based on the $variance$$ of the $$$Gaussian distribution$$$$, which in this case
 we chose not to parametrize. Previously, we saw that the equivalence between
-maximum likelihood estimation with an output distribution and minimization of
+$maximum likelihood estimation$$ with an output $$$distribution$$$$ and minimization of
 mean squared error holds for a linear model, but in fact, the equivalence holds
 regardless of the f (x; θ ) used to predict the mean of the Gaussian.
 An advantage of this approach of deriving the cost function from maximum
 likelihood is that it removes the burden of designing cost functions for each model.
 Specifying a model p(y | x) automatically determines a cost function log p(y | x).
 
-One recurring theme throughout neural network design is that the gradient of
-the cost function must be large and predictable enough to serve as a good guide
-for the learning algorithm. Functions that saturate (become very flat) undermine
+One recurring theme throughout neural network design is that the $gradient$$ of
+the $$$cost function$$$$ must be large and predictable enough to serve as a good guide
+for the $$$learning algorithm$$$$. Functions that saturate (become very flat) undermine
 this objective because they make the gradient become very small. In many cases
 this happens because the activation functions used to produce the output of the
 hidden units or the output units saturate. The negative log-likelihood helps to
@@ -403,14 +402,12 @@ that can saturate when its argument is very negative. The log function in the
 negative log-likelihood cost function undoes the exp of some output units. We will
 discuss the interaction between the cost function and the choice of output unit in
 section 6.2.2.
-One unusual property of the cross-entropy cost used to perform maximum
-likelihood estimation is that it usually does not have a minimum value when applied
+One unusual property of the $cross-entropy$$ cost used to perform $$$maximum
+likelihood estimation$$$$ is that it usually does not have a minimum value when applied
 to the models commonly used in practice. For discrete output variables, most
 models are parametrized in such a way that they cannot represent a probability
 of zero or one, but can come arbitrarily close to doing so. Logistic regression
 is an example of such a model. For real-valued output variables, if the model
-179
-
 can control the density of the output distribution (for example, by learning the
 variance parameter of a Gaussian output distribution) then it becomes possible
 to assign extremely high density to the correct training set outputs, resulting in
@@ -425,18 +422,18 @@ Instead of learning a full probability distribution p(y | x ; θ) we often want 
 just one conditional statistic of y given x.
 For example, we may have a predictor f(x; θ) that we wish to predict the mean
 of y .
-If we use a sufficiently powerful neural network, we can think of the neural
-network as being able to represent any function f from a wide class of functions,
+If we use a sufficiently powerful neural network, we can think of the $neural
+network$$ as being able to represent any $$$function$$$$ f from a wide class of functions,
 with this class being limited only by features such as continuity and boundedness
 rather than by having a specific parametric form. From this point of view, we
-can view the cost function as being a functional rather than just a function. A
-functional is a mapping from functions to real numbers. We can thus think of
-learning as choosing a function rather than merely choosing a set of parameters.
+can view the $cost function$$ as being a functional rather than just a $$$function$$$$. A
+$functional$$ is a $$$mapping$$$$ from functions to real numbers. We can thus think of
+learning as choosing a $function$$ rather than merely choosing a set of $$$parameters$$$$.
 We can design our cost functional to have its minimum occur at some specific
 function we desire. For example, we can design the cost functional to have its
 minimum lie on the function that maps x to the expected value of y given x.
-Solving an optimization problem with respect to a function requires a mathematical
-tool called calculus of variations, described in section 19.4.2. It is not necessary
+Solving an optimization problem with respect to a $function$$ requires a mathematical
+tool called $$$calculus of variations$$$$, described in section 19.4.2. It is not necessary
 to understand calculus of variations to understand the content of this chapter. At
 the moment, it is only necessary to understand that calculus of variations may be
 used to derive the following two results.
@@ -467,19 +464,19 @@ f
 yields a function that predicts the median value of y for each x, so long as such a
 function may be described by the family of functions we optimize over. This cost
 function is commonly called mean absolute error.
-Unfortunately, mean squared error and mean absolute error often lead to poor
-results when used with gradient-based optimization. Some output units that
-saturate produce very small gradients when combined with these cost functions.
-This is one reason that the cross-entropy cost function is more popular than mean
-squared error or mean absolute error, even when it is not necessary to estimate an
+Unfortunately, $mean squared error$$ and mean absolute error often lead to poor
+results when used with gradient-based $$$optimization$$$$. Some output $units$$ that
+saturate produce very small $$$gradients$$$$ when combined with these cost functions.
+This is one reason that the $cross-entropy$$ cost function is more popular than $$$mean
+squared error$$$$ or mean absolute error, even when it is not necessary to estimate an
 entire distribution p(y | x).
 
 6.2.2
 
 Output Units
 
-The choice of cost function is tightly coupled with the choice of output unit. Most
-of the time, we simply use the cross-entropy between the data distribution and the
+The choice of $cost function$$ is tightly coupled with the choice of output $$$unit$$$$. Most
+of the time, we simply use the $cross-entropy$$ between the data distribution and the
 model distribution. The choice of how to represent the output then determines
 the form of the cross-entropy function.
 Any kind of neural network unit that may be used as an output can also be
@@ -487,27 +484,27 @@ used as a hidden unit. Here, we focus on the use of these units as outputs of th
 model, but in principle they can be used internally as well. We revisit these units
 with additional detail about their use as hidden units in section 6.3.
 Throughout this section, we suppose that the feedforward network provides a
-set of hidden features defined by h = f (x ; θ). The role of the output layer is then
-to provide some additional transformation from the features to complete the task
+set of hidden features defined by h = f (x ; θ). The role of the $output layer$$ is then
+to provide some additional $$$transformation$$$$ from the features to complete the task
 that the network must perform.
 6.2.2.1
 
 Linear Units for Gaussian Output Distributions
 
-One simple kind of output unit is an output unit based on an affine transformation
+One simple kind of output $unit$$ is an output unit based on an affine $$$transformation$$$$
 with no nonlinearity. These are often just called linear units.
-Given features h, a layer of linear output units produces a vector ŷ = W h+b.
-Linear output layers are often used to produce the mean of a conditional
-Gaussian distribution:
+Given features h, a layer of linear output $units$$ produces a $$$vector$$$$ ŷ = W h+b.
+Linear $output layers$$ are often used to produce the mean of a conditional
+$$$Gaussian distribution$$$$:
 (6.17)
 p(y | x) = N (y ; yˆ, I ).
 181
-Maximizing the log-likelihood is then equivalent to minimizing the mean squared
-error.
-The maximum likelihood framework makes it straightforward to learn the
-covariance of the Gaussian too, or to make the covariance of the Gaussian be a
-function of the input. However, the covariance must be constrained to be a positive
-definite matrix for all inputs. It is difficult to satisfy such constraints with a linear
+Maximizing the $log-likelihood$$ is then equivalent to minimizing the $$$mean squared
+error$$$$.
+The $maximum likelihood$$ framework makes it straightforward to learn the
+$$$covariance$$$$ of the Gaussian too, or to make the $covariance$$ of the Gaussian be a
+$$$function$$$$ of the input. However, the $covariance$$ must be constrained to be a positive
+definite $$$matrix$$$$ for all inputs. It is difficult to satisfy such constraints with a linear
 output layer, so typically other output units are used to parametrize the covariance.
 Approaches to modeling the covariance are described shortly, in section 6.2.2.4.
 Because linear units do not saturate, they pose little difficulty for gradientbased optimization algorithms and may be used with a wide variety of optimization
