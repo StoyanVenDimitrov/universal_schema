@@ -1,4 +1,5 @@
 import random
+import re
 import nltk
 import csv
 import numpy as np
@@ -13,16 +14,24 @@ from get_requests import single_query, rel_from_domain, wikimedia_request
 
 nltk.download('punkt')
 def read_from_pdf(file_dir):
+    """read from pdf-to-txt converted texts
+
+    Args:
+        file_dir (str): all files
+
+    Returns:
+        List[List[str]]: Sentences[Tokens]
+    """
     content = []
     dirs = glob.glob(os.path.join(file_dir, '*.txt')) if glob.glob(os.path.join(file_dir, '*.txt')) else [file_dir]
     for filename in dirs:
         content_as_list = []
         with open(filename) as file:
             for line in file.readlines():
-                line_as_list = nltk.word_tokenize(line) # good tokenizer will avoid splitting on each . 
+                line_as_list = nltk.word_tokenize(line) 
                 if len(line_as_list) >3:
                     content_as_list = content_as_list + line_as_list
-        i = (list(g) for _, g in groupby(content_as_list, key='.'.__ne__)) #TODO: dont split if next token starts with lowercase
+        i = (list(g) for _, g in groupby(content_as_list, key='.'.__ne__))
         chapter_content = [a + b for a, b in zip(i, i)]
         content.extend(chapter_content)
     return content
@@ -313,6 +322,38 @@ def get_training_data(index):
     #         json.dump(final_json,  f, indent=4)
     return index, desired_rels
 
+
+def read_annotations(file_dir):
+    """read the annotated text file
+
+    Args:
+        file_dir (str): text file
+    """
+    content = read_from_pdf(file_dir)
+    all_relations = dict()
+    for tokens in content: 
+        entities_start = []
+        entities_end = []
+        for i,token in enumerate(tokens):
+            if token=='_start_e1_':
+                entities_start = []
+                entities_end = []
+
+            if token.startswith('_start_'):
+                entities_start.append(i+1)
+            if token.startswith('_end_'):
+                entities_end.append(i)
+            if len(entities_start)==len(entities_end):
+                contexts = [tokens[end+1:start-1] for start, end in zip(entities_start[1:], entities_end[:-1])]
+                if contexts:
+                    entity_1 = [tokens[i:j] for i,j in zip(entities_start[:-1], entities_end[:-1])]
+                    entity_2 = [tokens[i:j] for i,j in zip(entities_start[1:], entities_end[1:])]
+                    for e1,c,e2 in zip(entity_1, contexts, entity_2):
+                        key = ' '.join(e1) + '*' + ' '.join(e2)
+                        all_relations.setdefault(key, set()).add(' '.join(c))
+    return all_relations
+
+
 def get_test_data(index, file_dir, desired_rels):
     manual_content = read_from_pdf(file_dir)
     result = dict()
@@ -382,12 +423,14 @@ def get_test_data(index, file_dir, desired_rels):
 def run(file_dir, index_path):
     # ------ get the book' index -------
     index = read_index(index_path)
+    read_annotations('resources/annotated_[11]part-2-chapter-6.txt')
     
     # ---- preparing training data ------
     extended_index, desired_rels = get_training_data(index)
 
     # ---- preparing training data ------
     get_test_data(extended_index, file_dir, desired_rels)
+
 
     # ---- prepare test data - (s, text, o) with s,o from entity_index of all 'interesting' entities
     # manual_content = read_from_pdf(file_dir)

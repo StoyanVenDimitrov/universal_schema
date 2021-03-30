@@ -1,5 +1,0 @@
-ccw	februar	stattfinden	1
-kunde	kundenummer	haben	1
-verkaeufer	anzug	/biology/gene_group_membership/gene	1
-papa	auto	$ARG1 haben morgens fuer mit $ARG2	1
-kunde	kundenummer	haben	1

@@ -1,22 +1,22 @@
 Chapter 6
 
 Deep Feedforward Networks
- _start_e1_ Deep feedforward networks _end_e1_ , also often called  _start_e2_ feedforward neural networks _end_e2_ ,
-or  _start_e1_ multilayer perceptrons _end_e1_  (MLPs), are the  quintessential _start_e2_ deep learning _end_e2_  models.
-The goal of a  _start_e1_ feedforward network _end_e1_  is to approximate some  _start_e2_ function _end_e2_  f ∗ . For example,
-for a classifier, y = f ∗ (x) maps an input x to a category y. A  _start_e1_ feedforward network _end_e1_ 
-defines a  _start_e2_ mapping _end_e2_  y = f (x; θ) and learns the value of the  _start_e1_ parameters _end_e1_  θ that result
-in the best  _start_e2_ function approximation _end_e2_ .
-These models are called feedforward because  _start_e1_ information _end_e1_  flows through the
- _start_e2_ function _end_e2_  being evaluated from x, through the intermediate computations used to
+$Deep feedforward networks$$, also often called $$$feedforward neural networks$$$$,
+or $multilayer perceptrons$$ (MLPs), are the $$$quintessential deep learning$$$$ models.
+The goal of a $feedforward network$$ is to approximate some $$$function$$$$ f ∗ . For example,
+for a classifier, y = f ∗ (x) maps an input x to a category y. A $feedforward network$$
+defines a $$$mapping$$$$ y = f (x; θ) and learns the value of the $parameters$$ θ that result
+in the best $$$function approximation$$$$.
+These models are called feedforward because $information$$ flows through the
+$$$function being$$$$ evaluated from x, through the intermediate computations used to
 define f , and finally to the output y. There are no feedback connections in which
-outputs of the model are fed back into itself. When  _start_e1_ feedforward neural networks _end_e1_ 
-are extended to include feedback connections, they are called  _start_e2_ recurrent neural
-networks _end_e2_ , presented in chapter 10.
- _start_e1_ Feedforward networks _end_e1_  are of extreme importance to  _start_e2_ machine learning _end_e2_  practitioners. They form the basis of many important commercial applications. For
-example, the  _start_e1_ convolutional networks _end_e1_  used for  _start_e2_ object recognition _end_e2_  from photos are a
-specialized kind of feedforward network.  _start_e1_ Feedforward networks _end_e1_  are a conceptual
-stepping stone on the path to  _start_e2_ recurrent networks _end_e2_ , which power many natural
+outputs of the model are fed back into itself. When $feedforward neural networks$$
+are extended to include feedback connections, they are called $$$recurrent neural
+networks$$$$, presented in chapter 10.
+$Feedforward networks$$ are of extreme importance to $$$machine learning$$$$ practitioners. They form the basis of many important commercial applications. For
+example, the $convolutional networks$$ used for $$$object recognition$$$$ from photos are a
+specialized kind of feedforward network. $Feedforward networks$$ are a conceptual
+stepping stone on the path to $$$recurrent networks$$$$, which power many natural
 language applications.
 Feedforward neural networks are called networks because they are typically
 represented by composing together many different function. The model is associated with a directed acyclic graph describing how the functions are composed
@@ -25,24 +25,24 @@ in a chain, to form f(x) = f (3) (f (2) (f (1) (x))). These chain structures are
 commonly used structures of neural networks. In this case, f (1) is called the first
 layer of the network, f (2) is called the second layer, and so on. The overall
 length of the chain gives the depth of the model. It is from this terminology that
-the name “deep learning” arises. The final  _start_e1_ layer _end_e1_  of a  _start_e2_ feedforward network _end_e2_  is called
+the name “deep learning” arises. The final $layer$$ of a $$$feedforward network$$$$ is called
 the output layer. During neural network training, we drive f (x) to match f ∗ (x).
 The training data provides us with noisy, approximate examples of f ∗(x) evaluated
 at different training points. Each example x is accompanied by a label y ≈ f ∗ (x).
 The training examples specify directly what the output layer must do at each point
-x; it must produce a value that is close to y. The behavior of the other  _start_e1_ layers _end_e1_  is
-not directly specified by the  _start_e2_ training data _end_e2_ . The  _start_e1_ learning algorithm _end_e1_  must decide
-how to use those  _start_e2_ layers _end_e2_  to produce the desired output, but the  _start_e1_ training data _end_e1_  does
-not say what each individual  _start_e2_ layer _end_e2_  should do. Instead, the  _start_e1_ learning algorithm _end_e1_  must
-decide how to use these  _start_e2_ layers _end_e2_  to best implement an approximation of f ∗ . Because
-the  _start_e1_ training data _end_e1_  does not show the desired output for each of these  _start_e2_ layers _end_e2_ , these
- _start_e1_ layers _end_e1_  are called  _start_e2_ hidden layers _end_e2_ .
+x; it must produce a value that is close to y. The behavior of the other $layers$$ is
+not directly specified by the $$$training data$$$$. The $learning algorithm$$ must decide
+how to use those $$$layers$$$$ to produce the desired output, but the $training data$$ does
+not say what each individual $$$layer$$$$ should do. Instead, the $learning algorithm$$ must
+decide how to use these $$$layers$$$$ to best implement an approximation of f ∗ . Because
+the $training data$$ does not show the desired output for each of these $$$layers$$$$, these
+$layers$$ are called $$$hidden layers$$$$.
 Finally, these networks are called neural because they are loosely inspired by
-neuroscience. Each  _start_e1_ hidden layer _end_e1_  of the network is typically  _start_e2_ vector _end_e2_ -valued. The
+neuroscience. Each $hidden layer$$ of the network is typically $$$vector$$$$-valued. The
 dimensionality of these hidden layers determines the width of the model. Each
 element of the vector may be interpreted as playing a role analogous to a neuron.
-Rather than thinking of the  _start_e1_ layer _end_e1_  as representing a single vector-to-vector  _start_e2_ function _end_e2_ ,
-we can also think of the  _start_e1_ layer _end_e1_  as consisting of many  _start_e2_ units _end_e2_  that act in parallel,
+Rather than thinking of the $layer$$ as representing a single vector-to-vector $$$function$$$$,
+we can also think of the $layer$$ as consisting of many $$$units$$$$ that act in parallel,
 each representing a vector-to-scalar function. Each unit resembles a neuron in
 the sense that it receives input from many other units and computes its own
 activation value. The idea of using many layers of vector-valued representation
@@ -51,26 +51,26 @@ these representations is also loosely guided by neuroscientific observations abo
 the functions that biological neurons compute. However, modern neural network
 research is guided by many mathematical and engineering disciplines, and the
 goal of neural networks is not to perfectly model the brain. It is best to think of
- _start_e1_ feedforward networks _end_e1_  as function approximation machines that are designed to
-achieve statistical  _start_e2_ generalization _end_e2_ , occasionally drawing some insights from what we
+$feedforward networks$$ as function approximation machines that are designed to
+achieve statistical $$$generalization$$$$, occasionally drawing some insights from what we
 know about the brain, rather than as models of brain function.
-One way to understand  _start_e1_ feedforward networks _end_e1_  is to begin with  _start_e2_ linear models _end_e2_ 
-and consider how to overcome their limitations.  _start_e1_ Linear models _end_e1_ , such as  _start_e2_ logistic
-regression _end_e2_  and  _start_e3_ linear regression _end_e3_ , are appealing because they may be fit efficiently
-and reliably, either in closed form or with convex optimization.  _start_e1_ Linear models _end_e1_  also
-have the obvious defect that the model capacity is limited to linear  _start_e2_ function _end_e2_ , so
+One way to understand $feedforward networks$$ is to begin with $$$linear models$$$$
+and consider how to overcome their limitations. $Linear models$$, such as $$$logistic
+regression$$$$ and $$$linear regression$$$$, are appealing because they may be fit efficiently
+and reliably, either in closed form or with convex optimization. $Linear models$$ also
+have the obvious defect that the model capacity is limited to linear $$$function$$$$, so
 the model cannot understand the interaction between any two input variables.
-To extend  _start_e1_ linear models _end_e1_  to represent nonlinear  _start_e2_ functions _end_e2_  of x, we can apply
+To extend $linear models$$ to represent nonlinear $$$functions$$$$ of x, we can apply
 the linear model not to x itself but to a transformed input φ(x), where φ is a
-nonlinear transformation. Equivalently, we can apply the  _start_e1_ kernel trick _end_e1_  described in
-section 5.7.2, to obtain a nonlinear  _start_e2_ learning algorithm _end_e2_  based on implicitly applying
-the φ  _start_e3_ mapping _end_e3_ . We can think of φ as providing a set of features describing x, or
+nonlinear transformation. Equivalently, we can apply the $kernel trick$$ described in
+section 5.7.2, to obtain a nonlinear $$$learning algorithm$$$$ based on implicitly applying
+the φ $$$mapping$$$$. We can think of φ as providing a set of features describing x, or
 as providing a new representation for x.
 The question is then how to choose the mapping φ.
 1. One option is to use a very generic φ, such as the infinite-dimensional φ that
 is implicitly used by kernel machines based on the RBF kernel. If φ(x) is
 of high enough dimension, we can always have enough capacity to fit the
-training set, but  _start_e1_ generalization _end_e1_  to the test  _start_e2_ set _end_e2_  often remains poor. Very
+training set, but $generalization$$ to the test $$$set$$$$ often remains poor. Very
 generic feature mappings are usually based only on the principle of local
 smoothness and do not encode enough prior information to solve advanced
 problems.
@@ -80,17 +80,17 @@ effort for each separate task, with practitioners specializing in different
 domains such as speech recognition or computer vision, and with little
 transfer between domains.
 3. The strategy of deep learning is to learn φ. In this approach, we have a model
-y = f(x; θ , w) = φ(x; θ)w. We now have  _start_e1_ parameters _end_e1_  θ that we use to learn
-φ from a broad class of  _start_e2_ functions _end_e2_ , and parameters w that map from φ(x) to
-the desired output. This is an example of a  _start_e1_ deep feedforward network _end_e1_ , with
-φ defining a  _start_e2_ hidden layer _end_e2_ . This approach is the only one of the three that
+y = f(x; θ , w) = φ(x; θ)w. We now have $parameters$$ θ that we use to learn
+φ from a broad class of $$$functions$$$$, and parameters w that map from φ(x) to
+the desired output. This is an example of a $deep feedforward network$$, with
+φ defining a $$$hidden layer$$$$. This approach is the only one of the three that
 gives up on the convexity of the training problem, but the benefits outweigh
 the harms. In this approach, we parametrize the representation as φ(x; θ)
 and use the optimization algorithm to find the θ that corresponds to a good
 representation. If we wish, this approach can capture the benefit of the first
 approach by being highly generic—we do so by using a very broad family
 φ(x; θ). This approach can also capture the benefit of the second approach.
- _start_e1_ Human _end_e1_  practitioners can encode their knowledge to help  _start_e2_ generalization _end_e2_  by
+$Human$$ practitioners can encode their knowledge to help $$$generalization$$$$ by
 designing families φ(x; θ ) that they expect will perform well. The advantage
 is that the human designer only needs to find the right general function
 family rather than finding precisely the right function.
@@ -103,16 +103,16 @@ later will apply these principles to learning stochastic mappings, learning func
 with feedback, and learning probability distributions over a single vector.
 We begin this chapter with a simple example of a feedforward network. Next,
 we address each of the design decisions needed to deploy a feedforward network.
-First, training a  _start_e1_ feedforward network _end_e1_  requires making many of the same design
-decisions as are necessary for a  _start_e2_ linear model _end_e2_ : choosing the optimizer, the cost
+First, training a $feedforward network$$ requires making many of the same design
+decisions as are necessary for a $$$linear model$$$$: choosing the optimizer, the cost
 function, and the form of the output units. We review these basics of gradient-based
 learning, then proceed to confront some of the design decisions that are unique
-to feedforward networks.  _start_e1_ Feedforward networks _end_e1_  have introduced the concept of a
- _start_e2_ hidden layer _end_e2_ , and this requires us to choose the  _start_e1_ activation functions _end_e1_  that will
-be used to compute the  _start_e2_ hidden layer _end_e2_  values. We must also design the architecture
+to feedforward networks. $Feedforward networks$$ have introduced the concept of a
+$$$hidden layer$$$$, and this requires us to choose the $activation functions$$ that will
+be used to compute the $$$hidden layer$$$$ values. We must also design the architecture
 of the network, including how many layers the network should contain, how these
-layers should be connected to each other, and how many  _start_e1_ units _end_e1_  should be in
-each  _start_e2_ layer _end_e2_ . Learning in  _start_e1_ deep neural networks _end_e1_  requires computing the  _start_e2_ gradients _end_e2_ 
+layers should be connected to each other, and how many $units$$ should be in
+each $$$layer$$$$. Learning in $deep neural networks$$ requires computing the $$$gradients$$$$
 of complicated functions. We present the back-propagation algorithm and its
 modern generalizations, which can be used to efficiently compute these gradients.
 Finally, we close with some historical perspective.
@@ -122,13 +122,13 @@ Finally, we close with some historical perspective.
 Example: Learning XOR
 
 To make the idea of a feedforward network more concrete, we begin with an
-example of a fully functioning feedforward network on a very simple task:  _start_e1_ learning _end_e1_ 
-the XOR  _start_e2_ function _end_e2_ .
-The XOR  _start_e1_ function _end_e1_  ("exclusive or") is an  _start_e2_ operation _end_e2_  on two binary values, x1
+example of a fully functioning feedforward network on a very simple task: $learning$$
+the XOR $$$function$$$$.
+The XOR $function$$ ("exclusive or") is an $$$operation$$$$ on two binary values, x1
 and x2 . When exactly one of these binary values is equal to 1, the XOR function
 returns 1. Otherwise, it returns 0. The XOR function provides the target function
 y = f ∗ (x) that we want to learn. Our model provides a function y = f(x;θ) and
-our  _start_e1_ learning algorithm _end_e1_  will adapt the  _start_e2_ parameters _end_e2_  θ to make f as similar as possible
+our $learning algorithm$$ will adapt the $$$parameters$$$$ θ to make f as similar as possible
 to f ∗ .
 In this simple example, we will not be concerned with statistical generalization.
 We want our network to perform correctly on the four points X = {[0, 0] , [0,1] ,
@@ -160,29 +160,29 @@ We can minimize J(θ ) in closed form with respect to w and b using the normal
 equations.
 After solving the normal equations, we obtain w = 0 and b = 12 . The linear
 model simply outputs 0.5 everywhere. Why does this happen? Figure 6.1 shows
-how a  _start_e1_ linear model _end_e1_  is not able to represent the XOR  _start_e2_ function _end_e2_ . One way to solve
+how a $linear model$$ is not able to represent the XOR $$$function$$$$. One way to solve
 this problem is to use a model that learns a different feature space in which a
 linear model is able to represent the solution.
-Specifically, we will introduce a very simple  _start_e1_ feedforward network _end_e1_  with one
- _start_e2_ hidden layer _end_e2_  containing two  _start_e3_ hidden units _end_e3_ . See figure 6.2 for an illustration of
-this model. This  _start_e1_ feedforward network _end_e1_  has a vector of  _start_e2_ hidden units _end_e2_  h that are
-computed by a  _start_e3_ function _end_e3_  f (1)(x; W , c). The values of these  _start_e1_ hidden units _end_e1_  are then
-used as the input for a second  _start_e2_ layer _end_e2_ . The second  _start_e1_ layer _end_e1_  is the  _start_e2_ output layer _end_e2_  of the
-network. The  _start_e1_ output layer _end_e1_  is still just a  _start_e2_ linear regression _end_e2_  model, but now it is
+Specifically, we will introduce a very simple $feedforward network$$ with one
+$$$hidden layer$$$$ containing two $$$hidden units$$$$. See figure 6.2 for an illustration of
+this model. This $feedforward network$$ has a vector of $$$hidden units$$$$ h that are
+computed by a $$$function$$$$ f (1)(x; W , c). The values of these $hidden units$$ are then
+used as the input for a second $$$layer$$$$. The second $layer$$ is the $$$output layer$$$$ of the
+network. The $output layer$$ is still just a $$$linear regression$$$$ model, but now it is
 applied to h rather than to x . The network now contains two functions chained
 together: h = f (1) (x; W , c) and y = f (2)(h; w, b), with the complete model being
 f (x; W , c, w, b) = f (2) (f (1) (x)).
 What function should f (1) compute? Linear models have served us well so far,
 and it may be tempting to make f (1) be linear as well. Unfortunately, if f (1) were
-linear, then the  _start_e1_ feedforward network _end_e1_  as a whole would remain a  _start_e2_ linear function _end_e2_  of
+linear, then the $feedforward network$$ as a whole would remain a $$$linear function$$$$ of
 its input. Ignoring the intercept terms for the moment, suppose f (1) (x ) = W  x
 and f (2)(h) = h  w. Then f (x) = w W  x. We could represent this function as
 f (x) = x w where w = W w.
-Clearly, we must use a nonlinear function to describe the features. Most  _start_e1_ neural
-networks _end_e1_  do so using an affine  _start_e2_ transformation _end_e2_  controlled by learned  _start_e3_ parameters _end_e3_ ,
-followed by a fixed, nonlinear  _start_e4_ function _end_e4_  called an  _start_e5_ activation function _end_e5_ . We use that
-strategy here, by defining h = g(W  x + c), where W provides the  _start_e1_ weights _end_e1_  of a
-linear  _start_e2_ transformation _end_e2_  and c the biases. Previously, to describe a linear regression
+Clearly, we must use a nonlinear function to describe the features. Most $neural
+networks$$ do so using an affine $$$transformation$$$$ controlled by learned $$$parameters$$$$,
+followed by a fixed, nonlinear $$$function$$$$ called an $$$activation function$$$$. We use that
+strategy here, by defining h = g(W  x + c), where W provides the $weights$$ of a
+linear $$$transformation$$$$ and c the biases. Previously, to describe a linear regression
 172
 
 Original x space
@@ -216,14 +216,14 @@ Figure 6.1: Solving the XOR problem by learning a representation. The bold numbe
 printed on the plot indicate the value that the learned function must output at each point.
 (Left)A linear model applied directly to the original input cannot implement the XOR
 function. When x1 = 0, the model’s output must increase as x2 increases. When x1 = 1,
-the model’s output must decrease as x2 increases. A  _start_e1_ linear model _end_e1_  must apply a fixed
- _start_e2_ coefficient _end_e2_  w2 to x2. The  _start_e1_ linear model _end_e1_  therefore cannot use the value of x 1 to change
-the  _start_e2_ coefficient _end_e2_  on x2 and cannot solve this problem. (Right)In the transformed space
+the model’s output must decrease as x2 increases. A $linear model$$ must apply a fixed
+$$$coefficient$$$$ w2 to x2. The $linear model$$ therefore cannot use the value of x 1 to change
+the $$$coefficient$$$$ on x2 and cannot solve this problem. (Right)In the transformed space
 represented by the features extracted by a neural network, a linear model can now solve
 the problem. In our example solution, the two points that must have output 1 have been
 collapsed into a single point in feature space. In other words, the nonlinear features have
 mapped both x = [1, 0]  and x = [0, 1]  to a single point in feature space, h = [1 ,0] .
-The  _start_e1_ linear model _end_e1_  can now describe the  _start_e2_ function _end_e2_  as increasing in h1 and decreasing in h 2.
+The $linear model$$ can now describe the $$$function$$$$ as increasing in h1 and decreasing in h 2.
 In this example, the motivation for learning the feature space is only to make the model
 capacity greater so that it can fit the training set. In more realistic applications, learned
 representations can also help the model to generalize.
@@ -240,12 +240,12 @@ the mapping from x to h, and a vector w describes the mapping from h to y. We
 typically omit the intercept parameters associated with each layer when labeling this kind
 of drawing.
 
-model, we used a vector of  _start_e1_ weights _end_e1_  and a scalar  _start_e2_ bias _end_e2_   _start_e1_ parameter _end_e1_  to describe an
-affine  _start_e2_ transformation _end_e2_  from an input vector to an output scalar. Now, we describe
-an affine  _start_e1_ transformation _end_e1_  from a  _start_e2_ vector _end_e2_  x to a vector h, so an entire vector of bias
-parameters is needed. The  _start_e1_ activation function _end_e1_  g is typically chosen to be a  _start_e2_ function _end_e2_ 
-that is applied element-wise, with hi = g(xW:,i + c i ). In modern  _start_e1_ neural networks _end_e1_ ,
-the default recommendation is to use the rectified linear unit or  _start_e2_ ReLU _end_e2_  (Jarrett
+model, we used a vector of $weights$$ and a scalar $$$bias$$$$ $parameter$$ to describe an
+affine $$$transformation$$$$ from an input vector to an output scalar. Now, we describe
+an affine $transformation$$ from a $$$vector$$$$ x to a vector h, so an entire vector of bias
+parameters is needed. The $activation function$$ g is typically chosen to be a $$$function$$$$
+that is applied element-wise, with hi = g(xW:,i + c i ). In modern $neural networks$$,
+the default recommendation is to use the rectified linear unit or $$$ReLU$$$$ (Jarrett
 et al., 2009; Nair and Hinton, 2010; Glorot et al., 2011a) defined by the activation
 function g (z ) = max{0, z } depicted in figure 6.3.
 We can now specify our complete network as
@@ -264,13 +264,13 @@ from rectified linear functions.
 We can now walk through the way that the model processes a batch of inputs.
 Let X be the design matrix containing all four points in the binary input space,
 with one example per row:
-The first step in the  _start_e1_ neural network _end_e1_  is to multiply the input  _start_e2_ matrix _end_e2_  by the first
- _start_e1_ layer _end_e1_ ’s weight  _start_e2_ matrix _end_e2_ :
+The first step in the $neural network$$ is to multiply the input $$$matrix$$$$ by the first
+$layer$$’s weight $$$matrix$$$$:
 Next, we add the bias vector c, to obtain
 
 In this space, all of the examples lie along a line with slope 1. As we move along
 this line, the output needs to begin at 0, then rise to 1, then drop back down to 0.
-A  _start_e1_ linear model _end_e1_  cannot implement such a  _start_e2_ function _end_e2_ . To finish computing the value
+A $linear model$$ cannot implement such a $$$function$$$$. To finish computing the value
 of h for each example, we apply the rectified linear transformation:
 
 This transformation has changed the relationship between the examples. They no
@@ -295,8 +295,8 @@ here. Instead, a gradient-based optimization algorithm can find parameters that
 produce very little error. The solution we described to the XOR problem is at a
 global minimum of the loss function, so gradient descent could converge to this
 point. There are other equivalent solutions to the XOR problem that gradient
-descent could also find. The  _start_e1_ convergence _end_e1_  point of  _start_e2_ gradient descent _end_e2_  depends on the
-initial values of the  _start_e2_ parameters _end_e2_ . In practice, gradient descent would usually not
+descent could also find. The $convergence$$ point of $$$gradient descent$$$$ depends on the
+initial values of the $$$parameters$$$$. In practice, gradient descent would usually not
 find clean, easily understood, integer-valued solutions like the one we presented
 here.
 
@@ -304,38 +304,38 @@ here.
 
 Gradient-Based Learning
 
-Designing and training a  _start_e1_ neural network _end_e1_  is not much different from training any
-other  _start_e2_ machine learning _end_e2_  model with gradient descent. In section 5.10, we described
-how to build a machine learning  _start_e1_ algorithm _end_e1_  by specifying an  _start_e2_ optimization procedure _end_e2_ ,
+Designing and training a $neural network$$ is not much different from training any
+other $$$machine learning$$$$ model with gradient descent. In section 5.10, we described
+how to build a machine learning $algorithm$$ by specifying an $$$optimization procedure$$$$,
 a cost function, and a model family.
 The largest difference between the linear models we have seen so far and neural
-networks is that the nonlinearity of a  _start_e1_ neural network _end_e1_  causes most interesting  _start_e2_ loss
-functions _end_e2_  to become non-convex. This means that neural networks are usually
+networks is that the nonlinearity of a $neural network$$ causes most interesting $$$loss
+functions$$$$ to become non-convex. This means that neural networks are usually
 trained by using iterative, gradient-based optimizers that merely drive the cost
 function to a very low value, rather than the linear equation solvers used to train
-linear regression models or the convex optimization algorithms with global convergence guarantees used to train logistic regression or SVMs.  _start_e1_ Convex optimization _end_e1_ 
-converges starting from any initial  _start_e2_ parameters _end_e2_  (in theory—in practice it is very
-robust but can encounter numerical problems).  _start_e1_ Stochastic gradient descent _end_e1_  applied
-to non-convex  _start_e2_ loss functions _end_e2_  has no such convergence guarantee, and is sensitive
-to the values of the initial parameters. For  _start_e1_ feedforward neural networks _end_e1_ , it is
-important to initialize all  _start_e2_ weights _end_e2_  to small random values. The biases may be
-initialized to zero or to small positive values. The iterative gradient-based  _start_e1_ optimization algorithms _end_e1_  used to train  _start_e2_ feedforward networks _end_e2_  and almost all other deep
+linear regression models or the convex optimization algorithms with global convergence guarantees used to train logistic regression or SVMs. $Convex optimization$$
+converges starting from any initial $$$parameters$$$$ (in theory—in practice it is very
+robust but can encounter numerical problems). $Stochastic gradient descent$$ applied
+to non-convex $$$loss functions$$$$ has no such convergence guarantee, and is sensitive
+to the values of the initial parameters. For $feedforward neural networks$$, it is
+important to initialize all $$$weights$$$$ to small random values. The biases may be
+initialized to zero or to small positive values. The iterative gradient-based $optimization algorithms$$ used to train $$$feedforward networks$$$$ and almost all other deep
 models will be described in detail in chapter 8, with parameter initialization in
 particular discussed in section 8.4. For the moment, it suffices to understand that
-the training  _start_e1_ algorithm _end_e1_  is almost always based on using the  _start_e2_ gradient _end_e2_  to descend the
- _start_e2_ cost function _end_e2_  in one way or another. The specific  _start_e1_ algorithms _end_e1_  are improvements
-and refinements on the ideas of  _start_e2_ gradient descent _end_e2_ , introduced in section 4.3, and,
+the training $algorithm$$ is almost always based on using the $$$gradient$$$$ to descend the
+$$$cost function$$$$ in one way or another. The specific $algorithms$$ are improvements
+and refinements on the ideas of $$$gradient descent$$$$, introduced in section 4.3, and,
 more specifically, are most often improvements of the stochastic gradient descent
 algorithm, introduced in section 5.9.
-We can of course, train models such as  _start_e1_ linear regression _end_e1_  and  _start_e2_ support vector
-machines _end_e2_  with gradient descent too, and in fact this is common when the training
+We can of course, train models such as $linear regression$$ and $$$support vector
+machines$$$$ with gradient descent too, and in fact this is common when the training
 set is extremely large. From this point of view, training a neural network is not
-much different from training any other model. Computing the  _start_e1_ gradient _end_e1_  is slightly
-more complicated for a  _start_e2_ neural network _end_e2_ , but can still be done efficiently and exactly.
-Section 6.5 will describe how to obtain the  _start_e1_ gradient _end_e1_  using the  _start_e2_ back-propagation _end_e2_ 
+much different from training any other model. Computing the $gradient$$ is slightly
+more complicated for a $$$neural network$$$$, but can still be done efficiently and exactly.
+Section 6.5 will describe how to obtain the $gradient$$ using the $$$back-propagation$$$$
 algorithm and modern generalizations of the back-propagation algorithm.
-As with other  _start_e1_ machine learning _end_e1_  models, to apply gradient-based learning we
-must choose a  _start_e2_ cost function _end_e2_ , and we must choose how to represent the output of
+As with other $machine learning$$ models, to apply gradient-based learning we
+must choose a $$$cost function$$$$, and we must choose how to represent the output of
 the model. We now revisit these design considerations with special emphasis on
 the neural networks scenario.
 
@@ -344,28 +344,28 @@ the neural networks scenario.
 Cost Functions
 
 An important aspect of the design of a deep neural network is the choice of the
-cost function. Fortunately, the  _start_e1_ cost functions _end_e1_  for  _start_e2_ neural networks _end_e2_  are more or less
-the same as those for other  _start_e1_ parametric models _end_e1_ , such as  _start_e2_ linear models _end_e2_ .
-In most cases, our  _start_e1_ parametric model _end_e1_  defines a  _start_e2_ distribution _end_e2_  p(y | x; θ ) and
+cost function. Fortunately, the $cost functions$$ for $$$neural networks$$$$ are more or less
+the same as those for other $parametric models$$, such as $$$linear models$$$$.
+In most cases, our $parametric model$$ defines a $$$distribution$$$$ p(y | x; θ ) and
 we simply use the principle of maximum likelihood. This means we use the
- _start_e1_ cross-entropy _end_e1_  between the  _start_e2_ training data _end_e2_  and the model’s predictions as the cost
+$cross-entropy$$ between the $$$training data$$$$ and the model’s predictions as the cost
 function.
 Sometimes, we take a simpler approach, where rather than predicting a complete
 probability distribution over y, we merely predict some statistic of y conditioned
 on x. Specialized loss functions allow us to train a predictor of these estimates.
-The total  _start_e1_ cost function _end_e1_  used to train a  _start_e2_ neural network _end_e2_  will often combine one
-of the primary  _start_e1_ cost functions _end_e1_  described here with a  _start_e2_ regularization _end_e2_  term. We have
-already seen some simple examples of  _start_e1_ regularization _end_e1_  applied to  _start_e2_ linear models _end_e2_  in
-section 5.2.2. The  _start_e1_ weight decay _end_e1_  approach used for  _start_e2_ linear models _end_e2_  is also directly
+The total $cost function$$ used to train a $$$neural network$$$$ will often combine one
+of the primary $cost functions$$ described here with a $$$regularization$$$$ term. We have
+already seen some simple examples of $regularization$$ applied to $$$linear models$$$$ in
+section 5.2.2. The $weight decay$$ approach used for $$$linear models$$$$ is also directly
 applicable to deep neural networks and is among the most popular regularization
-strategies. More advanced  _start_e1_ regularization _end_e1_  strategies for  _start_e2_ neural networks _end_e2_  will be
+strategies. More advanced $regularization$$ strategies for $$$neural networks$$$$ will be
 described in chapter 7.
 6.2.1.1
 
 Learning Conditional Distributions with Maximum Likelihood
-Most modern  _start_e1_ neural networks _end_e1_  are trained using  _start_e2_ maximum likelihood _end_e2_ . This means
-that the  _start_e1_ cost function _end_e1_  is simply the negative log-likelihood, equivalently described
-as the  _start_e2_ cross-entropy _end_e2_  between the  _start_e2_ training data _end_e2_  and the model distribution. This
+Most modern $neural networks$$ are trained using $$$maximum likelihood$$. This means
+that the $cost function$$ is simply the negative log-likelihood, equivalently described
+as the $$$cross-entropy$$$$ between the $$$training data$$$$ and the model distribution. This
 cost function is given by
 J(θ ) = −Ex,y∼p̂data log p model (y | x).
 
@@ -382,18 +382,18 @@ J (θ ) = E x,y∼p̂data ||y − f (x; θ )||2 + const,
 (6.13)
 
 up to a scaling factor of 12 and a term that does not depend on θ . The discarded
-constant is based on the  _start_e1_ variance _end_e1_  of the  _start_e2_ Gaussian distribution _end_e2_ , which in this case
+constant is based on the $variance$$ of the $$$Gaussian distribution$$$$, which in this case
 we chose not to parametrize. Previously, we saw that the equivalence between
- _start_e1_ maximum likelihood estimation _end_e1_  with an output  _start_e2_ distribution _end_e2_  and minimization of
+$maximum likelihood estimation$$ with an output $$$distribution$$$$ and minimization of
 mean squared error holds for a linear model, but in fact, the equivalence holds
 regardless of the f (x; θ ) used to predict the mean of the Gaussian.
 An advantage of this approach of deriving the cost function from maximum
 likelihood is that it removes the burden of designing cost functions for each model.
 Specifying a model p(y | x) automatically determines a cost function log p(y | x).
 
-One recurring theme throughout neural network design is that the  _start_e1_ gradient _end_e1_  of
-the  _start_e2_ cost function _end_e2_  must be large and predictable enough to serve as a good guide
-for the  _start_e3_ learning algorithm _end_e3_ . Functions that saturate (become very flat) undermine
+One recurring theme throughout neural network design is that the $gradient$$ of
+the $$$cost function$$$$ must be large and predictable enough to serve as a good guide
+for the $$$learning algorithm$$$$. Functions that saturate (become very flat) undermine
 this objective because they make the gradient become very small. In many cases
 this happens because the activation functions used to produce the output of the
 hidden units or the output units saturate. The negative log-likelihood helps to
@@ -402,8 +402,8 @@ that can saturate when its argument is very negative. The log function in the
 negative log-likelihood cost function undoes the exp of some output units. We will
 discuss the interaction between the cost function and the choice of output unit in
 section 6.2.2.
-One unusual property of the  _start_e1_ cross-entropy _end_e1_  cost used to perform  _start_e2_ maximum
-likelihood estimation _end_e2_  is that it usually does not have a minimum value when applied
+One unusual property of the $cross-entropy$$ cost used to perform $$$maximum
+likelihood estimation$$$$ is that it usually does not have a minimum value when applied
 to the models commonly used in practice. For discrete output variables, most
 models are parametrized in such a way that they cannot represent a probability
 of zero or one, but can come arbitrarily close to doing so. Logistic regression
@@ -422,18 +422,18 @@ Instead of learning a full probability distribution p(y | x ; θ) we often want 
 just one conditional statistic of y given x.
 For example, we may have a predictor f(x; θ) that we wish to predict the mean
 of y .
-If we use a sufficiently powerful neural network, we can think of the  _start_e1_ neural
-network _end_e1_  as being able to represent any  _start_e2_ function _end_e2_  f from a wide class of functions,
+If we use a sufficiently powerful neural network, we can think of the $neural
+network$$ as being able to represent any $$$function$$$$ f from a wide class of functions,
 with this class being limited only by features such as continuity and boundedness
 rather than by having a specific parametric form. From this point of view, we
-can view the  _start_e1_ cost function _end_e1_  as being a functional rather than just a  _start_e2_ function _end_e2_ . A
- _start_e1_ functional _end_e1_  is a  _start_e2_ mapping _end_e2_  from functions to real numbers. We can thus think of
-learning as choosing a  _start_e1_ function _end_e1_  rather than merely choosing a set of  _start_e2_ parameters _end_e2_ .
+can view the $cost function$$ as being a functional rather than just a $$$function$$$$. A
+$functional$$ is a $$$mapping$$$$ from functions to real numbers. We can thus think of
+learning as choosing a $function$$ rather than merely choosing a set of $$$parameters$$$$.
 We can design our cost functional to have its minimum occur at some specific
 function we desire. For example, we can design the cost functional to have its
 minimum lie on the function that maps x to the expected value of y given x.
-Solving an optimization problem with respect to a  _start_e1_ function _end_e1_  requires a mathematical
-tool called  _start_e2_ calculus of variations _end_e2_ , described in section 19.4.2. It is not necessary
+Solving an optimization problem with respect to a $function$$ requires a mathematical
+tool called $$$calculus of variations$$$$, described in section 19.4.2. It is not necessary
 to understand calculus of variations to understand the content of this chapter. At
 the moment, it is only necessary to understand that calculus of variations may be
 used to derive the following two results.
@@ -464,19 +464,19 @@ f
 yields a function that predicts the median value of y for each x, so long as such a
 function may be described by the family of functions we optimize over. This cost
 function is commonly called mean absolute error.
-Unfortunately,  _start_e1_ mean squared error _end_e1_  and mean absolute error often lead to poor
-results when used with gradient-based  _start_e2_ optimization _end_e2_ . Some output  _start_e1_ units _end_e1_  that
-saturate produce very small  _start_e2_ gradients _end_e2_  when combined with these cost functions.
-This is one reason that the  _start_e1_ cross-entropy _end_e1_  cost function is more popular than  _start_e2_ mean
-squared error _end_e2_  or mean absolute error, even when it is not necessary to estimate an
+Unfortunately, $mean squared error$$ and mean absolute error often lead to poor
+results when used with gradient-based $$$optimization$$$$. Some output $units$$ that
+saturate produce very small $$$gradients$$$$ when combined with these cost functions.
+This is one reason that the $cross-entropy$$ cost function is more popular than $$$mean
+squared error$$$$ or mean absolute error, even when it is not necessary to estimate an
 entire distribution p(y | x).
 
 6.2.2
 
 Output Units
 
-The choice of  _start_e1_ cost function _end_e1_  is tightly coupled with the choice of output  _start_e2_ unit _end_e2_ . Most
-of the time, we simply use the  _start_e1_ cross-entropy _end_e1_  between the data distribution and the
+The choice of $cost function$$ is tightly coupled with the choice of output $$$unit$$$$. Most
+of the time, we simply use the cross-entropy between the data distribution and the
 model distribution. The choice of how to represent the output then determines
 the form of the cross-entropy function.
 Any kind of neural network unit that may be used as an output can also be
@@ -484,27 +484,27 @@ used as a hidden unit. Here, we focus on the use of these units as outputs of th
 model, but in principle they can be used internally as well. We revisit these units
 with additional detail about their use as hidden units in section 6.3.
 Throughout this section, we suppose that the feedforward network provides a
-set of hidden features defined by h = f (x ; θ). The role of the  _start_e1_ output layer _end_e1_  is then
-to provide some additional  _start_e2_ transformation _end_e2_  from the features to complete the task
+set of hidden features defined by h = f (x ; θ). The role of the $output layer$$ is then
+to provide some additional $$$transformation$$$$ from the features to complete the task
 that the network must perform.
 6.2.2.1
 
 Linear Units for Gaussian Output Distributions
 
-One simple kind of output  _start_e1_ unit _end_e1_  is an output unit based on an affine  _start_e2_ transformation _end_e2_ 
+One simple kind of output $unit$$ is an output unit based on an affine $$$transformation$$$$
 with no nonlinearity. These are often just called linear units.
-Given features h, a layer of linear output  _start_e1_ units _end_e1_  produces a  _start_e2_ vector _end_e2_  ŷ = W h+b.
-Linear  _start_e1_ output layers _end_e1_  are often used to produce the mean of a conditional
- _start_e2_ Gaussian distribution _end_e2_ :
+Given features h, a layer of linear output $units$$ produces a $$$vector$$$$ ŷ = W h+b.
+Linear $output layers$$ are often used to produce the mean of a conditional
+$$$Gaussian distribution$$$$:
 (6.17)
 p(y | x) = N (y ; yˆ, I ).
 181
-Maximizing the  _start_e1_ log-likelihood _end_e1_  is then equivalent to minimizing the  _start_e2_ mean squared
-error _end_e2_ .
-The  _start_e1_ maximum likelihood _end_e1_  framework makes it straightforward to learn the
- _start_e2_ covariance _end_e2_  of the Gaussian too, or to make the  _start_e1_ covariance _end_e1_  of the Gaussian be a
- _start_e2_ function _end_e2_  of the input. However, the  _start_e1_ covariance _end_e1_  must be constrained to be a positive
-definite  _start_e2_ matrix _end_e2_  for all inputs. It is difficult to satisfy such constraints with a linear
+Maximizing the $log-likelihood$$ is then equivalent to minimizing the $$$mean squared
+error$$$$.
+The $maximum likelihood$$ framework makes it straightforward to learn the
+$$$covariance$$$$ of the Gaussian too, or to make the $covariance$$ of the Gaussian be a
+$$$function$$$$ of the input. However, the $covariance$$ must be constrained to be a positive
+definite $$$matrix$$$$ for all inputs. It is difficult to satisfy such constraints with a linear
 output layer, so typically other output units are used to parametrize the covariance.
 Approaches to modeling the covariance are described shortly, in section 6.2.2.4.
 Because linear units do not saturate, they pose little difficulty for gradientbased optimization algorithms and may be used with a wide variety of optimization
