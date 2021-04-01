@@ -48,6 +48,7 @@ def read_index(index_path):
                 name = line_list[0].lower()
                 entity_index[name] = name.split()
     # TODO: Map entities with 'see ...' together
+    # TODO: use nltk stemmer
     return entity_index
 
 
@@ -317,13 +318,11 @@ def get_training_data(index):
                     }
                     json.dump(to_add, outfile)
                     outfile.write('\n')
-    # final_json = {"training_set": final_dataset}
-    # with open('data/final_dataset.json', 'w+') as f:
-    #         json.dump(final_json,  f, indent=4)
+
     return index, desired_rels
 
 
-def read_annotations(file_dir):
+def read_annotations(file_dir, desired_rels):
     """read the annotated text file
 
     Args:
@@ -351,6 +350,18 @@ def read_annotations(file_dir):
                     for e1,c,e2 in zip(entity_1, contexts, entity_2):
                         key = ' '.join(e1) + '*' + ' '.join(e2)
                         all_relations.setdefault(key, set()).add(' '.join(c))
+    with open('data/annotations.json', 'w+') as outfile: 
+        for key, values in all_relations.items():
+        # add the KB relation to be evaluated:
+        # TODO: try directly with 'relation': desired_rels  
+            for relation in desired_rels:
+                to_add = {
+                            'entity_pair': key, 
+                            'seen_with': list(values), 
+                            'relation': relation
+                        }
+                json.dump(to_add, outfile)
+                outfile.write('\n')
     return all_relations
 
 
@@ -423,14 +434,13 @@ def get_test_data(index, file_dir, desired_rels):
 def run(file_dir, index_path):
     # ------ get the book' index -------
     index = read_index(index_path)
-    read_annotations('resources/annotated_[11]part-2-chapter-6.txt')
     
     # ---- preparing training data ------
     extended_index, desired_rels = get_training_data(index)
 
     # ---- preparing training data ------
     get_test_data(extended_index, file_dir, desired_rels)
-
+    read_annotations('resources/annotated_[11]part-2-chapter-6.txt', desired_rels)
 
     # ---- prepare test data - (s, text, o) with s,o from entity_index of all 'interesting' entities
     # manual_content = read_from_pdf(file_dir)
