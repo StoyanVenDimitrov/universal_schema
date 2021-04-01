@@ -1,18 +1,26 @@
+import csv
+import glob
+import itertools
+import json
+import os
 import random
 import re
+from collections import defaultdict
+from itertools import groupby, zip_longest
+
 import nltk
-import csv
 import numpy as np
 import requests
-import json
-import os,glob
-import itertools  
-from itertools import groupby, zip_longest
-from collections import defaultdict
 from bs4 import BeautifulSoup
-from get_requests import single_query, rel_from_domain, wikimedia_request
+from nltk.stem.porter import PorterStemmer
+
+from get_requests import rel_from_domain, single_query, wikimedia_request
 
 nltk.download('punkt')
+
+STEMMER = PorterStemmer()
+
+
 def read_from_pdf(file_dir):
     """read from pdf-to-txt converted texts
 
@@ -348,9 +356,9 @@ def read_annotations(file_dir, desired_rels):
                     entity_1 = [tokens[i:j] for i,j in zip(entities_start[:-1], entities_end[:-1])]
                     entity_2 = [tokens[i:j] for i,j in zip(entities_start[1:], entities_end[1:])]
                     for e1,c,e2 in zip(entity_1, contexts, entity_2):
-                        key = ' '.join(e1) + '*' + ' '.join(e2)
+                        key = ' '.join([STEMMER.stem(i) for i in e1]) + ' * ' + ' '.join([STEMMER.stem(j) for j in e2])
                         all_relations.setdefault(key, set()).add(' '.join(c))
-    with open('data/annotations.json', 'w+') as outfile: 
+    with open('data/_annotations.json', 'w+') as outfile: 
         for key, values in all_relations.items():
         # add the KB relation to be evaluated:
         # TODO: try directly with 'relation': desired_rels  
@@ -404,16 +412,21 @@ def get_test_data(index, file_dir, desired_rels):
                 end_pos = i +1
             span = (start_pos, end_pos)
             w = single_candidate[0]
-            if last_found != None and last_found != w:
+            if last_found != None and last_found[0] != single_candidate[0]:
                 # apply aliases from list of aliases
-                found_here.append((last_found, w))  
+                found_here.append(
+                    (
+                        ' '.join([STEMMER.stem(i) for i in last_found[1]]), 
+                        ' '.join([STEMMER.stem(i) for i in single_candidate[1]])
+                    )
+                )  
                 found_here_on.append((last_found_on, span[0]))
             last_found_on = span[1]
-            last_found = w
+            last_found = single_candidate
 
         for e, i in zip(found_here, found_here_on):
             if i[0]!=i[1]:
-                pair = '*****'.join([e[0], e[1]])
+                pair = ' * '.join([e[0], e[1]])
                 result.setdefault(pair, []).append(' '.join(sentence[i[0]:i[1]]))
                 # seq = ' '.join(sentence[i[0]:i[1]])
                 # result.append((e[0], e[1], '*****'.join([e[0], e[1]]), '$ARG1 '+ seq +' $ARG2'))
