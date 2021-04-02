@@ -31,7 +31,7 @@
     "seen_with": [
         "\u03b8 that result in the best"
     ],
-    "label": "P366"
+    "label": "P1552"
 }
 {
     "entity_pair": "inform * function",
@@ -110,7 +110,7 @@
     "seen_with": [
         "of the network is typically"
     ],
-    "label": "P279"
+    "label": "P31"
 }
 {
     "entity_pair": "layer * function",
@@ -131,7 +131,7 @@
     "seen_with": [
         "as function approximation machines that are designed to achieve statistical"
     ],
-    "label": "P366"
+    "label": "P1552"
 }
 {
     "entity_pair": "feedforward network * linear model",
@@ -146,7 +146,7 @@
     "seen_with": [
         ", such as"
     ],
-    "label": "P527"
+    "label": "P1552"
 }
 {
     "entity_pair": "logist regress * linear regress",
@@ -243,7 +243,7 @@
     "seen_with": [
         "( `` exclusive or '' ) is an"
     ],
-    "label": "P31"
+    "label": "P279"
 }
 {
     "entity_pair": "learn algorithm * paramet",
@@ -320,7 +320,7 @@
     "seen_with": [
         "called an"
     ],
-    "label": "P366"
+    "label": "P527"
 }
 {
     "entity_pair": "weight * transform",
@@ -356,7 +356,7 @@
     "seen_with": [
         "from a"
     ],
-    "label": "P361"
+    "label": "P279"
 }
 {
     "entity_pair": "activ function * function",
@@ -412,14 +412,14 @@
     "seen_with": [
         "by specifying an"
     ],
-    "label": "P279"
+    "label": "P527"
 }
 {
     "entity_pair": "neural network * loss function",
     "seen_with": [
         "causes most interesting"
     ],
-    "label": "P366"
+    "label": "P1552"
 }
 {
     "entity_pair": "convex optim * paramet",
@@ -519,7 +519,7 @@
     "seen_with": [
         "defines a"
     ],
-    "label": "P31"
+    "label": "P279"
 }
 {
     "entity_pair": "cross-entropi * train data",
@@ -533,7 +533,7 @@
     "seen_with": [
         "described here with a"
     ],
-    "label": "P527"
+    "label": "P1552"
 }
 {
     "entity_pair": "regular * linear model",
@@ -554,14 +554,14 @@
     "seen_with": [
         "strategies for"
     ],
-    "label": "P101"
+    "label": "P366"
 }
 {
     "entity_pair": "neural network * maximum likelihood",
     "seen_with": [
         "are trained using"
     ],
-    "label": "P366"
+    "label": "P2283"
 }
 {
     "entity_pair": "cost function * cross-entropi",
@@ -617,7 +617,7 @@
     "seen_with": [
         "is a"
     ],
-    "label": "P31"
+    "label": "P279"
 }
 {
     "entity_pair": "function * paramet",
@@ -645,7 +645,7 @@
     "seen_with": [
         "that saturate produce very small"
     ],
-    "label": "P527"
+    "label": "P1552"
 }
 {
     "entity_pair": "cross-entropi * mean squar error",
@@ -680,7 +680,7 @@
     "seen_with": [
         "produces a"
     ],
-    "label": "P366"
+    "label": "P1552"
 }
 {
     "entity_pair": "output layer * gaussian distribut",
