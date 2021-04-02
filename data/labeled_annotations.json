@@ -621,7 +621,7 @@
         "is to begin with"
     ],
     "relation": "P279",
-    "label": "P366"
+    "label": "P1889"
 }
 {
     "entity_pair": "feedforward network * linear model",
@@ -1995,7 +1995,8 @@
     "seen_with": [
         ", it is important to initialize all"
     ],
-    "relation": "P279"
+    "relation": "P279",
+    "label": "P366"
 }
 {
     "entity_pair": "feedforward neural network * weight",
@@ -2034,7 +2035,8 @@
     "seen_with": [
         "used to train"
     ],
-    "relation": "P31"
+    "relation": "P31",
+    "label": "P366"
 }
 {
     "entity_pair": "optim algorithm * feedforward network",
