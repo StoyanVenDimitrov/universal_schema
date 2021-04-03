@@ -63,6 +63,7 @@ Classical dynamical system, 372
 Classiﬁcation, 99
 Clique potential, see factor (graphical model)
 CNN, see convolutional neural network
+Coefficient, 34
 Collaborative Filtering, 474
 Collider, see explaining away
 Color images, 357
@@ -112,6 +113,7 @@ Data generating process, 110
 Data parallelism, 444
 Dataset, 103
 Dataset augmentation, 268, 454
+Deep neural network, 45
 DBM, see deep Boltzmann machine
 DCGAN, 547, 548, 695
 Decision tree, 144, 544
@@ -267,6 +269,7 @@ base, 2, 479
 Heteroscedastic, 186
 Krylov methods, 222
 Hidden layer, 6, 166
+Hidden unit, 6, 166
 Kullback-Leibler divergence, xiii, 73
 Hill climbing, 85
 Hyperparameter optimization, 429
@@ -280,7 +283,7 @@ i.i.d. assumptions, 110, 121, 265
 Laplace distribution, 64, 492
 Identity matrix, 35
 ILSVRC, see ImageNet Large Scale Visual Latent variable, 66
-Layer (neural network), 166
+Layer, 166
 Recognition Challenge
 ImageNet Large Scale Visual Recognition LCN, see local contrast normalization
 Leaky ReLU, 191
@@ -288,6 +291,7 @@ Challenge, 22
 Leaky units, 404
 Immorality, 573
 Learning rate, 84
+Learning algorithm, 84
 Importance sampling, 588, 620, 691
 Line search, 84, 85, 92
 Importance weighted autoencoder, 691
@@ -403,6 +407,7 @@ OMP-k, see orthogonal matching pursuit
 One-shot learning, 534
 Operation, 202
 Optimization, 79, 81
+Optimization procedure, 79, 81
 Orthodox statistics, see frequentist statistics
 Orthogonal matching pursuit, 26, 252
 Orthogonal matrix, 41
@@ -459,6 +464,7 @@ Policy, 476
 Relational database, 479
 Pooling, 327, 677
 Relations, 478
+Relu, 478
 Positive deﬁnite, 88
 Reparametrization trick, 682
 Positive phase, 466, 602, 604, 650, 662
@@ -547,6 +553,7 @@ chine, 674
 Transcription, 100
 SPN, see sum-product network
 Transfer learning, 532
+Transformation, 532
 Transpose, xii, 32
 Triangle inequality, 38
 Triangulated graph, see chordal graph

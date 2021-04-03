@@ -111,11 +111,3 @@ def wikimedia_request(search_term, continue_val):
     PARAMS.update(continue_val)
   R = S.get(url=URL, params=PARAMS).json()
   return R
-  # while True:
-  #   R = S.get(url=URL, params=PARAMS).json()
-  #   print (R['query']['search'])#(len(R['query']['search'][0]['snippet'])) 
-  #   print('##################')
-  #   if 'continue' in R:
-  #       PARAMS.update(R['continue'])
-  #   else:
-  #       break

@@ -74,6 +74,8 @@ def get_initial_wikidata_facts(entities):
             code_triples = json.load(f_in)
         with open('data/initial_label_facts.json') as f_in:
             label_triples = json.load(f_in)
+            x = {label:len(value) for label,value in label_triples.items()}
+            print({k: v for k, v in sorted(x.items(), key=lambda item: item[1], reverse=True)})
         with open('data/initial_entities.json') as f_in:
             found_objects = json.load(f_in)
         return code_triples, label_triples, found_objects
@@ -134,19 +136,20 @@ def get_secondary_wikidata_facts(code_facts, top_k):
         keys = sorted(code_facts.items(), key=lambda item: len(item[1]), reverse=True)[:top_k]
         facts = {k[0]: code_facts[k[0]] for k in keys if len(code_facts[k[0]])>min_count}
         # ! Domains: Mathematics, CS.
-        # TODO: more categories
+        skip_following = ['P101', 'P1269', 'P461', 'P2579', 'P373', 'P1659', 'P1855', 'P1629', 'P703']
         for category in ['Q21198', 'Q395']:
             for rel in facts.keys():
-                c, l, obj = rel_from_domain(rel, category)
-                for rel_code, code_tuples in c.items():
-                    code_triples[rel_code] = code_triples.get(rel_code, []) + code_tuples
-                # code_triples.update(c)
-                for rel_label, label_tuples in l.items():
-                    label_triples[rel_label] = label_triples.get(rel_label, []) + label_tuples
-                # label_triples.update(l)
-                found_objects.update(obj)
-            # label_triples = dict()
-            # found_objects = dict()
+                if rel not in skip_following:
+                    c, l, obj = rel_from_domain(rel, category)
+                    for rel_code, code_tuples in c.items():
+                        code_triples[rel_code] = code_triples.get(rel_code, []) + code_tuples
+                    # code_triples.update(c)
+                    for rel_label, label_tuples in l.items():
+                        label_triples[rel_label] = label_triples.get(rel_label, []) + label_tuples
+                    # label_triples.update(l)
+                    found_objects.update(obj)
+                # label_triples = dict()
+                # found_objects = dict()
         with open('data/secondary_code_facts.json', 'w+') as f:
             json.dump(code_triples,  f, indent=4)
         with open('data/secondary_label_facts.json', 'w+') as f:
@@ -212,7 +215,6 @@ def get_wikipedia_evidences(sec_labels):
             wikipedia_evidences = json.load(f_in)
     except FileNotFoundError:
         wikipedia_evidences = dict()
-        # TODO: by now, the initial KB facts are NOT used to extract text patterns:
         id_start = 0
         for relation, pairs in sec_labels.items():
             entity_text_mentions = dict()
@@ -220,8 +222,8 @@ def get_wikipedia_evidences(sec_labels):
             for _id, i in enumerate(pairs, id_start):
                 mentions = get_textual_mentions(i)
                 if mentions:
-                    mentions.append(relation)
-                    entity_text_mentions['*'.join(i)] = mentions
+                    # mentions.append(relation)
+                    entity_text_mentions[' * '.join(i)] = mentions
                     entity_id_mentions[_id] = mentions
                 # entity_text_mentions['*'.join(i)] = get_textual_mentions(i)
             wikipedia_evidences[relation] = entity_text_mentions
@@ -245,6 +247,8 @@ def prepare_neg_data(all_pos_samples, num_samples):
             # all_pos_samples have been changed
     except FileNotFoundError:
         neg_samples = dict()
+        # ! negative pool - only KB relations:
+        neg_pool = set(all_pos_samples.keys())
         for relation, pos_samples in all_pos_samples.items():
             # ! removing mentions as negatives
             # adding all neg mentions
@@ -255,13 +259,11 @@ def prepare_neg_data(all_pos_samples, num_samples):
             #         for e in examples.values():
             #             neg_pool.update(e)
                   
-            # ! neg pool - only KB relations:
-            neg_pool = set(all_pos_samples.keys())
             for _id, values in pos_samples.items():
                 neg_examples = set()
                 while len(neg_examples) < num_samples:
                     neg_rel = random.choice(list(neg_pool))
-                    if not neg_rel in values:
+                    if neg_rel != relation:
                         neg_examples.add(neg_rel)
                     # sample entity pairs:
                     # sample_ids = random.choices(list(pos_samples.keys()), k=num_samples)
@@ -283,7 +285,7 @@ def get_training_data(index):
     Args:
         index ([type]): book's index terms + terms related with them in the KB
     """
-    top_k = 4
+    top_k = 18
     facts = dict()
     # codes, labels, new_entities = get_initial_wikidata_facts(dict(itertools.islice(entity_index.items(), 15)))
     codes, labels, new_entities = get_initial_wikidata_facts(index) # s or o from the book index
@@ -291,24 +293,24 @@ def get_training_data(index):
     index.update(new_entities)  # take in the new entities 
     sec_codes, sec_labels, sec_new_entities = get_secondary_wikidata_facts(codes, top_k)
     # define the possible KB relations for test time
-    best_rels_obj = sorted(codes.items(), key=lambda item: len(item[1]), reverse=True)[:top_k]
-    desired_rels = [rel[0]for rel in best_rels_obj]
+    # best_rels_obj = sorted(codes.items(), key=lambda item: len(item[1]), reverse=True)[:top_k]
+    desired_rels = list(sec_codes.keys())
     # search textual patterns between entities of found KB facts for the most prominent relations 
     wikipedia_evidences = get_wikipedia_evidences(sec_labels)
-    neg_data = prepare_neg_data(wikipedia_evidences, 2)
+    neg_data = prepare_neg_data(wikipedia_evidences, 5)
 
     # [{row:..., seen_with:[...], column:..., label: 0 or 1}, ...]
     with open('data/final_dataset.json', 'w+') as outfile:
         # final_dataset = []
-        for _, evidences in wikipedia_evidences.items():
+        for kb_rel, evidences in wikipedia_evidences.items():
             for pair, relations in evidences.items():
-                # ! remove the relation itself to avoid predicting simply its position
-                seen_with = [i for i in relations if not i.startswith('P')]
+                # # ! remove the relation itself to avoid predicting simply its position
+                # seen_with = [i for i in relations if not i.startswith('P')]
                 for mention in relations:
                     to_add = {
                             'entity_pair': pair, 
-                            'seen_with': seen_with, 
-                            'relation': mention,
+                            'seen_with': relations, 
+                            'relation': kb_rel,
                             'label': 1
                         }
                     # ! query with textual mentions as in USchema is too hard and 
@@ -317,11 +319,11 @@ def get_training_data(index):
                 json.dump(to_add, outfile) # last is always path
                 outfile.write('\n')
                 neg_relations = neg_data[pair]
-                for neg_mention in neg_relations:
+                for neg_rel in neg_relations:
                     to_add = {
                         'entity_pair': pair, 
-                        'seen_with': seen_with, 
-                        'relation': neg_mention,
+                        'seen_with': relations, 
+                        'relation': neg_rel,
                         'label': 0
                     }
                     json.dump(to_add, outfile)
@@ -373,7 +375,26 @@ def read_annotations(file_dir, desired_rels):
     return all_relations
 
 
-def get_test_data(index, file_dir, desired_rels):
+def get_test_data(index, file_dir, desired_rels, evaluating=False):
+
+    if evaluating:
+        # modify the index with test set entities only:
+        mod_index = {}
+        with open('resources/test_facts.json') as f_in:
+            test_facts = json.load(f_in)['samples']
+            # in evaluation, take only the test facts' entities: 
+            test_index = set()
+            for fact in test_facts:
+                split = fact['entity_pair'].split(' * ')
+                [test_index.add(i) for i in split]
+            test_index = list(test_index)
+            for k, v in index.items():
+                mod_v = ' '.join([STEMMER.stem(i) for i in v])
+                if mod_v in test_index:
+                    mod_index[k] = v
+                    test_index.remove(mod_v)
+        index = mod_index
+
     manual_content = read_from_pdf(file_dir)
     result = dict()
     for sentence in manual_content:
@@ -428,9 +449,8 @@ def get_test_data(index, file_dir, desired_rels):
             if i[0]!=i[1]:
                 pair = ' * '.join([e[0], e[1]])
                 result.setdefault(pair, []).append(' '.join(sentence[i[0]:i[1]]))
-                # seq = ' '.join(sentence[i[0]:i[1]])
-                # result.append((e[0], e[1], '*****'.join([e[0], e[1]]), '$ARG1 '+ seq +' $ARG2'))
-    with open('data/test_dataset_ch6.json', 'w+') as outfile: 
+    # first, drop all found mentions and prepare a dataset:
+    with open('data/prediction_dataset.json', 'w+') as outfile: 
         for key, values in result.items():
             # add the KB relation to be evaluated:
             # TODO: try directly with 'relation': desired_rels  
@@ -442,18 +462,56 @@ def get_test_data(index, file_dir, desired_rels):
                         }
                 json.dump(to_add, outfile)
                 outfile.write('\n')
+    # second, if evaluating, create dataset with the labaled data:
+    if evaluating:
+        with open('data/test_dataset.json', 'w+') as outfile: 
+            test_pairs = {i['entity_pair']:i['label'] for i in test_facts}
+            for key, values in result.items():
+                if key in test_pairs.keys():
+                    # add the KB relation to be evaluated:
+                    # TODO: try directly with 'relation': desired_rels  
+                    for relation in desired_rels: 
+                        to_add = {
+                                    'entity_pair': key, 
+                                    'seen_with': values, 
+                                    'relation': relation,
+                                    'label': 1 if relation==test_pairs[key] else 0
+                                }
+                        json.dump(to_add, outfile)
+                        outfile.write('\n')
+        
+
 
 
 def run(file_dir, index_path):
+    labeled_data = []
+    # with open('data/labeled_annotations.json') as f_in:
+    #         annotations = json.load(f_in)
+    # with open('data/edited_labeling.json', 'w+') as outfile: 
+    #     for a in annotations['samples']:
+    #         if a['relation']=='P31':
+    #             del a['relation']
+    #             labeled_data.append(a)
+    #             json.dump(a, outfile)
+    #             outfile.write('\n')
     # ------ get the book' index -------
     index = read_index(index_path)
+    # with open('resources/test_facts.json') as f_in:
+    #         test_facts = json.load(f_in)['samples']
+    #         # in evaluation, take only the test facts' entities: 
+    #         test_index = set()
+    #         for fact in test_facts:
+    #             split = fact['entity_pair'].split(' * ')
+    #             [test_index.add(i) for i in split]
+    # with open('resources/test_index.json', 'w+') as outfile:
+    #     json.dump({'index':list(test_index)}, outfile)
     
     # ---- preparing training data ------
     extended_index, desired_rels = get_training_data(index)
 
     # ---- preparing training data ------
-    get_test_data(extended_index, file_dir, desired_rels)
-    read_annotations('resources/annotated_[11]part-2-chapter-6.txt', desired_rels)
+    get_test_data(extended_index, file_dir, desired_rels,evaluating=True)
+    # read_annotations('resources/annotated_[11]part-2-chapter-6.txt', desired_rels)
 
     # ---- prepare test data - (s, text, o) with s,o from entity_index of all 'interesting' entities
     # manual_content = read_from_pdf(file_dir)

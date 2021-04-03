@@ -5,6 +5,7 @@ import torch
 import torch.nn as nn
 import torchtext.data as data
 import tqdm
+from sklearn.metrics import confusion_matrix, f1_score
 from torchnlp.nn import Attention
 
 from utils import LSTMEncoder
@@ -37,7 +38,8 @@ path='data/test_dataset.json', format='json',
 fields= {
     "entity_pair": ('row', row),
     "seen_with": ('mentions', mentions),
-    "relation": ('column', column)
+    "relation": ('column', column), 
+    "label": ('label', label)
     } 
 )
 
@@ -46,8 +48,9 @@ train_iterator = data.BucketIterator(
     shuffle=True
     )
 
+# ! The batch size must be always equal the number of rel classes
 test_iterator = data.BucketIterator(
-    dataset=test_dataset, batch_size=4,
+    dataset=test_dataset, batch_size=9,
     shuffle=False
     )
 
@@ -62,6 +65,7 @@ class UniversalSchema(nn.Module):
         self.row_encoder = nn.Embedding(row_vocab_size, params['emb_dim'])
         # encode the mentions with LSTM:
         self.mention_col_encoder = LSTMEncoder(mentions_vocab_size, params['emb_dim'], params['lstm_hid'])
+        #TODO: if no mentions as query, this can be a simple table:
         self.query_col_encoder = LSTMEncoder(col_vocab_size, params['emb_dim'], params['lstm_hid'])
         if params.get('pooling', None) == 'attention':
             # TODO: using tying for the attention encoder
@@ -115,7 +119,7 @@ def train():
     opt = torch.optim.Adam(model.parameters(), lr=0.01)
 
     # model.train()
-    for epoch in range(10):
+    for epoch in range(1):
         running_loss = 0.0
         for i, batch in enumerate(train_iterator,0): # enumerate(tqdm(train_iterator)): 
             x = batch
@@ -138,13 +142,23 @@ def train():
 
 def test():
     model = UniversalSchema(params)
-    model.load_state_dict(torch.load("models/attention-03-01-20:33:16.pth"))
+    model.load_state_dict(torch.load("models/attention-04-03-14:09:23.pth"))
     classes = column.vocab.itos[2:] # col vocab without <unk> and <pad>
+    predictions = []
+    true_labels = []
     for i, example in enumerate(test_iterator,0):
         scores = model(example)
         output = classes[torch.argmax(scores)]
+        true_label = classes[torch.argmax(example.label)]
+        predictions.append(output)
+        true_labels.append(true_label)
+    print(confusion_matrix(true_labels,predictions))
+    print(f1_score(true_labels,predictions, average='macro'))
+
 
         
 
-train()
-# test()
+        
+
+# train()
+test()
