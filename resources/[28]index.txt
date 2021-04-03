@@ -21,7 +21,7 @@ Adversarial example, 265
 Belief network, see directed graphical model
 Adversarial training, 266, 268, 526
 Bernoulli distribution, 61
-Aﬃne, 109
+Affine, 109
 Bias, 123, 227
 Almost everywhere, 70
 Bias parameter, 109
@@ -155,15 +155,17 @@ Factors of variation, 4
 Feature, 98
 Feature selection, 234
 Feedforward neural network, 166
+Feedforward network, 166
 E-step, 629
 Fine-tuning, 321
+Function approximation, 321
 Early stopping, 244, 246, 270, 271, 422
 Finite diﬀerences, 436
 EBM, see energy-based model
 Forget gate, 304
 Echo state network, 23, 26, 401
 Forward propagation, 201
-Eﬀective capacity, 113
+Effective capacity, 113
 Fourier transform, 357, 359
 Eigendecomposition, 41
 Fovea, 363
@@ -293,6 +295,7 @@ Linear combination, 36
 Independence, xiii, 59
 Independent and identically distributed, see Linear dependence, 37
 Linear factor models, 485
+Linear function, 485
 i.i.d. assumptions
 Linear regression, 106, 109, 138
 Independent component analysis, 487
@@ -431,6 +434,7 @@ Parameter sharing, 249, 332, 370, 372, 386 Ratio matching, 614
 Parameter tying, see Parameter sharing
 RBF, 195
 Parametric model, 113
+Parameter, 113
 RBM, see restricted Boltzmann machine
 Parametric ReLU, 191
 Recall, 420
@@ -537,6 +541,7 @@ recognition
 Topographic ICA, 489
 Sphering, see whitening
 Trace operator, 45
+Training data, 45
 Spike and slab restricted Boltzmann ma- Training error, 109
 chine, 674
 Transcription, 100
@@ -555,6 +560,7 @@ Undirected graphical model, 76, 503
 Undirected model, 562
 Uniform distribution, 56
 Unigram, 458
+Unit, 458
 Unit norm, 40
 Unit vector, 40
 Universal approximation theorem, 196
