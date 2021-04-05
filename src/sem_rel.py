@@ -5,6 +5,7 @@ import torch
 import torch.nn as nn
 import torchtext.data as data
 import tqdm
+import json
 from sklearn.metrics import confusion_matrix, f1_score
 from torchnlp.nn import Attention
 
@@ -16,7 +17,7 @@ row = data.Field(sequential=False)
 mention = data.Field(sequential=True)
 mentions = data.NestedField(mention)
 # TODO: try shared vocabulary here
-column = data.Field(sequential=True)
+column = data.Field(sequential=False)
 label = data.LabelField(dtype = torch.float, use_vocab=False, preprocessing=float)
 
 dataset = data.TabularDataset(
@@ -34,7 +35,7 @@ mentions.build_vocab(dataset)
 column.build_vocab(dataset)
 
 test_dataset = data.TabularDataset(
-path='data/test_dataset.json', format='json',
+path='data/test_aggregated_dataset.json', format='json',
 fields= {
     "entity_pair": ('row', row),
     "seen_with": ('mentions', mentions),
@@ -54,6 +55,19 @@ test_iterator = data.BucketIterator(
     shuffle=False
     )
 
+CLASSES = ['P279','P31','P1889','P361','P1552','P366','P460','P2283','P527']
+VALUES = {
+    'P279': 'subclass of',
+    'P31': 'instance of',
+    'P1889':'different from',
+    'P361':'part of',
+    'P1552':'has quality',
+    'P366':'use',
+    'P460':'said to be the same as',
+    'P2283':'uses',
+    'P527':'has part'
+    }
+
 
 class UniversalSchema(nn.Module):
     def __init__(self, params):
@@ -66,7 +80,8 @@ class UniversalSchema(nn.Module):
         # encode the mentions with LSTM:
         self.mention_col_encoder = LSTMEncoder(mentions_vocab_size, params['emb_dim'], params['lstm_hid'])
         #TODO: if no mentions as query, this can be a simple table:
-        self.query_col_encoder = LSTMEncoder(col_vocab_size, params['emb_dim'], params['lstm_hid'])
+        # self.query_col_encoder = LSTMEncoder(col_vocab_size, params['emb_dim'], params['lstm_hid'])
+        self.query_col_encoder = nn.Embedding(col_vocab_size, params['lstm_hid'])
         if params.get('pooling', None) == 'attention':
             # TODO: using tying for the attention encoder
             self.attention_col_encoder = LSTMEncoder(mentions_vocab_size, params['emb_dim'], params['lstm_hid'])
@@ -105,21 +120,18 @@ class UniversalSchema(nn.Module):
         row_m = torch.unsqueeze(row_aggregation, 1)
         col_m = torch.unsqueeze(query, 2)
         score = torch.bmm(row_m, col_m)
+        sigm = torch.sigmoid(score)
         return torch.squeeze(score, dim=1)  # skip sigmoid if using BCEWithLogitsLoss
-
-
-params = {'emb_dim': 100, 'lstm_encoder': True, 'pooling': 'attention', 'lstm_hid':64}   
-model = UniversalSchema(params)
 
 
 def train():
     loss_func = nn.BCEWithLogitsLoss() # (reduction='none')
     # https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html
     # https://discuss.pytorch.org/t/difference-between-cross-entropy-loss-or-log-likelihood-loss/38816/2
-    opt = torch.optim.Adam(model.parameters(), lr=0.01)
+    opt = torch.optim.Adam(model.parameters(), lr=0.0001)
 
     # model.train()
-    for epoch in range(1):
+    for epoch in range(params['epochs']):
         running_loss = 0.0
         for i, batch in enumerate(train_iterator,0): # enumerate(tqdm(train_iterator)): 
             x = batch
@@ -137,28 +149,40 @@ def train():
                 running_loss = 0.0
     
 
-    PATH = 'models/{mode}-{save_as}.pth'.format(save_as = datetime.today().strftime('%m-%d-%H:%M:%S'), mode=params['pooling'])
+    PATH = 'models/{mode}-{dim}x{lstm_hid}-{epochs}-{save_as}.pth'.format(
+        save_as = datetime.today().strftime('%m-%d-%H:%M:%S'), 
+        mode=params['pooling'],
+        dim = params['emb_dim'],
+        lstm_hid = params['lstm_hid'],
+        epochs = params['epochs']
+    )
     torch.save(model.state_dict(), PATH)
 
 def test():
     model = UniversalSchema(params)
-    model.load_state_dict(torch.load("models/attention-04-03-14:09:23.pth"))
-    classes = column.vocab.itos[2:] # col vocab without <unk> and <pad>
+    model.load_state_dict(torch.load("models/attention-100x64-10-04-05-16:34:14.pth"))
+    # classes = column.vocab.itos[2:] # col vocab without <unk> and <pad>
+
     predictions = []
     true_labels = []
     for i, example in enumerate(test_iterator,0):
         scores = model(example)
-        output = classes[torch.argmax(scores)]
-        true_label = classes[torch.argmax(example.label)]
+        output = CLASSES[torch.argmax(scores)]
+        true_label = CLASSES[torch.argmax(example.label)]
         predictions.append(output)
         true_labels.append(true_label)
-    print(confusion_matrix(true_labels,predictions))
+    print(confusion_matrix(true_labels,true_labels, labels=CLASSES))
+    print(confusion_matrix(true_labels,predictions,labels=CLASSES))
     print(f1_score(true_labels,predictions, average='macro'))
+    pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+    print('Trainable parameters:', pytorch_total_params)
 
 
         
 
-        
+params = {'emb_dim': 100, 'lstm_encoder': True, 'pooling': 'attention', 'lstm_hid':64, 'epochs':10}   
+model = UniversalSchema(params)       
 
-# train()
-test()
+train()
+# test()

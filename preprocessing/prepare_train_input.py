@@ -137,7 +137,7 @@ def get_secondary_wikidata_facts(code_facts, top_k):
         facts = {k[0]: code_facts[k[0]] for k in keys if len(code_facts[k[0]])>min_count}
         # ! Domains: Mathematics, CS.
         skip_following = ['P101', 'P1269', 'P461', 'P2579', 'P373', 'P1659', 'P1855', 'P1629', 'P703']
-        for category in ['Q21198', 'Q395']:
+        for category in ['Q21198', 'Q395','Q816264', 'Q12483', 'Q8078', 'Q11023','Q413']:
             for rel in facts.keys():
                 if rel not in skip_following:
                     c, l, obj = rel_from_domain(rel, category)
@@ -211,7 +211,7 @@ def get_wikipedia_evidences(sec_labels):
     """
 
     try:
-        with open('data/wikipedia_evidences.json') as f_in:
+        with open('data/wikipedia_evidences copy.json') as f_in:
             wikipedia_evidences = json.load(f_in)
     except FileNotFoundError:
         wikipedia_evidences = dict()
@@ -298,13 +298,17 @@ def get_training_data(index):
     # search textual patterns between entities of found KB facts for the most prominent relations 
     wikipedia_evidences = get_wikipedia_evidences(sec_labels)
     neg_data = prepare_neg_data(wikipedia_evidences, 5)
-
+    data_statistics = {kb_rel:len(evidences.keys()) for kb_rel, evidences in wikipedia_evidences.items()}
     # [{row:..., seen_with:[...], column:..., label: 0 or 1}, ...]
     with open('data/final_dataset.json', 'w+') as outfile:
         # final_dataset = []
         for kb_rel, evidences in wikipedia_evidences.items():
-            for pair, relations in evidences.items():
-                # # ! remove the relation itself to avoid predicting simply its position
+            # ! reduce P279 and P31:
+            if kb_rel in ['P279', 'P31']:
+                subset = random.sample(evidences.items(),100)
+                evidences = dict(subset)
+            for pair, relations in evidences.items(): 
+                # ! remove the relation itself to avoid predicting simply its position
                 # seen_with = [i for i in relations if not i.startswith('P')]
                 for mention in relations:
                     to_add = {
@@ -464,7 +468,20 @@ def get_test_data(index, file_dir, desired_rels, evaluating=False):
                 outfile.write('\n')
     # second, if evaluating, create dataset with the labaled data:
     if evaluating:
+        # mentions from the test anntoations only
         with open('data/test_dataset.json', 'w+') as outfile: 
+            for item in test_facts:
+                for relation in desired_rels: 
+                        to_add = {
+                                    'entity_pair': item['entity_pair'], 
+                                    'seen_with': item['seen_with'], 
+                                    'relation': relation,
+                                    'label': 1 if relation==item['label'] else 0
+                                }
+                        json.dump(to_add, outfile)
+                        outfile.write('\n')
+        # mentions from all the book
+        with open('data/test_aggregated_dataset.json', 'w+') as outfile: 
             test_pairs = {i['entity_pair']:i['label'] for i in test_facts}
             for key, values in result.items():
                 if key in test_pairs.keys():
@@ -479,9 +496,7 @@ def get_test_data(index, file_dir, desired_rels, evaluating=False):
                                 }
                         json.dump(to_add, outfile)
                         outfile.write('\n')
-        
-
-
+              
 
 def run(file_dir, index_path):
     labeled_data = []
