@@ -16,15 +16,15 @@
 {"entity_pair": "multilay perceptron * deep learn", "seen_with": ["( MLPs ) , are the quintessential"], "relation": "P460", "label": 0}
 {"entity_pair": "multilay perceptron * deep learn", "seen_with": ["( MLPs ) , are the quintessential"], "relation": "P2283", "label": 0}
 {"entity_pair": "multilay perceptron * deep learn", "seen_with": ["( MLPs ) , are the quintessential"], "relation": "P527", "label": 0}
-{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some", "on a very simple task : learning the XOR", "can also approximate the derivatives of the", "provide a universal system for representing functions , in the sense that , given a", "that approximates the", "can be seen as e\ufb03cient nonlinear"], "relation": "P279", "label": 0}
-{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some", "on a very simple task : learning the XOR", "can also approximate the derivatives of the", "provide a universal system for representing functions , in the sense that , given a", "that approximates the", "can be seen as e\ufb03cient nonlinear"], "relation": "P31", "label": 0}
-{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some", "on a very simple task : learning the XOR", "can also approximate the derivatives of the", "provide a universal system for representing functions , in the sense that , given a", "that approximates the", "can be seen as e\ufb03cient nonlinear"], "relation": "P1889", "label": 0}
-{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some", "on a very simple task : learning the XOR", "can also approximate the derivatives of the", "provide a universal system for representing functions , in the sense that , given a", "that approximates the", "can be seen as e\ufb03cient nonlinear"], "relation": "P361", "label": 0}
-{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some", "on a very simple task : learning the XOR", "can also approximate the derivatives of the", "provide a universal system for representing functions , in the sense that , given a", "that approximates the", "can be seen as e\ufb03cient nonlinear"], "relation": "P1552", "label": 0}
-{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some", "on a very simple task : learning the XOR", "can also approximate the derivatives of the", "provide a universal system for representing functions , in the sense that , given a", "that approximates the", "can be seen as e\ufb03cient nonlinear"], "relation": "P366", "label": 1}
-{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some", "on a very simple task : learning the XOR", "can also approximate the derivatives of the", "provide a universal system for representing functions , in the sense that , given a", "that approximates the", "can be seen as e\ufb03cient nonlinear"], "relation": "P460", "label": 0}
-{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some", "on a very simple task : learning the XOR", "can also approximate the derivatives of the", "provide a universal system for representing functions , in the sense that , given a", "that approximates the", "can be seen as e\ufb03cient nonlinear"], "relation": "P2283", "label": 0}
-{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some", "on a very simple task : learning the XOR", "can also approximate the derivatives of the", "provide a universal system for representing functions , in the sense that , given a", "that approximates the", "can be seen as e\ufb03cient nonlinear"], "relation": "P527", "label": 0}
+{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some"], "relation": "P279", "label": 0}
+{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some"], "relation": "P31", "label": 0}
+{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some"], "relation": "P1889", "label": 0}
+{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some"], "relation": "P361", "label": 0}
+{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some"], "relation": "P1552", "label": 0}
+{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some"], "relation": "P366", "label": 1}
+{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some"], "relation": "P460", "label": 0}
+{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some"], "relation": "P2283", "label": 0}
+{"entity_pair": "feedforward network * function", "seen_with": ["is to approximate some"], "relation": "P527", "label": 0}
 {"entity_pair": "feedforward network * map", "seen_with": ["defines a"], "relation": "P279", "label": 0}
 {"entity_pair": "feedforward network * map", "seen_with": ["defines a"], "relation": "P31", "label": 1}
 {"entity_pair": "feedforward network * map", "seen_with": ["defines a"], "relation": "P1889", "label": 0}
@@ -34,15 +34,24 @@
 {"entity_pair": "feedforward network * map", "seen_with": ["defines a"], "relation": "P460", "label": 0}
 {"entity_pair": "feedforward network * map", "seen_with": ["defines a"], "relation": "P2283", "label": 0}
 {"entity_pair": "feedforward network * map", "seen_with": ["defines a"], "relation": "P527", "label": 0}
-{"entity_pair": "inform * function", "seen_with": ["flows through the", "through a network is very general , and can be used to compute values such as the Jacobian of a"], "relation": "P279", "label": 0}
-{"entity_pair": "inform * function", "seen_with": ["flows through the", "through a network is very general , and can be used to compute values such as the Jacobian of a"], "relation": "P31", "label": 1}
-{"entity_pair": "inform * function", "seen_with": ["flows through the", "through a network is very general , and can be used to compute values such as the Jacobian of a"], "relation": "P1889", "label": 0}
-{"entity_pair": "inform * function", "seen_with": ["flows through the", "through a network is very general , and can be used to compute values such as the Jacobian of a"], "relation": "P361", "label": 0}
-{"entity_pair": "inform * function", "seen_with": ["flows through the", "through a network is very general , and can be used to compute values such as the Jacobian of a"], "relation": "P1552", "label": 0}
-{"entity_pair": "inform * function", "seen_with": ["flows through the", "through a network is very general , and can be used to compute values such as the Jacobian of a"], "relation": "P366", "label": 0}
-{"entity_pair": "inform * function", "seen_with": ["flows through the", "through a network is very general , and can be used to compute values such as the Jacobian of a"], "relation": "P460", "label": 0}
-{"entity_pair": "inform * function", "seen_with": ["flows through the", "through a network is very general , and can be used to compute values such as the Jacobian of a"], "relation": "P2283", "label": 0}
-{"entity_pair": "inform * function", "seen_with": ["flows through the", "through a network is very general , and can be used to compute values such as the Jacobian of a"], "relation": "P527", "label": 0}
+{"entity_pair": "paramet * function approxim", "seen_with": ["\u03b8 that result in the best"], "relation": "P279", "label": 0}
+{"entity_pair": "paramet * function approxim", "seen_with": ["\u03b8 that result in the best"], "relation": "P31", "label": 0}
+{"entity_pair": "paramet * function approxim", "seen_with": ["\u03b8 that result in the best"], "relation": "P1889", "label": 0}
+{"entity_pair": "paramet * function approxim", "seen_with": ["\u03b8 that result in the best"], "relation": "P361", "label": 0}
+{"entity_pair": "paramet * function approxim", "seen_with": ["\u03b8 that result in the best"], "relation": "P1552", "label": 1}
+{"entity_pair": "paramet * function approxim", "seen_with": ["\u03b8 that result in the best"], "relation": "P366", "label": 0}
+{"entity_pair": "paramet * function approxim", "seen_with": ["\u03b8 that result in the best"], "relation": "P460", "label": 0}
+{"entity_pair": "paramet * function approxim", "seen_with": ["\u03b8 that result in the best"], "relation": "P2283", "label": 0}
+{"entity_pair": "paramet * function approxim", "seen_with": ["\u03b8 that result in the best"], "relation": "P527", "label": 0}
+{"entity_pair": "inform * function", "seen_with": ["flows through the"], "relation": "P279", "label": 0}
+{"entity_pair": "inform * function", "seen_with": ["flows through the"], "relation": "P31", "label": 1}
+{"entity_pair": "inform * function", "seen_with": ["flows through the"], "relation": "P1889", "label": 0}
+{"entity_pair": "inform * function", "seen_with": ["flows through the"], "relation": "P361", "label": 0}
+{"entity_pair": "inform * function", "seen_with": ["flows through the"], "relation": "P1552", "label": 0}
+{"entity_pair": "inform * function", "seen_with": ["flows through the"], "relation": "P366", "label": 0}
+{"entity_pair": "inform * function", "seen_with": ["flows through the"], "relation": "P460", "label": 0}
+{"entity_pair": "inform * function", "seen_with": ["flows through the"], "relation": "P2283", "label": 0}
+{"entity_pair": "inform * function", "seen_with": ["flows through the"], "relation": "P527", "label": 0}
 {"entity_pair": "feedforward neural network * recurr neural network", "seen_with": ["are extended to include feedback connections , they are called"], "relation": "P279", "label": 0}
 {"entity_pair": "feedforward neural network * recurr neural network", "seen_with": ["are extended to include feedback connections , they are called"], "relation": "P31", "label": 0}
 {"entity_pair": "feedforward neural network * recurr neural network", "seen_with": ["are extended to include feedback connections , they are called"], "relation": "P1889", "label": 1}
@@ -52,15 +61,15 @@
 {"entity_pair": "feedforward neural network * recurr neural network", "seen_with": ["are extended to include feedback connections , they are called"], "relation": "P460", "label": 0}
 {"entity_pair": "feedforward neural network * recurr neural network", "seen_with": ["are extended to include feedback connections , they are called"], "relation": "P2283", "label": 0}
 {"entity_pair": "feedforward neural network * recurr neural network", "seen_with": ["are extended to include feedback connections , they are called"], "relation": "P527", "label": 0}
-{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to", "has been viewed since 2012 as a powerful technology that may be applied to many other"], "relation": "P279", "label": 1}
-{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to", "has been viewed since 2012 as a powerful technology that may be applied to many other"], "relation": "P31", "label": 0}
-{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to", "has been viewed since 2012 as a powerful technology that may be applied to many other"], "relation": "P1889", "label": 0}
-{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to", "has been viewed since 2012 as a powerful technology that may be applied to many other"], "relation": "P361", "label": 0}
-{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to", "has been viewed since 2012 as a powerful technology that may be applied to many other"], "relation": "P1552", "label": 0}
-{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to", "has been viewed since 2012 as a powerful technology that may be applied to many other"], "relation": "P366", "label": 0}
-{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to", "has been viewed since 2012 as a powerful technology that may be applied to many other"], "relation": "P460", "label": 0}
-{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to", "has been viewed since 2012 as a powerful technology that may be applied to many other"], "relation": "P2283", "label": 0}
-{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to", "has been viewed since 2012 as a powerful technology that may be applied to many other"], "relation": "P527", "label": 0}
+{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to"], "relation": "P279", "label": 1}
+{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to"], "relation": "P31", "label": 0}
+{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to"], "relation": "P1889", "label": 0}
+{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to"], "relation": "P361", "label": 0}
+{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to"], "relation": "P1552", "label": 0}
+{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to"], "relation": "P366", "label": 0}
+{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to"], "relation": "P460", "label": 0}
+{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to"], "relation": "P2283", "label": 0}
+{"entity_pair": "feedforward network * machin learn", "seen_with": ["are of extreme importance to"], "relation": "P527", "label": 0}
 {"entity_pair": "convolut network * object recognit", "seen_with": ["used for"], "relation": "P279", "label": 0}
 {"entity_pair": "convolut network * object recognit", "seen_with": ["used for"], "relation": "P31", "label": 0}
 {"entity_pair": "convolut network * object recognit", "seen_with": ["used for"], "relation": "P1889", "label": 0}
@@ -88,33 +97,87 @@
 {"entity_pair": "layer * feedforward network", "seen_with": ["of a"], "relation": "P460", "label": 0}
 {"entity_pair": "layer * feedforward network", "seen_with": ["of a"], "relation": "P2283", "label": 0}
 {"entity_pair": "layer * feedforward network", "seen_with": ["of a"], "relation": "P527", "label": 0}
-{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual"], "relation": "P279", "label": 0}
-{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual"], "relation": "P31", "label": 0}
-{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual"], "relation": "P1889", "label": 1}
-{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual"], "relation": "P361", "label": 0}
-{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual"], "relation": "P1552", "label": 0}
-{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual"], "relation": "P366", "label": 0}
-{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual"], "relation": "P460", "label": 0}
-{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual"], "relation": "P2283", "label": 0}
-{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual"], "relation": "P527", "label": 0}
-{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector", "as consisting of many units that act in parallel , each representing a vector-to-scalar", "with two pieces can learn to implement the same", "types , so the learning dynamics will be different even in the cases where maxout learns to implement the same", "being a", "is su\ufb03cient to represent any"], "relation": "P279", "label": 0}
-{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector", "as consisting of many units that act in parallel , each representing a vector-to-scalar", "with two pieces can learn to implement the same", "types , so the learning dynamics will be different even in the cases where maxout learns to implement the same", "being a", "is su\ufb03cient to represent any"], "relation": "P31", "label": 1}
-{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector", "as consisting of many units that act in parallel , each representing a vector-to-scalar", "with two pieces can learn to implement the same", "types , so the learning dynamics will be different even in the cases where maxout learns to implement the same", "being a", "is su\ufb03cient to represent any"], "relation": "P1889", "label": 0}
-{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector", "as consisting of many units that act in parallel , each representing a vector-to-scalar", "with two pieces can learn to implement the same", "types , so the learning dynamics will be different even in the cases where maxout learns to implement the same", "being a", "is su\ufb03cient to represent any"], "relation": "P361", "label": 0}
-{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector", "as consisting of many units that act in parallel , each representing a vector-to-scalar", "with two pieces can learn to implement the same", "types , so the learning dynamics will be different even in the cases where maxout learns to implement the same", "being a", "is su\ufb03cient to represent any"], "relation": "P1552", "label": 0}
-{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector", "as consisting of many units that act in parallel , each representing a vector-to-scalar", "with two pieces can learn to implement the same", "types , so the learning dynamics will be different even in the cases where maxout learns to implement the same", "being a", "is su\ufb03cient to represent any"], "relation": "P366", "label": 0}
-{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector", "as consisting of many units that act in parallel , each representing a vector-to-scalar", "with two pieces can learn to implement the same", "types , so the learning dynamics will be different even in the cases where maxout learns to implement the same", "being a", "is su\ufb03cient to represent any"], "relation": "P460", "label": 0}
-{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector", "as consisting of many units that act in parallel , each representing a vector-to-scalar", "with two pieces can learn to implement the same", "types , so the learning dynamics will be different even in the cases where maxout learns to implement the same", "being a", "is su\ufb03cient to represent any"], "relation": "P2283", "label": 0}
-{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector", "as consisting of many units that act in parallel , each representing a vector-to-scalar", "with two pieces can learn to implement the same", "types , so the learning dynamics will be different even in the cases where maxout learns to implement the same", "being a", "is su\ufb03cient to represent any"], "relation": "P527", "label": 0}
-{"entity_pair": "feedforward network * linear model", "seen_with": ["is to begin with", "requires making many of the same design decisions as are necessary for a"], "relation": "P279", "label": 0}
-{"entity_pair": "feedforward network * linear model", "seen_with": ["is to begin with", "requires making many of the same design decisions as are necessary for a"], "relation": "P31", "label": 0}
-{"entity_pair": "feedforward network * linear model", "seen_with": ["is to begin with", "requires making many of the same design decisions as are necessary for a"], "relation": "P1889", "label": 1}
-{"entity_pair": "feedforward network * linear model", "seen_with": ["is to begin with", "requires making many of the same design decisions as are necessary for a"], "relation": "P361", "label": 0}
-{"entity_pair": "feedforward network * linear model", "seen_with": ["is to begin with", "requires making many of the same design decisions as are necessary for a"], "relation": "P1552", "label": 0}
-{"entity_pair": "feedforward network * linear model", "seen_with": ["is to begin with", "requires making many of the same design decisions as are necessary for a"], "relation": "P366", "label": 0}
-{"entity_pair": "feedforward network * linear model", "seen_with": ["is to begin with", "requires making many of the same design decisions as are necessary for a"], "relation": "P460", "label": 0}
-{"entity_pair": "feedforward network * linear model", "seen_with": ["is to begin with", "requires making many of the same design decisions as are necessary for a"], "relation": "P2283", "label": 0}
-{"entity_pair": "feedforward network * linear model", "seen_with": ["is to begin with", "requires making many of the same design decisions as are necessary for a"], "relation": "P527", "label": 0}
+{"entity_pair": "layer * train data", "seen_with": ["is not directly specified by the"], "relation": "P279", "label": 0}
+{"entity_pair": "layer * train data", "seen_with": ["is not directly specified by the"], "relation": "P31", "label": 0}
+{"entity_pair": "layer * train data", "seen_with": ["is not directly specified by the"], "relation": "P1889", "label": 1}
+{"entity_pair": "layer * train data", "seen_with": ["is not directly specified by the"], "relation": "P361", "label": 0}
+{"entity_pair": "layer * train data", "seen_with": ["is not directly specified by the"], "relation": "P1552", "label": 0}
+{"entity_pair": "layer * train data", "seen_with": ["is not directly specified by the"], "relation": "P366", "label": 0}
+{"entity_pair": "layer * train data", "seen_with": ["is not directly specified by the"], "relation": "P460", "label": 0}
+{"entity_pair": "layer * train data", "seen_with": ["is not directly specified by the"], "relation": "P2283", "label": 0}
+{"entity_pair": "layer * train data", "seen_with": ["is not directly specified by the"], "relation": "P527", "label": 0}
+{"entity_pair": "learn algorithm * layer", "seen_with": ["must decide how to use these", "must decide how to use those"], "relation": "P279", "label": 0}
+{"entity_pair": "learn algorithm * layer", "seen_with": ["must decide how to use these", "must decide how to use those"], "relation": "P31", "label": 0}
+{"entity_pair": "learn algorithm * layer", "seen_with": ["must decide how to use these", "must decide how to use those"], "relation": "P1889", "label": 0}
+{"entity_pair": "learn algorithm * layer", "seen_with": ["must decide how to use these", "must decide how to use those"], "relation": "P361", "label": 0}
+{"entity_pair": "learn algorithm * layer", "seen_with": ["must decide how to use these", "must decide how to use those"], "relation": "P1552", "label": 0}
+{"entity_pair": "learn algorithm * layer", "seen_with": ["must decide how to use these", "must decide how to use those"], "relation": "P366", "label": 0}
+{"entity_pair": "learn algorithm * layer", "seen_with": ["must decide how to use these", "must decide how to use those"], "relation": "P460", "label": 0}
+{"entity_pair": "learn algorithm * layer", "seen_with": ["must decide how to use these", "must decide how to use those"], "relation": "P2283", "label": 1}
+{"entity_pair": "learn algorithm * layer", "seen_with": ["must decide how to use these", "must decide how to use those"], "relation": "P527", "label": 0}
+{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual", "does not show the desired output for each of these"], "relation": "P279", "label": 0}
+{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual", "does not show the desired output for each of these"], "relation": "P31", "label": 0}
+{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual", "does not show the desired output for each of these"], "relation": "P1889", "label": 1}
+{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual", "does not show the desired output for each of these"], "relation": "P361", "label": 0}
+{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual", "does not show the desired output for each of these"], "relation": "P1552", "label": 0}
+{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual", "does not show the desired output for each of these"], "relation": "P366", "label": 0}
+{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual", "does not show the desired output for each of these"], "relation": "P460", "label": 0}
+{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual", "does not show the desired output for each of these"], "relation": "P2283", "label": 0}
+{"entity_pair": "train data * layer", "seen_with": ["does not say what each individual", "does not show the desired output for each of these"], "relation": "P527", "label": 0}
+{"entity_pair": "layer * hidden layer", "seen_with": ["are called"], "relation": "P279", "label": 0}
+{"entity_pair": "layer * hidden layer", "seen_with": ["are called"], "relation": "P31", "label": 0}
+{"entity_pair": "layer * hidden layer", "seen_with": ["are called"], "relation": "P1889", "label": 0}
+{"entity_pair": "layer * hidden layer", "seen_with": ["are called"], "relation": "P361", "label": 0}
+{"entity_pair": "layer * hidden layer", "seen_with": ["are called"], "relation": "P1552", "label": 1}
+{"entity_pair": "layer * hidden layer", "seen_with": ["are called"], "relation": "P366", "label": 0}
+{"entity_pair": "layer * hidden layer", "seen_with": ["are called"], "relation": "P460", "label": 0}
+{"entity_pair": "layer * hidden layer", "seen_with": ["are called"], "relation": "P2283", "label": 0}
+{"entity_pair": "layer * hidden layer", "seen_with": ["are called"], "relation": "P527", "label": 0}
+{"entity_pair": "hidden layer * vector", "seen_with": ["of the network is typically"], "relation": "P279", "label": 0}
+{"entity_pair": "hidden layer * vector", "seen_with": ["of the network is typically"], "relation": "P31", "label": 1}
+{"entity_pair": "hidden layer * vector", "seen_with": ["of the network is typically"], "relation": "P1889", "label": 0}
+{"entity_pair": "hidden layer * vector", "seen_with": ["of the network is typically"], "relation": "P361", "label": 0}
+{"entity_pair": "hidden layer * vector", "seen_with": ["of the network is typically"], "relation": "P1552", "label": 0}
+{"entity_pair": "hidden layer * vector", "seen_with": ["of the network is typically"], "relation": "P366", "label": 0}
+{"entity_pair": "hidden layer * vector", "seen_with": ["of the network is typically"], "relation": "P460", "label": 0}
+{"entity_pair": "hidden layer * vector", "seen_with": ["of the network is typically"], "relation": "P2283", "label": 0}
+{"entity_pair": "hidden layer * vector", "seen_with": ["of the network is typically"], "relation": "P527", "label": 0}
+{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector"], "relation": "P279", "label": 0}
+{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector"], "relation": "P31", "label": 1}
+{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector"], "relation": "P1889", "label": 0}
+{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector"], "relation": "P361", "label": 0}
+{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector"], "relation": "P1552", "label": 0}
+{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector"], "relation": "P366", "label": 0}
+{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector"], "relation": "P460", "label": 0}
+{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector"], "relation": "P2283", "label": 0}
+{"entity_pair": "layer * function", "seen_with": ["as representing a single vector-to-vector"], "relation": "P527", "label": 0}
+{"entity_pair": "layer * unit", "seen_with": ["as consisting of many"], "relation": "P279", "label": 0}
+{"entity_pair": "layer * unit", "seen_with": ["as consisting of many"], "relation": "P31", "label": 0}
+{"entity_pair": "layer * unit", "seen_with": ["as consisting of many"], "relation": "P1889", "label": 0}
+{"entity_pair": "layer * unit", "seen_with": ["as consisting of many"], "relation": "P361", "label": 0}
+{"entity_pair": "layer * unit", "seen_with": ["as consisting of many"], "relation": "P1552", "label": 0}
+{"entity_pair": "layer * unit", "seen_with": ["as consisting of many"], "relation": "P366", "label": 0}
+{"entity_pair": "layer * unit", "seen_with": ["as consisting of many"], "relation": "P460", "label": 0}
+{"entity_pair": "layer * unit", "seen_with": ["as consisting of many"], "relation": "P2283", "label": 0}
+{"entity_pair": "layer * unit", "seen_with": ["as consisting of many"], "relation": "P527", "label": 1}
+{"entity_pair": "feedforward network * gener", "seen_with": ["as function approximation machines that are designed to achieve statistical"], "relation": "P279", "label": 0}
+{"entity_pair": "feedforward network * gener", "seen_with": ["as function approximation machines that are designed to achieve statistical"], "relation": "P31", "label": 0}
+{"entity_pair": "feedforward network * gener", "seen_with": ["as function approximation machines that are designed to achieve statistical"], "relation": "P1889", "label": 0}
+{"entity_pair": "feedforward network * gener", "seen_with": ["as function approximation machines that are designed to achieve statistical"], "relation": "P361", "label": 0}
+{"entity_pair": "feedforward network * gener", "seen_with": ["as function approximation machines that are designed to achieve statistical"], "relation": "P1552", "label": 1}
+{"entity_pair": "feedforward network * gener", "seen_with": ["as function approximation machines that are designed to achieve statistical"], "relation": "P366", "label": 0}
+{"entity_pair": "feedforward network * gener", "seen_with": ["as function approximation machines that are designed to achieve statistical"], "relation": "P460", "label": 0}
+{"entity_pair": "feedforward network * gener", "seen_with": ["as function approximation machines that are designed to achieve statistical"], "relation": "P2283", "label": 0}
+{"entity_pair": "feedforward network * gener", "seen_with": ["as function approximation machines that are designed to achieve statistical"], "relation": "P527", "label": 0}
+{"entity_pair": "feedforward network * linear model", "seen_with": ["requires making many of the same design decisions as are necessary for a", "is to begin with"], "relation": "P279", "label": 0}
+{"entity_pair": "feedforward network * linear model", "seen_with": ["requires making many of the same design decisions as are necessary for a", "is to begin with"], "relation": "P31", "label": 0}
+{"entity_pair": "feedforward network * linear model", "seen_with": ["requires making many of the same design decisions as are necessary for a", "is to begin with"], "relation": "P1889", "label": 1}
+{"entity_pair": "feedforward network * linear model", "seen_with": ["requires making many of the same design decisions as are necessary for a", "is to begin with"], "relation": "P361", "label": 0}
+{"entity_pair": "feedforward network * linear model", "seen_with": ["requires making many of the same design decisions as are necessary for a", "is to begin with"], "relation": "P1552", "label": 0}
+{"entity_pair": "feedforward network * linear model", "seen_with": ["requires making many of the same design decisions as are necessary for a", "is to begin with"], "relation": "P366", "label": 0}
+{"entity_pair": "feedforward network * linear model", "seen_with": ["requires making many of the same design decisions as are necessary for a", "is to begin with"], "relation": "P460", "label": 0}
+{"entity_pair": "feedforward network * linear model", "seen_with": ["requires making many of the same design decisions as are necessary for a", "is to begin with"], "relation": "P2283", "label": 0}
+{"entity_pair": "feedforward network * linear model", "seen_with": ["requires making many of the same design decisions as are necessary for a", "is to begin with"], "relation": "P527", "label": 0}
 {"entity_pair": "linear model * logist regress", "seen_with": [", such as"], "relation": "P279", "label": 0}
 {"entity_pair": "linear model * logist regress", "seen_with": [", such as"], "relation": "P31", "label": 0}
 {"entity_pair": "linear model * logist regress", "seen_with": [", such as"], "relation": "P1889", "label": 0}
@@ -133,6 +196,15 @@
 {"entity_pair": "logist regress * linear regress", "seen_with": ["and"], "relation": "P460", "label": 0}
 {"entity_pair": "logist regress * linear regress", "seen_with": ["and"], "relation": "P2283", "label": 0}
 {"entity_pair": "logist regress * linear regress", "seen_with": ["and"], "relation": "P527", "label": 0}
+{"entity_pair": "linear model * function", "seen_with": ["also have the obvious defect that the model capacity is limited to linear", "can not implement such a", "is not able to represent the XOR", "to represent nonlinear", "can now describe the"], "relation": "P279", "label": 0}
+{"entity_pair": "linear model * function", "seen_with": ["also have the obvious defect that the model capacity is limited to linear", "can not implement such a", "is not able to represent the XOR", "to represent nonlinear", "can now describe the"], "relation": "P31", "label": 1}
+{"entity_pair": "linear model * function", "seen_with": ["also have the obvious defect that the model capacity is limited to linear", "can not implement such a", "is not able to represent the XOR", "to represent nonlinear", "can now describe the"], "relation": "P1889", "label": 0}
+{"entity_pair": "linear model * function", "seen_with": ["also have the obvious defect that the model capacity is limited to linear", "can not implement such a", "is not able to represent the XOR", "to represent nonlinear", "can now describe the"], "relation": "P361", "label": 0}
+{"entity_pair": "linear model * function", "seen_with": ["also have the obvious defect that the model capacity is limited to linear", "can not implement such a", "is not able to represent the XOR", "to represent nonlinear", "can now describe the"], "relation": "P1552", "label": 0}
+{"entity_pair": "linear model * function", "seen_with": ["also have the obvious defect that the model capacity is limited to linear", "can not implement such a", "is not able to represent the XOR", "to represent nonlinear", "can now describe the"], "relation": "P366", "label": 0}
+{"entity_pair": "linear model * function", "seen_with": ["also have the obvious defect that the model capacity is limited to linear", "can not implement such a", "is not able to represent the XOR", "to represent nonlinear", "can now describe the"], "relation": "P460", "label": 0}
+{"entity_pair": "linear model * function", "seen_with": ["also have the obvious defect that the model capacity is limited to linear", "can not implement such a", "is not able to represent the XOR", "to represent nonlinear", "can now describe the"], "relation": "P2283", "label": 0}
+{"entity_pair": "linear model * function", "seen_with": ["also have the obvious defect that the model capacity is limited to linear", "can not implement such a", "is not able to represent the XOR", "to represent nonlinear", "can now describe the"], "relation": "P527", "label": 0}
 {"entity_pair": "kernel trick * learn algorithm", "seen_with": ["described in section 5.7.2 , to obtain a nonlinear"], "relation": "P279", "label": 0}
 {"entity_pair": "kernel trick * learn algorithm", "seen_with": ["described in section 5.7.2 , to obtain a nonlinear"], "relation": "P31", "label": 0}
 {"entity_pair": "kernel trick * learn algorithm", "seen_with": ["described in section 5.7.2 , to obtain a nonlinear"], "relation": "P1889", "label": 0}
@@ -160,6 +232,15 @@
 {"entity_pair": "gener * set", "seen_with": ["to the test"], "relation": "P460", "label": 0}
 {"entity_pair": "gener * set", "seen_with": ["to the test"], "relation": "P2283", "label": 0}
 {"entity_pair": "gener * set", "seen_with": ["to the test"], "relation": "P527", "label": 0}
+{"entity_pair": "paramet * function", "seen_with": ["\u03b8 that we use to learn \u03c6 from a broad class of", ", followed by a fixed , nonlinear"], "relation": "P279", "label": 0}
+{"entity_pair": "paramet * function", "seen_with": ["\u03b8 that we use to learn \u03c6 from a broad class of", ", followed by a fixed , nonlinear"], "relation": "P31", "label": 0}
+{"entity_pair": "paramet * function", "seen_with": ["\u03b8 that we use to learn \u03c6 from a broad class of", ", followed by a fixed , nonlinear"], "relation": "P1889", "label": 0}
+{"entity_pair": "paramet * function", "seen_with": ["\u03b8 that we use to learn \u03c6 from a broad class of", ", followed by a fixed , nonlinear"], "relation": "P361", "label": 0}
+{"entity_pair": "paramet * function", "seen_with": ["\u03b8 that we use to learn \u03c6 from a broad class of", ", followed by a fixed , nonlinear"], "relation": "P1552", "label": 0}
+{"entity_pair": "paramet * function", "seen_with": ["\u03b8 that we use to learn \u03c6 from a broad class of", ", followed by a fixed , nonlinear"], "relation": "P366", "label": 1}
+{"entity_pair": "paramet * function", "seen_with": ["\u03b8 that we use to learn \u03c6 from a broad class of", ", followed by a fixed , nonlinear"], "relation": "P460", "label": 0}
+{"entity_pair": "paramet * function", "seen_with": ["\u03b8 that we use to learn \u03c6 from a broad class of", ", followed by a fixed , nonlinear"], "relation": "P2283", "label": 0}
+{"entity_pair": "paramet * function", "seen_with": ["\u03b8 that we use to learn \u03c6 from a broad class of", ", followed by a fixed , nonlinear"], "relation": "P527", "label": 0}
 {"entity_pair": "deep feedforward network * hidden layer", "seen_with": [", with \u03c6 defining a"], "relation": "P279", "label": 0}
 {"entity_pair": "deep feedforward network * hidden layer", "seen_with": [", with \u03c6 defining a"], "relation": "P31", "label": 0}
 {"entity_pair": "deep feedforward network * hidden layer", "seen_with": [", with \u03c6 defining a"], "relation": "P1889", "label": 0}
@@ -178,15 +259,15 @@
 {"entity_pair": "human * gener", "seen_with": ["practitioners can encode their knowledge to help"], "relation": "P460", "label": 0}
 {"entity_pair": "human * gener", "seen_with": ["practitioners can encode their knowledge to help"], "relation": "P2283", "label": 1}
 {"entity_pair": "human * gener", "seen_with": ["practitioners can encode their knowledge to help"], "relation": "P527", "label": 0}
-{"entity_pair": "feedforward network * hidden layer", "seen_with": ["have introduced the concept of a", "with one", "with"], "relation": "P279", "label": 0}
-{"entity_pair": "feedforward network * hidden layer", "seen_with": ["have introduced the concept of a", "with one", "with"], "relation": "P31", "label": 0}
-{"entity_pair": "feedforward network * hidden layer", "seen_with": ["have introduced the concept of a", "with one", "with"], "relation": "P1889", "label": 0}
-{"entity_pair": "feedforward network * hidden layer", "seen_with": ["have introduced the concept of a", "with one", "with"], "relation": "P361", "label": 0}
-{"entity_pair": "feedforward network * hidden layer", "seen_with": ["have introduced the concept of a", "with one", "with"], "relation": "P1552", "label": 0}
-{"entity_pair": "feedforward network * hidden layer", "seen_with": ["have introduced the concept of a", "with one", "with"], "relation": "P366", "label": 0}
-{"entity_pair": "feedforward network * hidden layer", "seen_with": ["have introduced the concept of a", "with one", "with"], "relation": "P460", "label": 0}
-{"entity_pair": "feedforward network * hidden layer", "seen_with": ["have introduced the concept of a", "with one", "with"], "relation": "P2283", "label": 0}
-{"entity_pair": "feedforward network * hidden layer", "seen_with": ["have introduced the concept of a", "with one", "with"], "relation": "P527", "label": 1}
+{"entity_pair": "feedforward network * hidden layer", "seen_with": ["with one", "have introduced the concept of a"], "relation": "P279", "label": 0}
+{"entity_pair": "feedforward network * hidden layer", "seen_with": ["with one", "have introduced the concept of a"], "relation": "P31", "label": 0}
+{"entity_pair": "feedforward network * hidden layer", "seen_with": ["with one", "have introduced the concept of a"], "relation": "P1889", "label": 0}
+{"entity_pair": "feedforward network * hidden layer", "seen_with": ["with one", "have introduced the concept of a"], "relation": "P361", "label": 0}
+{"entity_pair": "feedforward network * hidden layer", "seen_with": ["with one", "have introduced the concept of a"], "relation": "P1552", "label": 0}
+{"entity_pair": "feedforward network * hidden layer", "seen_with": ["with one", "have introduced the concept of a"], "relation": "P366", "label": 0}
+{"entity_pair": "feedforward network * hidden layer", "seen_with": ["with one", "have introduced the concept of a"], "relation": "P460", "label": 0}
+{"entity_pair": "feedforward network * hidden layer", "seen_with": ["with one", "have introduced the concept of a"], "relation": "P2283", "label": 0}
+{"entity_pair": "feedforward network * hidden layer", "seen_with": ["with one", "have introduced the concept of a"], "relation": "P527", "label": 1}
 {"entity_pair": "activ function * hidden layer", "seen_with": ["that will be used to compute the"], "relation": "P279", "label": 0}
 {"entity_pair": "activ function * hidden layer", "seen_with": ["that will be used to compute the"], "relation": "P31", "label": 0}
 {"entity_pair": "activ function * hidden layer", "seen_with": ["that will be used to compute the"], "relation": "P1889", "label": 0}
@@ -196,60 +277,87 @@
 {"entity_pair": "activ function * hidden layer", "seen_with": ["that will be used to compute the"], "relation": "P460", "label": 0}
 {"entity_pair": "activ function * hidden layer", "seen_with": ["that will be used to compute the"], "relation": "P2283", "label": 0}
 {"entity_pair": "activ function * hidden layer", "seen_with": ["that will be used to compute the"], "relation": "P527", "label": 0}
-{"entity_pair": "function * oper", "seen_with": ["( \u201c exclusive or \u201d ) is an", "f : R \u2192 R as the", "that the"], "relation": "P279", "label": 1}
-{"entity_pair": "function * oper", "seen_with": ["( \u201c exclusive or \u201d ) is an", "f : R \u2192 R as the", "that the"], "relation": "P31", "label": 0}
-{"entity_pair": "function * oper", "seen_with": ["( \u201c exclusive or \u201d ) is an", "f : R \u2192 R as the", "that the"], "relation": "P1889", "label": 0}
-{"entity_pair": "function * oper", "seen_with": ["( \u201c exclusive or \u201d ) is an", "f : R \u2192 R as the", "that the"], "relation": "P361", "label": 0}
-{"entity_pair": "function * oper", "seen_with": ["( \u201c exclusive or \u201d ) is an", "f : R \u2192 R as the", "that the"], "relation": "P1552", "label": 0}
-{"entity_pair": "function * oper", "seen_with": ["( \u201c exclusive or \u201d ) is an", "f : R \u2192 R as the", "that the"], "relation": "P366", "label": 0}
-{"entity_pair": "function * oper", "seen_with": ["( \u201c exclusive or \u201d ) is an", "f : R \u2192 R as the", "that the"], "relation": "P460", "label": 0}
-{"entity_pair": "function * oper", "seen_with": ["( \u201c exclusive or \u201d ) is an", "f : R \u2192 R as the", "that the"], "relation": "P2283", "label": 0}
-{"entity_pair": "function * oper", "seen_with": ["( \u201c exclusive or \u201d ) is an", "f : R \u2192 R as the", "that the"], "relation": "P527", "label": 0}
-{"entity_pair": "linear model * function", "seen_with": ["is not able to represent the XOR", "applied directly to the original input can not implement the XOR", "can now describe the", "can not implement such a", "family , such as its inability to learn the XOR"], "relation": "P279", "label": 0}
-{"entity_pair": "linear model * function", "seen_with": ["is not able to represent the XOR", "applied directly to the original input can not implement the XOR", "can now describe the", "can not implement such a", "family , such as its inability to learn the XOR"], "relation": "P31", "label": 1}
-{"entity_pair": "linear model * function", "seen_with": ["is not able to represent the XOR", "applied directly to the original input can not implement the XOR", "can now describe the", "can not implement such a", "family , such as its inability to learn the XOR"], "relation": "P1889", "label": 0}
-{"entity_pair": "linear model * function", "seen_with": ["is not able to represent the XOR", "applied directly to the original input can not implement the XOR", "can now describe the", "can not implement such a", "family , such as its inability to learn the XOR"], "relation": "P361", "label": 0}
-{"entity_pair": "linear model * function", "seen_with": ["is not able to represent the XOR", "applied directly to the original input can not implement the XOR", "can now describe the", "can not implement such a", "family , such as its inability to learn the XOR"], "relation": "P1552", "label": 0}
-{"entity_pair": "linear model * function", "seen_with": ["is not able to represent the XOR", "applied directly to the original input can not implement the XOR", "can now describe the", "can not implement such a", "family , such as its inability to learn the XOR"], "relation": "P366", "label": 0}
-{"entity_pair": "linear model * function", "seen_with": ["is not able to represent the XOR", "applied directly to the original input can not implement the XOR", "can now describe the", "can not implement such a", "family , such as its inability to learn the XOR"], "relation": "P460", "label": 0}
-{"entity_pair": "linear model * function", "seen_with": ["is not able to represent the XOR", "applied directly to the original input can not implement the XOR", "can now describe the", "can not implement such a", "family , such as its inability to learn the XOR"], "relation": "P2283", "label": 0}
-{"entity_pair": "linear model * function", "seen_with": ["is not able to represent the XOR", "applied directly to the original input can not implement the XOR", "can now describe the", "can not implement such a", "family , such as its inability to learn the XOR"], "relation": "P527", "label": 0}
-{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two", "of the The design of"], "relation": "P279", "label": 0}
-{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two", "of the The design of"], "relation": "P31", "label": 0}
-{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two", "of the The design of"], "relation": "P1889", "label": 0}
-{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two", "of the The design of"], "relation": "P361", "label": 0}
-{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two", "of the The design of"], "relation": "P1552", "label": 0}
-{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two", "of the The design of"], "relation": "P366", "label": 0}
-{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two", "of the The design of"], "relation": "P460", "label": 0}
-{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two", "of the The design of"], "relation": "P2283", "label": 0}
-{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two", "of the The design of"], "relation": "P527", "label": 1}
-{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a", "types include : \u2022 Radial basis"], "relation": "P279", "label": 0}
-{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a", "types include : \u2022 Radial basis"], "relation": "P31", "label": 0}
-{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a", "types include : \u2022 Radial basis"], "relation": "P1889", "label": 0}
-{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a", "types include : \u2022 Radial basis"], "relation": "P361", "label": 0}
-{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a", "types include : \u2022 Radial basis"], "relation": "P1552", "label": 0}
-{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a", "types include : \u2022 Radial basis"], "relation": "P366", "label": 1}
-{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a", "types include : \u2022 Radial basis"], "relation": "P460", "label": 0}
-{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a", "types include : \u2022 Radial basis"], "relation": "P2283", "label": 0}
-{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a", "types include : \u2022 Radial basis"], "relation": "P527", "label": 0}
-{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second", "at each"], "relation": "P279", "label": 0}
-{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second", "at each"], "relation": "P31", "label": 0}
-{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second", "at each"], "relation": "P1889", "label": 0}
-{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second", "at each"], "relation": "P361", "label": 1}
-{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second", "at each"], "relation": "P1552", "label": 0}
-{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second", "at each"], "relation": "P366", "label": 0}
-{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second", "at each"], "relation": "P460", "label": 0}
-{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second", "at each"], "relation": "P2283", "label": 0}
-{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second", "at each"], "relation": "P527", "label": 0}
-{"entity_pair": "layer * output layer", "seen_with": ["is the", "is connected to only a small subset of units in the", "k , starting from the"], "relation": "P279", "label": 0}
-{"entity_pair": "layer * output layer", "seen_with": ["is the", "is connected to only a small subset of units in the", "k , starting from the"], "relation": "P31", "label": 1}
-{"entity_pair": "layer * output layer", "seen_with": ["is the", "is connected to only a small subset of units in the", "k , starting from the"], "relation": "P1889", "label": 0}
-{"entity_pair": "layer * output layer", "seen_with": ["is the", "is connected to only a small subset of units in the", "k , starting from the"], "relation": "P361", "label": 0}
-{"entity_pair": "layer * output layer", "seen_with": ["is the", "is connected to only a small subset of units in the", "k , starting from the"], "relation": "P1552", "label": 0}
-{"entity_pair": "layer * output layer", "seen_with": ["is the", "is connected to only a small subset of units in the", "k , starting from the"], "relation": "P366", "label": 0}
-{"entity_pair": "layer * output layer", "seen_with": ["is the", "is connected to only a small subset of units in the", "k , starting from the"], "relation": "P460", "label": 0}
-{"entity_pair": "layer * output layer", "seen_with": ["is the", "is connected to only a small subset of units in the", "k , starting from the"], "relation": "P2283", "label": 0}
-{"entity_pair": "layer * output layer", "seen_with": ["is the", "is connected to only a small subset of units in the", "k , starting from the"], "relation": "P527", "label": 0}
+{"entity_pair": "unit * layer", "seen_with": ["should be in each"], "relation": "P279", "label": 0}
+{"entity_pair": "unit * layer", "seen_with": ["should be in each"], "relation": "P31", "label": 0}
+{"entity_pair": "unit * layer", "seen_with": ["should be in each"], "relation": "P1889", "label": 0}
+{"entity_pair": "unit * layer", "seen_with": ["should be in each"], "relation": "P361", "label": 1}
+{"entity_pair": "unit * layer", "seen_with": ["should be in each"], "relation": "P1552", "label": 0}
+{"entity_pair": "unit * layer", "seen_with": ["should be in each"], "relation": "P366", "label": 0}
+{"entity_pair": "unit * layer", "seen_with": ["should be in each"], "relation": "P460", "label": 0}
+{"entity_pair": "unit * layer", "seen_with": ["should be in each"], "relation": "P2283", "label": 0}
+{"entity_pair": "unit * layer", "seen_with": ["should be in each"], "relation": "P527", "label": 0}
+{"entity_pair": "deep neural network * gradient", "seen_with": ["requires computing the"], "relation": "P279", "label": 0}
+{"entity_pair": "deep neural network * gradient", "seen_with": ["requires computing the"], "relation": "P31", "label": 0}
+{"entity_pair": "deep neural network * gradient", "seen_with": ["requires computing the"], "relation": "P1889", "label": 0}
+{"entity_pair": "deep neural network * gradient", "seen_with": ["requires computing the"], "relation": "P361", "label": 0}
+{"entity_pair": "deep neural network * gradient", "seen_with": ["requires computing the"], "relation": "P1552", "label": 0}
+{"entity_pair": "deep neural network * gradient", "seen_with": ["requires computing the"], "relation": "P366", "label": 0}
+{"entity_pair": "deep neural network * gradient", "seen_with": ["requires computing the"], "relation": "P460", "label": 0}
+{"entity_pair": "deep neural network * gradient", "seen_with": ["requires computing the"], "relation": "P2283", "label": 1}
+{"entity_pair": "deep neural network * gradient", "seen_with": ["requires computing the"], "relation": "P527", "label": 0}
+{"entity_pair": "function * oper", "seen_with": ["( `` exclusive or '' ) is an"], "relation": "P279", "label": 1}
+{"entity_pair": "function * oper", "seen_with": ["( `` exclusive or '' ) is an"], "relation": "P31", "label": 0}
+{"entity_pair": "function * oper", "seen_with": ["( `` exclusive or '' ) is an"], "relation": "P1889", "label": 0}
+{"entity_pair": "function * oper", "seen_with": ["( `` exclusive or '' ) is an"], "relation": "P361", "label": 0}
+{"entity_pair": "function * oper", "seen_with": ["( `` exclusive or '' ) is an"], "relation": "P1552", "label": 0}
+{"entity_pair": "function * oper", "seen_with": ["( `` exclusive or '' ) is an"], "relation": "P366", "label": 0}
+{"entity_pair": "function * oper", "seen_with": ["( `` exclusive or '' ) is an"], "relation": "P460", "label": 0}
+{"entity_pair": "function * oper", "seen_with": ["( `` exclusive or '' ) is an"], "relation": "P2283", "label": 0}
+{"entity_pair": "function * oper", "seen_with": ["( `` exclusive or '' ) is an"], "relation": "P527", "label": 0}
+{"entity_pair": "learn algorithm * paramet", "seen_with": ["will adapt the"], "relation": "P279", "label": 0}
+{"entity_pair": "learn algorithm * paramet", "seen_with": ["will adapt the"], "relation": "P31", "label": 0}
+{"entity_pair": "learn algorithm * paramet", "seen_with": ["will adapt the"], "relation": "P1889", "label": 0}
+{"entity_pair": "learn algorithm * paramet", "seen_with": ["will adapt the"], "relation": "P361", "label": 0}
+{"entity_pair": "learn algorithm * paramet", "seen_with": ["will adapt the"], "relation": "P1552", "label": 0}
+{"entity_pair": "learn algorithm * paramet", "seen_with": ["will adapt the"], "relation": "P366", "label": 0}
+{"entity_pair": "learn algorithm * paramet", "seen_with": ["will adapt the"], "relation": "P460", "label": 0}
+{"entity_pair": "learn algorithm * paramet", "seen_with": ["will adapt the"], "relation": "P2283", "label": 1}
+{"entity_pair": "learn algorithm * paramet", "seen_with": ["will adapt the"], "relation": "P527", "label": 0}
+{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two"], "relation": "P279", "label": 0}
+{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two"], "relation": "P31", "label": 0}
+{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two"], "relation": "P1889", "label": 0}
+{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two"], "relation": "P361", "label": 0}
+{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two"], "relation": "P1552", "label": 0}
+{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two"], "relation": "P366", "label": 0}
+{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two"], "relation": "P460", "label": 0}
+{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two"], "relation": "P2283", "label": 0}
+{"entity_pair": "hidden layer * hidden unit", "seen_with": ["containing two"], "relation": "P527", "label": 1}
+{"entity_pair": "feedforward network * hidden unit", "seen_with": ["has a vector of"], "relation": "P279", "label": 0}
+{"entity_pair": "feedforward network * hidden unit", "seen_with": ["has a vector of"], "relation": "P31", "label": 0}
+{"entity_pair": "feedforward network * hidden unit", "seen_with": ["has a vector of"], "relation": "P1889", "label": 0}
+{"entity_pair": "feedforward network * hidden unit", "seen_with": ["has a vector of"], "relation": "P361", "label": 0}
+{"entity_pair": "feedforward network * hidden unit", "seen_with": ["has a vector of"], "relation": "P1552", "label": 0}
+{"entity_pair": "feedforward network * hidden unit", "seen_with": ["has a vector of"], "relation": "P366", "label": 0}
+{"entity_pair": "feedforward network * hidden unit", "seen_with": ["has a vector of"], "relation": "P460", "label": 0}
+{"entity_pair": "feedforward network * hidden unit", "seen_with": ["has a vector of"], "relation": "P2283", "label": 0}
+{"entity_pair": "feedforward network * hidden unit", "seen_with": ["has a vector of"], "relation": "P527", "label": 1}
+{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a"], "relation": "P279", "label": 0}
+{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a"], "relation": "P31", "label": 0}
+{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a"], "relation": "P1889", "label": 0}
+{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a"], "relation": "P361", "label": 0}
+{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a"], "relation": "P1552", "label": 0}
+{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a"], "relation": "P366", "label": 1}
+{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a"], "relation": "P460", "label": 0}
+{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a"], "relation": "P2283", "label": 0}
+{"entity_pair": "hidden unit * function", "seen_with": ["h that are computed by a"], "relation": "P527", "label": 0}
+{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second"], "relation": "P279", "label": 0}
+{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second"], "relation": "P31", "label": 0}
+{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second"], "relation": "P1889", "label": 0}
+{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second"], "relation": "P361", "label": 1}
+{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second"], "relation": "P1552", "label": 0}
+{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second"], "relation": "P366", "label": 0}
+{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second"], "relation": "P460", "label": 0}
+{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second"], "relation": "P2283", "label": 0}
+{"entity_pair": "hidden unit * layer", "seen_with": ["are then used as the input for a second"], "relation": "P527", "label": 0}
+{"entity_pair": "layer * output layer", "seen_with": ["is the"], "relation": "P279", "label": 0}
+{"entity_pair": "layer * output layer", "seen_with": ["is the"], "relation": "P31", "label": 1}
+{"entity_pair": "layer * output layer", "seen_with": ["is the"], "relation": "P1889", "label": 0}
+{"entity_pair": "layer * output layer", "seen_with": ["is the"], "relation": "P361", "label": 0}
+{"entity_pair": "layer * output layer", "seen_with": ["is the"], "relation": "P1552", "label": 0}
+{"entity_pair": "layer * output layer", "seen_with": ["is the"], "relation": "P366", "label": 0}
+{"entity_pair": "layer * output layer", "seen_with": ["is the"], "relation": "P460", "label": 0}
+{"entity_pair": "layer * output layer", "seen_with": ["is the"], "relation": "P2283", "label": 0}
+{"entity_pair": "layer * output layer", "seen_with": ["is the"], "relation": "P527", "label": 0}
 {"entity_pair": "output layer * linear regress", "seen_with": ["is still just a"], "relation": "P279", "label": 0}
 {"entity_pair": "output layer * linear regress", "seen_with": ["is still just a"], "relation": "P31", "label": 1}
 {"entity_pair": "output layer * linear regress", "seen_with": ["is still just a"], "relation": "P1889", "label": 0}
@@ -268,24 +376,33 @@
 {"entity_pair": "feedforward network * linear function", "seen_with": ["as a whole would remain a"], "relation": "P460", "label": 0}
 {"entity_pair": "feedforward network * linear function", "seen_with": ["as a whole would remain a"], "relation": "P2283", "label": 0}
 {"entity_pair": "feedforward network * linear function", "seen_with": ["as a whole would remain a"], "relation": "P527", "label": 0}
-{"entity_pair": "neural network * transform", "seen_with": ["do so using an a\ufb03ne"], "relation": "P279", "label": 0}
-{"entity_pair": "neural network * transform", "seen_with": ["do so using an a\ufb03ne"], "relation": "P31", "label": 0}
-{"entity_pair": "neural network * transform", "seen_with": ["do so using an a\ufb03ne"], "relation": "P1889", "label": 0}
-{"entity_pair": "neural network * transform", "seen_with": ["do so using an a\ufb03ne"], "relation": "P361", "label": 0}
-{"entity_pair": "neural network * transform", "seen_with": ["do so using an a\ufb03ne"], "relation": "P1552", "label": 0}
-{"entity_pair": "neural network * transform", "seen_with": ["do so using an a\ufb03ne"], "relation": "P366", "label": 0}
-{"entity_pair": "neural network * transform", "seen_with": ["do so using an a\ufb03ne"], "relation": "P460", "label": 0}
-{"entity_pair": "neural network * transform", "seen_with": ["do so using an a\ufb03ne"], "relation": "P2283", "label": 1}
-{"entity_pair": "neural network * transform", "seen_with": ["do so using an a\ufb03ne"], "relation": "P527", "label": 0}
-{"entity_pair": "function * activ function", "seen_with": ["called an", "as the"], "relation": "P279", "label": 0}
-{"entity_pair": "function * activ function", "seen_with": ["called an", "as the"], "relation": "P31", "label": 0}
-{"entity_pair": "function * activ function", "seen_with": ["called an", "as the"], "relation": "P1889", "label": 0}
-{"entity_pair": "function * activ function", "seen_with": ["called an", "as the"], "relation": "P361", "label": 0}
-{"entity_pair": "function * activ function", "seen_with": ["called an", "as the"], "relation": "P1552", "label": 0}
-{"entity_pair": "function * activ function", "seen_with": ["called an", "as the"], "relation": "P366", "label": 0}
-{"entity_pair": "function * activ function", "seen_with": ["called an", "as the"], "relation": "P460", "label": 0}
-{"entity_pair": "function * activ function", "seen_with": ["called an", "as the"], "relation": "P2283", "label": 0}
-{"entity_pair": "function * activ function", "seen_with": ["called an", "as the"], "relation": "P527", "label": 1}
+{"entity_pair": "neural network * transform", "seen_with": ["do so using an affine"], "relation": "P279", "label": 0}
+{"entity_pair": "neural network * transform", "seen_with": ["do so using an affine"], "relation": "P31", "label": 0}
+{"entity_pair": "neural network * transform", "seen_with": ["do so using an affine"], "relation": "P1889", "label": 0}
+{"entity_pair": "neural network * transform", "seen_with": ["do so using an affine"], "relation": "P361", "label": 0}
+{"entity_pair": "neural network * transform", "seen_with": ["do so using an affine"], "relation": "P1552", "label": 0}
+{"entity_pair": "neural network * transform", "seen_with": ["do so using an affine"], "relation": "P366", "label": 0}
+{"entity_pair": "neural network * transform", "seen_with": ["do so using an affine"], "relation": "P460", "label": 0}
+{"entity_pair": "neural network * transform", "seen_with": ["do so using an affine"], "relation": "P2283", "label": 1}
+{"entity_pair": "neural network * transform", "seen_with": ["do so using an affine"], "relation": "P527", "label": 0}
+{"entity_pair": "transform * paramet", "seen_with": ["controlled by learned"], "relation": "P279", "label": 0}
+{"entity_pair": "transform * paramet", "seen_with": ["controlled by learned"], "relation": "P31", "label": 0}
+{"entity_pair": "transform * paramet", "seen_with": ["controlled by learned"], "relation": "P1889", "label": 0}
+{"entity_pair": "transform * paramet", "seen_with": ["controlled by learned"], "relation": "P361", "label": 0}
+{"entity_pair": "transform * paramet", "seen_with": ["controlled by learned"], "relation": "P1552", "label": 0}
+{"entity_pair": "transform * paramet", "seen_with": ["controlled by learned"], "relation": "P366", "label": 0}
+{"entity_pair": "transform * paramet", "seen_with": ["controlled by learned"], "relation": "P460", "label": 0}
+{"entity_pair": "transform * paramet", "seen_with": ["controlled by learned"], "relation": "P2283", "label": 1}
+{"entity_pair": "transform * paramet", "seen_with": ["controlled by learned"], "relation": "P527", "label": 0}
+{"entity_pair": "function * activ function", "seen_with": ["called an"], "relation": "P279", "label": 0}
+{"entity_pair": "function * activ function", "seen_with": ["called an"], "relation": "P31", "label": 0}
+{"entity_pair": "function * activ function", "seen_with": ["called an"], "relation": "P1889", "label": 0}
+{"entity_pair": "function * activ function", "seen_with": ["called an"], "relation": "P361", "label": 0}
+{"entity_pair": "function * activ function", "seen_with": ["called an"], "relation": "P1552", "label": 0}
+{"entity_pair": "function * activ function", "seen_with": ["called an"], "relation": "P366", "label": 0}
+{"entity_pair": "function * activ function", "seen_with": ["called an"], "relation": "P460", "label": 0}
+{"entity_pair": "function * activ function", "seen_with": ["called an"], "relation": "P2283", "label": 0}
+{"entity_pair": "function * activ function", "seen_with": ["called an"], "relation": "P527", "label": 1}
 {"entity_pair": "weight * transform", "seen_with": ["of a linear"], "relation": "P279", "label": 0}
 {"entity_pair": "weight * transform", "seen_with": ["of a linear"], "relation": "P31", "label": 0}
 {"entity_pair": "weight * transform", "seen_with": ["of a linear"], "relation": "P1889", "label": 0}
@@ -295,42 +412,60 @@
 {"entity_pair": "weight * transform", "seen_with": ["of a linear"], "relation": "P460", "label": 0}
 {"entity_pair": "weight * transform", "seen_with": ["of a linear"], "relation": "P2283", "label": 0}
 {"entity_pair": "weight * transform", "seen_with": ["of a linear"], "relation": "P527", "label": 0}
-{"entity_pair": "weight * bia", "seen_with": ["and a scalar", "and"], "relation": "P279", "label": 0}
-{"entity_pair": "weight * bia", "seen_with": ["and a scalar", "and"], "relation": "P31", "label": 0}
-{"entity_pair": "weight * bia", "seen_with": ["and a scalar", "and"], "relation": "P1889", "label": 1}
-{"entity_pair": "weight * bia", "seen_with": ["and a scalar", "and"], "relation": "P361", "label": 0}
-{"entity_pair": "weight * bia", "seen_with": ["and a scalar", "and"], "relation": "P1552", "label": 0}
-{"entity_pair": "weight * bia", "seen_with": ["and a scalar", "and"], "relation": "P366", "label": 0}
-{"entity_pair": "weight * bia", "seen_with": ["and a scalar", "and"], "relation": "P460", "label": 0}
-{"entity_pair": "weight * bia", "seen_with": ["and a scalar", "and"], "relation": "P2283", "label": 0}
-{"entity_pair": "weight * bia", "seen_with": ["and a scalar", "and"], "relation": "P527", "label": 0}
-{"entity_pair": "paramet * transform", "seen_with": ["to describe an a\ufb03ne"], "relation": "P279", "label": 0}
-{"entity_pair": "paramet * transform", "seen_with": ["to describe an a\ufb03ne"], "relation": "P31", "label": 0}
-{"entity_pair": "paramet * transform", "seen_with": ["to describe an a\ufb03ne"], "relation": "P1889", "label": 0}
-{"entity_pair": "paramet * transform", "seen_with": ["to describe an a\ufb03ne"], "relation": "P361", "label": 1}
-{"entity_pair": "paramet * transform", "seen_with": ["to describe an a\ufb03ne"], "relation": "P1552", "label": 0}
-{"entity_pair": "paramet * transform", "seen_with": ["to describe an a\ufb03ne"], "relation": "P366", "label": 0}
-{"entity_pair": "paramet * transform", "seen_with": ["to describe an a\ufb03ne"], "relation": "P460", "label": 0}
-{"entity_pair": "paramet * transform", "seen_with": ["to describe an a\ufb03ne"], "relation": "P2283", "label": 0}
-{"entity_pair": "paramet * transform", "seen_with": ["to describe an a\ufb03ne"], "relation": "P527", "label": 0}
-{"entity_pair": "transform * vector", "seen_with": ["from an input", "from a"], "relation": "P279", "label": 1}
-{"entity_pair": "transform * vector", "seen_with": ["from an input", "from a"], "relation": "P31", "label": 0}
-{"entity_pair": "transform * vector", "seen_with": ["from an input", "from a"], "relation": "P1889", "label": 0}
-{"entity_pair": "transform * vector", "seen_with": ["from an input", "from a"], "relation": "P361", "label": 0}
-{"entity_pair": "transform * vector", "seen_with": ["from an input", "from a"], "relation": "P1552", "label": 0}
-{"entity_pair": "transform * vector", "seen_with": ["from an input", "from a"], "relation": "P366", "label": 0}
-{"entity_pair": "transform * vector", "seen_with": ["from an input", "from a"], "relation": "P460", "label": 0}
-{"entity_pair": "transform * vector", "seen_with": ["from an input", "from a"], "relation": "P2283", "label": 0}
-{"entity_pair": "transform * vector", "seen_with": ["from an input", "from a"], "relation": "P527", "label": 0}
-{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a", ", absolute value rectification", ") can approximate any Borel measurable", ", including rectified linear units , have universal approximation properties , but these results do not address the questions of depth or e\ufb03ciency\u2014they specify only that a su\ufb03ciently wide rectifier network could represent any"], "relation": "P279", "label": 0}
-{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a", ", absolute value rectification", ") can approximate any Borel measurable", ", including rectified linear units , have universal approximation properties , but these results do not address the questions of depth or e\ufb03ciency\u2014they specify only that a su\ufb03ciently wide rectifier network could represent any"], "relation": "P31", "label": 1}
-{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a", ", absolute value rectification", ") can approximate any Borel measurable", ", including rectified linear units , have universal approximation properties , but these results do not address the questions of depth or e\ufb03ciency\u2014they specify only that a su\ufb03ciently wide rectifier network could represent any"], "relation": "P1889", "label": 0}
-{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a", ", absolute value rectification", ") can approximate any Borel measurable", ", including rectified linear units , have universal approximation properties , but these results do not address the questions of depth or e\ufb03ciency\u2014they specify only that a su\ufb03ciently wide rectifier network could represent any"], "relation": "P361", "label": 0}
-{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a", ", absolute value rectification", ") can approximate any Borel measurable", ", including rectified linear units , have universal approximation properties , but these results do not address the questions of depth or e\ufb03ciency\u2014they specify only that a su\ufb03ciently wide rectifier network could represent any"], "relation": "P1552", "label": 0}
-{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a", ", absolute value rectification", ") can approximate any Borel measurable", ", including rectified linear units , have universal approximation properties , but these results do not address the questions of depth or e\ufb03ciency\u2014they specify only that a su\ufb03ciently wide rectifier network could represent any"], "relation": "P366", "label": 0}
-{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a", ", absolute value rectification", ") can approximate any Borel measurable", ", including rectified linear units , have universal approximation properties , but these results do not address the questions of depth or e\ufb03ciency\u2014they specify only that a su\ufb03ciently wide rectifier network could represent any"], "relation": "P460", "label": 0}
-{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a", ", absolute value rectification", ") can approximate any Borel measurable", ", including rectified linear units , have universal approximation properties , but these results do not address the questions of depth or e\ufb03ciency\u2014they specify only that a su\ufb03ciently wide rectifier network could represent any"], "relation": "P2283", "label": 0}
-{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a", ", absolute value rectification", ") can approximate any Borel measurable", ", including rectified linear units , have universal approximation properties , but these results do not address the questions of depth or e\ufb03ciency\u2014they specify only that a su\ufb03ciently wide rectifier network could represent any"], "relation": "P527", "label": 0}
+{"entity_pair": "linear model * coeffici", "seen_with": ["must apply a fixed", "therefore can not use the value of x 1 to change the"], "relation": "P279", "label": 0}
+{"entity_pair": "linear model * coeffici", "seen_with": ["must apply a fixed", "therefore can not use the value of x 1 to change the"], "relation": "P31", "label": 0}
+{"entity_pair": "linear model * coeffici", "seen_with": ["must apply a fixed", "therefore can not use the value of x 1 to change the"], "relation": "P1889", "label": 0}
+{"entity_pair": "linear model * coeffici", "seen_with": ["must apply a fixed", "therefore can not use the value of x 1 to change the"], "relation": "P361", "label": 0}
+{"entity_pair": "linear model * coeffici", "seen_with": ["must apply a fixed", "therefore can not use the value of x 1 to change the"], "relation": "P1552", "label": 0}
+{"entity_pair": "linear model * coeffici", "seen_with": ["must apply a fixed", "therefore can not use the value of x 1 to change the"], "relation": "P366", "label": 0}
+{"entity_pair": "linear model * coeffici", "seen_with": ["must apply a fixed", "therefore can not use the value of x 1 to change the"], "relation": "P460", "label": 0}
+{"entity_pair": "linear model * coeffici", "seen_with": ["must apply a fixed", "therefore can not use the value of x 1 to change the"], "relation": "P2283", "label": 0}
+{"entity_pair": "linear model * coeffici", "seen_with": ["must apply a fixed", "therefore can not use the value of x 1 to change the"], "relation": "P527", "label": 1}
+{"entity_pair": "weight * bia", "seen_with": ["and a scalar"], "relation": "P279", "label": 0}
+{"entity_pair": "weight * bia", "seen_with": ["and a scalar"], "relation": "P31", "label": 0}
+{"entity_pair": "weight * bia", "seen_with": ["and a scalar"], "relation": "P1889", "label": 1}
+{"entity_pair": "weight * bia", "seen_with": ["and a scalar"], "relation": "P361", "label": 0}
+{"entity_pair": "weight * bia", "seen_with": ["and a scalar"], "relation": "P1552", "label": 0}
+{"entity_pair": "weight * bia", "seen_with": ["and a scalar"], "relation": "P366", "label": 0}
+{"entity_pair": "weight * bia", "seen_with": ["and a scalar"], "relation": "P460", "label": 0}
+{"entity_pair": "weight * bia", "seen_with": ["and a scalar"], "relation": "P2283", "label": 0}
+{"entity_pair": "weight * bia", "seen_with": ["and a scalar"], "relation": "P527", "label": 0}
+{"entity_pair": "paramet * transform", "seen_with": ["to describe an affine"], "relation": "P279", "label": 0}
+{"entity_pair": "paramet * transform", "seen_with": ["to describe an affine"], "relation": "P31", "label": 0}
+{"entity_pair": "paramet * transform", "seen_with": ["to describe an affine"], "relation": "P1889", "label": 0}
+{"entity_pair": "paramet * transform", "seen_with": ["to describe an affine"], "relation": "P361", "label": 1}
+{"entity_pair": "paramet * transform", "seen_with": ["to describe an affine"], "relation": "P1552", "label": 0}
+{"entity_pair": "paramet * transform", "seen_with": ["to describe an affine"], "relation": "P366", "label": 0}
+{"entity_pair": "paramet * transform", "seen_with": ["to describe an affine"], "relation": "P460", "label": 0}
+{"entity_pair": "paramet * transform", "seen_with": ["to describe an affine"], "relation": "P2283", "label": 0}
+{"entity_pair": "paramet * transform", "seen_with": ["to describe an affine"], "relation": "P527", "label": 0}
+{"entity_pair": "transform * vector", "seen_with": ["from a"], "relation": "P279", "label": 1}
+{"entity_pair": "transform * vector", "seen_with": ["from a"], "relation": "P31", "label": 0}
+{"entity_pair": "transform * vector", "seen_with": ["from a"], "relation": "P1889", "label": 0}
+{"entity_pair": "transform * vector", "seen_with": ["from a"], "relation": "P361", "label": 0}
+{"entity_pair": "transform * vector", "seen_with": ["from a"], "relation": "P1552", "label": 0}
+{"entity_pair": "transform * vector", "seen_with": ["from a"], "relation": "P366", "label": 0}
+{"entity_pair": "transform * vector", "seen_with": ["from a"], "relation": "P460", "label": 0}
+{"entity_pair": "transform * vector", "seen_with": ["from a"], "relation": "P2283", "label": 0}
+{"entity_pair": "transform * vector", "seen_with": ["from a"], "relation": "P527", "label": 0}
+{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a"], "relation": "P279", "label": 0}
+{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a"], "relation": "P31", "label": 1}
+{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a"], "relation": "P1889", "label": 0}
+{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a"], "relation": "P361", "label": 0}
+{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a"], "relation": "P1552", "label": 0}
+{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a"], "relation": "P366", "label": 0}
+{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a"], "relation": "P460", "label": 0}
+{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a"], "relation": "P2283", "label": 0}
+{"entity_pair": "activ function * function", "seen_with": ["g is typically chosen to be a"], "relation": "P527", "label": 0}
+{"entity_pair": "neural network * relu", "seen_with": [", the default recommendation is to use the rectified linear unit or"], "relation": "P279", "label": 0}
+{"entity_pair": "neural network * relu", "seen_with": [", the default recommendation is to use the rectified linear unit or"], "relation": "P31", "label": 0}
+{"entity_pair": "neural network * relu", "seen_with": [", the default recommendation is to use the rectified linear unit or"], "relation": "P1889", "label": 0}
+{"entity_pair": "neural network * relu", "seen_with": [", the default recommendation is to use the rectified linear unit or"], "relation": "P361", "label": 0}
+{"entity_pair": "neural network * relu", "seen_with": [", the default recommendation is to use the rectified linear unit or"], "relation": "P1552", "label": 0}
+{"entity_pair": "neural network * relu", "seen_with": [", the default recommendation is to use the rectified linear unit or"], "relation": "P366", "label": 0}
+{"entity_pair": "neural network * relu", "seen_with": [", the default recommendation is to use the rectified linear unit or"], "relation": "P460", "label": 0}
+{"entity_pair": "neural network * relu", "seen_with": [", the default recommendation is to use the rectified linear unit or"], "relation": "P2283", "label": 1}
+{"entity_pair": "neural network * relu", "seen_with": [", the default recommendation is to use the rectified linear unit or"], "relation": "P527", "label": 0}
 {"entity_pair": "neural network * matrix", "seen_with": ["is to multiply the input"], "relation": "P279", "label": 0}
 {"entity_pair": "neural network * matrix", "seen_with": ["is to multiply the input"], "relation": "P31", "label": 0}
 {"entity_pair": "neural network * matrix", "seen_with": ["is to multiply the input"], "relation": "P1889", "label": 0}
@@ -340,15 +475,15 @@
 {"entity_pair": "neural network * matrix", "seen_with": ["is to multiply the input"], "relation": "P460", "label": 0}
 {"entity_pair": "neural network * matrix", "seen_with": ["is to multiply the input"], "relation": "P2283", "label": 0}
 {"entity_pair": "neural network * matrix", "seen_with": ["is to multiply the input"], "relation": "P527", "label": 0}
-{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight", "using weight"], "relation": "P279", "label": 0}
-{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight", "using weight"], "relation": "P31", "label": 1}
-{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight", "using weight"], "relation": "P1889", "label": 0}
-{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight", "using weight"], "relation": "P361", "label": 0}
-{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight", "using weight"], "relation": "P1552", "label": 0}
-{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight", "using weight"], "relation": "P366", "label": 0}
-{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight", "using weight"], "relation": "P460", "label": 0}
-{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight", "using weight"], "relation": "P2283", "label": 0}
-{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight", "using weight"], "relation": "P527", "label": 0}
+{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight"], "relation": "P279", "label": 0}
+{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight"], "relation": "P31", "label": 1}
+{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight"], "relation": "P1889", "label": 0}
+{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight"], "relation": "P361", "label": 0}
+{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight"], "relation": "P1552", "label": 0}
+{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight"], "relation": "P366", "label": 0}
+{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight"], "relation": "P460", "label": 0}
+{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight"], "relation": "P2283", "label": 0}
+{"entity_pair": "layer * matrix", "seen_with": ["\u2019 s weight"], "relation": "P527", "label": 0}
 {"entity_pair": "converg * gradient descent", "seen_with": ["point of"], "relation": "P279", "label": 0}
 {"entity_pair": "converg * gradient descent", "seen_with": ["point of"], "relation": "P31", "label": 0}
 {"entity_pair": "converg * gradient descent", "seen_with": ["point of"], "relation": "P1889", "label": 0}
@@ -358,15 +493,24 @@
 {"entity_pair": "converg * gradient descent", "seen_with": ["point of"], "relation": "P460", "label": 0}
 {"entity_pair": "converg * gradient descent", "seen_with": ["point of"], "relation": "P2283", "label": 0}
 {"entity_pair": "converg * gradient descent", "seen_with": ["point of"], "relation": "P527", "label": 0}
-{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other", "that are common to most parametric", "used for"], "relation": "P279", "label": 1}
-{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other", "that are common to most parametric", "used for"], "relation": "P31", "label": 0}
-{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other", "that are common to most parametric", "used for"], "relation": "P1889", "label": 0}
-{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other", "that are common to most parametric", "used for"], "relation": "P361", "label": 0}
-{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other", "that are common to most parametric", "used for"], "relation": "P1552", "label": 0}
-{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other", "that are common to most parametric", "used for"], "relation": "P366", "label": 0}
-{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other", "that are common to most parametric", "used for"], "relation": "P460", "label": 0}
-{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other", "that are common to most parametric", "used for"], "relation": "P2283", "label": 0}
-{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other", "that are common to most parametric", "used for"], "relation": "P527", "label": 0}
+{"entity_pair": "gradient descent * paramet", "seen_with": ["depends on the initial values of the"], "relation": "P279", "label": 0}
+{"entity_pair": "gradient descent * paramet", "seen_with": ["depends on the initial values of the"], "relation": "P31", "label": 0}
+{"entity_pair": "gradient descent * paramet", "seen_with": ["depends on the initial values of the"], "relation": "P1889", "label": 0}
+{"entity_pair": "gradient descent * paramet", "seen_with": ["depends on the initial values of the"], "relation": "P361", "label": 0}
+{"entity_pair": "gradient descent * paramet", "seen_with": ["depends on the initial values of the"], "relation": "P1552", "label": 0}
+{"entity_pair": "gradient descent * paramet", "seen_with": ["depends on the initial values of the"], "relation": "P366", "label": 0}
+{"entity_pair": "gradient descent * paramet", "seen_with": ["depends on the initial values of the"], "relation": "P460", "label": 0}
+{"entity_pair": "gradient descent * paramet", "seen_with": ["depends on the initial values of the"], "relation": "P2283", "label": 0}
+{"entity_pair": "gradient descent * paramet", "seen_with": ["depends on the initial values of the"], "relation": "P527", "label": 1}
+{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other"], "relation": "P279", "label": 1}
+{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other"], "relation": "P31", "label": 0}
+{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other"], "relation": "P1889", "label": 0}
+{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other"], "relation": "P361", "label": 0}
+{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other"], "relation": "P1552", "label": 0}
+{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other"], "relation": "P366", "label": 0}
+{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other"], "relation": "P460", "label": 0}
+{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other"], "relation": "P2283", "label": 0}
+{"entity_pair": "neural network * machin learn", "seen_with": ["is not much different from training any other"], "relation": "P527", "label": 0}
 {"entity_pair": "algorithm * optim procedur", "seen_with": ["by specifying an"], "relation": "P279", "label": 0}
 {"entity_pair": "algorithm * optim procedur", "seen_with": ["by specifying an"], "relation": "P31", "label": 0}
 {"entity_pair": "algorithm * optim procedur", "seen_with": ["by specifying an"], "relation": "P1889", "label": 0}
@@ -385,6 +529,15 @@
 {"entity_pair": "neural network * loss function", "seen_with": ["causes most interesting"], "relation": "P460", "label": 0}
 {"entity_pair": "neural network * loss function", "seen_with": ["causes most interesting"], "relation": "P2283", "label": 0}
 {"entity_pair": "neural network * loss function", "seen_with": ["causes most interesting"], "relation": "P527", "label": 0}
+{"entity_pair": "convex optim * paramet", "seen_with": ["converges starting from any initial"], "relation": "P279", "label": 0}
+{"entity_pair": "convex optim * paramet", "seen_with": ["converges starting from any initial"], "relation": "P31", "label": 0}
+{"entity_pair": "convex optim * paramet", "seen_with": ["converges starting from any initial"], "relation": "P1889", "label": 0}
+{"entity_pair": "convex optim * paramet", "seen_with": ["converges starting from any initial"], "relation": "P361", "label": 0}
+{"entity_pair": "convex optim * paramet", "seen_with": ["converges starting from any initial"], "relation": "P1552", "label": 0}
+{"entity_pair": "convex optim * paramet", "seen_with": ["converges starting from any initial"], "relation": "P366", "label": 1}
+{"entity_pair": "convex optim * paramet", "seen_with": ["converges starting from any initial"], "relation": "P460", "label": 0}
+{"entity_pair": "convex optim * paramet", "seen_with": ["converges starting from any initial"], "relation": "P2283", "label": 0}
+{"entity_pair": "convex optim * paramet", "seen_with": ["converges starting from any initial"], "relation": "P527", "label": 0}
 {"entity_pair": "stochast gradient descent * loss function", "seen_with": ["applied to non-convex"], "relation": "P279", "label": 0}
 {"entity_pair": "stochast gradient descent * loss function", "seen_with": ["applied to non-convex"], "relation": "P31", "label": 0}
 {"entity_pair": "stochast gradient descent * loss function", "seen_with": ["applied to non-convex"], "relation": "P1889", "label": 0}
@@ -412,24 +565,33 @@
 {"entity_pair": "optim algorithm * feedforward network", "seen_with": ["used to train"], "relation": "P460", "label": 0}
 {"entity_pair": "optim algorithm * feedforward network", "seen_with": ["used to train"], "relation": "P2283", "label": 0}
 {"entity_pair": "optim algorithm * feedforward network", "seen_with": ["used to train"], "relation": "P527", "label": 0}
-{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the", "can be applied to these tasks as well , and is not restricted to computing the", "that specifies the actual", "6.4 then shows the corresponding computation to be done for Figure 6.9 : A computational graph that results in repeated subexpressions when computing the", "is used to compute the", "is not capable of simplifying the"], "relation": "P279", "label": 0}
-{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the", "can be applied to these tasks as well , and is not restricted to computing the", "that specifies the actual", "6.4 then shows the corresponding computation to be done for Figure 6.9 : A computational graph that results in repeated subexpressions when computing the", "is used to compute the", "is not capable of simplifying the"], "relation": "P31", "label": 0}
-{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the", "can be applied to these tasks as well , and is not restricted to computing the", "that specifies the actual", "6.4 then shows the corresponding computation to be done for Figure 6.9 : A computational graph that results in repeated subexpressions when computing the", "is used to compute the", "is not capable of simplifying the"], "relation": "P1889", "label": 0}
-{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the", "can be applied to these tasks as well , and is not restricted to computing the", "that specifies the actual", "6.4 then shows the corresponding computation to be done for Figure 6.9 : A computational graph that results in repeated subexpressions when computing the", "is used to compute the", "is not capable of simplifying the"], "relation": "P361", "label": 0}
-{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the", "can be applied to these tasks as well , and is not restricted to computing the", "that specifies the actual", "6.4 then shows the corresponding computation to be done for Figure 6.9 : A computational graph that results in repeated subexpressions when computing the", "is used to compute the", "is not capable of simplifying the"], "relation": "P1552", "label": 0}
-{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the", "can be applied to these tasks as well , and is not restricted to computing the", "that specifies the actual", "6.4 then shows the corresponding computation to be done for Figure 6.9 : A computational graph that results in repeated subexpressions when computing the", "is used to compute the", "is not capable of simplifying the"], "relation": "P366", "label": 0}
-{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the", "can be applied to these tasks as well , and is not restricted to computing the", "that specifies the actual", "6.4 then shows the corresponding computation to be done for Figure 6.9 : A computational graph that results in repeated subexpressions when computing the", "is used to compute the", "is not capable of simplifying the"], "relation": "P460", "label": 0}
-{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the", "can be applied to these tasks as well , and is not restricted to computing the", "that specifies the actual", "6.4 then shows the corresponding computation to be done for Figure 6.9 : A computational graph that results in repeated subexpressions when computing the", "is used to compute the", "is not capable of simplifying the"], "relation": "P2283", "label": 1}
-{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the", "can be applied to these tasks as well , and is not restricted to computing the", "that specifies the actual", "6.4 then shows the corresponding computation to be done for Figure 6.9 : A computational graph that results in repeated subexpressions when computing the", "is used to compute the", "is not capable of simplifying the"], "relation": "P527", "label": 0}
-{"entity_pair": "gradient * cost function", "seen_with": ["to descend the", "of the", "is 0 , it is acceptable for the minima of the", "of the", "of the"], "relation": "P279", "label": 0}
-{"entity_pair": "gradient * cost function", "seen_with": ["to descend the", "of the", "is 0 , it is acceptable for the minima of the", "of the", "of the"], "relation": "P31", "label": 0}
-{"entity_pair": "gradient * cost function", "seen_with": ["to descend the", "of the", "is 0 , it is acceptable for the minima of the", "of the", "of the"], "relation": "P1889", "label": 0}
-{"entity_pair": "gradient * cost function", "seen_with": ["to descend the", "of the", "is 0 , it is acceptable for the minima of the", "of the", "of the"], "relation": "P361", "label": 1}
-{"entity_pair": "gradient * cost function", "seen_with": ["to descend the", "of the", "is 0 , it is acceptable for the minima of the", "of the", "of the"], "relation": "P1552", "label": 0}
-{"entity_pair": "gradient * cost function", "seen_with": ["to descend the", "of the", "is 0 , it is acceptable for the minima of the", "of the", "of the"], "relation": "P366", "label": 0}
-{"entity_pair": "gradient * cost function", "seen_with": ["to descend the", "of the", "is 0 , it is acceptable for the minima of the", "of the", "of the"], "relation": "P460", "label": 0}
-{"entity_pair": "gradient * cost function", "seen_with": ["to descend the", "of the", "is 0 , it is acceptable for the minima of the", "of the", "of the"], "relation": "P2283", "label": 0}
-{"entity_pair": "gradient * cost function", "seen_with": ["to descend the", "of the", "is 0 , it is acceptable for the minima of the", "of the", "of the"], "relation": "P527", "label": 0}
+{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the"], "relation": "P279", "label": 0}
+{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the"], "relation": "P31", "label": 0}
+{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the"], "relation": "P1889", "label": 0}
+{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the"], "relation": "P361", "label": 0}
+{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the"], "relation": "P1552", "label": 0}
+{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the"], "relation": "P366", "label": 0}
+{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the"], "relation": "P460", "label": 0}
+{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the"], "relation": "P2283", "label": 1}
+{"entity_pair": "algorithm * gradient", "seen_with": ["is almost always based on using the"], "relation": "P527", "label": 0}
+{"entity_pair": "gradient * cost function", "seen_with": ["of the", "to descend the"], "relation": "P279", "label": 0}
+{"entity_pair": "gradient * cost function", "seen_with": ["of the", "to descend the"], "relation": "P31", "label": 0}
+{"entity_pair": "gradient * cost function", "seen_with": ["of the", "to descend the"], "relation": "P1889", "label": 0}
+{"entity_pair": "gradient * cost function", "seen_with": ["of the", "to descend the"], "relation": "P361", "label": 1}
+{"entity_pair": "gradient * cost function", "seen_with": ["of the", "to descend the"], "relation": "P1552", "label": 0}
+{"entity_pair": "gradient * cost function", "seen_with": ["of the", "to descend the"], "relation": "P366", "label": 0}
+{"entity_pair": "gradient * cost function", "seen_with": ["of the", "to descend the"], "relation": "P460", "label": 0}
+{"entity_pair": "gradient * cost function", "seen_with": ["of the", "to descend the"], "relation": "P2283", "label": 0}
+{"entity_pair": "gradient * cost function", "seen_with": ["of the", "to descend the"], "relation": "P527", "label": 0}
+{"entity_pair": "algorithm * gradient descent", "seen_with": ["are improvements and refinements on the ideas of"], "relation": "P279", "label": 0}
+{"entity_pair": "algorithm * gradient descent", "seen_with": ["are improvements and refinements on the ideas of"], "relation": "P31", "label": 1}
+{"entity_pair": "algorithm * gradient descent", "seen_with": ["are improvements and refinements on the ideas of"], "relation": "P1889", "label": 0}
+{"entity_pair": "algorithm * gradient descent", "seen_with": ["are improvements and refinements on the ideas of"], "relation": "P361", "label": 0}
+{"entity_pair": "algorithm * gradient descent", "seen_with": ["are improvements and refinements on the ideas of"], "relation": "P1552", "label": 0}
+{"entity_pair": "algorithm * gradient descent", "seen_with": ["are improvements and refinements on the ideas of"], "relation": "P366", "label": 0}
+{"entity_pair": "algorithm * gradient descent", "seen_with": ["are improvements and refinements on the ideas of"], "relation": "P460", "label": 0}
+{"entity_pair": "algorithm * gradient descent", "seen_with": ["are improvements and refinements on the ideas of"], "relation": "P2283", "label": 0}
+{"entity_pair": "algorithm * gradient descent", "seen_with": ["are improvements and refinements on the ideas of"], "relation": "P527", "label": 0}
 {"entity_pair": "linear regress * support vector machin", "seen_with": ["and"], "relation": "P279", "label": 0}
 {"entity_pair": "linear regress * support vector machin", "seen_with": ["and"], "relation": "P31", "label": 0}
 {"entity_pair": "linear regress * support vector machin", "seen_with": ["and"], "relation": "P1889", "label": 1}
@@ -448,15 +610,15 @@
 {"entity_pair": "gradient * neural network", "seen_with": ["is slightly more complicated for a"], "relation": "P460", "label": 0}
 {"entity_pair": "gradient * neural network", "seen_with": ["is slightly more complicated for a"], "relation": "P2283", "label": 0}
 {"entity_pair": "gradient * neural network", "seen_with": ["is slightly more complicated for a"], "relation": "P527", "label": 0}
-{"entity_pair": "gradient * back-propag", "seen_with": ["using the", "is given by A\ue03e G. The", "on W ( 2 ) , using the", "of a scalar output but"], "relation": "P279", "label": 0}
-{"entity_pair": "gradient * back-propag", "seen_with": ["using the", "is given by A\ue03e G. The", "on W ( 2 ) , using the", "of a scalar output but"], "relation": "P31", "label": 0}
-{"entity_pair": "gradient * back-propag", "seen_with": ["using the", "is given by A\ue03e G. The", "on W ( 2 ) , using the", "of a scalar output but"], "relation": "P1889", "label": 0}
-{"entity_pair": "gradient * back-propag", "seen_with": ["using the", "is given by A\ue03e G. The", "on W ( 2 ) , using the", "of a scalar output but"], "relation": "P361", "label": 0}
-{"entity_pair": "gradient * back-propag", "seen_with": ["using the", "is given by A\ue03e G. The", "on W ( 2 ) , using the", "of a scalar output but"], "relation": "P1552", "label": 0}
-{"entity_pair": "gradient * back-propag", "seen_with": ["using the", "is given by A\ue03e G. The", "on W ( 2 ) , using the", "of a scalar output but"], "relation": "P366", "label": 1}
-{"entity_pair": "gradient * back-propag", "seen_with": ["using the", "is given by A\ue03e G. The", "on W ( 2 ) , using the", "of a scalar output but"], "relation": "P460", "label": 0}
-{"entity_pair": "gradient * back-propag", "seen_with": ["using the", "is given by A\ue03e G. The", "on W ( 2 ) , using the", "of a scalar output but"], "relation": "P2283", "label": 0}
-{"entity_pair": "gradient * back-propag", "seen_with": ["using the", "is given by A\ue03e G. The", "on W ( 2 ) , using the", "of a scalar output but"], "relation": "P527", "label": 0}
+{"entity_pair": "gradient * back-propag", "seen_with": ["using the"], "relation": "P279", "label": 0}
+{"entity_pair": "gradient * back-propag", "seen_with": ["using the"], "relation": "P31", "label": 0}
+{"entity_pair": "gradient * back-propag", "seen_with": ["using the"], "relation": "P1889", "label": 0}
+{"entity_pair": "gradient * back-propag", "seen_with": ["using the"], "relation": "P361", "label": 0}
+{"entity_pair": "gradient * back-propag", "seen_with": ["using the"], "relation": "P1552", "label": 0}
+{"entity_pair": "gradient * back-propag", "seen_with": ["using the"], "relation": "P366", "label": 1}
+{"entity_pair": "gradient * back-propag", "seen_with": ["using the"], "relation": "P460", "label": 0}
+{"entity_pair": "gradient * back-propag", "seen_with": ["using the"], "relation": "P2283", "label": 0}
+{"entity_pair": "gradient * back-propag", "seen_with": ["using the"], "relation": "P527", "label": 0}
 {"entity_pair": "machin learn * cost function", "seen_with": ["models , to apply gradient-based learning we must choose a"], "relation": "P279", "label": 0}
 {"entity_pair": "machin learn * cost function", "seen_with": ["models , to apply gradient-based learning we must choose a"], "relation": "P31", "label": 0}
 {"entity_pair": "machin learn * cost function", "seen_with": ["models , to apply gradient-based learning we must choose a"], "relation": "P1889", "label": 0}
@@ -466,15 +628,15 @@
 {"entity_pair": "machin learn * cost function", "seen_with": ["models , to apply gradient-based learning we must choose a"], "relation": "P460", "label": 0}
 {"entity_pair": "machin learn * cost function", "seen_with": ["models , to apply gradient-based learning we must choose a"], "relation": "P2283", "label": 1}
 {"entity_pair": "machin learn * cost function", "seen_with": ["models , to apply gradient-based learning we must choose a"], "relation": "P527", "label": 0}
-{"entity_pair": "cost function * neural network", "seen_with": ["for", "used to train a"], "relation": "P279", "label": 0}
-{"entity_pair": "cost function * neural network", "seen_with": ["for", "used to train a"], "relation": "P31", "label": 0}
-{"entity_pair": "cost function * neural network", "seen_with": ["for", "used to train a"], "relation": "P1889", "label": 0}
-{"entity_pair": "cost function * neural network", "seen_with": ["for", "used to train a"], "relation": "P361", "label": 1}
-{"entity_pair": "cost function * neural network", "seen_with": ["for", "used to train a"], "relation": "P1552", "label": 0}
-{"entity_pair": "cost function * neural network", "seen_with": ["for", "used to train a"], "relation": "P366", "label": 0}
-{"entity_pair": "cost function * neural network", "seen_with": ["for", "used to train a"], "relation": "P460", "label": 0}
-{"entity_pair": "cost function * neural network", "seen_with": ["for", "used to train a"], "relation": "P2283", "label": 0}
-{"entity_pair": "cost function * neural network", "seen_with": ["for", "used to train a"], "relation": "P527", "label": 0}
+{"entity_pair": "cost function * neural network", "seen_with": ["used to train a", "for"], "relation": "P279", "label": 0}
+{"entity_pair": "cost function * neural network", "seen_with": ["used to train a", "for"], "relation": "P31", "label": 0}
+{"entity_pair": "cost function * neural network", "seen_with": ["used to train a", "for"], "relation": "P1889", "label": 0}
+{"entity_pair": "cost function * neural network", "seen_with": ["used to train a", "for"], "relation": "P361", "label": 1}
+{"entity_pair": "cost function * neural network", "seen_with": ["used to train a", "for"], "relation": "P1552", "label": 0}
+{"entity_pair": "cost function * neural network", "seen_with": ["used to train a", "for"], "relation": "P366", "label": 0}
+{"entity_pair": "cost function * neural network", "seen_with": ["used to train a", "for"], "relation": "P460", "label": 0}
+{"entity_pair": "cost function * neural network", "seen_with": ["used to train a", "for"], "relation": "P2283", "label": 0}
+{"entity_pair": "cost function * neural network", "seen_with": ["used to train a", "for"], "relation": "P527", "label": 0}
 {"entity_pair": "parametr model * linear model", "seen_with": [", such as"], "relation": "P279", "label": 0}
 {"entity_pair": "parametr model * linear model", "seen_with": [", such as"], "relation": "P31", "label": 0}
 {"entity_pair": "parametr model * linear model", "seen_with": [", such as"], "relation": "P1889", "label": 0}
@@ -493,15 +655,15 @@
 {"entity_pair": "parametr model * distribut", "seen_with": ["defines a"], "relation": "P460", "label": 0}
 {"entity_pair": "parametr model * distribut", "seen_with": ["defines a"], "relation": "P2283", "label": 0}
 {"entity_pair": "parametr model * distribut", "seen_with": ["defines a"], "relation": "P527", "label": 0}
-{"entity_pair": "cross-entropi * train data", "seen_with": ["between the", "between the"], "relation": "P279", "label": 0}
-{"entity_pair": "cross-entropi * train data", "seen_with": ["between the", "between the"], "relation": "P31", "label": 0}
-{"entity_pair": "cross-entropi * train data", "seen_with": ["between the", "between the"], "relation": "P1889", "label": 1}
-{"entity_pair": "cross-entropi * train data", "seen_with": ["between the", "between the"], "relation": "P361", "label": 0}
-{"entity_pair": "cross-entropi * train data", "seen_with": ["between the", "between the"], "relation": "P1552", "label": 0}
-{"entity_pair": "cross-entropi * train data", "seen_with": ["between the", "between the"], "relation": "P366", "label": 0}
-{"entity_pair": "cross-entropi * train data", "seen_with": ["between the", "between the"], "relation": "P460", "label": 0}
-{"entity_pair": "cross-entropi * train data", "seen_with": ["between the", "between the"], "relation": "P2283", "label": 0}
-{"entity_pair": "cross-entropi * train data", "seen_with": ["between the", "between the"], "relation": "P527", "label": 0}
+{"entity_pair": "cross-entropi * train data", "seen_with": ["between the"], "relation": "P279", "label": 0}
+{"entity_pair": "cross-entropi * train data", "seen_with": ["between the"], "relation": "P31", "label": 0}
+{"entity_pair": "cross-entropi * train data", "seen_with": ["between the"], "relation": "P1889", "label": 1}
+{"entity_pair": "cross-entropi * train data", "seen_with": ["between the"], "relation": "P361", "label": 0}
+{"entity_pair": "cross-entropi * train data", "seen_with": ["between the"], "relation": "P1552", "label": 0}
+{"entity_pair": "cross-entropi * train data", "seen_with": ["between the"], "relation": "P366", "label": 0}
+{"entity_pair": "cross-entropi * train data", "seen_with": ["between the"], "relation": "P460", "label": 0}
+{"entity_pair": "cross-entropi * train data", "seen_with": ["between the"], "relation": "P2283", "label": 0}
+{"entity_pair": "cross-entropi * train data", "seen_with": ["between the"], "relation": "P527", "label": 0}
 {"entity_pair": "cost function * regular", "seen_with": ["described here with a"], "relation": "P279", "label": 0}
 {"entity_pair": "cost function * regular", "seen_with": ["described here with a"], "relation": "P31", "label": 0}
 {"entity_pair": "cost function * regular", "seen_with": ["described here with a"], "relation": "P1889", "label": 0}
@@ -583,42 +745,51 @@
 {"entity_pair": "cost function * learn algorithm", "seen_with": ["must be large and predictable enough to serve as a good guide for the"], "relation": "P460", "label": 0}
 {"entity_pair": "cost function * learn algorithm", "seen_with": ["must be large and predictable enough to serve as a good guide for the"], "relation": "P2283", "label": 0}
 {"entity_pair": "cost function * learn algorithm", "seen_with": ["must be large and predictable enough to serve as a good guide for the"], "relation": "P527", "label": 0}
-{"entity_pair": "cost function * unit", "seen_with": ["and the choice of output", "is tightly coupled with the choice of output"], "relation": "P279", "label": 0}
-{"entity_pair": "cost function * unit", "seen_with": ["and the choice of output", "is tightly coupled with the choice of output"], "relation": "P31", "label": 0}
-{"entity_pair": "cost function * unit", "seen_with": ["and the choice of output", "is tightly coupled with the choice of output"], "relation": "P1889", "label": 0}
-{"entity_pair": "cost function * unit", "seen_with": ["and the choice of output", "is tightly coupled with the choice of output"], "relation": "P361", "label": 0}
-{"entity_pair": "cost function * unit", "seen_with": ["and the choice of output", "is tightly coupled with the choice of output"], "relation": "P1552", "label": 0}
-{"entity_pair": "cost function * unit", "seen_with": ["and the choice of output", "is tightly coupled with the choice of output"], "relation": "P366", "label": 0}
-{"entity_pair": "cost function * unit", "seen_with": ["and the choice of output", "is tightly coupled with the choice of output"], "relation": "P460", "label": 0}
-{"entity_pair": "cost function * unit", "seen_with": ["and the choice of output", "is tightly coupled with the choice of output"], "relation": "P2283", "label": 1}
-{"entity_pair": "cost function * unit", "seen_with": ["and the choice of output", "is tightly coupled with the choice of output"], "relation": "P527", "label": 0}
-{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform", "performs"], "relation": "P279", "label": 0}
-{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform", "performs"], "relation": "P31", "label": 0}
-{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform", "performs"], "relation": "P1889", "label": 0}
-{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform", "performs"], "relation": "P361", "label": 0}
-{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform", "performs"], "relation": "P1552", "label": 0}
-{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform", "performs"], "relation": "P366", "label": 1}
-{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform", "performs"], "relation": "P460", "label": 0}
-{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform", "performs"], "relation": "P2283", "label": 0}
-{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform", "performs"], "relation": "P527", "label": 0}
-{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any", "as representing a", "may also approximate any", ", but in principle it can compute derivatives of any"], "relation": "P279", "label": 1}
-{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any", "as representing a", "may also approximate any", ", but in principle it can compute derivatives of any"], "relation": "P31", "label": 0}
-{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any", "as representing a", "may also approximate any", ", but in principle it can compute derivatives of any"], "relation": "P1889", "label": 0}
-{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any", "as representing a", "may also approximate any", ", but in principle it can compute derivatives of any"], "relation": "P361", "label": 0}
-{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any", "as representing a", "may also approximate any", ", but in principle it can compute derivatives of any"], "relation": "P1552", "label": 0}
-{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any", "as representing a", "may also approximate any", ", but in principle it can compute derivatives of any"], "relation": "P366", "label": 0}
-{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any", "as representing a", "may also approximate any", ", but in principle it can compute derivatives of any"], "relation": "P460", "label": 0}
-{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any", "as representing a", "may also approximate any", ", but in principle it can compute derivatives of any"], "relation": "P2283", "label": 0}
-{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any", "as representing a", "may also approximate any", ", but in principle it can compute derivatives of any"], "relation": "P527", "label": 0}
-{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a", "to have its minimum occur at some specific", "to have its minimum lie on the", "gives a", "based on the softmax also saturate , unless they are able to invert the saturating activating"], "relation": "P279", "label": 0}
-{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a", "to have its minimum occur at some specific", "to have its minimum lie on the", "gives a", "based on the softmax also saturate , unless they are able to invert the saturating activating"], "relation": "P31", "label": 1}
-{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a", "to have its minimum occur at some specific", "to have its minimum lie on the", "gives a", "based on the softmax also saturate , unless they are able to invert the saturating activating"], "relation": "P1889", "label": 0}
-{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a", "to have its minimum occur at some specific", "to have its minimum lie on the", "gives a", "based on the softmax also saturate , unless they are able to invert the saturating activating"], "relation": "P361", "label": 0}
-{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a", "to have its minimum occur at some specific", "to have its minimum lie on the", "gives a", "based on the softmax also saturate , unless they are able to invert the saturating activating"], "relation": "P1552", "label": 0}
-{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a", "to have its minimum occur at some specific", "to have its minimum lie on the", "gives a", "based on the softmax also saturate , unless they are able to invert the saturating activating"], "relation": "P366", "label": 0}
-{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a", "to have its minimum occur at some specific", "to have its minimum lie on the", "gives a", "based on the softmax also saturate , unless they are able to invert the saturating activating"], "relation": "P460", "label": 0}
-{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a", "to have its minimum occur at some specific", "to have its minimum lie on the", "gives a", "based on the softmax also saturate , unless they are able to invert the saturating activating"], "relation": "P2283", "label": 0}
-{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a", "to have its minimum occur at some specific", "to have its minimum lie on the", "gives a", "based on the softmax also saturate , unless they are able to invert the saturating activating"], "relation": "P527", "label": 0}
+{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform"], "relation": "P279", "label": 0}
+{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform"], "relation": "P31", "label": 0}
+{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform"], "relation": "P1889", "label": 0}
+{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform"], "relation": "P361", "label": 0}
+{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform"], "relation": "P1552", "label": 0}
+{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform"], "relation": "P366", "label": 1}
+{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform"], "relation": "P460", "label": 0}
+{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform"], "relation": "P2283", "label": 0}
+{"entity_pair": "cross-entropi * maximum likelihood estim", "seen_with": ["cost used to perform"], "relation": "P527", "label": 0}
+{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any"], "relation": "P279", "label": 1}
+{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any"], "relation": "P31", "label": 0}
+{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any"], "relation": "P1889", "label": 0}
+{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any"], "relation": "P361", "label": 0}
+{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any"], "relation": "P1552", "label": 0}
+{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any"], "relation": "P366", "label": 0}
+{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any"], "relation": "P460", "label": 0}
+{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any"], "relation": "P2283", "label": 0}
+{"entity_pair": "neural network * function", "seen_with": ["as being able to represent any"], "relation": "P527", "label": 0}
+{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a"], "relation": "P279", "label": 0}
+{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a"], "relation": "P31", "label": 1}
+{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a"], "relation": "P1889", "label": 0}
+{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a"], "relation": "P361", "label": 0}
+{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a"], "relation": "P1552", "label": 0}
+{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a"], "relation": "P366", "label": 0}
+{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a"], "relation": "P460", "label": 0}
+{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a"], "relation": "P2283", "label": 0}
+{"entity_pair": "cost function * function", "seen_with": ["as being a functional rather than just a"], "relation": "P527", "label": 0}
+{"entity_pair": "function * map", "seen_with": ["is a"], "relation": "P279", "label": 1}
+{"entity_pair": "function * map", "seen_with": ["is a"], "relation": "P31", "label": 0}
+{"entity_pair": "function * map", "seen_with": ["is a"], "relation": "P1889", "label": 0}
+{"entity_pair": "function * map", "seen_with": ["is a"], "relation": "P361", "label": 0}
+{"entity_pair": "function * map", "seen_with": ["is a"], "relation": "P1552", "label": 0}
+{"entity_pair": "function * map", "seen_with": ["is a"], "relation": "P366", "label": 0}
+{"entity_pair": "function * map", "seen_with": ["is a"], "relation": "P460", "label": 0}
+{"entity_pair": "function * map", "seen_with": ["is a"], "relation": "P2283", "label": 0}
+{"entity_pair": "function * map", "seen_with": ["is a"], "relation": "P527", "label": 0}
+{"entity_pair": "function * paramet", "seen_with": ["rather than merely choosing a set of"], "relation": "P279", "label": 0}
+{"entity_pair": "function * paramet", "seen_with": ["rather than merely choosing a set of"], "relation": "P31", "label": 0}
+{"entity_pair": "function * paramet", "seen_with": ["rather than merely choosing a set of"], "relation": "P1889", "label": 0}
+{"entity_pair": "function * paramet", "seen_with": ["rather than merely choosing a set of"], "relation": "P361", "label": 0}
+{"entity_pair": "function * paramet", "seen_with": ["rather than merely choosing a set of"], "relation": "P1552", "label": 0}
+{"entity_pair": "function * paramet", "seen_with": ["rather than merely choosing a set of"], "relation": "P366", "label": 0}
+{"entity_pair": "function * paramet", "seen_with": ["rather than merely choosing a set of"], "relation": "P460", "label": 0}
+{"entity_pair": "function * paramet", "seen_with": ["rather than merely choosing a set of"], "relation": "P2283", "label": 0}
+{"entity_pair": "function * paramet", "seen_with": ["rather than merely choosing a set of"], "relation": "P527", "label": 1}
 {"entity_pair": "function * calculu of variat", "seen_with": ["requires a mathematical tool called"], "relation": "P279", "label": 0}
 {"entity_pair": "function * calculu of variat", "seen_with": ["requires a mathematical tool called"], "relation": "P31", "label": 0}
 {"entity_pair": "function * calculu of variat", "seen_with": ["requires a mathematical tool called"], "relation": "P1889", "label": 0}
@@ -637,6 +808,33 @@
 {"entity_pair": "mean squar error * optim", "seen_with": ["and mean absolute error often lead to poor results when used with gradient-based"], "relation": "P460", "label": 0}
 {"entity_pair": "mean squar error * optim", "seen_with": ["and mean absolute error often lead to poor results when used with gradient-based"], "relation": "P2283", "label": 0}
 {"entity_pair": "mean squar error * optim", "seen_with": ["and mean absolute error often lead to poor results when used with gradient-based"], "relation": "P527", "label": 0}
+{"entity_pair": "unit * gradient", "seen_with": ["that saturate produce very small"], "relation": "P279", "label": 0}
+{"entity_pair": "unit * gradient", "seen_with": ["that saturate produce very small"], "relation": "P31", "label": 0}
+{"entity_pair": "unit * gradient", "seen_with": ["that saturate produce very small"], "relation": "P1889", "label": 0}
+{"entity_pair": "unit * gradient", "seen_with": ["that saturate produce very small"], "relation": "P361", "label": 0}
+{"entity_pair": "unit * gradient", "seen_with": ["that saturate produce very small"], "relation": "P1552", "label": 1}
+{"entity_pair": "unit * gradient", "seen_with": ["that saturate produce very small"], "relation": "P366", "label": 0}
+{"entity_pair": "unit * gradient", "seen_with": ["that saturate produce very small"], "relation": "P460", "label": 0}
+{"entity_pair": "unit * gradient", "seen_with": ["that saturate produce very small"], "relation": "P2283", "label": 0}
+{"entity_pair": "unit * gradient", "seen_with": ["that saturate produce very small"], "relation": "P527", "label": 0}
+{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["cost function is more popular than"], "relation": "P279", "label": 0}
+{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["cost function is more popular than"], "relation": "P31", "label": 0}
+{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["cost function is more popular than"], "relation": "P1889", "label": 1}
+{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["cost function is more popular than"], "relation": "P361", "label": 0}
+{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["cost function is more popular than"], "relation": "P1552", "label": 0}
+{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["cost function is more popular than"], "relation": "P366", "label": 0}
+{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["cost function is more popular than"], "relation": "P460", "label": 0}
+{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["cost function is more popular than"], "relation": "P2283", "label": 0}
+{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["cost function is more popular than"], "relation": "P527", "label": 0}
+{"entity_pair": "cost function * unit", "seen_with": ["is tightly coupled with the choice of output"], "relation": "P279", "label": 0}
+{"entity_pair": "cost function * unit", "seen_with": ["is tightly coupled with the choice of output"], "relation": "P31", "label": 0}
+{"entity_pair": "cost function * unit", "seen_with": ["is tightly coupled with the choice of output"], "relation": "P1889", "label": 0}
+{"entity_pair": "cost function * unit", "seen_with": ["is tightly coupled with the choice of output"], "relation": "P361", "label": 0}
+{"entity_pair": "cost function * unit", "seen_with": ["is tightly coupled with the choice of output"], "relation": "P1552", "label": 0}
+{"entity_pair": "cost function * unit", "seen_with": ["is tightly coupled with the choice of output"], "relation": "P366", "label": 0}
+{"entity_pair": "cost function * unit", "seen_with": ["is tightly coupled with the choice of output"], "relation": "P460", "label": 0}
+{"entity_pair": "cost function * unit", "seen_with": ["is tightly coupled with the choice of output"], "relation": "P2283", "label": 1}
+{"entity_pair": "cost function * unit", "seen_with": ["is tightly coupled with the choice of output"], "relation": "P527", "label": 0}
 {"entity_pair": "output layer * transform", "seen_with": ["is then to provide some additional"], "relation": "P279", "label": 0}
 {"entity_pair": "output layer * transform", "seen_with": ["is then to provide some additional"], "relation": "P31", "label": 0}
 {"entity_pair": "output layer * transform", "seen_with": ["is then to provide some additional"], "relation": "P1889", "label": 0}
@@ -646,15 +844,33 @@
 {"entity_pair": "output layer * transform", "seen_with": ["is then to provide some additional"], "relation": "P460", "label": 0}
 {"entity_pair": "output layer * transform", "seen_with": ["is then to provide some additional"], "relation": "P2283", "label": 1}
 {"entity_pair": "output layer * transform", "seen_with": ["is then to provide some additional"], "relation": "P527", "label": 0}
-{"entity_pair": "unit * transform", "seen_with": ["based on an a\ufb03ne"], "relation": "P279", "label": 0}
-{"entity_pair": "unit * transform", "seen_with": ["based on an a\ufb03ne"], "relation": "P31", "label": 0}
-{"entity_pair": "unit * transform", "seen_with": ["based on an a\ufb03ne"], "relation": "P1889", "label": 0}
-{"entity_pair": "unit * transform", "seen_with": ["based on an a\ufb03ne"], "relation": "P361", "label": 0}
-{"entity_pair": "unit * transform", "seen_with": ["based on an a\ufb03ne"], "relation": "P1552", "label": 0}
-{"entity_pair": "unit * transform", "seen_with": ["based on an a\ufb03ne"], "relation": "P366", "label": 0}
-{"entity_pair": "unit * transform", "seen_with": ["based on an a\ufb03ne"], "relation": "P460", "label": 0}
-{"entity_pair": "unit * transform", "seen_with": ["based on an a\ufb03ne"], "relation": "P2283", "label": 1}
-{"entity_pair": "unit * transform", "seen_with": ["based on an a\ufb03ne"], "relation": "P527", "label": 0}
+{"entity_pair": "unit * transform", "seen_with": ["is an output unit based on an affine"], "relation": "P279", "label": 0}
+{"entity_pair": "unit * transform", "seen_with": ["is an output unit based on an affine"], "relation": "P31", "label": 0}
+{"entity_pair": "unit * transform", "seen_with": ["is an output unit based on an affine"], "relation": "P1889", "label": 0}
+{"entity_pair": "unit * transform", "seen_with": ["is an output unit based on an affine"], "relation": "P361", "label": 0}
+{"entity_pair": "unit * transform", "seen_with": ["is an output unit based on an affine"], "relation": "P1552", "label": 0}
+{"entity_pair": "unit * transform", "seen_with": ["is an output unit based on an affine"], "relation": "P366", "label": 0}
+{"entity_pair": "unit * transform", "seen_with": ["is an output unit based on an affine"], "relation": "P460", "label": 0}
+{"entity_pair": "unit * transform", "seen_with": ["is an output unit based on an affine"], "relation": "P2283", "label": 1}
+{"entity_pair": "unit * transform", "seen_with": ["is an output unit based on an affine"], "relation": "P527", "label": 0}
+{"entity_pair": "unit * vector", "seen_with": ["produces a"], "relation": "P279", "label": 0}
+{"entity_pair": "unit * vector", "seen_with": ["produces a"], "relation": "P31", "label": 0}
+{"entity_pair": "unit * vector", "seen_with": ["produces a"], "relation": "P1889", "label": 0}
+{"entity_pair": "unit * vector", "seen_with": ["produces a"], "relation": "P361", "label": 0}
+{"entity_pair": "unit * vector", "seen_with": ["produces a"], "relation": "P1552", "label": 1}
+{"entity_pair": "unit * vector", "seen_with": ["produces a"], "relation": "P366", "label": 0}
+{"entity_pair": "unit * vector", "seen_with": ["produces a"], "relation": "P460", "label": 0}
+{"entity_pair": "unit * vector", "seen_with": ["produces a"], "relation": "P2283", "label": 0}
+{"entity_pair": "unit * vector", "seen_with": ["produces a"], "relation": "P527", "label": 0}
+{"entity_pair": "output layer * gaussian distribut", "seen_with": ["are often used to produce the mean of a conditional"], "relation": "P279", "label": 0}
+{"entity_pair": "output layer * gaussian distribut", "seen_with": ["are often used to produce the mean of a conditional"], "relation": "P31", "label": 0}
+{"entity_pair": "output layer * gaussian distribut", "seen_with": ["are often used to produce the mean of a conditional"], "relation": "P1889", "label": 0}
+{"entity_pair": "output layer * gaussian distribut", "seen_with": ["are often used to produce the mean of a conditional"], "relation": "P361", "label": 0}
+{"entity_pair": "output layer * gaussian distribut", "seen_with": ["are often used to produce the mean of a conditional"], "relation": "P1552", "label": 0}
+{"entity_pair": "output layer * gaussian distribut", "seen_with": ["are often used to produce the mean of a conditional"], "relation": "P366", "label": 1}
+{"entity_pair": "output layer * gaussian distribut", "seen_with": ["are often used to produce the mean of a conditional"], "relation": "P460", "label": 0}
+{"entity_pair": "output layer * gaussian distribut", "seen_with": ["are often used to produce the mean of a conditional"], "relation": "P2283", "label": 0}
+{"entity_pair": "output layer * gaussian distribut", "seen_with": ["are often used to produce the mean of a conditional"], "relation": "P527", "label": 0}
 {"entity_pair": "maximum likelihood * covari", "seen_with": ["framework makes it straightforward to learn the"], "relation": "P279", "label": 0}
 {"entity_pair": "maximum likelihood * covari", "seen_with": ["framework makes it straightforward to learn the"], "relation": "P31", "label": 0}
 {"entity_pair": "maximum likelihood * covari", "seen_with": ["framework makes it straightforward to learn the"], "relation": "P1889", "label": 0}
@@ -673,57 +889,12 @@
 {"entity_pair": "covari * function", "seen_with": ["of the Gaussian be a"], "relation": "P460", "label": 0}
 {"entity_pair": "covari * function", "seen_with": ["of the Gaussian be a"], "relation": "P2283", "label": 0}
 {"entity_pair": "covari * function", "seen_with": ["of the Gaussian be a"], "relation": "P527", "label": 0}
-{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite", "or precision"], "relation": "P279", "label": 0}
-{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite", "or precision"], "relation": "P31", "label": 1}
-{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite", "or precision"], "relation": "P1889", "label": 0}
-{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite", "or precision"], "relation": "P361", "label": 0}
-{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite", "or precision"], "relation": "P1552", "label": 0}
-{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite", "or precision"], "relation": "P366", "label": 0}
-{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite", "or precision"], "relation": "P460", "label": 0}
-{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite", "or precision"], "relation": "P2283", "label": 0}
-{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite", "or precision"], "relation": "P527", "label": 0}
-{"entity_pair": "unit * gradient", "seen_with": ["interval , the"], "relation": "P279", "label": 0}
-{"entity_pair": "unit * gradient", "seen_with": ["interval , the"], "relation": "P31", "label": 0}
-{"entity_pair": "unit * gradient", "seen_with": ["interval , the"], "relation": "P1889", "label": 0}
-{"entity_pair": "unit * gradient", "seen_with": ["interval , the"], "relation": "P361", "label": 0}
-{"entity_pair": "unit * gradient", "seen_with": ["interval , the"], "relation": "P1552", "label": 1}
-{"entity_pair": "unit * gradient", "seen_with": ["interval , the"], "relation": "P366", "label": 0}
-{"entity_pair": "unit * gradient", "seen_with": ["interval , the"], "relation": "P460", "label": 0}
-{"entity_pair": "unit * gradient", "seen_with": ["interval , the"], "relation": "P2283", "label": 0}
-{"entity_pair": "unit * gradient", "seen_with": ["interval , the"], "relation": "P527", "label": 0}
-{"entity_pair": "unit * layer", "seen_with": ["in the input"], "relation": "P279", "label": 0}
-{"entity_pair": "unit * layer", "seen_with": ["in the input"], "relation": "P31", "label": 0}
-{"entity_pair": "unit * layer", "seen_with": ["in the input"], "relation": "P1889", "label": 0}
-{"entity_pair": "unit * layer", "seen_with": ["in the input"], "relation": "P361", "label": 1}
-{"entity_pair": "unit * layer", "seen_with": ["in the input"], "relation": "P1552", "label": 0}
-{"entity_pair": "unit * layer", "seen_with": ["in the input"], "relation": "P366", "label": 0}
-{"entity_pair": "unit * layer", "seen_with": ["in the input"], "relation": "P460", "label": 0}
-{"entity_pair": "unit * layer", "seen_with": ["in the input"], "relation": "P2283", "label": 0}
-{"entity_pair": "unit * layer", "seen_with": ["in the input"], "relation": "P527", "label": 0}
-{"entity_pair": "algorithm * gradient descent", "seen_with": ["and the same approaches to"], "relation": "P279", "label": 0}
-{"entity_pair": "algorithm * gradient descent", "seen_with": ["and the same approaches to"], "relation": "P31", "label": 1}
-{"entity_pair": "algorithm * gradient descent", "seen_with": ["and the same approaches to"], "relation": "P1889", "label": 0}
-{"entity_pair": "algorithm * gradient descent", "seen_with": ["and the same approaches to"], "relation": "P361", "label": 0}
-{"entity_pair": "algorithm * gradient descent", "seen_with": ["and the same approaches to"], "relation": "P1552", "label": 0}
-{"entity_pair": "algorithm * gradient descent", "seen_with": ["and the same approaches to"], "relation": "P366", "label": 0}
-{"entity_pair": "algorithm * gradient descent", "seen_with": ["and the same approaches to"], "relation": "P460", "label": 0}
-{"entity_pair": "algorithm * gradient descent", "seen_with": ["and the same approaches to"], "relation": "P2283", "label": 0}
-{"entity_pair": "algorithm * gradient descent", "seen_with": ["and the same approaches to"], "relation": "P527", "label": 0}
-{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["losses greatly improved the performance of models with sigmoid and softmax outputs , which had previously suffered from saturation and slow learning when using the"], "relation": "P279", "label": 0}
-{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["losses greatly improved the performance of models with sigmoid and softmax outputs , which had previously suffered from saturation and slow learning when using the"], "relation": "P31", "label": 0}
-{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["losses greatly improved the performance of models with sigmoid and softmax outputs , which had previously suffered from saturation and slow learning when using the"], "relation": "P1889", "label": 1}
-{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["losses greatly improved the performance of models with sigmoid and softmax outputs , which had previously suffered from saturation and slow learning when using the"], "relation": "P361", "label": 0}
-{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["losses greatly improved the performance of models with sigmoid and softmax outputs , which had previously suffered from saturation and slow learning when using the"], "relation": "P1552", "label": 0}
-{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["losses greatly improved the performance of models with sigmoid and softmax outputs , which had previously suffered from saturation and slow learning when using the"], "relation": "P366", "label": 0}
-{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["losses greatly improved the performance of models with sigmoid and softmax outputs , which had previously suffered from saturation and slow learning when using the"], "relation": "P460", "label": 0}
-{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["losses greatly improved the performance of models with sigmoid and softmax outputs , which had previously suffered from saturation and slow learning when using the"], "relation": "P2283", "label": 0}
-{"entity_pair": "cross-entropi * mean squar error", "seen_with": ["losses greatly improved the performance of models with sigmoid and softmax outputs , which had previously suffered from saturation and slow learning when using the"], "relation": "P527", "label": 0}
-{"entity_pair": "feedforward network * hidden unit", "seen_with": ["was the replacement of sigmoid"], "relation": "P279", "label": 0}
-{"entity_pair": "feedforward network * hidden unit", "seen_with": ["was the replacement of sigmoid"], "relation": "P31", "label": 0}
-{"entity_pair": "feedforward network * hidden unit", "seen_with": ["was the replacement of sigmoid"], "relation": "P1889", "label": 0}
-{"entity_pair": "feedforward network * hidden unit", "seen_with": ["was the replacement of sigmoid"], "relation": "P361", "label": 0}
-{"entity_pair": "feedforward network * hidden unit", "seen_with": ["was the replacement of sigmoid"], "relation": "P1552", "label": 0}
-{"entity_pair": "feedforward network * hidden unit", "seen_with": ["was the replacement of sigmoid"], "relation": "P366", "label": 0}
-{"entity_pair": "feedforward network * hidden unit", "seen_with": ["was the replacement of sigmoid"], "relation": "P460", "label": 0}
-{"entity_pair": "feedforward network * hidden unit", "seen_with": ["was the replacement of sigmoid"], "relation": "P2283", "label": 0}
-{"entity_pair": "feedforward network * hidden unit", "seen_with": ["was the replacement of sigmoid"], "relation": "P527", "label": 1}
+{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite"], "relation": "P279", "label": 0}
+{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite"], "relation": "P31", "label": 1}
+{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite"], "relation": "P1889", "label": 0}
+{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite"], "relation": "P361", "label": 0}
+{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite"], "relation": "P1552", "label": 0}
+{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite"], "relation": "P366", "label": 0}
+{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite"], "relation": "P460", "label": 0}
+{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite"], "relation": "P2283", "label": 0}
+{"entity_pair": "covari * matrix", "seen_with": ["must be constrained to be a positive definite"], "relation": "P527", "label": 0}
