@@ -211,7 +211,7 @@ def get_wikipedia_evidences(sec_labels):
     """
 
     try:
-        with open('data/wikipedia_evidences copy.json') as f_in:
+        with open('data/wikipedia_evidences_extended.json') as f_in:
             wikipedia_evidences = json.load(f_in)
     except FileNotFoundError:
         wikipedia_evidences = dict()
@@ -314,24 +314,14 @@ def get_training_data(index):
                     to_add = {
                             'entity_pair': pair, 
                             'seen_with': relations, 
-                            'relation': kb_rel,
-                            'label': 1
+                            'relations': desired_rels,
+                            'relation': kb_rel
                         }
                     # ! query with textual mentions as in USchema is too hard and 
                     # ! not sufficient (prob. for depend. paths works).
                     # ! Go only for KB relations as query, also on. neg samples
                 json.dump(to_add, outfile) # last is always path
                 outfile.write('\n')
-                neg_relations = neg_data[pair]
-                for neg_rel in neg_relations:
-                    to_add = {
-                        'entity_pair': pair, 
-                        'seen_with': relations, 
-                        'relation': neg_rel,
-                        'label': 0
-                    }
-                    json.dump(to_add, outfile)
-                    outfile.write('\n')
 
     return index, desired_rels
 
@@ -462,7 +452,7 @@ def get_test_data(index, file_dir, desired_rels, evaluating=False):
                 to_add = {
                             'entity_pair': key, 
                             'seen_with': values, 
-                            'relation': relation
+                            'relations': desired_rels
                         }
                 json.dump(to_add, outfile)
                 outfile.write('\n')
@@ -471,15 +461,14 @@ def get_test_data(index, file_dir, desired_rels, evaluating=False):
         # mentions from the test anntoations only
         with open('data/test_dataset.json', 'w+') as outfile: 
             for item in test_facts:
-                for relation in desired_rels: 
-                        to_add = {
-                                    'entity_pair': item['entity_pair'], 
-                                    'seen_with': item['seen_with'], 
-                                    'relation': relation,
-                                    'label': 1 if relation==item['label'] else 0
-                                }
-                        json.dump(to_add, outfile)
-                        outfile.write('\n')
+                    to_add = {
+                                'entity_pair': item['entity_pair'], 
+                                'seen_with': item['seen_with'], 
+                                'relations': desired_rels,
+                                'relation': item['label']
+                            }
+                    json.dump(to_add, outfile)
+                    outfile.write('\n')
         # mentions from all the book
         with open('data/test_aggregated_dataset.json', 'w+') as outfile: 
             test_pairs = {i['entity_pair']:i['label'] for i in test_facts}
@@ -487,16 +476,15 @@ def get_test_data(index, file_dir, desired_rels, evaluating=False):
                 if key in test_pairs.keys():
                     # add the KB relation to be evaluated:
                     # TODO: try directly with 'relation': desired_rels  
-                    for relation in desired_rels: 
-                        to_add = {
-                                    'entity_pair': key, 
-                                    'seen_with': values, 
-                                    'relation': relation,
-                                    'label': 1 if relation==test_pairs[key] else 0
-                                }
-                        json.dump(to_add, outfile)
-                        outfile.write('\n')
-              
+                    to_add = {
+                                'entity_pair': key, 
+                                'seen_with': values, 
+                                'relations': desired_rels,
+                                'relation': test_pairs[key]
+                            }
+                    json.dump(to_add, outfile)
+                    outfile.write('\n')
+          
 
 def run(file_dir, index_path):
     labeled_data = []
