@@ -10,7 +10,7 @@
     ],
     "editor.useTabStops": false,
     "editor.insertSpaces": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,

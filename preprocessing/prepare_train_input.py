@@ -171,7 +171,6 @@ def get_textual_mentions(term_pair):
     mentions = set()
     cont = None
 
-    # TODO: the while is unneccessery if break after 1 iteration remains:
     for term in term_pair:
         while True:
             res = wikimedia_request(term, cont)
