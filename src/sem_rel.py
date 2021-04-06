@@ -1,15 +1,19 @@
 import copy
+import json
+import os
 from datetime import datetime
-
+import pandas as pd
+import numpy as np
 import torch
 import torch.nn as nn
 import torchtext.data as data
 import tqdm
-import json
-from sklearn.metrics import confusion_matrix, f1_score
+from sklearn.metrics import confusion_matrix, f1_score, classification_report
 from torchnlp.nn import Attention
 
 from utils import LSTMEncoder
+
+params = {'emb_dim': 100, 'lstm_encoder': True, 'pooling': 'max_pool', 'lstm_hid':64, 'epochs':1}   
 
 # --- prepare data tensors --- 
 
@@ -29,13 +33,6 @@ fields= {
     "relation": ('column', column)
     } 
 )
-# {
-#                             'entity_pair': pair, 
-#                             'seen_with': relations, 
-#                             'neg_relations': [rel for rel in desired_rels if rel!=kb_rel],
-#                             'relation': kb_rel
-#                         }
-
 row.build_vocab(dataset)
 mentions.build_vocab(dataset)
 column.build_vocab(dataset)
@@ -73,7 +70,14 @@ VALUES = {
     'P2283':'uses',
     'P527':'has part'
     }
-
+mypath = os.path.join(
+    'models', 
+    str(params['pooling']), 
+    str(params['emb_dim']) + '_emb_dim', 
+    str(params['lstm_hid']) + '_lstm_hid', 
+    str(params['epochs'])+ '_epochs'
+)
+os.makedirs(mypath, exist_ok = True)
 
 class UniversalSchema(nn.Module):
     def __init__(self, params):
@@ -131,7 +135,10 @@ class UniversalSchema(nn.Module):
             col_m = torch.unsqueeze(query, 2)
             score = torch.bmm(row_m, col_m)
             scores.append(torch.squeeze(score.T))
-        result = torch.stack(scores, dim=1)
+        try:
+            result = torch.stack(scores, dim=1)
+        except IndexError:
+            result = torch.unsqueeze(torch.stack(scores, dim=0),0)
         return result  # skip sigmoid if using BCEWithLogitsLoss
 
 
@@ -162,42 +169,50 @@ def train():
                 running_loss = 0.0
     
 
-    PATH = 'models/{mode}-{dim}x{lstm_hid}-{epochs}-{save_as}.pth'.format(
+    PATH = '{path}/{save_as}.pth'.format(
         save_as = datetime.today().strftime('%m-%d-%H:%M:%S'), 
-        mode=params['pooling'],
-        dim = params['emb_dim'],
-        lstm_hid = params['lstm_hid'],
-        epochs = params['epochs']
+        path = mypath
     )
     torch.save(model.state_dict(), PATH)
+    return model
 
-def test():
-    model = UniversalSchema(params)
-    model.load_state_dict(torch.load("models/max_pool-100x64-15-04-06-14:15:31.pth"))
+def test(model=None):
+    if not model:
+        model = UniversalSchema(params)
+        PATH = '{path}/04-06-16:59:25.pth'.format(
+            path = mypath
+        )
+        model.load_state_dict(torch.load(PATH))
     # classes = column.vocab.itos[2:] # col vocab without <unk> and <pad>
 
     predictions = []
-    true_labels = []
+    targets = []
     predicted_labels = []
+    true_labels = []
     for i, example in enumerate(test_iterator,0):
         scores = model(example)
         results = torch.argmax(scores, dim=1)
-        true_label = torch.squeeze(example.column[0].T) - 2
         predictions.extend(results)
-        true_labels.extend(true_label)
-    predicted_labels.extend([column.vocab.itos[l] for l in predictions])
-    print(confusion_matrix(true_labels,true_labels))
-    print(confusion_matrix(true_labels,predictions))
-    print(f1_score(true_labels,predictions, average='macro'))
-    pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-
-    print('Trainable parameters:', pytorch_total_params)
-
+        target= torch.squeeze(example.column[0].T) - 2
+        targets.extend(target)
+    predicted_labels.extend([column.vocab.itos[l+2] for l in predictions])
+    true_labels.extend([column.vocab.itos[l+2] for l in targets])
+    conf_matrix = confusion_matrix(true_labels,true_labels, labels=CLASSES)
+    class_report = classification_report(true_labels,predicted_labels, output_dict=True)
+    # print (f1_score(true_labels,predictions, average='macro'))
+    # pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    matrix_file = mypath + '/conf_matrix'
+    with open(matrix_file, 'w') as fp:
+        np.savetxt(fp, conf_matrix,fmt='%10.1f')
+    
+    report = mypath + '/report.json'
+    with open(report, 'w') as fp:
+        frame = pd.DataFrame(class_report)
+        frame.to_json(report, indent=4)
 
         
 
-params = {'emb_dim': 100, 'lstm_encoder': True, 'pooling': 'max_pool', 'lstm_hid':64, 'epochs':15}   
 model = UniversalSchema(params)       
 
-# train()
-test()
+model = train()
+test(model)
