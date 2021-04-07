@@ -1,7 +1,6 @@
 feedforward network
 parameter
 function approximation
-output layer
 training data
 neuroscience
 unit
@@ -11,3 +10,35 @@ linear function
 too broad:
 Learning
 other
+
+Choosen rel:
+"P279": "subclass of "          128     2150
+"P31": "instance of"            60      1000
+"P101": "field of work"         32      60      x
+"P1889": "different from"       44      300
+
+"P460": "said to be the same as" 12     0       x x     
+"P366": "use"                   96      0       xx
+"P1552": "has quality"          28      14      x
+
+USE: 
+'subclass of':      P279    9       10
+'instance of':      P31     13      14
+'field of work':    P101    
+'different from':   P1889   9       10
+'part of':          P361    11      11
+'has quality':      P1552   4       8
+'facet of':         P1269   
+'use':              P366    17      20
+'opposite of'       P461
+'studied by':       P2579
+'said to be the same as': P460  2   2
+'uses':             P2283   9       14
+'has part':         P527    7       11
+
+REMOVE:
+'Commons category'
+'see also'
+'Wikidata property example'
+'subject item of this property'
+'found in taxon'

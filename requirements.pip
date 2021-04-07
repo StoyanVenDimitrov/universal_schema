@@ -6,3 +6,5 @@ pytorch-nlp
 beautifulsoup4==4.9.3
 networkx==2.5
 matplotlib==3.3.4
+numpy==1.19.5
+pandas==1.1.5
